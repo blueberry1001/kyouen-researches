@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=8x8 nodes=8744406 losing=2991713 winning=5752693
+forbidden=14564 root=empty
+conclusion=8x8 SECOND PLAYER WIN
+seconds=8.53354

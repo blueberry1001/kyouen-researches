@@ -1,0 +1,26 @@
+built forbidden=6364
+search complete: n=7 verdict=SECOND forbidden=6364 states=4060657 maxdepth=14 seconds=3.40967
+certificate complete: nodes=393550 losing=139217 winning=254333 bytes=6296840 seconds=0.185916
+	Command being timed: "./build/kyouen-certgen-1-to-8 7 certificates/raw/kyouen-7x7.cert"
+	User time (seconds): 3.59
+	System time (seconds): 0.06
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 152212
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 37265
+	Voluntary context switches: 1
+	Involuntary context switches: 11
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 12312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

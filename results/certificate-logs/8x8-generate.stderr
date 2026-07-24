@@ -1,0 +1,42 @@
+built forbidden=14564
+states=4194304 memo=4194295 depth=8 rate=1.2663 M/s
+states=8388608 memo=8388596 depth=11 rate=1.24263 M/s
+states=12582912 memo=12582900 depth=11 rate=1.19751 M/s
+states=16777216 memo=16777204 depth=11 rate=1.14536 M/s
+states=20971520 memo=20971509 depth=10 rate=1.11581 M/s
+states=25165824 memo=25165814 depth=9 rate=1.11336 M/s
+states=29360128 memo=29360119 depth=8 rate=1.0915 M/s
+states=33554432 memo=33554420 depth=11 rate=1.07913 M/s
+search complete: n=8 verdict=SECOND forbidden=14564 states=35961745 maxdepth=15 seconds=33.6824
+certificate nodes=1048576 stack=70 rate=2.23522 M/s
+certificate nodes=2097152 stack=94 rate=2.2519 M/s
+certificate nodes=3145728 stack=112 rate=2.21968 M/s
+certificate nodes=4194304 stack=103 rate=2.22489 M/s
+certificate nodes=5242880 stack=120 rate=2.21415 M/s
+certificate nodes=6291456 stack=108 rate=2.21228 M/s
+certificate nodes=7340032 stack=71 rate=2.21679 M/s
+certificate nodes=8388608 stack=119 rate=2.2261 M/s
+certificate complete: nodes=8744406 losing=2991713 winning=5752693 bytes=139910536 seconds=3.92791
+	Command being timed: "./build/kyouen-certgen-1-to-8 8 certificates/raw/kyouen-8x8.cert"
+	User time (seconds): 37.55
+	System time (seconds): 0.67
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:38.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1185384
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 295594
+	Voluntary context switches: 1
+	Involuntary context switches: 135
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 273280
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

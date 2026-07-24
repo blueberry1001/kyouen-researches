@@ -1,0 +1,58 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/kyouen-1-to-9-classification/build
+[100%] Built target kyouen-certcheck
+== kyouen-1x1.cert.zst ==
+CERTIFICATE VALID
+board=1x1 nodes=2 losing=1 winning=1
+forbidden=0 root=empty
+conclusion=1x1 FIRST PLAYER WIN
+seconds=4.6019e-05
+== kyouen-2x2.cert.zst ==
+CERTIFICATE VALID
+board=2x2 nodes=5 losing=2 winning=3
+forbidden=1 root=empty
+conclusion=2x2 FIRST PLAYER WIN
+seconds=4.3481e-05
+== kyouen-3x3.cert.zst ==
+CERTIFICATE VALID
+board=3x3 nodes=28 losing=10 winning=18
+forbidden=14 root=empty
+conclusion=3x3 FIRST PLAYER WIN
+seconds=5.0906e-05
+== kyouen-4x4.cert.zst ==
+CERTIFICATE VALID
+board=4x4 nodes=135 losing=47 winning=88
+forbidden=194 root=empty
+conclusion=4x4 SECOND PLAYER WIN
+seconds=0.000106393
+== kyouen-5x5.cert.zst ==
+CERTIFICATE VALID
+board=5x5 nodes=1217 losing=449 winning=768
+forbidden=826 root=empty
+conclusion=5x5 FIRST PLAYER WIN
+seconds=0.000463499
+== kyouen-6x6.cert.zst ==
+CERTIFICATE VALID
+board=6x6 nodes=21712 losing=7625 winning=14087
+forbidden=2491 root=empty
+conclusion=6x6 FIRST PLAYER WIN
+seconds=0.00670169
+== kyouen-7x7.cert.zst ==
+CERTIFICATE VALID
+board=7x7 nodes=393550 losing=139217 winning=254333
+forbidden=6364 root=empty
+conclusion=7x7 SECOND PLAYER WIN
+seconds=0.172842
+== kyouen-8x8.cert.zst ==
+CERTIFICATE VALID
+board=8x8 nodes=8744406 losing=2991713 winning=5752693
+forbidden=14564 root=empty
+conclusion=8x8 SECOND PLAYER WIN
+seconds=7.57252
+== kyouen-9x9.cert.zst ==
+CERTIFICATE VALID
+board=9x9 nodes=13457134 losing=4630676 winning=8826458
+forbidden=29152 root=empty
+conclusion=9x9 FIRST PLAYER WIN
+seconds=13.3495

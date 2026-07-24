@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=2x2 nodes=5 losing=2 winning=3
+forbidden=1 root=empty
+conclusion=2x2 FIRST PLAYER WIN
+seconds=5.1167e-05

@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=7x7 nodes=393550 losing=139217 winning=254333
+forbidden=6364 root=empty
+conclusion=7x7 SECOND PLAYER WIN
+seconds=0.185767

@@ -1,0 +1,26 @@
+built forbidden=14
+search complete: n=3 verdict=FIRST forbidden=14 states=28 maxdepth=5 seconds=5.7528e-05
+certificate complete: nodes=28 losing=10 winning=18 bytes=488 seconds=1.7145e-05
+	Command being timed: "./build/kyouen-certgen-1-to-8 3 certificates/raw/kyouen-3x3.cert"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4372
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 306
+	Voluntary context switches: 1
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

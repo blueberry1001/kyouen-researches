@@ -1,0 +1,71 @@
+built forbidden=29152
+depth 1 at 1 states
+depth 2 at 2 states
+depth 3 at 3 states
+depth 4 at 4 states
+depth 5 at 5 states
+depth 6 at 6 states
+depth 7 at 7 states
+depth 8 at 8 states
+depth 9 at 9 states
+depth 10 at 10 states
+depth 11 at 11 states
+depth 12 at 12 states
+depth 13 at 17 states
+depth 14 at 20 states
+depth 15 at 350 states
+depth 16 at 12554 states
+states=4194304 memo=4194290 depth=14 rate=0.41176 M/s
+depth 17 at 5677451 states
+states=8388608 memo=8388594 depth=14 rate=0.486407 M/s
+states=12582912 memo=12582901 depth=11 rate=0.525634 M/s
+states=16777216 memo=16777206 depth=10 rate=0.548261 M/s
+states=20971520 memo=20971510 depth=10 rate=0.56349 M/s
+states=25165824 memo=25165811 depth=13 rate=0.57295 M/s
+states=29360128 memo=29360116 depth=12 rate=0.580246 M/s
+states=33554432 memo=33554421 depth=11 rate=0.585878 M/s
+states=37748736 memo=37748723 depth=13 rate=0.577194 M/s
+states=41943040 memo=41943029 depth=11 rate=0.57366 M/s
+states=46137344 memo=46137332 depth=12 rate=0.575785 M/s
+states=50331648 memo=50331638 depth=10 rate=0.574746 M/s
+states=54525952 memo=54525940 depth=12 rate=0.576894 M/s
+first move (4,4) leaves LOSS for player to move
+representative second moves and one winning third reply after center:
+  second (0,0) -> third (1,0)
+  second (0,1) -> third (0,0)
+  second (0,2) -> third (0,4)
+  second (0,3) -> third (0,0)
+  second (0,4) -> third (0,2)
+  second (1,1) -> third (0,0)
+  second (1,2) -> third (1,1)
+  second (1,3) -> third (0,0)
+  second (1,4) -> third (0,4)
+  second (2,2) -> third (0,0)
+  second (2,3) -> third (1,0)
+  second (2,4) -> third (0,4)
+  second (3,3) -> third (0,0)
+  second (3,4) -> third (0,4)
+forbidden=29152 visited=57078016 memo=57078016 maxdepth=17 seconds=99.6766
+	Command being timed: "/mnt/data/kyouen_research/kyouen_solver_9 40 28"
+	User time (seconds): 99.84
+	System time (seconds): 1.68
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:41.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3158048
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 788729
+	Voluntary context switches: 1
+	Involuntary context switches: 158
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

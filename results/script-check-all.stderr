@@ -1,0 +1,29 @@
+outcome table slots=4
+outcome table slots=16
+outcome table slots=64
+outcome table slots=512
+outcome table slots=4096
+outcome table slots=65536
+outcome table slots=1048576
+outcome table slots=33554432
+checked=1048576/8744406 rate=0.255674 M nodes/s
+checked=2097152/8744406 rate=0.460231 M nodes/s
+checked=3145728/8744406 rate=0.626726 M nodes/s
+checked=4194304/8744406 rate=0.764943 M nodes/s
+checked=5242880/8744406 rate=0.881188 M nodes/s
+checked=6291456/8744406 rate=0.97707 M nodes/s
+checked=7340032/8744406 rate=1.06078 M nodes/s
+checked=8388608/8744406 rate=1.13254 M nodes/s
+outcome table slots=33554432
+checked=1048576/13457134 rate=0.156441 M nodes/s
+checked=2097152/13457134 rate=0.289761 M nodes/s
+checked=3145728/13457134 rate=0.404831 M nodes/s
+checked=4194304/13457134 rate=0.504611 M nodes/s
+checked=5242880/13457134 rate=0.591869 M nodes/s
+checked=6291456/13457134 rate=0.667133 M nodes/s
+checked=7340032/13457134 rate=0.734954 M nodes/s
+checked=8388608/13457134 rate=0.794538 M nodes/s
+checked=9437184/13457134 rate=0.848829 M nodes/s
+checked=10485760/13457134 rate=0.898482 M nodes/s
+checked=11534336/13457134 rate=0.942085 M nodes/s
+checked=12582912/13457134 rate=0.979272 M nodes/s

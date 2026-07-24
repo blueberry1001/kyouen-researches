@@ -1,0 +1,9 @@
+build/
+.lake/
+*.olean
+*.ilean
+*.trace
+certificates/raw/*.cert
+release-assets/*.cert.zst
+!release-assets/SHA256SUMS.txt
+*.tmp

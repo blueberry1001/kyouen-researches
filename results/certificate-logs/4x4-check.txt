@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=4x4 nodes=135 losing=47 winning=88
+forbidden=194 root=empty
+conclusion=4x4 SECOND PLAYER WIN
+seconds=0.000111205

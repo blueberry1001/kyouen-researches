@@ -1,0 +1,10 @@
+n,verdict,forbidden_quadruples,winning_first_moves,search_states,max_search_depth,certificate_nodes,notes
+1,first,0,1,2,1,2,all first moves win
+2,first,1,4,5,3,5,all first moves win
+3,first,14,9,28,5,28,all first moves win
+4,second,194,0,207,7,135,second-player win
+5,first,826,9,5775,9,1217,nine winning first moves
+6,first,2491,36,51958,11,21712,all first moves win
+7,second,6364,0,4060657,14,393550,verified by separate exact implementation
+8,second,14564,0,35961745,15,8744406,verified by two exact implementations
+9,first,29152,≥1 (centre),57078016,17,13457134,centre is a winning first move; other first moves not fully classified

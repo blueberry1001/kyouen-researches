@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  cpp:
+    name: C++ build and small-certificate checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --parallel 2
+      - name: Generate and check 1x1 through 6x6
+        run: |
+          mkdir -p /tmp/kyouen-certs
+          for n in 1 2 3 4 5 6; do
+            ./build/kyouen-certgen-1-to-8 "$n" "/tmp/kyouen-certs/${n}.cert"
+            ./build/kyouen-certcheck "/tmp/kyouen-certs/${n}.cert"
+          done
+
+  lean:
+    name: Lean soundness layer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          build: true

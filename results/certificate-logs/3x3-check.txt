@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=3x3 nodes=28 losing=10 winning=18
+forbidden=14 root=empty
+conclusion=3x3 FIRST PLAYER WIN
+seconds=5.386e-05

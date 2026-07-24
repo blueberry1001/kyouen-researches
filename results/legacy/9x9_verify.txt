@@ -1,0 +1,38 @@
+built 29152
+states=4194304 depth=14
+states=8388608 depth=14
+states=12582912 depth=11
+states=16777216 depth=10
+states=20971520 depth=10
+states=25165824 depth=13
+states=29360128 depth=12
+states=33554432 depth=11
+states=37748736 depth=13
+states=41943040 depth=11
+states=46137344 depth=12
+states=50331648 depth=10
+states=54525952 depth=12
+LOSS for player after center; forbidden=29152 states=57078016 memo=57078016 maxdepth=17
+	Command being timed: "/mnt/data/kyouen_research/kyouen_solver_9_verify"
+	User time (seconds): 153.81
+	System time (seconds): 1.93
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:35.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3157452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 788682
+	Voluntary context switches: 1
+	Involuntary context switches: 550
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

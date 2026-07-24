@@ -1,0 +1,56 @@
+built forbidden=29152
+depth 1 at 1 states
+depth 2 at 2 states
+depth 3 at 3 states
+depth 4 at 4 states
+depth 5 at 5 states
+depth 6 at 6 states
+depth 7 at 7 states
+depth 8 at 8 states
+depth 9 at 9 states
+depth 10 at 10 states
+depth 11 at 11 states
+depth 12 at 12 states
+depth 13 at 17 states
+depth 14 at 20 states
+depth 15 at 350 states
+depth 16 at 12554 states
+states=4194304 memo=4194290 depth=14 rate=0.576954 M/s
+depth 17 at 5677451 states
+states=8388608 memo=8388594 depth=14 rate=0.600718 M/s
+states=12582912 memo=12582901 depth=11 rate=0.606162 M/s
+states=16777216 memo=16777206 depth=10 rate=0.597504 M/s
+states=20971520 memo=20971510 depth=10 rate=0.597086 M/s
+states=25165824 memo=25165811 depth=13 rate=0.596511 M/s
+states=29360128 memo=29360116 depth=12 rate=0.591434 M/s
+states=33554432 memo=33554421 depth=11 rate=0.593561 M/s
+states=37748736 memo=37748723 depth=13 rate=0.594121 M/s
+states=41943040 memo=41943029 depth=11 rate=0.589971 M/s
+states=46137344 memo=46137332 depth=12 rate=0.587896 M/s
+states=50331648 memo=50331638 depth=10 rate=0.586139 M/s
+states=54525952 memo=54525940 depth=12 rate=0.580358 M/s
+first move (4,4) leaves LOSS for player to move
+forbidden=29152 visited=57078016 memo=57078016 maxdepth=17 seconds=98.5066
+	Command being timed: "/mnt/data/kyouen_research/kyouen_solver_9 40 28"
+	User time (seconds): 98.56
+	System time (seconds): 5.08
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:43.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3158040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 788728
+	Voluntary context switches: 1
+	Involuntary context switches: 365
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 24
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

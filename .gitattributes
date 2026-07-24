@@ -1,0 +1,6 @@
+*.cert binary
+*.zst binary
+*.csv text eol=lf
+*.lean text eol=lf
+*.cpp text eol=lf
+*.md text eol=lf

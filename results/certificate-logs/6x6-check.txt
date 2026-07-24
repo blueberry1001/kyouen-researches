@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=6x6 nodes=21712 losing=7625 winning=14087
+forbidden=2491 root=empty
+conclusion=6x6 FIRST PLAYER WIN
+seconds=0.00711072

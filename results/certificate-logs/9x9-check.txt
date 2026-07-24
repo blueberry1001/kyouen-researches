@@ -1,0 +1,5 @@
+CERTIFICATE VALID
+board=9x9 nodes=13457134 losing=4630676 winning=8826458
+forbidden=29152 root=empty
+conclusion=9x9 FIRST PLAYER WIN
+seconds=13.6702

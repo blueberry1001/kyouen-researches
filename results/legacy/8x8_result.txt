@@ -1,0 +1,18 @@
+8x8 root: SECOND
+representative first moves and one winning second reply:
+  first (0,0) -> second (1,0)
+  first (0,1) -> second (0,0)
+  first (0,2) -> second (0,0)
+  first (0,3) -> second (0,0)
+  first (1,1) -> second (0,0)
+  first (1,2) -> second (0,0)
+  first (1,3) -> second (0,1)
+  first (2,2) -> second (0,0)
+  first (2,3) -> second (0,0)
+  first (3,3) -> second (1,0)
+forbidden=14564 visited=46200800 memo=46200800 maxdepth=15
+
+Independent verifier:
+SECOND forbidden=14564 states=46200800
+
+Coordinates use (x,y), with (0,0) at the upper-left. Other first moves are obtained by rotation/reflection.
