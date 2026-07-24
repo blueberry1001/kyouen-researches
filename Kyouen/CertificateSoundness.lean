@@ -8,17 +8,14 @@ inductive Outcome where
   | winning
 deriving Repr, BEq, DecidableEq
 
-/--
-`Winning moves s` and `Losing moves s` are the ordinary normal-play meanings.
-A player wins at `s` when one legal child is losing; a player loses at `s`
-when every legal child is winning.
--/
 mutual
-inductive Winning {σ : Type u} (moves : σ → List σ) : σ → Prop where
-  | move {s t : σ} : t ∈ moves s → Losing moves t → Winning moves s
+  /-- A state is winning when it has a legal move to a losing state. -/
+  inductive Winning {σ : Type u} (moves : σ → List σ) : σ → Prop where
+    | move {s t : σ} : t ∈ moves s → Losing moves t → Winning moves s
 
-inductive Losing {σ : Type u} (moves : σ → List σ) : σ → Prop where
-  | all {s : σ} : (∀ t, t ∈ moves s → Winning moves t) → Losing moves s
+  /-- A state is losing when every legal move leads to a winning state. -/
+  inductive Losing {σ : Type u} (moves : σ → List σ) : σ → Prop where
+    | all {s : σ} : (∀ t, t ∈ moves s → Winning moves t) → Losing moves s
 end
 
 /-- A certificate entry. `rank` only has to decrease along checked edges. -/

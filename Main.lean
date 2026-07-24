@@ -3,11 +3,15 @@ import Kyouen.Rules
 
 open Kyouen
 
-/-- A tiny finite game used as a compile-time demonstration of certificate soundness. -/
+/-
+A tiny finite game used as a compile-time demonstration of
+certificate soundness.
+-/
 namespace Demo
 
 inductive State where
-  | root | leaf
+  | root
+  | leaf
 deriving Repr, BEq, DecidableEq
 
 open State
@@ -17,8 +21,16 @@ def moves : State → List State
   | leaf => []
 
 def cert : Certificate State
-  | root => some { outcome := .winning, rank := 1 }
-  | leaf => some { outcome := .losing, rank := 0 }
+  | root =>
+      some {
+        outcome := .winning
+        rank := 1
+      }
+  | leaf =>
+      some {
+        outcome := .losing
+        rank := 0
+      }
 
 theorem cert_valid : LocallyValid moves cert := by
   intro s e hs
@@ -26,7 +38,14 @@ theorem cert_valid : LocallyValid moves cert := by
   | root =>
       simp only [cert, Option.some.injEq] at hs
       subst e
-      exact ⟨leaf, { outcome := .losing, rank := 0 }, by simp [moves], rfl, rfl, by decide⟩
+      exact ⟨
+        leaf,
+        { outcome := .losing, rank := 0 },
+        by simp [moves],
+        rfl,
+        rfl,
+        by decide
+      ⟩
   | leaf =>
       simp only [cert, Option.some.injEq] at hs
       subst e
@@ -39,4 +58,5 @@ theorem root_is_winning : Winning moves root :=
 end Demo
 
 def main : IO Unit := do
-  IO.println "Kyouen 1–9: ranked AND/OR certificate soundness layer loaded."
+  IO.println
+    "Kyouen 1–9: ranked AND/OR certificate soundness layer loaded."
