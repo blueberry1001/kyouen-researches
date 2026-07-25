@@ -171,7 +171,3 @@ Leanによる証明書方式の一般健全性定理
 This repository gives a computer-assisted complete classification of optimal-play outcomes for Kyouen on `n × n` lattice-point boards for `1 ≤ n ≤ 9`.
 
 The first player wins for `n ∈ {1,2,3,5,6,9}`, while the second player wins for `n ∈ {4,7,8}`. Every result is accompanied by a ranked AND/OR certificate checked by a common independent verifier. A Lean development formalizes the general soundness argument for such certificates.
-
-## ライセンス
-
-ライセンスは未設定です。公開前にMIT、Apache-2.0など、意図に合うライセンスを追加してください。
