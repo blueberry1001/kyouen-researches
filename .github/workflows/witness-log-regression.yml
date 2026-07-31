@@ -1,0 +1,79 @@
+name: Winning witness log regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-log-regression.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-log-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  witness-log:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust/independent-verifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build verifier and exact solver
+        run: |
+          cargo build --release --bin kyouen-cert-verify
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+            ../../cpp/solvers/kyouen_solver_10_kyoenc4.cpp \
+            -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Search, retain witnesses, and export proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/witness-first.cert \
+            3 80 50000 /tmp/witness-first.index 0 0 \
+            /tmp/winning-witnesses.log 0 \
+            > /tmp/witness-first.out 2> /tmp/witness-first.err
+          cat /tmp/witness-first.out
+          cat /tmp/witness-first.err
+          grep -q ',LOSS,' /tmp/witness-first.out
+          grep -q 'witness_log loaded=0 ' /tmp/witness-first.err
+          grep -Eq 'proof_hits=[1-9][0-9]*' /tmp/witness-first.err
+          target/release/kyouen-cert-verify /tmp/witness-first.cert | tee /tmp/witness-first.verify
+          grep -q '^root_outcome=LOSS$' /tmp/witness-first.verify
+      - name: Reload the append-only log and reproduce the proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/witness-second.cert \
+            3 80 50000 /tmp/witness-second.index 0 0 \
+            /tmp/winning-witnesses.log 1 \
+            > /tmp/witness-second.out 2> /tmp/witness-second.err
+          cat /tmp/witness-second.out
+          cat /tmp/witness-second.err
+          grep -q ',LOSS,' /tmp/witness-second.out
+          grep -Eq 'witness_log loaded=[1-9][0-9]* ' /tmp/witness-second.err
+          grep -Eq 'proof_hits=[1-9][0-9]*' /tmp/witness-second.err
+          target/release/kyouen-cert-verify /tmp/witness-second.cert | tee /tmp/witness-second.verify
+          grep -q '^root_outcome=LOSS$' /tmp/witness-second.verify
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          first = Path('/tmp/witness-first.err').read_text()
+          second = Path('/tmp/witness-second.err').read_text()
+          def metric(text, name):
+              match = re.search(rf'{name}=(\d+)', text)
+              assert match, f'missing {name}'
+              return int(match.group(1))
+          assert metric(first, 'recomputed') < 8778
+          assert metric(second, 'recomputed') <= metric(first, 'recomputed')
+          assert metric(second, 'appended') == 0
+          assert metric(first, 'proof_misses') == 0
+          assert metric(second, 'proof_misses') == 0
+          PY
