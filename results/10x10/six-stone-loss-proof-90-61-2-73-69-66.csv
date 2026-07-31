@@ -1,0 +1,2 @@
+state,outcome,search_visited,search_maxdepth,search_memo,search_seconds,proof_nodes,losing_nodes,winning_nodes,proof_recomputed,certificate_bytes,compressed_bytes,proof_index_limit,proof_index_bytes,witness_unique,witness_conflicts,witness_hits,witness_misses,witness_log_bytes,witness_index_limit,witness_index_bytes,wall_seconds,max_rss_kb,verified,verify_wall_seconds,verify_max_rss_kb
+"90,61,2,73,69,66",LOSS,432614,18,432175,1.81635,77726,27315,50411,50411,1865472,464813,5000000,201326656,286975,3,50411,0,6887432,10000000,402653248,16.00,1158096,yes,0.28,30172
