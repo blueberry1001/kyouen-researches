@@ -1,0 +1,31 @@
+name: Rust independent verifier
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/rust-verifier.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/rust-verifier.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Build, self-test, and audit sample evidence
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust/independent-verifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Unit tests
+        run: cargo test --release
+      - name: Reference self-test
+        run: cargo run --release -- self-test
+      - name: Audit bundled 10x10 evidence summary
+        run: cargo run --release -- audit-evidence evidence-sample
