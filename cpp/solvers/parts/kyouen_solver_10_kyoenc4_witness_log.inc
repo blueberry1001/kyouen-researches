@@ -78,3 +78,26 @@ private:
   write_all_at(fd_,&h,sizeof(h),0);
  }
 };
+
+static std::unique_ptr<WitnessLog> winning_witness_log;
+static std::uint64_t winning_witness_hits=0,winning_witness_misses=0;
+static void open_winning_witness_log(const std::string&path,bool resume){
+ winning_witness_hits=0;winning_witness_misses=0;
+ if(path.empty())winning_witness_log.reset();else winning_witness_log=std::make_unique<WitnessLog>(path,resume);
+}
+static bool get_winning_witness(Bits state,std::uint8_t&out){
+ if(!winning_witness_log)return false;return winning_witness_log->get(state,out);
+}
+static void record_winning_witness(Bits state,std::uint8_t witness,std::uint8_t rank){
+ if(winning_witness_log)winning_witness_log->record(state,witness,rank);
+}
+static void print_winning_witness_stats(std::ostream&out){
+ if(!winning_witness_log)return;
+ out<<"witness_log loaded="<<winning_witness_log->loaded_records()
+    <<" appended="<<winning_witness_log->appended_records()
+    <<" unique="<<winning_witness_log->unique_records()
+    <<" conflicts="<<winning_witness_log->conflicts()
+    <<" proof_hits="<<winning_witness_hits
+    <<" proof_misses="<<winning_witness_misses
+    <<" bytes="<<winning_witness_log->file_bytes()<<"\n";
+}
