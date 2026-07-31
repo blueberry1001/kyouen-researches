@@ -106,7 +106,8 @@ static void open_winning_witness_log(const std::string&path,bool resume){
  if(path.empty())winning_witness_log.reset();else winning_witness_log=std::make_unique<WitnessLog>(path,resume);
 }
 static bool get_winning_witness(std::uint64_t lo,std::uint64_t hi,std::uint8_t&out){
- if(!winning_witness_log)return false;return winning_witness_log->get(lo,hi,out);
+ if(!winning_witness_log)return false;
+ return winning_witness_log->get(lo,hi,out);
 }
 static void record_winning_witness(std::uint64_t lo,std::uint64_t hi,std::uint8_t witness,std::uint8_t rank){
  if(winning_witness_log)winning_witness_log->record(lo,hi,witness,rank);
