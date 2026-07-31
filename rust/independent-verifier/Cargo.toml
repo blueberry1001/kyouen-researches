@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "Independent Rust reference solver and evidence auditor for the Kyouen game"
 license = "MIT"
+default-run = "kyouen-verifier"
 
 [lib]
 name = "kyouen_verifier"
