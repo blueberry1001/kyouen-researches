@@ -1,0 +1,59 @@
+name: Six-stone 10x10 proof regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/six-stone-proof-regression.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/six-stone-proof-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  six-stone-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build exact solver and independent verifier
+        run: |
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+            cpp/solvers/kyouen_solver_10_kyoenc4.cpp \
+            -o /tmp/kyouen-solver-10-kyoenc4
+          cargo build --release --manifest-path rust/independent-verifier/Cargo.toml \
+            --bin kyouen-cert-verify
+      - name: Generate the fixed six-stone LOSS proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66' \
+            /tmp/six-stone-loss.cert \
+            3 80 100000 /tmp/six-stone-proof.index 0 0 \
+            /tmp/six-stone-witness.log 0 \
+            /tmp/six-stone-witness.index 400000 \
+            > /tmp/six-stone.out 2> /tmp/six-stone.err
+          cat /tmp/six-stone.out
+          cat /tmp/six-stone.err
+          grep -q '^90,61,2,73,69,66,LOSS,432614,18,432175,' /tmp/six-stone.out
+          grep -q 'certificate nodes=77726 recomputed=50411 bytes=1865472 root_stones=6 proof_index=mmap index_bytes=6291520 ' /tmp/six-stone.err
+          grep -q 'witness_log loaded=0 appended=286975 unique=286975 conflicts=3 proof_hits=50411 proof_misses=0 bytes=6887432 witness_index=mmap index_bytes=25165888 indexed_records=286975 rebuilt_records=0' /tmp/six-stone.err
+          test "$(stat -c %s /tmp/six-stone-loss.cert)" = 1865472
+          test "$(stat -c %s /tmp/six-stone-proof.index)" = 6291520
+          test "$(stat -c %s /tmp/six-stone-witness.log)" = 6887432
+          test "$(stat -c %s /tmp/six-stone-witness.index)" = 25165888
+      - name: Independently verify all 77726 proof nodes
+        run: |
+          rust/independent-verifier/target/release/kyouen-cert-verify \
+            /tmp/six-stone-loss.cert | tee /tmp/six-stone.verify
+          grep -q '^nodes=77726$' /tmp/six-stone.verify
+          grep -q '^losing_nodes=27315$' /tmp/six-stone.verify
+          grep -q '^winning_nodes=50411$' /tmp/six-stone.verify
+          grep -q '^root_stones=6$' /tmp/six-stone.verify
+          grep -q '^root_outcome=LOSS$' /tmp/six-stone.verify
