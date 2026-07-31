@@ -87,7 +87,6 @@ Root:
 | Root outcome | LOSS | LOSS |
 | Initial exact-search visits | 10,471 | 10,471 |
 | Proof nodes | 6,524 | 3,214 |
-| WIN proof nodes | 4,? (not fixed separately) | 2,046 |
 | Proof child recomputations | 8,778 | 2,046 |
 | Certificate size | 156,624 bytes | 77,184 bytes |
 | Saved witnesses | 0 | 6,776 |
