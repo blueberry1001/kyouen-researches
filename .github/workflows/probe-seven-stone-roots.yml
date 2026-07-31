@@ -1,0 +1,93 @@
+name: Probe seven-stone 10x10 roots
+
+on:
+  push:
+    branches: [probe-seven-stone-roots]
+    paths:
+      - '.github/workflows/probe-seven-stone-roots.yml'
+      - 'cpp/solvers/**'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Probe all one-stone deletions
+        shell: bash
+        run: |
+          set -u
+          states=(
+            '61,2,73,69,66,13,91'
+            '90,2,73,69,66,13,91'
+            '90,61,73,69,66,13,91'
+            '90,61,2,69,66,13,91'
+            '90,61,2,73,66,13,91'
+            '90,61,2,73,69,13,91'
+            '90,61,2,73,69,66,91'
+            '90,61,2,73,69,66,13'
+          )
+          printf '%s\n' \
+            'removed_id,state,exit_code,status,outcome,visited,maxdepth,memo,solver_seconds,witness_unique,witness_bytes,wall_seconds,max_rss_kb' \
+            > seven-stone-probe.csv
+          removed=(90 61 2 73 69 66 13 91)
+          for i in "${!states[@]}"; do
+            state="${states[$i]}"
+            work="/tmp/probe-$i"
+            printf '%s\n' "$state" > "$work.state"
+            rm -f "$work.log" "$work.index" "$work.out" "$work.err" "$work.time"
+            set +e
+            /usr/bin/time -f 'wall=%e rss_kb=%M' -o "$work.time" \
+              timeout --signal=TERM --kill-after=10s 120s \
+              /tmp/kyouen-solver-10-kyoenc4 \
+              "$work.state" 3 80 "$work.log" 0 "$work.index" 5000000 \
+              > "$work.out" 2> "$work.err"
+            rc=$?
+            set -e
+            cat "$work.out"
+            cat "$work.err"
+            cat "$work.time"
+            status=ERROR
+            case "$rc" in
+              0) status=COMPLETE ;;
+              3) status=TABLE_FULL ;;
+              124) status=TIMEOUT ;;
+              137) status=KILLED ;;
+            esac
+            outcome=''
+            visited=''
+            maxdepth=''
+            memo=''
+            solver_seconds=''
+            if [[ "$rc" = 0 ]]; then
+              line=$(tail -n 1 "$work.out")
+              outcome=$(awk -F, '{print $2}' <<< "$line")
+              visited=$(awk -F, '{print $3}' <<< "$line")
+              maxdepth=$(awk -F, '{print $4}' <<< "$line")
+              memo=$(awk -F, '{print $5}' <<< "$line")
+              solver_seconds=$(awk -F, '{print $6}' <<< "$line")
+            else
+              memo=$(sed -n 's/.* memo=\([0-9][0-9]*\).*/\1/p' "$work.err" | tail -n 1)
+              solver_seconds=$(sed -n 's/.* seconds=\([0-9.eE+-][0-9.eE+-]*\).*/\1/p' "$work.err" | tail -n 1)
+            fi
+            witness_unique=$(sed -n 's/.*witness_log .* unique=\([0-9][0-9]*\).*/\1/p' "$work.err" | tail -n 1)
+            witness_bytes=$(stat -c %s "$work.log" 2>/dev/null || true)
+            wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' "$work.time")
+            rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' "$work.time")
+            printf '%s,"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n' \
+              "${removed[$i]}" "$state" "$rc" "$status" "$outcome" "$visited" \
+              "$maxdepth" "$memo" "$solver_seconds" "$witness_unique" \
+              "$witness_bytes" "$wall" "$rss" >> seven-stone-probe.csv
+            rm -f "$work.index" "$work.log"
+          done
+          cat seven-stone-probe.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seven-stone-probe-results
+          path: seven-stone-probe.csv
