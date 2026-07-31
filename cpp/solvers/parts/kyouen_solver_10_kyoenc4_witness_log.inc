@@ -1,3 +1,23 @@
+#include <cstdint>
+#include <cstring>
+#include <fcntl.h>
+#include <memory>
+#include <ostream>
+#include <stdexcept>
+#include <string>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <unordered_map>
+
+struct WitnessKey{std::uint64_t lo=0,hi=0;};
+static inline bool operator==(WitnessKey a,WitnessKey b){return a.lo==b.lo&&a.hi==b.hi;}
+struct WitnessKeyHash{
+ std::size_t operator()(WitnessKey key)const noexcept{
+  auto mix=[](std::uint64_t x){x^=x>>30;x*=0xbf58476d1ce4e5b9ULL;x^=x>>27;x*=0x94d049bb133111ebULL;return x^(x>>31);};
+  return static_cast<std::size_t>(mix(key.lo^(mix(key.hi)+0x9e3779b97f4a7c15ULL)));
+ }
+};
+
 #pragma pack(push,1)
 struct WitnessLogHeader{
  char magic[8];std::uint32_t version,recordSize;std::uint64_t recordCount,reserved;
@@ -18,20 +38,20 @@ public:
   if(fd_>=0){update_header();::fsync(fd_);::close(fd_);}
  }
  WitnessLog(const WitnessLog&)=delete;WitnessLog&operator=(const WitnessLog&)=delete;
- bool get(Bits state,std::uint8_t&out)const{
-  auto it=records_.find(state);if(it==records_.end())return false;out=it->second.witness;return true;
+ bool get(std::uint64_t lo,std::uint64_t hi,std::uint8_t&out)const{
+  auto it=records_.find(WitnessKey{lo,hi});if(it==records_.end())return false;out=it->second.witness;return true;
  }
- void record(Bits state,std::uint8_t witness,std::uint8_t rank){
+ void record(std::uint64_t lo,std::uint64_t hi,std::uint8_t witness,std::uint8_t rank){
   if(witness>=100)throw std::runtime_error("winning witness is outside the 10x10 board");
-  auto it=records_.find(state);
+  WitnessKey key{lo,hi};auto it=records_.find(key);
   if(it!=records_.end()){
    if(it->second.witness!=witness)++conflicts_;
    return;
   }
-  WitnessLogRecord rec{state.lo,state.hi,witness,rank,0,0};
+  WitnessLogRecord rec{lo,hi,witness,rank,0,0};
   const auto offset=sizeof(WitnessLogHeader)+record_count_*sizeof(WitnessLogRecord);
   write_all_at(fd_,&rec,sizeof(rec),static_cast<off_t>(offset));
-  records_.emplace(state,rec);++record_count_;++appended_records_;
+  records_.emplace(key,rec);++record_count_;++appended_records_;
   update_header();
  }
  std::size_t loaded_records()const{return loaded_records_;}
@@ -41,7 +61,7 @@ public:
  std::size_t file_bytes()const{return sizeof(WitnessLogHeader)+record_count_*sizeof(WitnessLogRecord);}
 private:
  std::string path_;int fd_=-1;std::uint64_t record_count_=0;std::size_t loaded_records_=0,appended_records_=0,conflicts_=0;
- std::unordered_map<Bits,WitnessLogRecord,BitsHash>records_;
+ std::unordered_map<WitnessKey,WitnessLogRecord,WitnessKeyHash>records_;
  static bool file_exists(const std::string&path){struct stat st{};return::stat(path.c_str(),&st)==0;}
  static void read_all_at(int fd,void*data,std::size_t size,off_t offset){
   auto*p=static_cast<std::uint8_t*>(data);std::size_t done=0;
@@ -69,7 +89,7 @@ private:
   for(std::uint64_t i=0;i<record_count_;++i){
    WitnessLogRecord rec{};read_all_at(fd_,&rec,sizeof(rec),static_cast<off_t>(sizeof(WitnessLogHeader)+i*sizeof(WitnessLogRecord)));
    if(rec.witness>=100||rec.rank>100)throw std::runtime_error("winning witness log has an invalid record");
-   Bits state{rec.lo,rec.hi};auto[it,inserted]=records_.emplace(state,rec);if(!inserted&&it->second.witness!=rec.witness)++conflicts_;
+   WitnessKey key{rec.lo,rec.hi};auto[it,inserted]=records_.emplace(key,rec);if(!inserted&&it->second.witness!=rec.witness)++conflicts_;
   }
   loaded_records_=records_.size();update_header();
  }
@@ -85,11 +105,11 @@ static void open_winning_witness_log(const std::string&path,bool resume){
  winning_witness_hits=0;winning_witness_misses=0;
  if(path.empty())winning_witness_log.reset();else winning_witness_log=std::make_unique<WitnessLog>(path,resume);
 }
-static bool get_winning_witness(Bits state,std::uint8_t&out){
- if(!winning_witness_log)return false;return winning_witness_log->get(state,out);
+static bool get_winning_witness(std::uint64_t lo,std::uint64_t hi,std::uint8_t&out){
+ if(!winning_witness_log)return false;return winning_witness_log->get(lo,hi,out);
 }
-static void record_winning_witness(Bits state,std::uint8_t witness,std::uint8_t rank){
- if(winning_witness_log)winning_witness_log->record(state,witness,rank);
+static void record_winning_witness(std::uint64_t lo,std::uint64_t hi,std::uint8_t witness,std::uint8_t rank){
+ if(winning_witness_log)winning_witness_log->record(lo,hi,witness,rank);
 }
 static void print_winning_witness_stats(std::ostream&out){
  if(!winning_witness_log)return;
