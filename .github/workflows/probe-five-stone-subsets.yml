@@ -1,0 +1,154 @@
+name: Probe five-stone 10x10 subsets
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-five-stone-subsets.yml'
+      - 'cpp/solvers/**'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Generate the 40 unresolved roots
+        run: |
+          cat > /tmp/five-stone.states <<'EOF'
+          90,61,2,73,13
+          90,61,2,73,91
+          90,61,2,69,91
+          90,61,2,66,91
+          90,61,2,13,91
+          90,61,73,69,13
+          90,61,73,69,91
+          90,61,73,66,13
+          90,61,73,66,91
+          90,61,73,13,91
+          90,2,73,69,13
+          90,2,73,69,91
+          90,2,73,66,13
+          90,2,73,66,91
+          90,2,73,13,91
+          90,2,69,66,91
+          90,2,69,13,91
+          90,2,66,13,91
+          90,73,69,66,13
+          90,73,69,66,91
+          90,73,69,13,91
+          90,73,66,13,91
+          61,2,73,69,13
+          61,2,73,69,91
+          61,2,73,66,13
+          61,2,73,66,91
+          61,2,73,13,91
+          61,2,69,66,91
+          61,2,69,13,91
+          61,2,66,13,91
+          61,73,69,66,13
+          61,73,69,66,91
+          61,73,69,13,91
+          61,73,66,13,91
+          2,73,69,66,13
+          2,73,69,66,91
+          2,73,69,13,91
+          2,73,66,13,91
+          2,69,66,13,91
+          73,69,66,13,91
+          EOF
+      - name: Solve with shared memoization
+        shell: bash
+        run: |
+          set +e
+          /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/five-stone.time \
+            timeout --signal=TERM --kill-after=15s 900s \
+            /tmp/kyouen-solver-10-kyoenc4 \
+            /tmp/five-stone.states 3 80 \
+            /tmp/five-stone-witness.log 0 \
+            /tmp/five-stone-witness.index 20000000 \
+            > /tmp/five-stone.out 2> /tmp/five-stone.err
+          rc=$?
+          set -e
+          echo "$rc" > /tmp/five-stone.exit
+          cat /tmp/five-stone.out
+          cat /tmp/five-stone.err
+          cat /tmp/five-stone.time
+      - name: Assemble all 56 roots
+        run: |
+          python3 - <<'PY'
+          import csv
+          import itertools
+          import re
+          from pathlib import Path
+
+          root = [90, 61, 2, 73, 69, 66, 13, 91]
+          losing_six = [
+              frozenset([90,61,69,66,13,91]),
+              frozenset([90,61,2,69,66,13]),
+              frozenset([90,61,2,73,69,66]),
+          ]
+          stdout = Path('/tmp/five-stone.out').read_text()
+          stderr = Path('/tmp/five-stone.err').read_text()
+          timing = Path('/tmp/five-stone.time').read_text()
+          exit_code = int(Path('/tmp/five-stone.exit').read_text().strip())
+          batch_status = {0:'COMPLETE',3:'TABLE_FULL',124:'TIMEOUT',137:'KILLED'}.get(exit_code,'ERROR')
+
+          solved = {}
+          rows = list(csv.reader(stdout.splitlines()))
+          for row in rows[1:]:
+              if len(row) >= 6:
+                  solved[row[0]] = row[1:6]
+
+          def find(pattern, text, default=''):
+              match = re.search(pattern, text)
+              return match.group(1) if match else default
+
+          witness_unique = find(r'witness_log .* unique=(\d+)', stderr)
+          witness_bytes = str(Path('/tmp/five-stone-witness.log').stat().st_size) if Path('/tmp/five-stone-witness.log').exists() else ''
+          wall = find(r'wall=([^ ]+)', timing)
+          rss = find(r'rss_kb=(\d+)', timing)
+
+          fields = [
+              'state','classification_source','winning_move_to_loss','status','outcome',
+              'visited','maxdepth','cumulative_memo','solver_seconds','batch_exit_code',
+              'batch_witness_unique','batch_witness_bytes','batch_wall_seconds','max_rss_kb',
+          ]
+          with open('five-stone-subsets.csv','w',newline='') as output:
+              writer=csv.DictWriter(output,fieldnames=fields)
+              writer.writeheader()
+              for combo in itertools.combinations(root,5):
+                  state=frozenset(combo)
+                  loss_children=[child for child in losing_six if state < child]
+                  text=','.join(map(str,combo))
+                  row={
+                      'state':text,
+                      'batch_exit_code':exit_code,
+                      'batch_witness_unique':witness_unique,
+                      'batch_witness_bytes':witness_bytes,
+                      'batch_wall_seconds':wall,
+                      'max_rss_kb':rss,
+                  }
+                  if loss_children:
+                      child=loss_children[0]
+                      move=next(iter(child-state))
+                      row.update(classification_source='DIRECT_TO_KNOWN_6_STONE_LOSS',winning_move_to_loss=move,status='COMPLETE',outcome='WIN',visited=0,maxdepth='',cumulative_memo='',solver_seconds=0)
+                  else:
+                      values=solved.get(text.replace(',','-'))
+                      if values:
+                          row.update(classification_source='EXACT_SHARED_MEMO_SEARCH',winning_move_to_loss='',status='COMPLETE',outcome=values[0],visited=values[1],maxdepth=values[2],cumulative_memo=values[3],solver_seconds=values[4])
+                      else:
+                          row.update(classification_source='EXACT_SHARED_MEMO_SEARCH',winning_move_to_loss='',status=batch_status,outcome='',visited='',maxdepth='',cumulative_memo='',solver_seconds='')
+                  writer.writerow(row)
+          PY
+          cat five-stone-subsets.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: five-stone-subset-results
+          path: five-stone-subsets.csv
