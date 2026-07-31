@@ -13,12 +13,12 @@
   TState ts=from_bits(state);Bits legal=legal_from_state(state);
   if(winning){
    bool found=false;std::uint8_t saved=255;
-   if(get_winning_witness(state,saved)&&any(legal&bitof(saved))){
+   if(get_winning_witness(state.lo,state.hi,saved)&&any(legal&bitof(saved))){
     Bits child=canonical(add(ts,saved));cert_set_witness(state,saved);build_proof(child,false);found=true;++winning_witness_hits;
    }else ++winning_witness_misses;
    if(!found){
     Bits moves=legal;
-    while(any(moves)){int v=take_lsb(moves);TState child_ts=add(ts,v);Bits child=canonical(child_ts);bool child_winning=evaluate_canonical(child);if(!child_winning){cert_set_witness(state,static_cast<std::uint8_t>(v));record_winning_witness(state,static_cast<std::uint8_t>(v),meta.rank);build_proof(child,false);found=true;break;}}
+    while(any(moves)){int v=take_lsb(moves);TState child_ts=add(ts,v);Bits child=canonical(child_ts);bool child_winning=evaluate_canonical(child);if(!child_winning){cert_set_witness(state,static_cast<std::uint8_t>(v));record_winning_witness(state.lo,state.hi,static_cast<std::uint8_t>(v),meta.rank);build_proof(child,false);found=true;break;}}
    }
    if(!found)throw std::runtime_error("winning certificate node has no losing child");
   }else{
@@ -34,7 +34,7 @@
   auto cached=memo_.get(key,depth);if(cached)return cached==MultiDepthMemo100::Winning;++st.visited;st.maxdepth=std::max(st.maxdepth,depth);if((st.visited&((1ULL<<24)-1))==0)std::cerr<<"progress visited="<<st.visited<<" memo="<<memo_.used()<<" depth="<<depth<<" maxdepth="<<st.maxdepth<<" seconds="<<seconds()<<"\n";if(!any(legal)){memo_.put(key,depth,MultiDepthMemo100::Losing);return false;}std::array<Child,V>ch{};int n=0;Bits moves=legal;while(any(moves)){int v=take_lsb(moves);Bits bit=bitof(v);TState ns=add(s,v);Bits nl=(legal&~bit)&~bans(s.t[0],v);nl.hi&=HiMask;Bits nk=canonical(ns);bool dup=false;for(int i=0;i<n;++i)if(ch[i].key==nk){dup=true;break;}if(dup)continue;auto cv=memo_.get(nk,depth+1);ch[n++]={ns,nl,nk,popcount(nl),cv};}std::sort(ch.begin(),ch.begin()+n,[](const Child&a,const Child&b){int pa=a.cached==MultiDepthMemo100::Losing?0:(a.cached==0?1:2),pb=b.cached==MultiDepthMemo100::Losing?0:(b.cached==0?1:2);if(pa!=pb)return pa<pb;if(a.count!=b.count)return a.count<b.count;return a.key<b.key;});for(int i=0;i<n;++i){bool cw=ch[i].cached?ch[i].cached==MultiDepthMemo100::Winning:win(ch[i].ts,ch[i].legal,depth+1,st);if(!cw){
     int witness=-1;Bits candidates=legal;while(any(candidates)){int v=take_lsb(candidates);if(canonical(add(s,v))==ch[i].key){Bits transformed=tbit_[canonical_k][v];witness=take_lsb(transformed);break;}}
     if(witness<0)throw std::runtime_error("cannot recover canonical winning witness");
-    memo_.put(key,depth,MultiDepthMemo100::Winning);record_winning_witness(key,static_cast<std::uint8_t>(witness),static_cast<std::uint8_t>(V-depth));return true;
+    memo_.put(key,depth,MultiDepthMemo100::Winning);record_winning_witness(key.lo,key.hi,static_cast<std::uint8_t>(witness),static_cast<std::uint8_t>(V-depth));return true;
    }}memo_.put(key,depth,MultiDepthMemo100::Losing);return false;}
 };
 static std::vector<int> parse(const std::string&s){std::vector<int>v;std::size_t b=0;while(b<s.size()){auto e=s.find(',',b);auto t=s.substr(b,e==std::string::npos?std::string::npos:e-b);if(!t.empty())v.push_back(std::stoi(t));if(e==std::string::npos)break;b=e+1;}return v;}
