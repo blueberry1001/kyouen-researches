@@ -5,17 +5,19 @@ on:
     branches: [main]
     paths:
       - 'rust/independent-verifier/**'
+      - 'cpp/tools/kyouen_query.cpp'
       - '.github/workflows/rust-verifier.yml'
   pull_request:
     branches: [main]
     paths:
       - 'rust/independent-verifier/**'
+      - 'cpp/tools/kyouen_query.cpp'
       - '.github/workflows/rust-verifier.yml'
   workflow_dispatch:
 
 jobs:
   test:
-    name: Build, self-test, and audit sample evidence
+    name: Build, self-test, audit, and cross-check C++
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,3 +31,23 @@ jobs:
         run: cargo run --release -- self-test
       - name: Audit bundled 10x10 evidence summary
         run: cargo run --release -- audit-evidence evidence-sample
+      - name: Build C++ query tool
+        run: g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/tools/kyouen_query.cpp -o /tmp/kyouen-query
+      - name: Cross-check complete outcomes on 4x4 samples
+        run: >-
+          cargo run --release --bin kyouen-cross-check --
+          --cpp /tmp/kyouen-query
+          --size 4
+          --samples 40
+          --seed 20260801
+          --max-stones 8
+          --solve-max-size 4
+      - name: Cross-check 10x10 geometry and legal moves
+        run: >-
+          cargo run --release --bin kyouen-cross-check --
+          --cpp /tmp/kyouen-query
+          --size 10
+          --samples 100
+          --seed 20260802
+          --max-stones 12
+          --solve-max-size 0
