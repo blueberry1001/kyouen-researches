@@ -1,0 +1,59 @@
+name: Four-stone 10x10 proof regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/four-stone-proof-regression.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/four-stone-proof-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  four-stone-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build exact solver and independent verifier
+        run: |
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+            cpp/solvers/kyouen_solver_10_kyoenc4.cpp \
+            -o /tmp/kyouen-solver-10-kyoenc4
+          cargo build --release --manifest-path rust/independent-verifier/Cargo.toml \
+            --bin kyouen-cert-verify
+      - name: Generate the fixed four-stone LOSS proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '61,73,66,13' \
+            /tmp/four-stone-loss.cert \
+            3 80 2000000 /tmp/four-stone-proof.index 0 0 \
+            /tmp/four-stone-witness.log 0 \
+            /tmp/four-stone-witness.index 7000000 \
+            > /tmp/four-stone.out 2> /tmp/four-stone.err
+          cat /tmp/four-stone.out
+          cat /tmp/four-stone.err
+          grep -q '^61,73,66,13,LOSS,9559583,19,9517270,' /tmp/four-stone.out
+          grep -q 'certificate nodes=1784457 recomputed=1180074 bytes=42827016 root_stones=4 proof_index=mmap index_bytes=100663360 ' /tmp/four-stone.err
+          grep -q 'witness_log loaded=0 appended=6490893 unique=6490893 conflicts=1933 proof_hits=1180074 proof_misses=0 bytes=155781464 witness_index=mmap index_bytes=402653248 indexed_records=6490893 rebuilt_records=0' /tmp/four-stone.err
+          test "$(stat -c %s /tmp/four-stone-loss.cert)" = 42827016
+          test "$(stat -c %s /tmp/four-stone-proof.index)" = 100663360
+          test "$(stat -c %s /tmp/four-stone-witness.log)" = 155781464
+          test "$(stat -c %s /tmp/four-stone-witness.index)" = 402653248
+      - name: Independently verify all 1784457 proof nodes
+        run: |
+          rust/independent-verifier/target/release/kyouen-cert-verify \
+            /tmp/four-stone-loss.cert | tee /tmp/four-stone.verify
+          grep -q '^nodes=1784457$' /tmp/four-stone.verify
+          grep -q '^losing_nodes=604383$' /tmp/four-stone.verify
+          grep -q '^winning_nodes=1180074$' /tmp/four-stone.verify
+          grep -q '^root_stones=4$' /tmp/four-stone.verify
+          grep -q '^root_outcome=LOSS$' /tmp/four-stone.verify
