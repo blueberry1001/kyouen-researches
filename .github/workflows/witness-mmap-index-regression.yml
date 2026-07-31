@@ -1,0 +1,115 @@
+name: mmap winning witness index regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-mmap-index-regression.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-mmap-index-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  mmap-witness-index:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust/independent-verifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build verifier and exact solver
+        run: |
+          cargo build --release --bin kyouen-cert-verify
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+            ../../cpp/solvers/kyouen_solver_10_kyoenc4.cpp \
+            -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Create the log and mmap index
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/mmap-first.cert \
+            3 80 50000 /tmp/mmap-first-proof.index 0 0 \
+            /tmp/winning-witnesses-mmap.log 0 \
+            /tmp/winning-witnesses-mmap.index 10000 \
+            > /tmp/mmap-first.out 2> /tmp/mmap-first.err
+          cat /tmp/mmap-first.out
+          cat /tmp/mmap-first.err
+          grep -q ',LOSS,10471,17,' /tmp/mmap-first.out
+          grep -q 'certificate nodes=3214 recomputed=2046 bytes=77184 ' /tmp/mmap-first.err
+          grep -q 'witness_log loaded=0 appended=6776 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656 witness_index=mmap index_bytes=393280 indexed_records=6776 rebuilt_records=0' /tmp/mmap-first.err
+          test "$(stat -c %s /tmp/winning-witnesses-mmap.index)" = 393280
+          target/release/kyouen-cert-verify /tmp/mmap-first.cert | tee /tmp/mmap-first.verify
+          grep -q '^nodes=3214$' /tmp/mmap-first.verify
+          grep -q '^root_outcome=LOSS$' /tmp/mmap-first.verify
+      - name: Reuse the mmap index without scanning the log
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/mmap-second.cert \
+            3 80 50000 /tmp/mmap-second-proof.index 0 0 \
+            /tmp/winning-witnesses-mmap.log 1 \
+            /tmp/winning-witnesses-mmap.index 10000 \
+            > /tmp/mmap-second.out 2> /tmp/mmap-second.err
+          cat /tmp/mmap-second.out
+          cat /tmp/mmap-second.err
+          grep -q 'witness_log loaded=6776 appended=0 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656 witness_index=mmap index_bytes=393280 indexed_records=6776 rebuilt_records=0' /tmp/mmap-second.err
+          target/release/kyouen-cert-verify /tmp/mmap-second.cert | tee /tmp/mmap-second.verify
+          grep -q '^nodes=3214$' /tmp/mmap-second.verify
+      - name: Rebuild a missing mmap index from the append-only log
+        run: |
+          rm /tmp/winning-witnesses-mmap.index
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/mmap-rebuilt.cert \
+            3 80 50000 /tmp/mmap-rebuilt-proof.index 0 0 \
+            /tmp/winning-witnesses-mmap.log 1 \
+            /tmp/winning-witnesses-mmap.index 10000 \
+            > /tmp/mmap-rebuilt.out 2> /tmp/mmap-rebuilt.err
+          cat /tmp/mmap-rebuilt.out
+          cat /tmp/mmap-rebuilt.err
+          grep -q 'witness_log loaded=6776 appended=0 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656 witness_index=mmap index_bytes=393280 indexed_records=6776 rebuilt_records=6776' /tmp/mmap-rebuilt.err
+          target/release/kyouen-cert-verify /tmp/mmap-rebuilt.cert | tee /tmp/mmap-rebuilt.verify
+          grep -q '^nodes=3214$' /tmp/mmap-rebuilt.verify
+      - name: Catch up an index that trails the log by one record
+        run: |
+          dd if=/tmp/winning-witnesses-mmap.log \
+            of=/tmp/winning-witnesses-mmap.log \
+            bs=1 skip=32 count=24 oflag=append conv=notrunc status=none
+          test "$(stat -c %s /tmp/winning-witnesses-mmap.log)" = 162680
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/mmap-tail.cert \
+            3 80 50000 /tmp/mmap-tail-proof.index 0 0 \
+            /tmp/winning-witnesses-mmap.log 1 \
+            /tmp/winning-witnesses-mmap.index 10000 \
+            > /tmp/mmap-tail.out 2> /tmp/mmap-tail.err
+          cat /tmp/mmap-tail.out
+          cat /tmp/mmap-tail.err
+          grep -q 'witness_log loaded=6776 appended=0 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162680 witness_index=mmap index_bytes=393280 indexed_records=6777 rebuilt_records=1' /tmp/mmap-tail.err
+          target/release/kyouen-cert-verify /tmp/mmap-tail.cert | tee /tmp/mmap-tail.verify
+          grep -q '^nodes=3214$' /tmp/mmap-tail.verify
+          python3 - <<'PY'
+          from pathlib import Path
+          def read(path):
+              data = Path(path).read_bytes()
+              return data[:48], {data[i:i+24] for i in range(48, len(data), 24)}
+          paths = [
+              '/tmp/mmap-first.cert',
+              '/tmp/mmap-second.cert',
+              '/tmp/mmap-rebuilt.cert',
+              '/tmp/mmap-tail.cert',
+          ]
+          proofs = [read(path) for path in paths]
+          assert all(proof == proofs[0] for proof in proofs[1:]), 'mmap witness proofs differ'
+          PY
