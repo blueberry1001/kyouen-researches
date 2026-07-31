@@ -1,0 +1,19 @@
+[package]
+name = "kyouen-verifier"
+version = "0.1.0"
+edition = "2021"
+description = "Independent Rust reference solver and evidence auditor for the Kyouen game"
+license = "MIT"
+
+[lib]
+name = "kyouen_verifier"
+path = "src/lib.rs"
+
+[[bin]]
+name = "kyouen-verifier"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
