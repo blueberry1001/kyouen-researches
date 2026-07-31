@@ -1,0 +1,96 @@
+name: Winning witness log regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-log-regression.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cpp/solvers/**'
+      - 'rust/independent-verifier/**'
+      - '.github/workflows/witness-log-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  witness-log:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust/independent-verifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build verifier and exact solver
+        run: |
+          cargo build --release --bin kyouen-cert-verify
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
+            ../../cpp/solvers/kyouen_solver_10_kyoenc4.cpp \
+            -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Search, retain witnesses, and export proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/witness-first.cert \
+            3 80 50000 /tmp/witness-first.index 0 0 \
+            /tmp/winning-witnesses.log 0 \
+            > /tmp/witness-first.out 2> /tmp/witness-first.err
+          cat /tmp/witness-first.out
+          cat /tmp/witness-first.err
+          grep -q ',LOSS,10471,17,' /tmp/witness-first.out
+          grep -q 'certificate nodes=3214 recomputed=2046 bytes=77184 ' /tmp/witness-first.err
+          grep -q 'witness_log loaded=0 appended=6776 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656' /tmp/witness-first.err
+          test "$(stat -c %s /tmp/witness-first.cert)" = 77184
+          test "$(stat -c %s /tmp/witness-first.index)" = 3145792
+          test "$(stat -c %s /tmp/winning-witnesses.log)" = 162656
+          target/release/kyouen-cert-verify /tmp/witness-first.cert | tee /tmp/witness-first.verify
+          grep -q '^nodes=3214$' /tmp/witness-first.verify
+          grep -q '^root_outcome=LOSS$' /tmp/witness-first.verify
+      - name: Reload the append-only log and reproduce the proof
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/witness-second.cert \
+            3 80 50000 /tmp/witness-second.index 0 0 \
+            /tmp/winning-witnesses.log 1 \
+            > /tmp/witness-second.out 2> /tmp/witness-second.err
+          cat /tmp/witness-second.out
+          cat /tmp/witness-second.err
+          grep -q ',LOSS,10471,17,' /tmp/witness-second.out
+          grep -q 'certificate nodes=3214 recomputed=2046 bytes=77184 ' /tmp/witness-second.err
+          grep -q 'witness_log loaded=6776 appended=0 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656' /tmp/witness-second.err
+          target/release/kyouen-cert-verify /tmp/witness-second.cert | tee /tmp/witness-second.verify
+          grep -q '^nodes=3214$' /tmp/witness-second.verify
+          grep -q '^root_outcome=LOSS$' /tmp/witness-second.verify
+      - name: Recover from a partial final witness record
+        run: |
+          printf '\x01\x02\x03\x04\x05' >> /tmp/winning-witnesses.log
+          test "$(stat -c %s /tmp/winning-witnesses.log)" = 162661
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '90,61,2,73,69,66,13,91' \
+            /tmp/witness-third.cert \
+            3 80 50000 /tmp/witness-third.index 0 0 \
+            /tmp/winning-witnesses.log 1 \
+            > /tmp/witness-third.out 2> /tmp/witness-third.err
+          cat /tmp/witness-third.out
+          cat /tmp/witness-third.err
+          grep -q 'witness_log loaded=6776 appended=0 unique=6776 conflicts=0 proof_hits=2046 proof_misses=0 bytes=162656' /tmp/witness-third.err
+          test "$(stat -c %s /tmp/winning-witnesses.log)" = 162656
+          target/release/kyouen-cert-verify /tmp/witness-third.cert | tee /tmp/witness-third.verify
+          grep -q '^nodes=3214$' /tmp/witness-third.verify
+          python3 - <<'PY'
+          from pathlib import Path
+          def read(path):
+              data = Path(path).read_bytes()
+              return data[:48], {data[i:i+24] for i in range(48, len(data), 24)}
+          first = read('/tmp/witness-first.cert')
+          second = read('/tmp/witness-second.cert')
+          third = read('/tmp/witness-third.cert')
+          assert first == second == third, 'witness-backed proofs differ semantically'
+          PY
