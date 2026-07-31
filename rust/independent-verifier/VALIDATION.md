@@ -1,6 +1,6 @@
-# 作成時の検証記録
+# 検証記録
 
-## 実施済み
+## 事前に実施した照合
 
 1. Rustソースの文字列・コメントを除外した括弧対応検査
 2. 別実装の簡易全探索による小盤面の結果照合
@@ -16,20 +16,18 @@
    - 98分枝CSVは占有済み2点以外をちょうど一度ずつ包含
    - 53代表CSVは転置軌道をちょうど一度ずつ包含
 
-## この環境で未実施
+## Rustでの実行確認
 
-作成に使った実行環境には `rustc` と `cargo` がなく、外部からRust一式を取得することもできなかったため、ここでは実際のコンパイルを完了できていません。
-
-その代わり、外部クレートを使わない構成にし、GitHub Actionsで次を自動実行する設定を同梱しています。
+2026年7月31日、GitHub Actions上の安定版Rustで次の処理がすべて成功しました。
 
 - `cargo test --release`
-- `self-test`
-- 同梱証拠CSVの監査
+- `cargo run --release -- self-test`
+- `cargo run --release -- audit-evidence evidence-sample`
 
-最初にRust環境のある端末で次を実行してください。
+この確認により、実際のコンパイル、単体テスト、1×1～4×4の参照探索、および同梱した10×10 CSV見本の構造監査まで実行済みです。
+
+ローカルでも次の一括スクリプトで同じ検査を実行できます。
 
 ```bash
-cargo test --release
-cargo run --release -- self-test
-cargo run --release -- audit-evidence evidence-sample
+./check.sh
 ```
