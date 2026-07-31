@@ -15,6 +15,7 @@ endif()
 
 add_executable(kyouen-certcheck cpp/certificate/kyouen_certcheck.cpp)
 add_executable(kyouen-certgen-1-to-8 cpp/certificate/kyouen_certgen_1_to_8.cpp)
+add_executable(kyouen-certgen-v4-smoke cpp/certificate/kyouen_certgen_v4_smoke.cpp)
 add_executable(convert-9-v2-to-v3 cpp/certificate/convert_9_v2_to_v3.cpp)
 
 # Historical 9x9 certificate tools retained for reproducibility.
