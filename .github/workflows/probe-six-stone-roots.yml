@@ -1,0 +1,111 @@
+name: Probe six-stone 10x10 roots
+
+on:
+  push:
+    branches: [probe-seven-stone-roots]
+    paths:
+      - '.github/workflows/probe-six-stone-roots.yml'
+      - 'cpp/solvers/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-six-stone-roots.yml'
+      - 'cpp/solvers/**'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Generate all two-stone deletions
+        run: |
+          python3 - <<'PY'
+          import csv
+          import itertools
+          root = [90, 61, 2, 73, 69, 66, 13, 91]
+          with open('/tmp/six-stone.states', 'w') as states, open('/tmp/six-stone-map.csv', 'w', newline='') as mapping:
+              writer = csv.writer(mapping)
+              writer.writerow(['removed_a', 'removed_b', 'state'])
+              for a, b in itertools.combinations(root, 2):
+                  state = [value for value in root if value not in (a, b)]
+                  text = ','.join(map(str, state))
+                  states.write(text + '\n')
+                  writer.writerow([a, b, text])
+          PY
+          cat /tmp/six-stone-map.csv
+      - name: Solve the 28 roots with shared memoization
+        shell: bash
+        run: |
+          set +e
+          /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/six-stone.time \
+            timeout --signal=TERM --kill-after=10s 600s \
+            /tmp/kyouen-solver-10-kyoenc4 \
+            /tmp/six-stone.states 3 80 \
+            /tmp/six-stone-witness.log 0 \
+            /tmp/six-stone-witness.index 10000000 \
+            > /tmp/six-stone.out 2> /tmp/six-stone.err
+          rc=$?
+          set -e
+          echo "$rc" > /tmp/six-stone.exit
+          cat /tmp/six-stone.out
+          cat /tmp/six-stone.err
+          cat /tmp/six-stone.time
+      - name: Assemble result table
+        run: |
+          python3 - <<'PY'
+          import csv
+          import re
+          from pathlib import Path
+
+          exit_code = int(Path('/tmp/six-stone.exit').read_text().strip())
+          global_status = {0: 'COMPLETE', 3: 'TABLE_FULL', 124: 'TIMEOUT', 137: 'KILLED'}.get(exit_code, 'ERROR')
+          solved = {}
+          rows = list(csv.reader(Path('/tmp/six-stone.out').read_text().splitlines()))
+          for row in rows[1:]:
+              if len(row) >= 6:
+                  solved[row[0]] = row[1:6]
+          stderr = Path('/tmp/six-stone.err').read_text()
+          time_text = Path('/tmp/six-stone.time').read_text()
+          witness = re.search(r'witness_log loaded=(\d+) appended=(\d+) unique=(\d+).* bytes=(\d+)', stderr)
+          wall = re.search(r'wall=([^ ]+)', time_text)
+          rss = re.search(r'rss_kb=(\d+)', time_text)
+
+          with open('/tmp/six-stone-map.csv', newline='') as source, open('six-stone-probe.csv', 'w', newline='') as output:
+              reader = csv.DictReader(source)
+              fields = [
+                  'removed_a', 'removed_b', 'state', 'status', 'outcome',
+                  'visited', 'maxdepth', 'memo', 'solver_seconds',
+                  'batch_exit_code', 'witness_unique', 'witness_bytes',
+                  'batch_wall_seconds', 'max_rss_kb',
+              ]
+              writer = csv.DictWriter(output, fieldnames=fields)
+              writer.writeheader()
+              for item in reader:
+                  key = item['state'].replace(',', '-')
+                  values = solved.get(key)
+                  row = dict(item)
+                  if values:
+                      row.update(status='COMPLETE', outcome=values[0], visited=values[1], maxdepth=values[2], memo=values[3], solver_seconds=values[4])
+                  else:
+                      row.update(status=global_status, outcome='', visited='', maxdepth='', memo='', solver_seconds='')
+                  row.update(
+                      batch_exit_code=exit_code,
+                      witness_unique=witness.group(3) if witness else '',
+                      witness_bytes=witness.group(4) if witness else '',
+                      batch_wall_seconds=wall.group(1) if wall else '',
+                      max_rss_kb=rss.group(1) if rss else '',
+                  )
+                  writer.writerow(row)
+          PY
+          cat six-stone-probe.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: six-stone-probe-results
+          path: six-stone-probe.csv
