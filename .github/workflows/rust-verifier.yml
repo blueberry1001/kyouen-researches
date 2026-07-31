@@ -7,6 +7,7 @@ on:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
       - 'cpp/certificate/**'
+      - 'cpp/solvers/kyouen_solver_10_kyoenc4.cpp'
       - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
       - 'cpp/certificate/**'
+      - 'cpp/solvers/kyouen_solver_10_kyoenc4.cpp'
       - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   workflow_dispatch:
@@ -81,3 +83,22 @@ jobs:
           grep -q '^nodes=2$' /tmp/kyoenc4-report.txt
           grep -q '^forbidden_quadruples=54441$' /tmp/kyoenc4-report.txt
           grep -q '^root_outcome=WIN$' /tmp/kyoenc4-report.txt
+      - name: Build the exact 10x10 solver with KYOENC4 export
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          ../../cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Export and independently verify a DAG from the exact solver
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '7,16,17,28,30,33,41,48,54,68,69,71,81,92' \
+            /tmp/solver-export.cert \
+            3 80 1000 | tee /tmp/solver-export.txt
+          grep -q ',WIN,' /tmp/solver-export.txt
+          cargo run --release --bin kyouen-cert-verify -- /tmp/solver-export.cert | tee /tmp/solver-export-report.txt
+          grep -q '^format=KYOENC4$' /tmp/solver-export-report.txt
+          grep -q '^board=10x10$' /tmp/solver-export-report.txt
+          grep -q '^nodes=2$' /tmp/solver-export-report.txt
+          grep -q '^root_stones=14$' /tmp/solver-export-report.txt
+          grep -q '^root_outcome=WIN$' /tmp/solver-export-report.txt
