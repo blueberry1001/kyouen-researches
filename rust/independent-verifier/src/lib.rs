@@ -13,6 +13,7 @@ use std::path::{Path, PathBuf};
 include!("parts/board.rs");
 include!("parts/solver.rs");
 include!("parts/cross_check.rs");
+include!("parts/certificate.rs");
 include!("parts/audit_entry.rs");
 include!("parts/audit_classification.rs");
 include!("parts/audit_children.rs");

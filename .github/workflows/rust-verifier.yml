@@ -6,18 +6,20 @@ on:
     paths:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
+      - 'cpp/certificate/**'
       - '.github/workflows/rust-verifier.yml'
   pull_request:
     branches: [main]
     paths:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
+      - 'cpp/certificate/**'
       - '.github/workflows/rust-verifier.yml'
   workflow_dispatch:
 
 jobs:
   test:
-    name: Build, self-test, audit, and cross-check C++
+    name: Build, self-test, audit, cross-check, and verify DAGs
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -51,3 +53,15 @@ jobs:
           --seed 20260802
           --max-stones 12
           --solve-max-size 0
+      - name: Build C++ certificate generator and checker
+        run: |
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certgen_1_to_8.cpp -o /tmp/kyouen-certgen
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certcheck.cpp -o /tmp/kyouen-certcheck
+      - name: Generate and independently verify 1x1 through 6x6 certificate DAGs
+        run: |
+          for n in 1 2 3 4 5 6; do
+            cert="/tmp/kyouen-${n}.cert"
+            /tmp/kyouen-certgen "$n" "$cert"
+            /tmp/kyouen-certcheck "$cert"
+            cargo run --release --bin kyouen-cert-verify -- "$cert"
+          done
