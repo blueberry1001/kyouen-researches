@@ -94,11 +94,45 @@ jobs:
             --certificate \
             '7,16,17,28,30,33,41,48,54,68,69,71,81,92' \
             /tmp/solver-export.cert \
-            3 80 1000 | tee /tmp/solver-export.txt
+            3 80 1000 > /tmp/solver-export.txt 2> /tmp/solver-export.err
+          cat /tmp/solver-export.txt
+          cat /tmp/solver-export.err
           grep -q ',WIN,' /tmp/solver-export.txt
+          grep -q 'proof_index=memory' /tmp/solver-export.err
           cargo run --release --bin kyouen-cert-verify -- /tmp/solver-export.cert | tee /tmp/solver-export-report.txt
           grep -q '^format=KYOENC4$' /tmp/solver-export-report.txt
           grep -q '^board=10x10$' /tmp/solver-export-report.txt
           grep -q '^nodes=2$' /tmp/solver-export-report.txt
           grep -q '^root_stones=14$' /tmp/solver-export-report.txt
           grep -q '^root_outcome=WIN$' /tmp/solver-export-report.txt
+      - name: Export and verify the same DAG with an mmap proof index
+        run: |
+          /tmp/kyouen-solver-10-kyoenc4 \
+            --certificate \
+            '7,16,17,28,30,33,41,48,54,68,69,71,81,92' \
+            /tmp/solver-export-disk.cert \
+            3 80 1000 /tmp/solver-proof.index \
+            > /tmp/solver-export-disk.txt 2> /tmp/solver-export-disk.err
+          cat /tmp/solver-export-disk.txt
+          cat /tmp/solver-export-disk.err
+          grep -q ',WIN,' /tmp/solver-export-disk.txt
+          grep -q 'proof_index=mmap' /tmp/solver-export-disk.err
+          test -s /tmp/solver-proof.index
+          cargo run --release --bin kyouen-cert-verify -- /tmp/solver-export-disk.cert | tee /tmp/solver-export-disk-report.txt
+          grep -q '^format=KYOENC4$' /tmp/solver-export-disk-report.txt
+          grep -q '^board=10x10$' /tmp/solver-export-disk-report.txt
+          grep -q '^nodes=2$' /tmp/solver-export-disk-report.txt
+          grep -q '^root_stones=14$' /tmp/solver-export-disk-report.txt
+          grep -q '^root_outcome=WIN$' /tmp/solver-export-disk-report.txt
+          python3 - <<'PY'
+          import struct
+          from pathlib import Path
+          def read(path):
+              data = Path(path).read_bytes()
+              header = data[:48]
+              nodes = {data[i:i+24] for i in range(48, len(data), 24)}
+              return header, nodes
+          memory = read('/tmp/solver-export.cert')
+          disk = read('/tmp/solver-export-disk.cert')
+          assert memory == disk, 'memory and mmap certificates differ semantically'
+          PY
