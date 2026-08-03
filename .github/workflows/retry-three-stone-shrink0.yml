@@ -1,0 +1,81 @@
+name: Reproduce heavy three-stone 10x10 roots
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - state: '90,73,91'
+            profile: targeted-v1
+          - state: '90,2,91'
+            profile: targeted-v2
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply recorded memo profile
+        shell: bash
+        run: |
+          file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
+          profile='${{ matrix.profile }}'
+          grep -q 'd13b_(53,p(25,shrink>0?shrink-1:0),load)' "$file"
+          grep -q 'd14b_(56,p(24,shrink),load)' "$file"
+          case "$profile" in
+            targeted-v1)
+              sed -i \
+                -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(26,shrink>0?shrink-1:0),load)/' \
+                -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(25,shrink),load)/' \
+                "$file"
+              ;;
+            targeted-v2)
+              sed -i \
+                -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(27,shrink>0?shrink-1:0),load)/' \
+                -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(26,shrink),load)/' \
+                "$file"
+              ;;
+            *) exit 2 ;;
+          esac
+          sed -i \
+            -e 's/d15_(58,p(26,shrink),load)/d15_(58,p(27,shrink),load)/' \
+            -e 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' \
+            -e 's/d17_(p(19,shrink),load)/d17_(p(20,shrink),load)/' \
+            "$file"
+      - name: Build exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Reproduce classification
+        shell: bash
+        run: |
+          state='${{ matrix.state }}'
+          profile='${{ matrix.profile }}'
+          safe=${state//,/-}
+          printf '%s\n' "$state" > /tmp/one.state
+          /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
+            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
+            > /tmp/one.out 2> /tmp/one.err
+          cat /tmp/one.out
+          cat /tmp/one.err
+          cat /tmp/one.time
+          grep -q "^${safe},LOSS," /tmp/one.out
+          line=$(tail -n 1 /tmp/one.out)
+          outcome=$(awk -F, '{print $2}' <<< "$line")
+          visited=$(awk -F, '{print $3}' <<< "$line")
+          maxdepth=$(awk -F, '{print $4}' <<< "$line")
+          memo=$(awk -F, '{print $5}' <<< "$line")
+          solver_seconds=$(awk -F, '{print $6}' <<< "$line")
+          wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
+          rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
+          printf '%s\n' 'state,outcome,visited,maxdepth,memo,solver_seconds,wall_seconds,max_rss_kb,shrink,load,search_profile' > "reproduce-$safe.csv"
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,0,90,%s\n' \
+            "$state" "$outcome" "$visited" "$maxdepth" "$memo" \
+            "$solver_seconds" "$wall" "$rss" "$profile" >> "reproduce-$safe.csv"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproduce-${{ matrix.profile }}
+          path: reproduce-*.csv
