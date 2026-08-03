@@ -1,4 +1,4 @@
-name: Retry three-stone roots with expanded depth-16 memo
+name: Retry final three-stone roots with targeted memo expansion
 
 on:
   pull_request:
@@ -17,22 +17,36 @@ jobs:
           - '90,2,91'
           - '90,73,91'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
-      - name: Expand only the saturated depth-16 memo table
+      - name: Expand only saturated or near-saturated memo layers
         shell: bash
         run: |
           file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
+          grep -q 'd13b_(53,p(25,shrink>0?shrink-1:0),load)' "$file"
+          grep -q 'd14b_(56,p(24,shrink),load)' "$file"
+          grep -q 'd15_(58,p(26,shrink),load)' "$file"
           grep -q 'd16_(61,p(23,shrink),load)' "$file"
-          sed -i 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' "$file"
+          grep -q 'd17_(p(19,shrink),load)' "$file"
+          sed -i \
+            -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(26,shrink>0?shrink-1:0),load)/' \
+            -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(25,shrink),load)/' \
+            -e 's/d15_(58,p(26,shrink),load)/d15_(58,p(27,shrink),load)/' \
+            -e 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' \
+            -e 's/d17_(p(19,shrink),load)/d17_(p(20,shrink),load)/' \
+            "$file"
+          grep -q 'd13b_(53,p(26,shrink>0?shrink-1:0),load)' "$file"
+          grep -q 'd14b_(56,p(25,shrink),load)' "$file"
+          grep -q 'd15_(58,p(27,shrink),load)' "$file"
           grep -q 'd16_(61,p(24,shrink),load)' "$file"
+          grep -q 'd17_(p(20,shrink),load)' "$file"
       - name: Build exact solver
         run: >-
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic
           cpp/solvers/kyouen_solver_10_kyoenc4.cpp
           -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Solve with shrink 0
+      - name: Solve with shrink 0 and load 90
         shell: bash
         run: |
           state='${{ matrix.state }}'
@@ -40,8 +54,8 @@ jobs:
           printf '%s\n' "$state" > /tmp/one.state
           set +e
           /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-            timeout --signal=TERM --kill-after=30s 1500s \
-            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 80 \
+            timeout --signal=TERM --kill-after=30s 1800s \
+            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
             > /tmp/one.out 2> /tmp/one.err
           rc=$?
           set -e
@@ -69,12 +83,12 @@ jobs:
           fi
           wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
           rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
-          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,depth16_power' > "retry0-$safe.csv"
-          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,24\n' \
+          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,load,search_profile' > "retry-final-$safe.csv"
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,90,targeted-13b14b15-17\n' \
             "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
-            "$solver_seconds" "$rc" "$wall" "$rss" >> "retry0-$safe.csv"
-          cat "retry0-$safe.csv"
+            "$solver_seconds" "$rc" "$wall" "$rss" >> "retry-final-$safe.csv"
+          cat "retry-final-$safe.csv"
       - uses: actions/upload-artifact@v4
         with:
-          name: retry0-expanded16-${{ strategy.job-index }}
-          path: retry0-*.csv
+          name: retry-final-${{ strategy.job-index }}
+          path: retry-final-*.csv
