@@ -1,87 +1,81 @@
-name: Finish the last three-stone root with targeted memo expansion
+name: Reproduce heavy three-stone 10x10 roots
 
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/retry-three-stone-shrink0.yml'
-      - 'cpp/solvers/**'
   workflow_dispatch:
 
 jobs:
-  retry:
+  reproduce:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - state: '90,73,91'
+            profile: targeted-v1
+          - state: '90,2,91'
+            profile: targeted-v2
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - name: Expand only saturated or near-saturated memo layers
+      - name: Apply recorded memo profile
         shell: bash
         run: |
           file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
+          profile='${{ matrix.profile }}'
           grep -q 'd13b_(53,p(25,shrink>0?shrink-1:0),load)' "$file"
           grep -q 'd14b_(56,p(24,shrink),load)' "$file"
-          grep -q 'd15_(58,p(26,shrink),load)' "$file"
-          grep -q 'd16_(61,p(23,shrink),load)' "$file"
-          grep -q 'd17_(p(19,shrink),load)' "$file"
+          case "$profile" in
+            targeted-v1)
+              sed -i \
+                -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(26,shrink>0?shrink-1:0),load)/' \
+                -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(25,shrink),load)/' \
+                "$file"
+              ;;
+            targeted-v2)
+              sed -i \
+                -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(27,shrink>0?shrink-1:0),load)/' \
+                -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(26,shrink),load)/' \
+                "$file"
+              ;;
+            *) exit 2 ;;
+          esac
           sed -i \
-            -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(27,shrink>0?shrink-1:0),load)/' \
-            -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(26,shrink),load)/' \
             -e 's/d15_(58,p(26,shrink),load)/d15_(58,p(27,shrink),load)/' \
             -e 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' \
             -e 's/d17_(p(19,shrink),load)/d17_(p(20,shrink),load)/' \
             "$file"
-          grep -q 'd13b_(53,p(27,shrink>0?shrink-1:0),load)' "$file"
-          grep -q 'd14b_(56,p(26,shrink),load)' "$file"
-          grep -q 'd15_(58,p(27,shrink),load)' "$file"
-          grep -q 'd16_(61,p(24,shrink),load)' "$file"
-          grep -q 'd17_(p(20,shrink),load)' "$file"
       - name: Build exact solver
         run: >-
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic
           cpp/solvers/kyouen_solver_10_kyoenc4.cpp
           -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Solve 90,2,91 with shrink 0 and load 90
+      - name: Reproduce classification
         shell: bash
         run: |
-          state='90,2,91'
+          state='${{ matrix.state }}'
+          profile='${{ matrix.profile }}'
+          safe=${state//,/-}
           printf '%s\n' "$state" > /tmp/one.state
-          set +e
           /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-            timeout --signal=TERM --kill-after=30s 2100s \
             /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
             > /tmp/one.out 2> /tmp/one.err
-          rc=$?
-          set -e
           cat /tmp/one.out
           cat /tmp/one.err
           cat /tmp/one.time
-          status=ERROR
-          case "$rc" in
-            0) status=COMPLETE ;;
-            3) status=TABLE_FULL ;;
-            124) status=TIMEOUT ;;
-            137) status=KILLED ;;
-          esac
-          outcome=''; visited=''; maxdepth=''; memo=''; solver_seconds=''
-          if [[ "$rc" = 0 ]]; then
-            line=$(tail -n 1 /tmp/one.out)
-            outcome=$(awk -F, '{print $2}' <<< "$line")
-            visited=$(awk -F, '{print $3}' <<< "$line")
-            maxdepth=$(awk -F, '{print $4}' <<< "$line")
-            memo=$(awk -F, '{print $5}' <<< "$line")
-            solver_seconds=$(awk -F, '{print $6}' <<< "$line")
-          else
-            memo=$(sed -n 's/.* memo=\([0-9][0-9]*\).*/\1/p' /tmp/one.err | tail -n 1)
-            solver_seconds=$(sed -n 's/.* seconds=\([0-9.eE+-][0-9.eE+-]*\).*/\1/p' /tmp/one.err | tail -n 1)
-          fi
+          grep -q "^${safe},LOSS," /tmp/one.out
+          line=$(tail -n 1 /tmp/one.out)
+          outcome=$(awk -F, '{print $2}' <<< "$line")
+          visited=$(awk -F, '{print $3}' <<< "$line")
+          maxdepth=$(awk -F, '{print $4}' <<< "$line")
+          memo=$(awk -F, '{print $5}' <<< "$line")
+          solver_seconds=$(awk -F, '{print $6}' <<< "$line")
           wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
           rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
-          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,load,search_profile' > retry-final-v2.csv
-          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,90,targeted-13b27-14b26-15-16-17\n' \
-            "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
-            "$solver_seconds" "$rc" "$wall" "$rss" >> retry-final-v2.csv
-          cat retry-final-v2.csv
+          printf '%s\n' 'state,outcome,visited,maxdepth,memo,solver_seconds,wall_seconds,max_rss_kb,shrink,load,search_profile' > "reproduce-$safe.csv"
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,0,90,%s\n' \
+            "$state" "$outcome" "$visited" "$maxdepth" "$memo" \
+            "$solver_seconds" "$wall" "$rss" "$profile" >> "reproduce-$safe.csv"
       - uses: actions/upload-artifact@v4
         with:
-          name: retry-final-v2
-          path: retry-final-v2.csv
+          name: reproduce-${{ matrix.profile }}
+          path: reproduce-*.csv
