@@ -1,4 +1,4 @@
-name: Retry two-stone 10x10 subsets with shrink 0
+name: Retry two-stone roots with targeted depth-9 and depth-13 expansion
 
 on:
   pull_request:
@@ -31,22 +31,33 @@ jobs:
           - '73,69'
           - '73,66'
           - '73,13'
-          - '69,66'
           - '69,13'
           - '69,91'
           - '66,13'
           - '66,91'
           - '13,91'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
+      - name: Expand the observed saturated memo layers
+        shell: bash
+        run: |
+          file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
+          grep -q 'd9_(41,p(23,shrink),load)' "$file"
+          grep -q 'd13b_(53,p(25,shrink>0?shrink-1:0),load)' "$file"
+          sed -i \
+            -e 's/d9_(41,p(23,shrink),load)/d9_(41,p(24,shrink),load)/' \
+            -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(26,shrink>0?shrink-1:0),load)/' \
+            "$file"
+          grep -q 'd9_(41,p(24,shrink),load)' "$file"
+          grep -q 'd13b_(53,p(26,shrink>0?shrink-1:0),load)' "$file"
       - name: Build exact solver
         run: >-
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic
           cpp/solvers/kyouen_solver_10_kyoenc4.cpp
           -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Solve independently with shrink 0
+      - name: Solve independently with targeted profile
         shell: bash
         run: |
           state='${{ matrix.state }}'
@@ -54,8 +65,8 @@ jobs:
           printf '%s\n' "$state" > /tmp/one.state
           set +e
           /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-            timeout --signal=TERM --kill-after=30s 2400s \
-            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 80 \
+            timeout --signal=TERM --kill-after=30s 3000s \
+            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
             > /tmp/one.out 2> /tmp/one.err
           rc=$?
           set -e
@@ -83,13 +94,13 @@ jobs:
           fi
           wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
           rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
-          out="two-stone-shrink0-$safe.csv"
-          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,load' > "$out"
-          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,80\n' \
+          out="two-stone-targeted1-$safe.csv"
+          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,load,search_profile' > "$out"
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,90,expanded-d9-d13b\n' \
             "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
             "$solver_seconds" "$rc" "$wall" "$rss" >> "$out"
           cat "$out"
       - uses: actions/upload-artifact@v4
         with:
-          name: two-stone-shrink0-${{ strategy.job-index }}
-          path: two-stone-shrink0-*.csv
+          name: two-stone-targeted1-${{ strategy.job-index }}
+          path: two-stone-targeted1-*.csv
