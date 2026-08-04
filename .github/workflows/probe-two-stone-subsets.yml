@@ -1,4 +1,4 @@
-name: Probe two-stone 10x10 subsets
+name: Retry two-stone 10x10 subsets with shrink 2
 
 on:
   pull_request:
@@ -9,13 +9,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  probe:
+  retry:
     strategy:
       fail-fast: false
       matrix:
         shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: Build exact solver
@@ -40,17 +40,17 @@ jobs:
             10) printf '%s\n' '66,13' '66,91' > /tmp/states ;;
             11) printf '%s\n' '13,91' > /tmp/states ;;
           esac
-      - name: Solve each state independently with shrink 3
+      - name: Solve each state independently with shrink 2
         shell: bash
         run: |
-          out=two-stone-shard-${{ matrix.shard }}.csv
+          out=two-stone-shrink2-${{ matrix.shard }}.csv
           printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink' > "$out"
           while IFS= read -r state; do
             printf '%s\n' "$state" > /tmp/one.state
             set +e
             /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-              timeout --signal=TERM --kill-after=30s 900s \
-              /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 3 80 \
+              timeout --signal=TERM --kill-after=30s 1200s \
+              /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 2 80 \
               > /tmp/one.out 2> /tmp/one.err
             rc=$?
             set -e
@@ -78,12 +78,12 @@ jobs:
             fi
             wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
             rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
-            printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,3\n' \
+            printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,2\n' \
               "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
               "$solver_seconds" "$rc" "$wall" "$rss" >> "$out"
           done < /tmp/states
           cat "$out"
       - uses: actions/upload-artifact@v4
         with:
-          name: two-stone-shard-${{ matrix.shard }}
-          path: two-stone-shard-*.csv
+          name: two-stone-shrink2-${{ matrix.shard }}
+          path: two-stone-shrink2-*.csv
