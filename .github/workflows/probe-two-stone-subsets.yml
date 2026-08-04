@@ -1,4 +1,4 @@
-name: Retry two-stone 10x10 subsets with shrink 2
+name: Retry two-stone 10x10 subsets with shrink 1
 
 on:
   pull_request:
@@ -13,9 +13,32 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        state:
+          - '90,61'
+          - '90,69'
+          - '90,66'
+          - '90,13'
+          - '61,2'
+          - '61,73'
+          - '61,69'
+          - '61,66'
+          - '61,13'
+          - '61,91'
+          - '2,73'
+          - '2,69'
+          - '2,66'
+          - '2,13'
+          - '73,69'
+          - '73,66'
+          - '73,13'
+          - '69,66'
+          - '69,13'
+          - '69,91'
+          - '66,13'
+          - '66,91'
+          - '13,91'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - name: Build exact solver
@@ -23,67 +46,50 @@ jobs:
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic
           cpp/solvers/kyouen_solver_10_kyoenc4.cpp
           -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Select shard states
+      - name: Solve independently with shrink 1
         shell: bash
         run: |
-          case "${{ matrix.shard }}" in
-            0) printf '%s\n' '90,61' '90,69' > /tmp/states ;;
-            1) printf '%s\n' '90,66' '90,13' > /tmp/states ;;
-            2) printf '%s\n' '61,2' '61,73' > /tmp/states ;;
-            3) printf '%s\n' '61,69' '61,66' > /tmp/states ;;
-            4) printf '%s\n' '61,13' '61,91' > /tmp/states ;;
-            5) printf '%s\n' '2,73' '2,69' > /tmp/states ;;
-            6) printf '%s\n' '2,66' '2,13' > /tmp/states ;;
-            7) printf '%s\n' '73,69' '73,66' > /tmp/states ;;
-            8) printf '%s\n' '73,13' '69,66' > /tmp/states ;;
-            9) printf '%s\n' '69,13' '69,91' > /tmp/states ;;
-            10) printf '%s\n' '66,13' '66,91' > /tmp/states ;;
-            11) printf '%s\n' '13,91' > /tmp/states ;;
+          state='${{ matrix.state }}'
+          safe=${state//,/-}
+          printf '%s\n' "$state" > /tmp/one.state
+          set +e
+          /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
+            timeout --signal=TERM --kill-after=30s 1800s \
+            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 1 80 \
+            > /tmp/one.out 2> /tmp/one.err
+          rc=$?
+          set -e
+          cat /tmp/one.out
+          cat /tmp/one.err
+          cat /tmp/one.time
+          status=ERROR
+          case "$rc" in
+            0) status=COMPLETE ;;
+            3) status=TABLE_FULL ;;
+            124) status=TIMEOUT ;;
+            137) status=KILLED ;;
           esac
-      - name: Solve each state independently with shrink 2
-        shell: bash
-        run: |
-          out=two-stone-shrink2-${{ matrix.shard }}.csv
+          outcome=''; visited=''; maxdepth=''; memo=''; solver_seconds=''
+          if [[ "$rc" = 0 ]]; then
+            line=$(tail -n 1 /tmp/one.out)
+            outcome=$(awk -F, '{print $2}' <<< "$line")
+            visited=$(awk -F, '{print $3}' <<< "$line")
+            maxdepth=$(awk -F, '{print $4}' <<< "$line")
+            memo=$(awk -F, '{print $5}' <<< "$line")
+            solver_seconds=$(awk -F, '{print $6}' <<< "$line")
+          else
+            memo=$(sed -n 's/.* memo=\([0-9][0-9]*\).*/\1/p' /tmp/one.err | tail -n 1)
+            solver_seconds=$(sed -n 's/.* seconds=\([0-9.eE+-][0-9.eE+-]*\).*/\1/p' /tmp/one.err | tail -n 1)
+          fi
+          wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
+          rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
+          out="two-stone-shrink1-$safe.csv"
           printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink' > "$out"
-          while IFS= read -r state; do
-            printf '%s\n' "$state" > /tmp/one.state
-            set +e
-            /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-              timeout --signal=TERM --kill-after=30s 1200s \
-              /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 2 80 \
-              > /tmp/one.out 2> /tmp/one.err
-            rc=$?
-            set -e
-            cat /tmp/one.out
-            cat /tmp/one.err
-            cat /tmp/one.time
-            status=ERROR
-            case "$rc" in
-              0) status=COMPLETE ;;
-              3) status=TABLE_FULL ;;
-              124) status=TIMEOUT ;;
-              137) status=KILLED ;;
-            esac
-            outcome=''; visited=''; maxdepth=''; memo=''; solver_seconds=''
-            if [[ "$rc" = 0 ]]; then
-              line=$(tail -n 1 /tmp/one.out)
-              outcome=$(awk -F, '{print $2}' <<< "$line")
-              visited=$(awk -F, '{print $3}' <<< "$line")
-              maxdepth=$(awk -F, '{print $4}' <<< "$line")
-              memo=$(awk -F, '{print $5}' <<< "$line")
-              solver_seconds=$(awk -F, '{print $6}' <<< "$line")
-            else
-              memo=$(sed -n 's/.* memo=\([0-9][0-9]*\).*/\1/p' /tmp/one.err | tail -n 1)
-              solver_seconds=$(sed -n 's/.* seconds=\([0-9.eE+-][0-9.eE+-]*\).*/\1/p' /tmp/one.err | tail -n 1)
-            fi
-            wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
-            rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
-            printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,2\n' \
-              "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
-              "$solver_seconds" "$rc" "$wall" "$rss" >> "$out"
-          done < /tmp/states
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,1\n' \
+            "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
+            "$solver_seconds" "$rc" "$wall" "$rss" >> "$out"
           cat "$out"
       - uses: actions/upload-artifact@v4
         with:
-          name: two-stone-shrink2-${{ matrix.shard }}
-          path: two-stone-shrink2-*.csv
+          name: two-stone-shrink1-${{ strategy.job-index }}
+          path: two-stone-shrink1-*.csv
