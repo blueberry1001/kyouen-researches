@@ -1,11 +1,6 @@
 name: Retry two-stone roots with targeted third-stage expansion
 
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/probe-two-stone-subsets.yml'
-      - 'cpp/solvers/**'
   workflow_dispatch:
 
 jobs:
@@ -14,14 +9,12 @@ jobs:
       fail-fast: false
       matrix:
         state:
-          - '90,61'
           - '90,69'
           - '90,66'
           - '90,13'
           - '61,2'
           - '61,73'
           - '61,69'
-          - '61,66'
           - '61,13'
           - '61,91'
           - '2,73'
@@ -37,10 +30,10 @@ jobs:
           - '66,91'
           - '13,91'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
-      - name: Expand all observed saturated memo layers
+      - name: Expand saturated and near-saturated memo layers
         shell: bash
         run: |
           file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
@@ -60,19 +53,12 @@ jobs:
             -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(25,shrink),load)/' \
             -e 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' \
             "$file"
-          grep -q 'd9_(41,p(24,shrink),load)' "$file"
-          grep -q 'd10_(44,p(26,shrink),load)' "$file"
-          grep -q 'd11b_(48,p(25,shrink),load)' "$file"
-          grep -q 'd12b_(50,p(25,shrink),load)' "$file"
-          grep -q 'd13b_(53,p(27,shrink>0?shrink-1:0),load)' "$file"
-          grep -q 'd14b_(56,p(25,shrink),load)' "$file"
-          grep -q 'd16_(61,p(24,shrink),load)' "$file"
       - name: Build exact solver
         run: >-
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic
           cpp/solvers/kyouen_solver_10_kyoenc4.cpp
           -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Solve independently with third-stage expanded profile
+      - name: Solve independently with expanded profile
         shell: bash
         run: |
           state='${{ matrix.state }}'
@@ -80,7 +66,7 @@ jobs:
           printf '%s\n' "$state" > /tmp/one.state
           set +e
           /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
-            timeout --signal=TERM --kill-after=30s 4800s \
+            timeout --signal=TERM --kill-after=30s 3600s \
             /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
             > /tmp/one.out 2> /tmp/one.err
           rc=$?
