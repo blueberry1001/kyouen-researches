@@ -7,3 +7,17 @@ certificates/raw/*.cert
 release-assets/*.cert.zst
 !release-assets/SHA256SUMS.txt
 *.tmp
+
+# BEGIN oh-my-opencode-slim worktrees
+.slim/worktrees/
+.slim/worktrees.json
+# END oh-my-opencode-slim worktrees
+
+# Deepwork state
+.slim/deepwork/
+
+# Temporary / environment
+.commandcode/
+.ignore
+kyouen-local-handoff/
+kyouen-local-handoff-extract/
