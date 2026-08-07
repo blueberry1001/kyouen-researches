@@ -22,9 +22,9 @@ index,state,outcome,source,loss_child,visited,maxdepth,memo,seconds
 20,"1,39,72",WIN,split-exact-search shrink=2 load=80,,125211843,19,124951644,475.492
 21,"1,39,73",WIN,split-exact-search shrink=2 load=80,,40458541,18,40373195,157.242
 22,"1,39,74",WIN,split-exact-search shrink=1 load=85,,203045139,19,202692074,580.049
-23,"1,39,80",TABLE_FULL,split-exact-search shrink=0 load=90,,,,475654197,1486.13
+23,"1,39,80",WIN,split-exact-search shrink=0 load=90 expanded-memo,,603662904,19,602769989,1802.49
 24,"1,39,81",WIN,split-exact-search shrink=2 load=80,,44252480,19,44156596,143.445
-25,"1,39,90",TABLE_FULL,split-exact-search shrink=0 load=90,,,,463036884,1410.6
+25,"1,39,90",LOSS,split-exact-search shrink=0 load=90 expanded-memo,,827783863,19,826696649,2462.06
 26,"2,8,30",WIN,split-exact-search shrink=0 load=90,,352129890,19,351391143,915.157
 27,"3,8,30",WIN,split-exact-search shrink=2 load=80,,22455099,18,22395892,74.2212
 28,"3,8,80",WIN,split-exact-search shrink=2 load=80,,24740137,18,24674517,81.7781
@@ -47,7 +47,7 @@ index,state,outcome,source,loss_child,visited,maxdepth,memo,seconds
 45,"4,8,30",WIN,split-exact-search shrink=2 load=80,,22193110,18,22134500,71.6244
 46,"5,8,30",WIN,split-exact-search shrink=0 load=90,,516334994,19,515151855,1596.5
 47,"6,8,30",WIN,split-exact-search shrink=1 load=85,,178086561,19,177707209,510.666
-48,"7,8,30",TABLE_FULL,split-exact-search shrink=0 load=90,,,,516901571,1584.03
+48,"7,8,30",LOSS,split-exact-search shrink=0 load=90 expanded-memo,,826399468,19,824861983,2474.03
 49,"8,9,30",WIN,split-exact-search shrink=0 load=90,,379052148,19,378376894,1064.92
 50,"8,10,30",WIN,split-exact-search shrink=0 load=90,,389304153,19,388629632,1039
 51,"8,11,30",WIN,split-exact-search shrink=2 load=80,,23344463,18,23288075,76.1315
@@ -56,7 +56,7 @@ index,state,outcome,source,loss_child,visited,maxdepth,memo,seconds
 54,"8,14,30",WIN,split-exact-search shrink=2 load=80,,75068432,19,74907901,252.052
 55,"8,15,30",WIN,split-exact-search shrink=2 load=80,,102486523,18,102281772,347.788
 56,"8,16,30",WIN,split-exact-search shrink=2 load=80,,16908878,18,16862334,53.4707
-57,"8,17,30",TABLE_FULL,split-exact-search shrink=0 load=90,,,,518154340,1524
+57,"8,17,30",LOSS,split-exact-search shrink=0 load=90 expanded-memo,,819209782,19,817829824,2410.90
 58,"8,18,30",WIN,split-exact-search shrink=2 load=80,,97498284,19,97320045,332.416
 59,"8,19,30",WIN,split-exact-search shrink=2 load=80,,26221342,18,26153920,86.5568
 60,"8,20,30",WIN,split-exact-search shrink=2 load=80,,127733631,19,127473235,452.625

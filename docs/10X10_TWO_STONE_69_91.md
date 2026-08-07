@@ -4,87 +4,121 @@ This experiment continues the two-stone frontier opened by
 `docs/10X10_THREE_STONE_SUBSETS.md`. Coordinates use `id = y * 10 + x`; outcomes
 are from the player to move.
 
-## Classification of the 98 three-stone children
+## Result: the parent 69,91 is a WIN
 
-The exact split-search over all legal third stones of the two-stone root
-`69,91` (canonical form `[8,30]`) classifies:
+All 98 three-stone children are now resolved by exact search. The four former
+`TABLE_FULL` states were re-run with expanded memo profiles (compile-time
+`EXPANDED_MEMO` variants, search logic byte-identical to the standard solver):
 
 ```text
-WIN       = 94
-LOSS      = 0
-TABLE_FULL = 4
+WIN  = 95
+LOSS =  3  (1,39,90; 7,8,30; 8,17,30)
+TABLE_FULL = 0
 ```
+
+A parent is a WIN iff it has at least one LOSS child. Three of the four
+resolved states are LOSS, so **`69,91` is a WIN** — the previous "cannot be
+proven LOSS unless every child is WIN" caveat is resolved in the opposite
+direction: LOSS children exist, and they decide the parent immediately.
 
 Machine-readable results:
 [`results/10x10/two-stone-69-91-child-proof.csv`](../results/10x10/two-stone-69-91-child-proof.csv).
+Expanded-memo run details (per-bucket usage):
+[`results/10x10/69-91-expanded-memo.csv`](../results/10x10/69-91-expanded-memo.csv).
 
-Until the four TABLE_FULL states are resolved, the parent `69,91` cannot be
-proven LOSS (a parent is LOSS iff every child is WIN).
+## The four former TABLE_FULL children, resolved
 
-## The four TABLE_FULL children
+| child | outcome | visited | maxdepth | memo | wall time | profile |
+|---|---:|---:|---:|---:|---:|---|
+| `1,39,80` | WIN | 603,662,904 | 19 | 602,769,989 | 1802 s | v3 |
+| `1,39,90` | LOSS | 827,783,863 | 19 | 826,696,649 | 2462 s | v4 |
+| `7,8,30` | LOSS | 826,399,468 | 19 | 824,861,983 | 2474 s | v4 |
+| `8,17,30` | LOSS | 819,209,782 | 19 | 817,829,824 | 2411 s | v4 |
 
-| child | memo entries at failure | wall time |
-|---|---|---:|
-| `1,39,80` | 475,654,197 | 1486 s |
-| `1,39,90` | 463,036,884 | 1411 s |
-| `7,8,30` | 516,901,571 | 1584 s |
-| `8,17,30` | 518,154,340 | 1524 s |
+Profiles (per-layer power, all others at base):
 
-All four were re-attempted at `shrink=0`, `load=90` and failed again with the
-same `TABLE_FULL`, at nearly the same memo sizes.
+| profile | d11 | d12a | d12b | d13a | d14a | d15 | d16 | d17 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| base | 26 | 27 | 24 | 27 | 27 | 26 | 23 | 19 |
+| v3 | 27 | 28 | 25 | 28 | 28 | 27 | 24 | 19 |
+| v4 | 27 | 28 | 25 | **29** | 28 | 27 | 24 | **21** |
 
-## Bucket diagnostics
+## Bucket usage at the resolution point (max_used = 2^power * 0.9)
 
-Each child was re-run with a diagnostic build that dumps per-depth memo bucket
-usage on completion (`DONE`) or on the fill that kills the search (`FILL`).
-Capacities are `max_used = 2^power * load / 100` with `load=90`.
+| child | outcome | d12a | d13a | d14a | d15 | d16 | d17 |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| `1,39,80` | WIN (v3) | 127.9M | 175.9M | 152.0M | 61.5M | 9.2M | 424,948 |
+| `1,39,90` | LOSS (v4) | 171.0M | 240.7M | 214.5M | 89.5M | 13.8M | 645,017 |
+| `7,8,30` | LOSS (v4) | 181.2M | 240.8M | 200.3M | 77.6M | 11.0M | 480,771 |
+| `8,17,30` | LOSS (v4) | 175.9M | 238.0M | 203.1M | 81.1M | 12.0M | 550,707 |
 
-| child | outcome | d13a (2^27) | d13b (2^25) | d14a (2^27) | d14b (2^24) | d16 (2^23) |
-|---|---|---|---:|---:|---:|---:|---:|
-| `8,30,72` | WIN | 120,795,955 (100%) | 30,062,303 (99.5%) | 120,795,955 (100%) | 1,759,454 | 6,533,219 (86.5%) |
-| `5,8,30` | WIN | 120,795,955 (100%) | 29,211,706 (96.8%) | 120,604,995 (99.8%) | 0 | 6,259,324 (82.9%) |
-| `8,10,30` | WIN | 112,294,939 (93.0%) | 0 | 97,117,981 (80.4%) | 0 | 6,174,529 (81.8%) |
-| `8,9,30` | WIN | 110,277,343 (91.3%) | 0 | 93,036,131 (77.0%) | 0 | 5,368,607 (71.1%) |
-| `1,39,70` | WIN | 103,790,039 (85.9%) | 0 | 88,616,950 (73.4%) | 0 | 5,448,041 (72.2%) |
-| `2,8,30` | WIN | 102,330,162 (84.7%) | 0 | 82,852,608 (68.6%) | 0 | 4,454,054 (59.0%) |
-| `3,9,80` | WIN | 71,226,853 (59.0%) | 0 | 60,979,801 (50.5%) | 0 | 3,708,086 (49.1%) |
-| `1,39,80` | TF | 120,795,955 (100%) | 17,850,690 | 120,795,955 (100%) | 666,160 | **7,549,747 (100%)** |
-| `1,39,90` | TF | 120,795,955 (100%) | 14,352,064 | 119,441,955 (98.9%) | 0 | **7,549,747 (100%)** |
-| `7,8,30` | TF | 120,795,955 (100%) | **30,198,988 (100%)** | 120,795,955 (100%) | 4,233,764 | 6,827,798 (90.5%) |
-| `8,17,30` | TF | 120,795,955 (100%) | **30,198,988 (100%)** | 120,795,955 (100%) | 6,799,550 | 7,344,855 (97.3%) |
+## The minimal capacities that would have sufficed
 
-## Why exactly these four are hard
+The v4 runs show that the *true* requirement is a chain, not a single layer:
 
-The decisive observations:
+- `d13a` is the sharpest constraint: `7,8,30` uses 240,796,468 entries =
+  **99.7% of the 2^28 * 0.9 = 241.6M cap**. In theory 2^28 suffices, but the
+  margin is 0.3% — 2^29 (v4) is the defensible choice. Under v3 (d13a = 2^28)
+  these states died on `d17` first, at d13a ≈ 235M.
+- `d16` usage 13.8M = 91% of the 2^24 cap — 2^24 was necessary (2^23 holds
+  only 7.55M), and just barely sufficient.
+- `d17` (2^19, 471,859) was the immediate fill trigger for both `1,39,90` and
+  `7,8,30` under v3; max usage 645K fits in 2^20 (943,718), so **2^20 would
+  have been enough**; v4's 2^21 is generous.
+- `d11`, `d12a`, `d14a`, `d15` were saturated under base/v1 profiles and need
+  the v3/v4 powers (2^27 / 2^28 / 2^28 / 2^27).
 
-1. **A full depth-13 or depth-14 primary table alone never kills the search.**
-   `8,30,72` (WIN) ends with both `d13a` and `d14a` at 100%; the
-   `MultiDepthMemo100::put` fallback chain (`d13a` -> `d13b`, `d14a` -> `d14b`)
-   absorbs the overflow.
+So the minimal coherent profile is v3 plus d17 = 2^20 (d13a stays 2^28 at
+99.7% utilization — technically sufficient, practically too close to call).
 
-2. **The failure trigger is a full fallback or a small leaf layer:**
-   - `7,8,30` and `8,17,30` fill `d13b` too: the depth-13 layer collectively
-     holds 151,0M entries (120.8M + 30.2M) and the search still needs more.
-   - `1,39,80` and `1,39,90` fill the depth-16 layer (`d16`, only 2^23 * 0.9 =
-     7.55M entries), which has no secondary table.
+## Why exactly these four are hard — resolved
 
-3. **The line between WIN and TABLE_FULL is razor-thin.** The largest WIN
-   (`8,30,72`, 518,980,323 visited) ends at `d13b = 99.5%` of capacity — within
-   136,685 entries of the failure point of `7,8,30`/`8,17,30`. These four TF
-   children are the upper tail of a stable middle band, not a different
-   geometric class: their D4 orbit siblings and same-Σd siblings all WIN.
+The decisive observations from the expanded runs:
 
-4. **Legal-count and geometry do not discriminate.** All four TF children have
-   the same legal-move count (98) as most children; the WIN children `8,9,30`,
-   `8,10,30`, `1,39,70`, `2,8,30` sit in the same D4 orbits (third-stone
-   `x = 90/91/92/82` orbits) and same-distance groups as the TF states.
+1. **The "hardness" is the tail of a size distribution, not a structural
+   singularity.** All four states are simply large searches: their memo
+   tables reach 603M–827M entries, above the total capacity the base profile
+   can hold (~475M–518M). They saturate whatever layer is *next* in line, in
+   order: base → d13a/d13b/d16; v1 → d12a/d15/d11; v3 → d17 (and d13a at 99%);
+   v4 → resolves.
 
-## What would resolve them
+2. **The failure trigger moves with the capacity.** Each expansion pushed the
+   bottleneck to the next layer:
+   - base: `1,39,80`/`1,39,90` die on `d16` (7.55M cap); `7,8,30`/`8,17,30`
+     die on `d13b` (30.2M).
+   - v1 (+d13a/d14a/d16): all four now die on `d12a` (120.8M) or `d15` (60.4M).
+   - v3 (+d11/d12a/d12b/d15): `1,39,80` resolves WIN; the three LOSS states
+     die on `d17` (471,859) with d13a at ~235M.
+   - v4 (+d13a/d17): all resolve.
+   This is the classic boundary effect of fixed-capacity hash tables: the
+   search is capacity-bound, not rule-bound. No state needed a rule change or
+   a different algorithm — every one resolved once the tables were large
+   enough.
 
-The search is capacity-bound, not rule-bound. A profile that gives the depth-13
-and depth-14 primary tables one more power (`d13a`, `d14a`: 2^27 -> 2^28) plus
-a larger depth-16 layer (`d16`: 2^23 -> 2^24) should absorb all four
-(150.9M depth-13 entries for `7,8,30` fits in 2^28 alone; 7.55M depth-16 for
-`1,39,80` fits in 2^24). This costs roughly one byte per extra entry in the
-affected layers; the peak RSS would rise from ~3.5 GB to ~7 GB, still far
-inside the 41 GB machine. Until then the parent `69,91` remains open.
+3. **Three of the four are LOSS.** A LOSS state must exhaust its whole tree
+   before it can be proven; WIN states can stop at the first winning line.
+   That is why these three are so much heavier than the largest WIN
+   (`8,30,72`, 518,980,323 visited): proof of LOSS requires visiting every
+   node, ~827M here.
+
+4. **The razor-thin line is confirmed and quantified.** The old doc noted
+   `8,30,72` (WIN) ends at d13b = 99.5%. Now `7,8,30` (LOSS) needs d13a =
+   240.8M vs a 241.6M cap — 0.3% from re-failing. The WIN/LOSS boundary is
+   close in *size*, but the outcomes themselves are clean: WIN=95, LOSS=3.
+
+5. **The three LOSS children are in two distinct D4 orbits** — `1,39,90` vs
+   `7,8,30`/`8,17,30` — with the same legal-move count (98) as everything
+   else, so orbit and geometry still do not discriminate. Their sibling
+   `1,39,80` in the same orbit is a WIN. The distinction is search size, which
+   is an emergent property, not a local invariant.
+
+## Methodology note
+
+- All expanded runs used the standard solver (`kyouen-local-handoff/solver.cpp`)
+  recompiled with `-DEXPANDED_MEMO3` / `-DEXPANDED_MEMO4` and the profile
+  tables above; no search-logic changes (verified: known WIN `8,30,72` and
+  `8,10,30` reproduce identical visited/memo counts).
+- Runs: single- or dual-process on the 41 GB machine, shrink=0, load=90,
+  wall times 1802–2474 s each, peak RSS ≈ 6.5 GB (v3) / 7.8 GB (v4).
+- `1,39,90` under v3 hit `std::bad_alloc` only when launched in parallel with
+  another expanded process (free RAM ~5.6 GB); re-run alone it completed.
