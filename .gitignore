@@ -21,3 +21,5 @@ release-assets/*.cert.zst
 .ignore
 kyouen-local-handoff/
 kyouen-local-handoff-extract/
+__pycache__/
+*.pyc
