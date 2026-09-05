@@ -22,12 +22,9 @@ That directional failure raises a separate question: does the bounded probe
 contain useful information with the opposite sign?
 
 For unresolved candidates every corrected probe has exactly 1,000,000 visited
-nodes.  Therefore, within those candidates,
-
-`1,000,000 - memo`
-
-is a simple proxy for revisits / transposition convergence.  Sorting `memo`
-ascending is equivalent to sorting this proxy descending.
+nodes. Sorting `memo` ascending is therefore equivalent to sorting
+`visited - memo` descending.  However, **the latter must not be interpreted as
+a revisit/transposition count**; see the source-level correction below.
 
 ## Re-analysis without new solving
 
@@ -75,27 +72,53 @@ test gives `p = 0.03125`.
 This p-value is **descriptive only** because the score direction was selected
 post-hoc.  It must not be reported as a confirmatory significance result.
 
-## New hypothesis
+## Source-level correction: what `visited - memo` actually measures
+
+A later audit of the 10x10 solver invalidated the earlier mechanistic label
+"revisits / transposition convergence".
+
+In `Solver::win`, the memo lookup occurs before `++st.visited`.  A memo hit
+returns immediately and therefore does **not** increment `visited`.  Thus a
+memo-hit/revisit cannot contribute +1 to `visited - memo`.
+
+Moreover, `MultiDepthMemo100::get/put` are active only for depths 9 through 17.
+Calls at depths below 9 or above 17 can be visited but are never retained by
+`memo_.used()`.  For a four-stone child root, depths 4--8 are therefore an
+important guaranteed source of `visited - memo`.
+
+For completed searches, most visited cache-miss states at memoized depths are
+inserted before returning.  Under a bounded/aborted probe there can also be a
+small frontier contribution from calls that were visited but had not yet been
+inserted when the probe stopped.  Consequently the difference is best treated
+as a mixed **non-retained expansion count**, dominated structurally by
+expansions outside the memoized depth window, not as a transposition-hit count.
+
+This changes the interpretation but not the stored ordering: among unresolved
+1M-visited candidates, smaller `memo` is still exactly the same ranking as
+larger `visited - memo`.
+
+## Revised hypothesis
 
 A fresh hypothesis suitable for a new blind test is:
 
 > Among 10x10 three-stone parents with multiple unresolved legal children,
-> children whose fixed-budget independent search visits fewer distinct memo
-> states (equivalently, has more revisits / transposition convergence at the
-> same visited-node budget) are more likely to be LOSS children.
+> children whose fixed-budget independent search spends a larger fraction of
+> its cache-miss expansions outside the depth-9..17 memoized window are more
+> likely to be LOSS children.
 
-The important quantity is therefore not raw cumulative memo size.  It is the
-candidate-local convergence statistic under a fresh memo table.
+For the present four-stone child roots, the most plausible component is the
+amount of shallow expansion at depths 4--8.  One game-theoretic interpretation
+is that LOSS children force the solver to exhaust more alternatives in the
+shallow layers before deep memoized subproblems dominate.  This is a hypothesis,
+not yet a demonstrated mechanism.
 
-A more explicit score for an unresolved candidate is
-
-`redundancy = visited - memo`.
-
-At a fixed 1M budget this has exactly the reverse ordering of `memo`.
+The next instrumentation should therefore record visited counts by depth, and
+preferably memo insertions and memo hits by depth, rather than trying to infer
+those quantities from one scalar `visited - memo`.
 
 ## Highest-value confirmatory test
 
-Do **not** tune on the seven parents above.  Freeze the rule now:
+Do **not** tune on the seven parents above.  Freeze the ordering rule now:
 
 1. use fresh solver/memo per candidate;
 2. same shrink/load/budget as the corrected run unless resource constraints
@@ -106,6 +129,11 @@ Do **not** tune on the seven parents above.  Freeze the rule now:
 6. evaluate on new LOSS parents / batches not used to choose this direction;
 7. compare first-LOSS rank against the exact random order-statistic baseline
    and solver-default ordering.
+
+In parallel, instrument `visited_by_depth`, `memo_hits_by_depth`, and
+`memo_puts_by_depth` on a separate diagnostic run.  These counters are for
+mechanism interpretation and should not be used to retune the frozen blind
+ordering before its confirmatory evaluation.
 
 A second useful endpoint is candidate-level discrimination (LOSS vs WIN) using
 `visited-memo`, evaluated by rank/AUC across each parent.  This uses all exact
@@ -123,6 +151,9 @@ the sign-test summaries.
 
 The corrected result is therefore more interesting than simply "the 1M probe
 failed".  The originally chosen sign failed badly, but the independent probe
-appears to contain an opposite-direction structural signal.  The seven parents
-are now training/exploratory data for that hypothesis.  Only a new blind set can
-determine whether the signal generalizes.
+appears to contain an opposite-direction structural signal.  What that scalar
+signal means was initially misidentified: it is not a direct transposition
+convergence measure.  The seven parents remain training/exploratory data for
+the ordering hypothesis.  Only a new blind set can determine whether the
+signal generalizes, while depth-resolved counters can separately test the new
+shallow-expansion explanation.
