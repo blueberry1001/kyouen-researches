@@ -1,0 +1,7 @@
+progress visited=16777216 memo=24078734 depth=12 maxdepth=18 seconds=95.3635
+progress visited=33554432 memo=40820100 depth=13 maxdepth=18 seconds=176.278
+progress visited=16777216 memo=74737246 depth=13 maxdepth=18 seconds=320.583
+progress visited=16777216 memo=103308047 depth=11 maxdepth=18 seconds=442.622
+progress visited=16777216 memo=121658234 depth=14 maxdepth=18 seconds=518.231
+memo_by_depth 9:1576444 10:6255561 11:20404107 12:38973168 13:48183483 14:35831733 15:12101855 16:1520288 17:63318
+forbidden=54441 completed=10 requested=10 memo=164909957 seconds=708.28 table_full=0
