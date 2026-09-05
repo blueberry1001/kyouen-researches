@@ -79,6 +79,8 @@ n ∈ {4, 7, 8}
 
 現時点では、中央以外の初手が勝ちかどうかをすべて分類したとは主張していません。
 
+fixed rule / two-stone subset probe の盲検追試後に行った反例解析・訂正・棄却済み仮説・次の実験は [`docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md`](docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md) にまとめています。
+
 ## リポジトリ構成
 
 ```text
