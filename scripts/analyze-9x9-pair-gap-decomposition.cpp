@@ -1,7 +1,9 @@
 #include <algorithm>
 #include <array>
 #include <cstdint>
+#include <fstream>
 #include <iostream>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -78,9 +80,28 @@ struct CanonicalRow {
     std::array<int,4> parent;
     int pair_top=-1, true_top=-1;
     int cause_class=0;
+    Features pair_features{};
+    Features true_features{};
 };
 
-int main() {
+static const char* cause_name(int c) {
+    switch (c) {
+        case 1: return "E-only";
+        case 2: return "O-only";
+        case 3: return "both";
+        case 4: return "synergy";
+        default: return "unknown";
+    }
+}
+
+int main(int argc, char** argv) {
+    std::string csv_path;
+    if (argc == 3 && std::string(argv[1]) == "--csv") csv_path = argv[2];
+    else if (argc != 1) {
+        std::cerr << "usage: " << argv[0] << " [--csv OUTPUT.csv]\n";
+        return 2;
+    }
+
     std::vector<Mask81> completion(81*81*81);
     std::unordered_set<std::uint32_t> forbidden;
     forbidden.reserve(40000);
@@ -182,7 +203,9 @@ int main() {
                 ck.parent,
                 transform_point(raw_move,ck.transform),
                 transform_point(true_move,ck.transform),
-                cause
+                cause,
+                P,
+                Q
             });
         }
     }
@@ -218,4 +241,24 @@ int main() {
     std::cout << '\n' << "gap_hist";
     for (int i=0;i<10;++i) std::cout << ' ' << i << ':' << gap_hist[i];
     std::cout << '\n';
+
+    if (!csv_path.empty()) {
+        std::vector<std::pair<std::uint32_t, CanonicalRow>> rows(canonical.begin(), canonical.end());
+        std::sort(rows.begin(), rows.end(), [](const auto& x, const auto& y){ return x.first < y.first; });
+        std::ofstream f(csv_path);
+        if (!f) {
+            std::cerr << "cannot open CSV output: " << csv_path << '\n';
+            return 4;
+        }
+        f << "canonical_parent,pair_top,true_unique_top,cause_class,"
+             "pair_T,pair_E,pair_O,pair_raw,true_T,true_E,true_O,true_raw\n";
+        for (const auto& [key,row] : rows) {
+            (void)key;
+            f << '"' << row.parent[0] << ',' << row.parent[1] << ',' << row.parent[2] << ',' << row.parent[3] << "\","
+              << row.pair_top << ',' << row.true_top << ',' << cause_name(row.cause_class) << ','
+              << row.pair_features.T << ',' << row.pair_features.E << ',' << row.pair_features.O << ',' << row.pair_features.raw << ','
+              << row.true_features.T << ',' << row.true_features.E << ',' << row.true_features.O << ',' << row.true_features.raw << '\n';
+        }
+        std::cerr << "wrote " << rows.size() << " canonical rows to " << csv_path << '\n';
+    }
 }
