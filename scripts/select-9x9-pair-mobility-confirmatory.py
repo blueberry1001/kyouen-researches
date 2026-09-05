@@ -66,8 +66,19 @@ def main():
         selected.extend(rows[:alloc[cls]])
 
     selected.sort(key=lambda r: (r["cause_class"], digest(args.seed, r["canonical_parent"])))
-    fields = list(population[0].keys())
+
+    # The comparison solver intentionally accepts exactly these three columns.
+    solver_fields = ["canonical_parent", "pair_top", "true_unique_top"]
     with open(args.output_csv, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=solver_fields)
+        w.writeheader()
+        for row in selected:
+            w.writerow({k: row[k] for k in solver_fields})
+
+    # Preserve the pre-outcome covariates separately for later stratified analysis.
+    meta_path = str(Path(args.output_csv).with_suffix("")) + ".meta.csv"
+    fields = list(population[0].keys())
+    with open(meta_path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         w.writerows(selected)
@@ -76,7 +87,8 @@ def main():
     print(f"population={len(population)} pilot_excluded={len(population)-len(eligible)} eligible={len(eligible)} sample={len(selected)}")
     for cls in sorted(sizes):
         print(f"{cls}: eligible={sizes[cls]} selected={alloc[cls]}")
-    print(f"output={Path(args.output_csv)}")
+    print(f"solver_input={Path(args.output_csv)}")
+    print(f"metadata={Path(meta_path)}")
 
 
 if __name__ == "__main__":
