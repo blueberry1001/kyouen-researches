@@ -1,6 +1,6 @@
 # 9×9 pair component factorial population audit
 
-最終更新: 2026-09-05
+最終更新: 2026-09-06
 
 ## 結論
 
@@ -48,6 +48,52 @@ at least one score chooses a different move:
 g++ -O3 -std=c++20 scripts/export-9x9-factorial-population.cpp -o /tmp/export-9x9-factorial-population
 /tmp/export-9x9-factorial-population --csv /tmp/9x9-factorial-population.csv
 ```
+
+## D4代表を1票としてよいか
+
+factorial解析はD4 canonical orbitを1単位として扱うため、raw parentを一様に1個選ぶ推定対象とは、対称性の強いorbitが存在すると重みが異なる。
+
+ただし今回の母集団では、この差は数え上げだけから非常に小さいと分かる。
+
+D4の群サイズは8なので、orbit sizeは `1,2,4,8` のいずれか。size別orbit数を `n1,n2,n4,n8` とすると、上の全数走査結果から
+
+```text
+n1 + n2 + n4 + n8 = 5,113
+1*n1 + 2*n2 + 4*n4 + 8*n8 = 40,884
+```
+
+したがって、すべてsize 8だった場合との差20について
+
+```text
+7*n1 + 6*n2 + 4*n4 = 20
+```
+
+を満たす。非負整数解は次の3通りしかない。
+
+```text
+(n1,n2,n4,n8) = (0,0,5,5108)
+                 (0,2,2,5109)
+                 (2,1,0,5110)
+```
+
+よって、少なくとも `5,108 / 5,113 = 99.9022%` のcanonical orbitは完全なsize 8 orbitである。対称orbitは最大5個しかない。
+
+さらに、
+
+- orbitを一様に選ぶ分布
+- 40,884 raw parentsから一様に選び、その所属orbitを見る分布
+
+のtotal variation distanceを上の3候補で計算すると、最大でも
+
+```text
+0.000488902
+```
+
+である。したがって0/1の事象確率や `[0,1]` に収まる統計量について、orbit一様とraw-parent一様の期待値差は絶対値で高々約 `0.049 percentage points`。
+
+このため、現在のfactorial inferenceを「D4 orbitを一様に選んだときの効果」と解釈するのが厳密だが、今回の選択母集団に限ればraw-parent一様へ読み替えたときの重み差は実質的に無視できる上限まで小さい。
+
+この結論はgame outcomeを一切使わず、既に確定した母集団サイズだけから得られるため、holdoutの盲検性には影響しない。
 
 ## 各matched comparisonの母集団サイズ
 
