@@ -18,11 +18,15 @@ For each LOSS parent, the exact labels in `blind-probe-rankings.csv` were combin
 | `4,9,33` | 3 | 3--3 |
 | `9,12,33` | 18 | 17--19 |
 | `9,19,33` | 8 | 9--13 |
-| `9,23,33` | 3 | 1--2 |
+| `9,23,33` | 3 | 4--6 |
 | `0,31,36` | 1 | 1--1 |
-| `0,36,44` | 6 | 6--7 |
+| `0,36,44` | 6 | 9--11 |
 
-The median of both legal-count interval endpoints is 3, coincidentally the same headline median as the saved candidate-generation baseline. The parent-level behavior is nevertheless different. In particular, `9,19,33` proves the two orders cannot be identified: its saved baseline finds the LOSS at rank 8, whereas legal-count ordering cannot place it earlier than rank 9. Conversely, `2,9,33` has a guaranteed legal-count first LOSS at rank 1 while the saved baseline finds one at rank 2.
+The earlier version of this document incorrectly reported `9,23,33` as `1--2` and `0,36,44` as `6--7`. Recomputing the 10x10 completion relation directly from the integer determinant rule and then counting all legal next moves gives `4--6` and `9--11`, respectively. The LOSS labels used for this check are the frozen labels already present in `blind-probe-rankings.csv`; no new outcome was introduced.
+
+With those corrections, the median lower endpoint of the legal-count interval is 4 and the median upper endpoint is 6. Therefore the previously stated coincidence with the saved candidate-generation median 3 was also incorrect. The distinction between the two baselines is stronger than first documented.
+
+In particular, `9,19,33` proves the two orders cannot be identified: its saved baseline finds the LOSS at rank 8, whereas legal-count ordering cannot place it earlier than rank 9. `9,23,33` and `0,36,44` now provide two additional examples where candidate-generation order reaches LOSS substantially earlier than legal-count ordering can guarantee.
 
 ## Consequence for the probe hypothesis
 
