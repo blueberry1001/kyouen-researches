@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Run preregistered 10x10 holdout probes with one fresh Solver process per child.
 
-The collector never reads exact outcomes.  It also refuses to run a stale
+The collector never reads exact outcomes. It also refuses to run a stale
 solver binary: --build records a digest of probe_cert_solver.cpp plus all
 probe_parts/*.inc dependencies, and --run requires that digest to still match.
+
+For resumability without train/evaluation-condition drift, the first --run
+also freezes a protocol manifest beside the output CSV. The manifest binds the
+exact solver binary bytes, solver-source digest, budget, shrink, and load. Any
+later --run must match it exactly before rows can be appended.
 """
 
 from __future__ import annotations
@@ -11,6 +16,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import json
 import subprocess
 import sys
 import tempfile
@@ -21,6 +27,7 @@ SELECTION = REPO_ROOT / "results" / "10x10" / "holdout-parent-selection-preregis
 CHILDREN_DIR = REPO_ROOT / "results" / "10x10" / "blind_probe_children"
 OUT_DIR = REPO_ROOT / "results" / "10x10" / "blind-probe-holdout"
 OUT_CSV = OUT_DIR / "independent_probe_1000000.csv"
+RUN_MANIFEST = OUT_DIR / "independent_probe_1000000.protocol.json"
 SOLVER_SRC = REPO_ROOT / "scripts" / "probe_cert_solver.cpp"
 SOLVER_PARTS = REPO_ROOT / "scripts" / "probe_parts"
 SOLVER_BIN = REPO_ROOT / "tmp-kb" / "probe_holdout_native"
@@ -79,6 +86,14 @@ def load_tasks() -> list[tuple[str, int, int, str]]:
     return tasks
 
 
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
 def solver_source_digest() -> str:
     """Digest every source file that can affect the compiled probe solver."""
     files = [SOLVER_SRC] + sorted(SOLVER_PARTS.glob("*.inc"))
@@ -112,6 +127,44 @@ def require_fresh_solver() -> None:
             "probe solver sources changed since the binary was built; "
             "run --build again before collecting holdout rows"
         )
+
+
+def current_protocol_manifest() -> dict[str, object]:
+    require_fresh_solver()
+    return {
+        "format": 1,
+        "solver_binary_sha256": sha256_file(SOLVER_BIN),
+        "solver_sources_sha256": solver_source_digest(),
+        "budget": BUDGET,
+        "shrink": SHRINK,
+        "load": LOAD,
+    }
+
+
+def require_or_create_protocol_manifest() -> None:
+    """Freeze exact run conditions before appending any holdout result row."""
+    current = current_protocol_manifest()
+    if RUN_MANIFEST.exists():
+        recorded = json.loads(RUN_MANIFEST.read_text(encoding="utf-8"))
+        if recorded != current:
+            raise RuntimeError(
+                "holdout protocol differs from the run already recorded in "
+                f"{RUN_MANIFEST}; refusing to mix rows from different binaries/configurations"
+            )
+        return
+
+    # A CSV without its provenance sidecar is ambiguous and must never be
+    # silently adopted as part of this preregistered run.
+    if OUT_CSV.exists() and OUT_CSV.stat().st_size > 0:
+        raise RuntimeError(
+            f"{OUT_CSV} exists but {RUN_MANIFEST} does not; refusing to append "
+            "because existing row provenance cannot be established"
+        )
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    RUN_MANIFEST.write_text(
+        json.dumps(current, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
 
 
 def build() -> None:
@@ -169,7 +222,7 @@ def run_one(state: str) -> dict[str, str]:
 
 
 def run() -> None:
-    require_fresh_solver()
+    require_or_create_protocol_manifest()
     tasks = load_tasks()
     done = completed_keys()
     remaining = [t for t in tasks if (t[0], t[3].replace(",", "-")) not in done]
