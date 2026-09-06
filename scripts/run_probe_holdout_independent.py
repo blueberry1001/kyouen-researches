@@ -7,8 +7,9 @@ probe_parts/*.inc dependencies, and --run requires that digest to still match.
 
 For resumability without train/evaluation-condition drift, the first --run
 also freezes a protocol manifest beside the output CSV. The manifest binds the
-exact solver binary bytes, solver-source digest, budget, shrink, and load. Any
-later --run must match it exactly before rows can be appended.
+exact solver binary bytes, solver-source digest, budget, shrink, load, and the
+complete ordered holdout task set. Any later --run must match it exactly before
+rows can be appended.
 """
 
 from __future__ import annotations
@@ -86,6 +87,16 @@ def load_tasks() -> list[tuple[str, int, int, str]]:
     return tasks
 
 
+def task_set_digest(tasks: list[tuple[str, int, int, str]]) -> str:
+    """Digest the complete ordered task sequence without ambiguous separators."""
+    h = hashlib.sha256()
+    for task in tasks:
+        data = json.dumps(task, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        h.update(len(data).to_bytes(8, "big"))
+        h.update(data)
+    return h.hexdigest()
+
+
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -129,27 +140,29 @@ def require_fresh_solver() -> None:
         )
 
 
-def current_protocol_manifest() -> dict[str, object]:
+def current_protocol_manifest(tasks: list[tuple[str, int, int, str]]) -> dict[str, object]:
     require_fresh_solver()
     return {
-        "format": 1,
+        "format": 2,
         "solver_binary_sha256": sha256_file(SOLVER_BIN),
         "solver_sources_sha256": solver_source_digest(),
         "budget": BUDGET,
         "shrink": SHRINK,
         "load": LOAD,
+        "holdout_task_count": len(tasks),
+        "holdout_tasks_sha256": task_set_digest(tasks),
     }
 
 
-def require_or_create_protocol_manifest() -> None:
-    """Freeze exact run conditions before appending any holdout result row."""
-    current = current_protocol_manifest()
+def require_or_create_protocol_manifest(tasks: list[tuple[str, int, int, str]]) -> None:
+    """Freeze exact run conditions and task sequence before appending any row."""
+    current = current_protocol_manifest(tasks)
     if RUN_MANIFEST.exists():
         recorded = json.loads(RUN_MANIFEST.read_text(encoding="utf-8"))
         if recorded != current:
             raise RuntimeError(
-                "holdout protocol differs from the run already recorded in "
-                f"{RUN_MANIFEST}; refusing to mix rows from different binaries/configurations"
+                "holdout protocol or task set differs from the run already recorded in "
+                f"{RUN_MANIFEST}; refusing to mix rows from different conditions/task sets"
             )
         return
 
@@ -222,8 +235,10 @@ def run_one(state: str) -> dict[str, str]:
 
 
 def run() -> None:
-    require_or_create_protocol_manifest()
+    # Read the complete task sequence once, then bind that exact in-memory
+    # sequence into the manifest before any result row can be appended.
     tasks = load_tasks()
+    require_or_create_protocol_manifest(tasks)
     done = completed_keys()
     remaining = [t for t in tasks if (t[0], t[3].replace(",", "-")) not in done]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
