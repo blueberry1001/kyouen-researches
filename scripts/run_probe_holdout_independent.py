@@ -1,28 +1,16 @@
 #!/usr/bin/env python3
-"""Run the preregistered 10x10 holdout probes with a fresh Solver per child.
+"""Run preregistered 10x10 holdout probes with one fresh Solver process per child.
 
-This script deliberately does not read exact child outcomes and does not rank
-children.  It only collects the preregistered 1M-probe statistics.  Keeping
-collection separate from outcome analysis makes the order/memo audit simple:
-every solver invocation receives exactly one state, so no transposition table
-can leak from one candidate to another.
-
-Parent membership comes only from the already-committed
-results/10x10/holdout-parent-selection-preregistered.csv.  Existing child
-batch files are used as immutable input; no child set is regenerated here.
-
-Usage:
-    python scripts/run_probe_holdout_independent.py --build
-    python scripts/run_probe_holdout_independent.py --run
-    python scripts/run_probe_holdout_independent.py --check
-
-The run is resumable.  One CSV row is flushed after every completed child.
+The collector never reads exact outcomes.  It also refuses to run a stale
+solver binary: --build records a digest of probe_cert_solver.cpp plus all
+probe_parts/*.inc dependencies, and --run requires that digest to still match.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import subprocess
 import sys
 import tempfile
@@ -34,22 +22,17 @@ CHILDREN_DIR = REPO_ROOT / "results" / "10x10" / "blind_probe_children"
 OUT_DIR = REPO_ROOT / "results" / "10x10" / "blind-probe-holdout"
 OUT_CSV = OUT_DIR / "independent_probe_1000000.csv"
 SOLVER_SRC = REPO_ROOT / "scripts" / "probe_cert_solver.cpp"
+SOLVER_PARTS = REPO_ROOT / "scripts" / "probe_parts"
 SOLVER_BIN = REPO_ROOT / "tmp-kb" / "probe_holdout_native"
+SOLVER_STAMP = REPO_ROOT / "tmp-kb" / "probe_holdout_native.sources.sha256"
 
 BUDGET = 1_000_000
 SHRINK = 3
 LOAD = 80
 
 FIELDS = [
-    "parent",
-    "batch",
-    "batch_position",
-    "state",
-    "probe_outcome",
-    "visited",
-    "maxdepth",
-    "memo",
-    "seconds",
+    "parent", "batch", "batch_position", "state", "probe_outcome",
+    "visited", "maxdepth", "memo", "seconds",
 ]
 
 
@@ -84,7 +67,7 @@ def load_tasks() -> list[tuple[str, int, int, str]]:
             raise RuntimeError(f"no child batch files for preregistered parent {parent}")
         for path in files:
             b = batch_index(path)
-            states = [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+            states = [x.strip() for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
             if not states:
                 raise RuntimeError(f"empty child batch: {path}")
             for pos, state in enumerate(states):
@@ -96,15 +79,56 @@ def load_tasks() -> list[tuple[str, int, int, str]]:
     return tasks
 
 
+def solver_source_digest() -> str:
+    """Digest every source file that can affect the compiled probe solver."""
+    files = [SOLVER_SRC] + sorted(SOLVER_PARTS.glob("*.inc"))
+    if len(files) == 1:
+        raise RuntimeError(f"no solver include parts found under {SOLVER_PARTS}")
+    h = hashlib.sha256()
+    for path in files:
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        rel = path.relative_to(REPO_ROOT).as_posix().encode()
+        data = path.read_bytes()
+        h.update(len(rel).to_bytes(4, "big"))
+        h.update(rel)
+        h.update(len(data).to_bytes(8, "big"))
+        h.update(data)
+    return h.hexdigest()
+
+
+def require_fresh_solver() -> None:
+    if not SOLVER_BIN.exists():
+        raise RuntimeError(f"missing {SOLVER_BIN}; run --build first")
+    if not SOLVER_STAMP.exists():
+        raise RuntimeError(
+            f"missing solver source stamp {SOLVER_STAMP}; run --build first "
+            "(an untracked/stale binary is not accepted for the holdout)"
+        )
+    recorded = SOLVER_STAMP.read_text(encoding="ascii").strip()
+    current = solver_source_digest()
+    if recorded != current:
+        raise RuntimeError(
+            "probe solver sources changed since the binary was built; "
+            "run --build again before collecting holdout rows"
+        )
+
+
 def build() -> None:
     SOLVER_BIN.parent.mkdir(parents=True, exist_ok=True)
+    digest_before = solver_source_digest()
     cmd = ["g++", "-O2", "-std=c++20", "-o", str(SOLVER_BIN), str(SOLVER_SRC)]
     proc = subprocess.run(cmd, cwd=REPO_ROOT, text=True, capture_output=True)
     if proc.returncode != 0:
         sys.stderr.write(proc.stdout)
         sys.stderr.write(proc.stderr)
         raise SystemExit(proc.returncode)
-    print(f"built {SOLVER_BIN.relative_to(REPO_ROOT)}")
+    digest_after = solver_source_digest()
+    if digest_after != digest_before:
+        SOLVER_BIN.unlink(missing_ok=True)
+        raise RuntimeError("solver sources changed during compilation; build discarded")
+    SOLVER_STAMP.write_text(digest_after + "\n", encoding="ascii")
+    print(f"built {SOLVER_BIN.relative_to(REPO_ROOT)} sources_sha256={digest_after}")
 
 
 def completed_keys() -> set[tuple[str, str]]:
@@ -121,9 +145,9 @@ def completed_keys() -> set[tuple[str, str]]:
 
 
 def run_one(state: str) -> dict[str, str]:
-    # A distinct process is the isolation boundary.  A one-line temporary input
-    # additionally makes accidental in-process candidate reuse impossible.
-    with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False, dir=SOLVER_BIN.parent, encoding="utf-8") as tmp:
+    with tempfile.NamedTemporaryFile(
+        "w", suffix=".txt", delete=False, dir=SOLVER_BIN.parent, encoding="utf-8"
+    ) as tmp:
         tmp.write(state + "\n")
         tmp_path = Path(tmp.name)
     try:
@@ -145,8 +169,7 @@ def run_one(state: str) -> dict[str, str]:
 
 
 def run() -> None:
-    if not SOLVER_BIN.exists():
-        raise RuntimeError(f"missing {SOLVER_BIN}; run --build first")
+    require_fresh_solver()
     tasks = load_tasks()
     done = completed_keys()
     remaining = [t for t in tasks if (t[0], t[3].replace(",", "-")) not in done]
@@ -176,7 +199,10 @@ def run() -> None:
                 "seconds": row["seconds"],
             })
             f.flush()
-            print(f"[{n}/{len(remaining)}] {parent} {row['state']} outcome={row['outcome']} visited={row['visited']} memo={row['memo']}")
+            print(
+                f"[{n}/{len(remaining)}] {parent} {row['state']} "
+                f"outcome={row['outcome']} visited={row['visited']} memo={row['memo']}"
+            )
 
 
 def check() -> None:
