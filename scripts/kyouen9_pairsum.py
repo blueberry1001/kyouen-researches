@@ -1,22 +1,32 @@
-"""9x9 pair-sum (S) vs exact distinct-response mobility (S_mob) + D4 helpers.
-
-Pure-python game logic for the 9x9 Kyoen board, independent of the C++/Lean
-solvers. Used for:
-  - task 5: verify S == newly-killed safe responses on safe 3-stone parents,
-    with pairwise-disjoint dangerous-response sets (circle/line split);
-  - task 6: S_pair / S_mob / O = S_pair - S_mob on 4+-stone parents;
-  - task 7: enumerate safe 4-stone parents, D4-canonicalize, find discordant
-    pairTop-vs-exactTop orbits (exact solving itself stays in C++/Lean).
+"""9x9 pair-sum response-set metrics: raw + filtered modes.
 
 Board indexing: cell id p = y*N + x, x = p % N, y = p // N, N = 9.
 
 Forbidden rule: 4 points are forbidden iff concyclic OR collinear. This
 matches the solver's determinant test: for points (x,y), the 4x4 matrix
 [x^2+y^2, x, y, 1] has determinant 0 for concyclic-or-collinear quads
-(the circle equation degenerates to a line). We implement direct checks:
-  - collinear: area-determinants of all triples == 0;
-  - concyclic non-collinear: circumcircle of first 3 non-collinear points
-    contains the 4th (exact integer arithmetic).
+(the circle equation degenerates to a line).
+
+Two response-set modes (see docs/9X9_PAIRSUM_METRIC_DEFINITION_CORRECTION.md;
+P6 requires them to be explicitly separated so the definition error cannot
+recur):
+
+  raw_ab(v)      = {r : {a,b,v,r} is forbidden}                      (no filter)
+  filtered_ab(v) = raw_ab(v) ∩ {r : every other quad in P+v+r is safe}
+
+The main-branch C++ analyzer (scripts/analyze-9x9-pair-gap-decomposition.cpp)
+uses raw completion sets:
+
+  existing B(P) = ∪ over parent triples of completion(triple)
+  raw_pair(v)   = Σ_ab |raw_ab(v)|
+  U(v)          = ∪_ab raw_ab(v)
+  T(v)          = |U(v) \\ B(P)|   (true one-ply mobility reduction)
+  E(v)          = |U(v) ∩ B(P)|    (already-dangerous re-evaluation)
+  O(v)          = raw_pair(v) - |U(v)|  (multiplicity)
+
+The old audit-branch names ``pair_sum`` / ``exact_mobility`` / ``overlap``
+referred to the FILTERED mode and must not be read as raw quantities.
+They are kept as deprecated aliases, documented as filtered-only.
 """
 
 from itertools import combinations
@@ -119,13 +129,40 @@ def is_safe(stones):
     return not any(forbidden(*q) for q in combinations(stones, 4))
 
 
-def response_sets(parent, v, kind=None):
-    """W_ab(v) per parent pair: responses r such that {a,b,v,r} is forbidden
-    (of the requested kind) and P+v+r is otherwise safe, i.e. every other
-    quad in P+v+r is safe. Note r is NOT legal-after-P+v in the game sense:
-    playing r itself completes the forbidden quad {a,b,v,r} (an immediate
-    losing response for the player to move), which is exactly what makes r
-    a 'dangerous response' killed by playing v."""
+def raw_response_sets(parent, v, kind=None):
+    """Raw mode: r qualifies iff {a,b,v,r} is forbidden (of requested kind).
+
+    No other-quad filter. Matches the main-branch C++ completion table:
+    raw_ab(v) = completion(triple(a,b,v)) restricted to r ∉ P+v.
+    """
+    P = list(parent)
+    assert v not in P
+    Pv = P + [v]
+    assert is_safe(Pv), f"P+v not safe: {sorted(Pv)}"
+    Pv_set = set(Pv)
+    out = {}
+    for a, b in combinations(sorted(P), 2):
+        s = set()
+        for r in range(V):
+            if r in Pv_set:
+                continue
+            k = forbidden_kind(a, b, v, r)
+            if k is None:
+                continue
+            if kind is not None and k != kind:
+                continue
+            s.add(r)
+        out[(a, b)] = s
+    return out
+
+
+def filtered_response_sets(parent, v, kind=None):
+    """Filtered mode (old audit definition): raw condition PLUS every other
+    quad in P+v+r is safe.
+
+    By construction E'=0 and O'=0 (see metric-definition correction doc).
+    Kept for regression purposes only; do not use as the raw pair-sum.
+    """
     P = list(parent)
     assert v not in P
     Pv = P + [v]
@@ -141,8 +178,6 @@ def response_sets(parent, v, kind=None):
                 continue
             if kind is not None and k != kind:
                 continue
-            # quads of P+v+r not involving all of {a,b,v}: must be safe,
-            # except the target quad {a,b,v,r} itself.
             ok = True
             Pv_set = set(Pv)
             for q in combinations(sorted(Pv_set | {r}), 4):
@@ -157,18 +192,69 @@ def response_sets(parent, v, kind=None):
     return out
 
 
+def response_sets(parent, v, kind=None):
+    """DEPRECATED alias for filtered_response_sets (old audit definition).
+
+    Kept so existing callers/tests keep running, but new code must call
+    raw_response_sets or filtered_response_sets explicitly.
+    """
+    return filtered_response_sets(parent, v, kind)
+
+
+def existing_danger(parent):
+    """B(P): points already completing a forbidden quad with a parent triple."""
+    occ = set(parent)
+    out = set()
+    for triple in combinations(sorted(parent), 3):
+        a, b, c = triple
+        for r in range(V):
+            if r in occ:
+                continue
+            if forbidden(a, b, c, r):
+                out.add(r)
+    return out
+
+
+def raw_decomposition(parent, v, kind=None):
+    """Full raw decomposition matching the main C++ analyzer.
+
+    Returns dict with raw_pair, union_size, T, E, O and per-pair sets.
+    T = |U \\ B(P)| is the true one-ply mobility reduction.
+    """
+    B = existing_danger(parent)
+    sets = raw_response_sets(parent, v, kind)
+    U = set().union(*sets.values()) if sets else set()
+    T = len(U - B)
+    E = len(U & B)
+    S = sum(len(s) for s in sets.values())
+    return {"raw_pair": S, "union_size": len(U), "T": T, "E": E,
+            "O": S - len(U), "existing": B, "pair_sets": sets, "union": U}
+
+
+def raw_pair_sum(parent, v, kind=None):
+    return sum(len(s) for s in raw_response_sets(parent, v, kind).values())
+
+
+def raw_union_size(parent, v, kind=None):
+    sets = raw_response_sets(parent, v, kind)
+    return len(set().union(*sets.values())) if sets else 0
+
+
 def pair_sum(parent, v, kind=None):
-    return sum(len(s) for s in response_sets(parent, v, kind).values())
+    """DEPRECATED (filtered-mode) alias. Use raw_pair_sum for raw heuristic."""
+    return sum(len(s) for s in filtered_response_sets(parent, v, kind).values())
 
 
 def exact_mobility(parent, v, kind=None):
+    """DEPRECATED (filtered-mode) alias. Use raw_decomposition()['T'] for true mobility."""
     u = set()
-    for s in response_sets(parent, v, kind).values():
+    for s in filtered_response_sets(parent, v, kind).values():
         u |= s
     return len(u)
 
 
 def overlap(parent, v, kind=None):
+    """DEPRECATED (filtered-mode) alias. Use raw_decomposition()['O'] for raw overlap."""
     return pair_sum(parent, v, kind) - exact_mobility(parent, v, kind)
 
 
