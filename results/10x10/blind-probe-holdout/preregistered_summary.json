@@ -1,0 +1,14 @@
+{
+  "design": "preregistered fresh-memo 1M holdout",
+  "parents": 11,
+  "better_vs_exact_random_median": 10,
+  "ties_vs_exact_random_median": 1,
+  "worse_vs_exact_random_median": 0,
+  "one_sided_exact_sign_p_ties_excluded": 0.0009765625,
+  "mean_corrected_first_loss": 1.4545454545454546,
+  "median_corrected_first_loss": 1.0,
+  "mean_random_expected_first_loss": 17.361066173732183,
+  "auc_parent_count": 11,
+  "mean_parent_auc": 0.8197393017878344,
+  "median_parent_auc": 0.802439024390244
+}
