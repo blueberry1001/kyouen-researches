@@ -75,8 +75,6 @@ def load_children(parent: str) -> list[str]:
         out.extend(norm_state(x.strip()) for x in path.read_text(encoding="utf-8").splitlines() if x.strip())
     if len(out) != len(set(out)):
         raise RuntimeError(f"duplicate children for {parent}")
-    # Confirm deterministic file order has deterministic move order within the
-    # complete concatenated child set; it remains a comparator, not primary.
     return out
 
 
@@ -106,20 +104,27 @@ def load_probe() -> dict[tuple[str, str], dict[str, str]]:
         key = (row["parent"].strip(), norm_state(row["state"]))
         if key in out:
             raise RuntimeError(f"duplicate probe row: {key}")
+        outcome = row["probe_outcome"].strip().upper()
+        if outcome not in {"LOSS", "PROBE", "WIN"}:
+            raise RuntimeError(f"unexpected probe outcome for {key}: {outcome}")
         out[key] = row
     return out
 
 
 def corrected_key(parent: str, state: str, probe: dict[str, str]) -> tuple[int, int, int]:
     outcome = probe["probe_outcome"].strip().upper()
-    # Preregistered strata: proved LOSS first, unresolved second, proved WIN last.
+    move = move_of(parent, state)
+    # Preregistered ranking is categorical first: proved LOSS, unresolved,
+    # proved WIN.  Only unresolved children use ascending memo_used.  Within
+    # the proved strata there is no preregistered score, so the fixed
+    # tie-break is ascending move/cell index.
     if outcome == "LOSS":
-        stratum = 0
-    elif outcome == "WIN":
-        stratum = 2
-    else:
-        stratum = 1
-    return (stratum, int(probe["memo"]), move_of(parent, state))
+        return (0, 0, move)
+    if outcome == "PROBE":
+        return (1, int(probe["memo"]), move)
+    if outcome == "WIN":
+        return (2, 0, move)
+    raise AssertionError(outcome)
 
 
 def memo_desc_key(parent: str, state: str, probe: dict[str, str]) -> tuple[int, int]:
@@ -198,8 +203,6 @@ def main() -> None:
         m = len(children)
         loss = sum(exact[s] == "LOSS" for s in children)
         if loss == 0:
-            # The frozen set was selected as LOSS parents; silently dropping one
-            # would change the confirmatory sample, so fail loudly instead.
             raise RuntimeError(f"frozen parent has zero LOSS children: {parent}")
 
         corrected = sorted(children, key=lambda s: corrected_key(parent, s, pmap[s]))
