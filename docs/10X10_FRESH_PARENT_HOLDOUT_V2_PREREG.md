@@ -8,7 +8,9 @@ Purpose: test the already-fixed fresh-solver `memo_used` ascending rule on 3-sto
 
 Universe: every 3-cell subset of the 10x10 board, reduced to one lexicographically-minimal representative per D4 orbit.
 
-Before hashing, conservatively exclude every D4 orbit whose 3-cell canonical key can be extracted from historical repository text at the fixed base SHA under `docs/`, `results/`, or `scripts/`. The exclusion parser is intentionally label-blind: it records state identities only and never reads WIN/LOSS fields, witness labels, probe scores, memo counts, or game values. Over-exclusion is acceptable; outcome-dependent inclusion is not.
+Before hashing, conservatively exclude every D4 orbit whose 3-cell canonical key can be extracted from **any tracked text file** at the fixed base SHA. The implementation uses `git grep -I` over the entire tree rather than only selected directories, so a state appearing only in `tests/`, `cpp/`, `experiments/`, or another tracked path is still excluded. The exclusion parser is intentionally label-blind: it records state identities only and never reads WIN/LOSS fields, witness labels, probe scores, memo counts, or game values. Over-exclusion is acceptable; outcome-dependent inclusion is not.
+
+This whole-tree exclusion rule was fixed before the v2 parent CSV was generated or any v2 probe/exact outcome was inspected.
 
 Seed: `kyouen-10x10-fresh-parent-holdout-v2-2026-09-07`
 
