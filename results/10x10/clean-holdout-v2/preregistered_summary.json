@@ -1,0 +1,15 @@
+{
+  "parents": 12,
+  "eligible_parents": 12,
+  "better": 6,
+  "tie": 6,
+  "worse": 0,
+  "one_sided_sign_p": 0.015625,
+  "rank_sum": 12,
+  "rank_sum_null_expectation": 40.96565929637044,
+  "mean_normalized_rank": 0.010570434836473942,
+  "median_normalized_rank": 0.010416666666666666,
+  "mean_auc": 0.7707509851330077,
+  "median_auc": 0.786732143208613,
+  "aucs_computed": 12
+}

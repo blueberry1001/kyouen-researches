@@ -1,0 +1,8 @@
+{
+  "parents": 12,
+  "mean_total_cost_file_order_s": 241.09583333333333,
+  "mean_total_cost_memo_order_s": 826.3408333333333,
+  "median_total_cost_ratio_memo_over_file": 5.000500000000001,
+  "mean_total_cost_ratio_memo_over_file": 5.80275,
+  "parents_where_memo_total_cheaper": 1
+}
