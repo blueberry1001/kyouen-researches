@@ -1,0 +1,15 @@
+{
+  "analysis": "exhaustive preknown LOSS witness exclusion sensitivity analysis",
+  "base_sha": "46b4e50",
+  "total_parents": 11,
+  "parents_with_remaining_loss": 9,
+  "parents_where_rank1_was_preknown": 6,
+  "better_after": 8,
+  "tie_after": 1,
+  "worse_after": 0,
+  "sign_p_after": 0.00390625,
+  "mean_auc_before": 0.8197393017878343,
+  "median_auc_before": 0.802439024390244,
+  "mean_auc_after": 0.8127191105974502,
+  "median_auc_after": 0.8143939393939394
+}
