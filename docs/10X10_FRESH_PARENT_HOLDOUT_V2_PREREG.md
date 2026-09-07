@@ -78,3 +78,21 @@ Significance threshold: $\alpha = 0.05$.
 4. Execute exact solver on all 1,136 child tasks.
 5. Compute preregistered evaluation metrics and compile reports.
 6. Stopping rule: All 12 parents are evaluated. No parents may be added or removed post-hoc based on exact outcomes.
+
+## 7. Protocol Amendment A1 (format fix; frozen choices unchanged)
+
+After freezing, a format defect was found: the first generated children/task
+list used hyphen-separated states (`0-3-53-84`), which the solver `parse()`
+splits on commas only, so those tasks would have been misparsed as 1-stone
+roots. The entire first probe collection (1,136 rows) was therefore **invalid
+and discarded**, and the children/task list was regenerated with
+comma-separated states. Task-set SHA256 changed from
+`7ca356a7...` to `aeccb666...`. Probes were re-collected from scratch and
+re-frozen before the exact sweep began.
+
+Disclosure: during format diagnosis, one V2 cohort child (`1,3,53,84`) was
+solved exactly (`WIN`, 51s) to confirm the parser hypothesis. This outcome
+was observed before the re-freeze but caused no change to any frozen choice:
+same 12 parents, same seed, same ranking rule, same budgets, same endpoints.
+The re-freeze was mandatory regardless of that outcome. All remaining 1,135
+exact outcomes were first observed after the re-freeze.
