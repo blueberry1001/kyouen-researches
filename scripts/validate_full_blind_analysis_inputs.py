@@ -3,7 +3,8 @@
 
 This guard is intentionally stricter than analyze_probe_blind_validation.py.
 It refuses to treat partially solved or partially probed parents as complete,
-and checks that batch concatenation is a well-defined global solver order.
+and checks that batch concatenation exactly reproduces the saved unbatched child
+list so the global solver order is independently verified.
 """
 
 import csv
@@ -117,14 +118,23 @@ def validate_parent(parent: str) -> None:
     if len(global_children) != len(set(global_children)):
         fail(f"child state appears in multiple batches for {parent}")
 
+    # The unbatched file is the independent reference for the original solver
+    # enumeration order. Without it, contiguous batch numbers alone cannot prove
+    # that batches were neither permuted nor produced from a different child list.
     unbatched = CHILDREN_DIR / f"children_{safe}.txt"
-    if unbatched.exists():
-        full = read_children(unbatched)
-        if full != global_children:
-            fail(
-                f"batch concatenation does not exactly reproduce {unbatched.name}; "
-                "global solver order is not verified"
-            )
+    if not unbatched.exists():
+        fail(
+            f"missing unbatched global-order reference: {unbatched.name}; "
+            "cannot certify solver-default order"
+        )
+    full = read_children(unbatched)
+    if len(full) != len(set(full)):
+        fail(f"duplicate child state in global-order reference {unbatched.name}")
+    if full != global_children:
+        fail(
+            f"batch concatenation does not exactly reproduce {unbatched.name}; "
+            "global solver order is not verified"
+        )
 
     print(
         f"OK {parent}: batches={len(indexed)} children={len(global_children)} "
