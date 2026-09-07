@@ -5,6 +5,10 @@ This script is intentionally written before corrected outcomes are joined.
 It refuses to evaluate unless the outcome-blind ranking manifest and ranking
 created by verify_and_freeze_blind_probe_fresh.py are present and hash-consistent.
 
+It also refuses to parse any exact outcome CSV until all seven exact inputs have
+been checked against a pre-reveal Git-blob seal. This prevents a later change to
+an exact-label file from silently changing the revealed evaluation.
+
 Primary comparison (frozen by docs/BLIND_PROBE_FRESHNESS_AUDIT.md):
   first-LOSS position of memo-desc@1M vs solver/input order and random order.
 
@@ -26,6 +30,7 @@ RESULTS = ROOT / "results" / "10x10"
 CHILDREN_DIR = RESULTS / "blind_probe_children"
 RANKING = RESULTS / "blind-probe-fresh-rankings-unrevealed.csv"
 MANIFEST = RESULTS / "blind-probe-fresh-ranking-manifest.json"
+EXACT_SEAL = RESULTS / "blind-probe-fresh-exact-input-seal.json"
 OUT_CSV = RESULTS / "blind-probe-fresh-revealed-results.csv"
 OUT_JSON = RESULTS / "blind-probe-fresh-revealed-analysis.json"
 
@@ -40,6 +45,7 @@ PARENTS = (
 )
 EXPECTED_PROTOCOL = "corrected-blind-probe-fresh-v1"
 EXPECTED_BUDGET = 1_000_000
+EXPECTED_EXACT_SEAL_SCHEMA = "blind-probe-fresh-exact-input-seal-v1"
 
 
 def norm(s: str) -> str:
@@ -52,6 +58,13 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def git_blob_sha1(path: Path) -> str:
+    """Compute the Git SHA-1 blob id from raw bytes without parsing contents."""
+    data = path.read_bytes()
+    header = f"blob {len(data)}\0".encode("ascii")
+    return hashlib.sha1(header + data).hexdigest()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -100,6 +113,50 @@ def auc_loss_early(order: list[str], outcomes: dict[str, str]) -> float | None:
     return good / (len(losses) * len(wins))
 
 
+def expected_exact_path(parent: str) -> Path:
+    safe = parent.replace(",", "_")
+    return CHILDREN_DIR / f"exact_{safe}_batch0.csv"
+
+
+def verify_exact_seal_before_reveal() -> dict[str, dict[str, str]]:
+    """Verify every exact file as raw bytes before any outcome CSV is parsed."""
+    if not EXACT_SEAL.exists():
+        raise SystemExit("pre-reveal exact-input seal is missing")
+    seal = json.loads(EXACT_SEAL.read_text(encoding="utf-8"))
+    if seal.get("schema") != EXPECTED_EXACT_SEAL_SCHEMA:
+        raise SystemExit("exact-input seal schema mismatch")
+    if seal.get("protocol") != EXPECTED_PROTOCOL:
+        raise SystemExit("exact-input seal protocol mismatch")
+    files = seal.get("files")
+    if not isinstance(files, dict) or set(files) != set(PARENTS):
+        raise SystemExit("exact-input seal parent set mismatch")
+
+    resolved: dict[str, dict[str, str]] = {}
+    # Deliberately finish verification for all parents before returning. No CSV
+    # parser is called in this function.
+    for parent in PARENTS:
+        entry = files[parent]
+        if not isinstance(entry, dict):
+            raise SystemExit(f"{parent}: invalid exact-input seal entry")
+        path = expected_exact_path(parent)
+        expected_rel = path.relative_to(ROOT).as_posix()
+        if entry.get("path") != expected_rel:
+            raise SystemExit(f"{parent}: sealed exact path mismatch")
+        expected_sha = entry.get("git_blob_sha1")
+        if not isinstance(expected_sha, str) or len(expected_sha) != 40:
+            raise SystemExit(f"{parent}: invalid sealed Git blob SHA-1")
+        if not path.exists():
+            raise SystemExit(f"{parent}: sealed exact input is missing")
+        actual_sha = git_blob_sha1(path)
+        if actual_sha != expected_sha:
+            raise SystemExit(
+                f"{parent}: exact input changed since pre-reveal seal: "
+                f"{actual_sha} != {expected_sha}"
+            )
+        resolved[parent] = {"path": expected_rel, "git_blob_sha1": expected_sha}
+    return resolved
+
+
 def main() -> None:
     if OUT_CSV.exists() or OUT_JSON.exists():
         raise SystemExit("revealed outputs already exist; refusing to overwrite")
@@ -138,6 +195,10 @@ def main() -> None:
             raise SystemExit(f"unexpected parent in ranking: {p}")
         by_parent[p].append(r)
 
+    # Crucial reveal boundary: all seven exact inputs are authenticated as raw
+    # Git blobs here. Only after this succeeds may read_csv(exact_path) occur.
+    sealed_exact = verify_exact_seal_before_reveal()
+
     result_rows: list[dict[str, object]] = []
     for parent in PARENTS:
         ranked_rows = sorted(by_parent[parent], key=lambda r: int(r["rank"]))
@@ -147,7 +208,7 @@ def main() -> None:
 
         safe = parent.replace(",", "_")
         child_path = CHILDREN_DIR / f"children_{safe}_batch0.txt"
-        exact_path = CHILDREN_DIR / f"exact_{safe}_batch0.csv"
+        exact_path = expected_exact_path(parent)
         if not child_path.exists() or not exact_path.exists():
             raise SystemExit(f"{parent}: missing child/exact batch0 input")
         if parent not in manifest.get("files", {}):
@@ -155,6 +216,8 @@ def main() -> None:
         mf = manifest["files"][parent]
         if mf.get("children_sha256") != sha256_file(child_path):
             raise SystemExit(f"{parent}: frozen child-list SHA256 mismatch")
+        if sealed_exact[parent]["path"] != exact_path.relative_to(ROOT).as_posix():
+            raise AssertionError("sealed exact path changed after preflight")
 
         solver_order = [norm(x.strip()) for x in child_path.read_text(encoding="utf-8").splitlines() if x.strip()]
         if len(solver_order) != 20 or len(set(solver_order)) != 20:
@@ -232,8 +295,10 @@ def main() -> None:
         "solver_rank_sum": sum(solver),
         "random_median_rank_sum": sum(random_med),
         "ranking_sha256": sha256_file(RANKING),
+        "exact_inputs": sealed_exact,
         "note": (
             "Random baseline is exact combinatorial first-LOSS distribution. "
+            "All seven exact inputs were authenticated against the pre-reveal Git-blob seal before any exact CSV was parsed. "
             "No new pass/fail threshold is introduced by this evaluator."
         ),
     }
