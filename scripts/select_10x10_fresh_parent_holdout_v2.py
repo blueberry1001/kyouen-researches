@@ -19,6 +19,7 @@ N = 10
 BASE_SHA = "eaf40af27224ad5beb977dc401a787a59cefd2f0"
 SEED = "kyouen-10x10-fresh-parent-holdout-v2-2026-09-07"
 SAMPLE_N = 24
+EXPECTED_D4_ORBITS = 20355
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "results" / "10x10" / "fresh-parent-holdout-v2"
 OUT_CSV = OUT_DIR / "parents.csv"
@@ -80,10 +81,22 @@ def digest_for(state: tuple[int, int, int]) -> str:
 
 def main() -> None:
     universe = all_canonical_parents()
+    if len(universe) != EXPECTED_D4_ORBITS:
+        raise SystemExit(
+            f"D4 universe mismatch: got {len(universe)}, expected {EXPECTED_D4_ORBITS}"
+        )
+
     excluded = historical_triples()
     eligible = sorted(universe - excluded)
+    if len(eligible) < SAMPLE_N:
+        raise SystemExit(
+            f"not enough eligible parents after historical exclusion: {len(eligible)}"
+        )
+
     ranked = sorted(eligible, key=lambda s: (digest_for(s), s))
     selected = ranked[:SAMPLE_N]
+    if len(set(selected)) != len(selected):
+        raise SystemExit("duplicate selected canonical parent")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     with OUT_CSV.open("w", newline="", encoding="utf-8") as f:
