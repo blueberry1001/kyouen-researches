@@ -6,7 +6,9 @@ Primary mode is intentionally narrow:
   * exactly batch0 (20 children), matching the historical primary evaluation;
   * one fresh native solver process per child;
   * 1,000,000 visited-node probe budget;
-  * no exact-outcome input is read by this program.
+  * no exact-outcome input is read by this program;
+  * the executable, this runner, and frozen child lists must have been sealed
+    before the first primary probe.
 
 Use --exploratory only after the corrected primary rerun is committed.  It may
 run a non-primary parent and/or all batches, but writes a visibly different
@@ -15,6 +17,8 @@ run a non-primary parent and/or all batches, but writes a visibly different
 from __future__ import annotations
 
 import csv
+import hashlib
+import json
 import subprocess
 import sys
 import tempfile
@@ -23,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOLVER = ROOT / "scripts" / "probe_cert_solver"
 DIR = ROOT / "results" / "10x10" / "blind_probe_children"
+SEAL = ROOT / "results" / "10x10" / "blind-probe-fresh-executable-seal.json"
 BUDGET = 1_000_000
 SHRINK, LOAD = 3, 80
 
@@ -35,6 +40,55 @@ FROZEN_PRIMARY_PARENTS = {
     "0,31,36",
     "0,36,44",
 }
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def verify_primary_seal(parent: str, child_file: Path) -> None:
+    if not SEAL.exists():
+        raise SystemExit(
+            f"missing pre-run executable seal: {SEAL}. "
+            "Build the solver, then run scripts/seal_blind_probe_fresh_binary.py "
+            "before any primary probe."
+        )
+    data = json.loads(SEAL.read_text(encoding="utf-8"))
+    if data.get("protocol") != "corrected-blind-probe-fresh-executable-seal-v1":
+        raise SystemExit("unexpected executable-seal protocol")
+    expected = {"budget": BUDGET, "shrink": SHRINK, "load": LOAD}
+    for key, value in expected.items():
+        if int(data.get(key, -1)) != value:
+            raise SystemExit(f"seal parameter mismatch: {key}={data.get(key)} expected={value}")
+    if set(data.get("parents", [])) != FROZEN_PRIMARY_PARENTS:
+        raise SystemExit("seal parent set does not match frozen seven-parent primary set")
+    if not SOLVER.exists():
+        raise SystemExit(f"missing sealed solver executable: {SOLVER}")
+    solver_sha = sha256_file(SOLVER)
+    if solver_sha != data.get("solver", {}).get("sha256"):
+        raise SystemExit(
+            f"solver executable changed after seal: got={solver_sha} "
+            f"expected={data.get('solver', {}).get('sha256')}"
+        )
+    runner_sha = sha256_file(Path(__file__).resolve())
+    if runner_sha != data.get("runner", {}).get("sha256"):
+        raise SystemExit(
+            f"runner changed after seal: got={runner_sha} "
+            f"expected={data.get('runner', {}).get('sha256')}"
+        )
+    entry = data.get("children", {}).get(parent)
+    if not isinstance(entry, dict):
+        raise SystemExit(f"parent missing from executable seal: {parent}")
+    child_sha = sha256_file(child_file)
+    if child_sha != entry.get("sha256"):
+        raise SystemExit(
+            f"frozen child list changed after seal for {parent}: got={child_sha} "
+            f"expected={entry.get('sha256')}"
+        )
 
 
 def wsl_path(p: Path) -> str:
@@ -138,10 +192,12 @@ def main() -> None:
             x.strip() for x in bp.read_text(encoding="utf-8").splitlines()
             if x.strip()
         ]
-        if not exploratory and len(states) != 20:
-            raise RuntimeError(
-                f"frozen batch0 must contain exactly 20 children for {parent}, got {len(states)}"
-            )
+        if not exploratory:
+            if len(states) != 20:
+                raise RuntimeError(
+                    f"frozen batch0 must contain exactly 20 children for {parent}, got {len(states)}"
+                )
+            verify_primary_seal(parent, bp)
 
         rows = [run_one(s) for s in states]
         fields = list(rows[0].keys())
