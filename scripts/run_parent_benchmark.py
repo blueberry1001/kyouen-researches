@@ -221,23 +221,32 @@ def solve_parent(parent: str, strategy: str, order_file: Path | None,
         logf.write(f"CMD {parent} {strategy}: {' '.join(cmd)}\n")
         logf.flush()
         t0 = time.time()
-        proc = subprocess.run(cmd, cwd=REPO_ROOT, text=True, capture_output=True,
-                              timeout=EXACT_TIMEOUT)
+        pop = subprocess.Popen(cmd, cwd=REPO_ROOT, text=True, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
+        pid = pop.pid
+        try:
+            out, err = pop.communicate(timeout=EXACT_TIMEOUT)
+        except subprocess.TimeoutExpired:
+            pop.kill()
+            out, err = pop.communicate()
+            raise RuntimeError(f"exact {parent} {strategy} TIMEOUT after {EXACT_TIMEOUT}s")
         wall = time.time() - t0
+        proc = (pop.returncode, out, err)
     finally:
         tmp_path.unlink(missing_ok=True)
-    if proc.returncode != 0:
-        raise RuntimeError(f"exact {parent} {strategy} rc={proc.returncode}\n{proc.stderr[-600:]}")
-    rows = list(csv.DictReader(proc.stdout.splitlines()))
+    rc, out, err = proc
+    if rc != 0:
+        raise RuntimeError(f"exact {parent} {strategy} rc={rc}\n{err[-600:]}")
+    rows = list(csv.DictReader(out.splitlines()))
     if len(rows) != 1:
         raise RuntimeError(f"expected 1 row for {parent}, got {len(rows)}")
     r = rows[0]
-    b = bench_from_stderr(proc.stderr)
+    b = bench_from_stderr(err)
     return {"parent": parent, "strategy": strategy,
             "outcome": r["outcome"], "exact_visited": r["visited"],
             "exact_maxdepth": r["maxdepth"], "exact_memo": r["memo"],
             "exact_seconds": r["seconds"], "wall_seconds": f"{wall:.3f}",
-            "pid": str(proc.pid), "root_unique": b["unique"],
+            "pid": str(pid), "root_unique": b["unique"],
             "root_entered": b["entered"], "root_first_lo": b["first_lo"],
             "root_first_hi": b["first_hi"], "root_witness": b["witness"],
             "solver_cmd": " ".join(cmd)}
