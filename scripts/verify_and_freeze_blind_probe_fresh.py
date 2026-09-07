@@ -61,6 +61,10 @@ def main() -> None:
         "batch": 0,
         "parents": list(PARENTS),
         "exact_outcomes_read": False,
+        "freshness_invariants": {
+            "memo_le_visited": True,
+            "probe_rows_hit_exact_visited_budget": True,
+        },
         "files": {},
     }
 
@@ -102,14 +106,34 @@ def main() -> None:
                 raise SystemExit(f"duplicate parent/state pair: {key}")
             global_seen.add(key)
 
+            outcome = r["outcome"].upper()
             visited = int(r["visited"])
             memo = int(r["memo"])
             if visited <= 0 or visited > BUDGET:
                 raise SystemExit(f"{parent} {state}: invalid visited={visited}")
-            if memo < 0 or memo > max(visited * 3, BUDGET * 3):
-                raise SystemExit(f"{parent} {state}: suspicious fresh memo={memo}")
-            if r["outcome"].upper() not in {"PROBE", "WIN", "LOSS"}:
+            if outcome not in {"PROBE", "WIN", "LOSS"}:
                 raise SystemExit(f"{parent} {state}: unknown probe outcome={r['outcome']}")
+
+            # Fresh-Solver invariant from Solver::win(): a state is counted in
+            # `visited` before it can add at most one previously-empty memo entry.
+            # Therefore one fresh Solver can never end with memo_used > visited.
+            # The original contaminated batch run violated this once memo carried
+            # over across children, so this is a direct regression guard rather
+            # than a loose heuristic threshold.
+            if memo < 0 or memo > visited:
+                raise SystemExit(
+                    f"{parent} {state}: freshness invariant violated: memo={memo} > visited={visited}"
+                )
+
+            # PROBE is emitted only by ProbeExhausted. With a visited-only budget
+            # and no seconds budget, the exception fires exactly when visited
+            # reaches BUDGET. Early exact WIN/LOSS is allowed and will have
+            # visited <= BUDGET.
+            if outcome == "PROBE" and visited != BUDGET:
+                raise SystemExit(
+                    f"{parent} {state}: PROBE must hit exact visited budget; "
+                    f"visited={visited}, budget={BUDGET}"
+                )
 
         if set(by_state) != set(children):
             missing = sorted(set(children) - set(by_state))
@@ -155,6 +179,7 @@ def main() -> None:
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     print("verified: 7 parents x 20 children = 140 fresh probe rows")
+    print("verified freshness: memo <= visited; PROBE rows hit visited budget exactly")
     print("froze: memo descending, original-input-position tie break")
     print(f"ranking: {OUT}")
     print(f"manifest: {MANIFEST}")
