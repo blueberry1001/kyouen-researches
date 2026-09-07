@@ -1,0 +1,43 @@
+{
+  "sample_sizes": {
+    "preknown_loss": 33,
+    "new_loss": 140,
+    "all_loss": 173,
+    "win": 847,
+    "total": 1020
+  },
+  "median_norm_rank": {
+    "preknown_loss": 0.2826086956521739,
+    "new_loss": 0.36413043478260865,
+    "all_loss": 0.33695652173913043,
+    "win": 0.5425531914893617
+  },
+  "mean_norm_rank": {
+    "preknown_loss": 0.31635270372550667,
+    "new_loss": 0.39229549359059074,
+    "all_loss": 0.37780929667991,
+    "win": 0.5314509937123678
+  },
+  "mann_whitney_tests": {
+    "preknown_vs_new_loss": {
+      "u_statistic": 1910.0,
+      "p_value_two_sided": 0.12266884992324745,
+      "interpretation": "Whether preknown LOSS witnesses had significantly different memo rank from newly discovered LOSS children"
+    },
+    "all_loss_vs_win": {
+      "u_statistic": 50764.5,
+      "p_value_one_sided_less": 9.295743407926872e-11,
+      "interpretation": "Whether ALL LOSS children have significantly lower memo rank than WIN children"
+    },
+    "new_loss_vs_win": {
+      "u_statistic": 42750.0,
+      "p_value_one_sided_less": 6.002357628362654e-08,
+      "interpretation": "Whether NEWLY DISCOVERED LOSS children alone have significantly lower memo rank than WIN children"
+    },
+    "preknown_loss_vs_win": {
+      "u_statistic": 8014.5,
+      "p_value_one_sided_less": 1.5845180232169915e-05,
+      "interpretation": "Whether PREKNOWN LOSS witnesses have significantly lower memo rank than WIN children"
+    }
+  }
+}
