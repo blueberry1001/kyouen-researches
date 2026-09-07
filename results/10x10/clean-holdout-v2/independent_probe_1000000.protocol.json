@@ -1,0 +1,10 @@
+{
+  "budget": 1000000,
+  "format": 2,
+  "holdout_task_count": 1136,
+  "holdout_tasks_sha256": "708c2846c2a082b96731666a536a64494957d262650ce51f170a2b13112ec69e",
+  "load": 80,
+  "shrink": 3,
+  "solver_binary_sha256": "15d805ea9b354cc11c5c5ee5329512b723241897e32d135bf5a82094cdccd585",
+  "solver_sources_sha256": "9b6f227ffb9fd802851ae69bad3a5621ce78857af1c65084ae92d09aa67e47b3"
+}
