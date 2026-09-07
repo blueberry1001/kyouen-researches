@@ -4,7 +4,9 @@
 Run only after all seven primary `probe_fresh_*_batch0_1000000.csv` files exist.
 This program deliberately never opens exact-outcome files or blind-probe-results.csv.
 It verifies the frozen task set, freshness sanity conditions, and writes the
-memo-desc ranking that must be committed before outcomes are joined.
+memo-desc ranking that must be committed before outcomes are joined.  The
+ranking manifest is also cryptographically bound to the executable seal that
+the primary runner verified before every parent run.
 """
 from __future__ import annotations
 
@@ -17,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "results" / "10x10" / "blind_probe_children"
 OUT = ROOT / "results" / "10x10" / "blind-probe-fresh-rankings-unrevealed.csv"
 MANIFEST = ROOT / "results" / "10x10" / "blind-probe-fresh-ranking-manifest.json"
+EXEC_SEAL = ROOT / "results" / "10x10" / "blind-probe-fresh-executable-seal.json"
 BUDGET = 1_000_000
 PARENTS = (
     "2,9,33",
@@ -51,6 +54,17 @@ def main() -> None:
         raise SystemExit(
             "ranking/manifest already exists; refusing to overwrite frozen primary artifacts"
         )
+    if not EXEC_SEAL.exists():
+        raise SystemExit(
+            f"missing pre-run executable seal: {EXEC_SEAL}; cannot bind rankings to solver provenance"
+        )
+    exec_seal = json.loads(EXEC_SEAL.read_text(encoding="utf-8"))
+    if exec_seal.get("protocol") != "corrected-blind-probe-fresh-executable-seal-v1":
+        raise SystemExit("unexpected executable-seal protocol")
+    if int(exec_seal.get("budget", -1)) != BUDGET:
+        raise SystemExit("executable seal budget mismatch")
+    if set(exec_seal.get("parents", [])) != set(PARENTS):
+        raise SystemExit("executable seal parent set mismatch")
 
     ranking_rows: list[dict[str, object]] = []
     manifest: dict[str, object] = {
@@ -61,6 +75,10 @@ def main() -> None:
         "batch": 0,
         "parents": list(PARENTS),
         "exact_outcomes_read": False,
+        "executable_seal": str(EXEC_SEAL.relative_to(ROOT)).replace("\\", "/"),
+        "executable_seal_sha256": sha256_file(EXEC_SEAL),
+        "solver_sha256": exec_seal.get("solver", {}).get("sha256"),
+        "runner_sha256": exec_seal.get("runner", {}).get("sha256"),
         "freshness_invariants": {
             "memo_le_visited": True,
             "probe_rows_hit_exact_visited_budget": True,
@@ -77,6 +95,16 @@ def main() -> None:
             raise SystemExit(f"missing frozen child list: {children_path}")
         if not probe_path.exists():
             raise SystemExit(f"missing fresh raw probe: {probe_path}")
+
+        sealed_child = exec_seal.get("children", {}).get(parent)
+        if not isinstance(sealed_child, dict):
+            raise SystemExit(f"{parent}: child list missing from executable seal")
+        actual_child_sha = sha256_file(children_path)
+        if actual_child_sha != sealed_child.get("sha256"):
+            raise SystemExit(
+                f"{parent}: child list differs from pre-run seal: "
+                f"got={actual_child_sha} expected={sealed_child.get('sha256')}"
+            )
 
         children = [
             norm(x.strip())
@@ -116,19 +144,12 @@ def main() -> None:
 
             # Fresh-Solver invariant from Solver::win(): a state is counted in
             # `visited` before it can add at most one previously-empty memo entry.
-            # Therefore one fresh Solver can never end with memo_used > visited.
-            # The original contaminated batch run violated this once memo carried
-            # over across children, so this is a direct regression guard rather
-            # than a loose heuristic threshold.
             if memo < 0 or memo > visited:
                 raise SystemExit(
                     f"{parent} {state}: freshness invariant violated: memo={memo} > visited={visited}"
                 )
 
-            # PROBE is emitted only by ProbeExhausted. With a visited-only budget
-            # and no seconds budget, the exception fires exactly when visited
-            # reaches BUDGET. Early exact WIN/LOSS is allowed and will have
-            # visited <= BUDGET.
+            # With a visited-only budget, PROBE fires exactly at BUDGET.
             if outcome == "PROBE" and visited != BUDGET:
                 raise SystemExit(
                     f"{parent} {state}: PROBE must hit exact visited budget; "
@@ -162,7 +183,7 @@ def main() -> None:
 
         manifest["files"][parent] = {
             "children": str(children_path.relative_to(ROOT)).replace("\\", "/"),
-            "children_sha256": sha256_file(children_path),
+            "children_sha256": actual_child_sha,
             "probe": str(probe_path.relative_to(ROOT)).replace("\\", "/"),
             "probe_sha256": sha256_file(probe_path),
         }
@@ -179,6 +200,7 @@ def main() -> None:
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     print("verified: 7 parents x 20 children = 140 fresh probe rows")
+    print("verified: child lists match the pre-run executable seal")
     print("verified freshness: memo <= visited; PROBE rows hit visited budget exactly")
     print("froze: memo descending, original-input-position tie break")
     print(f"ranking: {OUT}")
