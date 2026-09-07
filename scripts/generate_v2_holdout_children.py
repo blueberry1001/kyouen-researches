@@ -47,7 +47,7 @@ def generate_children(parent: tuple[int, int, int]) -> list[str]:
             continue
         if not forbidden(p1, p2, p3, p4):
             child_pts = sorted((p1, p2, p3, p4))
-            children.append("-".join(str(x) for x in child_pts))
+            children.append(",".join(str(x) for x in child_pts))
     return sorted(children)
 
 

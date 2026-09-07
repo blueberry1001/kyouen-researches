@@ -1,0 +1,16 @@
+{
+  "analysis": "minimum sensitivity: exclude one prereg-base selection-source LOSS witness per parent",
+  "base_sha": "9d2e4e6987e89c88b7f9cb591f1f7824ea806171",
+  "parents": 11,
+  "parents_with_remaining_loss": 9,
+  "preknown_witness_was_first_loss_count": 3,
+  "better_after": 8,
+  "tie_after": 1,
+  "worse_after": 0,
+  "one_sided_sign_p_after": 0.00390625,
+  "mean_auc_before": 0.8197393017878343,
+  "mean_auc_after": 0.7892827901298977,
+  "median_auc_before": 0.802439024390244,
+  "median_auc_after": 0.8,
+  "scope_warning": "Only the LOSS witness in each selected proof-source row is removed; this is not an exhaustive pre-holdout history audit."
+}
