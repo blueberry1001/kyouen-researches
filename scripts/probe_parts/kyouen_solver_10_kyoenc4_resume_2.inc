@@ -32,6 +32,14 @@ public:
  void memo_capacity_by_depth(std::array<std::size_t,13>&out)const{memo_.capacity_by_depth(out);}
  struct ProbeBudget{std::uint64_t visited=0;double seconds=0;};
  void set_probe_budget(std::uint64_t v,double s){probe_budget_={v,s};probe_active_=(v>0||s>0);}
+public:void print_bench_root(std::ostream&o,const char*outcome)const{Bits f=root_eval_order_.empty()?Bits{}:root_eval_order_.front();o<<"bench_root unique="<<root_children_unique_<<" entered="<<root_children_entered_<<" first_lo="<<f.lo<<" first_hi="<<f.hi<<" witness="<<root_witness_move_<<" outcome="<<outcome<<"\n";}
+public:void set_root_order(int depth,const std::vector<Bits>&keys){root_order_active_=true;root_order_depth_=depth;root_order_=keys;}
+public:Bits canonical_key_of(const std::vector<int>&pts)const{TState s{};for(int v:pts)s=add(s,v);return canonical(s);}
+public:void set_root_diag(int depth){root_diag_depth_=depth;root_children_unique_=0;root_children_entered_=0;root_witness_move_=-1;root_eval_order_.clear();}
+private:int root_rank(Bits k)const{for(std::size_t j=0;j<root_order_.size();++j)if(root_order_[j]==k)return(int)j;return -1;}
+private:void order_children(std::array<Child,V>&ch,int n,int depth){if(root_order_active_&&depth==root_order_depth_){if((int)root_order_.size()!=n)throw std::runtime_error("root order size mismatch vs unique root children");std::sort(ch.begin(),ch.begin()+n,[this](const Child&a,const Child&b){int ra=root_rank(a.key),rb=root_rank(b.key);if(ra<0||rb<0)throw std::runtime_error("root order missing child key");if(ra!=rb)return ra<rb;return a.key<b.key;});}else{std::sort(ch.begin(),ch.begin()+n,[](const Child&a,const Child&b){int pa=a.cached==MultiDepthMemo100::Losing?0:(a.cached==0?1:2),pb=b.cached==MultiDepthMemo100::Losing?0:(b.cached==0?1:2);if(pa!=pb)return pa<pb;if(a.count!=b.count)return a.count<b.count;return a.key<b.key;});}if(depth==root_diag_depth_){root_children_unique_=(std::size_t)n;root_eval_order_.clear();for(int i=0;i<n;++i)root_eval_order_.push_back(ch[i].key);}}
+private:bool root_order_active_=false;int root_order_depth_=-1;std::vector<Bits> root_order_;int root_diag_depth_=-1;std::size_t root_children_unique_=0;std::size_t root_children_entered_=0;int root_witness_move_=-1;std::vector<Bits> root_eval_order_;
+public:
  bool probe_active()const{return probe_active_;}
  double seconds()const{return std::chrono::duration<double>(Clock::now()-start_).count();}
  void print(std::ostream&o)const{memo_.print(o);}
