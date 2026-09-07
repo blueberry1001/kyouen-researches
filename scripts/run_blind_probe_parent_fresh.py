@@ -70,14 +70,32 @@ def run_one(state: str) -> dict[str, str]:
     row = rows[0]
     if row.get("state", "").replace(",", "-") != state.replace(",", "-"):
         raise RuntimeError(f"solver state mismatch: requested={state} got={row.get('state')}")
+
+    outcome = row["outcome"].upper()
     visited = int(row["visited"])
     memo = int(row["memo"])
-    if visited > BUDGET:
-        raise RuntimeError(f"probe exceeded budget for {state}: visited={visited}")
-    # A fresh child can have memo somewhat different from visited, but it must
-    # never show the batch-scale 2M,3M,... accumulation that invalidated b5172a4.
-    if memo > max(visited * 3, BUDGET * 3):
-        raise RuntimeError(f"freshness sanity check failed for {state}: memo={memo}")
+    if outcome not in {"PROBE", "WIN", "LOSS"}:
+        raise RuntimeError(f"unknown probe outcome for {state}: {row['outcome']}")
+    if visited <= 0 or visited > BUDGET:
+        raise RuntimeError(f"invalid probe visited for {state}: visited={visited}")
+
+    # Exact fresh-Solver invariant. Solver::win() increments visited only after
+    # a memo miss, and such a newly visited state can contribute at most one new
+    # memo entry. Therefore a genuinely fresh child process must satisfy
+    # memo_used <= visited. This catches the historical cross-child accumulation
+    # immediately instead of waiting for the post-run verifier.
+    if memo < 0 or memo > visited:
+        raise RuntimeError(
+            f"freshness invariant failed for {state}: memo={memo} visited={visited}"
+        )
+
+    # With a visited-only budget, PROBE is emitted by ProbeExhausted exactly at
+    # the requested budget. Early exact WIN/LOSS is allowed below the budget.
+    if outcome == "PROBE" and visited != BUDGET:
+        raise RuntimeError(
+            f"PROBE did not hit exact visited budget for {state}: "
+            f"visited={visited} budget={BUDGET}"
+        )
     return row
 
 
