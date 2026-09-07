@@ -48,12 +48,14 @@ def canonical(state: tuple[int, int, int]) -> tuple[int, int, int]:
 
 
 def historical_triples() -> set[tuple[int, int, int]]:
-    # `git grep` is run at the frozen base SHA. Only matching text is inspected;
-    # the parser never consumes outcome columns or neighboring labels.
+    # Scan every tracked text file at the frozen base SHA. Restricting this to
+    # selected directories could accidentally re-admit a previously used parent
+    # that appears only in tests/, cpp/, experiments/, etc. The parser remains
+    # outcome-blind: it extracts only 3-cell identities from matching text.
     cmd = [
         "git", "grep", "-I", "-h", "-E",
         r"[0-9]{1,2}[, -][[:space:]]*[0-9]{1,2}[, -][[:space:]]*[0-9]{1,2}",
-        BASE_SHA, "--", "docs", "results", "scripts",
+        BASE_SHA,
     ]
     proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True)
     if proc.returncode not in (0, 1):
@@ -116,7 +118,7 @@ def main() -> None:
         "selected_count": len(selected),
         "parents_csv_sha256": csv_sha,
         "selection_rule": "sha256(seed|canonical_parent), ascending",
-        "historical_scan_paths": ["docs", "results", "scripts"],
+        "historical_scan_scope": "all tracked text files at base_sha via git grep -I",
         "historical_scan_semantics": "identity-only conservative blacklist; labels ignored",
     }
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
