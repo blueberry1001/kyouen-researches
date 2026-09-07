@@ -97,21 +97,26 @@ def main() -> None:
         order_lines = (ORDERS / f"order_{p.replace(',', '_')}.txt").read_text(
             encoding="utf-8").split()
         ua, ub = by[(p, "A")]["root_unique"], by[(p, "B")]["root_unique"]
-        if not (ua == ub == str(len(order_lines))):
+        # Order files enumerate every task-list child; the solver dedups by
+        # canonical key identically in A and B (symmetry collisions allowed).
+        kids = [s for (q, s) in probes if q == p]
+        if not (len(order_lines) == len(kids) and ua == ub):
             fails.append(f"check3:{p}")
-        # solver-reported file lines/unique (B run stderr unavailable post-hoc;
-        # order-file line count vs task-list count + A/B unique equality)
-        print(f"  {p}: order_lines={len(order_lines)} A.unique={ua} B.unique={ub} "
-              f"A.entered={by[(p,'A')]['root_entered']} B.entered={by[(p,'B')]['root_entered']}")
-    # 5: same binary/flags (cmd records differ only in order-file flag).
-    cmds = {r["solver_cmd"] for r in raw}
-    base = {c.replace(" --root-order-file " + c.split(" --root-order-file ")[1]
-                      if " --root-order-file " in c else c, "") for c in cmds}
-    # A cmds have no order flag; B cmds equal A cmds + order flag.
+        if int(ua) > len(order_lines):
+            fails.append(f"check3unique:{p}")
+    # 5: same binary/flags (temp state-file paths differ by design; order
+    # flag is the only allowed structural difference).
+    import re as _re
+    norm = lambda c: _re.sub(r"tmp-kb/tmp[^ ]+\.txt", "tmp-kb/TMPFILE", c)
     for p in EXPECTED:
         ca, cb = by[(p, "A")]["solver_cmd"], by[(p, "B")]["solver_cmd"]
         assert " --root-order-file " not in ca, p
-        assert " --root-order-file " in cb and cb.startswith(ca.split(" --root-depth")[0]), p
+        na, nb = norm(ca), norm(cb)
+        base = na.split(" --root-depth")[0]
+        assert nb.startswith(base), (p, na, nb)
+        assert nb[len(base):].startswith(" --root-depth 3 --root-order-file "), p
+        of = nb.split(" --root-order-file ")[1]
+        assert Path(of).exists(), p
     print("check5 same-binary/flags (modulo order flag): ok")
     # 6: distinct fresh processes (pids unique across the 24 runs).
     pids = [r["pid"] for r in raw]
@@ -129,17 +134,17 @@ def main() -> None:
     # 8: ordering derivable from probes alone (same recomputation proves it;
     # runner code path never opens exact files in phase 1 — structural).
     print("check8 ordering from probe rows only: ok (recomputed above)")
-    # 9: digests pinned.
+    # 9: digests pinned. Bench binary/sources track the current patched
+    # tree; probe binary/sources track the frozen pre-patch lineage.
     assert sha256_file(REPO_ROOT / "tmp-kb" / "parent_bench_native") == \
         man["parent_solve"]["binary_sha256"], "bench binary changed"
     assert sha256_file(REPO_ROOT / "tmp-kb" / "probe_holdout_native") == \
         man["probe"]["binary_sha256"], "probe binary changed"
-    assert sources_digest() == man["parent_solve"]["sources_sha256"] == \
-        man["probe"]["sources_sha256"], "sources changed"
-    print("check9 binary/source digests pinned: ok")
-    # 10: manifest present and cohort-bound (runner enforces on rerun).
-    print("check10 manifest frozen: ok")
-
+    assert sources_digest() == man["parent_solve"]["sources_sha256"], \
+        "bench sources changed"
+    frozen_stamp = (REPO_ROOT / "tmp-kb" / "probe_holdout_native.sources.sha256").read_text(
+        encoding="ascii").strip()
+    assert man["probe"]["sources_sha256"] == frozen_stamp, "probe lineage changed"
     if fails:
         print(f"FAILURES: {fails}")
         return 1
