@@ -1,0 +1,11 @@
+{
+  "experiment": "10x10-cache-aware-bucket-order-optimization",
+  "purpose": "hard-gate semantic parity before any timing interpretation",
+  "source_experiment": "C1 cache-aware vs cache-blind below-root ordering",
+  "source_result_commit": "d9b9a0fafa0158f185f17a5acf323d617eb33d58",
+  "source_result_file": "docs/10X10_CACHE_AWARE_VS_BLIND_BELOW_ROOT_RESULT.md",
+  "selection_rule": "reuse exactly the original frozen C1 12-parent cohort; no resampling",
+  "parents": ["0,11,35","11,38,44","11,78,87","12,24,68","12,32,55","13,52,57","14,64,74","23,44,45","3,47,63","3,53,84","4,24,26","4,42,54"],
+  "required_exact_fields": ["outcome","visited","memo","maxdepth","depth_visited","root_unique","root_entered","root_first_lo","root_first_hi","root_witness","memo_instrumentation"],
+  "hard_gate": "all 12 parents must match single vs bucket exactly on every required field; otherwise FAIL-SAFETY and timing must not be interpreted"
+}
