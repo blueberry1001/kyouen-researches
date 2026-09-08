@@ -1,0 +1,8 @@
+BUCKET-ORDER SEMANTIC PARITY VERIFIER: PASS
+cohort=12/12 (C1 original, d9b9a0f)
+cache-aware S vs frozen C1: 12/12 exact
+cache-aware B vs frozen C1: 12/12 exact
+S == B (visited/memo/maxdepth/depth_visited/memo_used/capacity/root/instrumentation): 12/12 exact
+cache-blind flag-independence: PASS (2/2, exact C1 blind)
+counter identities + depth_visited sums: OK
+provenance (binary sha, source audit, receipts): OK
