@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """Build the capacity-rerun solver from audited sources and emit a provenance receipt.
 
-This closes a subtle stale-binary hole: the semantic regression cases all fit in
-old C2 memo capacity, so an old C2 binary could pass 6/6 regression even though
-it does not contain the enlarged d12--d16 tables.  This script therefore:
+This closes two provenance holes:
 
-1. runs the frozen source-diff audit;
-2. deletes the target binary before compilation;
-3. compiles the audited working-tree source with the frozen C2 compiler flags;
-4. records source hashes, binary hash, compiler identity, command, and git HEAD;
-5. optionally runs the exact 6/6 regression against that just-built binary.
+1. the semantic regression cases all fit in old C2 memo capacity, so an old C2
+   binary could pass 6/6 regression even though it lacks the enlarged tables;
+2. a receipt must never claim that regression was run merely because it was
+   requested -- it is published only after a successful regression.
 
-The receipt is intended to be committed and referenced by the execution
-manifest before any endpoint run starts.
+The script therefore audits sources, deletes any stale target, rebuilds with the
+frozen flags, optionally runs the exact 6/6 regression against that just-built
+binary, and only then atomically publishes a receipt describing what actually
+succeeded.
 """
 from __future__ import annotations
 
@@ -73,6 +72,12 @@ def compiler_identity(cxx: str) -> str:
     return first[0] if first else p.stdout.strip()
 
 
+def atomic_write_json(path: Path, obj: dict) -> None:
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cxx", default=os.environ.get("CXX", "g++"))
@@ -84,6 +89,11 @@ def main() -> None:
 
     binary = args.bin if args.bin.is_absolute() else (ROOT / args.bin)
     receipt = args.receipt if args.receipt.is_absolute() else (ROOT / args.receipt)
+
+    # A failed new attempt must not leave an old successful receipt that could be
+    # mistaken for provenance of the newly requested build.
+    receipt.unlink(missing_ok=True)
+    receipt.with_name(receipt.name + ".tmp").unlink(missing_ok=True)
 
     # Fail closed before compiling: only the preregistered source-capacity delta
     # may differ from the C2 base.
@@ -97,8 +107,8 @@ def main() -> None:
     binary.parent.mkdir(parents=True, exist_ok=True)
     receipt.parent.mkdir(parents=True, exist_ok=True)
 
-    # The deletion is deliberate.  A compiler failure must never leave a stale
-    # old-C2 executable at the path that the regression later consumes.
+    # A compiler failure must never leave a stale old-C2 executable at the path
+    # that the regression or endpoint runner later consumes.
     binary.unlink(missing_ok=True)
     if binary.exists():
         raise SystemExit(f"failed to remove pre-existing target binary: {binary}")
@@ -112,12 +122,24 @@ def main() -> None:
     if not binary.is_file() or binary.stat().st_size == 0:
         raise SystemExit("compiler returned success but target binary is missing/empty")
 
-    # Use nanosecond mtimes only as an additional sanity check; the stronger
-    # provenance is the delete-before-build procedure plus the receipt hashes.
     if binary.stat().st_mtime_ns < int(started.timestamp() * 1_000_000_000):
         raise SystemExit("target binary mtime predates build start; refusing stale artifact")
 
     head = git_head()
+    binary_hash = sha256(binary)
+    regression_status = "not-requested"
+
+    print(f"BUILD PASS binary_sha256={binary_hash}")
+
+    if args.run_regression:
+        run_checked([sys.executable, str(REGRESSION), "--bin", str(binary)])
+        # Re-hash after regression so the receipt also proves the tested artifact
+        # was not modified while the regression was running.
+        if sha256(binary) != binary_hash:
+            raise SystemExit("binary changed during regression; refusing provenance receipt")
+        regression_status = "pass"
+        print("BUILD+REGRESSION PASS")
+
     receipt_obj = {
         "experiment": "10x10-cache-aware-below-root-capacity-rerun",
         "git_head": head,
@@ -128,20 +150,14 @@ def main() -> None:
         "source_diff_audit": str(AUDIT.relative_to(ROOT)),
         "binary": str(binary.relative_to(ROOT)),
         "binary_size": binary.stat().st_size,
-        "binary_sha256": sha256(binary),
+        "binary_sha256": binary_hash,
         "sources_sha256": {rel: sha256(ROOT / rel) for rel in SOURCES},
         "regression_script": str(REGRESSION.relative_to(ROOT)),
-        "regression_run_in_this_build": bool(args.run_regression),
+        "regression_requested": bool(args.run_regression),
+        "regression_status": regression_status,
     }
-    receipt.write_text(json.dumps(receipt_obj, indent=2, sort_keys=True) + "\n",
-                       encoding="utf-8")
-
-    print(f"BUILD PASS binary_sha256={receipt_obj['binary_sha256']}")
+    atomic_write_json(receipt, receipt_obj)
     print(f"receipt={receipt.relative_to(ROOT)}")
-
-    if args.run_regression:
-        run_checked([sys.executable, str(REGRESSION), "--bin", str(binary)])
-        print("BUILD+REGRESSION PASS")
 
 
 if __name__ == "__main__":
