@@ -1,0 +1,554 @@
+{
+  "analysis_script_sha256": "23b00e9ac68450ae8339b551417c813001c7b9de584d65944d027d96af9f8662",
+  "binary": "tmp-kb/order_ab_native",
+  "binary_sha256": "3b52e510569861b79c3281a2274d57e38d0bd96b8128f78313ed41c52bde9758",
+  "build_receipt_sha256": "49ac37226196d9474a794ea9fb20c426be7e7420eb3687ae9acba314599c390a",
+  "cohort": "C1 original 12 parents (d9b9a0f)",
+  "counterbalance": "odd rank: rep1 S->B, rep2 B->S, rep3 S->B; even rank: rep1 B->S, rep2 S->B, rep3 B->S",
+  "experiment": "10x10 cache-aware bucket-order optimization timing",
+  "failure_policy": {
+    "exogenous": "crash/timeout/parse failure: rerun fresh at sequence end, keep failed raw under failed_<n>/, log to reruns.json; never delete failed raw",
+    "historical_timing_reuse": false,
+    "semantic_mismatch": "FAIL-SAFETY: no rerun, no timing interpretation"
+  },
+  "fresh_process_each_run": true,
+  "implementations": {
+    "B": "--cache-aware-order-impl bucket (3-bucket partition + per-bucket sort)",
+    "S": "--cache-aware-order-impl sort (single std::sort)"
+  },
+  "parents": [
+    "0,11,35",
+    "11,38,44",
+    "11,78,87",
+    "12,24,68",
+    "12,32,55",
+    "13,52,57",
+    "14,64,74",
+    "23,44,45",
+    "3,47,63",
+    "3,53,84",
+    "4,24,26",
+    "4,42,54"
+  ],
+  "parity_receipt_sha256": "d7df049748bf83b521aab461de5fb2feb4be867f2e80b2b7451eeacf783ffc8a",
+  "parity_verifier_script_sha256": "b05364a47fd73799a9f537667f37c3fed1ee647cb0624c196fe71351fbc83344",
+  "repetitions": 3,
+  "run_order": [
+    {
+      "impl": "sort",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 1,
+      "run_slot": 1
+    },
+    {
+      "impl": "bucket",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 1,
+      "run_slot": 2
+    },
+    {
+      "impl": "bucket",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 2,
+      "run_slot": 3
+    },
+    {
+      "impl": "sort",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 2,
+      "run_slot": 4
+    },
+    {
+      "impl": "sort",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 3,
+      "run_slot": 5
+    },
+    {
+      "impl": "bucket",
+      "parent": "0,11,35",
+      "rank": 1,
+      "rep": 3,
+      "run_slot": 6
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 1,
+      "run_slot": 7
+    },
+    {
+      "impl": "sort",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 1,
+      "run_slot": 8
+    },
+    {
+      "impl": "sort",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 2,
+      "run_slot": 9
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 2,
+      "run_slot": 10
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 3,
+      "run_slot": 11
+    },
+    {
+      "impl": "sort",
+      "parent": "11,38,44",
+      "rank": 2,
+      "rep": 3,
+      "run_slot": 12
+    },
+    {
+      "impl": "sort",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 1,
+      "run_slot": 13
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 1,
+      "run_slot": 14
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 2,
+      "run_slot": 15
+    },
+    {
+      "impl": "sort",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 2,
+      "run_slot": 16
+    },
+    {
+      "impl": "sort",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 3,
+      "run_slot": 17
+    },
+    {
+      "impl": "bucket",
+      "parent": "11,78,87",
+      "rank": 3,
+      "rep": 3,
+      "run_slot": 18
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 1,
+      "run_slot": 19
+    },
+    {
+      "impl": "sort",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 1,
+      "run_slot": 20
+    },
+    {
+      "impl": "sort",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 2,
+      "run_slot": 21
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 2,
+      "run_slot": 22
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 3,
+      "run_slot": 23
+    },
+    {
+      "impl": "sort",
+      "parent": "12,24,68",
+      "rank": 4,
+      "rep": 3,
+      "run_slot": 24
+    },
+    {
+      "impl": "sort",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 1,
+      "run_slot": 25
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 1,
+      "run_slot": 26
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 2,
+      "run_slot": 27
+    },
+    {
+      "impl": "sort",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 2,
+      "run_slot": 28
+    },
+    {
+      "impl": "sort",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 3,
+      "run_slot": 29
+    },
+    {
+      "impl": "bucket",
+      "parent": "12,32,55",
+      "rank": 5,
+      "rep": 3,
+      "run_slot": 30
+    },
+    {
+      "impl": "bucket",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 1,
+      "run_slot": 31
+    },
+    {
+      "impl": "sort",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 1,
+      "run_slot": 32
+    },
+    {
+      "impl": "sort",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 2,
+      "run_slot": 33
+    },
+    {
+      "impl": "bucket",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 2,
+      "run_slot": 34
+    },
+    {
+      "impl": "bucket",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 3,
+      "run_slot": 35
+    },
+    {
+      "impl": "sort",
+      "parent": "13,52,57",
+      "rank": 6,
+      "rep": 3,
+      "run_slot": 36
+    },
+    {
+      "impl": "sort",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 1,
+      "run_slot": 37
+    },
+    {
+      "impl": "bucket",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 1,
+      "run_slot": 38
+    },
+    {
+      "impl": "bucket",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 2,
+      "run_slot": 39
+    },
+    {
+      "impl": "sort",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 2,
+      "run_slot": 40
+    },
+    {
+      "impl": "sort",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 3,
+      "run_slot": 41
+    },
+    {
+      "impl": "bucket",
+      "parent": "14,64,74",
+      "rank": 7,
+      "rep": 3,
+      "run_slot": 42
+    },
+    {
+      "impl": "bucket",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 1,
+      "run_slot": 43
+    },
+    {
+      "impl": "sort",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 1,
+      "run_slot": 44
+    },
+    {
+      "impl": "sort",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 2,
+      "run_slot": 45
+    },
+    {
+      "impl": "bucket",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 2,
+      "run_slot": 46
+    },
+    {
+      "impl": "bucket",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 3,
+      "run_slot": 47
+    },
+    {
+      "impl": "sort",
+      "parent": "23,44,45",
+      "rank": 8,
+      "rep": 3,
+      "run_slot": 48
+    },
+    {
+      "impl": "sort",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 1,
+      "run_slot": 49
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 1,
+      "run_slot": 50
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 2,
+      "run_slot": 51
+    },
+    {
+      "impl": "sort",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 2,
+      "run_slot": 52
+    },
+    {
+      "impl": "sort",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 3,
+      "run_slot": 53
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,47,63",
+      "rank": 9,
+      "rep": 3,
+      "run_slot": 54
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 1,
+      "run_slot": 55
+    },
+    {
+      "impl": "sort",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 1,
+      "run_slot": 56
+    },
+    {
+      "impl": "sort",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 2,
+      "run_slot": 57
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 2,
+      "run_slot": 58
+    },
+    {
+      "impl": "bucket",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 3,
+      "run_slot": 59
+    },
+    {
+      "impl": "sort",
+      "parent": "3,53,84",
+      "rank": 10,
+      "rep": 3,
+      "run_slot": 60
+    },
+    {
+      "impl": "sort",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 1,
+      "run_slot": 61
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 1,
+      "run_slot": 62
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 2,
+      "run_slot": 63
+    },
+    {
+      "impl": "sort",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 2,
+      "run_slot": 64
+    },
+    {
+      "impl": "sort",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 3,
+      "run_slot": 65
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,24,26",
+      "rank": 11,
+      "rep": 3,
+      "run_slot": 66
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 1,
+      "run_slot": 67
+    },
+    {
+      "impl": "sort",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 1,
+      "run_slot": 68
+    },
+    {
+      "impl": "sort",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 2,
+      "run_slot": 69
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 2,
+      "run_slot": 70
+    },
+    {
+      "impl": "bucket",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 3,
+      "run_slot": 71
+    },
+    {
+      "impl": "sort",
+      "parent": "4,42,54",
+      "rank": 12,
+      "rep": 3,
+      "run_slot": 72
+    }
+  ],
+  "runner_script_sha256": "df79c09b3218ebab79849494fc4dff5cd0f5e05aff2e60fc5b64835d801f3f95",
+  "serial": true,
+  "solver_flags": {
+    "below_root_order": "cache-aware",
+    "budget": 0,
+    "load": 90,
+    "root_depth": 3,
+    "shrink": 0
+  },
+  "timing_value_per_parent_impl": "median solver-reported seconds over 3 repetitions",
+  "total_runs": 72,
+  "verifier_script_sha256": "b05364a47fd73799a9f537667f37c3fed1ee647cb0624c196fe71351fbc83344"
+}
