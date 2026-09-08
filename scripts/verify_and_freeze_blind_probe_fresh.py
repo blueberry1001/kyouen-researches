@@ -3,10 +3,10 @@
 
 Run only after all seven primary `probe_fresh_*_batch0_1000000.csv` files exist.
 This program deliberately never opens exact-outcome files or blind-probe-results.csv.
-It verifies the frozen task set, freshness sanity conditions, and writes the
-memo-desc ranking that must be committed before outcomes are joined.  The
-ranking manifest is also cryptographically bound to the executable seal that
-the primary runner verified before every parent run.
+It verifies the frozen task set, freshness sanity conditions, per-row executable
+provenance, and writes the memo-desc ranking that must be committed before
+outcomes are joined.  The ranking manifest is cryptographically bound to the
+same executable seal that every primary raw row records.
 """
 from __future__ import annotations
 
@@ -66,6 +66,16 @@ def main() -> None:
     if set(exec_seal.get("parents", [])) != set(PARENTS):
         raise SystemExit("executable seal parent set mismatch")
 
+    expected_seal_sha = sha256_file(EXEC_SEAL)
+    expected_solver_sha = exec_seal.get("solver", {}).get("sha256")
+    expected_runner_sha = exec_seal.get("runner", {}).get("sha256")
+    if not all(isinstance(x, str) and len(x) == 64 for x in (
+        expected_seal_sha,
+        expected_solver_sha,
+        expected_runner_sha,
+    )):
+        raise SystemExit("executable seal is missing valid SHA-256 provenance")
+
     ranking_rows: list[dict[str, object]] = []
     manifest: dict[str, object] = {
         "protocol": "corrected-blind-probe-fresh-v1",
@@ -76,12 +86,17 @@ def main() -> None:
         "parents": list(PARENTS),
         "exact_outcomes_read": False,
         "executable_seal": str(EXEC_SEAL.relative_to(ROOT)).replace("\\", "/"),
-        "executable_seal_sha256": sha256_file(EXEC_SEAL),
-        "solver_sha256": exec_seal.get("solver", {}).get("sha256"),
-        "runner_sha256": exec_seal.get("runner", {}).get("sha256"),
+        "executable_seal_sha256": expected_seal_sha,
+        "solver_sha256": expected_solver_sha,
+        "runner_sha256": expected_runner_sha,
         "freshness_invariants": {
             "memo_le_visited": True,
             "probe_rows_hit_exact_visited_budget": True,
+        },
+        "raw_provenance_invariants": {
+            "every_row_matches_executable_seal_sha256": True,
+            "every_row_matches_solver_sha256": True,
+            "every_row_matches_runner_sha256": True,
         },
         "files": {},
     }
@@ -119,9 +134,13 @@ def main() -> None:
         rows = read_csv(probe_path)
         if len(rows) != 20:
             raise SystemExit(f"{parent}: expected 20 fresh probe rows, got {len(rows)}")
-        required = {"state", "outcome", "visited", "memo", "maxdepth", "seconds"}
-        if not required.issubset(rows[0]):
-            raise SystemExit(f"{parent}: missing required columns {required - set(rows[0])}")
+        required = {
+            "state", "outcome", "visited", "memo", "maxdepth", "seconds",
+            "executable_seal_sha256", "solver_sha256", "runner_sha256",
+        }
+        if not rows or not required.issubset(rows[0]):
+            got = set(rows[0]) if rows else set()
+            raise SystemExit(f"{parent}: missing required columns {required - got}")
 
         by_state: dict[str, dict[str, str]] = {}
         for r in rows:
@@ -133,6 +152,22 @@ def main() -> None:
             if key in global_seen:
                 raise SystemExit(f"duplicate parent/state pair: {key}")
             global_seen.add(key)
+
+            if r["executable_seal_sha256"] != expected_seal_sha:
+                raise SystemExit(
+                    f"{parent} {state}: raw row seal provenance mismatch: "
+                    f"got={r['executable_seal_sha256']} expected={expected_seal_sha}"
+                )
+            if r["solver_sha256"] != expected_solver_sha:
+                raise SystemExit(
+                    f"{parent} {state}: raw row solver provenance mismatch: "
+                    f"got={r['solver_sha256']} expected={expected_solver_sha}"
+                )
+            if r["runner_sha256"] != expected_runner_sha:
+                raise SystemExit(
+                    f"{parent} {state}: raw row runner provenance mismatch: "
+                    f"got={r['runner_sha256']} expected={expected_runner_sha}"
+                )
 
             outcome = r["outcome"].upper()
             visited = int(r["visited"])
@@ -201,6 +236,7 @@ def main() -> None:
 
     print("verified: 7 parents x 20 children = 140 fresh probe rows")
     print("verified: child lists match the pre-run executable seal")
+    print("verified: every raw row is bound to the same seal, solver, and runner SHA-256")
     print("verified freshness: memo <= visited; PROBE rows hit visited budget exactly")
     print("froze: memo descending, original-input-position tie break")
     print(f"ranking: {OUT}")
