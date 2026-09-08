@@ -1,0 +1,28 @@
+{
+  "status": "frozen_before_confirmation_runs",
+  "date": "2026-09-08",
+  "branch": "preregister-10x10-cache-aware-below-root-confirmation-v2",
+  "base_commit": "d9b9a0fafa0158f185f17a5acf323d617eb33d58",
+  "original_v2_freeze_commit": "98564ac1713c7cc387d69a8fe301a0417c01f765",
+  "original_sampling_seed": "kyouen-10x10-fresh-parent-holdout-v2-seed-20260907",
+  "original_extended_sample_blob": "ebbfde8c7d6de2cf7c9803ab508454e43886d442",
+  "original_sampling_manifest_blob": "89d01b0015920ad24fa0f1fc25f36c768250f4a8",
+  "confirmation_cohort_blob": "bf6f6fc321e8e642c19b7f8c869e64376f4141ba",
+  "cohort_source_ranks": [13,14,15,16,17,18,19,20,21,22,23,24],
+  "n_parents": 12,
+  "n_conditions": 2,
+  "n_runs": 24,
+  "condition_A": "cache-aware native below-root ordering",
+  "condition_B": "cache-blind below-root ordering; memo reuse preserved",
+  "root_policy": "identical native root ordering in A and B",
+  "primary_endpoint": "R = visited_B / visited_A",
+  "success_criterion": {
+    "median_R_gt": 1.0,
+    "A_lower_visited_min_parents": 7,
+    "denominator": 12,
+    "both_required": true
+  },
+  "stopping_rule": "attempt all frozen parents under both conditions; no outcome/runtime-based replacement; no early stopping",
+  "primary_requires_all_12_ratios": true,
+  "main_merge_allowed": false
+}
