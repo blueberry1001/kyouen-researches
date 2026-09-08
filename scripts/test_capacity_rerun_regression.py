@@ -125,7 +125,7 @@ def run_exact(parent: str, condition: str
     with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False,
                                      encoding="utf-8") as tmp:
         tmp_path = tmp.name
-    instr_path = Path(tmp_path).with_suffix(".instr.csv")
+    instr_path = Path(tmp_path).with_suffix(".d2_instr.csv")
     try:
         cmd = [str(NEW_BIN), tmp_path, str(EXACT_SHRINK), str(EXACT_LOAD),
                "0", "0", "--root-depth", str(ROOT_DEPTH),
