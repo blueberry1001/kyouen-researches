@@ -1,0 +1,5 @@
+below_root_order=cache-aware
+cache_aware_impl=bucket
+bench_root unique=97 entered=1 first_lo=18014398847123456 first_hi=0 witness=21 outcome=WIN
+memo_by_depth 9:148783 10:504415 11:1307254 12:1933624 13:1921709 14:1010449 15:218590 16:15995 17:331
+forbidden=54441 completed=1 requested=1 memo=7061150 seconds=35.5639 table_full=0
