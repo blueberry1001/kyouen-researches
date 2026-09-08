@@ -124,6 +124,7 @@ def run_exact(parent: str, condition: str
     assert NEW_BIN.exists(), f"missing {NEW_BIN}; build it first"
     with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False,
                                      encoding="utf-8") as tmp:
+        tmp.write(parent + "\n")
         tmp_path = tmp.name
     instr_path = Path(tmp_path).with_suffix(".d2_instr.csv")
     try:
