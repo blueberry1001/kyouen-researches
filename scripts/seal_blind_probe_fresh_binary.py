@@ -2,9 +2,16 @@
 """Seal the exact executable and frozen inputs before the corrected blind rerun.
 
 Run this *after* building scripts/probe_cert_solver but *before* running any
-primary probe.  The resulting JSON is deliberately outcome-blind and is used
+primary probe. The resulting JSON is deliberately outcome-blind and is used
 by run_blind_probe_parent_fresh.py to reject a changed executable, runner, or
 batch0 child list.
+
+This seal also guards against the most likely stale-build failure: an older
+solver executable being accidentally reused after its source files changed.
+Because the primary runner executes the binary under WSL, the sealed solver
+must be an ELF executable and its mtime must not predate any sealed source.
+The mtime check is an accidental-staleness guard, not a reproducible-build
+proof; exact source/binary SHA-256 values remain the authoritative record.
 """
 from __future__ import annotations
 
@@ -57,6 +64,25 @@ def main() -> None:
     part_files = sorted(SOLVER_PARTS.glob("*.inc"))
     if not part_files:
         raise SystemExit(f"no solver implementation parts found in {SOLVER_PARTS}")
+    source_files = [SOLVER_SRC, *part_files]
+
+    # The corrected runner invokes this file from WSL. Reject an obviously
+    # wrong/stale local artifact before it can become part of the frozen seal.
+    with SOLVER.open("rb") as f:
+        magic = f.read(4)
+    if magic != b"\x7fELF":
+        raise SystemExit(
+            f"solver is not an ELF executable expected by the WSL runner: {SOLVER}"
+        )
+    newest_source_mtime_ns = max(p.stat().st_mtime_ns for p in source_files)
+    solver_mtime_ns = SOLVER.stat().st_mtime_ns
+    if solver_mtime_ns < newest_source_mtime_ns:
+        newest = max(source_files, key=lambda p: p.stat().st_mtime_ns)
+        raise SystemExit(
+            "solver executable predates sealed source; rebuild before sealing: "
+            f"solver_mtime_ns={solver_mtime_ns} newest_source={newest} "
+            f"source_mtime_ns={newest_source_mtime_ns}"
+        )
 
     children: dict[str, dict[str, object]] = {}
     for parent in PARENTS:
@@ -73,7 +99,6 @@ def main() -> None:
             "count": len(states),
         }
 
-    source_files = [SOLVER_SRC, *part_files]
     data = {
         "protocol": "corrected-blind-probe-fresh-executable-seal-v1",
         "outcomes_read": False,
@@ -85,6 +110,8 @@ def main() -> None:
             "path": str(SOLVER.relative_to(ROOT)).replace("\\", "/"),
             "sha256": sha256_file(SOLVER),
             "size": SOLVER.stat().st_size,
+            "format": "ELF",
+            "mtime_ns": solver_mtime_ns,
         },
         "runner": {
             "path": str(RUNNER.relative_to(ROOT)).replace("\\", "/"),
@@ -94,15 +121,24 @@ def main() -> None:
             {
                 "path": str(p.relative_to(ROOT)).replace("\\", "/"),
                 "sha256": sha256_file(p),
+                "mtime_ns": p.stat().st_mtime_ns,
             }
             for p in source_files
         ],
+        "build_freshness_guard": {
+            "solver_is_elf": True,
+            "solver_mtime_ns": solver_mtime_ns,
+            "newest_source_mtime_ns": newest_source_mtime_ns,
+            "solver_not_older_than_sources": True,
+            "scope": "accidental-stale-build guard only; not a reproducible-build proof",
+        },
         "children": children,
     }
     SEAL.parent.mkdir(parents=True, exist_ok=True)
     SEAL.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"sealed executable + runner + 7x20 frozen child lists -> {SEAL}")
     print(f"solver_sha256={data['solver']['sha256']}")
+    print("build freshness guard: ELF + solver mtime >= all sealed sources")
     print("No exact-outcome file was opened.")
 
 
