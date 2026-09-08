@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """Build the capacity-rerun solver from audited sources and emit a provenance receipt.
 
-This closes two provenance holes:
+This closes three provenance holes:
 
 1. the semantic regression cases all fit in old C2 memo capacity, so an old C2
    binary could pass 6/6 regression even though it lacks the enlarged tables;
 2. a receipt must never claim that regression was run merely because it was
-   requested -- it is published only after a successful regression.
+   requested -- it is published only after a successful regression;
+3. the regression parent/reference contract must itself be frozen and hashed,
+   rather than silently drifting inside the executable gate.
 
 The script therefore audits sources, deletes any stale target, rebuilds with the
-frozen flags, optionally runs the exact 6/6 regression against that just-built
-binary, and only then atomically publishes a receipt describing what actually
-succeeded.
+frozen flags, optionally runs the frozen-contract exact regression against that
+just-built binary, and only then atomically publishes a receipt describing what
+actually succeeded.
 """
 from __future__ import annotations
 
@@ -26,7 +28,9 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "scripts/audit_capacity_rerun_source_diff.py"
-REGRESSION = ROOT / "scripts/test_capacity_rerun_regression.py"
+REGRESSION = ROOT / "scripts/test_capacity_rerun_regression_frozen.py"
+REGRESSION_IMPL = ROOT / "scripts/test_capacity_rerun_regression.py"
+REGRESSION_EXPECTED = ROOT / "results/10x10/cache-aware-below-root-capacity-rerun/regression_expected.json"
 DEFAULT_BIN = ROOT / "tmp-kb/order_ab_capacity"
 DEFAULT_RECEIPT = ROOT / "results/10x10/cache-aware-below-root-capacity-rerun/build_receipt.json"
 
@@ -103,6 +107,9 @@ def main() -> None:
         p = ROOT / rel
         if not p.is_file():
             raise SystemExit(f"missing audited source: {rel}")
+    for p in (REGRESSION, REGRESSION_IMPL, REGRESSION_EXPECTED):
+        if not p.is_file():
+            raise SystemExit(f"missing regression contract input: {p.relative_to(ROOT)}")
 
     binary.parent.mkdir(parents=True, exist_ok=True)
     receipt.parent.mkdir(parents=True, exist_ok=True)
@@ -148,11 +155,17 @@ def main() -> None:
         "compile_command": cmd,
         "frozen_flags": FROZEN_FLAGS,
         "source_diff_audit": str(AUDIT.relative_to(ROOT)),
+        "source_diff_audit_sha256": sha256(AUDIT),
         "binary": str(binary.relative_to(ROOT)),
         "binary_size": binary.stat().st_size,
         "binary_sha256": binary_hash,
         "sources_sha256": {rel: sha256(ROOT / rel) for rel in SOURCES},
         "regression_script": str(REGRESSION.relative_to(ROOT)),
+        "regression_script_sha256": sha256(REGRESSION),
+        "regression_impl": str(REGRESSION_IMPL.relative_to(ROOT)),
+        "regression_impl_sha256": sha256(REGRESSION_IMPL),
+        "regression_expected": str(REGRESSION_EXPECTED.relative_to(ROOT)),
+        "regression_expected_sha256": sha256(REGRESSION_EXPECTED),
         "regression_requested": bool(args.run_regression),
         "regression_status": regression_status,
     }
