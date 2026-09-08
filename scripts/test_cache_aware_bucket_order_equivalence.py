@@ -10,7 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import random
 
-SEED = 0xCACE_AWARE
+SEED = 0xCACEA11E
 RANDOM_CASES = 20_000
 MAX_N = 100
 
@@ -95,7 +95,7 @@ def edge_cases() -> list[tuple[str, list[Child]]]:
 def random_case(rng: random.Random, idx: int) -> list[Child]:
     n = rng.randrange(MAX_N + 1)
     out: list[Child] = []
-    # Keys are deliberately unique.  The exact solver deduplicates canonical child keys
+    # Keys are deliberately unique. The exact solver deduplicates canonical child keys
     # before order_children; duplicate-key behavior is therefore outside this transform.
     used: set[tuple[int, int]] = set()
     while len(out) < n:
@@ -118,7 +118,8 @@ def random_case(rng: random.Random, idx: int) -> list[Child]:
 
 def main() -> None:
     total = 0
-    for name, children in edge_cases():
+    cases = edge_cases()
+    for name, children in cases:
         assert_same(name, children)
         total += 1
 
@@ -129,7 +130,7 @@ def main() -> None:
 
     print("BUCKET ORDER EQUIVALENCE PASS")
     print(f"seed={SEED}")
-    print(f"edge_cases={len(edge_cases())}")
+    print(f"edge_cases={len(cases)}")
     print(f"random_cases={RANDOM_CASES}")
     print(f"total_cases={total}")
     print("duplicate_key_assumption=excluded; solver deduplicates canonical child keys before ordering")
