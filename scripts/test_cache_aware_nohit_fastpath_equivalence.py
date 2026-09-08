@@ -18,7 +18,7 @@ import itertools
 import random
 from dataclasses import dataclass
 
-SEED = 0xA11CACHED
+SEED = 0xA11CADED
 RANDOM_CASES = 30000
 
 # Mirror the solver encoding only at the level needed by the ordering rule.
