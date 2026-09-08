@@ -1,0 +1,4 @@
+  13,52,57,76: A parity frozen==default==aware (WIN visited=1133888 maxdepth=18 memo=1129942) B outcome=WIN visited=1330624 cached_evals=1057652 shortcut=488216 orderΔ=0 ok
+  4,24,26,67: A parity frozen==default==aware (WIN visited=1679114 maxdepth=18 memo=1674270) B outcome=WIN visited=1977107 cached_evals=1503380 shortcut=707587 orderΔ=0 ok
+  14,64,74: A parity frozen==default==aware (WIN visited=4342654 maxdepth=17 memo=4296010) B outcome=WIN visited=4988016 cached_evals=3649168 shortcut=1746802 orderΔ=0 ok
+ALL ORDER A/B REGRESSION TESTS PASSED
