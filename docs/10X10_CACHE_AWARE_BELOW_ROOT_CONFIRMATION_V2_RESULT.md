@@ -4,7 +4,7 @@ Prereg: `docs/10X10_CACHE_AWARE_BELOW_ROOT_CONFIRMATION_V2_PREREG.md`
 (prereg commits `cd151c3` text + `6a9bbab` machine manifest)
 Branch: `preregister-10x10-cache-aware-below-root-confirmation-v2`
 Base: `d9b9a0f` (C1 end). Freeze commit: `7caa7e9` (tooling + execution manifest).
-End SHA: (filled at push time).
+End SHA: `d87b1e8aaff31628016f8ad89925bd7825cc1b57` (report commit; push receipt follows).
 
 ## 1. Headline
 
