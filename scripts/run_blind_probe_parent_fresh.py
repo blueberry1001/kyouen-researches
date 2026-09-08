@@ -8,7 +8,10 @@ Primary mode is intentionally narrow:
   * 1,000,000 visited-node probe budget;
   * no exact-outcome input is read by this program;
   * the executable, this runner, and frozen child lists must have been sealed
-    before the first primary probe.
+    before the first primary probe;
+  * every primary raw row records the executable-seal and solver SHA-256 so a
+    raw CSV cannot later be silently detached from the provenance it was run
+    under.
 
 Use --exploratory only after the corrected primary rerun is committed.  It may
 run a non-primary parent and/or all batches, but writes a visibly different
@@ -50,7 +53,7 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def verify_primary_seal(parent: str, child_file: Path) -> None:
+def verify_primary_seal(parent: str, child_file: Path) -> dict[str, str]:
     if not SEAL.exists():
         raise SystemExit(
             f"missing pre-run executable seal: {SEAL}. "
@@ -80,6 +83,26 @@ def verify_primary_seal(parent: str, child_file: Path) -> None:
             f"runner changed after seal: got={runner_sha} "
             f"expected={data.get('runner', {}).get('sha256')}"
         )
+
+    # Keep the source provenance in the seal truthful at execution time.  The
+    # binary hash is what fixes executed behaviour; this additional check stops
+    # a later source edit from making the sealed source/binary record ambiguous.
+    sources = data.get("solver_sources")
+    if not isinstance(sources, list) or not sources:
+        raise SystemExit("executable seal has no solver_sources provenance")
+    for src in sources:
+        if not isinstance(src, dict) or not isinstance(src.get("path"), str):
+            raise SystemExit("malformed solver_sources entry in executable seal")
+        src_path = ROOT / src["path"]
+        if not src_path.exists():
+            raise SystemExit(f"sealed solver source missing at execution time: {src_path}")
+        actual_src_sha = sha256_file(src_path)
+        if actual_src_sha != src.get("sha256"):
+            raise SystemExit(
+                f"sealed solver source changed before probe run: {src['path']} "
+                f"got={actual_src_sha} expected={src.get('sha256')}"
+            )
+
     entry = data.get("children", {}).get(parent)
     if not isinstance(entry, dict):
         raise SystemExit(f"parent missing from executable seal: {parent}")
@@ -89,6 +112,11 @@ def verify_primary_seal(parent: str, child_file: Path) -> None:
             f"frozen child list changed after seal for {parent}: got={child_sha} "
             f"expected={entry.get('sha256')}"
         )
+    return {
+        "executable_seal_sha256": sha256_file(SEAL),
+        "solver_sha256": solver_sha,
+        "runner_sha256": runner_sha,
+    }
 
 
 def wsl_path(p: Path) -> str:
@@ -192,20 +220,31 @@ def main() -> None:
             x.strip() for x in bp.read_text(encoding="utf-8").splitlines()
             if x.strip()
         ]
+        provenance: dict[str, str] = {}
         if not exploratory:
             if len(states) != 20:
                 raise RuntimeError(
                     f"frozen batch0 must contain exactly 20 children for {parent}, got {len(states)}"
                 )
-            verify_primary_seal(parent, bp)
+            provenance = verify_primary_seal(parent, bp)
 
         rows = [run_one(s) for s in states]
+        if provenance:
+            for row in rows:
+                row.update(provenance)
         fields = list(rows[0].keys())
         with out.open("x", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(rows)
         print(f"{parent} batch {bi}: wrote {len(rows)} fresh probes -> {out.name}")
+        if provenance:
+            print(
+                "provenance: "
+                f"seal={provenance['executable_seal_sha256']} "
+                f"solver={provenance['solver_sha256']} "
+                f"runner={provenance['runner_sha256']}"
+            )
 
 
 if __name__ == "__main__":
