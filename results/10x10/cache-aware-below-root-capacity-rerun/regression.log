@@ -1,0 +1,7 @@
+  12,13,67 cache-aware: WIN visited=6524427 memo=6489322 maxdepth=18 memo16=13512 wall=38.6s orderΔ=1911737 ok
+  12,13,67 cache-blind: WIN visited=7563460 memo=7528352 maxdepth=18 memo16=14150 wall=39.1s orderΔ=0 ok
+  1,27,61 cache-aware: WIN visited=16020139 memo=15961949 maxdepth=18 memo16=121282 wall=65.0s orderΔ=4733793 ok
+  1,27,61 cache-blind: WIN visited=18775664 memo=18717453 maxdepth=18 memo16=130651 wall=66.3s orderΔ=0 ok
+  0,7,67 cache-aware: WIN visited=33663004 memo=33564588 maxdepth=19 memo16=303154 wall=118.4s orderΔ=9815372 ok
+  0,7,67 cache-blind: WIN visited=39772866 memo=39674364 maxdepth=19 memo16=329569 wall=121.9s orderΔ=0 ok
+ALL CAPACITY-RERUN REGRESSION TESTS PASSED (12/12 capacity columns = preregistered new powers)
