@@ -1,0 +1,86 @@
+# Cache-aware below-root ordering capacity-rescued rerun — analysis
+
+## Primary: R = visited_blind / visited_aware
+
+| parent | visited A | visited B | R |
+|---|---|---|---|
+| 0,19,95 | 40334044 | 48122261 | 1.193093 |
+| 0,7,67 | 33663004 | 39772866 | 1.181501 |
+| 1,12,80 | 555114540 | 669211681 | 1.205538 |
+| 1,27,61 | 16020139 | 18775664 | 1.172004 |
+| 1,6,51 | 10931142 | 12786596 | 1.169740 |
+| 1,68,74 | 14174908 | 16534371 | 1.166453 |
+| 12,13,67 | 6524427 | 7563460 | 1.159253 |
+| 12,21,58 | 41253019 | 48565266 | 1.177254 |
+| 12,25,71 | 13528345 | 15785216 | 1.166825 |
+| 2,11,61 | 27789159 | 32749276 | 1.178491 |
+| 2,43,60 | 10890815 | 12698786 | 1.166009 |
+| 23,37,45 | 11864773 | 13822908 | 1.165038 |
+
+- median R = 1.170872
+- geometric mean R = 1.175032
+- arithmetic mean R = 1.175100
+- aggregate visited ratio = 1.197292 (936388351/782088315)
+- improved(A better)=12 tie=0 worse=0
+- exact paired sign test: two-sided p=0.000488, one-sided(A better) p=0.000244 (n_eff=12)
+- prereg criterion (median>1 and >=7/12): PASS
+
+## Secondary
+- solver seconds: A=2874.6 B=3449.9 ratio=1.2001
+- wall seconds: A=2739.1 B=3262.5 ratio=1.1911
+- final memo: A=780360682 B=934657582
+- A mechanism: prefetch_hit=0.238552 omission=0.349653 shortcut=0.530085 recursive=782088303 cached=420483223 puts=782088315
+- B mechanism: prefetch_hit=0.281828 omission=0.406310 shortcut=0.510425 recursive=936388339 cached=640847075 puts=936388351
+
+## Depth deltas (B - A, all parents)
+
+| depth | visited Δ | recursive Δ | cached Δ | shortcut Δ |
+|---|---|---|---|---|
+| 3 | 0 | 0 | 0 | 0 |
+| 4 | 0 | 0 | 0 | 0 |
+| 5 | 0 | 0 | 0 | 0 |
+| 6 | 0 | 0 | 0 | 0 |
+| 7 | 0 | 0 | 0 | 0 |
+| 8 | 0 | 355078 | 4167430 | -53841 |
+| 9 | 355078 | 3121477 | 5923266 | -243021 |
+| 10 | 3121477 | 14221489 | 22207849 | -308353 |
+| 11 | 14221489 | 35412287 | 42755002 | 1137982 |
+| 12 | 35412287 | 50245977 | 64787268 | 5483298 |
+| 13 | 50245977 | 38425795 | 50294713 | 13641983 |
+| 14 | 38425795 | 11444276 | 24969275 | 14911310 |
+| 15 | 11444276 | 1042223 | 4999726 | 4022761 |
+| 16 | 1042223 | 28298 | 259323 | 236907 |
+| 17 | 28298 | 3044 | 0 | 0 |
+| 18 | 3044 | 92 | 0 | 0 |
+| 19 | 92 | 0 | 0 | 0 |
+
+## Capacity headroom (enlarged 90% ceilings, worst of A/B)
+
+| depth | used (max cond) | ceiling | occupancy |
+|---|---|---|---|
+| 12 | 209461417 | 271790899 | 77.07% |
+| 13 | 275711734 | 301989888 | 91.30% |
+| 14 | 222350519 | 271790899 | 81.81% |
+| 15 | 82233443 | 120795955 | 68.08% |
+| 16 | 11184988 | 15099494 | 74.08% |
+
+## Pooled C1 + capacity rerun (reference, secondary)
+- C1: 12/12 improved, median=1.162010
+- capacity rerun: 12/12 improved, median=1.170872
+- pooled n=24: median=1.166895 gmean=1.170225
+- C1 range: 1.1486-1.1892; rerun range: 1.1593-1.2055
+
+## Historical C2 (descriptive only; C2 endpoint INCOMPLETE)
+- C2 completed-parent R overlap with this cohort: 11 parents
+  - 0,19,95: C2 R=1.193093 rerun R=1.193093
+  - 0,7,67: C2 R=1.181501 rerun R=1.181501
+  - 1,27,61: C2 R=1.172004 rerun R=1.172004
+  - 1,6,51: C2 R=1.169740 rerun R=1.169740
+  - 1,68,74: C2 R=1.166453 rerun R=1.166453
+  - 12,13,67: C2 R=1.159253 rerun R=1.159253
+  - 12,21,58: C2 R=1.177254 rerun R=1.177254
+  - 12,25,71: C2 R=1.166825 rerun R=1.166825
+  - 2,11,61: C2 R=1.178491 rerun R=1.178491
+  - 2,43,60: C2 R=1.166009 rerun R=1.166009
+  - 23,37,45: C2 R=1.165038 rerun R=1.165038
+

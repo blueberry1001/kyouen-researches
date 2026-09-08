@@ -1,0 +1,9 @@
+capacity-rerun supplemental output audit: PASS
+summary_keys=24/24
+counterbalance_order_index=12/12
+depth_visited_rows=480/480
+sum_depth_visited_equals_exact=24/24
+sum_puts_equals_exact=24/24
+memo_below_enlarged_ceilings=24/24
+old_c2_raw_mixture=none
+source_binary_provenance=ok
