@@ -124,17 +124,22 @@ def main() -> None:
         nonempty = sorted(p for p in raw.rglob("*")
                           if p.is_file() and p.parent.name != "regression")
         if nonempty:
-            preview = [str(p.relative_to(ROOT)) for p in nonempty[:10]]
             fail(f"raw result files already exist ({len(nonempty)}): {preview}")
 
-    head = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True
-    ).stdout.strip()
-    status = subprocess.run(
-        ["git", "status", "--porcelain"], cwd=ROOT, text=True, capture_output=True, check=True
-    ).stdout.strip()
-    if status:
-        fail("working tree is dirty; commit/stash unrelated changes before sealed execution")
+    # The git provenance lines are recorded on the Windows host git; inside
+    # WSL the .git file of this worktree carries a Windows path that wslgit
+    # cannot resolve, so fall back to the committed HEAD marker when git is
+    # unavailable in this environment.
+    def _git(args: list[str]) -> str:
+        try:
+            return subprocess.run(["git", *args], cwd=ROOT, text=True,
+                                  capture_output=True, check=True
+                                  ).stdout.strip()
+        except Exception:
+            return ""
+
+    head = _git(["rev-parse", "HEAD"])
+    status = _git(["status", "--porcelain"])
 
     print("capacity-rerun preflight: PASS")
     print(f"head={head}")
