@@ -5,8 +5,8 @@ Run only after all seven primary `probe_fresh_*_batch0_1000000.csv` files exist.
 This program deliberately never opens exact-outcome files or blind-probe-results.csv.
 It verifies the frozen task set, freshness sanity conditions, per-row executable
 provenance, and writes the memo-desc ranking that must be committed before
-outcomes are joined.  The ranking manifest is cryptographically bound to the
-same executable seal that every primary raw row records.
+outcomes are joined. Probe-time WIN/LOSS labels are forbidden from the raw and
+ranking artifacts; only BUDGET_EXHAUSTED vs EARLY_RESOLVED may be present.
 """
 from __future__ import annotations
 
@@ -85,18 +85,23 @@ def main() -> None:
         "batch": 0,
         "parents": list(PARENTS),
         "exact_outcomes_read": False,
+        "probe_labels_persisted_before_reveal": False,
         "executable_seal": str(EXEC_SEAL.relative_to(ROOT)).replace("\\", "/"),
         "executable_seal_sha256": expected_seal_sha,
         "solver_sha256": expected_solver_sha,
         "runner_sha256": expected_runner_sha,
         "freshness_invariants": {
             "memo_le_visited": True,
-            "probe_rows_hit_exact_visited_budget": True,
+            "budget_exhausted_rows_hit_exact_visited_budget": True,
         },
         "raw_provenance_invariants": {
             "every_row_matches_executable_seal_sha256": True,
             "every_row_matches_solver_sha256": True,
             "every_row_matches_runner_sha256": True,
+        },
+        "blindness_invariants": {
+            "raw_outcome_column_forbidden": True,
+            "allowed_probe_status": ["BUDGET_EXHAUSTED", "EARLY_RESOLVED"],
         },
         "files": {},
     }
@@ -135,12 +140,16 @@ def main() -> None:
         if len(rows) != 20:
             raise SystemExit(f"{parent}: expected 20 fresh probe rows, got {len(rows)}")
         required = {
-            "state", "outcome", "visited", "memo", "maxdepth", "seconds",
+            "state", "probe_status", "visited", "memo", "maxdepth", "seconds",
             "executable_seal_sha256", "solver_sha256", "runner_sha256",
         }
         if not rows or not required.issubset(rows[0]):
             got = set(rows[0]) if rows else set()
             raise SystemExit(f"{parent}: missing required columns {required - got}")
+        if "outcome" in rows[0]:
+            raise SystemExit(
+                f"{parent}: raw probe contains forbidden label-bearing outcome column"
+            )
 
         by_state: dict[str, dict[str, str]] = {}
         for r in rows:
@@ -169,25 +178,22 @@ def main() -> None:
                     f"got={r['runner_sha256']} expected={expected_runner_sha}"
                 )
 
-            outcome = r["outcome"].upper()
+            status = r["probe_status"].upper()
             visited = int(r["visited"])
             memo = int(r["memo"])
             if visited <= 0 or visited > BUDGET:
                 raise SystemExit(f"{parent} {state}: invalid visited={visited}")
-            if outcome not in {"PROBE", "WIN", "LOSS"}:
-                raise SystemExit(f"{parent} {state}: unknown probe outcome={r['outcome']}")
+            if status not in {"BUDGET_EXHAUSTED", "EARLY_RESOLVED"}:
+                raise SystemExit(f"{parent} {state}: unknown probe_status={r['probe_status']}")
 
-            # Fresh-Solver invariant from Solver::win(): a state is counted in
-            # `visited` before it can add at most one previously-empty memo entry.
             if memo < 0 or memo > visited:
                 raise SystemExit(
                     f"{parent} {state}: freshness invariant violated: memo={memo} > visited={visited}"
                 )
 
-            # With a visited-only budget, PROBE fires exactly at BUDGET.
-            if outcome == "PROBE" and visited != BUDGET:
+            if status == "BUDGET_EXHAUSTED" and visited != BUDGET:
                 raise SystemExit(
-                    f"{parent} {state}: PROBE must hit exact visited budget; "
+                    f"{parent} {state}: BUDGET_EXHAUSTED must hit exact visited budget; "
                     f"visited={visited}, budget={BUDGET}"
                 )
 
@@ -196,7 +202,6 @@ def main() -> None:
             extra = sorted(set(by_state) - set(children))
             raise SystemExit(f"{parent}: task mismatch missing={missing} extra={extra}")
 
-        # Tie break is original batch/input order, as frozen in the audit doc.
         input_pos = {s: i for i, s in enumerate(children)}
         ranked = sorted(
             children,
@@ -209,7 +214,7 @@ def main() -> None:
                 "rank": rank,
                 "input_position": input_pos[state] + 1,
                 "state": state,
-                "probe_outcome": r["outcome"],
+                "probe_status": r["probe_status"],
                 "visited": int(r["visited"]),
                 "memo": int(r["memo"]),
                 "maxdepth": int(r["maxdepth"]),
@@ -237,7 +242,8 @@ def main() -> None:
     print("verified: 7 parents x 20 children = 140 fresh probe rows")
     print("verified: child lists match the pre-run executable seal")
     print("verified: every raw row is bound to the same seal, solver, and runner SHA-256")
-    print("verified freshness: memo <= visited; PROBE rows hit visited budget exactly")
+    print("verified blindness: no raw WIN/LOSS labels persisted before reveal")
+    print("verified freshness: memo <= visited; budget exhaustion hits visited budget exactly")
     print("froze: memo descending, original-input-position tie break")
     print(f"ranking: {OUT}")
     print(f"manifest: {MANIFEST}")
