@@ -1,0 +1,42 @@
+{
+  "source_c2_commit": "5b501588d0e71807977ef69850ad78758295b031",
+  "source_summary": "results/10x10/cache-aware-below-root-confirmation-v2/summary_ab.csv",
+  "selection_rule": "Three successful C2 parents spanning light/medium/heavy exact_visited without using A/B ratios: 12,13,67; 1,27,61; 12,21,58. Both conditions must match exactly on semantic/work diagnostics; timing is excluded.",
+  "required_fields": [
+    "outcome",
+    "exact_visited",
+    "exact_maxdepth",
+    "exact_memo",
+    "root_unique",
+    "root_entered",
+    "root_first_lo",
+    "root_first_hi",
+    "root_witness"
+  ],
+  "cases": [
+    {
+      "parent": "12,13,67",
+      "class": "light",
+      "conditions": {
+        "cache-aware": {"outcome":"WIN","exact_visited":6524427,"exact_maxdepth":18,"exact_memo":6489322,"root_unique":96,"root_entered":1,"root_first_lo":4611686018427588608,"root_first_hi":0,"root_witness":12},
+        "cache-blind": {"outcome":"WIN","exact_visited":7563460,"exact_maxdepth":18,"exact_memo":7528352,"root_unique":96,"root_entered":1,"root_first_lo":4611686018427588608,"root_first_hi":0,"root_witness":12}
+      }
+    },
+    {
+      "parent": "1,27,61",
+      "class": "medium",
+      "conditions": {
+        "cache-aware": {"outcome":"WIN","exact_visited":16020139,"exact_maxdepth":18,"exact_memo":15961949,"root_unique":96,"root_entered":3,"root_first_lo":2308094809161596930,"root_first_hi":0,"root_witness":16},
+        "cache-blind": {"outcome":"WIN","exact_visited":18775664,"exact_maxdepth":18,"exact_memo":18717453,"root_unique":96,"root_entered":3,"root_first_lo":2308094809161596930,"root_first_hi":0,"root_witness":16}
+      }
+    },
+    {
+      "parent": "12,21,58",
+      "class": "heavy",
+      "conditions": {
+        "cache-aware": {"outcome":"WIN","exact_visited":41253019,"exact_maxdepth":18,"exact_memo":41122898,"root_unique":96,"root_entered":3,"root_first_lo":2251800082253824,"root_first_hi":0,"root_witness":6},
+        "cache-blind": {"outcome":"WIN","exact_visited":48565266,"exact_maxdepth":18,"exact_memo":48435076,"root_unique":96,"root_entered":3,"root_first_lo":2251800082253824,"root_first_hi":0,"root_witness":6}
+      }
+    }
+  ]
+}
