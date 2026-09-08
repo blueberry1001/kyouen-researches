@@ -48,14 +48,46 @@ SOLVER_PATHS = [
     "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc",
 ]
 
+def _resolve_main_gitdir() -> Path | None:
+    """Map a Windows worktree .git pointer to the main repo git-dir path
+    usable from the current OS (WSL or Windows)."""
+    import re as _re
+    gitdir_file = ROOT / ".git"
+    if not gitdir_file.is_file():
+        return None
+    pointer = gitdir_file.read_text(encoding="utf-8", errors="replace").strip()
+    if pointer.startswith("gitdir:"):
+        pointer = pointer[len("gitdir:"):].strip()
+    m = _re.match(r"(.*)[/\\\\]\.git[/\\\\]worktrees[/\\\\](.+)$", pointer)
+    if not m:
+        return None
+    cand = m.group(1)
+    mm = _re.match(r"^([A-Za-z]):[/\\\\](.*)$", cand)
+    if mm:  # Windows drive path
+        on_wsl = Path("/mnt").exists() and not Path("C:/").exists()
+        if on_wsl:
+            cand = ("/mnt/" + mm.group(1).lower() + "/"
+                    + mm.group(2).replace("\\\\", "/"))
+    return Path(cand) / ".git"
+
 
 def git_show(path: str) -> bytes:
+    # Normal case: this worktree's own git works.
     p = subprocess.run(["git", "show", f"{BASE}:{path}"], cwd=ROOT,
                        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    if p.returncode != 0:
-        raise SystemExit(f"SOURCE AUDIT FAIL: cannot read {BASE}:{path}\n"
-                         + p.stderr.decode("utf-8", "replace"))
-    return p.stdout
+    if p.returncode == 0:
+        return p.stdout
+    # WSL-in-Windows-worktree case: .git points to a Windows path WSL git
+    # cannot follow. Read the same commit from the main repository instead.
+    main_gitdir = _resolve_main_gitdir()
+    if main_gitdir is not None and main_gitdir.is_dir():
+        p = subprocess.run(
+            ["git", "--git-dir", str(main_gitdir), "show", f"{BASE}:{path}"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if p.returncode == 0:
+            return p.stdout
+    raise SystemExit(f"SOURCE AUDIT FAIL: cannot read {BASE}:{path}\n"
+                     + p.stderr.decode("utf-8", "replace"))
 
 
 def fail(msg: str) -> None:
@@ -177,6 +209,75 @@ def check_unchanged(path: str) -> None:
     if cur != old:
         fail(f"unauthorized solver change in {path}")
     print(f"  unchanged: {path}")
+
+
+def expected_solver_bytes(path: str, old_bytes: bytes) -> bytes:
+    """The committed (manual-swap) authorized variant of a solver file,
+    reconstructed from the base bytes. Exposed for the sibling audit
+    script (audit_cache_aware_bucket_order_source_diff.py), which
+    accepts either authorized implementation variant."""
+    if path not in ("scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc",
+                    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc",
+                    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc"):
+        return old_bytes
+    old = old_bytes.decode("utf-8")
+    if path.endswith("resume_2.inc"):
+        anchor_public = (
+            " static constexpr int N=10,V=100;"
+            "static constexpr int kFrozenRootDepth=3;"
+            "static constexpr std::uint64_t HiMask=(1ULL<<36)-1;"
+            "using Clock=std::chrono::steady_clock;"
+            "struct TState{std::array<Bits,8>t{};};"
+            "struct Child{TState ts;Bits legal,key;int count;"
+            "std::uint32_t cached;};\npublic:\n"
+        )
+        anchor_root_rank = (
+            "private:int root_rank(Bits k)const{for(std::size_t j=0;"
+            "j<root_order_.size();++j)if(root_order_[j]==k)return(int)j;"
+            "return -1;}\n"
+        )
+        blind_branch = (
+            "else if(below_root_blind_&&depth>kFrozenRootDepth){std::sort("
+            "ch.begin(),ch.begin()+n,[](const Child&a,const Child&b)"
+            "{if(a.count!=b.count)return a.count<b.count;"
+            "return a.key<b.key;});}"
+        )
+        anchor_members = (
+            "private:bool below_root_blind_=false;"
+            "private:bool root_order_active_=false;"
+            "int root_order_depth_=-1;std::vector<Bits> root_order_;"
+            "int root_diag_depth_=-1;std::size_t root_children_unique_=0;"
+            "std::size_t root_children_entered_=0;int root_witness_move_=-1;"
+            "std::vector<Bits> root_eval_order_;\n"
+        )
+        for needle, what in ((anchor_public, "public anchor"),
+                             (anchor_root_rank, "root_rank anchor"),
+                             (blind_branch, "blind branch"),
+                             (anchor_members, "member line")):
+            if old.count(needle) != 1:
+                fail(f"base resume_2 {what} count != 1")
+        exp = old
+        exp = exp.replace(
+            anchor_public,
+            anchor_public
+            + R2_TEST_STRUCT + "\n" + R2_TEST_SINGLE + "\n" + R2_TEST_BUCKET
+            + "\n", 1)
+        exp = exp.replace(anchor_root_rank,
+                          anchor_root_rank + R2_BUCKET_METHOD + "\n", 1)
+        exp = exp.replace(blind_branch, blind_branch + R2_ELSE_IF, 1)
+        exp = exp.replace(anchor_members, R2_MEMBER + "\n" + R2_SETTER + "\n",
+                          1)
+        return exp.encode("utf-8")
+    if path.endswith("resume_3.inc"):
+        if old.count(R3_OLD) != 1:
+            fail("base resume_3 guard count != 1")
+        return old.replace(R3_OLD, R3_NEW, 1).encode("utf-8")
+    # resume_4
+    if old.count(R4_OLD_FLAGLINE) != 1 or old.count(R4_OLD_SOLVE) != 1:
+        fail("base resume_4 anchors count != 1")
+    exp = old.replace(R4_OLD_FLAGLINE, R4_NEW_FLAGLINE, 1)
+    exp = exp.replace(R4_OLD_SOLVE, R4_NEW_SOLVE, 1)
+    return exp.encode("utf-8")
 
 
 def main() -> int:
