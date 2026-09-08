@@ -1,5 +1,5 @@
  std::string root_order_file;int root_order_depth=-1;
- std::string memo_instr_out;for(int ai2=1;ai2<argc;){std::string a=argv[ai2];if(a=="--memo-instr-out"&&ai2+1<argc){memo_instr_out=argv[ai2+1];for(int aj=ai2;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai2;}
+ std::string memo_instr_out;for(int ai2=1;ai2<argc;){std::string a=argv[ai2];if(a=="--memo-instr-out"&&ai2+1<argc){memo_instr_out=argv[ai2+1];for(int aj=ai2;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai2;}std::string below_root_order="cache-aware";for(int ai3=1;ai3<argc;){std::string a=argv[ai3];if(a=="--below-root-order"&&ai3+1<argc){below_root_order=argv[ai3+1];for(int aj=ai3;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai3;}if(below_root_order!="cache-aware"&&below_root_order!="cache-blind")throw std::runtime_error("unknown --below-root-order (want cache-aware|cache-blind)");
  for(int ai=1;ai<argc;){std::string a=argv[ai];if(a=="--root-order-file"&&ai+1<argc){root_order_file=argv[ai+1];for(int aj=ai;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else if(a=="--root-depth"&&ai+1<argc){root_order_depth=std::atoi(argv[ai+1]);for(int aj=ai;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai;}
  unsigned shrink=argc>=3?std::atoi(argv[2]):3,load=argc>=4?std::atoi(argv[3]):80;
  std::uint64_t max_visited=argc>=5?std::strtoull(argv[4],nullptr,10):0;
@@ -9,7 +9,7 @@
  std::ifstream in(argv[1]);if(!in)throw std::runtime_error("cannot open states file");
  std::vector<std::vector<int>>tasks;std::string line;
  while(std::getline(in,line))if(!line.empty())tasks.push_back(parse(line));
- Solver solver(shrink,load);if(!memo_instr_out.empty())solver.set_memo_instr(memo_instr_out);
+ Solver solver(shrink,load);if(!memo_instr_out.empty())solver.set_memo_instr(memo_instr_out);if(below_root_order=="cache-blind")solver.set_below_root_order_blind(true);std::cerr<<"below_root_order="<<below_root_order<<"\n";
  solver.set_probe_budget(max_visited,max_seconds);
  if(!root_order_file.empty()&&root_order_depth<0)throw std::runtime_error("--root-order-file requires --root-depth");
  if(!root_order_file.empty()&&(int)tasks.size()!=1)throw std::runtime_error("--root-order-file requires a single-state file");
