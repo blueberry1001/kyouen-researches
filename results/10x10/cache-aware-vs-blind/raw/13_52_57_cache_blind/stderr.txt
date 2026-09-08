@@ -1,0 +1,4 @@
+below_root_order=cache-blind
+bench_root unique=92 entered=1 first_lo=148618787705331712 first_hi=0 witness=21 outcome=WIN
+memo_by_depth 9:181464 10:681716 11:2071170 12:3557600 13:3947924 14:2457481 15:649681 16:60684 17:1703
+forbidden=54441 completed=1 requested=1 memo=13609423 seconds=51.0704 table_full=0
