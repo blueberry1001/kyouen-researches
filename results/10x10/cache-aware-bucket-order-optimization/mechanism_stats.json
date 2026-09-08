@@ -1,0 +1,22 @@
+{
+  "child_class_distribution": {
+    "cached_loss": 106043262,
+    "cached_win": 98090122,
+    "unknown": 654035043
+  },
+  "child_class_fractions": {
+    "loss": 0.12356928857276638,
+    "unknown": 0.762128997551666,
+    "win": 0.11430171387556769
+  },
+  "children_per_node_mean": 4.432544510411889,
+  "fraction_nodes_no_cache_hit": 0.35986081215529203,
+  "nodes_cache_changes_first_child": 41677154,
+  "nodes_cache_changes_full_order": 65256722,
+  "nodes_with_any_prefetch_hit": 123934963,
+  "nodes_without_any_prefetch_hit": 69671311,
+  "nonterminal_nodes_sorted": 193606274,
+  "note": "single-std::sort comparator recomputes the cached-class of both operands on every comparison; the bucket implementation replaces that with 2 partition passes + 3 short (count,key) sorts. On this cohort ~36.0% of nodes have no cached child at all, so the single-sort fast path is already dominated by (count,key) comparisons; bucket adds partition cost with little comparator savings.",
+  "source": "raw_parity S-run instrumentation (identical for B by parity)",
+  "total_children_sorted": 858168427
+}

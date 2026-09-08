@@ -1,0 +1,98 @@
+[
+  {
+    "parent": "0,11,35",
+    "median_S": 330.921,
+    "median_B": 329.612,
+    "delta_S_minus_B": 1.308999999999969,
+    "visited": 85311102,
+    "ns_per_node_delta": 15.343841180248369
+  },
+  {
+    "parent": "11,38,44",
+    "median_S": 72.2924,
+    "median_B": 70.7202,
+    "delta_S_minus_B": 1.5721999999999952,
+    "visited": 17051435,
+    "ns_per_node_delta": 92.20338346889838
+  },
+  {
+    "parent": "11,78,87",
+    "median_S": 43.1311,
+    "median_B": 44.0432,
+    "delta_S_minus_B": -0.9120999999999952,
+    "visited": 9928498,
+    "ns_per_node_delta": -91.86686646862347
+  },
+  {
+    "parent": "12,24,68",
+    "median_S": 50.7332,
+    "median_B": 53.4,
+    "delta_S_minus_B": -2.666800000000002,
+    "visited": 11677827,
+    "ns_per_node_delta": -228.364403754226
+  },
+  {
+    "parent": "12,32,55",
+    "median_S": 34.4624,
+    "median_B": 35.5558,
+    "delta_S_minus_B": -1.0933999999999955,
+    "visited": 7106990,
+    "ns_per_node_delta": -153.8485350338182
+  },
+  {
+    "parent": "13,52,57",
+    "median_S": 55.6117,
+    "median_B": 54.5971,
+    "delta_S_minus_B": 1.0146000000000015,
+    "visited": 11651703,
+    "ns_per_node_delta": 87.07739975864486
+  },
+  {
+    "parent": "14,64,74",
+    "median_S": 23.0668,
+    "median_B": 23.7267,
+    "delta_S_minus_B": -0.6599000000000004,
+    "visited": 4342654,
+    "ns_per_node_delta": -151.95776591918224
+  },
+  {
+    "parent": "23,44,45",
+    "median_S": 41.0995,
+    "median_B": 39.7102,
+    "delta_S_minus_B": 1.3892999999999986,
+    "visited": 7188933,
+    "ns_per_node_delta": 193.2553829615603
+  },
+  {
+    "parent": "3,47,63",
+    "median_S": 31.0068,
+    "median_B": 33.2211,
+    "delta_S_minus_B": -2.2143000000000015,
+    "visited": 5711578,
+    "ns_per_node_delta": -387.68620510829084
+  },
+  {
+    "parent": "3,53,84",
+    "median_S": 39.9145,
+    "median_B": 37.8122,
+    "delta_S_minus_B": 2.1022999999999996,
+    "visited": 7184954,
+    "ns_per_node_delta": 292.5975587317608
+  },
+  {
+    "parent": "4,24,26",
+    "median_S": 213.018,
+    "median_B": 216.04,
+    "delta_S_minus_B": -3.0219999999999914,
+    "visited": 51289701,
+    "ns_per_node_delta": -58.920210901599745
+  },
+  {
+    "parent": "4,42,54",
+    "median_S": 37.7963,
+    "median_B": 42.5316,
+    "delta_S_minus_B": -4.735299999999995,
+    "visited": 6977109,
+    "ns_per_node_delta": -678.6908445890691
+  }
+]
