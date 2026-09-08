@@ -3,7 +3,7 @@
 Prereg: `docs/10X10_CACHE_AWARE_VS_BLIND_BELOW_ROOT_PREREG.md`
 Branch: `preregister-10x10-cache-aware-vs-blind-below-root`
 Start SHA: `21e7bfe` (= stated prereg head; base `80b734b` confirmed).
-End SHA: `4bbce27` (4 commits on top of prereg head; full: `4bbce2765db3188de6e9fc3b7cfa8e6397a7dd17`).
+End SHA: `54af4a5` (4 commits on top of prereg head; full: `54af4a563fb3b88b3873c16921dd4066a079f69c`).
 
 One binary (`tmp-kb/order_ab_native`, `g++ -O2 -std=c++20`, Ubuntu 13.3.0),
 runtime switch `--below-root-order cache-aware|cache-blind` (default
@@ -138,4 +138,4 @@ cached-LOSS-first ordering.
 
 Commits: implementation+tooling, manifest freeze, raw 24/24, this report.
 `main` untouched (verified via `git status` on main worktree / merge-base).
-Push receipt: (filled at push time).
+Push receipt: `54af4a5` pushed to `origin/preregister-10x10-cache-aware-vs-blind-below-root`; this receipt fix follows as final commit.
