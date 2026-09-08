@@ -1,0 +1,3 @@
+bench_root unique=92 entered=1 first_lo=9059975821262848 first_hi=0 witness=53 outcome=WIN
+memo_by_depth 9:130208 10:435766 11:1220422 12:1904432 13:1998225 14:1161316 15:280181 16:22723 17:550
+forbidden=54441 completed=1 requested=1 memo=7153823 seconds=20.675 table_full=0

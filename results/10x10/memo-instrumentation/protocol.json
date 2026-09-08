@@ -1,0 +1,35 @@
+{
+  "cohort": {
+    "parents": [
+      "0,11,35",
+      "11,38,44",
+      "11,78,87",
+      "12,24,68",
+      "12,32,55",
+      "13,52,57",
+      "14,64,74",
+      "23,44,45",
+      "3,47,63",
+      "3,53,84",
+      "4,24,26",
+      "4,42,54"
+    ]
+  },
+  "instrumentation": "below-root memo reuse counters (preregistered)",
+  "parent_solve": {
+    "binary": "tmp-kb/memo_instr_native",
+    "binary_sha256": "b6a3e21f5df0ba23b59930cd75f5415c5ce87db631cebcf3ff4528139412bab5",
+    "budget": 0,
+    "build_cmd": [
+      "g++",
+      "-O2",
+      "-std=c++20"
+    ],
+    "fresh_process_per_parent": true,
+    "load": 90,
+    "root_depth": 3,
+    "root_order_override": null,
+    "shrink": 0,
+    "sources_sha256": "8082a0e591173e73c0faad0b52d0c6c4f0c71f62ab39764a34a7e535b2ce2046"
+  }
+}
