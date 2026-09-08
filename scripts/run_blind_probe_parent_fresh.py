@@ -11,7 +11,9 @@ Primary mode is intentionally narrow:
     before the first primary probe;
   * every primary raw row records the executable-seal and solver SHA-256 so a
     raw CSV cannot later be silently detached from the provenance it was run
-    under.
+    under;
+  * solver WIN/LOSS labels are never written to disk before reveal.  They are
+    collapsed to EARLY_RESOLVED; budget exhaustion is BUDGET_EXHAUSTED.
 
 Use --exploratory only after the corrected primary rerun is committed.  It may
 run a non-primary parent and/or all batches, but writes a visibly different
@@ -84,9 +86,6 @@ def verify_primary_seal(parent: str, child_file: Path) -> dict[str, str]:
             f"expected={data.get('runner', {}).get('sha256')}"
         )
 
-    # Keep the source provenance in the seal truthful at execution time.  The
-    # binary hash is what fixes executed behaviour; this additional check stops
-    # a later source edit from making the sealed source/binary record ambiguous.
     sources = data.get("solver_sources")
     if not isinstance(sources, list) or not sources:
         raise SystemExit("executable seal has no solver_sources provenance")
@@ -153,31 +152,34 @@ def run_one(state: str) -> dict[str, str]:
     if row.get("state", "").replace(",", "-") != state.replace(",", "-"):
         raise RuntimeError(f"solver state mismatch: requested={state} got={row.get('state')}")
 
-    outcome = row["outcome"].upper()
+    solver_outcome = row["outcome"].upper()
     visited = int(row["visited"])
     memo = int(row["memo"])
-    if outcome not in {"PROBE", "WIN", "LOSS"}:
+    if solver_outcome not in {"PROBE", "WIN", "LOSS"}:
         raise RuntimeError(f"unknown probe outcome for {state}: {row['outcome']}")
     if visited <= 0 or visited > BUDGET:
         raise RuntimeError(f"invalid probe visited for {state}: visited={visited}")
 
-    # Exact fresh-Solver invariant. Solver::win() increments visited only after
-    # a memo miss, and such a newly visited state can contribute at most one new
-    # memo entry. Therefore a genuinely fresh child process must satisfy
-    # memo_used <= visited. This catches the historical cross-child accumulation
-    # immediately instead of waiting for the post-run verifier.
     if memo < 0 or memo > visited:
         raise RuntimeError(
             f"freshness invariant failed for {state}: memo={memo} visited={visited}"
         )
 
-    # With a visited-only budget, PROBE is emitted by ProbeExhausted exactly at
-    # the requested budget. Early exact WIN/LOSS is allowed below the budget.
-    if outcome == "PROBE" and visited != BUDGET:
+    if solver_outcome == "PROBE" and visited != BUDGET:
         raise RuntimeError(
             f"PROBE did not hit exact visited budget for {state}: "
             f"visited={visited} budget={BUDGET}"
         )
+
+    # Do not persist label-bearing probe outcomes before the reveal boundary.
+    # Whether an early solve was WIN or LOSS is irrelevant to the frozen memo
+    # ranking; retaining that bit would make the supposedly unrevealed artifact
+    # itself contain exact labels.  Keep only the operational distinction needed
+    # to verify the visited-budget invariant.
+    row.pop("outcome", None)
+    row["probe_status"] = (
+        "BUDGET_EXHAUSTED" if solver_outcome == "PROBE" else "EARLY_RESOLVED"
+    )
     return row
 
 
