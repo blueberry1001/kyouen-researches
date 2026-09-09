@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Build the frozen v2 ranking from isolated probe outputs without labels.
 
-This script deliberately never opens either source proof CSV.  It accepts only
-(1) the already-frozen label-free holdout and (2) child input/probe files.
+This script deliberately never opens either source proof CSV. It accepts only
+(1) the already-frozen label-free holdout, (2) the frozen complete child-order
+CSV, and (3) child input/probe files.
+
 The ordering rule is the one frozen in THREE_STONE_PROBE_HOLDOUT_V2_PRE_RUN_RECEIPT.md:
 
   exact LOSS first; exact WIN excluded; unfinished PROBE by memo ascending;
   ties by the solver-default input order.
 
-The child input text files are the authority for solver-default order.  Every
-probe CSV must match its corresponding child file row-for-row, so file-system
-ordering cannot silently change the tie break.
+The frozen child-order CSV is the completeness authority. Every planned child
+must have exactly one isolated probe result before a ranking can be written.
+The child input text files remain the authority for the actual solver-default
+row order inside each batch, and every probe CSV must match its corresponding
+child file row-for-row.
 """
 
 import argparse
@@ -70,6 +74,60 @@ def read_holdout(path: Path) -> list[str]:
     if len(parents) != len(set(parents)):
         raise ValueError("duplicate parent in holdout")
     return parents
+
+
+def read_frozen_children(path: Path, parents: list[str]) -> dict[str, list[str]]:
+    with path.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    if not rows:
+        raise ValueError("frozen child CSV is empty")
+    required = {"parent", "solver_default_rank", "child_state"}
+    missing = required - set(rows[0])
+    if missing:
+        raise ValueError(f"frozen child CSV missing columns: {sorted(missing)}")
+    forbidden = {"loss_child", "outcome", "label", "memo", "visited", "maxdepth", "seconds"}
+    leaked = forbidden & set(rows[0])
+    if leaked:
+        raise ValueError(f"result-bearing columns forbidden in frozen children: {sorted(leaked)}")
+
+    expected: dict[str, list[str]] = {p: [] for p in parents}
+    seen_states: set[tuple[str, str]] = set()
+    seen_parent_order: list[str] = []
+    seen_parents: set[str] = set()
+    for row in rows:
+        parent = row["parent"]
+        if parent not in expected:
+            raise ValueError(f"frozen child CSV contains parent outside holdout: {parent}")
+        if parent not in seen_parents:
+            seen_parents.add(parent)
+            seen_parent_order.append(parent)
+        state = row["child_state"]
+        key = (parent, state)
+        if key in seen_states:
+            raise ValueError(f"duplicate frozen child state for {parent}: {state}")
+        seen_states.add(key)
+        child_of(parent, state)
+        want_rank = len(expected[parent]) + 1
+        try:
+            got_rank = int(row["solver_default_rank"])
+        except ValueError as exc:
+            raise ValueError(f"bad solver_default_rank for {parent}: {row['solver_default_rank']!r}") from exc
+        if got_rank != want_rank:
+            raise ValueError(
+                f"non-contiguous frozen solver_default_rank for {parent}: "
+                f"got {got_rank}, expected {want_rank}"
+            )
+        expected[parent].append(state)
+
+    if seen_parent_order != parents:
+        raise ValueError(
+            f"frozen child parent order differs from holdout: "
+            f"frozen={seen_parent_order} holdout={parents}"
+        )
+    empty = [p for p, states in expected.items() if not states]
+    if empty:
+        raise ValueError(f"frozen child CSV missing holdout parents: {empty}")
+    return expected
 
 
 def discover_batches(probe_dir: Path, slug: str) -> tuple[dict[int, Path], dict[int, Path]]:
@@ -175,8 +233,9 @@ def sort_key(row: dict[str, object]) -> tuple[int, int, int]:
     raise ValueError("WIN rows must be excluded before ranking")
 
 
-def build(holdout: Path, probe_dir: Path, output: Path) -> None:
+def build(holdout: Path, frozen_children: Path, probe_dir: Path, output: Path) -> None:
     parents = read_holdout(holdout)
+    frozen = read_frozen_children(frozen_children, parents)
     output.parent.mkdir(parents=True, exist_ok=True)
     fields = [
         "parent",
@@ -191,8 +250,16 @@ def build(holdout: Path, probe_dir: Path, output: Path) -> None:
         "rank_reason",
     ]
     rows_out: list[dict[str, object]] = []
+    measured_total = 0
     for parent in parents:
         measured = read_parent_rows(parent, probe_dir)
+        measured_states = [str(r["state"]) for r in measured]
+        if measured_states != frozen[parent]:
+            raise ValueError(
+                f"incomplete or altered probe child sequence for {parent}: "
+                f"measured={len(measured_states)} frozen={len(frozen[parent])}"
+            )
+        measured_total += len(measured)
         candidates = [r for r in measured if r["outcome"] != "WIN"]
         ranked = sorted(candidates, key=sort_key)
         for rank, row in enumerate(ranked, start=1):
@@ -212,25 +279,34 @@ def build(holdout: Path, probe_dir: Path, output: Path) -> None:
                 }
             )
 
+    frozen_total = sum(len(v) for v in frozen.values())
+    if measured_total != frozen_total:
+        raise ValueError(f"probe completeness mismatch: measured={measured_total} frozen={frozen_total}")
+
     with output.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         w.writeheader()
         w.writerows(rows_out)
 
     print(f"parents={len(parents)}")
+    print(f"frozen_children={frozen_total}")
+    print(f"measured_children={measured_total}")
+    print(f"frozen_children_sha256={sha256(frozen_children)}")
     print(f"ranked_rows={len(rows_out)}")
     print(f"ranking_sha256={sha256(output)}")
     print(f"output={output}")
+    print("complete_frozen_child_universe=PASS")
     print("source_proof_labels_opened=0")
 
 
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("holdout", type=Path)
+    p.add_argument("frozen_children", type=Path)
     p.add_argument("probe_dir", type=Path)
     p.add_argument("output", type=Path)
     args = p.parse_args()
-    build(args.holdout, args.probe_dir, args.output)
+    build(args.holdout, args.frozen_children, args.probe_dir, args.output)
 
 
 if __name__ == "__main__":
