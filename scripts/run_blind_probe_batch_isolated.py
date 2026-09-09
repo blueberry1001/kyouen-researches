@@ -12,13 +12,18 @@ Output:
     results/10x10/blind_probe_children/
       probe_isolated_<parent>_batch<batch>_<budget>.csv
       probe_isolated_<parent>_batch<batch>_<budget>.err
+      probe_isolated_<parent>_batch<batch>_<budget>.meta.json
 
 Each child is executed in a separate process, hence all memo/search statistics
-start from a fresh Solver state.
+start from a fresh Solver state. The metadata sidecar seals the exact solver
+binary, runner source, fixed search parameters, input, and raw outputs so later
+holdout sealing can reject mixed execution conditions without inspecting labels.
 """
 
 import csv
+import hashlib
 import io
+import json
 import os
 import subprocess
 import sys
@@ -32,6 +37,15 @@ CHILDREN_DIR = REPO_ROOT / "results" / "10x10" / "blind_probe_children"
 FIXED_BUDGETS = {3: 1_000_000, 4: 10_000, 5: 10_000}
 SHRINK = 3
 LOAD = 80
+PROVENANCE_SCHEMA = 1
+
+
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def wsl_path(p: Path) -> str:
@@ -100,10 +114,20 @@ def main() -> None:
     in_file = CHILDREN_DIR / f"children_{safe}_batch{batch_index}.txt"
     if not in_file.exists():
         raise SystemExit(f"Input file missing: {in_file}")
+    if not SOLVER.is_file():
+        raise SystemExit(f"Solver missing: {SOLVER}")
 
     states = [x.strip() for x in in_file.read_text().splitlines() if x.strip()]
     out_file = CHILDREN_DIR / f"probe_isolated_{safe}_batch{batch_index}_{budget}.csv"
     err_file = CHILDREN_DIR / f"probe_isolated_{safe}_batch{batch_index}_{budget}.err"
+    meta_file = CHILDREN_DIR / f"probe_isolated_{safe}_batch{batch_index}_{budget}.meta.json"
+
+    # Capture identities before starting the batch. If either file changes
+    # during execution, the post-run check below rejects the batch.
+    solver_sha_before = sha256(SOLVER)
+    runner_path = Path(__file__).resolve()
+    runner_sha_before = sha256(runner_path)
+    input_sha_before = sha256(in_file)
 
     header = None
     data_rows = []
@@ -119,16 +143,44 @@ def main() -> None:
         err_parts.append(f"===== {i}/{len(states)} {state} =====\n{err}")
         print(f"{parent} batch {batch_index}: isolated {i}/{len(states)} {state}")
 
+    if sha256(SOLVER) != solver_sha_before:
+        raise RuntimeError("solver binary changed during batch")
+    if sha256(runner_path) != runner_sha_before:
+        raise RuntimeError("runner source changed during batch")
+    if sha256(in_file) != input_sha_before:
+        raise RuntimeError("child input changed during batch")
+
     with out_file.open("w", newline="") as f:
         w = csv.writer(f)
         w.writerow(header)
         w.writerows(data_rows)
     err_file.write_text("\n".join(err_parts))
 
+    provenance = {
+        "schema": PROVENANCE_SCHEMA,
+        "parent": parent,
+        "batch_index": batch_index,
+        "stones": stones,
+        "budget": budget,
+        "shrink": SHRINK,
+        "load": LOAD,
+        "solver_sha256": solver_sha_before,
+        "runner_sha256": runner_sha_before,
+        "child_input_sha256": input_sha_before,
+        "probe_csv_sha256": sha256(out_file),
+        "probe_err_sha256": sha256(err_file),
+    }
+    meta_file.write_text(
+        json.dumps(provenance, sort_keys=True, separators=(",", ":")) + "\n",
+        encoding="ascii",
+        newline="\n",
+    )
+
     elapsed = time.time() - start
     print(f"completed {len(states)} isolated probes in {elapsed:.1f}s")
     print(f"out={out_file}")
     print(f"err={err_file}")
+    print(f"meta={meta_file}")
 
 
 if __name__ == "__main__":
