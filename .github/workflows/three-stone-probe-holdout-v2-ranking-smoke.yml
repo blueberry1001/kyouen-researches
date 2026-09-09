@@ -1,0 +1,22 @@
+name: Three-stone probe holdout v2 ranking smoke
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - '.github/workflows/three-stone-probe-holdout-v2-ranking-smoke.yml'
+      - 'scripts/rank_three_stone_probe_holdout_v2.py'
+      - 'scripts/test_rank_three_stone_probe_holdout_v2.py'
+  workflow_dispatch:
+
+jobs:
+  synthetic-ranking:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify frozen label-blind ranking semantics
+        run: |
+          set -euo pipefail
+          python3 scripts/test_rank_three_stone_probe_holdout_v2.py
