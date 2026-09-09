@@ -3,7 +3,6 @@ import argparse
 import csv
 import hashlib
 import json
-import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -46,7 +45,7 @@ def normalize_transport(src, dst):
     return len(data) - len(normalized)
 
 
-def validate_success(input_path, output_path):
+def validate_success(input_path, output_path, require_nondecreasing_memo=True):
     inp = read_csv(input_path)
     out = read_csv(output_path)
     if len(inp) != len(out):
@@ -67,9 +66,10 @@ def validate_success(input_path, output_path):
             memo = int(y["memo_used"])
         except (KeyError, ValueError) as e:
             raise RuntimeError(f"row {i}: invalid memo_used") from e
-        if memo < last_memo:
+        if require_nondecreasing_memo and memo < last_memo:
             raise RuntimeError(
-                f"row {i}: memo_used decreased: {memo} < {last_memo}"
+                f"row {i}: memo_used decreased within one solver process: "
+                f"{memo} < {last_memo}"
             )
         last_memo = memo
     return len(out), last_memo
@@ -209,7 +209,9 @@ def main():
         }
 
         if proc.returncode == 0:
-            validated_rows, final_memo = validate_success(executed, stdout)
+            validated_rows, final_memo = validate_success(
+                executed, stdout, require_nondecreasing_memo=True
+            )
             record["status"] = "success"
             record["validated_rows"] = validated_rows
             record["final_memo_used"] = final_memo
@@ -301,6 +303,7 @@ def main():
                 "memo_power": args.memo_power,
                 "max_recovery_level": args.max_recovery_level,
                 "recovery_trigger": MEMO_LIMIT_MARKER,
+                "memo_monotonicity_scope": "within_each_fresh_solver_process_only",
                 "policy": "only exact memo-limit marker auto-splits; all failed partial output excluded",
                 "attempts": attempt_records,
                 "error": error,
@@ -319,10 +322,13 @@ def main():
 
     consolidated = outdir / "consolidated-results.csv"
     write_consolidated(primary, leaf_outputs, consolidated)
-    # Validate consolidated identity/order once more against an LF primary copy.
+    # Each recovery leaf used a fresh Solver, so memo_used can reset at leaf
+    # boundaries. At this stage validate only semantic identity/order/outcomes.
     primary_lf = outdir / "primary-executed-input.csv"
     normalize_transport(primary, primary_lf)
-    validated_rows, _ = validate_success(primary_lf, consolidated)
+    validated_rows, _ = validate_success(
+        primary_lf, consolidated, require_nondecreasing_memo=False
+    )
 
     receipt = outdir / "recovery-receipt.txt"
     successful = sum(r["status"] == "success" for r in attempt_records)
@@ -337,6 +343,7 @@ def main():
                 f"successful_leaf_attempts={successful}",
                 f"excluded_failed_attempts={excluded}",
                 f"consolidated_sha256={sha256(consolidated)}",
+                "memo_monotonicity_scope=within_each_fresh_solver_process_only",
                 "partial_failed_outputs_used=0",
                 "statistical_analysis_run=0",
             ]
