@@ -8,10 +8,11 @@ Two-step use is intentional:
   git commit -m "Freeze no-hit timing execution manifest"
   python3 scripts/run_nohit_fastpath_timing.py --run
 
---seal performs NO timing runs.  It requires semantic-parity PASS and records
+--seal performs NO timing runs. It requires semantic-parity PASS and records
 the exact 72-run order plus binary/plan/collector/verifier/analyzer hashes.
 --run refuses to start unless that manifest is byte-identical to the version
-committed at HEAD.  Raw timing is collected only; analysis is a separate step.
+committed at this worktree's HEAD. Raw timing is collected only; analysis is a
+separate step.
 """
 from __future__ import annotations
 
@@ -143,6 +144,50 @@ def exact_run_order(plan: dict) -> list[dict[str, object]]:
     return runs
 
 
+def _wsl_main_gitdir_and_worktree_head() -> tuple[Path, str] | None:
+    """Resolve the *current worktree's* commit from a Windows .git pointer.
+
+    A bare `git --git-dir MAIN/.git show HEAD:...` is NOT sufficient because
+    MAIN/.git/HEAD can point at main while this linked worktree is on the
+    experiment branch. We therefore read MAIN/.git/worktrees/<name>/HEAD,
+    resolve that ref/commit, and use the resulting revision explicitly.
+    """
+    dotgit = ROOT / ".git"
+    if not dotgit.is_file():
+        return None
+    pointer = dotgit.read_text(encoding="utf-8", errors="replace").strip()
+    if pointer.startswith("gitdir:"):
+        pointer = pointer[len("gitdir:"):].strip()
+    normalized = pointer.replace("\\", "/")
+    m = re.match(r"^(.*)/\.git/worktrees/([^/]+)$", normalized)
+    if not m:
+        return None
+    repo = m.group(1)
+    wt_name = m.group(2)
+    drive = re.match(r"^([A-Za-z]):/(.*)$", repo)
+    if drive and Path("/mnt").exists() and not Path("C:/").exists():
+        repo = f"/mnt/{drive.group(1).lower()}/{drive.group(2)}"
+    gitdir = Path(repo) / ".git"
+    wt_head = gitdir / "worktrees" / wt_name / "HEAD"
+    if not gitdir.is_dir() or not wt_head.is_file():
+        return None
+    line = wt_head.read_text(encoding="utf-8", errors="replace").strip()
+    if not line:
+        return None
+    if line.startswith("ref: "):
+        refname = line[5:].strip()
+        p = subprocess.run(
+            ["git", "--git-dir", str(gitdir), "rev-parse", refname],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+        )
+        if p.returncode != 0 or not p.stdout.strip():
+            return None
+        revision = p.stdout.strip()
+    else:
+        revision = line
+    return gitdir, revision
+
+
 def git_show_head(path: Path) -> bytes:
     rp = rel(path)
     p = subprocess.run(
@@ -152,27 +197,16 @@ def git_show_head(path: Path) -> bytes:
     if p.returncode == 0:
         return p.stdout
 
-    # WSL fallback for a Windows-created worktree whose .git pointer is not
-    # directly traversable by WSL git.
-    dotgit = ROOT / ".git"
-    if dotgit.is_file():
-        pointer = dotgit.read_text(encoding="utf-8", errors="replace").strip()
-        if pointer.startswith("gitdir:"):
-            pointer = pointer[len("gitdir:"):].strip()
-        m = re.match(r"(.*)[/\\]\.git[/\\]worktrees[/\\](.+)$", pointer)
-        if m:
-            repo = m.group(1)
-            mm = re.match(r"^([A-Za-z]):[/\\](.*)$", repo)
-            if mm and Path("/mnt").exists() and not Path("C:/").exists():
-                repo = "/mnt/" + mm.group(1).lower() + "/" + mm.group(2).replace("\\", "/")
-            gitdir = Path(repo) / ".git"
-            q = subprocess.run(
-                ["git", "--git-dir", str(gitdir), "show", f"HEAD:{rp}"],
-                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            )
-            if q.returncode == 0:
-                return q.stdout
-    fail(f"cannot read committed HEAD:{rp}")
+    fallback = _wsl_main_gitdir_and_worktree_head()
+    if fallback is not None:
+        gitdir, revision = fallback
+        q = subprocess.run(
+            ["git", "--git-dir", str(gitdir), "show", f"{revision}:{rp}"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        )
+        if q.returncode == 0:
+            return q.stdout
+    fail(f"cannot read committed worktree HEAD:{rp}")
     raise AssertionError
 
 
@@ -324,11 +358,12 @@ def run_one(binary: Path, spec: dict[str, object], timeout: float) -> dict[str, 
 def run_endpoint(timeout: float) -> int:
     if not MANIFEST.is_file():
         fail("timing manifest missing; run --seal and commit it first")
-    # Strong commit gate: the exact manifest consumed must already be in HEAD.
+    # Strong commit gate: the exact manifest consumed must already be in this
+    # linked worktree's committed HEAD, not merely in the main repository HEAD.
     committed = git_show_head(MANIFEST)
     current = MANIFEST.read_bytes()
     if committed != current:
-        fail("timing manifest is not byte-identical to committed HEAD; commit before --run")
+        fail("timing manifest is not byte-identical to committed worktree HEAD")
 
     check_parity_pass()
     binary, build = load_binary()
