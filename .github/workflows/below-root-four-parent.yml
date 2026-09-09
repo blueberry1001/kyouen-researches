@@ -1,0 +1,28 @@
+name: Below-root frozen four-parent diagnostic
+
+on:
+  push:
+    branches: [implement-below-root-instrumentation-v1]
+    paths:
+      - .github/workflows/below-root-four-parent.yml
+  workflow_dispatch:
+
+jobs:
+  four-parent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run paired fresh-process exact instrumentation
+        run: python3 scripts/run_below_root_instrumentation.py --run-four --timeout 600 --exact-timeout 10800
+      - name: Summarize mechanism rows
+        run: python3 scripts/analyze_below_root_instrumentation.py results/10x10/below-root-instrumentation/four_parent_raw.csv --min-mass 0.01
+      - name: Upload immutable raw rows and protocol
+        uses: actions/upload-artifact@v4
+        with:
+          name: below-root-four-parent-${{ github.sha }}
+          path: |
+            results/10x10/below-root-instrumentation/four_parent_raw.csv
+            results/10x10/below-root-instrumentation/four_parent_protocol.json
+          if-no-files-found: error
+          retention-days: 30
