@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Analyze the frozen 72-run no-hit fastpath timing endpoint.
 
-This script is intentionally committed before endpoint timing.  It refuses to
+This script is intentionally committed before endpoint timing. It refuses to
 run unless the 24-run semantic-parity verifier passes and the timing collector
-receipt says all 72 fresh serial runs completed.  Primary endpoint is exactly
+receipt says all 72 fresh serial runs completed. Primary endpoint is exactly
 the preregistered one:
   T_parent = median(seconds_sort) / median(seconds_nohit)
   PASS iff median(T_parent) > 1 AND nohit is faster on >= 7/12 parents.
@@ -85,7 +85,19 @@ def median3(xs: list[float], label: str) -> float:
     return float(statistics.median(xs))
 
 
+def confined_run_dir(run_dir_rel: str) -> Path:
+    run_dir = ROOT / run_dir_rel
+    try:
+        run_dir.resolve().relative_to(TIMING.resolve())
+    except ValueError:
+        fail(f"run directory escapes frozen timing root: {run_dir_rel}")
+    return run_dir
+
+
 def main() -> int:
+    if RESULT_JSON.exists() or RESULT_CSV.exists():
+        fail("analysis output already exists; refusing silent re-analysis/overwrite")
+
     plan = load_json(PLAN_PATH)
     if plan.get("parents_ranked") != PARENTS:
         fail("cohort differs from frozen execution plan")
@@ -122,12 +134,29 @@ def main() -> int:
         fail("timing manifest binary SHA differs from sealed build")
     if manifest.get("execution_plan_sha256") != sha256_file(PLAN_PATH):
         fail("timing manifest execution-plan SHA mismatch")
+    if receipt.get("manifest_sha256") != sha256_file(TIMING_MANIFEST):
+        fail("timing receipt manifest SHA differs from current sealed manifest")
+    mprimary = manifest.get("primary", {})
+    if mprimary.get("per_parent") != "median(seconds_sort)/median(seconds_nohit)":
+        fail("sealed manifest primary ratio differs from preregistration")
+    if mprimary.get("pass_all") != ["median_parent_ratio > 1", "F_faster_count >= 7_of_12"]:
+        fail("sealed manifest primary PASS criterion differs from preregistration")
+    if mprimary.get("effect_size_threshold") is not None:
+        fail("sealed manifest added an unauthorized effect-size threshold")
 
     run_entries = receipt.get("runs")
+    manifest_runs = manifest.get("runs")
     if not isinstance(run_entries, list) or len(run_entries) != 72:
         fail("timing receipt run list is not exactly 72 entries")
+    if not isinstance(manifest_runs, list) or len(manifest_runs) != 72:
+        fail("timing manifest run list is not exactly 72 entries")
     if [r.get("order_index") for r in run_entries] != list(range(1, 73)):
         fail("timing receipt order_index is not exactly 1..72")
+    frozen_fields = ("order_index", "rank", "parent", "repetition", "implementation")
+    for got, frozen in zip(run_entries, manifest_runs):
+        for field in frozen_fields:
+            if got.get(field) != frozen.get(field):
+                fail(f"receipt run order differs from manifest at order {frozen.get('order_index')} field {field}")
 
     seconds: dict[tuple[str, str], list[float]] = {}
     walls: dict[tuple[str, str], list[float]] = {}
@@ -138,9 +167,26 @@ def main() -> int:
         run_dir_rel = entry.get("run_dir")
         if parent not in PARENTS or impl not in ("sort", "nohit") or not isinstance(run_dir_rel, str):
             fail(f"invalid run receipt entry: {entry}")
-        run_dir = ROOT / run_dir_rel
-        row = read_one_stdout(run_dir / "stdout.txt")
-        meta = load_json(run_dir / "run_meta.json")
+        run_dir = confined_run_dir(run_dir_rel)
+        stdout_path = run_dir / "stdout.txt"
+        stderr_path = run_dir / "stderr.txt"
+        meta_path = run_dir / "run_meta.json"
+        for path, field in (
+            (stdout_path, "stdout_sha256"),
+            (stderr_path, "stderr_sha256"),
+            (meta_path, "meta_sha256"),
+        ):
+            expected_hash = entry.get(field)
+            if not path.is_file() or not isinstance(expected_hash, str):
+                fail(f"order {entry.get('order_index')}: missing raw/hash for {path.name}")
+            if sha256_file(path) != expected_hash:
+                fail(f"order {entry.get('order_index')}: raw SHA mismatch for {path.name}")
+
+        row = read_one_stdout(stdout_path)
+        meta = load_json(meta_path)
+        for field in frozen_fields:
+            if meta.get(field) != entry.get(field):
+                fail(f"order {entry.get('order_index')}: run_meta differs on {field}")
         if row.get("outcome") not in ("WIN", "LOSS"):
             fail(f"{parent}/{impl}: invalid outcome")
         try:
@@ -221,6 +267,8 @@ def main() -> int:
         "primary_pass": primary_pass,
         "primary_criterion": "median_parent_ratio > 1 AND nohit_faster >= 7/12",
         "effect_size_threshold": None,
+        "manifest_sha256": sha256_file(TIMING_MANIFEST),
+        "timing_collection_receipt_sha256": sha256_file(TIMING_RECEIPT),
         "parents": rows_out,
     }
     RESULT_JSON.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
