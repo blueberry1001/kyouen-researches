@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - preregister-10x10-cache-aware-nohit-fastpath
+    paths:
+      - '.github/workflows/nohit-fastpath-smoke.yml'
+      - 'scripts/probe_cert_solver.cpp'
+      - 'scripts/probe_parts/**'
+      - 'scripts/prepare_cache_aware_nohit_fastpath.py'
+      - 'scripts/audit_cache_aware_nohit_fastpath_source_diff.py'
+      - 'scripts/build_nohit_fastpath_binary.py'
+      - 'scripts/test_cache_aware_nohit_fastpath_equivalence.py'
+      - 'scripts/test_nohit_fastpath_solver_smoke.py'
   workflow_dispatch:
 
 permissions:
