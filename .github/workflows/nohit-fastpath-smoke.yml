@@ -31,5 +31,12 @@ jobs:
       - name: Build sealed no-hit binary
         run: python3 scripts/build_nohit_fastpath_binary.py
 
+      - name: Full-capacity empty-state allocation smoke
+        run: |
+          free -h
+          nproc
+          : > /tmp/nohit-empty-states.txt
+          /usr/bin/time -v ./tmp-kb/nohit_fastpath_ab_native /tmp/nohit-empty-states.txt 0 90 0 0 --cache-aware-order-impl sort
+
       - name: Capped solver integration smoke
         run: python3 scripts/test_nohit_fastpath_solver_smoke.py
