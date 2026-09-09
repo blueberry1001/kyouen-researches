@@ -1,0 +1,91 @@
+name: run-blind-probe-fresh-corrective
+
+on:
+  push:
+    branches: [run-blind-probe-fresh-corrective]
+    paths:
+      - 'scripts/run_blind_probe_parent_fresh.py'
+      - 'scripts/seal_blind_probe_fresh_binary.py'
+      - 'scripts/verify_and_freeze_blind_probe_fresh.py'
+      - 'scripts/evaluate_blind_probe_fresh_revealed.py'
+      - '.github/workflows/run-blind-probe-fresh-corrective.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  corrective:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure provenance commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Verify no corrected primary artifacts exist
+        run: |
+          test ! -e results/10x10/blind-probe-fresh-executable-seal.json
+          test ! -e results/10x10/blind-probe-fresh-rankings-unrevealed.csv
+          test ! -e results/10x10/blind-probe-fresh-ranking-manifest.json
+          test ! -e results/10x10/blind-probe-fresh-revealed-results.csv
+          test ! -e results/10x10/blind-probe-fresh-revealed-analysis.json
+          ! find results/10x10/blind_probe_children -maxdepth 1 -name 'probe_fresh_*_batch0_1000000.csv' | grep -q .
+
+      - name: Build fresh-probe solver
+        run: |
+          g++ -O2 -std=c++20 scripts/probe_cert_solver.cpp -o scripts/probe_cert_solver
+          file scripts/probe_cert_solver
+
+      - name: Seal executable and frozen inputs before first probe
+        run: python3 scripts/seal_blind_probe_fresh_binary.py
+
+      - name: Commit pre-probe executable seal
+        run: |
+          git add results/10x10/blind-probe-fresh-executable-seal.json
+          git commit -m 'Seal corrected fresh-probe executable before rerun'
+          git push origin HEAD:run-blind-probe-fresh-corrective
+
+      - name: Run frozen seven-parent fresh probes
+        run: |
+          python3 scripts/run_blind_probe_parent_fresh.py '2,9,33'
+          python3 scripts/run_blind_probe_parent_fresh.py '4,9,33'
+          python3 scripts/run_blind_probe_parent_fresh.py '9,12,33'
+          python3 scripts/run_blind_probe_parent_fresh.py '9,19,33'
+          python3 scripts/run_blind_probe_parent_fresh.py '9,23,33'
+          python3 scripts/run_blind_probe_parent_fresh.py '0,31,36'
+          python3 scripts/run_blind_probe_parent_fresh.py '0,36,44'
+
+      - name: Commit raw fresh probes before ranking/reveal
+        run: |
+          git add results/10x10/blind_probe_children/probe_fresh_*_batch0_1000000.csv
+          test "$(git diff --cached --name-only | wc -l)" -eq 7
+          git commit -m 'Record corrected fresh-solver blind probe rows'
+          git push origin HEAD:run-blind-probe-fresh-corrective
+
+      - name: Verify freshness and freeze unrevealed rankings
+        run: python3 scripts/verify_and_freeze_blind_probe_fresh.py
+
+      - name: Commit unrevealed ranking before outcome join
+        run: |
+          git add results/10x10/blind-probe-fresh-rankings-unrevealed.csv results/10x10/blind-probe-fresh-ranking-manifest.json
+          git commit -m 'Freeze corrected memo rankings before reveal'
+          git push origin HEAD:run-blind-probe-fresh-corrective
+
+      - name: Reveal against presealed exact outcomes
+        run: python3 scripts/evaluate_blind_probe_fresh_revealed.py
+
+      - name: Commit corrected revealed evaluation
+        run: |
+          git add results/10x10/blind-probe-fresh-revealed-results.csv results/10x10/blind-probe-fresh-revealed-analysis.json
+          git commit -m 'Evaluate corrected fresh-solver blind probe rule'
+          git push origin HEAD:run-blind-probe-fresh-corrective
