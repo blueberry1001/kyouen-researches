@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/probe-known-loss-isolated-batch0.yml'
       - 'scripts/run_blind_probe_batch_isolated.py'
+      - 'scripts/analyze_known_loss_isolated_probe.py'
       - 'scripts/probe_cert_solver.cpp'
       - 'scripts/probe_parts/**'
   workflow_dispatch:
@@ -83,8 +84,6 @@ jobs:
                           f'{r["state"]} probe={outcome} exact={labels.get(key)}'
                       )
                   completed_loss += outcome == 'LOSS'
-              # Fresh-process memo is child-local; unlike the historical shared
-              # process it cannot grow by ~1M for every preceding CSV row.
               if int(r['memo']) > 1_100_000:
                   raise SystemExit('memo exceeds fresh-process sanity bound')
           print(
@@ -101,5 +100,37 @@ jobs:
           path: |
             results/10x10/blind_probe_children/probe_isolated_*_batch0_1000000.csv
             results/10x10/blind_probe_children/probe_isolated_*_batch0_1000000.err
+          if-no-files-found: error
+          retention-days: 30
+
+  analyze:
+    needs: probe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all isolated probe artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: known-loss-isolated-*
+          path: /tmp/known-loss-isolated
+          merge-multiple: true
+
+      - name: Analyze preregistered exploratory feature set
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/known-loss-analysis
+          python3 scripts/analyze_known_loss_isolated_probe.py \
+            /tmp/known-loss-isolated \
+            --exact-dir results/10x10/blind_probe_children \
+            --json-out /tmp/known-loss-analysis/analysis.json \
+            --csv-out /tmp/known-loss-analysis/per-parent.csv \
+            | tee /tmp/known-loss-analysis/summary.txt
+
+      - name: Upload analysis receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: known-loss-isolated-analysis
+          path: /tmp/known-loss-analysis/
           if-no-files-found: error
           retention-days: 30
