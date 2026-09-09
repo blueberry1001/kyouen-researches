@@ -50,6 +50,42 @@ delta_memo[i] = memo[i] - memo[i-1]
 
 これは `memo` が「このchildが何件memoを使ったか」ではなく「process開始からここまでにmemoに何件入ったか」を表していることと整合する。
 
+## fresh-process 測定の順序不変性
+
+累積値問題を除くため、既存 `run_blind_probe_batch_isolated.py` をWindows/WSLだけでなくLinux上でも同じ意味で動くようにし、childごとに完全に別processを起動する経路をGitHub Actionsで検証した。
+
+追加:
+
+```text
+scripts/test_fresh_probe_order_invariance.py
+.github/workflows/probe-fresh-process-order-invariance.yml
+```
+
+GitHub Actions:
+
+```text
+run 34366319306: SUCCESS
+commit ae88f95c89f8a0ee7270f6e9cde16566ece3799e
+```
+
+同じ3 childを20,000-node budgetで
+
+```text
+forward
+reverse
+fixed shuffle (seed 20260909)
+```
+
+の3順序に並べ、各childを毎回fresh solver processで測定した。壁時計時間 `seconds` を除くsolver CSVの全項目が、同一childについて3順序で完全一致した。
+
+```text
+0,1,10,13  visited=20000 maxdepth=17 memo=19940
+0,2,10,13  visited=20000 maxdepth=16 memo=19959
+0,4,10,13  visited=20000 maxdepth=17 memo=19940
+```
+
+したがって少なくともこの検査範囲では、fresh-process版の `memo` / depth profile は**前にどのchildを測ったかに依存しないchild固有測定値**として扱える。一方で20,000-node時点のmemo差は最大19件と小さく、順位特徴として十分な信号量があるかはまだ未確認である。
+
 ## 最大反例の再解釈
 
 ### `4,9,33`
@@ -95,21 +131,26 @@ memo heuristic の証拠として扱ってはいけないもの:
 
 ## 次の優先実験
 
-11×11へ進む前に、3-stoneだけを対象として probe特徴量の測定方法を直す。
+11×11へ進む前に、3-stoneだけを対象としてprobe特徴量を測り直す。
 
 優先順位:
 
-1. **fresh-process probe**
-   - childごとに新しいsolver process / fresh memoで同じbudgetを実行する。
-   - `memo` がchild固有値として比較可能になる。
-   - 既存の新規LOSS親を再利用してよいが、これは今回のoutcomeを既に見た後なので探索的再解析と明記する。
+1. **既知7 LOSS親でfresh-process 1,000,000-node probeを探索的に再測定**
+   - childごとに新しいsolver process / fresh memoで測る。
+   - 既にoutcomeを見た親なので、ここでは `memo`、`maxdepth`、depth profile の候補規則を作るだけに限定し、成功判定には使わない。
+   - raw `memo descending` だけでなく、`memo/visited`、深さ別memo比率、深さ別visited比率も候補にする。
 
-2. **既存rawから `delta_memo` を作るpost-hoc解析**
-   - `memo[i]-memo[i-1]` は追加memo件数の近似になる。
-   - ただし前childのmemo再利用の影響があるため、fresh-process版の代替ではなく低コストな仮説生成用途に限定する。
+2. **候補規則を結果非依存の形へ固定**
+   - 方向（ascending/descending）を既知7親だけで選ぶ。
+   - tie-breakまで完全に固定する。
+   - solver既定順、固定乱数順、旧「逆順」baselineを同時に残す。
 
-3. **順序不変性テスト**
-   - 同じchildrenを正順・逆順・固定乱数順でprobeし、fresh-processなら同じchildの特徴量が一致することを確認する。
-   - shared-process測定値が順序で変わることも対照として記録する。
+3. **新しいholdout parentで再盲検**
+   - fresh-process probeを先に完了・hash固定する。
+   - その後だけexact child outcomeを開く。
+   - first LOSS順位とtotal exact costを主評価にする。
 
-次の正式な固定則を作るなら、特徴量ごとに「processを跨いでもchild固有である」ことを先に検証し、その後に別holdoutを凍結する。
+4. **既存rawの `delta_memo` は補助解析に限定**
+   - `memo[i]-memo[i-1]` は追加memo件数の近似になるが、前childからのmemo再利用を含むためfresh-process版の代替にはしない。
+
+fresh-process順序不変性は確認できたので、次に未解決なのは「**正しく測ったchild固有特徴に、LOSSを早く見つけるだけの信号が本当にあるか**」である。
