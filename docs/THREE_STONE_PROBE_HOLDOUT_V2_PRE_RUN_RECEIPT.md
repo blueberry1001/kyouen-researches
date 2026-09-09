@@ -67,11 +67,57 @@ results/10x10/three-stone-probe-holdout-v2.csv
 
 選抜再現CI run `34378337405` は、同じ選抜を2回生成してbyte一致、12 parentの一意性、ラベル/search-data列を含まないことを確認してSUCCESS。
 
+## Child集合・solver既定入力順の固定
+
+過去の盲検解析で `solver_default_rank` は、内部DFSの探索順ではなく `children_<parent>_batch*.txt` の行順として定義されていた。そこで3-stone parentへ第四手を加える合法性をsolverと同じ4点共円判定で再構成し、盤面indexの昇順で合法手を列挙する outcome-free generator を追加した。
+
+generator / freeze commit:
+
+```text
+0a1b8c1bb1317f1b5ca66db597b326323b8b294a
+```
+
+過去データとの独立照合:
+
+```text
+historical 3-stone parents with identical ordered child lines  19 / 19
+historical batch files whose concatenation is identical         95 / 95
+historical full files differing only in newline transport       19 / 19
+```
+
+したがって過去ファイルとの差はWindows由来のCRLF/LFだけであり、child集合と行順は完全一致した。新holdoutでは明示的にLFで固定する。
+
+新12 parentの固定child集合:
+
+```text
+total legal children  1161
+0,6,31                96
+9,38,71               97
+9,16,21               97
+9,16,81               96
+9,10,16               97
+9,16,20               97
+0,46,63               97
+9,66,71               97
+9,33,51               97
+9,32,33               96
+9,21,33               97
+0,36,53               97
+```
+
+child-order CSV SHA256:
+
+```text
+8cec2f9ae1bee65df13ed87b7f646e8c195ac29a444feb6e59d231e6c94c2a73
+```
+
+CI run `34390948966` は、過去19 parent / 95 batchとの意味的一致、1161行、結果列の非混入、2回生成のbyte一致、上記SHA256との一致を確認してSUCCESS。このSHAを変更する場合は同一blind holdout v2として扱わない。
+
 ## 評価順序
 
 ラベル漏洩を避けるため、次の順序を変更しない。
 
-1. 12 parentについてchild集合をsolver既定順で固定する。
+1. 12 parentについて上記SHAのchild集合・solver既定順を使用する。
 2. 全childを上記fresh-process probe条件で測定する。
 3. `LOSS / WIN / PROBE` と `memo` からv2順位を作り、順位ファイルのSHA256を固定する。
 4. **ここまで完了するまでsource proofの `loss_child` をholdoutへjoinしない。**
@@ -94,6 +140,7 @@ results/10x10/three-stone-probe-holdout-v2.csv
 
 ```text
 holdout selection:      FROZEN
+holdout child order:    FROZEN (SHA256 8cec2f9a...c2a73)
 holdout probe:          NOT RUN
 holdout ranking:        NOT CREATED
 holdout label join:     NOT RUN
