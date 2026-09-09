@@ -113,15 +113,46 @@ child-order CSV SHA256:
 
 CI run `34390948966` は、過去19 parent / 95 batchとの意味的一致、1161行、結果列の非混入、2回生成のbyte一致、上記SHA256との一致を確認してSUCCESS。このSHAを変更する場合は同一blind holdout v2として扱わない。
 
+## Batch分割の固定
+
+固定済み1161-child列を、過去runnerと同じ最大20 child単位へ結果非依存で分割する。parent境界をまたがず、各parent内のsolver既定順をそのまま保持する。
+
+```text
+parents          12
+batches          60
+total children   1161
+batch size       1..20
+batch manifest SHA256  086c4d226e4511350924d3f12a78bd5fc438df9c95c2eec780d0c364deb94a69
+```
+
+CI run `34396169093` は、全batchの連番性、1161 childの完全なpartition、再結合時の固定child列との完全一致、二重生成byte一致、結果列非混入を確認してSUCCESS。
+
+## 順位生成前の完全性gate
+
+初期の順位生成器は、存在する `children_*.txt` と `probe_*.csv` の対応・行順は厳密に検査していた一方、**あるbatchの入力ファイルとprobe結果が両方欠落した場合**には、その欠落自体を検出できなかった。連続して残ったbatchだけで順位を作れる可能性があったため、holdout probe開始前に塞いだ。
+
+順位生成器は今後、固定child-order CSVを必須入力とし、各parentについて実測したchild列が固定列と**全件・同一順序で完全一致**しない限り順位CSVを出力しない。したがって、60 batch / 1161 childの一部が未実行、欠落、置換されている状態では順位SHAを固定できない。
+
+追加検査:
+
+- frozen child CSVに結果・ラベル列が混入していれば拒否
+- holdout外parent、重複child、非連続 `solver_default_rank` を拒否
+- child inputとprobe CSVの片方だけ欠けても拒否
+- **child inputとprobe CSVが対で欠けても固定1161-child列との照合で拒否**
+- 全parentの実測child総数が固定総数と一致しなければ拒否
+
+この変更は順位規則・標本・node budgetを変更せず、事前固定された実験集合の完全性だけを強制する。
+
 ## 評価順序
 
 ラベル漏洩を避けるため、次の順序を変更しない。
 
 1. 12 parentについて上記SHAのchild集合・solver既定順を使用する。
 2. 全childを上記fresh-process probe条件で測定する。
-3. `LOSS / WIN / PROBE` と `memo` からv2順位を作り、順位ファイルのSHA256を固定する。
-4. **ここまで完了するまでsource proofの `loss_child` をholdoutへjoinしない。**
-5. 順位固定後にだけ既知exact LOSS childラベルをjoinし、first LOSS rankを算出する。
+3. **固定1161-child列との完全一致を確認する。**
+4. `LOSS / WIN / PROBE` と `memo` からv2順位を作り、順位ファイルのSHA256を固定する。
+5. **ここまで完了するまでsource proofの `loss_child` をholdoutへjoinしない。**
+6. 順位固定後にだけ既知exact LOSS childラベルをjoinし、first LOSS rankを算出する。
 
 ## 事前固定する主要評価
 
@@ -141,6 +172,8 @@ CI run `34390948966` は、過去19 parent / 95 batchとの意味的一致、116
 ```text
 holdout selection:      FROZEN
 holdout child order:    FROZEN (SHA256 8cec2f9a...c2a73)
+holdout batches:        FROZEN (60 batches / manifest SHA256 086c4d22...94a69)
+completeness gate:      IMPLEMENTED before holdout probe
 holdout probe:          NOT RUN
 holdout ranking:        NOT CREATED
 holdout label join:     NOT RUN
