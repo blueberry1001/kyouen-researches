@@ -1,0 +1,43 @@
+name: Persist below-root four-parent artifact
+
+on:
+  push:
+    branches: [implement-below-root-instrumentation-v1]
+    paths:
+      - .github/workflows/persist-below-root-four.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  persist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: implement-below-root-instrumentation-v1
+      - name: Download frozen raw artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/below-root-four
+          gh run download 34323472176 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name below-root-four-parent-71b11a442d792646a4c3faad35edd81bdb698a59 \
+            --dir /tmp/below-root-four
+          test -f /tmp/below-root-four/four_parent_raw.csv
+          test -f /tmp/below-root-four/four_parent_protocol.json
+      - name: Commit exact artifact bytes
+        run: |
+          mkdir -p results/10x10/below-root-instrumentation
+          test ! -e results/10x10/below-root-instrumentation/four_parent_raw.csv
+          test ! -e results/10x10/below-root-instrumentation/four_parent_protocol.json
+          cp /tmp/below-root-four/four_parent_raw.csv results/10x10/below-root-instrumentation/
+          cp /tmp/below-root-four/four_parent_protocol.json results/10x10/below-root-instrumentation/
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add results/10x10/below-root-instrumentation/four_parent_raw.csv \
+                  results/10x10/below-root-instrumentation/four_parent_protocol.json
+          git commit -m "Record frozen four-parent below-root diagnostic"
+          git push origin HEAD:implement-below-root-instrumentation-v1
