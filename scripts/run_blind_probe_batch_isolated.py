@@ -19,6 +19,7 @@ start from a fresh Solver state.
 
 import csv
 import io
+import os
 import subprocess
 import sys
 import tempfile
@@ -26,7 +27,7 @@ import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SOLVER = REPO_ROOT / "scripts" / "probe_cert_solver"
+SOLVER = Path(os.environ.get("KYOUEN_PROBE_SOLVER", REPO_ROOT / "scripts" / "probe_cert_solver"))
 CHILDREN_DIR = REPO_ROOT / "results" / "10x10" / "blind_probe_children"
 FIXED_BUDGETS = {3: 1_000_000, 4: 10_000, 5: 10_000}
 SHRINK = 3
@@ -40,9 +41,22 @@ def wsl_path(p: Path) -> str:
     return f"/mnt/{drive}/" + "/".join(parts[1:]).replace("\\", "/")
 
 
+def _solver_cmd(tmp: Path, budget: int) -> list[str]:
+    """Return the historical WSL command on Windows, native command elsewhere."""
+    if os.name == "nt":
+        return [
+            "wsl", "bash", "-c",
+            f"cd {wsl_path(REPO_ROOT)} && "
+            f"{wsl_path(SOLVER)} {wsl_path(tmp)} {SHRINK} {LOAD} {budget} 0",
+        ]
+    return [str(SOLVER.resolve()), str(tmp.resolve()), str(SHRINK), str(LOAD), str(budget), "0"]
+
+
 def run_one(state: str, budget: int) -> tuple[list[str], str]:
     # Keep the temporary file under the repo so the Windows->WSL path mapping
-    # remains identical to the historical runner.
+    # remains identical to the historical runner. On native Linux this also
+    # makes the exact input byte stream easy to inspect in CI failures.
+    CHILDREN_DIR.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
         mode="w", suffix=".txt", prefix="probe_isolated_",
         dir=CHILDREN_DIR, delete=False, newline=""
@@ -51,12 +65,9 @@ def run_one(state: str, budget: int) -> tuple[list[str], str]:
         tmp = Path(tf.name)
 
     try:
-        cmd = [
-            "wsl", "bash", "-c",
-            f"cd {wsl_path(REPO_ROOT)} && "
-            f"{wsl_path(SOLVER)} {wsl_path(tmp)} {SHRINK} {LOAD} {budget} 0",
-        ]
-        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        proc = subprocess.run(
+            _solver_cmd(tmp, budget), stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
         if proc.returncode not in (0, 3):
             raise RuntimeError(
                 f"solver rc={proc.returncode} for state={state}: "
