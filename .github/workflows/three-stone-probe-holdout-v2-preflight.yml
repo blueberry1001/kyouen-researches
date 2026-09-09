@@ -1,0 +1,81 @@
+name: Three-stone probe holdout v2 preflight
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - 'scripts/select_three_stone_probe_holdout_v2.py'
+      - '.github/workflows/three-stone-probe-holdout-v2-preflight.yml'
+      - 'results/10x10/blind-probe-parent-selection.csv'
+      - 'results/10x10/two-stone-90-61-child-proof.csv'
+      - 'results/10x10/two-stone-90-66-child-proof.csv'
+  workflow_dispatch:
+
+jobs:
+  freeze-selection:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate label-sequestered holdout selection twice
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/v2a /tmp/v2b
+          python3 scripts/select_three_stone_probe_holdout_v2.py \
+            /tmp/v2a/three-stone-probe-holdout-v2.csv \
+            | tee /tmp/v2a/receipt.txt
+          python3 scripts/select_three_stone_probe_holdout_v2.py \
+            /tmp/v2b/three-stone-probe-holdout-v2.csv \
+            > /tmp/v2b/receipt.txt
+          cmp /tmp/v2a/three-stone-probe-holdout-v2.csv \
+              /tmp/v2b/three-stone-probe-holdout-v2.csv
+
+      - name: Verify selection contains no label-bearing columns
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path('/tmp/v2a/three-stone-probe-holdout-v2.csv')
+          with p.open(newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          expected = {'source', 'source_index', 'parent', 'selection_hash'}
+          if set(rows[0]) != expected:
+              raise SystemExit(f'unexpected columns: {rows[0].keys()}')
+          if len(rows) != 12:
+              raise SystemExit(f'expected 12 holdout parents, got {len(rows)}')
+          if len({r['parent'] for r in rows}) != 12:
+              raise SystemExit('duplicate parent')
+          forbidden = {'outcome', 'loss_child', 'visited', 'memo', 'maxdepth'}
+          if forbidden & set(rows[0]):
+              raise SystemExit('label/search data leaked into selection')
+          print('label_sequestered_columns=PASS')
+          print('selected_parents=12')
+          PY
+
+      - name: Record source blob identities
+        run: |
+          set -euo pipefail
+          {
+            echo "source_commit=${GITHUB_SHA}"
+            echo "rule_commit=eff2b36ca01d98842af8adad80cd19d4bd3cf186"
+            echo "selection_only=1"
+            echo "holdout_probe_run=0"
+            echo "holdout_label_join_run=0"
+            git rev-parse HEAD:results/10x10/two-stone-90-61-child-proof.csv
+            git rev-parse HEAD:results/10x10/two-stone-90-66-child-proof.csv
+            git rev-parse HEAD:results/10x10/blind-probe-parent-selection.csv
+            sha256sum /tmp/v2a/three-stone-probe-holdout-v2.csv
+          } > /tmp/v2a/source-receipt.txt
+          cat /tmp/v2a/receipt.txt
+          cat /tmp/v2a/source-receipt.txt
+
+      - name: Upload selection-only artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: three-stone-probe-holdout-v2-selection
+          path: /tmp/v2a/
+          if-no-files-found: error
+          retention-days: 90
