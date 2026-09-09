@@ -1,0 +1,37 @@
+name: Below-root instrumentation regression
+
+on:
+  push:
+    branches: [implement-below-root-instrumentation-v1]
+    paths:
+      - scripts/probe_cert_solver.cpp
+      - scripts/probe_cert_solver_below_root.cpp
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_witness_log.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_0.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_1.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc
+      - scripts/probe_parts/kyouen_solver_10_below_root_instrumentation.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3_below_root.inc
+      - scripts/run_below_root_instrumentation.py
+      - cpp/certificate/kyouen_certgen_v4_smoke.cpp
+      - .github/workflows/below-root-instrumentation-regression.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/probe_cert_solver_below_root.cpp
+      - scripts/probe_parts/kyouen_solver_10_below_root_instrumentation.inc
+      - scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3_below_root.inc
+      - scripts/run_below_root_instrumentation.py
+      - .github/workflows/below-root-instrumentation-regression.yml
+  workflow_dispatch:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build baseline and instrumented solvers and compare semantics
+        run: python3 scripts/run_below_root_instrumentation.py --timeout 600
