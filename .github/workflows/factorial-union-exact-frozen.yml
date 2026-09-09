@@ -1,0 +1,291 @@
+name: Factorial union exact frozen
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Run the complete frozen 41-shard exact endpoint (no partial runs)'
+        required: true
+        default: 'NO'
+        type: choice
+        options:
+          - 'NO'
+          - 'RUN_FROZEN_41_SHARDS'
+
+jobs:
+  prepare:
+    if: ${{ inputs.confirm == 'RUN_FROZEN_41_SHARDS' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reproduce frozen non-outcome workset
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/factorial-workset
+          chmod +x scripts/prepare-9x9-factorial-repro-workset.sh
+          scripts/prepare-9x9-factorial-repro-workset.sh /tmp/factorial-workset \
+            > /tmp/factorial-workset/preflight.log 2>&1
+          cat /tmp/factorial-workset/preflight.log
+
+      - name: Enforce frozen workset hashes
+        run: |
+          set -euo pipefail
+          out=/tmp/factorial-workset
+          cat > /tmp/expected.sha256 <<'EOF'
+          07e60d22eac16834726a5972967e2ae426f2a75f89401f9d4508d1ce033fc840  /tmp/factorial-workset/9x9-confirmatory-1024.csv
+          5e11b3bd514919c87e2702f60a8e21df026b45ea60fc9044cfa8335da62517fa  /tmp/factorial-workset/9x9-factorial-holdout.csv
+          9cc23b43fed601db0dae6f4e2354b2d599675a6fae97db775ae083fc29a838a7  /tmp/factorial-workset/9x9-factorial-union.csv
+          b55f621fed792aa9db0ab0703c1921c2d89871b1feaeadfa7b9868ca47b332b7  /tmp/factorial-workset/shards/manifest.csv
+          EOF
+          sha256sum -c /tmp/expected.sha256
+          test "$(($(wc -l < "$out/shards/manifest.csv") - 1))" -eq 41
+          test "$(($(wc -l < "$out/9x9-factorial-holdout.csv") - 1))" -eq 2592
+          {
+            echo "source_commit=${GITHUB_SHA}"
+            echo "endpoint=factorial-union-exact-frozen-v1"
+            echo "memo_power=28"
+            echo "shards=41"
+            echo "parents=2592"
+            echo "expected_naive_root_calls=6804"
+            echo "expected_union_root_calls=5232"
+            echo "expected_root_calls_saved=1572"
+            cat /tmp/expected.sha256
+          } > "$out/frozen-receipt.txt"
+          tar -czf /tmp/factorial-frozen-workset.tgz -C "$out" \
+            9x9-factorial-holdout.csv \
+            9x9-factorial-holdout.manifest.csv \
+            9x9-factorial-union.csv \
+            frozen-receipt.txt \
+            shards
+
+      - name: Upload frozen workset
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorial-frozen-workset-${{ github.sha }}
+          path: /tmp/factorial-frozen-workset.tgz
+          if-no-files-found: error
+          retention-days: 90
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build exact compare solver
+        run: |
+          set -euo pipefail
+          cmake -S . -B build -DBUILD_RESEARCH_SOLVERS=ON -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --target kyouen-solver-9-compare --parallel 2
+          mkdir -p /tmp/factorial-bin
+          cp build/kyouen-solver-9-compare /tmp/factorial-bin/
+          sha256sum /tmp/factorial-bin/kyouen-solver-9-compare \
+            | tee /tmp/factorial-bin/binary.sha256
+          {
+            echo "source_commit=${GITHUB_SHA}"
+            c++ --version | head -n 1
+            cmake --version | head -n 1
+          } > /tmp/factorial-bin/build-receipt.txt
+          tar -czf /tmp/factorial-bin.tgz -C /tmp/factorial-bin .
+
+      - name: Upload frozen solver binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorial-frozen-binary-${{ github.sha }}
+          path: /tmp/factorial-bin.tgz
+          if-no-files-found: error
+          retention-days: 90
+
+  solve:
+    needs: [prepare, build]
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard:
+          - '0000'
+          - '0001'
+          - '0002'
+          - '0003'
+          - '0004'
+          - '0005'
+          - '0006'
+          - '0007'
+          - '0008'
+          - '0009'
+          - '0010'
+          - '0011'
+          - '0012'
+          - '0013'
+          - '0014'
+          - '0015'
+          - '0016'
+          - '0017'
+          - '0018'
+          - '0019'
+          - '0020'
+          - '0021'
+          - '0022'
+          - '0023'
+          - '0024'
+          - '0025'
+          - '0026'
+          - '0027'
+          - '0028'
+          - '0029'
+          - '0030'
+          - '0031'
+          - '0032'
+          - '0033'
+          - '0034'
+          - '0035'
+          - '0036'
+          - '0037'
+          - '0038'
+          - '0039'
+          - '0040'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Download frozen workset
+        uses: actions/download-artifact@v4
+        with:
+          name: factorial-frozen-workset-${{ github.sha }}
+          path: /tmp/download-workset
+
+      - name: Download frozen solver binary
+        uses: actions/download-artifact@v4
+        with:
+          name: factorial-frozen-binary-${{ github.sha }}
+          path: /tmp/download-bin
+
+      - name: Restore and verify frozen inputs
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/workset /tmp/bin
+          tar -xzf /tmp/download-workset/factorial-frozen-workset.tgz -C /tmp/workset
+          tar -xzf /tmp/download-bin/factorial-bin.tgz -C /tmp/bin
+          chmod +x /tmp/bin/kyouen-solver-9-compare
+          (cd /tmp/bin && sha256sum -c binary.sha256)
+          input="/tmp/workset/shards/union-${{ matrix.shard }}.csv"
+          test -f "$input"
+          expected_rows=$(awk -F, -v s="$((10#${{ matrix.shard }}))" 'NR>1 && $1==s {print $4}' /tmp/workset/shards/manifest.csv)
+          test -n "$expected_rows"
+          actual_rows=$(($(wc -l < "$input") - 1))
+          test "$actual_rows" -eq "$expected_rows"
+
+      - name: Exact solve shard with fresh memo
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/raw
+          input="/tmp/workset/shards/union-${{ matrix.shard }}.csv"
+          output="/tmp/raw/union-${{ matrix.shard }}-results.csv"
+          stderr="/tmp/raw/union-${{ matrix.shard }}.stderr.txt"
+          /usr/bin/time -v /tmp/bin/kyouen-solver-9-compare "$input" 28 \
+            > "$output" 2> "$stderr"
+
+          python3 - "$input" "$output" <<'PY'
+          import csv, sys
+          inp, out = sys.argv[1:]
+          with open(inp, newline='', encoding='utf-8') as f:
+              a = list(csv.DictReader(f))
+          with open(out, newline='', encoding='utf-8') as f:
+              b = list(csv.DictReader(f))
+          if len(a) != len(b):
+              raise SystemExit(f'row-count mismatch: input={len(a)} output={len(b)}')
+          last_memo = -1
+          for i, (x, y) in enumerate(zip(a, b), start=2):
+              for col in ('canonical_parent', 'pair_top', 'union_top'):
+                  if x[col] != y[col]:
+                      raise SystemExit(f'row {i}: {col} mismatch: {x[col]} != {y[col]}')
+              for col in ('pair_child_outcome', 'other_child_outcome'):
+                  if y[col] not in {'WIN', 'LOSS'}:
+                      raise SystemExit(f'row {i}: bad {col}={y[col]!r}')
+              memo = int(y['memo_used'])
+              if memo < last_memo:
+                  raise SystemExit(f'row {i}: memo_used decreased: {memo} < {last_memo}')
+              last_memo = memo
+          print(f'validated_rows={len(b)} final_memo_used={last_memo}')
+          PY
+
+          sha256sum "$input" "$output" /tmp/bin/kyouen-solver-9-compare \
+            > "/tmp/raw/union-${{ matrix.shard }}.sha256"
+          {
+            echo "source_commit=${GITHUB_SHA}"
+            echo "shard=${{ matrix.shard }}"
+            echo "memo_power=28"
+            echo "fresh_process=1"
+          } > "/tmp/raw/union-${{ matrix.shard }}.receipt.txt"
+
+      - name: Upload immutable raw shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorial-raw-${{ matrix.shard }}-${{ github.sha }}
+          path: /tmp/raw/
+          if-no-files-found: error
+          retention-days: 90
+
+  seal-raw:
+    needs: [prepare, build, solve]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download frozen workset
+        uses: actions/download-artifact@v4
+        with:
+          name: factorial-frozen-workset-${{ github.sha }}
+          path: /tmp/download-workset
+
+      - name: Download all raw shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: factorial-raw-*-${{ github.sha }}
+          path: /tmp/raw-all
+          merge-multiple: true
+
+      - name: Verify complete raw set before any statistical analysis
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/workset /tmp/reconstructed
+          tar -xzf /tmp/download-workset/factorial-frozen-workset.tgz -C /tmp/workset
+          test "$(find /tmp/raw-all -maxdepth 1 -name 'union-????-results.csv' | wc -l)" -eq 41
+          test "$(find /tmp/raw-all -maxdepth 1 -name 'union-????.sha256' | wc -l)" -eq 41
+
+          python3 scripts/reconstruct-9x9-factorial-results-from-union.py \
+            /tmp/workset/9x9-factorial-holdout.csv \
+            $(find /tmp/raw-all -maxdepth 1 -name 'union-????-results.csv' | sort) \
+            /tmp/reconstructed \
+            > /tmp/reconstruction.log
+
+          cat /tmp/reconstruction.log
+          cat /tmp/raw-all/union-????.sha256 | sort > /tmp/all-raw.sha256
+          sha256sum /tmp/reconstructed/*.csv > /tmp/reconstructed.sha256
+          {
+            echo "source_commit=${GITHUB_SHA}"
+            echo "raw_shards=41"
+            echo "statistical_analysis_run=0"
+            echo "reconstruction_only=1"
+          } > /tmp/raw-seal-receipt.txt
+
+      - name: Upload sealed complete raw endpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorial-sealed-raw-${{ github.sha }}
+          path: |
+            /tmp/raw-all/
+            /tmp/reconstructed/
+            /tmp/reconstruction.log
+            /tmp/all-raw.sha256
+            /tmp/reconstructed.sha256
+            /tmp/raw-seal-receipt.txt
+          if-no-files-found: error
+          retention-days: 90
