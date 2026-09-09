@@ -1,0 +1,23 @@
+name: Corrected independent blind probe
+
+on:
+  push:
+    branches: [correct-blind-probe-independent]
+  workflow_dispatch:
+
+jobs:
+  rerun:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build probe solver
+        run: g++ -O2 -std=c++20 scripts/probe_cert_solver.cpp -o /tmp/probe_cert_solver
+      - name: Run fresh-process probe on frozen batch0 children
+        run: python3 scripts/rerun_blind_probe_independent.py --solver /tmp/probe_cert_solver --workers 8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blind-probe-independent-${{ github.sha }}
+          path: |
+            results/10x10/blind-probe-independent-raw.csv
+            results/10x10/blind-probe-independent-summary.json
