@@ -5,13 +5,17 @@ on:
     branches: [factorial-union-child-solve]
     paths:
       - '.github/workflows/factorial-union-workset-preflight.yml'
+      - '.github/workflows/factorial-union-exact-frozen.yml'
       - 'scripts/prepare-9x9-factorial-repro-workset.sh'
       - 'scripts/prepare-9x9-factorial-union-input.py'
+      - 'scripts/reconstruct-9x9-factorial-results-from-union.py'
       - 'scripts/split-9x9-factorial-union-input.py'
       - 'scripts/select-9x9-factorial-holdout.py'
       - 'scripts/select-9x9-pair-mobility-confirmatory.py'
       - 'scripts/analyze-9x9-pair-gap-decomposition.cpp'
       - 'scripts/export-9x9-factorial-population.cpp'
+      - 'cpp/solvers/kyouen_solver_9_compare.cpp'
+      - 'CMakeLists.txt'
   workflow_dispatch:
 
 jobs:
@@ -29,19 +33,81 @@ jobs:
           chmod +x scripts/prepare-9x9-factorial-repro-workset.sh
           scripts/prepare-9x9-factorial-repro-workset.sh /tmp/factorial-workset | tee /tmp/factorial-workset/preflight.log
 
+      - name: Enforce frozen non-outcome hashes
+        run: |
+          set -euo pipefail
+          cat > /tmp/expected.sha256 <<'EOF'
+          07e60d22eac16834726a5972967e2ae426f2a75f89401f9d4508d1ce033fc840  /tmp/factorial-workset/9x9-confirmatory-1024.csv
+          5e11b3bd514919c87e2702f60a8e21df026b45ea60fc9044cfa8335da62517fa  /tmp/factorial-workset/9x9-factorial-holdout.csv
+          9cc23b43fed601db0dae6f4e2354b2d599675a6fae97db775ae083fc29a838a7  /tmp/factorial-workset/9x9-factorial-union.csv
+          b55f621fed792aa9db0ab0703c1921c2d89871b1feaeadfa7b9868ca47b332b7  /tmp/factorial-workset/shards/manifest.csv
+          EOF
+          sha256sum -c /tmp/expected.sha256
+
+      - name: Build compare solver
+        run: |
+          set -euo pipefail
+          cmake -S . -B build -DBUILD_RESEARCH_SOLVERS=ON -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --target kyouen-solver-9-compare --parallel 2
+          sha256sum build/kyouen-solver-9-compare | tee /tmp/factorial-workset/smoke-binary.sha256
+
+      - name: Run known non-holdout exact smoke
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv
+          src = 'results/9x9/pair-vs-true-unique-smoke.csv'
+          dst = '/tmp/factorial-smoke-input.csv'
+          with open(src, newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          if len(rows) != 1:
+              raise SystemExit(f'expected one committed smoke row, got {len(rows)}')
+          r = rows[0]
+          with open(dst, 'w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f)
+              w.writerow(['canonical_parent', 'pair_top', 'true_unique_top'])
+              w.writerow([r['canonical_parent'], r['pair_top'], r['true_unique_top']])
+          PY
+
+          ./build/kyouen-solver-9-compare /tmp/factorial-smoke-input.csv 20 \
+            > /tmp/factorial-smoke-result.csv \
+            2> /tmp/factorial-smoke.stderr
+
+          python3 - <<'PY'
+          import csv
+          with open('results/9x9/pair-vs-true-unique-smoke.csv', newline='', encoding='utf-8') as f:
+              expected = list(csv.DictReader(f))[0]
+          with open('/tmp/factorial-smoke-result.csv', newline='', encoding='utf-8') as f:
+              got_rows = list(csv.DictReader(f))
+          if len(got_rows) != 1:
+              raise SystemExit(f'smoke output row count={len(got_rows)}')
+          got = got_rows[0]
+          cols = ['canonical_parent', 'pair_top', 'true_unique_top',
+                  'pair_child_outcome', 'other_child_outcome']
+          mismatches = [(c, expected[c], got[c]) for c in cols if expected[c] != got[c]]
+          if mismatches:
+              raise SystemExit(f'smoke semantic mismatch: {mismatches}')
+          print('solver_smoke_semantic_match=PASS')
+          print('smoke_parent=' + got['canonical_parent'])
+          print('smoke_pair_outcome=' + got['pair_child_outcome'])
+          print('smoke_other_outcome=' + got['other_child_outcome'])
+          PY
+
       - name: Record non-outcome manifest
         run: |
           set -euo pipefail
           out=/tmp/factorial-workset
           {
             echo "commit=${GITHUB_SHA}"
-            echo "workflow=preflight-only-no-exact-outcomes"
+            echo "workflow=preflight-only-no-holdout-exact-outcomes"
             echo "parents_per_shard=64"
+            echo "frozen_exact_workflow=.github/workflows/factorial-union-exact-frozen.yml"
             sha256sum \
               "$out/9x9-confirmatory-1024.csv" \
               "$out/9x9-factorial-holdout.csv" \
               "$out/9x9-factorial-union.csv" \
-              "$out/shards/manifest.csv"
+              "$out/shards/manifest.csv" \
+              build/kyouen-solver-9-compare
           } > "$out/receipt.txt"
           cat "$out/preflight.log"
           cat "$out/shards/manifest.csv"
@@ -54,7 +120,11 @@ jobs:
           path: |
             /tmp/factorial-workset/preflight.log
             /tmp/factorial-workset/receipt.txt
+            /tmp/factorial-workset/smoke-binary.sha256
             /tmp/factorial-workset/9x9-factorial-holdout.manifest.csv
             /tmp/factorial-workset/shards/manifest.csv
+            /tmp/factorial-smoke-input.csv
+            /tmp/factorial-smoke-result.csv
+            /tmp/factorial-smoke.stderr
           if-no-files-found: error
           retention-days: 30
