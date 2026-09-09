@@ -42,11 +42,15 @@ def main():
     p = argparse.ArgumentParser(
         description=(
             "Reconstruct the four preregistered factorial solver-result CSVs "
-            "from one union run of kyouen-solver-9-compare."
+            "from one or more union runs of kyouen-solver-9-compare."
         )
     )
     p.add_argument("holdout_csv")
-    p.add_argument("union_result_csv")
+    p.add_argument(
+        "union_result_csv",
+        nargs="+",
+        help="one or more union solver output CSVs; sharded runs may be passed together",
+    )
     p.add_argument("output_dir")
     args = p.parse_args()
 
@@ -64,20 +68,6 @@ def main():
     if missing:
         raise SystemExit(f"holdout CSV missing columns: {sorted(missing)}")
 
-    union_rows = read_csv(args.union_result_csv)
-    if not union_rows:
-        raise SystemExit("empty union solver result CSV")
-    required_union = {
-        "canonical_parent",
-        "pair_top",
-        "union_top",
-        "pair_child_outcome",
-        "other_child_outcome",
-    }
-    missing = required_union - set(union_rows[0])
-    if missing:
-        raise SystemExit(f"union solver result missing columns: {sorted(missing)}")
-
     expected_keys = set()
     selected_parents = set()
     for parent, row in by_parent.items():
@@ -94,29 +84,55 @@ def main():
 
     outcomes = {}
     actual_parents = set()
-    for i, row in enumerate(union_rows, start=2):
-        parent = row["canonical_parent"]
-        if parent not in by_parent:
-            raise SystemExit(f"union result has unknown parent at row {i}: {parent}")
-        actual_parents.add(parent)
-        left_move = int(row["pair_top"])
-        right_move = int(row["union_top"])
-        if left_move == right_move:
-            raise SystemExit(f"union result row {i} has identical moves for {parent}: {left_move}")
-        add_observation(
-            outcomes,
-            parent,
-            left_move,
-            normalize_outcome(row["pair_child_outcome"], f"row {i} pair child"),
-            f"row {i} pair child",
-        )
-        add_observation(
-            outcomes,
-            parent,
-            right_move,
-            normalize_outcome(row["other_child_outcome"], f"row {i} union child"),
-            f"row {i} union child",
-        )
+    total_union_rows = 0
+    for result_path in args.union_result_csv:
+        union_rows = read_csv(result_path)
+        if not union_rows:
+            raise SystemExit(f"empty union solver result CSV: {result_path}")
+        required_union = {
+            "canonical_parent",
+            "pair_top",
+            "union_top",
+            "pair_child_outcome",
+            "other_child_outcome",
+        }
+        missing = required_union - set(union_rows[0])
+        if missing:
+            raise SystemExit(
+                f"union solver result {result_path} missing columns: {sorted(missing)}"
+            )
+
+        total_union_rows += len(union_rows)
+        for i, row in enumerate(union_rows, start=2):
+            context_prefix = f"{result_path}:row {i}"
+            parent = row["canonical_parent"]
+            if parent not in by_parent:
+                raise SystemExit(f"{context_prefix}: unknown parent {parent}")
+            actual_parents.add(parent)
+            left_move = int(row["pair_top"])
+            right_move = int(row["union_top"])
+            if left_move == right_move:
+                raise SystemExit(
+                    f"{context_prefix}: identical moves for {parent}: {left_move}"
+                )
+            add_observation(
+                outcomes,
+                parent,
+                left_move,
+                normalize_outcome(
+                    row["pair_child_outcome"], f"{context_prefix} pair child"
+                ),
+                f"{context_prefix} pair child",
+            )
+            add_observation(
+                outcomes,
+                parent,
+                right_move,
+                normalize_outcome(
+                    row["other_child_outcome"], f"{context_prefix} union child"
+                ),
+                f"{context_prefix} union child",
+            )
 
     actual_keys = set(outcomes)
     if actual_keys != expected_keys:
@@ -167,10 +183,11 @@ def main():
                 )
         print(f"{label}: rows={len(selected)} output={path}")
 
-    repeated_observations = 2 * len(union_rows) - len(actual_keys)
+    repeated_observations = 2 * total_union_rows - len(actual_keys)
     print(f"selected_parents={len(selected_parents)}")
     print(f"unique_child_outcomes={len(actual_keys)}")
-    print(f"union_rows={len(union_rows)}")
+    print(f"union_result_files={len(args.union_result_csv)}")
+    print(f"union_rows={total_union_rows}")
     print(f"consistent_repeated_observations={repeated_observations}")
 
 
