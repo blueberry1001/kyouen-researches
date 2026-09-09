@@ -24,6 +24,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -132,12 +133,17 @@ def run_one(state: str) -> dict[str, str]:
         f.write(state + "\n")
         tmp = Path(f.name)
     try:
-        cmd = [
-            "wsl", "bash", "-c",
-            f"cd {wsl_path(ROOT)} && {wsl_path(SOLVER)} "
-            f"{wsl_path(tmp)} {SHRINK} {LOAD} {BUDGET} 0",
-        ]
-        proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if os.name == "nt":
+            cmd = [
+                "wsl", "bash", "-c",
+                f"cd {wsl_path(ROOT)} && {wsl_path(SOLVER)} "
+                f"{wsl_path(tmp)} {SHRINK} {LOAD} {BUDGET} 0",
+            ]
+        else:
+            cmd = [
+                str(SOLVER), str(tmp), str(SHRINK), str(LOAD), str(BUDGET), "0"
+            ]
+        proc = subprocess.run(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     finally:
         tmp.unlink(missing_ok=True)
     if proc.returncode != 0:
@@ -171,11 +177,6 @@ def run_one(state: str) -> dict[str, str]:
             f"visited={visited} budget={BUDGET}"
         )
 
-    # Do not persist label-bearing probe outcomes before the reveal boundary.
-    # Whether an early solve was WIN or LOSS is irrelevant to the frozen memo
-    # ranking; retaining that bit would make the supposedly unrevealed artifact
-    # itself contain exact labels.  Keep only the operational distinction needed
-    # to verify the visited-budget invariant.
     row.pop("outcome", None)
     row["probe_status"] = (
         "BUDGET_EXHAUSTED" if solver_outcome == "PROBE" else "EARLY_RESOLVED"
