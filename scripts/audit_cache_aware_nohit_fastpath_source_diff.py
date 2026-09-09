@@ -2,11 +2,12 @@
 """Fail-closed source audit for the cache-aware no-hit fast-path experiment.
 
 Relative to frozen base d3b5e8b, only the exact replacements declared in
-prepare_cache_aware_nohit_fastpath.py are accepted.  All other solver files
+prepare_cache_aware_nohit_fastpath.py are accepted. All other solver files
 must remain byte-identical.
 """
 from __future__ import annotations
 
+import re
 import subprocess
 from pathlib import Path
 
@@ -25,19 +26,58 @@ SOLVER_PATHS = [
 ]
 
 
+def _resolve_main_gitdir() -> Path | None:
+    """Resolve MAIN/.git from a Windows-created linked worktree under WSL."""
+    dotgit = ROOT / ".git"
+    if not dotgit.is_file():
+        return None
+    pointer = dotgit.read_text(encoding="utf-8", errors="replace").strip()
+    if pointer.startswith("gitdir:"):
+        pointer = pointer[len("gitdir:"):].strip()
+    normalized = pointer.replace("\\", "/")
+    m = re.match(r"^(.*)/\.git/worktrees/[^/]+$", normalized)
+    if not m:
+        return None
+    repo = m.group(1)
+    drive = re.match(r"^([A-Za-z]):/(.*)$", repo)
+    if drive and Path("/mnt").exists() and not Path("C:/").exists():
+        repo = f"/mnt/{drive.group(1).lower()}/{drive.group(2)}"
+    gitdir = Path(repo) / ".git"
+    return gitdir if gitdir.is_dir() else None
+
+
 def git_show(path: str) -> bytes:
+    # Normal checkout/worktree case.
     p = subprocess.run(
         ["git", "show", f"{BASE}:{path}"],
         cwd=ROOT,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )
-    if p.returncode != 0:
-        raise SystemExit(
-            f"NOHIT SOURCE AUDIT FAIL: cannot read {BASE}:{path}\n"
-            + p.stderr.decode("utf-8", errors="replace")
+    if p.returncode == 0:
+        return p.stdout
+
+    # WSL cannot follow a Windows .git worktree pointer. BASE is an explicit
+    # immutable commit, so reading the same object from the main repository's
+    # object database is equivalent and does not involve the main branch HEAD.
+    main_gitdir = _resolve_main_gitdir()
+    if main_gitdir is not None:
+        q = subprocess.run(
+            ["git", "--git-dir", str(main_gitdir), "show", f"{BASE}:{path}"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
-    return p.stdout
+        if q.returncode == 0:
+            return q.stdout
+        fallback_err = q.stderr
+    else:
+        fallback_err = b"main gitdir fallback unavailable"
+    raise SystemExit(
+        f"NOHIT SOURCE AUDIT FAIL: cannot read {BASE}:{path}\n"
+        + p.stderr.decode("utf-8", errors="replace")
+        + "\nfallback: "
+        + fallback_err.decode("utf-8", errors="replace")
+    )
 
 
 def expected(path: str, base: bytes) -> bytes:
@@ -62,7 +102,11 @@ def main() -> None:
         exp = expected(rel, base)
         cur = path.read_bytes()
         if cur != exp:
-            kind = "authorized file differs from exact frozen transform" if path in prep.REPLACEMENTS else "unauthorized solver change"
+            kind = (
+                "authorized file differs from exact frozen transform"
+                if path in prep.REPLACEMENTS
+                else "unauthorized solver change"
+            )
             raise SystemExit(f"NOHIT SOURCE AUDIT FAIL: {rel}: {kind}")
 
     print("NOHIT SOURCE AUDIT PASS")
