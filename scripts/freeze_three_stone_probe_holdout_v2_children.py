@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Freeze legal 4-stone children for the v2 three-stone holdout.
 
-This script is intentionally outcome-free.  It reads only the parent column of
+This script is intentionally outcome-free. It reads only the parent column of
 an already-frozen selection and reconstructs the historical child-input order:
-legal fourth moves in increasing board-index order.  It can also verify that
-this reconstruction is byte-identical to every committed historical 3-stone
-children_<a>_<b>_<c>.txt file and its batches.
+legal fourth moves in increasing board-index order. Historical validation is
+on the ordered line sequence; old files may use CRLF while the frozen v2 CSV
+uses explicit LF.
 """
 from __future__ import annotations
 
@@ -17,7 +17,6 @@ from pathlib import Path
 
 N = 10
 V = N * N
-BATCH_SIZE = 20
 FULL_RE = re.compile(r"^children_(\d+)_(\d+)_(\d+)\.txt$")
 
 
@@ -72,11 +71,15 @@ def payload(lines: list[str]) -> bytes:
     return ("\n".join(lines) + "\n").encode("ascii")
 
 
+def semantic_lines(data: bytes) -> list[str]:
+    return data.decode("ascii").splitlines()
+
+
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def verify_historical(directory: Path) -> tuple[int, int]:
+def verify_historical(directory: Path) -> tuple[int, int, int]:
     full_files = []
     for path in sorted(directory.glob("children_*.txt")):
         m = FULL_RE.match(path.name)
@@ -86,28 +89,39 @@ def verify_historical(directory: Path) -> tuple[int, int]:
         raise SystemExit(f"no historical three-stone child files found in {directory}")
 
     batch_files_checked = 0
+    transport_differences = 0
     for path, parent in full_files:
-        expected = payload(child_lines(parent))
+        expected_lines = child_lines(parent)
         actual = path.read_bytes()
-        if actual != expected:
-            raise SystemExit(
-                f"historical child-order mismatch for {path.name}: "
-                f"committed={sha256(actual)} regenerated={sha256(expected)}"
+        actual_lines = semantic_lines(actual)
+        if actual_lines != expected_lines:
+            first = next(
+                (i for i, (a, b) in enumerate(zip(actual_lines, expected_lines), start=1) if a != b),
+                min(len(actual_lines), len(expected_lines)) + 1,
             )
+            got = actual_lines[first - 1] if first <= len(actual_lines) else "<EOF>"
+            want = expected_lines[first - 1] if first <= len(expected_lines) else "<EOF>"
+            raise SystemExit(
+                f"historical child-order semantic mismatch for {path.name} at line {first}: "
+                f"committed={got!r} regenerated={want!r}; "
+                f"rows={len(actual_lines)}/{len(expected_lines)}"
+            )
+        if actual != payload(expected_lines):
+            transport_differences += 1
+
         safe = "_".join(map(str, parent))
-        batches = []
+        batch_lines: list[str] = []
         i = 0
         while True:
             bp = directory / f"children_{safe}_batch{i}.txt"
             if not bp.exists():
                 break
-            batches.append(bp.read_bytes())
+            batch_lines.extend(semantic_lines(bp.read_bytes()))
+            batch_files_checked += 1
             i += 1
-        if batches:
-            if b"".join(batches) != actual:
-                raise SystemExit(f"historical batch concatenation mismatch for {path.name}")
-            batch_files_checked += len(batches)
-    return len(full_files), batch_files_checked
+        if batch_lines and batch_lines != actual_lines:
+            raise SystemExit(f"historical batch semantic concatenation mismatch for {path.name}")
+    return len(full_files), batch_files_checked, transport_differences
 
 
 def main() -> None:
@@ -118,17 +132,16 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.verify_existing_dir is not None:
-        parents_checked, batches_checked = verify_historical(args.verify_existing_dir)
-        print(f"historical_parents_byte_identical={parents_checked}")
-        print(f"historical_batches_concatenation_checked={batches_checked}")
+        parents_checked, batches_checked, transport_differences = verify_historical(args.verify_existing_dir)
+        print(f"historical_parents_semantic_order_identical={parents_checked}")
+        print(f"historical_batch_files_semantically_checked={batches_checked}")
+        print(f"historical_full_files_with_transport_difference={transport_differences}")
 
     with args.selection_csv.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     if not rows or "parent" not in rows[0]:
         raise SystemExit("selection must contain a parent column")
 
-    # Refuse known label/search-result columns even if a future selection file
-    # accidentally grows them.  The freezer needs parent identity only.
     forbidden_columns = {
         "loss_child", "outcome", "visited", "memo", "maxdepth", "seconds",
         "probe", "rank", "first_loss_rank",
@@ -139,7 +152,7 @@ def main() -> None:
 
     records: list[dict[str, str | int]] = []
     seen_parents = set()
-    for source_row, row in enumerate(rows, start=2):
+    for row in rows:
         parent_text = row["parent"]
         parent = parse_parent(parent_text)
         if parent in seen_parents:
@@ -149,7 +162,8 @@ def main() -> None:
         if not children:
             raise SystemExit(f"selected parent has no legal child: {parent_text}")
         for rank, child in enumerate(children, start=1):
-            move = next(v for v in map(int, child.split(",")) if v not in parent)
+            child_points = list(map(int, child.split(",")))
+            move = next(v for v in child_points if v not in parent)
             records.append({
                 "parent": parent_text,
                 "solver_default_rank": rank,
