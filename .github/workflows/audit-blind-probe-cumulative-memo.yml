@@ -1,0 +1,25 @@
+name: audit-blind-probe-cumulative-memo
+
+on:
+  push:
+    branches: [audit-blind-probe-cumulative-memo]
+    paths:
+      - 'scripts/audit_blind_probe_cumulative_memo.py'
+      - 'results/10x10/blind-probe-rankings.csv'
+      - '.github/workflows/audit-blind-probe-cumulative-memo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose cumulative memo order confound
+        run: python3 scripts/audit_blind_probe_cumulative_memo.py
