@@ -2,10 +2,12 @@
 """Select a fresh 3-stone v2 probe holdout without exposing child labels.
 
 The source proof CSVs contain `loss_child`, but selection is deliberately based
-only on source name, source row index and 3-stone parent state.  Outcome and
+only on source name, source row index and 3-stone parent state. Outcome and
 loss_child fields are never read into the candidate records and never emitted.
 
-This script is intended to run before any v2 holdout probes/rankings.
+Rows whose labels may have been exposed while designing this selector are
+quarantined before hashing. This keeps the final selected parents unseen not
+only by the selection algorithm but also by the analysis process that fixed it.
 """
 
 from __future__ import annotations
@@ -24,6 +26,9 @@ SOURCES = (
     "two-stone-90-66-child-proof.csv",
 )
 DEFAULT_QUOTA = 6
+# During holdout-design inspection, proof rows through source index 38 could
+# have been visible. Exclude the same prefix from both sources conservatively.
+MIN_UNEXPOSED_SOURCE_INDEX = 39
 
 
 def key_for(source: str, index: int, parent: str) -> str:
@@ -53,6 +58,8 @@ def label_sequestered_candidates(path: Path, source: str) -> list[dict[str, obje
             if not raw:
                 continue
             index = int(raw[index_col])
+            if index < MIN_UNEXPOSED_SOURCE_INDEX:
+                continue
             parent = raw[state_col].strip()
             points = [int(x) for x in parent.split(",")]
             if len(points) != 3 or points != sorted(points) or len(set(points)) != 3:
@@ -81,10 +88,8 @@ def main() -> None:
     selected: list[dict[str, object]] = []
     used = set(historical)
 
-    # Fixed source order; within each source use SHA-256 order.  This makes the
-    # result independent of proof-file row order except for the frozen index that
-    # is itself part of the key.  Global de-duplication prevents the same parent
-    # appearing through both proof sources.
+    # Fixed source order; within each source use SHA-256 order. Global
+    # de-duplication prevents the same parent appearing through both sources.
     eligible_counts: dict[str, int] = {}
     for source in SOURCES:
         candidates = label_sequestered_candidates(RESULTS / source, source)
@@ -105,6 +110,8 @@ def main() -> None:
     overlap = set(parents) & historical
     if overlap:
         raise SystemExit(f"historical overlap: {sorted(overlap)}")
+    if any(int(r["source_index"]) < MIN_UNEXPOSED_SOURCE_INDEX for r in selected):
+        raise SystemExit("quarantined source row selected")
 
     args.output_csv.parent.mkdir(parents=True, exist_ok=True)
     with args.output_csv.open("w", newline="", encoding="utf-8") as f:
@@ -119,11 +126,13 @@ def main() -> None:
     digest = hashlib.sha256(args.output_csv.read_bytes()).hexdigest()
     print(f"seed={SEED}")
     print(f"quota_per_source={args.quota_per_source}")
+    print(f"min_unexposed_source_index={MIN_UNEXPOSED_SOURCE_INDEX}")
     for source in SOURCES:
         print(f"eligible_{source}={eligible_counts[source]}")
     print(f"historical_3stone_parents={len(historical)}")
     print(f"selected={len(selected)}")
     print("historical_overlap=0")
+    print("quarantined_rows_selected=0")
     print(f"selection_sha256={digest}")
     print(f"output={args.output_csv}")
 
