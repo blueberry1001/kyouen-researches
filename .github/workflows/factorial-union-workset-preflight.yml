@@ -1,0 +1,59 @@
+name: Factorial union workset preflight
+
+on:
+  push:
+    branches: [factorial-union-child-solve]
+    paths:
+      - '.github/workflows/factorial-union-workset-preflight.yml'
+      - 'scripts/prepare-9x9-factorial-repro-workset.sh'
+      - 'scripts/prepare-9x9-factorial-union-input.py'
+      - 'scripts/split-9x9-factorial-union-input.py'
+      - 'scripts/select-9x9-factorial-holdout.py'
+      - 'scripts/select-9x9-pair-mobility-confirmatory.py'
+      - 'scripts/analyze-9x9-pair-gap-decomposition.cpp'
+      - 'scripts/export-9x9-factorial-population.cpp'
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reproduce frozen holdout and union workset
+        run: |
+          set -euo pipefail
+          chmod +x scripts/prepare-9x9-factorial-repro-workset.sh
+          scripts/prepare-9x9-factorial-repro-workset.sh /tmp/factorial-workset | tee /tmp/factorial-workset/preflight.log
+
+      - name: Record non-outcome manifest
+        run: |
+          set -euo pipefail
+          out=/tmp/factorial-workset
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "workflow=preflight-only-no-exact-outcomes"
+            echo "parents_per_shard=64"
+            sha256sum \
+              "$out/9x9-confirmatory-1024.csv" \
+              "$out/9x9-factorial-holdout.csv" \
+              "$out/9x9-factorial-union.csv" \
+              "$out/shards/manifest.csv"
+          } > "$out/receipt.txt"
+          cat "$out/preflight.log"
+          cat "$out/shards/manifest.csv"
+          cat "$out/receipt.txt"
+
+      - name: Upload preflight receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorial-union-workset-preflight
+          path: |
+            /tmp/factorial-workset/preflight.log
+            /tmp/factorial-workset/receipt.txt
+            /tmp/factorial-workset/9x9-factorial-holdout.csv.manifest.csv
+            /tmp/factorial-workset/shards/manifest.csv
+          if-no-files-found: error
+          retention-days: 30
