@@ -1,0 +1,35 @@
+name: nohit-fastpath-smoke
+
+on:
+  push:
+    branches:
+      - preregister-10x10-cache-aware-nohit-fastpath
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Frozen order-rule equivalence
+        run: python3 scripts/test_cache_aware_nohit_fastpath_equivalence.py
+
+      - name: Frozen solver source audit
+        run: python3 scripts/audit_cache_aware_nohit_fastpath_source_diff.py
+
+      - name: Build sealed no-hit binary
+        run: python3 scripts/build_nohit_fastpath_binary.py
+
+      - name: Capped solver integration smoke
+        run: python3 scripts/test_nohit_fastpath_solver_smoke.py
