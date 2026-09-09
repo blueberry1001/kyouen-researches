@@ -25,6 +25,7 @@ jobs:
       - name: Reproduce frozen holdout and union workset
         run: |
           set -euo pipefail
+          mkdir -p /tmp/factorial-workset
           chmod +x scripts/prepare-9x9-factorial-repro-workset.sh
           scripts/prepare-9x9-factorial-repro-workset.sh /tmp/factorial-workset | tee /tmp/factorial-workset/preflight.log
 
@@ -53,7 +54,7 @@ jobs:
           path: |
             /tmp/factorial-workset/preflight.log
             /tmp/factorial-workset/receipt.txt
-            /tmp/factorial-workset/9x9-factorial-holdout.csv.manifest.csv
+            /tmp/factorial-workset/9x9-factorial-holdout.manifest.csv
             /tmp/factorial-workset/shards/manifest.csv
           if-no-files-found: error
           retention-days: 30
