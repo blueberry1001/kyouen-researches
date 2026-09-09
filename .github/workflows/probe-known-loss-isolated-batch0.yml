@@ -47,28 +47,54 @@ jobs:
           set -euo pipefail
           safe=$(echo '${{ matrix.parent }}' | tr ',' '_')
           out="results/10x10/blind_probe_children/probe_isolated_${safe}_batch0_1000000.csv"
-          python3 - "$out" <<'PY'
+          exact="results/10x10/blind_probe_children/exact_${safe}_batch0.csv"
+          python3 - "$out" "$exact" <<'PY'
           import csv, sys
-          path = sys.argv[1]
-          with open(path, newline='', encoding='utf-8') as f:
+          out, exact = sys.argv[1:]
+          with open(out, newline='', encoding='utf-8') as f:
               rows = list(csv.DictReader(f))
+          with open(exact, newline='', encoding='utf-8') as f:
+              labels = {
+                  tuple(sorted(map(int, r['state'].replace(',', '-').split('-')))): r['outcome']
+                  for r in csv.DictReader(f)
+              }
           if not rows:
               raise SystemExit('empty isolated probe output')
           states = [r['state'] for r in rows]
           if len(states) != len(set(states)):
               raise SystemExit('duplicate state in isolated output')
-          if any(r['outcome'] != 'PROBE' for r in rows):
-              raise SystemExit('unexpected non-PROBE outcome')
-          if any(int(r['visited']) != 1_000_000 for r in rows):
-              raise SystemExit('probe did not consume fixed 1M node budget')
-          # Fresh-process memo must be child-local, not cumulative across CSV rows.
-          # Do not require a particular value; only reject impossible cumulative-scale carryover.
-          if any(int(r['memo']) > 1_100_000 for r in rows):
-              raise SystemExit('memo exceeds fresh-process sanity bound')
-          print(f'validated children={len(rows)} memo_range={min(int(r["memo"]) for r in rows)}..{max(int(r["memo"]) for r in rows)}')
+          completed = 0
+          completed_loss = 0
+          for r in rows:
+              outcome = r['outcome']
+              visited = int(r['visited'])
+              if outcome not in {'PROBE', 'WIN', 'LOSS'}:
+                  raise SystemExit(f'unexpected outcome={outcome}')
+              if visited > 1_000_000:
+                  raise SystemExit(f'visited exceeds budget for {r["state"]}')
+              if outcome == 'PROBE' and visited != 1_000_000:
+                  raise SystemExit(f'cutoff PROBE did not consume full budget for {r["state"]}')
+              if outcome != 'PROBE':
+                  completed += 1
+                  key = tuple(sorted(map(int, r['state'].replace(',', '-').split('-'))))
+                  if labels.get(key) != outcome:
+                      raise SystemExit(
+                          f'isolated exact completion disagrees with existing exact label: '
+                          f'{r["state"]} probe={outcome} exact={labels.get(key)}'
+                      )
+                  completed_loss += outcome == 'LOSS'
+              # Fresh-process memo is child-local; unlike the historical shared
+              # process it cannot grow by ~1M for every preceding CSV row.
+              if int(r['memo']) > 1_100_000:
+                  raise SystemExit('memo exceeds fresh-process sanity bound')
+          print(
+              f'validated children={len(rows)} completed={completed} completed_loss={completed_loss} '
+              f'memo_range={min(int(r["memo"]) for r in rows)}..{max(int(r["memo"]) for r in rows)}'
+          )
           PY
 
       - name: Upload raw isolated probe
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: known-loss-isolated-${{ strategy.job-index }}
