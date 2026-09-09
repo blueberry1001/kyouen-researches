@@ -64,7 +64,7 @@ jobs:
               raise SystemExit(f'expected one committed smoke row, got {len(rows)}')
           r = rows[0]
           with open(dst, 'w', newline='', encoding='utf-8') as f:
-              w = csv.writer(f)
+              w = csv.writer(f, lineterminator='\n')
               w.writerow(['canonical_parent', 'pair_top', 'true_unique_top'])
               w.writerow([r['canonical_parent'], r['pair_top'], r['true_unique_top']])
           PY
@@ -88,6 +88,7 @@ jobs:
           if mismatches:
               raise SystemExit(f'smoke semantic mismatch: {mismatches}')
           print('solver_smoke_semantic_match=PASS')
+          print('smoke_input_transport=LF')
           print('smoke_parent=' + got['canonical_parent'])
           print('smoke_pair_outcome=' + got['pair_child_outcome'])
           print('smoke_other_outcome=' + got['other_child_outcome'])
@@ -102,6 +103,7 @@ jobs:
             echo "workflow=preflight-only-no-holdout-exact-outcomes"
             echo "parents_per_shard=64"
             echo "frozen_exact_workflow=.github/workflows/factorial-union-exact-frozen.yml"
+            echo "solver_execution_transport=LF"
             sha256sum \
               "$out/9x9-confirmatory-1024.csv" \
               "$out/9x9-factorial-holdout.csv" \
