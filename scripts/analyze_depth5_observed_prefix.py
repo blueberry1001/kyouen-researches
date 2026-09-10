@@ -89,6 +89,19 @@ def validate(rows: list[dict[str, str]]) -> dict[tuple[str, str], list[dict[str,
             raise ValueError(f"{ident}: order_index is not strictly increasing")
         if len({(r["parent_lo"], r["parent_hi"]) for r in group}) != 1:
             raise ValueError(f"{ident}: parent bits change inside node")
+
+        # The observed-prefix analysis assumes that the trace was produced by
+        # the frozen native depth-5 baseline: child_count ascending, then
+        # canonical key ascending.  Verify that assumption from pre-recursion
+        # columns before using post-recursion labels.  Without this check, an
+        # instrumentation/order mismatch could masquerade as a successful
+        # repair rule.
+        baseline_keys = [candidate_key("min_count_key_asc", row) for row in group]
+        if any(b < a for a, b in zip(baseline_keys, baseline_keys[1:])):
+            raise ValueError(
+                f"{ident}: trace order disagrees with frozen min_count_key_asc baseline"
+            )
+
         for row in group:
             if as_int(row, "visited_delta") < 1:
                 raise ValueError(f"{ident}: visited_delta < 1 at order {row['order_index']}")
