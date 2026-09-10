@@ -1,0 +1,58 @@
+name: Below-root fixed-4 independent measurement
+
+on:
+  push:
+    branches: [analyze-10x10-parent-loss-cost]
+    paths:
+      - '.github/workflows/below-root-fixed4.yml'
+  workflow_dispatch:
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: p12-32-55
+            state: '12,32,55'
+          - label: p14-64-74
+            state: '14,64,74'
+          - label: p0-11-35
+            state: '0,11,35'
+          - label: p13-52-57
+            state: '13,52,57'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile instrumented solver
+        run: g++ -O2 -std=gnu++20 cpp/solvers/kyouen_solver_10_kyoenc4.cpp -o /tmp/kyouen_solver_10_instrumented
+      - name: Run one parent in a fresh process
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' '${{ matrix.state }}' > /tmp/state.txt
+          /tmp/kyouen_solver_10_instrumented /tmp/state.txt 3 80 '' 0 '' 10000000 below-root.csv > result.csv 2> run.log
+      - name: Validate instrumentation accounting
+        run: python scripts/check_below_root_instrumentation_csv.py below-root.csv
+      - name: Record run identity
+        shell: bash
+        run: |
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "state=${{ matrix.state }}"
+            echo "shrink=3"
+            echo "load=80"
+            echo "fresh_process=1"
+          } > run-meta.txt
+      - name: Upload measurement
+        uses: actions/upload-artifact@v4
+        with:
+          name: below-root-${{ matrix.label }}
+          path: |
+            result.csv
+            below-root.csv
+            run.log
+            run-meta.txt
+          if-no-files-found: error
+          retention-days: 30
