@@ -2,8 +2,13 @@
 """Validate and score the preregistered depth-5 observed-prefix child trace.
 
 This script deliberately uses only columns available before recursion for ranking.
-Post-recursion outcome/visited_delta/cutoff are labels used only for evaluation.
+Post-recursion child_outcome/visited_delta are labels used only for evaluation.
 The fixed final holdout root is 13-52-57; it must not be used to choose a rule.
+
+The solver's trace is intentionally minimal: root + node_id identify a depth-5
+parent, and the first LOSS child is necessarily the cutoff because the solver
+returns immediately on it.  Therefore parent bits and an explicit cutoff column
+are not required and must not be reconstructed from post-hoc information.
 """
 
 from __future__ import annotations
@@ -15,17 +20,14 @@ from collections import defaultdict
 from pathlib import Path
 
 REQUIRED = {
-    "root_state",
+    "root",
     "node_id",
-    "parent_lo",
-    "parent_hi",
     "order_index",
     "child_count",
     "child_lo",
     "child_hi",
-    "outcome",
+    "child_outcome",
     "visited_delta",
-    "cutoff",
 }
 
 FIXED_HOLDOUT = "13-52-57"
@@ -80,22 +82,18 @@ def load(path: Path) -> list[dict[str, str]]:
 def validate(rows: list[dict[str, str]]) -> dict[tuple[str, str], list[dict[str, str]]]:
     groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in rows:
-        groups[(row["root_state"], row["node_id"])].append(row)
+        groups[(row["root"], row["node_id"])].append(row)
 
     for ident, group in groups.items():
         group.sort(key=lambda r: as_int(r, "order_index"))
         order = [as_int(r, "order_index") for r in group]
         if any(b <= a for a, b in zip(order, order[1:])):
             raise ValueError(f"{ident}: order_index is not strictly increasing")
-        if len({(r["parent_lo"], r["parent_hi"]) for r in group}) != 1:
-            raise ValueError(f"{ident}: parent bits change inside node")
 
         # The observed-prefix analysis assumes that the trace was produced by
         # the frozen native depth-5 baseline: child_count ascending, then
-        # canonical key ascending.  Verify that assumption from pre-recursion
-        # columns before using post-recursion labels.  Without this check, an
-        # instrumentation/order mismatch could masquerade as a successful
-        # repair rule.
+        # canonical key ascending. Verify that assumption using only columns
+        # known before recursion.
         baseline_keys = [candidate_key("min_count_key_asc", row) for row in group]
         if any(b < a for a, b in zip(baseline_keys, baseline_keys[1:])):
             raise ValueError(
@@ -105,29 +103,26 @@ def validate(rows: list[dict[str, str]]) -> dict[tuple[str, str], list[dict[str,
         for row in group:
             if as_int(row, "visited_delta") < 1:
                 raise ValueError(f"{ident}: visited_delta < 1 at order {row['order_index']}")
-            if row["outcome"] not in {"WIN", "LOSS"}:
-                raise ValueError(f"{ident}: invalid outcome {row['outcome']!r}")
-            if as_int(row, "cutoff") not in {0, 1}:
-                raise ValueError(f"{ident}: cutoff must be 0/1")
+            if row["child_outcome"] not in {"WIN", "LOSS"}:
+                raise ValueError(f"{ident}: invalid outcome {row['child_outcome']!r}")
 
-        losses = [i for i, r in enumerate(group) if r["outcome"] == "LOSS"]
-        cutoffs = [i for i, r in enumerate(group) if as_int(r, "cutoff") == 1]
-        if losses or cutoffs:
-            if len(losses) != 1 or len(cutoffs) != 1 or losses[0] != cutoffs[0]:
-                raise ValueError(f"{ident}: completed WIN node must have one LOSS cutoff row")
-            if losses[0] != len(group) - 1:
-                raise ValueError(f"{ident}: rows appear after cutoff LOSS")
-            if any(r["outcome"] != "WIN" for r in group[:-1]):
-                raise ValueError(f"{ident}: non-cutoff entered child is not WIN")
+        losses = [i for i, r in enumerate(group) if r["child_outcome"] == "LOSS"]
+        if losses:
+            # win() returns immediately on the first losing child, so an
+            # observed LOSS must be unique and must end the observed prefix.
+            if len(losses) != 1 or losses[0] != len(group) - 1:
+                raise ValueError(f"{ident}: LOSS must be the unique final observed child")
+            if any(r["child_outcome"] != "WIN" for r in group[:-1]):
+                raise ValueError(f"{ident}: pre-cutoff entered child is not WIN")
         else:
-            # A traced LOSS node may have only WIN children and no cutoff.
-            if any(r["outcome"] != "WIN" for r in group):
+            # A traced LOSS parent explores every child and sees only WINs.
+            if any(r["child_outcome"] != "WIN" for r in group):
                 raise ValueError(f"{ident}: no-cutoff node contains non-WIN child")
     return groups
 
 
 def score_group(group: list[dict[str, str]], candidate: str) -> tuple[int, int] | None:
-    if not group or group[-1]["outcome"] != "LOSS" or as_int(group[-1], "cutoff") != 1:
+    if not group or group[-1]["child_outcome"] != "LOSS":
         return None
     loss = group[-1]
     lk = candidate_key(candidate, loss)
