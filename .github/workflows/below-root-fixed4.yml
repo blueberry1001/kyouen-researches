@@ -32,18 +32,56 @@ jobs:
         run: |
           set -euo pipefail
           printf '%s\n' '${{ matrix.state }}' > /tmp/state.txt
-          /tmp/kyouen_solver_10_instrumented /tmp/state.txt 3 80 '' 0 '' 10000000 below-root.csv > result.csv 2> run.log
+          success=0
+          for shrink in 3 2 1 0; do
+            rm -f result.csv below-root.csv depth5-trace.csv run.log
+            set +e
+            /tmp/kyouen_solver_10_instrumented /tmp/state.txt "$shrink" 80 '' 0 '' 10000000 below-root.csv depth5-trace.csv > result.csv 2> run.log
+            rc=$?
+            set -e
+            if [[ "$rc" -eq 0 ]]; then
+              echo "$shrink" > shrink-used.txt
+              success=1
+              break
+            fi
+            if [[ "$rc" -ne 3 ]]; then
+              echo "solver failed with rc=$rc at shrink=$shrink" >&2
+              exit "$rc"
+            fi
+            echo "TableFull at shrink=$shrink; retrying with larger memo" >&2
+          done
+          if [[ "$success" -ne 1 ]]; then
+            echo "solver remained TableFull through shrink=0" >&2
+            exit 3
+          fi
       - name: Validate instrumentation accounting
         run: python scripts/check_below_root_instrumentation_csv.py below-root.csv
+      - name: Validate depth-5 trace locally
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path('depth5-trace.csv')
+          with p.open(newline='', encoding='utf-8') as f:
+              r = csv.DictReader(f)
+              expected = ['root','node_id','order_index','child_count','child_hi','child_lo','child_outcome','visited_delta']
+              if r.fieldnames != expected:
+                  raise SystemExit(f'unexpected depth5 trace header: {r.fieldnames!r}')
+              rows = list(r)
+          if not rows:
+              raise SystemExit('empty depth5 trace')
+          PY
       - name: Record run identity
         shell: bash
         run: |
           {
             echo "commit=${GITHUB_SHA}"
             echo "state=${{ matrix.state }}"
-            echo "shrink=3"
+            echo "shrink=$(cat shrink-used.txt)"
             echo "load=80"
             echo "fresh_process=1"
+            echo "depth5_trace=1"
           } > run-meta.txt
       - name: Upload measurement
         uses: actions/upload-artifact@v4
@@ -52,7 +90,57 @@ jobs:
           path: |
             result.csv
             below-root.csv
+            depth5-trace.csv
             run.log
             run-meta.txt
+            shrink-used.txt
+          if-no-files-found: error
+          retention-days: 30
+
+  analyze-depth5:
+    needs: measure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all fixed-parent measurements
+        uses: actions/download-artifact@v4
+        with:
+          pattern: below-root-p*
+          path: artifacts
+      - name: Combine depth-5 traces
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          files = sorted(Path('artifacts').glob('below-root-p*/depth5-trace.csv'))
+          if len(files) != 4:
+              raise SystemExit(f'expected 4 trace files, got {len(files)}: {files}')
+          header = None
+          rows = []
+          for p in files:
+              with p.open(newline='', encoding='utf-8') as f:
+                  r = csv.reader(f)
+                  h = next(r)
+                  if header is None:
+                      header = h
+                  elif h != header:
+                      raise SystemExit(f'header mismatch in {p}: {h!r} != {header!r}')
+                  rows.extend(r)
+          with Path('depth5-trace-fixed4.csv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f)
+              w.writerow(header)
+              w.writerows(rows)
+          PY
+      - name: Run preregistered observed-prefix analysis
+        run: python scripts/analyze_depth5_observed_prefix.py depth5-trace-fixed4.csv --json-out depth5-observed-prefix-analysis.json
+      - name: Upload combined analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: depth5-observed-prefix-fixed4
+          path: |
+            depth5-trace-fixed4.csv
+            depth5-observed-prefix-analysis.json
           if-no-files-found: error
           retention-days: 30
