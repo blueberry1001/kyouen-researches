@@ -32,9 +32,24 @@ Define
 
 Median depth-5 waste fraction is **43.81%**. All 3/3 completed parents exceed the preregistered 25% threshold.
 
-This is direct evidence that meaningful search cost exists below the root in the ordering of children of WIN nodes. It does not yet show that any particular heuristic can recover that cost: a useful heuristic must identify the LOSS child cheaply enough that its own cost does not erase the saved search.
+This is direct evidence that meaningful search cost exists below the root in the observed ordering of children of WIN nodes. It does not yet show that any particular heuristic can recover that cost: a useful heuristic must identify the LOSS child cheaply enough that its own cost does not erase the saved search.
 
-The next experiment should therefore target ordering at depth 5 rather than another root-only ranking experiment. Candidate rules should be evaluated on the same fixed nodes with the rule frozen before exact outcomes are consulted. The primary measurement should be change in `work_into_win_child` and total `visited`, with correctness/outcome required to remain identical.
+### Important counterfactual limitation: memo path dependence
+
+The percentages above are **observed failed-child work**, not an estimate of the speedup obtainable by moving the eventual LOSS child earlier.
+
+The exact solver has a stateful transposition memo. A failed WIN child explored before the cutoff can populate memo entries that are later reused while proving the eventual LOSS child or elsewhere in the remaining search. If a new ordering skips that failed child, those memo entries may no longer exist. Consequently, the original-order inclusive visited deltas are path-dependent: subtracting `work_into_win_child` from the baseline does not produce the visited count of the reordered search.
+
+Therefore `waste_fraction` should be interpreted only as an **opportunity/localization diagnostic**. It is not a strict oracle upper bound on achievable improvement, and ranking overhead is not the only gap between this percentage and real speedup.
+
+A genuine performance claim requires a fresh-process paired rerun of the whole solver with the ordering rule frozen in advance. Baseline and treatment must start from identical empty memo state and use the same memo capacity/retry policy. The primary endpoint is whole-solve `visited`; uninstrumented wall time is secondary. Outcome must remain identical.
+
+The next experiment should therefore target ordering at depth 5 rather than another root-only ranking experiment, but it should be split into two phases:
+
+1. **Rule construction:** collect only information that would be available before recursive evaluation of a candidate child, and freeze a cheap ordering rule without using the holdout child's exact outcome or proof cost.
+2. **Counterfactual test:** rerun each holdout parent from a fresh process under baseline and the frozen rule, comparing total `visited` and then uninstrumented wall time. `work_into_win_child` remains mechanistic diagnostics, not the performance endpoint.
+
+Because the current aggregate depth counters do not retain candidate-level pre-recursion features together with eventual child outcome, designing a defensible new rule may require a separate per-WIN-node child trace. Such a trace should be added as a new preregistered output rather than changing the immutable phase-1 aggregate files.
 
 ## Boundary
 
