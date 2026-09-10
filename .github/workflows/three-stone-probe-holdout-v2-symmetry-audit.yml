@@ -14,11 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify parent stabilizers are trivial
+      - name: Verify symmetry and legal-universe partition
         run: |
           python3 scripts/audit_three_stone_holdout_v2_symmetry.py \
             results/10x10/three-stone-probe-holdout-v2.csv | tee symmetry-audit.txt
           grep -q '^parents=12$' symmetry-audit.txt
           grep -q '^trivial_stabilizer=12$' symmetry-audit.txt
           grep -q '^nontrivial_stabilizer=0$' symmetry-audit.txt
+          grep -q '^raw_moves=1164$' symmetry-audit.txt
+          grep -q '^legal_children=1161$' symmetry-audit.txt
+          grep -q '^terminal_moves=3$' symmetry-audit.txt
+          grep -q '^terminal_addition parent=0,6,31 move=35 quad=0,6,31,35$' symmetry-audit.txt
+          grep -q '^terminal_addition parent=9,16,81 move=52 quad=9,16,52,81$' symmetry-audit.txt
+          grep -q '^terminal_addition parent=9,32,33 move=18 quad=9,18,32,33$' symmetry-audit.txt
           grep -q '^raw_to_canonical_child_injective=PASS$' symmetry-audit.txt
+          grep -q '^legal_universe_partition=PASS$' symmetry-audit.txt
