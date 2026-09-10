@@ -1,0 +1,180 @@
+name: Depth-5 max-first fresh-process A/B
+
+on:
+  push:
+    branches: [analyze-10x10-parent-loss-cost]
+    paths:
+      - '.github/workflows/depth5-max-first-ab.yml'
+      - 'cpp/solvers/kyouen_solver_10_depth5_max_first.cpp'
+      - 'cpp/solvers/parts/kyouen_solver_10_kyoenc4_*.inc'
+  workflow_dispatch:
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: p12-32-55
+            state: '12,32,55'
+            start_shrink: 3
+          - label: p14-64-74
+            state: '14,64,74'
+            start_shrink: 3
+          - label: p0-11-35
+            state: '0,11,35'
+            start_shrink: 2
+          - label: p13-52-57
+            state: '13,52,57'
+            start_shrink: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile baseline and frozen treatment
+        run: |
+          g++ -O2 -std=gnu++20 cpp/solvers/kyouen_solver_10_kyoenc4.cpp -o /tmp/baseline
+          g++ -O2 -std=gnu++20 cpp/solvers/kyouen_solver_10_depth5_max_first.cpp -o /tmp/treatment
+      - name: Run matched-memo fresh-process A/B
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' '${{ matrix.state }}' > /tmp/state.txt
+          success=0
+          for shrink in $(seq '${{ matrix.start_shrink }}' -1 0); do
+            rm -f baseline.csv treatment.csv baseline.log treatment.log
+            set +e
+            /tmp/baseline /tmp/state.txt "$shrink" 80 > baseline.csv 2> baseline.log
+            rb=$?
+            /tmp/treatment /tmp/state.txt "$shrink" 80 > treatment.csv 2> treatment.log
+            rt=$?
+            set -e
+            for rc in "$rb" "$rt"; do
+              if [[ "$rc" -ne 0 && "$rc" -ne 3 ]]; then
+                echo "unexpected solver rc=$rc at shrink=$shrink" >&2
+                exit "$rc"
+              fi
+            done
+            if [[ "$rb" -eq 0 && "$rt" -eq 0 ]]; then
+              echo "$shrink" > shrink-used.txt
+              success=1
+              break
+            fi
+            echo "matched A/B retry: shrink=$shrink baseline_rc=$rb treatment_rc=$rt" >&2
+          done
+          if [[ "$success" -ne 1 ]]; then
+            echo "A/B did not jointly fit even at shrink=0" >&2
+            exit 3
+          fi
+      - name: Validate and summarize parent
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          def read_one(path):
+              with Path(path).open(newline='', encoding='utf-8') as f:
+                  rows = list(csv.DictReader(f))
+              if len(rows) != 1:
+                  raise SystemExit(f'{path}: expected one row, got {len(rows)}')
+              return rows[0]
+
+          b = read_one('baseline.csv')
+          t = read_one('treatment.csv')
+          if b['state'] != t['state'] or b['outcome'] != t['outcome']:
+              raise SystemExit(f'baseline/treatment mismatch: {b} vs {t}')
+          bv, tv = int(b['visited']), int(t['visited'])
+          reduction = (bv - tv) / bv
+          with Path('ab.csv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f)
+              w.writerow(['state','outcome','shrink','baseline_visited','treatment_visited','visited_ratio','reduction_fraction','baseline_seconds','treatment_seconds'])
+              w.writerow([b['state'], b['outcome'], Path('shrink-used.txt').read_text().strip(), bv, tv, f'{tv/bv:.12g}', f'{reduction:.12g}', b['seconds'], t['seconds']])
+          print(f"{b['state']}: {bv} -> {tv}; reduction={100*reduction:.3f}%")
+          PY
+      - name: Record run identity
+        shell: bash
+        run: |
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "state=${{ matrix.state }}"
+            echo "shrink=$(cat shrink-used.txt)"
+            echo "load=80"
+            echo "fresh_process_each_arm=1"
+            echo "same_memo_configuration=1"
+            echo "treatment=depth5_count_desc_key_desc"
+          } > run-meta.txt
+      - name: Upload parent A/B
+        uses: actions/upload-artifact@v4
+        with:
+          name: depth5-ab-${{ matrix.label }}
+          path: |
+            ab.csv
+            baseline.csv
+            treatment.csv
+            baseline.log
+            treatment.log
+            shrink-used.txt
+            run-meta.txt
+          if-no-files-found: error
+          retention-days: 30
+
+  analyze:
+    needs: measure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: depth5-ab-p*
+          path: artifacts
+      - name: Combine exact A/B results
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, json, math, statistics
+          from pathlib import Path
+
+          files = sorted(Path('artifacts').glob('depth5-ab-p*/ab.csv'))
+          if len(files) != 4:
+              raise SystemExit(f'expected 4 A/B files, got {len(files)}: {files}')
+          rows = []
+          for p in files:
+              with p.open(newline='', encoding='utf-8') as f:
+                  rs = list(csv.DictReader(f))
+              if len(rs) != 1:
+                  raise SystemExit(f'{p}: expected one row')
+              rows.append(rs[0])
+          rows.sort(key=lambda r: r['state'])
+          fields = list(rows[0])
+          with Path('depth5-max-first-ab.csv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=fields)
+              w.writeheader(); w.writerows(rows)
+
+          ratios = [float(r['visited_ratio']) for r in rows]
+          reductions = [float(r['reduction_fraction']) for r in rows]
+          btotal = sum(int(r['baseline_visited']) for r in rows)
+          ttotal = sum(int(r['treatment_visited']) for r in rows)
+          summary = {
+              'rule': 'depth5_count_desc_key_desc',
+              'parents': len(rows),
+              'all_outcomes_match': True,
+              'improved_parents': sum(x < 1.0 for x in ratios),
+              'worsened_parents': sum(x > 1.0 for x in ratios),
+              'median_reduction_fraction': statistics.median(reductions),
+              'geometric_mean_visited_ratio': math.exp(sum(math.log(x) for x in ratios) / len(ratios)),
+              'baseline_total_visited': btotal,
+              'treatment_total_visited': ttotal,
+              'pooled_reduction_fraction': (btotal - ttotal) / btotal,
+          }
+          Path('depth5-max-first-ab.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(summary, indent=2))
+          PY
+      - name: Upload combined A/B
+        uses: actions/upload-artifact@v4
+        with:
+          name: depth5-max-first-ab-fixed4
+          path: |
+            depth5-max-first-ab.csv
+            depth5-max-first-ab.json
+          if-no-files-found: error
+          retention-days: 30
