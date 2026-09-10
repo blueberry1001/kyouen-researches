@@ -1,0 +1,24 @@
+name: Three-stone probe holdout v2 symmetry audit
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - scripts/audit_three_stone_holdout_v2_symmetry.py
+      - results/10x10/three-stone-probe-holdout-v2.csv
+      - .github/workflows/three-stone-probe-holdout-v2-symmetry-audit.yml
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify parent stabilizers are trivial
+        run: |
+          python3 scripts/audit_three_stone_holdout_v2_symmetry.py \
+            results/10x10/three-stone-probe-holdout-v2.csv | tee symmetry-audit.txt
+          grep -q '^parents=12$' symmetry-audit.txt
+          grep -q '^trivial_stabilizer=12$' symmetry-audit.txt
+          grep -q '^nontrivial_stabilizer=0$' symmetry-audit.txt
+          grep -q '^raw_to_canonical_child_injective=PASS$' symmetry-audit.txt
