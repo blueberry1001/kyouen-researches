@@ -1,0 +1,22 @@
+name: Audit canonical loss-child structure
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - scripts/check_canonical_loss_child.py
+      - results/10x10/two-stone-90-61-child-proof.csv
+      - results/10x10/two-stone-90-66-child-proof.csv
+      - .github/workflows/audit-canonical-loss-child.yml
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify all source loss_child labels are canonical one-move children
+        run: |
+          python3 scripts/check_canonical_loss_child.py \
+            results/10x10/two-stone-90-61-child-proof.csv \
+            results/10x10/two-stone-90-66-child-proof.csv
