@@ -10,7 +10,7 @@ Three of the four parents completed and passed `scripts/check_below_root_instrum
 
 | parent | outcome | visited | maxdepth | memo |
 |---|---|---:|---:|---:|
-| `14,64,74` | WIN | 4,342,654 | 17 | 4,297,793 |
+| `14,64,74` | WIN | 4,342,654 | 17 | 4,296,010 |
 | `12,32,55` | WIN | 7,106,990 | 18 | 7,061,150 |
 | `13,52,57` | WIN | 11,651,703 | 18 | 11,605,528 |
 
