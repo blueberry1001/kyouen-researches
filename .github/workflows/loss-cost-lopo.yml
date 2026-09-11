@@ -1,0 +1,24 @@
+name: Loss cost nested LOPO
+
+on:
+  push:
+    branches: [analyze-10x10-parent-loss-cost]
+    paths:
+      - 'scripts/analyze_loss_proof_residual_lopo.py'
+      - 'results/10x10/parent-benchmark/loss_proof_cost_dataset.csv'
+      - '.github/workflows/loss-cost-lopo.yml'
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run nested parent holdout analysis
+        run: |
+          python3 scripts/analyze_loss_proof_residual_lopo.py | tee /tmp/loss-cost-lopo.txt
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: loss-cost-lopo
+          path: /tmp/loss-cost-lopo.txt
