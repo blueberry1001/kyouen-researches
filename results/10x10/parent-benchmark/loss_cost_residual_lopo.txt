@@ -1,0 +1,40 @@
+Nested leave-one-parent-out analysis of exact LOSS proof cost
+Run: GitHub Actions 34575323292
+Input: results/10x10/parent-benchmark/loss_proof_cost_dataset.csv
+Rows: 516
+Parents: 12
+
+NESTED_LOPO
+legal median_ratio=1.1179
+nested_one_feature median_ratio=1.4195
+outer improved/tied/worse=1/8/3
+
+parent	chosen_feature	legal_ratio	model_ratio	feature_coef
+0,11,35	n_cols	1.1819	1.1819	0.2021
+11,38,44	n_rows	1.4567	1.4567	-0.0003
+11,78,87	n_cols	1.9224	1.9224	0.2867
+12,24,68	pairdist_min	1.1216	1.1216	0.0346
+12,32,55	pairdist_min	1.0000	3.6347	0.0628
+13,52,57	n_cols	2.1027	1.3823	0.2939
+14,64,74	pairdist_mean	1.0000	2.4140	0.0356
+23,44,45	n_cols	1.1141	2.1843	0.2881
+3,47,63	pairdist_min	1.0000	1.0000	0.0276
+3,53,84	n_cols	1.0000	1.0000	0.2722
+4,24,26	n_cols	1.5070	1.5070	0.2009
+4,42,54	n_cols	1.0000	1.0000	0.2866
+
+EXPLORATORY_FIXED_FEATURE_LOPO
+n_cols	median=1.1030	mean_log=0.2110	vs_legal improved/tied/worse=2/9/1
+newly_banned	median=1.1179	mean_log=0.2144	vs_legal improved/tied/worse=0/12/0
+pairdist_min	median=1.1179	mean_log=0.2624	vs_legal improved/tied/worse=2/9/1
+n_rows	median=1.1518	mean_log=0.3220	vs_legal improved/tied/worse=0/11/1
+bbox_area	median=1.1631	mean_log=0.3725	vs_legal improved/tied/worse=1/8/3
+pairdist_mean	median=1.1631	mean_log=0.3725	vs_legal improved/tied/worse=1/8/3
+move_cdist	median=1.6660	mean_log=0.5835	vs_legal improved/tied/worse=0/4/8
+
+Interpretation:
+- Selecting one additional cheap feature inside nested parent-level cross-validation hurts rather than helps: median oracle ratio worsens from 1.1179 to 1.4195.
+- Only 1/12 held-out parents improves; 3 worsen and 8 tie.
+- Therefore there is no evidence in these 12 parents that adaptive one-feature geometry improves over legal_move_count for unknown parents.
+- n_cols is mildly interesting only as an exploratory fixed feature (median 1.1030; 2 improved, 9 tied, 1 worse), but this was selected after examining this dataset and needs a frozen prospective test before use.
+- Priority implication: keep legal_move_count as the proof-cost baseline; do not spend solver budget on a learned/adaptive one-feature ordering from this dataset. Continue with memo/proof-reuse causal work, or prospectively test a frozen n_cols tie-break only on genuinely new parents.
