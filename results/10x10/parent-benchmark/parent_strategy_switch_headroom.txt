@@ -1,0 +1,15 @@
+Parent-level native(A) vs 10k-order(B) switch headroom
+parents=12
+sum_A_visited=225422484
+sum_B_work=336307534
+sum_oracle_best=184293658
+oracle_best_over_A=0.817548
+oracle_improvement_vs_A=18.245219%
+B_wins=2/12
+
+B-winning parents:
+  0,11,35: A=85311102 B=45205249 B/A=0.529887 gain=40105853 share_of_oracle_gain=97.512759% A_entered=6 B_entered=3
+  13,52,57: A=11651703 B=10628730 B/A=0.912204 gain=1022973 share_of_oracle_gain=2.487241% A_entered=1 B_entered=1
+
+largest_gain_parent=0,11,35
+largest_gain_share=97.512759%
