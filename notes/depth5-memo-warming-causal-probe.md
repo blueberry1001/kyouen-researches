@@ -12,6 +12,8 @@ This probe tests that mechanism directly without changing child order.
 
 `RankCompactTable::try_put` and `RankFlat17::try_put` do not evict/replace an occupied key. They either insert into an empty slot, find the same key/outcome, or fail because the table is full. Therefore provenance only needs to identify which depth-5 sibling first made an entry available during the current depth-5 node; there is no replacement history to reconstruct.
 
+There is one important split-table exception to handle in the instrumentation. At depths 11--14, `MultiDepthMemo100::put` tries a primary table and falls back to a secondary table. `RankCompactTable::try_put` checks `closed_ || used_ >= max_used_` *before* searching for an already-present key. Thus, after a primary table closes, blindly calling physical `put` for a key that is already present in that primary table can insert a duplicate copy into the secondary table. Production search normally avoids this because an ordinary entry hit returns immediately; Probe B deliberately suppresses such a hit and can therefore expose this path. The causal probe must not create that duplicate, because doing so would mutate the real memo beyond the intended removal of cross-sibling reuse.
+
 ## Context carried during one depth-5 node
 
 Depth-5 nodes cannot nest: recursion from a depth-5 node starts at depth 6 and only increases depth. Thus provenance scratch state may be reused for one depth-5 node at a time.
@@ -33,15 +35,18 @@ Use **one provenance byte per physical memo slot** instead. The maximum `shrink=
 
 Expose the physical slot reached by `get`/`try_put` through an instrumentation-only API. Depths 11..14 have two backing tables, so the returned identity must retain the backing-table identity as well as the slot. The production lookup/insert semantics and packed memo entries themselves remain unchanged.
 
-Encode the current depth-5 sibling owner in the low seven bits of the provenance byte (`1..100` fits). Reserve the high bit as **rederived in the current child**. This avoids a second side table:
+Encode the current depth-5 sibling owner in the low seven bits of the provenance byte (`1..100` fits because the board has only 100 points). Reserve the high bit as **rederived in the current child**. This avoids a second side table:
 
 - when a new memo slot is first inserted while child `j` is active, write owner `j` to its provenance byte and append that byte's address/slot identity to a `node_touched` list;
 - a hit with owner `< active_child` and high bit clear is a prior-sibling hit;
 - in Probe B such a hit is blocked and treated as a miss;
-- if recomputation later reaches `put` for that already-existing prior-sibling slot, set the high bit and append it to a `child_rederived` list;
+- save the blocked hit's physical slot identity and cached outcome in that `win` stack frame;
+- if that recomputation later determines the same state's outcome, **do not call physical `memo_.put` for that frame**. Assert that the recomputed outcome equals the saved cached outcome, set the high bit on the already-existing slot, and append it to a `child_rederived` list instead;
 - while the high bit is set, subsequent accesses inside the same child are allowed as within-child reuse;
 - before the next sibling, clear the high bit for `child_rederived` only;
 - after the depth-5 node finishes, clear provenance bytes in `node_touched` only, rather than scanning the full sidecar.
+
+Suppressing physical re-put for a blocked entry is required even though a non-full single table would merely rediscover the same key. It keeps the intervention independent of table fullness and, critically, prevents the primary-closed/secondary-fallback duplicate described above. A blocked child-prefetch hit needs no separate re-put rule: if that child is actually entered, its normal entry lookup sees the same key and records the blocked physical hit there; if it is never entered because of an earlier cutoff, it was never rederived.
 
 Because the real memo never relocates or replaces occupied entries, stored slot identities remain stable. The touched lists make reset cost proportional to entries actually created/rederived in that depth-5 node, while the provenance storage itself remains a fixed one-byte-per-slot bound.
 
@@ -71,7 +76,7 @@ Also report counts rather than only fractions, because a small number of high-le
 
 Child order and the physical memo table remain unchanged. A memo result attributed to an earlier sibling of the same depth-5 node is treated as a miss for the current child. Preexisting memo entries and within-child reuse remain available.
 
-A subtlety matters: if the current child recomputes a blocked key and reaches `put` for that same key, the counterfactual state must treat the key as re-derived by the current child. Use the high-bit mechanism described above so subsequent accesses inside this child are allowed; when a later sibling starts, clear the rederived high bits and expose the original low-bit sibling owner again. Merely ignoring the hit forever would also suppress legitimate within-child reuse and would not isolate cross-sibling warming.
+A subtlety matters: if the current child recomputes a blocked key, the counterfactual state must treat the key as re-derived by the current child without physically reinserting it. Save the blocked slot/outcome in the frame, assert the recomputed outcome is identical, and set the high-bit marker on that original slot. When a later sibling starts, clear the rederived high bits and expose the original low-bit sibling owner again. Merely ignoring the hit forever would suppress legitimate within-child reuse; physically calling `put` can duplicate a key into a split table after its primary table closes. Both would fail to isolate cross-sibling warming.
 
 The intervention therefore represents: **memo knowledge may enter a child from before the current depth-5 node or from computation inside that child, but not from another child of the same depth-5 node.**
 
