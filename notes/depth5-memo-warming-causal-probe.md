@@ -18,16 +18,24 @@ Depth-5 nodes cannot nest: recursion from a depth-5 node starts at depth 6 and o
 
 Before entering child `j` of a depth-5 node, set `active_child = j` (1-based). During recursive work at memoized depths 9..17:
 
-- a newly inserted memo slot gets origin `j`;
+- a newly inserted memo key gets origin `j`;
 - a memo hit whose origin is nonzero and `< active_child` is a **prior-sibling hit**;
 - origin `== active_child` is within-child reuse and is not counted as warming;
-- origin zero means the entry predated this depth-5 node and is not attributed to its siblings.
+- no origin record means the entry predated this depth-5 node and is not attributed to its siblings.
 
-After the depth-5 node returns, clear only the origin bytes touched while processing that node. Do not clear or alter the real memo table.
+After the depth-5 node returns, discard the provenance scratch state. Do not clear or alter the real memo table.
 
-Use one byte of origin per physical memo slot, not a widened memo entry. This keeps the production memo layout unchanged. A touched-slot list permits O(number of new entries) clearing rather than clearing whole sidecars. Child count is < 100, so an 8-bit 1-based child index is sufficient.
+### Implementation refinement before data collection: sparse logical-key provenance
 
-Approximate sidecar capacity from the current table powers is 100 MiB at `shrink=3` and 640 MiB at `shrink=0`; this is preferable to a 32-bit node-id sidecar (about 400 MiB and 2.5 GiB respectively). No node id is required because sidecars are cleared after each depth-5 node.
+The intervention does **not** require exposing physical hash-table slots. The solver already has the exact canonical `Bits key` at both memo access sites, and a state's stone count determines its memo depth. Use the canonical state itself as the provenance identity, e.g. `unordered_map<Bits, uint8_t, BitsHash> origin` for keys first produced during the active depth-5 node.
+
+This is equivalent to physical-slot attribution for this experiment because the production memo has no eviction/replacement and because provenance is only queried for exact canonical states that the solver is already looking up. It is also substantially less invasive: `RankCompactTable`, `RankFlat17`, and `MultiDepthMemo100` need no slot-aware API, and the previous 100 MiB (`shrink=3`) to 640 MiB (`shrink=0`) byte sidecars are avoided.
+
+A genuinely new memo key can be detected without modifying `try_put`: each `win` call already performs its entry lookup before expansion. Save that **raw physical memo result** in the stack frame. If it was a miss and the call later reaches `memo_.put(key, depth, outcome)`, the key is newly produced by this computation and `origin.try_emplace(key, active_child)` records its first sibling. Recursion only increases the stone count, so a descendant cannot independently insert the same `(state, depth)` between that entry miss and this call's return.
+
+If the raw entry lookup was a prior-sibling hit that Probe B deliberately blocked, recomputation reaches `put` while the physical memo still contains the old entry. In that case do not change `origin`; instead add the canonical key to a per-child `rederived` set. Later accesses to a key in `rederived` are allowed inside the same child. Clear `rederived` before starting each next depth-5 sibling. This preserves the frozen counterfactual: physical knowledge from another sibling is unavailable, but knowledge recomputed inside the current child may be reused.
+
+This refinement changes only bookkeeping representation, not the preregistered intervention or success criteria, and is fixed before collecting provenance results.
 
 ## Probe A: attribution only
 
@@ -51,7 +59,7 @@ Also report counts rather than only fractions, because a small number of high-le
 
 Child order and the physical memo table remain unchanged. A memo result attributed to an earlier sibling of the same depth-5 node is treated as a miss for the current child. Preexisting memo entries and within-child reuse remain available.
 
-A subtlety matters: if the current child recomputes a blocked key and reaches `put` for that same key, the counterfactual state must treat the key as re-derived by the current child. Maintain a shadow origin for the current depth-5 node so subsequent accesses inside this child are allowed; when a later sibling starts, that re-derived entry is again prior-sibling state and is blocked. Merely ignoring the hit forever would also suppress legitimate within-child reuse and would not isolate cross-sibling warming.
+A subtlety matters: if the current child recomputes a blocked key and reaches `put` for that same key, the counterfactual state must treat the key as re-derived by the current child. Maintain the per-child `rederived` set described above so subsequent accesses inside this child are allowed; when a later sibling starts, `rederived` is cleared and that physical entry is again prior-sibling state and is blocked. Merely ignoring the hit forever would also suppress legitimate within-child reuse and would not isolate cross-sibling warming.
 
 The intervention therefore represents: **memo knowledge may enter a child from before the current depth-5 node or from computation inside that child, but not from another child of the same depth-5 node.**
 
