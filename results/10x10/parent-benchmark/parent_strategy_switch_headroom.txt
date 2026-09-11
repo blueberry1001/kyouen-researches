@@ -6,10 +6,32 @@ sum_oracle_best=184293658
 oracle_best_over_A=0.817548
 oracle_improvement_vs_A=18.245219%
 B_wins=2/12
+B_losses=10/12
+sum_B_win_gain=41128826
+sum_B_loss_penalty=152013876
+mean_B_loss_penalty=15201387.6
 
 B-winning parents:
   0,11,35: A=85311102 B=45205249 B/A=0.529887 gain=40105853 share_of_oracle_gain=97.512759% A_entered=6 B_entered=3
   13,52,57: A=11651703 B=10628730 B/A=0.912204 gain=1022973 share_of_oracle_gain=2.487241% A_entered=1 B_entered=1
 
+B-losing parents (false-switch cost):
+  12,32,55: A=7106990 B=86793418 B/A=12.212402 penalty=79686428 A_entered=1 B_entered=5
+  14,64,74: A=4342654 B=19008565 B/A=4.377177 penalty=14665911 A_entered=1 B_entered=1
+  11,78,87: A=9928498 B=23460280 B/A=2.362923 penalty=13531782 A_entered=1 B_entered=1
+  4,42,54: A=6977109 B=17662420 B/A=2.531481 penalty=10685311 A_entered=1 B_entered=1
+  3,53,84: A=7184954 B=15702401 B/A=2.185456 penalty=8517447 A_entered=1 B_entered=1
+  4,24,26: A=51289701 B=58199684 B/A=1.134725 penalty=6909983 A_entered=9 B_entered=4
+  3,47,63: A=5711578 B=11149826 B/A=1.952145 penalty=5438248 A_entered=1 B_entered=1
+  23,44,45: A=7188933 B=12443196 B/A=1.730882 penalty=5254263 A_entered=1 B_entered=1
+  11,38,44: A=17051435 B=21823832 B/A=1.279882 penalty=4772397 A_entered=1 B_entered=1
+  12,24,68: A=11677827 B=14229933 B/A=1.218543 penalty=2552106 A_entered=1 B_entered=1
+
 largest_gain_parent=0,11,35
 largest_gain_share=97.512759%
+largest_gain_false_switch_budget=40105853
+largest_gain_equiv_mean_false_switches=2.638302
+largest_false_switch_parent=12,32,55
+largest_false_switch_penalty=79686428
+largest_false_switch_over_largest_gain=1.986903
+largest_false_switch_alone_erases_largest_gain=yes
