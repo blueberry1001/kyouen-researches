@@ -25,15 +25,27 @@ Before entering child `j` of a depth-5 node, set `active_child = j` (1-based). D
 
 After the depth-5 node returns, discard the provenance scratch state. Do not clear or alter the real memo table.
 
-### Implementation refinement before data collection: sparse logical-key provenance
+### Implementation refinement before data collection: bounded physical-slot provenance
 
-The intervention does **not** require exposing physical hash-table slots. The solver already has the exact canonical `Bits key` at both memo access sites, and a state's stone count determines its memo depth. Use the canonical state itself as the provenance identity, e.g. `unordered_map<Bits, uint8_t, BitsHash> origin` for keys first produced during the active depth-5 node.
+The previous draft proposed sparse logical-key provenance with `unordered_map<Bits, uint8_t, BitsHash>`. Existing fixed-root artifacts show that this representation is not safely bounded enough for the largest run: baseline `0,11,35` at `shrink=0` finishes with 85,151,103 memo entries, and one observed depth-5 node alone accounts for 5,951,125 visited nodes. A node-local hash map could therefore contain millions of 128-bit keys; allocator/bucket overhead can exceed the cost of a compact sidecar and can become a new memory bottleneck. This was discovered before collecting any provenance results, so the intervention and interpretation remain frozen while only the bookkeeping representation changes.
 
-This is equivalent to physical-slot attribution for this experiment because the production memo has no eviction/replacement and because provenance is only queried for exact canonical states that the solver is already looking up. It is also substantially less invasive: `RankCompactTable`, `RankFlat17`, and `MultiDepthMemo100` need no slot-aware API, and the previous 100 MiB (`shrink=3`) to 640 MiB (`shrink=0`) byte sidecars are avoided.
+Use **one provenance byte per physical memo slot** instead. The maximum `shrink=0` capacity over all depth-9..17 tables is 671,612,928 slots = 640.5 MiB of provenance bytes; smaller shrink settings use correspondingly less. This is a deterministic upper bound rather than workload-dependent hash-map overhead.
 
-A genuinely new memo key can be detected without modifying `try_put`: each `win` call already performs its entry lookup before expansion. Save that **raw physical memo result** in the stack frame. If it was a miss and the call later reaches `memo_.put(key, depth, outcome)`, the key is newly produced by this computation and `origin.try_emplace(key, active_child)` records its first sibling. Recursion only increases the stone count, so a descendant cannot independently insert the same `(state, depth)` between that entry miss and this call's return.
+Expose the physical slot reached by `get`/`try_put` through an instrumentation-only API. Depths 11..14 have two backing tables, so the returned identity must retain the backing-table identity as well as the slot. The production lookup/insert semantics and packed memo entries themselves remain unchanged.
 
-If the raw entry lookup was a prior-sibling hit that Probe B deliberately blocked, recomputation reaches `put` while the physical memo still contains the old entry. In that case do not change `origin`; instead add the canonical key to a per-child `rederived` set. Later accesses to a key in `rederived` are allowed inside the same child. Clear `rederived` before starting each next depth-5 sibling. This preserves the frozen counterfactual: physical knowledge from another sibling is unavailable, but knowledge recomputed inside the current child may be reused.
+Encode the current depth-5 sibling owner in the low seven bits of the provenance byte (`1..100` fits). Reserve the high bit as **rederived in the current child**. This avoids a second side table:
+
+- when a new memo slot is first inserted while child `j` is active, write owner `j` to its provenance byte and append that byte's address/slot identity to a `node_touched` list;
+- a hit with owner `< active_child` and high bit clear is a prior-sibling hit;
+- in Probe B such a hit is blocked and treated as a miss;
+- if recomputation later reaches `put` for that already-existing prior-sibling slot, set the high bit and append it to a `child_rederived` list;
+- while the high bit is set, subsequent accesses inside the same child are allowed as within-child reuse;
+- before the next sibling, clear the high bit for `child_rederived` only;
+- after the depth-5 node finishes, clear provenance bytes in `node_touched` only, rather than scanning the full sidecar.
+
+Because the real memo never relocates or replaces occupied entries, stored slot identities remain stable. The touched lists make reset cost proportional to entries actually created/rederived in that depth-5 node, while the provenance storage itself remains a fixed one-byte-per-slot bound.
+
+A useful simplification follows from solver control flow: every **completed earlier sibling** of a currently explored child is necessarily WIN. A LOSS sibling would have caused the parent to return immediately, so there can be no later sibling. Therefore `prior-sibling hit` and `prior-WIN-sibling hit` are identical on the actually observed search path; no separate sibling-outcome provenance field is required.
 
 This refinement changes only bookkeeping representation, not the preregistered intervention or success criteria, and is fixed before collecting provenance results.
 
@@ -59,7 +71,7 @@ Also report counts rather than only fractions, because a small number of high-le
 
 Child order and the physical memo table remain unchanged. A memo result attributed to an earlier sibling of the same depth-5 node is treated as a miss for the current child. Preexisting memo entries and within-child reuse remain available.
 
-A subtlety matters: if the current child recomputes a blocked key and reaches `put` for that same key, the counterfactual state must treat the key as re-derived by the current child. Maintain the per-child `rederived` set described above so subsequent accesses inside this child are allowed; when a later sibling starts, `rederived` is cleared and that physical entry is again prior-sibling state and is blocked. Merely ignoring the hit forever would also suppress legitimate within-child reuse and would not isolate cross-sibling warming.
+A subtlety matters: if the current child recomputes a blocked key and reaches `put` for that same key, the counterfactual state must treat the key as re-derived by the current child. Use the high-bit mechanism described above so subsequent accesses inside this child are allowed; when a later sibling starts, clear the rederived high bits and expose the original low-bit sibling owner again. Merely ignoring the hit forever would also suppress legitimate within-child reuse and would not isolate cross-sibling warming.
 
 The intervention therefore represents: **memo knowledge may enter a child from before the current depth-5 node or from computation inside that child, but not from another child of the same depth-5 node.**
 
@@ -74,14 +86,14 @@ Use the same four roots as the previous fixed-four experiment:
 - `13,52,57` (previous holdout)
 - `0,11,35`
 
-For each root, baseline, attribution-only, and causal-blocking runs must use fresh processes and identical `shrink/load` settings. Preserve the existing TableFull retry policy (`shrink=3 -> 2 -> 1 -> 0`) and compare a pair only when all compared modes finish at the same setting.
+For each root, baseline, attribution-only, and causal-blocking runs must use fresh processes and identical `shrink/load` settings. Preserve the existing TableFull retry policy (`shrink=3 -> 2 -> 1 -> 0`) and compare a set only when all compared modes finish at the same setting.
 
 ## Preregistered interpretation
 
 The memo-warming mechanism is supported if:
 
 1. attribution-only exactly reproduces baseline outcome and visited count;
-2. cutoff LOSS children consume nonzero prior-WIN-sibling memo hits in multiple roots; and
+2. cutoff LOSS children consume nonzero prior-sibling memo hits in multiple roots; and
 3. causal blocking increases total visited nodes with unchanged game outcome in at least 3 of 4 fixed roots.
 
 A stronger result is obtained if the causal-blocking slowdown is largest in roots where the cutoff LOSS children consume the most prior-sibling hits or where those hits occur at shallower memoized depths.
