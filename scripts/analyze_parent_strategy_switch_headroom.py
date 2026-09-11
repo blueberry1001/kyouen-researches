@@ -10,6 +10,7 @@ for r in rows:
     r["A"] = int(r["A_visited"])
     r["B"] = int(r["B_work"])
     r["gain"] = max(r["A"] - r["B"], 0)
+    r["penalty"] = max(r["B"] - r["A"], 0)
     r["ratio"] = r["B"] / r["A"]
 
 sum_a = sum(r["A"] for r in rows)
@@ -17,6 +18,9 @@ sum_b = sum(r["B"] for r in rows)
 sum_best = sum(min(r["A"], r["B"]) for r in rows)
 total_gain = sum(r["gain"] for r in rows)
 b_wins = [r for r in rows if r["B"] < r["A"]]
+b_losses = [r for r in rows if r["B"] > r["A"]]
+total_penalty = sum(r["penalty"] for r in b_losses)
+avg_penalty = total_penalty / len(b_losses) if b_losses else 0.0
 
 lines = [
     "Parent-level native(A) vs 10k-order(B) switch headroom",
@@ -27,6 +31,10 @@ lines = [
     f"oracle_best_over_A={sum_best / sum_a:.6f}",
     f"oracle_improvement_vs_A={(sum_a - sum_best) / sum_a:.6%}",
     f"B_wins={len(b_wins)}/{len(rows)}",
+    f"B_losses={len(b_losses)}/{len(rows)}",
+    f"sum_B_win_gain={total_gain}",
+    f"sum_B_loss_penalty={total_penalty}",
+    f"mean_B_loss_penalty={avg_penalty:.1f}",
     "",
     "B-winning parents:",
 ]
@@ -38,13 +46,32 @@ for r in sorted(b_wins, key=lambda x: -x["gain"]):
         f"A_entered={r['A_entered']} B_entered={r['B_entered']}"
     )
 
+lines += ["", "B-losing parents (false-switch cost):"]
+for r in sorted(b_losses, key=lambda x: -x["penalty"]):
+    lines.append(
+        f"  {r['parent']}: A={r['A']} B={r['B']} "
+        f"B/A={r['ratio']:.6f} penalty={r['penalty']} "
+        f"A_entered={r['A_entered']} B_entered={r['B_entered']}"
+    )
+
 if b_wins:
     biggest = max(b_wins, key=lambda x: x["gain"])
+    biggest_gain = biggest["gain"]
     lines += [
         "",
         f"largest_gain_parent={biggest['parent']}",
-        f"largest_gain_share={biggest['gain'] / total_gain:.6%}",
+        f"largest_gain_share={biggest_gain / total_gain:.6%}",
+        f"largest_gain_false_switch_budget={biggest_gain}",
+        f"largest_gain_equiv_mean_false_switches={biggest_gain / avg_penalty:.6f}" if avg_penalty else "largest_gain_equiv_mean_false_switches=inf",
     ]
+    if b_losses:
+        worst = max(b_losses, key=lambda x: x["penalty"])
+        lines += [
+            f"largest_false_switch_parent={worst['parent']}",
+            f"largest_false_switch_penalty={worst['penalty']}",
+            f"largest_false_switch_over_largest_gain={worst['penalty'] / biggest_gain:.6f}",
+            f"largest_false_switch_alone_erases_largest_gain={'yes' if worst['penalty'] > biggest_gain else 'no'}",
+        ]
 
 OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
 print("\n".join(lines))
