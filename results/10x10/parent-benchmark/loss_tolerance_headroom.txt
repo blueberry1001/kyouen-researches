@@ -1,0 +1,30 @@
+legal_move_count tolerance-band oracle headroom
+parents=12
+NOTE: band_size is LOSS-only; real solver candidate burden can be larger because WIN children are absent.
+
+k,oracle_covered,median_band_oracle/global,median_loss_band_size,max_loss_band_size,native_regret_parents_improvable,median_regret_fraction_removable
+0,5/12,1.057307,1.0,3,2/7,0.000000
+1,6/12,1.000244,1.0,3,3/7,0.000000
+2,7/12,1.000000,1.5,6,3/7,0.000000
+3,7/12,1.000000,2.5,12,4/7,0.653340
+4,7/12,1.000000,5.0,16,4/7,0.815279
+5,9/12,1.000000,6.0,21,5/7,1.000000
+6,11/12,1.000000,8.0,24,7/7,1.000000
+8,11/12,1.000000,15.5,39,7/7,1.000000
+10,11/12,1.000000,22.0,57,7/7,1.000000
+13,12/12,1.000000,34.0,72,7/7,1.000000
+
+parent oracle legal-count gaps
+parent,min_legal,global_move,global_gap,native_move,native_ratio
+0,11,35,86,36,6,77,1.181916
+11,38,44,83,83,13,88,1.456703
+11,78,87,83,77,6,18,1.922449
+12,24,68,80,61,5,82,1.121595
+12,32,55,79,82,0,82,1.000000
+13,52,57,75,83,5,21,2.102702
+14,64,74,72,69,0,69,1.000000
+23,44,45,76,56,1,53,1.114126
+3,47,63,74,73,0,73,1.000000
+3,53,84,79,83,0,83,1.000000
+4,24,26,84,94,2,25,1.507050
+4,42,54,76,64,0,64,1.000000
