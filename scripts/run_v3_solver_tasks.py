@@ -127,10 +127,32 @@ def run_one(args_tuple: tuple[dict[str, str], int, int, int, str, Path]) -> dict
         tmp_path.unlink(missing_ok=True)
     wall = time.time() - t_start
     if proc.returncode != 0:
-        raise RuntimeError(f"solver failed for {state}: rc={proc.returncode}\n{(proc.stderr or '')[-500:]}")
+        return {
+            "parent": task["parent"],
+            "batch": task["batch"],
+            "batch_position": task["batch_position"],
+            "state": state,
+            "probe_outcome": f"ERROR_rc{proc.returncode}",
+            "visited": "",
+            "maxdepth": "",
+            "memo": "",
+            "seconds": "",
+            "_wall": f"{wall:.6f}",
+        }
     rows = list(csv.DictReader(proc.stdout.splitlines()))
     if len(rows) != 1:
-        raise RuntimeError(f"expected 1 row for {state}, got {len(rows)}\n{(proc.stdout or '')[-500:]}")
+        return {
+            "parent": task["parent"],
+            "batch": task["batch"],
+            "batch_position": task["batch_position"],
+            "state": state,
+            "probe_outcome": "ERROR_parse",
+            "visited": "",
+            "maxdepth": "",
+            "memo": "",
+            "seconds": "",
+            "_wall": f"{wall:.6f}",
+        }
     row = rows[0]
     return {
         "parent": task["parent"],
@@ -214,12 +236,14 @@ def main() -> None:
     base = done
     worker_args = [(t, args.shrink, args.load, args.budget, str(tmp_dir), str(REPO_ROOT)) for t in pending]
     with mp.Pool(processes=args.workers) as pool:
-        for res in pool.imap_unordered(run_one, worker_args, chunksize=8):
+        for res in pool.imap_unordered(run_one, worker_args, chunksize=4):
             row = {k: res[k] for k in FIELDS}
             writer.writerow(row)
             out_file.flush()
             done += 1
-            if done % 50 == 0 or done == len(tasks):
+            if str(res["probe_outcome"]).startswith("ERROR"):
+                print(f"FAIL {res['state']} {res['probe_outcome']}", flush=True)
+            if done % 20 == 0 or done == len(tasks):
                 elapsed = time.time() - t0
                 speed = (done - base) / elapsed if elapsed > 0 else 0
                 print(f"[{done}/{len(tasks)}] elapsed={elapsed:.1f}s ({speed:.2f} tasks/sec)", flush=True)
