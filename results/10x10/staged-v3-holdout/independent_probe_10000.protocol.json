@@ -1,0 +1,25 @@
+{
+  "budget": 10000,
+  "format": 3,
+  "fresh_process_per_child": true,
+  "holdout_task_count": 1144,
+  "load": 80,
+  "memo_sharing": "forbidden",
+  "output_schema": [
+    "parent",
+    "batch",
+    "batch_position",
+    "state",
+    "probe_outcome",
+    "visited",
+    "maxdepth",
+    "memo",
+    "seconds"
+  ],
+  "shrink": 3,
+  "solver_binary_sha256": "15d805ea9b354cc11c5c5ee5329512b723241897e32d135bf5a82094cdccd585",
+  "solver_sources_sha256": "9b6f227ffb9fd802851ae69bad3a5621ce78857af1c65084ae92d09aa67e47b3",
+  "tag": "independent_probe_10000",
+  "task_set_sha256": "64acd07866ad9a090e9db2abb269e61c17480178de283d81009a5a49a90fe8a0",
+  "tie_break": "probe LOSS first; unresolved memo_used ascending; probe WIN last; 4th-move board index ascending"
+}
