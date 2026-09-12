@@ -1,0 +1,22 @@
+{
+  "seed": "kyouen-10x10-staged-v3-holdout-seed-20260912",
+  "universe_size": 20355,
+  "excluded_count": 5157,
+  "clean_universe_size": 15198,
+  "primary_sample_size": 12,
+  "primary_parents": [
+    "1,47,64",
+    "3,23,61",
+    "22,24,73",
+    "3,12,81",
+    "3,57,78",
+    "14,27,35",
+    "0,16,59",
+    "1,34,89",
+    "2,55,65",
+    "1,37,64",
+    "4,21,47",
+    "4,72,85"
+  ],
+  "selection_rule": "SHA256(seed:canonical_parent) ascending on clean universe; no outcomes inspected"
+}
