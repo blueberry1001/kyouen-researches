@@ -1,0 +1,8 @@
+{
+  "source_shortlist_sha256": "ae876ee16160bb3f7d1e064e86fdda1a53235f80fa231dc222d1bdcea12231fc",
+  "source_1m_probe_sha256": "132033dbd4c08aec77e2fbfa2854be0bf46d8e6ae425265fd47d4170e8e366dc",
+  "ranking_key": "probe LOSS first; unresolved memo_used ascending; probe WIN last; move ascending",
+  "rows": 132,
+  "ranking_sha256": "767fd26de6421763f7b2d5d2299f438f518c85195f5695da4fd1156adb7b063f",
+  "labels_used": "1M probe outcomes only; exact labels not consulted"
+}
