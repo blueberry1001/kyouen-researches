@@ -1,0 +1,24 @@
+{
+  "files": [
+    "order_11_25_64.txt",
+    "order_12_44_46.txt",
+    "order_12_57_58.txt",
+    "order_1_27_54.txt",
+    "order_22_44_55.txt",
+    "order_2_30_53.txt",
+    "order_2_50_69.txt",
+    "order_2_59_87.txt",
+    "order_3_36_62.txt",
+    "order_3_58_81.txt",
+    "order_4_13_67.txt",
+    "order_4_15_23.txt",
+    "order_4_16_41.txt",
+    "order_4_32_64.txt",
+    "order_4_45_68.txt",
+    "order_4_55_78.txt"
+  ],
+  "combined_sha256": "af3ff00ff86ba952c7bc8cb5ad009e4ec636fde13ebb3429b11062f1407b6df5",
+  "head_rule": "1M-reordered top-11 unique",
+  "tail_rule": "native residual legal_move_count asc, Bits key asc",
+  "labels_used": "probe ranks only"
+}
