@@ -1,0 +1,8 @@
+{
+  "k": 11,
+  "source_probe_sha256": "b7684ee5f4f7f30f9163a44c1ae52b1d605267550a05e164c877ed29a8759b66",
+  "ranking_key": "probe LOSS first; unresolved memo_used ascending; probe WIN last; move ascending",
+  "rows": 176,
+  "shortlist_sha256": "45806cb51cb808d60f59ba4209ab875f49351f8ecf426c7b6734161f66bcc71a",
+  "labels_used": "10k probe outcomes only; exact labels not consulted"
+}
