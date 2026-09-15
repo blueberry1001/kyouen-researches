@@ -1,0 +1,4 @@
+canonical_parent,stratum,y00_T,y01_TO,y10_TE,y11_raw,E_effect_O0,E_effect_O1,interaction,top_T,top_TE,top_TO,top_raw,cause_class,pair_T,pair_E,pair_O,pair_raw,true_T,true_E,true_O,true_raw
+"1,10,30,41",overlap,0,1,1,1,1,0,-1,37,21,11,21,E-only,17,3,2,22,18,0,1,19
+"2,18,22,58",overlap,0,0,1,0,1,0,-1,1,28,1,19,synergy,21,2,2,25,23,0,1,24
+"3,55,60,76",overlap,1,1,1,0,0,-1,-1,59,20,59,54,synergy,13,4,2,19,16,1,0,17
