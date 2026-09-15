@@ -1,0 +1,13 @@
+forbidden=14564
+safe_4stone_parents=620812
+all4_unique_raw=395592
+any_score_diff_raw=18712 D4_orbits=2340
+E_effect_O0_raw=16840 D4_orbits=2105
+O_effect_E0_raw=2552 D4_orbits=320
+E_effect_O1_raw=16124 D4_orbits=2016
+O_effect_E1_raw=2052 D4_orbits=257
+T_vs_raw_raw=18364 D4_orbits=2296
+O0_only_orbits=165
+O_overlap_orbits=155
+O1_only_orbits=102
+wrote=2340 to artifacts/8x8-factorial-population.csv

@@ -1,0 +1,36 @@
+{
+  "population_file": "artifacts\\8x8-factorial-population.csv",
+  "population_sha256": "984703d5c1bac231a5258ffc382e03b51fdc61fdb6d9a9dba7fac3ddc89eeec6",
+  "population_d4_orbits": 2340,
+  "stratum_counts": {
+    "O1-only": 102,
+    "O0-only": 165,
+    "O-overlap": 155
+  },
+  "O0_only_n": 165,
+  "O_overlap_n": 155,
+  "O1_only_n": 102,
+  "raw_root_instances": 1154,
+  "unique_root_count": 848,
+  "dedup_rate": 0.2651646447140381,
+  "parent_count_with_roots": 422,
+  "stratum_raw_roots": {
+    "O1-only": 204,
+    "O0-only": 330,
+    "O-overlap": 620
+  },
+  "stratum_unique_pairs": {
+    "O1-only": 204,
+    "O0-only": 330,
+    "O-overlap": 314
+  },
+  "success_criterion": {
+    "primary": "\u0394_O(O0-only) > 0 AND \u0394_O(O0-only) - \u0394_O(O-overlap) >= 0.05",
+    "threshold_gap": 0.05,
+    "encoding": {
+      "LOSS": 1,
+      "WIN": 0
+    },
+    "O_effect_E0": "y01 - y00 where y00=outcome(top_T), y01=outcome(top_TO)"
+  }
+}

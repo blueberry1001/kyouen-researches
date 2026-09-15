@@ -1,0 +1,18 @@
+{
+  "child_instances": 848,
+  "unique_child_states": 840,
+  "shared_child_count": 7,
+  "max_shared_degree": 3,
+  "share_degree_histogram": {
+    "1": 833,
+    "2": 6,
+    "3": 1
+  },
+  "connected_component_count": 414,
+  "component_size_histogram": {
+    "1": 408,
+    "2": 4,
+    "3": 2
+  },
+  "max_component_size": 3
+}
