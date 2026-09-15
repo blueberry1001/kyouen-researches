@@ -1,0 +1,144 @@
+{
+  "roots_total": 848,
+  "shards": 12,
+  "workers": 8,
+  "memo_power": 26,
+  "wall_seconds": 3.7438294887542725,
+  "all_shards_ok": true,
+  "shards_detail": [
+    {
+      "shard_id": 0,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.6219122409820557,
+      "input": "artifacts\\8x8-o-solve\\shard-000.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-000.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-000.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 1,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.361114263534546,
+      "input": "artifacts\\8x8-o-solve\\shard-001.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-001.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-001.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 2,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.6935067176818848,
+      "input": "artifacts\\8x8-o-solve\\shard-002.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-002.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-002.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 3,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.2918941974639893,
+      "input": "artifacts\\8x8-o-solve\\shard-003.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-003.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-003.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 4,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.6587178707122803,
+      "input": "artifacts\\8x8-o-solve\\shard-004.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-004.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-004.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 5,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.543912172317505,
+      "input": "artifacts\\8x8-o-solve\\shard-005.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-005.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-005.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 6,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.554246664047241,
+      "input": "artifacts\\8x8-o-solve\\shard-006.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-006.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-006.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 7,
+      "expected_rows": 71,
+      "result_rows": 71,
+      "exit_code": 0,
+      "seconds": 2.5743303298950195,
+      "input": "artifacts\\8x8-o-solve\\shard-007.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-007.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-007.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 8,
+      "expected_rows": 70,
+      "result_rows": 70,
+      "exit_code": 0,
+      "seconds": 0.9501743316650391,
+      "input": "artifacts\\8x8-o-solve\\shard-008.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-008.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-008.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 9,
+      "expected_rows": 70,
+      "result_rows": 70,
+      "exit_code": 0,
+      "seconds": 1.1209759712219238,
+      "input": "artifacts\\8x8-o-solve\\shard-009.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-009.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-009.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 10,
+      "expected_rows": 70,
+      "result_rows": 70,
+      "exit_code": 0,
+      "seconds": 1.1483831405639648,
+      "input": "artifacts\\8x8-o-solve\\shard-010.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-010.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-010.err.log",
+      "ok": true
+    },
+    {
+      "shard_id": 11,
+      "expected_rows": 70,
+      "result_rows": 70,
+      "exit_code": 0,
+      "seconds": 1.174269199371338,
+      "input": "artifacts\\8x8-o-solve\\shard-011.in.csv",
+      "output": "artifacts\\8x8-o-solve\\shard-011.out.csv",
+      "stderr": "artifacts\\8x8-o-solve\\shard-011.err.log",
+      "ok": true
+    }
+  ],
+  "merged_rows": 848,
+  "merged_file": "artifacts\\8x8-o-census-outcomes.csv"
+}
