@@ -1,0 +1,3 @@
+comparison,population_type,n,both_loss,both_win,baseline_only_loss,component_added_only_loss,discordant,baseline_loss_rate,added_loss_rate,delta_loss_rate,change_rate,interpretation
+O_at_E0,finite_eligible_census,715,231,167,148,169,317,0.5300699300699301,0.5594405594405595,0.029370629370629397,0.4433566433566434,exact descriptive quantity on the pre-fixed unobserved eligible finite population; not a sampling estimate
+O_at_E1,finite_eligible_census,639,204,150,144,141,285,0.5446009389671361,0.539906103286385,-0.0046948356807511304,0.4460093896713615,exact descriptive quantity on the pre-fixed unobserved eligible finite population; not a sampling estimate

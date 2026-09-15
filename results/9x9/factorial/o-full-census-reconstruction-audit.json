@@ -1,0 +1,1226 @@
+{
+  "design_n": {
+    "O_at_E0": 801,
+    "O_at_E1": 702
+  },
+  "historical_outcome_files": [
+    "results/9x9/pair-vs-true-unique-first12.csv",
+    "results/9x9/pair-vs-true-unique-smoke.csv"
+  ],
+  "historical_parents_with_outcomes": 13,
+  "comparisons": {
+    "O_at_E0": {
+      "design_n": 801,
+      "solved_this_run": 715,
+      "excluded_from_design": 86,
+      "excluded_reconstructable": 0,
+      "excluded_missing_child_outcomes": 86,
+      "full_census_possible": false,
+      "missing_states": [
+        {
+          "canonical_parent": "0,1,16,18",
+          "left_move": 6,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,18,33",
+          "left_move": 57,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,23,32",
+          "left_move": 5,
+          "right_move": 2,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,71,76",
+          "left_move": 31,
+          "right_move": 8,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,6,15",
+          "left_move": 24,
+          "right_move": 78,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,18,24",
+          "left_move": 3,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,34,60",
+          "left_move": 10,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,43,60",
+          "left_move": 10,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,52,57",
+          "left_move": 12,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,54,69",
+          "left_move": 9,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,12,15",
+          "left_move": 60,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,12,29",
+          "left_move": 57,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,29,32",
+          "left_move": 48,
+          "right_move": 2,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,4,12,45",
+          "left_move": 36,
+          "right_move": 24,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,4,30,64",
+          "left_move": 1,
+          "right_move": 40,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,4,40,42",
+          "left_move": 38,
+          "right_move": 2,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,5,13,40",
+          "left_move": 31,
+          "right_move": 33,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,5,13,70",
+          "left_move": 37,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,5,32,57",
+          "left_move": 6,
+          "right_move": 12,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,6,50,51",
+          "left_move": 58,
+          "right_move": 24,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,7,14,19",
+          "left_move": 26,
+          "right_move": 59,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,10,24,43",
+          "left_move": 36,
+          "right_move": 60,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,13,23,56",
+          "left_move": 24,
+          "right_move": 45,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,13,43,65",
+          "left_move": 76,
+          "right_move": 70,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,14,31,40",
+          "left_move": 50,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,14,34,61",
+          "left_move": 33,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,16,33,67",
+          "left_move": 5,
+          "right_move": 44,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,20,24,26",
+          "left_move": 70,
+          "right_move": 50,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,21,23,48",
+          "left_move": 47,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,21,30,51",
+          "left_move": 39,
+          "right_move": 60,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,2,60,61",
+          "left_move": 41,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,9,26,34",
+          "left_move": 6,
+          "right_move": 17,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,13,29,35",
+          "left_move": 28,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,14,16,37",
+          "left_move": 44,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,15,21,67",
+          "left_move": 51,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,15,53,65",
+          "left_move": 13,
+          "right_move": 25,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,17,31,47",
+          "left_move": 41,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,18,70,78",
+          "left_move": 6,
+          "right_move": 58,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,19,37,59",
+          "left_move": 23,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,20,47,61",
+          "left_move": 11,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,25,31,56",
+          "left_move": 57,
+          "right_move": 61,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,25,42,54",
+          "left_move": 61,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,32,52,57",
+          "left_move": 12,
+          "right_move": 25,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,39,55,77",
+          "left_move": 5,
+          "right_move": 73,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,48,56,59",
+          "left_move": 51,
+          "right_move": 8,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,56,65,68",
+          "left_move": 11,
+          "right_move": 61,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,3,13,21",
+          "left_move": 48,
+          "right_move": 1,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,3,27,56",
+          "left_move": 66,
+          "right_move": 36,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,5,39,42",
+          "left_move": 59,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,13,48,53",
+          "left_move": 47,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,20,48,62",
+          "left_move": 47,
+          "right_move": 12,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,21,45,62",
+          "left_move": 18,
+          "right_move": 52,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,26,27,55",
+          "left_move": 19,
+          "right_move": 10,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,34,50,58",
+          "left_move": 32,
+          "right_move": 47,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,4,28,29",
+          "left_move": 67,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,5,30,49",
+          "left_move": 29,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,11,25,50",
+          "left_move": 61,
+          "right_move": 20,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,12,36,50",
+          "left_move": 43,
+          "right_move": 66,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,14,48,52",
+          "left_move": 24,
+          "right_move": 66,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,15,31,59",
+          "left_move": 55,
+          "right_move": 14,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,16,30,43",
+          "left_move": 10,
+          "right_move": 34,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,20,29,49",
+          "left_move": 30,
+          "right_move": 19,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,23,31,35",
+          "left_move": 27,
+          "right_move": 43,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,29,42,58",
+          "left_move": 2,
+          "right_move": 59,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,29,56,76",
+          "left_move": 61,
+          "right_move": 20,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,31,32,46",
+          "left_move": 30,
+          "right_move": 27,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,33,67,70",
+          "left_move": 43,
+          "right_move": 66,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,41,46,65",
+          "left_move": 66,
+          "right_move": 14,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,46,50,59",
+          "left_move": 66,
+          "right_move": 53,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "4,12,19,30",
+          "left_move": 39,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "4,28,46,52",
+          "left_move": 19,
+          "right_move": 49,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "4,28,49,52",
+          "left_move": 58,
+          "right_move": 61,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "10,12,42,64",
+          "left_move": 13,
+          "right_move": 37,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "10,14,20,32",
+          "left_move": 77,
+          "right_move": 13,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "10,34,61,67",
+          "left_move": 70,
+          "right_move": 11,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,21,28,58",
+          "left_move": 37,
+          "right_move": 61,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,33,43,49",
+          "left_move": 41,
+          "right_move": 39,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,39,66,68",
+          "left_move": 44,
+          "right_move": 12,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,42,47,56",
+          "left_move": 61,
+          "right_move": 37,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "12,28,32,50",
+          "left_move": 31,
+          "right_move": 14,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "12,29,30,52",
+          "left_move": 57,
+          "right_move": 34,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "12,30,42,51",
+          "left_move": 31,
+          "right_move": 21,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "12,50,57,59",
+          "left_move": 56,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "20,22,42,58",
+          "left_move": 31,
+          "right_move": 24,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "21,32,50,58",
+          "left_move": 26,
+          "right_move": 41,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "21,38,40,41",
+          "left_move": 78,
+          "right_move": 47,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        }
+      ]
+    },
+    "O_at_E1": {
+      "design_n": 702,
+      "solved_this_run": 639,
+      "excluded_from_design": 63,
+      "excluded_reconstructable": 0,
+      "excluded_missing_child_outcomes": 63,
+      "full_census_possible": false,
+      "missing_states": [
+        {
+          "canonical_parent": "0,1,16,18",
+          "left_move": 6,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,18,33",
+          "left_move": 57,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,23,32",
+          "left_move": 5,
+          "right_move": 2,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,1,71,76",
+          "left_move": 31,
+          "right_move": 8,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,8,16",
+          "left_move": 64,
+          "right_move": 56,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,18,24",
+          "left_move": 54,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,34,60",
+          "left_move": 10,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,36,42",
+          "left_move": 8,
+          "right_move": 54,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,43,60",
+          "left_move": 10,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,52,57",
+          "left_move": 12,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,2,54,69",
+          "left_move": 9,
+          "right_move": 6,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,8,45",
+          "left_move": 9,
+          "right_move": 27,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,12,15",
+          "left_move": 60,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,3,12,29",
+          "left_move": 57,
+          "right_move": 5,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,4,12,45",
+          "left_move": 36,
+          "right_move": 24,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,4,40,42",
+          "left_move": 38,
+          "right_move": 2,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,7,47,57",
+          "left_move": 1,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,13,23,56",
+          "left_move": 24,
+          "right_move": 45,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,13,43,65",
+          "left_move": 76,
+          "right_move": 70,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,14,31,40",
+          "left_move": 50,
+          "right_move": 30,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,16,33,67",
+          "left_move": 5,
+          "right_move": 44,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "0,23,32,60",
+          "left_move": 50,
+          "right_move": 20,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,3,32,46",
+          "left_move": 6,
+          "right_move": 27,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,6,17,28",
+          "left_move": 46,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,9,26,34",
+          "left_move": 6,
+          "right_move": 17,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,13,29,35",
+          "left_move": 28,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,14,16,37",
+          "left_move": 44,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,15,21,22",
+          "left_move": 51,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,15,21,67",
+          "left_move": 51,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,15,53,65",
+          "left_move": 13,
+          "right_move": 25,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,17,31,47",
+          "left_move": 41,
+          "right_move": 7,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,18,70,78",
+          "left_move": 6,
+          "right_move": 58,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,19,37,59",
+          "left_move": 23,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,20,47,61",
+          "left_move": 11,
+          "right_move": 31,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,25,42,54",
+          "left_move": 61,
+          "right_move": 9,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,32,52,57",
+          "left_move": 12,
+          "right_move": 25,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,39,55,77",
+          "left_move": 37,
+          "right_move": 73,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,48,56,59",
+          "left_move": 51,
+          "right_move": 8,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "1,56,65,68",
+          "left_move": 11,
+          "right_move": 61,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,13,48,53",
+          "left_move": 47,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,20,48,62",
+          "left_move": 47,
+          "right_move": 12,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,21,45,62",
+          "left_move": 18,
+          "right_move": 52,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,26,27,55",
+          "left_move": 19,
+          "right_move": 10,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "2,40,64,68",
+          "left_move": 65,
+          "right_move": 32,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,5,30,49",
+          "left_move": 29,
+          "right_move": 4,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,12,36,50",
+          "left_move": 43,
+          "right_move": 66,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,15,31,59",
+          "left_move": 55,
+          "right_move": 14,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,20,29,49",
+          "left_move": 11,
+          "right_move": 19,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,23,30,40",
+          "left_move": 57,
+          "right_move": 13,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,23,31,35",
+          "left_move": 27,
+          "right_move": 43,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,29,42,58",
+          "left_move": 2,
+          "right_move": 59,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,29,56,76",
+          "left_move": 61,
+          "right_move": 20,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,31,32,46",
+          "left_move": 30,
+          "right_move": 27,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,33,41,59",
+          "left_move": 49,
+          "right_move": 57,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,33,67,70",
+          "left_move": 43,
+          "right_move": 66,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,41,46,65",
+          "left_move": 66,
+          "right_move": 14,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "3,46,50,59",
+          "left_move": 66,
+          "right_move": 53,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "4,12,19,30",
+          "left_move": 39,
+          "right_move": 3,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,14,42,59",
+          "left_move": 15,
+          "right_move": 23,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,33,43,49",
+          "left_move": 41,
+          "right_move": 39,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "11,39,66,68",
+          "left_move": 44,
+          "right_move": 12,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "12,29,30,52",
+          "left_move": 57,
+          "right_move": 34,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        },
+        {
+          "canonical_parent": "21,38,40,41",
+          "left_move": 10,
+          "right_move": 47,
+          "left_outcome": null,
+          "right_outcome": null,
+          "sources": []
+        }
+      ]
+    }
+  },
+  "primary_results_unaffected": true
+}

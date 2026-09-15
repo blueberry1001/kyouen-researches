@@ -1,0 +1,76 @@
+{
+  "started_at_utc": "2026-09-15T10:18:39Z",
+  "finished_at_utc": "2026-09-15T10:24:03Z",
+  "elapsed_sec": 323.8,
+  "shard_size": 12,
+  "max_jobs": 6,
+  "memo_power": 28,
+  "comparisons": {
+    "O_at_E0": {
+      "comparison": "O_at_E0",
+      "solved_parents": 715,
+      "remaining": 0,
+      "both_loss": 231,
+      "both_win": 167,
+      "baseline_only": 148,
+      "added_only": 169,
+      "discordant": 317
+    },
+    "O_at_E1": {
+      "comparison": "O_at_E1",
+      "solved_parents": 639,
+      "remaining": 0,
+      "both_loss": 204,
+      "both_win": 150,
+      "baseline_only": 144,
+      "added_only": 141,
+      "discordant": 285
+    },
+    "E_at_O0": {
+      "comparison": "E_at_O0",
+      "solved_parents": 1024,
+      "remaining": 0,
+      "both_loss": 277,
+      "both_win": 284,
+      "baseline_only": 210,
+      "added_only": 253,
+      "discordant": 463
+    },
+    "E_at_O1": {
+      "comparison": "E_at_O1",
+      "solved_parents": 1024,
+      "remaining": 0,
+      "both_loss": 287,
+      "both_win": 285,
+      "baseline_only": 213,
+      "added_only": 239,
+      "discordant": 452
+    }
+  },
+  "merged": {
+    "O_at_E0": {
+      "path": "artifacts/solve/merged/O_at_E0.csv",
+      "sha256": "1be8157e9a356992297cc9d37d791a9cf0f7d6fa030327792e90b5c65b1145c0",
+      "rows": 715
+    },
+    "O_at_E1": {
+      "path": "artifacts/solve/merged/O_at_E1.csv",
+      "sha256": "9f1841635366208ffeb42951fd92eb613875b7bb8526fdb106a98c75515d8ecd",
+      "rows": 639
+    },
+    "E_at_O0": {
+      "path": "artifacts/solve/merged/E_at_O0.csv",
+      "sha256": "8a77c6e875a39bae2421cc4b56c02214271c19f8698e51b5b5921186cf1afff6",
+      "rows": 1024
+    },
+    "E_at_O1": {
+      "path": "artifacts/solve/merged/E_at_O1.csv",
+      "sha256": "c0ef1d5f46ce3c8f4dc8e5e3962e3b87e23893531d5b467785697a967e987f28",
+      "rows": 1024
+    }
+  },
+  "n_shards": 286,
+  "failed_shards": [],
+  "memo_over_shards": [],
+  "mp29_shards": []
+}
