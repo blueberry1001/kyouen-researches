@@ -72,10 +72,8 @@ def mean(xs):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("holdout_csv")
-    p.add_argument("--E_at_O0", required=True)
-    p.add_argument("--O_at_E0", required=True)
-    p.add_argument("--E_at_O1", required=True)
-    p.add_argument("--O_at_E1", required=True)
+    p.add_argument("--E_at_O0", required=True, help="top_T vs top_TE")
+    p.add_argument("--E_at_O1", required=True, help="top_TO vs top_raw")
     p.add_argument("summary_csv")
     args = p.parse_args()
 
@@ -93,14 +91,12 @@ def main():
     ]
     intersection_set = set(intersection)
 
+    # y00/y10 from E_at_O0 (T vs TE); y01/y11 from E_at_O1 (TO vs raw).
     maps = {
-        "T": parse_result_map(args.O_at_E0),
-        "TE": parse_result_map(args.E_at_O0),
-        "TO": parse_result_map(args.O_at_E1),
-        "raw": parse_result_map(args.E_at_O1),
+        "E_at_O0": parse_result_map(args.E_at_O0),
+        "E_at_O1": parse_result_map(args.E_at_O1),
     }
 
-    # Every intersection parent must appear in all four comparison outputs.
     for label, m in maps.items():
         missing = sorted(intersection_set - set(m))
         if missing:
@@ -116,18 +112,18 @@ def main():
     rule_loss = {"y00": 0, "y10": 0, "y01": 0, "y11": 0}
 
     for parent in intersection:
-        y00 = loss_bit(maps["T"][parent]["pair_child_outcome"])
-        y10 = loss_bit(maps["TE"][parent]["added_child_outcome"])
-        y01 = loss_bit(maps["TO"][parent]["added_child_outcome"])
-        y11 = loss_bit(maps["raw"][parent]["added_child_outcome"])
-        # y11 is also pair_child_outcome on E_at_O1 (baseline=top_TO vs added=top_raw).
-        # Prefer the pair side when available so both sides are validated.
-        y11_pair = loss_bit(maps["raw"][parent]["pair_child_outcome"])
-        y01_pair = loss_bit(maps["TO"][parent]["pair_child_outcome"])
-        y00_pair = loss_bit(maps["T"][parent]["pair_child_outcome"])
-        y10_pair = loss_bit(maps["TE"][parent]["pair_child_outcome"])
-        if y00 != y00_pair or y10 != y10_pair or y01 != y01_pair or y11 != y11_pair:
-            raise SystemExit(f"cross-map outcome mismatch for {parent}")
+        r00 = maps["E_at_O0"][parent]
+        r01 = maps["E_at_O1"][parent]
+        # Validate moves against the frozen holdout tops.
+        h = by_parent[parent]
+        if int(r00["pair_top"]) != int(h["top_T"]) or int(r00["added_top"]) != int(h["top_TE"]):
+            raise SystemExit(f"E_at_O0 move mismatch for {parent}")
+        if int(r01["pair_top"]) != int(h["top_TO"]) or int(r01["added_top"]) != int(h["top_raw"]):
+            raise SystemExit(f"E_at_O1 move mismatch for {parent}")
+        y00 = loss_bit(r00["pair_child_outcome"])
+        y10 = loss_bit(r00["added_child_outcome"])
+        y01 = loss_bit(r01["pair_child_outcome"])
+        y11 = loss_bit(r01["added_child_outcome"])
 
         interaction = y11 - y01 - y10 + y00
         if interaction not in i_hist:
