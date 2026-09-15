@@ -1,0 +1,3 @@
+board,O0_only_n,O_overlap_n,O0_only_delta,O_overlap_delta,gap,interaction_mean,O0_change_rate,O_overlap_change_rate
+8x8,165,155,-0.042424,-0.012903,-0.029521,0.000000,0.103030,0.103226
+9x9-ref,,,0.091200,-0.014300,0.105500,,,

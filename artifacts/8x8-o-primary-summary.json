@@ -1,0 +1,70 @@
+{
+  "encoding": {
+    "LOSS": 1,
+    "WIN": 0
+  },
+  "O0_only": {
+    "n": 165,
+    "both_loss": 3,
+    "both_win": 145,
+    "baseline_only_loss": 12,
+    "O_added_only_loss": 5,
+    "discordant": 17,
+    "baseline_loss_rate": 0.09090909090909091,
+    "added_loss_rate": 0.048484848484848485,
+    "delta_loss": -0.04242424242424243,
+    "change_rate": 0.10303030303030303,
+    "net_count": -7
+  },
+  "O_overlap": {
+    "n": 155,
+    "both_loss": 2,
+    "both_win": 137,
+    "baseline_only_loss": 9,
+    "O_added_only_loss": 7,
+    "discordant": 16,
+    "baseline_loss_rate": 0.07096774193548387,
+    "added_loss_rate": 0.05806451612903226,
+    "delta_loss": -0.012903225806451611,
+    "change_rate": 0.1032258064516129,
+    "net_count": -2
+  },
+  "O1_only": {
+    "n": 102,
+    "both_loss": 2,
+    "both_win": 83,
+    "baseline_only_loss": 4,
+    "O_added_only_loss": 13,
+    "discordant": 17,
+    "baseline_loss_rate": 0.058823529411764705,
+    "added_loss_rate": 0.14705882352941177,
+    "delta_loss": 0.08823529411764706,
+    "change_rate": 0.16666666666666666,
+    "net_count": 9
+  },
+  "primary_gap_G": -0.029521016617790816,
+  "success_criterion": {
+    "delta0_gt_0": false,
+    "gap_ge_0.05": false,
+    "threshold": 0.05,
+    "pass": false,
+    "verdict": "fail"
+  },
+  "interaction_O_overlap": {
+    "histogram": {
+      "-2": 0,
+      "-1": 0,
+      "0": 155,
+      "1": 0,
+      "2": 0
+    },
+    "mean": 0,
+    "median": 0,
+    "negative": 0,
+    "zero": 155,
+    "positive": 0,
+    "abs_eq_2": 0,
+    "n": 155
+  },
+  "missing_outcomes": 28
+}

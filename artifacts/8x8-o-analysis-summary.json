@@ -1,0 +1,17 @@
+{
+  "verdict": "fail",
+  "O0_only_delta": -0.04242424242424243,
+  "O_overlap_delta": -0.012903225806451611,
+  "gap": -0.029521016617790816,
+  "O1_only_delta": 0.08823529411764706,
+  "interaction_mean": 0,
+  "interaction_median": 0,
+  "population_d4_orbits": 2340,
+  "stratum_counts": {
+    "O0-only": 165,
+    "O-overlap": 155,
+    "O1-only": 102
+  },
+  "unique_roots_solved": 848,
+  "solve_completion": "848/848"
+}
