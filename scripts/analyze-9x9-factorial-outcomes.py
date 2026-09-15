@@ -46,8 +46,22 @@ def holm_adjust(raw):
     return adjusted
 
 
+def normalize_result_row(row):
+    """Accept either analyzer-native added_* columns or solver other_* columns.
+
+    kyouen_solver_9_compare emits other_top / other_child_outcome. Treat those
+    as the component-added side without changing outcome meaning.
+    """
+    out = dict(row)
+    if "added_child_outcome" not in out and "other_child_outcome" in out:
+        out["added_child_outcome"] = out["other_child_outcome"]
+    if "added_top" not in out and "other_top" in out:
+        out["added_top"] = out["other_top"]
+    return out
+
+
 def parse_result_map(path):
-    rows = read_csv(path)
+    rows = [normalize_result_row(r) for r in read_csv(path)]
     if not rows:
         raise SystemExit(f"empty solver result: {path}")
     required = {
@@ -127,11 +141,20 @@ def main():
                 right_only += 1
 
         discordant = left_only + right_only
+        n = len(expected)
         p_raw = binom_two_sided_equal_tail(right_only, discordant)
         raw_p.append(p_raw)
+        baseline_loss_rate = (both_loss + left_only) / n if n else ""
+        added_loss_rate = (both_loss + right_only) / n if n else ""
+        if n:
+            delta_loss_rate = added_loss_rate - baseline_loss_rate
+            change_rate = discordant / n
+        else:
+            delta_loss_rate = ""
+            change_rate = ""
         summaries.append({
             "comparison": label,
-            "n": len(expected),
+            "n": n,
             "both_loss": both_loss,
             "both_win": both_win,
             "baseline_only_loss": left_only,
@@ -141,6 +164,10 @@ def main():
                 right_only / discordant if discordant else ""
             ),
             "exact_two_sided_p": p_raw,
+            "baseline_loss_rate": baseline_loss_rate,
+            "added_loss_rate": added_loss_rate,
+            "delta_loss_rate": delta_loss_rate,
+            "change_rate": change_rate,
         })
 
     adjusted = holm_adjust(raw_p)
@@ -159,6 +186,7 @@ def main():
         "baseline_only_loss", "component_added_only_loss", "discordant",
         "component_added_fraction_discordant", "exact_two_sided_p",
         "holm_adjusted_p", "reject_fwer_0.05", "direction",
+        "baseline_loss_rate", "added_loss_rate", "delta_loss_rate", "change_rate",
     ]
     with open(args.summary_csv, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields)
@@ -173,7 +201,11 @@ def main():
             f"added_only={r['component_added_only_loss']} "
             f"p={r['exact_two_sided_p']:.8g} "
             f"holm={r['holm_adjusted_p']:.8g} "
-            f"direction={r['direction']}"
+            f"direction={r['direction']} "
+            f"base_loss={r['baseline_loss_rate']} "
+            f"added_loss={r['added_loss_rate']} "
+            f"delta_loss={r['delta_loss_rate']} "
+            f"change={r['change_rate']}"
         )
     print(f"summary={Path(args.summary_csv)}")
 
