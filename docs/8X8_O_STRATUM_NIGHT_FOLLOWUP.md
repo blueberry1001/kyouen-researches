@@ -89,6 +89,31 @@ Outcome-free 1-ply features (safe-child mobility, collinear triples among the 5 
 blocked completions, bounding-box span) do not separate LOSS from WIN
 (mobility means 33.9 vs 35.4; heavy overlap). LOSS is not locally “cramped” in an obvious way.
 
+### P7 — 8×8 shallow depth profile has a 5-stone WIN peak (SUPPORTED on random samples)
+
+Random safe positions on 8×8, solved with `kyouen_solver_8_root.exe`:
+
+| stones | n | LOSS | LOSS rate | visited median |
+|---:|---:|---:|---:|---:|
+| 0 (empty) | — | — | **1.0** (known: 8×8 second-player win) | — |
+| 3 | 150 | 4 | **0.027** | 106742 |
+| 4 | 150 | 92 | **0.613** | 115079 |
+| 5 | 200 | 8 | **0.040** | 3636 |
+| 6 | 150 | 44 | **0.293** | 1148 |
+
+Reading:
+
+- **5 stones is a sharp WIN peak** (96% WIN) — this is why the O-stratum factorial
+  experiment sits in a low-signal regime.
+- **Simple stone-count parity is false**: even depths are not ~100% LOSS
+  (4-stone 61%, 6-stone 29%). Odd≈WIN holds approximately at 3 and 5.
+- Visit cost collapses as stones increase (branching shrinks); 3–4 stones are
+  ~30× more expensive than 5–6 stones at this board size.
+
+Artifacts: `artifacts/8x8-random-depth-profile.json`,
+`scripts/sample-k-stone.py`, `scripts/summarize-8x8-depth-profile.py`,
+`artifacts/8x8-random-safe-{3,4,5,6}stone-*.csv`.
+
 ## 4. Cross-board table
 
 | stratum | n 8×8 | n 9×9 | Δ 8×8 | Δ 9×9 | change 8×8 | change 9×9 |

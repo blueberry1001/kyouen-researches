@@ -1,0 +1,42 @@
+[
+  {
+    "stones": "3stone",
+    "n": 150,
+    "LOSS": 4,
+    "WIN": 146,
+    "LOSS_rate": 0.02666666666666667,
+    "visited_median": 106741.5,
+    "visited_mean": 123595.32666666666,
+    "visited_max": 425399
+  },
+  {
+    "stones": "4stone",
+    "n": 150,
+    "LOSS": 92,
+    "WIN": 58,
+    "LOSS_rate": 0.6133333333333333,
+    "visited_median": 115079.0,
+    "visited_mean": 106901.00666666667,
+    "visited_max": 292646
+  },
+  {
+    "stones": "5stone",
+    "n": 200,
+    "LOSS": 8,
+    "WIN": 192,
+    "LOSS_rate": 0.04,
+    "visited_median": 3636.0,
+    "visited_mean": 4722.01,
+    "visited_max": 21254
+  },
+  {
+    "stones": "6stone",
+    "n": 150,
+    "LOSS": 44,
+    "WIN": 106,
+    "LOSS_rate": 0.29333333333333333,
+    "visited_median": 1148.0,
+    "visited_mean": 2298.7933333333335,
+    "visited_max": 15264
+  }
+]
