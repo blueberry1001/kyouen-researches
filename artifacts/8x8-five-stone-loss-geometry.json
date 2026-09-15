@@ -1,0 +1,318 @@
+{
+  "unique_children": 842,
+  "LOSS_n": 63,
+  "WIN_n": 779,
+  "LOSS_rate": 0.07482185273159145,
+  "feature_stats": {
+    "span_x": {
+      "LOSS": {
+        "n": 63,
+        "mean": 4.158730158730159,
+        "median": 4,
+        "min": 1,
+        "max": 7
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 4.296534017971759,
+        "median": 4,
+        "min": 1,
+        "max": 7
+      }
+    },
+    "span_y": {
+      "LOSS": {
+        "n": 63,
+        "mean": 5.174603174603175,
+        "median": 5,
+        "min": 3,
+        "max": 7
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 4.884467265725289,
+        "median": 5,
+        "min": 1,
+        "max": 7
+      }
+    },
+    "span_max": {
+      "LOSS": {
+        "n": 63,
+        "mean": 5.5396825396825395,
+        "median": 5,
+        "min": 4,
+        "max": 7
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 5.40821566110398,
+        "median": 6,
+        "min": 3,
+        "max": 7
+      }
+    },
+    "bbox_area": {
+      "LOSS": {
+        "n": 63,
+        "mean": 31.77777777777778,
+        "median": 30,
+        "min": 10,
+        "max": 64
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 31.186136071887034,
+        "median": 30,
+        "min": 8,
+        "max": 64
+      }
+    },
+    "min_pair_d2": {
+      "LOSS": {
+        "n": 63,
+        "mean": 2.507936507936508,
+        "median": 1,
+        "min": 1,
+        "max": 10
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 1.9653401797175867,
+        "median": 1,
+        "min": 1,
+        "max": 10
+      }
+    },
+    "max_pair_d2": {
+      "LOSS": {
+        "n": 63,
+        "mean": 39.301587301587304,
+        "median": 36,
+        "min": 16,
+        "max": 85
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 38.34017971758665,
+        "median": 36,
+        "min": 9,
+        "max": 98
+      }
+    },
+    "mean_pair_d2": {
+      "LOSS": {
+        "n": 63,
+        "mean": 17.063492063492063,
+        "median": 15.6,
+        "min": 5.2,
+        "max": 37.6
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 16.374839537869065,
+        "median": 15.4,
+        "min": 3.2,
+        "max": 42.8
+      }
+    },
+    "collinear_triples": {
+      "LOSS": {
+        "n": 63,
+        "mean": 0.8253968253968254,
+        "median": 1,
+        "min": 0,
+        "max": 2
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 0.8703465982028241,
+        "median": 1,
+        "min": 0,
+        "max": 2
+      }
+    },
+    "blocked_by_existing": {
+      "LOSS": {
+        "n": 63,
+        "mean": 25.11111111111111,
+        "median": 25,
+        "min": 16,
+        "max": 34
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 23.57637997432606,
+        "median": 24,
+        "min": 8,
+        "max": 37
+      }
+    },
+    "safe_child_mobility": {
+      "LOSS": {
+        "n": 63,
+        "mean": 33.888888888888886,
+        "median": 34,
+        "min": 25,
+        "max": 43
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 35.42362002567394,
+        "median": 35,
+        "min": 22,
+        "max": 51
+      }
+    },
+    "mean_T_if_extend": {
+      "LOSS": {
+        "n": 63,
+        "mean": 3.306137257057956,
+        "median": 3.1538461538461537,
+        "min": 0.9393939393939394,
+        "max": 7.105263157894737
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 3.397004795404769,
+        "median": 3.2162162162162162,
+        "min": 0.6764705882352942,
+        "max": 8.529411764705882
+      }
+    },
+    "max_T_if_extend": {
+      "LOSS": {
+        "n": 63,
+        "mean": 11.984126984126984,
+        "median": 12,
+        "min": 7,
+        "max": 19
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 11.933247753530168,
+        "median": 12,
+        "min": 5,
+        "max": 23
+      }
+    },
+    "centroid_dist_from_center": {
+      "LOSS": {
+        "n": 63,
+        "mean": 1.0686680068665089,
+        "median": 1.0295630140987,
+        "min": 0.14142135623730964,
+        "max": 2.3194827009486403
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 1.4039399601840652,
+        "median": 1.334166406412633,
+        "min": 0.14142135623730964,
+        "max": 3.67967389859482
+      }
+    },
+    "visited": {
+      "LOSS": {
+        "n": 63,
+        "mean": 4780.238095238095,
+        "median": 4697,
+        "min": 1099,
+        "max": 13624
+      },
+      "WIN": {
+        "n": 779,
+        "mean": 2627.788189987163,
+        "median": 1984,
+        "min": 0,
+        "max": 18773
+      }
+    }
+  },
+  "mobility_threshold_curve": [
+    {
+      "threshold": 10,
+      "LOSS_n_below": 0,
+      "LOSS_frac": 0.0,
+      "WIN_n_below": 0,
+      "WIN_frac": 0.0
+    },
+    {
+      "threshold": 15,
+      "LOSS_n_below": 0,
+      "LOSS_frac": 0.0,
+      "WIN_n_below": 0,
+      "WIN_frac": 0.0
+    },
+    {
+      "threshold": 20,
+      "LOSS_n_below": 0,
+      "LOSS_frac": 0.0,
+      "WIN_n_below": 0,
+      "WIN_frac": 0.0
+    },
+    {
+      "threshold": 25,
+      "LOSS_n_below": 1,
+      "LOSS_frac": 0.015873015873015872,
+      "WIN_n_below": 2,
+      "WIN_frac": 0.0025673940949935813
+    },
+    {
+      "threshold": 30,
+      "LOSS_n_below": 12,
+      "LOSS_frac": 0.19047619047619047,
+      "WIN_n_below": 68,
+      "WIN_frac": 0.08729139922978177
+    },
+    {
+      "threshold": 35,
+      "LOSS_n_below": 44,
+      "LOSS_frac": 0.6984126984126984,
+      "WIN_n_below": 398,
+      "WIN_frac": 0.5109114249037228
+    },
+    {
+      "threshold": 40,
+      "LOSS_n_below": 62,
+      "LOSS_frac": 0.9841269841269841,
+      "WIN_n_below": 716,
+      "WIN_frac": 0.9191270860077022
+    },
+    {
+      "threshold": 45,
+      "LOSS_n_below": 63,
+      "LOSS_frac": 1.0,
+      "WIN_n_below": 775,
+      "WIN_frac": 0.9948652118100129
+    },
+    {
+      "threshold": 50,
+      "LOSS_n_below": 63,
+      "LOSS_frac": 1.0,
+      "WIN_n_below": 778,
+      "WIN_frac": 0.9987163029525032
+    }
+  ],
+  "loss_stratum_counts": {
+    "O0-only": 22,
+    "O1-only": 21,
+    "O-overlap": 20
+  },
+  "win_stratum_counts": {
+    "O1-only": 182,
+    "O-overlap": 293,
+    "O0-only": 304
+  },
+  "loss_collinear_triple_hist": {
+    "0": 19,
+    "1": 36,
+    "2": 8
+  },
+  "win_collinear_triple_hist": {
+    "2": 106,
+    "0": 207,
+    "1": 466
+  },
+  "notes": "LOSS 5-stone positions on 8x8 are rare (n\u224864). Compare mobility and threat geometry vs WIN to see if LOSS is predictable from outcome-free structure."
+}

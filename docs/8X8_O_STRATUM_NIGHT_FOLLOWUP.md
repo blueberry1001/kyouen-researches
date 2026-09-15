@@ -20,27 +20,36 @@ This rejects the 9×9 claim that O is much more useful (higher LOSS-select rate)
 
 ## 2. New structural fact: LOSS base-rate collapse
 
-Among the 848 unique exact-solved 5-stone children:
+Among the 848 unique exact-solved factorial-selected 5-stone children:
 
-| board | selected-child LOSS rate |
-|---|---|
-| **8×8 census** | **64/848 = 0.0755** |
-| 9×9 factorial (T/TE/TO/raw) | **~0.45–0.48** |
+| sample | n | LOSS | LOSS rate | Wilson 95% |
+|---|---:|---:|---:|---|
+| **8×8 factorial top-moves** | 848 | 64 | **0.075** | [0.060, 0.095] |
+| **8×8 random safe 5-stone** | 200 | 8 | **0.040** | [0.020, 0.077] |
+| 9×9 factorial top-moves (T/TE/TO/raw) | — | — | **~0.45–0.48** | — |
 
-Independent check (not from the factorial selection):
+Random sample: `scripts/sample-8x8-random-safe-5stone.py` seed=20260915,
+solved with `cpp/solvers/kyouen_solver_8_root.exe`.
 
-- validation set of **40 random safe 5-stone roots** on 8×8: **40/40 WIN**
-- late 8–13 stone validation states: 21 WIN / 7 LOSS (LOSS appears only later)
+Refined statements:
 
-So on 8×8, safe 5-stone positions are almost all WIN for the player to move. The factorial O/E score still *selects different moves*, but those moves almost never change the exact WIN/LOSS label.
+1. **Population base rate on 8×8 is ~4%, not zero** (earlier n=40 validation was all-WIN by chance).
+2. **Factorial selection is mildly enriched** for LOSS (7.5% / 4.0% ≈ 1.9×), so the scores carry some signal even here.
+3. **Board-size regime gap is not a selection artifact**: both random and selected 8×8 rates are far below 9×9 factorial ~47%.
 
-Consequences:
+Local 1-ply geometry (safe-child mobility, collinear triples, blocked completions, span)
+does **not** separate the 63 unique 8×8 LOSS children from the 779 WIN children
+(`artifacts/8x8-five-stone-loss-geometry.json`). LOSS here is a deep game-tree property,
+not an obvious local cramping signature.
+
+Consequences for the O-stratum experiment:
 
 - O-induced change rate on 8×8 is ~0.10–0.17 per stratum
 - same quantity on 9×9 exploratory reference is ~0.44
 - Δ estimates on 8×8 are driven by a tiny discordant set (17 / 16 / 17 parents)
 
-This is a **board-size property of the experimental regime**, not a solver defect (solver already passed brute-force, D4, fresh-process, and memo_power checks).
+This is a **board-size property of the experimental regime**, not a solver defect
+(solver already passed brute-force, D4, fresh-process, and memo_power checks).
 
 ## 3. Proposition candidates (falsifiable)
 
@@ -70,7 +79,15 @@ Falsifier: any board with |mean I| > 0.02 on a full O-overlap census under the s
 
 ### P5 — pure shallow parity (REJECTED)
 
-Naive claim “all safe 5-stone positions on 8×8 are WIN” is false: the census contains **64 LOSS** 5-stone children. Parity-like base rates are strong but not absolute.
+Naive claim “all safe 5-stone positions on 8×8 are WIN” is false:
+census contains **64 LOSS** factorial-selected children; random sample contains **8/200 LOSS**.
+Parity-like base rates are strong but not absolute.
+
+### P6 — local geometry predicts 5-stone LOSS (REJECTED on 8×8)
+
+Outcome-free 1-ply features (safe-child mobility, collinear triples among the 5 stones,
+blocked completions, bounding-box span) do not separate LOSS from WIN
+(mobility means 33.9 vs 35.4; heavy overlap). LOSS is not locally “cramped” in an obvious way.
 
 ## 4. Cross-board table
 
@@ -95,9 +112,15 @@ The cleanest reading of tonight’s data:
 
 - `scripts/analyze-8x8-o-posthoc-structure.py`
 - `scripts/audit-8x8-o-base-rates.py`
+- `scripts/analyze-8x8-five-stone-loss-geometry.py`
+- `scripts/sample-8x8-random-safe-5stone.py`
+- `scripts/compare-8x8-loss-rates.py`
 - `artifacts/8x8-o-posthoc-structure.json`
 - `artifacts/8x8-o-flip-classes.csv`
 - `artifacts/8x8-o-base-rate-audit.json`
+- `artifacts/8x8-five-stone-loss-geometry.json` / `.csv`
+- `artifacts/8x8-random-safe-5stone-sample.csv` / `-out.csv`
+- `artifacts/8x8-loss-rate-comparison.json`
 - this document
 
 ## 7. Next highest-value experiments
