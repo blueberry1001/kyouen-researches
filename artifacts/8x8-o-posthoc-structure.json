@@ -1,0 +1,257 @@
+{
+  "population_orbits": 2340,
+  "strata_parents": 422,
+  "parent_outcome_rows": 422,
+  "stratum_cells": {
+    "O0-only": {
+      "n": 165,
+      "both_loss": 3,
+      "both_win": 145,
+      "baseline_only_loss_O_helped": 12,
+      "O_added_only_loss_O_hurt": 5,
+      "change_rate": 0.10303030303030303,
+      "baseline_loss_rate": 0.09090909090909091,
+      "added_loss_rate": 0.048484848484848485,
+      "delta_loss": -0.04242424242424243,
+      "net_O_hurt_minus_help": -7
+    },
+    "O-overlap": {
+      "n": 155,
+      "both_loss": 2,
+      "both_win": 137,
+      "baseline_only_loss_O_helped": 9,
+      "O_added_only_loss_O_hurt": 7,
+      "change_rate": 0.1032258064516129,
+      "baseline_loss_rate": 0.07096774193548387,
+      "added_loss_rate": 0.05806451612903226,
+      "delta_loss": -0.012903225806451613,
+      "net_O_hurt_minus_help": -2
+    },
+    "O1-only": {
+      "n": 102,
+      "both_loss": 2,
+      "both_win": 83,
+      "baseline_only_loss_O_helped": 4,
+      "O_added_only_loss_O_hurt": 13,
+      "change_rate": 0.16666666666666666,
+      "baseline_loss_rate": 0.058823529411764705,
+      "added_loss_rate": 0.14705882352941177,
+      "delta_loss": 0.08823529411764706,
+      "net_O_hurt_minus_help": 9
+    }
+  },
+  "nine_ref": {
+    "O0_only": {
+      "n": 296,
+      "delta": 0.091216,
+      "change_rate": 0.435811
+    },
+    "O_overlap": {
+      "n": 419,
+      "delta": -0.01432,
+      "change_rate": 0.444391
+    },
+    "O1_only": {
+      "n": 220,
+      "delta": 0.018182,
+      "change_rate": 0.436364
+    }
+  },
+  "flip_counts": {
+    "O-overlap|O_helped": 9,
+    "O-overlap|O_hurt": 7,
+    "O-overlap|both_loss": 2,
+    "O-overlap|both_win": 137,
+    "O0-only|O_helped": 12,
+    "O0-only|O_hurt": 5,
+    "O0-only|both_loss": 3,
+    "O0-only|both_win": 145,
+    "O1-only|O_helped": 4,
+    "O1-only|O_hurt": 13,
+    "O1-only|both_loss": 2,
+    "O1-only|both_win": 83
+  },
+  "feature_stats_by_stratum_flip": {
+    "O1-only|O_helped": {
+      "n": 4,
+      "mean_pair_E_top_T": 0.25,
+      "mean_pair_O_top_T": 0.5,
+      "mean_pair_E_top_TE": 0.75,
+      "mean_pair_O_top_TE": 0.0,
+      "mean_pair_O_top_TO": 0.5,
+      "mean_pair_O_top_raw": 2.0,
+      "mean_orbit": 8.0
+    },
+    "O1-only|O_hurt": {
+      "n": 13,
+      "mean_pair_E_top_T": 1.2307692307692308,
+      "mean_pair_O_top_T": 0.7692307692307693,
+      "mean_pair_E_top_TE": 2.3076923076923075,
+      "mean_pair_O_top_TE": 0.0,
+      "mean_pair_O_top_TO": 0.7692307692307693,
+      "mean_pair_O_top_raw": 2.076923076923077,
+      "mean_orbit": 8.0
+    },
+    "O1-only|both_loss": {
+      "n": 2,
+      "mean_pair_E_top_T": 1.0,
+      "mean_pair_O_top_T": 1.0,
+      "mean_pair_E_top_TE": 2.5,
+      "mean_pair_O_top_TE": 0.0,
+      "mean_pair_O_top_TO": 1.0,
+      "mean_pair_O_top_raw": 2.0,
+      "mean_orbit": 8.0
+    },
+    "O1-only|both_win": {
+      "n": 83,
+      "mean_pair_E_top_T": 0.7469879518072289,
+      "mean_pair_O_top_T": 0.6024096385542169,
+      "mean_pair_E_top_TE": 1.5180722891566265,
+      "mean_pair_O_top_TE": 0.04819277108433735,
+      "mean_pair_O_top_TO": 0.6024096385542169,
+      "mean_pair_O_top_raw": 2.108433734939759,
+      "mean_orbit": 8.0
+    },
+    "O0-only|O_helped": {
+      "n": 12,
+      "mean_pair_E_top_T": 1.3333333333333333,
+      "mean_pair_O_top_T": 0.0,
+      "mean_pair_E_top_TE": 3.75,
+      "mean_pair_O_top_TE": 1.6666666666666667,
+      "mean_pair_O_top_TO": 2.0,
+      "mean_pair_O_top_raw": 1.6666666666666667,
+      "mean_orbit": 8.0
+    },
+    "O0-only|O_hurt": {
+      "n": 5,
+      "mean_pair_E_top_T": 0.4,
+      "mean_pair_O_top_T": 0.2,
+      "mean_pair_E_top_TE": 3.0,
+      "mean_pair_O_top_TE": 2.2,
+      "mean_pair_O_top_TO": 2.2,
+      "mean_pair_O_top_raw": 2.2,
+      "mean_orbit": 8.0
+    },
+    "O0-only|both_loss": {
+      "n": 3,
+      "mean_pair_E_top_T": 2.0,
+      "mean_pair_O_top_T": 0.0,
+      "mean_pair_E_top_TE": 4.0,
+      "mean_pair_O_top_TE": 2.0,
+      "mean_pair_O_top_TO": 2.0,
+      "mean_pair_O_top_raw": 2.0,
+      "mean_orbit": 8.0
+    },
+    "O0-only|both_win": {
+      "n": 145,
+      "mean_pair_E_top_T": 1.0758620689655172,
+      "mean_pair_O_top_T": 0.041379310344827586,
+      "mean_pair_E_top_TE": 3.4482758620689653,
+      "mean_pair_O_top_TE": 1.889655172413793,
+      "mean_pair_O_top_TO": 2.1517241379310343,
+      "mean_pair_O_top_raw": 1.889655172413793,
+      "mean_orbit": 7.972413793103448
+    },
+    "O-overlap|O_helped": {
+      "n": 9,
+      "mean_pair_E_top_T": 0.3333333333333333,
+      "mean_pair_O_top_T": 0.0,
+      "mean_pair_E_top_TE": 0.3333333333333333,
+      "mean_pair_O_top_TE": 0.0,
+      "mean_pair_O_top_TO": 2.111111111111111,
+      "mean_pair_O_top_raw": 2.111111111111111,
+      "mean_orbit": 8.0
+    },
+    "O-overlap|O_hurt": {
+      "n": 7,
+      "mean_pair_E_top_T": 0.5714285714285714,
+      "mean_pair_O_top_T": 0.14285714285714285,
+      "mean_pair_E_top_TE": 0.5714285714285714,
+      "mean_pair_O_top_TE": 0.14285714285714285,
+      "mean_pair_O_top_TO": 2.4285714285714284,
+      "mean_pair_O_top_raw": 2.4285714285714284,
+      "mean_orbit": 8.0
+    },
+    "O-overlap|both_loss": {
+      "n": 2,
+      "mean_pair_E_top_T": 0.5,
+      "mean_pair_O_top_T": 0.0,
+      "mean_pair_E_top_TE": 0.5,
+      "mean_pair_O_top_TE": 0.0,
+      "mean_pair_O_top_TO": 2.0,
+      "mean_pair_O_top_raw": 2.0,
+      "mean_orbit": 8.0
+    },
+    "O-overlap|both_win": {
+      "n": 137,
+      "mean_pair_E_top_T": 0.5401459854014599,
+      "mean_pair_O_top_T": 0.021897810218978103,
+      "mean_pair_E_top_TE": 0.6058394160583942,
+      "mean_pair_O_top_TE": 0.029197080291970802,
+      "mean_pair_O_top_TO": 2.124087591240876,
+      "mean_pair_O_top_raw": 2.124087591240876,
+      "mean_orbit": 7.970802919708029
+    }
+  },
+  "cross_board_comparison": [
+    {
+      "stratum": "O0-only",
+      "n_8x8": 165,
+      "n_9x9": 296,
+      "delta_8x8": -0.04242424242424243,
+      "delta_9x9": 0.091216,
+      "change_8x8": 0.10303030303030303,
+      "change_9x9": 0.435811,
+      "base_loss_8x8": 0.09090909090909091,
+      "added_loss_8x8": 0.048484848484848485
+    },
+    {
+      "stratum": "O-overlap",
+      "n_8x8": 155,
+      "n_9x9": 419,
+      "delta_8x8": -0.012903225806451613,
+      "delta_9x9": -0.01432,
+      "change_8x8": 0.1032258064516129,
+      "change_9x9": 0.444391,
+      "base_loss_8x8": 0.07096774193548387,
+      "added_loss_8x8": 0.05806451612903226
+    },
+    {
+      "stratum": "O1-only",
+      "n_8x8": 102,
+      "n_9x9": 220,
+      "delta_8x8": 0.08823529411764706,
+      "delta_9x9": 0.018182,
+      "change_8x8": 0.16666666666666666,
+      "change_9x9": 0.436364,
+      "base_loss_8x8": 0.058823529411764705,
+      "added_loss_8x8": 0.14705882352941177
+    }
+  ],
+  "proposition_candidates": [
+    {
+      "id": "P1-change-rate-collapse",
+      "statement": "On 8x8 eligible O-stratum parents, the O-induced outcome change rate is <= 0.15 in every stratum (O0=0.103, overlap=0.103, O1=0.167), whereas the 9x9 exploratory reference is ~0.44. Board-size reduction collapses how often O flips the exact outcome.",
+      "status": "SUPPORTED_ON_8X8_CENSUS",
+      "falsifier": "Find an 8x8 stratum with change_rate > 0.20 on the same frozen population, or a 7x7/10x10 census with change_rate ~0.44."
+    },
+    {
+      "id": "P2-O0-only-sign-flip",
+      "statement": "The sign of \u0394_O(O0-only) flips between boards: 9x9 holdout +0.091 (O hurts) vs 8x8 census -0.0424 (O helps). Therefore the 9x9 O0-only positive-\u0394 claim is not a board-size-stable law.",
+      "status": "SUPPORTED_AS_NON_REPLICATION",
+      "falsifier": "Independent 7x7 or 10x10 O0-only census with \u0394 > +0.05 using the same frozen definitions."
+    },
+    {
+      "id": "P3-O1-only-net-hurt-on-8x8",
+      "statement": "On 8x8 O1-only parents, adding O at E=1 increases LOSS rate: \u0394_O_E1 = 0.0882 > 0 (O_hurt=13, O_helped=4). This is larger in magnitude than the 9x9 O1-only reference (+0.018).",
+      "status": "CANDIDATE_NEEDS_INDEPENDENT_DATA",
+      "falsifier": "7x7 or 10x10 O1-only census with \u0394_O_E1 <= 0, or 8x8 re-solve under independent verifier showing opposite sign."
+    },
+    {
+      "id": "P4-zero-interaction-board-stable",
+      "statement": "E\u00d7O interaction on O-overlap parents is ~0 on both boards (8x8: exactly 0 on n=155; 9x9: mean -0.002 on n=470). Shared-parent interaction is not the driver of overall O-effect sign changes.",
+      "status": "SUPPORTED",
+      "falsifier": "Any board where |mean I| > 0.02 on a full O-overlap census with the same I definition."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "eight_eight_all_unique_roots": {
+    "n": 848,
+    "WIN": 784,
+    "LOSS": 64,
+    "LOSS_rate": 0.07547169811320754
+  },
+  "loss_rate_by_stratum_any_top": {
+    "O0-only": {
+      "n": 330,
+      "LOSS": 23,
+      "LOSS_rate": 0.0696969696969697
+    },
+    "O-overlap": {
+      "n": 314,
+      "LOSS": 20,
+      "LOSS_rate": 0.06369426751592357
+    },
+    "O1-only": {
+      "n": 204,
+      "LOSS": 21,
+      "LOSS_rate": 0.10294117647058823
+    }
+  },
+  "loss_rate_by_role": {
+    "O-overlap|top_T": {
+      "n": 155,
+      "LOSS": 11,
+      "LOSS_rate": 0.07096774193548387
+    },
+    "O-overlap|top_TE": {
+      "n": 155,
+      "LOSS": 11,
+      "LOSS_rate": 0.07096774193548387
+    },
+    "O-overlap|top_TO": {
+      "n": 155,
+      "LOSS": 9,
+      "LOSS_rate": 0.05806451612903226
+    },
+    "O-overlap|top_raw": {
+      "n": 155,
+      "LOSS": 9,
+      "LOSS_rate": 0.05806451612903226
+    },
+    "O0-only|top_T": {
+      "n": 165,
+      "LOSS": 15,
+      "LOSS_rate": 0.09090909090909091
+    },
+    "O0-only|top_TE": {
+      "n": 159,
+      "LOSS": 10,
+      "LOSS_rate": 0.06289308176100629
+    },
+    "O0-only|top_TO": {
+      "n": 165,
+      "LOSS": 8,
+      "LOSS_rate": 0.048484848484848485
+    },
+    "O0-only|top_raw": {
+      "n": 159,
+      "LOSS": 10,
+      "LOSS_rate": 0.06289308176100629
+    },
+    "O1-only|top_T": {
+      "n": 94,
+      "LOSS": 10,
+      "LOSS_rate": 0.10638297872340426
+    },
+    "O1-only|top_TE": {
+      "n": 102,
+      "LOSS": 6,
+      "LOSS_rate": 0.058823529411764705
+    },
+    "O1-only|top_TO": {
+      "n": 94,
+      "LOSS": 10,
+      "LOSS_rate": 0.10638297872340426
+    },
+    "O1-only|top_raw": {
+      "n": 102,
+      "LOSS": 15,
+      "LOSS_rate": 0.14705882352941177
+    }
+  },
+  "parent_flip_patterns": {
+    "O1-only|same_WIN": 83,
+    "O0-only|same_WIN": 145,
+    "O-overlap|same_WIN": 137,
+    "O-overlap|flip": 16,
+    "O0-only|flip": 17,
+    "O0-only|same_LOSS": 3,
+    "O1-only|flip": 17,
+    "O-overlap|same_LOSS": 2,
+    "O1-only|same_LOSS": 2
+  },
+  "nine_ref": {
+    "selected_child_loss_rates": {
+      "T": 0.472441,
+      "TE": 0.46063,
+      "TO": 0.476378,
+      "raw": 0.452756
+    },
+    "note": "from docs/9X9_FACTORIAL_EXACT_PC_RUN_RESULT.md"
+  },
+  "interpretation": "8x8 selected top-move children are WIN at ~92.5%. 9x9 factorial selected children are LOSS at ~45-48%. The O-stratum 8x8 experiment therefore runs in a low-LOSS, low-change-rate regime; heuristic O/E differences rarely flip the exact outcome. This is a board-size structural fact about the experimental regime, not a solver bug."
+}
