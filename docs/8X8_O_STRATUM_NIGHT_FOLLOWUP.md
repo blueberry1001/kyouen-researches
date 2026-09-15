@@ -130,6 +130,32 @@ LOSS majority under the impartial-game recursion.
 Artifacts: `artifacts/8x8-depth-audit-consistency.json`,
 `scripts/audit-8x8-depth-consistency.py`.
 
+### P9 — board-dependent shallow LOSS-depth peak (SUPPORTED, cross-board)
+
+Random safe positions, exact-solved with `kyouen_solver_{8,9}_root.exe`:
+
+| board | 4-stone LOSS | 5-stone LOSS | 6-stone LOSS | empty (player to move) |
+|---|---:|---:|---:|---|
+| **8×8** (second-player win) | **0.613** (n=150) | **0.040** (n=200) | 0.293 (n=150) | LOSS |
+| **9×9** (first-player win) | **0.000** (n=80) | **0.620** (n=100) | **0.0125** (n=80) | WIN |
+
+The profile is essentially **inverted** across boards:
+
+- On 8×8, LOSS concentrates at **4 stones**; the 4→5 transition (the factorial
+  experiment’s depth) is a near-all-WIN low-signal regime.
+- On 9×9, LOSS concentrates at **5 stones**; the same 4→5 transition is high-signal.
+
+This is the structural explanation for why the 9×9 O-stratum effect sizes
+(~0.44 change rate) do not transfer to 8×8 (~0.10): the factorial design
+samples a different region of the shallow game tree on each board.
+
+Falsifier: a board where both 4-stone and 5-stone random LOSS rates sit in the
+same intermediate band (e.g. both in [0.3, 0.5]) under identical sampling.
+
+Artifacts: `artifacts/cross-board-depth-profile.json`,
+`artifacts/9x9-random-safe-{4,5,6}stone-*.csv`,
+`scripts/summarize-cross-board-depth-profile.py`.
+
 ## 4. Cross-board table
 
 | stratum | n 8×8 | n 9×9 | Δ 8×8 | Δ 9×9 | change 8×8 | change 9×9 |

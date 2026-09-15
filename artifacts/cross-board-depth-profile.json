@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "board": "8x8",
+      "stones": "4stone",
+      "n": 150,
+      "LOSS": 92,
+      "WIN": 58,
+      "LOSS_rate": 0.6133333333333333,
+      "visited_median": 115079.0,
+      "visited_mean": 106901.00666666667
+    },
+    {
+      "board": "8x8",
+      "stones": "5stone",
+      "n": 200,
+      "LOSS": 8,
+      "WIN": 192,
+      "LOSS_rate": 0.04,
+      "visited_median": 3636.0,
+      "visited_mean": 4722.01
+    },
+    {
+      "board": "8x8",
+      "stones": "6stone",
+      "n": 150,
+      "LOSS": 44,
+      "WIN": 106,
+      "LOSS_rate": 0.29333333333333333,
+      "visited_median": 1148.0,
+      "visited_mean": 2298.7933333333335
+    },
+    {
+      "board": "9x9",
+      "stones": "4stone",
+      "n": 80,
+      "LOSS": 0,
+      "WIN": 80,
+      "LOSS_rate": 0.0,
+      "visited_median": 137943.0,
+      "visited_mean": 168396.7
+    },
+    {
+      "board": "9x9",
+      "stones": "5stone",
+      "n": 100,
+      "LOSS": 62,
+      "WIN": 38,
+      "LOSS_rate": 0.62,
+      "visited_median": 236775.5,
+      "visited_mean": 273191.27
+    },
+    {
+      "board": "9x9",
+      "stones": "6stone",
+      "n": 80,
+      "LOSS": 1,
+      "WIN": 79,
+      "LOSS_rate": 0.0125,
+      "visited_median": 5436.5,
+      "visited_mean": 12097.375
+    }
+  ],
+  "known_empty": {
+    "8x8": {
+      "empty_winner": "second",
+      "empty_outcome_player_to_move": "LOSS"
+    },
+    "9x9": {
+      "empty_winner": "first",
+      "empty_outcome_player_to_move": "WIN"
+    }
+  },
+  "interpretation": "Shallow random-safe LOSS rate peaks at a board-dependent depth. 8x8 (second-player win): peak at 4 stones (~0.61). 9x9 (first-player win): peak at 5 stones (~0.62). Neighbor depths are near-all-WIN. This inverts the factorial 4\u21925 experimental regime between boards."
+}
