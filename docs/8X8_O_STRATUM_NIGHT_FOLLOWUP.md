@@ -156,6 +156,33 @@ Artifacts: `artifacts/cross-board-depth-profile.json`,
 `artifacts/9x9-random-safe-{4,5,6}stone-*.csv`,
 `scripts/summarize-cross-board-depth-profile.py`.
 
+### P9b — peak depth tracks empty-board winner on 6×6…9×9 (SUPPORTED)
+
+Random safe LOSS rates after fixing a V<64 legal-mask bug in the 6/7 solvers
+(`legal` had bits ≥ V set, which made N<8 solvers explode):
+
+| board | empty (player to move) | 4-stone | 5-stone | 6-stone | **peak depth** |
+|---|---|---:|---:|---:|---|
+| 6×6 (first-player win) | WIN | 0.005 (n=200) | **0.300** (n=200) | 0.100 (n=80) | **5** |
+| 7×7 (second-player win) | LOSS | **0.200** (n=200) | 0.085 (n=200) | 0.150 (n=80) | **4** |
+| 8×8 (second-player win) | LOSS | **0.613** (n=150) | 0.040 (n=200) | 0.293 (n=150) | **4** |
+| 9×9 (first-player win) | WIN | 0.000 (n=80) | **0.620** (n=100) | 0.013 (n=80) | **5** |
+
+Pattern:
+
+- **First-player-win boards peak at 5 stones**; **second-player-win boards peak at 4**.
+- **Peak height grows with board size** (mild on 6×6/7×7, extreme on 8×8/9×9).
+
+Falsifier: any board in this set where the modal shallow depth contradicts the
+empty-board winner, with n≥200 at the two candidate depths.
+
+Provenance: 6×6/7×7 solvers are mechanical N/V ports of `kyouen_solver_8_root.cpp`
+plus a legal-mask fix for V<64. Move ordering / memo / WIN-LOSS semantics unchanged.
+
+Artifacts: `artifacts/cross-board-depth-profile-6789.json`,
+`cpp/solvers/kyouen_solver_{6,7}_root.cpp`,
+`scripts/summarize-depth-profile-6789.py`.
+
 ## 4. Cross-board table
 
 | stratum | n 8×8 | n 9×9 | Δ 8×8 | Δ 9×9 | change 8×8 | change 9×9 |

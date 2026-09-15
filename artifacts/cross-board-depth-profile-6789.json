@@ -1,0 +1,136 @@
+{
+  "rows": [
+    {
+      "board": "6x6",
+      "stones": "4stone",
+      "n": 200,
+      "LOSS": 1,
+      "WIN": 199,
+      "LOSS_rate": 0.005,
+      "visited_median": 137.0,
+      "empty_outcome": "WIN"
+    },
+    {
+      "board": "6x6",
+      "stones": "5stone",
+      "n": 200,
+      "LOSS": 60,
+      "WIN": 140,
+      "LOSS_rate": 0.3,
+      "visited_median": 62.0,
+      "empty_outcome": "WIN"
+    },
+    {
+      "board": "6x6",
+      "stones": "6stone",
+      "n": 80,
+      "LOSS": 8,
+      "WIN": 72,
+      "LOSS_rate": 0.1,
+      "visited_median": 10.5,
+      "empty_outcome": "WIN"
+    },
+    {
+      "board": "7x7",
+      "stones": "4stone",
+      "n": 200,
+      "LOSS": 40,
+      "WIN": 160,
+      "LOSS_rate": 0.2,
+      "visited_median": 3976.0,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "7x7",
+      "stones": "5stone",
+      "n": 200,
+      "LOSS": 17,
+      "WIN": 183,
+      "LOSS_rate": 0.085,
+      "visited_median": 274.5,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "7x7",
+      "stones": "6stone",
+      "n": 80,
+      "LOSS": 12,
+      "WIN": 68,
+      "LOSS_rate": 0.15,
+      "visited_median": 88.5,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "8x8",
+      "stones": "4stone",
+      "n": 150,
+      "LOSS": 92,
+      "WIN": 58,
+      "LOSS_rate": 0.6133333333333333,
+      "visited_median": 115079.0,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "8x8",
+      "stones": "5stone",
+      "n": 200,
+      "LOSS": 8,
+      "WIN": 192,
+      "LOSS_rate": 0.04,
+      "visited_median": 3636.0,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "8x8",
+      "stones": "6stone",
+      "n": 150,
+      "LOSS": 44,
+      "WIN": 106,
+      "LOSS_rate": 0.29333333333333333,
+      "visited_median": 1148.0,
+      "empty_outcome": "LOSS"
+    },
+    {
+      "board": "9x9",
+      "stones": "4stone",
+      "n": 80,
+      "LOSS": 0,
+      "WIN": 80,
+      "LOSS_rate": 0.0,
+      "visited_median": 137943.0,
+      "empty_outcome": "WIN"
+    },
+    {
+      "board": "9x9",
+      "stones": "5stone",
+      "n": 100,
+      "LOSS": 62,
+      "WIN": 38,
+      "LOSS_rate": 0.62,
+      "visited_median": 236775.5,
+      "empty_outcome": "WIN"
+    },
+    {
+      "board": "9x9",
+      "stones": "6stone",
+      "n": 80,
+      "LOSS": 1,
+      "WIN": 79,
+      "LOSS_rate": 0.0125,
+      "visited_median": 5436.5,
+      "empty_outcome": "WIN"
+    }
+  ],
+  "known_empty": {
+    "6x6": "WIN",
+    "7x7": "LOSS",
+    "8x8": "LOSS",
+    "9x9": "WIN"
+  },
+  "winners": {
+    "6x6": "first",
+    "7x7": "second",
+    "8x8": "second",
+    "9x9": "first"
+  }
+}
