@@ -1,0 +1,202 @@
+[
+  {
+    "canonical_parent": "38,56,61,63",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 45
+  },
+  {
+    "canonical_parent": "1,16,30,61",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 58
+  },
+  {
+    "canonical_parent": "26,48,57,59",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 54
+  },
+  {
+    "canonical_parent": "2,33,57,59",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 59
+  },
+  {
+    "canonical_parent": "17,30,39,62",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 44
+  },
+  {
+    "canonical_parent": "4,7,26,44",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "9,29,58,61",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 55
+  },
+  {
+    "canonical_parent": "5,13,20,48",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "1,12,13,38",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 59
+  },
+  {
+    "canonical_parent": "12,13,42,44",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "4,35,54,57",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 57
+  },
+  {
+    "canonical_parent": "6,10,24,48",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 54
+  },
+  {
+    "canonical_parent": "0,13,39,45",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "13,45,49,57",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 58
+  },
+  {
+    "canonical_parent": "20,27,39,41",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 55
+  },
+  {
+    "canonical_parent": "3,46,54,60",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 45
+  },
+  {
+    "canonical_parent": "39,41,48,56",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 57
+  },
+  {
+    "canonical_parent": "0,45,47,54",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 51
+  },
+  {
+    "canonical_parent": "22,42,49,61",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 60
+  },
+  {
+    "canonical_parent": "22,31,34,55",
+    "parent_outcome": "LOSS",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "3,11,26,51",
+    "parent_outcome": "WIN",
+    "n_legal_children": 48
+  },
+  {
+    "canonical_parent": "14,27,28,36",
+    "parent_outcome": "WIN",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "24,30,31,35",
+    "parent_outcome": "WIN",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "9,12,28,43",
+    "parent_outcome": "WIN",
+    "n_legal_children": 58
+  },
+  {
+    "canonical_parent": "4,19,43,52",
+    "parent_outcome": "WIN",
+    "n_legal_children": 54
+  },
+  {
+    "canonical_parent": "27,30,33,37",
+    "parent_outcome": "WIN",
+    "n_legal_children": 51
+  },
+  {
+    "canonical_parent": "31,41,43,51",
+    "parent_outcome": "WIN",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "7,17,35,57",
+    "parent_outcome": "WIN",
+    "n_legal_children": 54
+  },
+  {
+    "canonical_parent": "10,11,13,60",
+    "parent_outcome": "WIN",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "3,33,41,61",
+    "parent_outcome": "WIN",
+    "n_legal_children": 59
+  },
+  {
+    "canonical_parent": "25,26,50,52",
+    "parent_outcome": "WIN",
+    "n_legal_children": 48
+  },
+  {
+    "canonical_parent": "6,31,59,60",
+    "parent_outcome": "WIN",
+    "n_legal_children": 49
+  },
+  {
+    "canonical_parent": "51,52,53,58",
+    "parent_outcome": "WIN",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "7,17,18,62",
+    "parent_outcome": "WIN",
+    "n_legal_children": 59
+  },
+  {
+    "canonical_parent": "1,12,43,57",
+    "parent_outcome": "WIN",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "29,32,34,51",
+    "parent_outcome": "WIN",
+    "n_legal_children": 55
+  },
+  {
+    "canonical_parent": "10,18,36,46",
+    "parent_outcome": "WIN",
+    "n_legal_children": 53
+  },
+  {
+    "canonical_parent": "3,23,28,39",
+    "parent_outcome": "WIN",
+    "n_legal_children": 50
+  },
+  {
+    "canonical_parent": "1,28,31,39",
+    "parent_outcome": "WIN",
+    "n_legal_children": 52
+  },
+  {
+    "canonical_parent": "13,26,33,61",
+    "parent_outcome": "WIN",
+    "n_legal_children": 59
+  }
+]

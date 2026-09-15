@@ -1,0 +1,15 @@
+{
+  "parents": 40,
+  "parent_outcomes": {
+    "LOSS": 20,
+    "WIN": 20
+  },
+  "children_solved": 2138,
+  "child_outcomes": {
+    "WIN": 2043,
+    "LOSS": 95
+  },
+  "violations": [],
+  "n_violations": 0,
+  "identity_holds": true
+}

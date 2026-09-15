@@ -114,6 +114,22 @@ Artifacts: `artifacts/8x8-random-depth-profile.json`,
 `scripts/sample-k-stone.py`, `scripts/summarize-8x8-depth-profile.py`,
 `artifacts/8x8-random-safe-{3,4,5,6}stone-*.csv`.
 
+### P8 — 4↔5 impartial identity on 8×8 (SUPPORTED)
+
+Expanded 40 random safe 4-stone parents (20 LOSS + 20 WIN) to all legal 5th moves
+and exact-solved every child (n=2138):
+
+- **0 violations** of `parent LOSS ⇔ all children WIN` / `parent WIN ⇔ ∃ LOSS child`
+- child outcomes: 2043 WIN / **95 LOSS** (4.4%)
+- all 95 LOSS children come from the 20 WIN parents (~4.8 LOSS children each)
+
+This is a solver-provenance audit for P7: the 5-stone WIN peak is not an
+artifact of independent sampling; it is exactly the complement of the 4-stone
+LOSS majority under the impartial-game recursion.
+
+Artifacts: `artifacts/8x8-depth-audit-consistency.json`,
+`scripts/audit-8x8-depth-consistency.py`.
+
 ## 4. Cross-board table
 
 | stratum | n 8×8 | n 9×9 | Δ 8×8 | Δ 9×9 | change 8×8 | change 9×9 |
