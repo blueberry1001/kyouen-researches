@@ -1,0 +1,39 @@
+{
+  "excluded_unique": 1089,
+  "exclusion_csv": "artifacts/exclusion-canonical-parents.csv",
+  "exclusion_sha256": "354d56c4455152876a945f6cf3b61b97ec8d43b5bbe4359829991e516fd302d0",
+  "sources": [
+    {
+      "source": "pilot-64-input",
+      "path": "results/9x9/pair-vs-true-unique-pilot-64-input.csv",
+      "sha256": "28b495a6e4864c40d0227eb5d2658dc42d51ea442926a02de2ceaeb19c4c2b7f",
+      "rows": 64,
+      "unique_in_file": 64,
+      "columns": "canonical_parent,pair_top,true_unique_top"
+    },
+    {
+      "source": "confirmatory-1024-regenerated",
+      "path": "artifacts/9x9-confirmatory-1024.csv",
+      "sha256": "07e60d22eac16834726a5972967e2ae426f2a75f89401f9d4508d1ce033fc840",
+      "rows": 1024,
+      "unique_in_file": 1024,
+      "columns": "canonical_parent,pair_top,true_unique_top"
+    },
+    {
+      "source": "first12",
+      "path": "results/9x9/pair-vs-true-unique-first12.csv",
+      "sha256": "4f9d626b3969b47c4d4dc27c8876ea5ea84347a45301f73c5d30b32575b4a03c",
+      "rows": 12,
+      "unique_in_file": 12,
+      "columns": "canonical_parent,pair_top,true_unique_top,pair_child_outcome,other_child_outcome,pair_visited,other_visited,pair_seconds,other_seconds,memo_used"
+    },
+    {
+      "source": "smoke",
+      "path": "results/9x9/pair-vs-true-unique-smoke.csv",
+      "sha256": "55ebe330185163de361dbcc094bf0566b8a6da09593ecd2e6e70e3f39ec06fe3",
+      "rows": 1,
+      "unique_in_file": 1,
+      "columns": "canonical_parent,pair_top,true_unique_top,pair_child_outcome,other_child_outcome,pair_visited,other_visited,pair_seconds,other_seconds,memo_used"
+    }
+  ]
+}

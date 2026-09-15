@@ -1,0 +1,5 @@
+comparison,design,eligible,selected
+E_at_O0,hash_sample_1024,4020,1024
+O_at_E0,census,715,715
+E_at_O1,hash_sample_1024,3944,1024
+O_at_E1,census,639,639
