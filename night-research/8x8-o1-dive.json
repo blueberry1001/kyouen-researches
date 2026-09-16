@@ -1,0 +1,706 @@
+{
+  "overlap_alias_patterns": {
+    "T==TE:True,TO==raw:True,T==TO:False,TE==raw:False,distinct:2": 151,
+    "T==TE:False,TO==raw:True,T==TO:False,TE==raw:False,distinct:3": 4
+  },
+  "overlap_I_hist": {
+    "0": 155
+  },
+  "overlap_mismatches": [],
+  "O1_only_n": 102,
+  "O1_top_T_eq_TE": 67,
+  "O1_top_TO_eq_raw": 27,
+  "O0_only_n": 165,
+  "O0_top_T_eq_TE": 17,
+  "O0_top_TE_eq_raw": 165,
+  "O1_discordant": [
+    {
+      "parent": "0,11,33,38",
+      "points": [
+        0,
+        11,
+        33,
+        38
+      ],
+      "coords": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "top_T": "36",
+      "top_TE": "36",
+      "top_TO": "36",
+      "top_raw": "56",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "1",
+      "pair_O_TE": "0",
+      "pair_E_raw": "4",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,4,27,30",
+      "points": [
+        2,
+        4,
+        27,
+        30
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "top_T": "38",
+      "top_TE": "38",
+      "top_TO": "38",
+      "top_raw": "3",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "3",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,4,36,41",
+      "points": [
+        2,
+        4,
+        36,
+        41
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "top_T": "50",
+      "top_TE": "50",
+      "top_TO": "50",
+      "top_raw": "32",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "1",
+      "pair_O_TE": "0",
+      "pair_E_raw": "3",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,5,25,37",
+      "points": [
+        2,
+        5,
+        25,
+        37
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "top_T": "61",
+      "top_TE": "61",
+      "top_TO": "61",
+      "top_raw": "1",
+      "y10": "1",
+      "y11": "0",
+      "delta_O_E1": -1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,10,12,14",
+      "points": [
+        2,
+        10,
+        12,
+        14
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "top_T": "58",
+      "top_TE": "58",
+      "top_TO": "58",
+      "top_raw": "42",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,17,35,43",
+      "points": [
+        2,
+        17,
+        35,
+        43
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "top_T": "25",
+      "top_TE": "25",
+      "top_TO": "25",
+      "top_raw": "3",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,20,32,50",
+      "points": [
+        2,
+        20,
+        32,
+        50
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "top_T": "26",
+      "top_TE": "26",
+      "top_TO": "26",
+      "top_raw": "41",
+      "y10": "1",
+      "y11": "0",
+      "delta_O_E1": -1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "3",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "2,27,34,41",
+      "points": [
+        2,
+        27,
+        34,
+        41
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "top_T": "50",
+      "top_TE": "9",
+      "top_TO": "50",
+      "top_raw": "50",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "3",
+      "pair_O_TE": "0",
+      "pair_E_raw": "1",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "2,29,36,52",
+      "points": [
+        2,
+        29,
+        36,
+        52
+      ],
+      "coords": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "top_T": "43",
+      "top_TE": "43",
+      "top_TO": "43",
+      "top_raw": "50",
+      "y10": "1",
+      "y11": "0",
+      "delta_O_E1": -1,
+      "pair_E_TE": "1",
+      "pair_O_TE": "0",
+      "pair_E_raw": "4",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "3,14,21,28",
+      "points": [
+        3,
+        14,
+        21,
+        28
+      ],
+      "coords": [
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "top_T": "39",
+      "top_TE": "24",
+      "top_TO": "39",
+      "top_raw": "39",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "5",
+      "pair_O_TE": "0",
+      "pair_E_raw": "3",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "3,14,37,54",
+      "points": [
+        3,
+        14,
+        37,
+        54
+      ],
+      "coords": [
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          6
+        ]
+      ],
+      "top_T": "51",
+      "top_TE": "43",
+      "top_TO": "51",
+      "top_raw": "51",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "4",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "9,10,27,46",
+      "points": [
+        9,
+        10,
+        27,
+        46
+      ],
+      "coords": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "top_T": "13",
+      "top_TE": "13",
+      "top_TO": "13",
+      "top_raw": "28",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "0",
+      "pair_O_TE": "0",
+      "pair_E_raw": "3",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "10,20,33,38",
+      "points": [
+        10,
+        20,
+        33,
+        38
+      ],
+      "coords": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "top_T": "44",
+      "top_TE": "37",
+      "top_TO": "44",
+      "top_raw": "44",
+      "y10": "1",
+      "y11": "0",
+      "delta_O_E1": -1,
+      "pair_E_TE": "2",
+      "pair_O_TE": "0",
+      "pair_E_raw": "0",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "11,18,21,33",
+      "points": [
+        11,
+        18,
+        21,
+        33
+      ],
+      "coords": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "top_T": "17",
+      "top_TE": "17",
+      "top_TO": "17",
+      "top_raw": "25",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "1",
+      "pair_O_TE": "0",
+      "pair_E_raw": "3",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    },
+    {
+      "parent": "11,20,34,43",
+      "points": [
+        11,
+        20,
+        34,
+        43
+      ],
+      "coords": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "top_T": "51",
+      "top_TE": "27",
+      "top_TO": "51",
+      "top_raw": "51",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "8",
+      "pair_O_TE": "0",
+      "pair_E_raw": "4",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "11,28,33,38",
+      "points": [
+        11,
+        28,
+        33,
+        38
+      ],
+      "coords": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "top_T": "43",
+      "top_TE": "36",
+      "top_TO": "43",
+      "top_raw": "43",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "6",
+      "pair_O_TE": "0",
+      "pair_E_raw": "2",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "0"
+    },
+    {
+      "parent": "11,28,36,43",
+      "points": [
+        11,
+        28,
+        36,
+        43
+      ],
+      "coords": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "top_T": "38",
+      "top_TE": "38",
+      "top_TO": "38",
+      "top_raw": "35",
+      "y10": "0",
+      "y11": "1",
+      "delta_O_E1": 1,
+      "pair_E_TE": "1",
+      "pair_O_TE": "0",
+      "pair_E_raw": "5",
+      "pair_O_raw": "2",
+      "diff_O_at_E1": "1",
+      "diff_E_at_O1": "1"
+    }
+  ],
+  "O1_pos_n": 13,
+  "O1_neg_n": 4,
+  "O1_pos_mean_pair_O_raw": 2.076923076923077,
+  "O1_neg_mean_pair_O_raw": 2.0,
+  "O1_pos_mean_diff_O": 1.0,
+  "O1_neg_mean_diff_O": 1.0,
+  "O1_all_mean_pair_O_raw": 2.0588235294117645,
+  "binom_note": "13 vs 4 discordant, two-sided exact binomial p\u22480.049 uncorrected"
+}

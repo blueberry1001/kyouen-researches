@@ -1,0 +1,91 @@
+{
+  "source": "artifacts/8x8-depth-audit-children.out.csv",
+  "n_children": 2138,
+  "n_parents": 40,
+  "n_parents_with_loss": 20,
+  "total_loss_children": 95,
+  "total_win_children": 2043,
+  "K_histogram": {
+    "1": 6,
+    "2": 5,
+    "3": 3,
+    "5": 2,
+    "8": 1,
+    "9": 1,
+    "12": 1,
+    "31": 1
+  },
+  "sum_K": 95,
+  "sum_K2": 1353,
+  "sibling_A_L": 629,
+  "one_swap_pairs_among_sample_loss": 629,
+  "identity_check_sum_K2_minus_sum_K": 1258,
+  "identity_note": "For a complete depth layer, sum K^2 = (d+1)*N_LOSS(d+1) + 2*A_L. Here the sample is complete only as children of these parents, not board-complete, so (d+1)*N_LOSS is not the right normalizer. Sibling pairs alone give A_L = sum C(K,2).",
+  "top_K_parents": [
+    {
+      "parent": "14,27,28,36",
+      "K_loss": 31,
+      "sibling_pairs": 465,
+      "win_children": 22
+    },
+    {
+      "parent": "51,52,53,58",
+      "K_loss": 12,
+      "sibling_pairs": 66,
+      "win_children": 40
+    },
+    {
+      "parent": "3,11,26,51",
+      "K_loss": 9,
+      "sibling_pairs": 36,
+      "win_children": 39
+    },
+    {
+      "parent": "25,26,50,52",
+      "K_loss": 8,
+      "sibling_pairs": 28,
+      "win_children": 40
+    },
+    {
+      "parent": "7,17,35,57",
+      "K_loss": 5,
+      "sibling_pairs": 10,
+      "win_children": 49
+    },
+    {
+      "parent": "9,12,28,43",
+      "K_loss": 5,
+      "sibling_pairs": 10,
+      "win_children": 53
+    },
+    {
+      "parent": "24,30,31,35",
+      "K_loss": 3,
+      "sibling_pairs": 3,
+      "win_children": 49
+    },
+    {
+      "parent": "27,30,33,37",
+      "K_loss": 3,
+      "sibling_pairs": 3,
+      "win_children": 48
+    },
+    {
+      "parent": "4,19,43,52",
+      "K_loss": 3,
+      "sibling_pairs": 3,
+      "win_children": 51
+    },
+    {
+      "parent": "1,28,31,39",
+      "K_loss": 2,
+      "sibling_pairs": 1,
+      "win_children": 50
+    }
+  ],
+  "interpretation": [
+    "A_L=629 is a sample statistic on 20 WIN 4-stone parents of 8x8, not a board census.",
+    "One parent has K=31 LOSS children (killer concentration).",
+    "Board-complete 6x6 A_L is not computable from existing certs/CSVs."
+  ]
+}

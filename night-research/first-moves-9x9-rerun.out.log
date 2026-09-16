@@ -1,0 +1,7 @@
+done 8/14 remaining 6
+(1,4) -> FIRST_WIN states=297795584 seconds=594.373
+(2,2) -> FIRST_WIN states=335544320 seconds=670.47
+(2,3) -> FIRST_WIN states=583008256 seconds=1110.95
+(2,4) -> FIRST_WIN states=268435456 seconds=517.197
+(3,3) -> FIRST_WIN states=314572800 seconds=563.742
+(3,4) -> FIRST_WIN states=306184192 seconds=507.064

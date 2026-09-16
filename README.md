@@ -77,7 +77,7 @@ n ∈ {4, 7, 8}
 
 9×9では、先手が中央 `(4,4)` に置くと、相手番がlosing局面になります。v3証明書は空盤面をwinningとし、中央を証人手として、その後の13,457,133局面の証明DAGへ接続しています。
 
-現時点では、中央以外の初手が勝ちかどうかをすべて分類したとは主張していません。
+D4軌道14クラス（中心を除く）を独立に逐次探索した結果、**すべての初手が勝ち**であることも確認しました（`night-research/first-moves-9x9.csv`）。したがって9×9の勝ち初手は81点すべてです。
 
 fixed rule / two-stone subset probe の盲検追試後に行った反例解析・訂正・棄却済み仮説・次の実験は [`docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md`](docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md) にまとめています。
 

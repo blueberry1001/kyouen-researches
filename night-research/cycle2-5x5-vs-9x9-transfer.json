@@ -1,0 +1,629 @@
+{
+  "five_by_five_orbits": [
+    {
+      "center_rel": [
+        2,
+        2
+      ],
+      "size": 4,
+      "win": 0,
+      "loss": 4,
+      "examples": [
+        [
+          0,
+          0,
+          "L"
+        ],
+        [
+          4,
+          0,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        2,
+        1
+      ],
+      "size": 8,
+      "win": 0,
+      "loss": 8,
+      "examples": [
+        [
+          1,
+          0,
+          "L"
+        ],
+        [
+          3,
+          0,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        2,
+        0
+      ],
+      "size": 4,
+      "win": 4,
+      "loss": 0,
+      "examples": [
+        [
+          2,
+          0,
+          "W"
+        ],
+        [
+          0,
+          2,
+          "W"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        1,
+        1
+      ],
+      "size": 4,
+      "win": 4,
+      "loss": 0,
+      "examples": [
+        [
+          1,
+          1,
+          "W"
+        ],
+        [
+          3,
+          1,
+          "W"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        1,
+        0
+      ],
+      "size": 4,
+      "win": 0,
+      "loss": 4,
+      "examples": [
+        [
+          2,
+          1,
+          "L"
+        ],
+        [
+          1,
+          2,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        0,
+        0
+      ],
+      "size": 1,
+      "win": 1,
+      "loss": 0,
+      "examples": [
+        [
+          2,
+          2,
+          "W"
+        ]
+      ]
+    }
+  ],
+  "nine_partial": [
+    {
+      "abs": [
+        0,
+        0
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        4,
+        4
+      ],
+      "seconds": "1099.43",
+      "states": "473956352"
+    },
+    {
+      "abs": [
+        0,
+        1
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        4,
+        3
+      ],
+      "seconds": "1346.26",
+      "states": "780140544"
+    },
+    {
+      "abs": [
+        0,
+        2
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        4,
+        2
+      ],
+      "seconds": "1208.96",
+      "states": "721420288"
+    },
+    {
+      "abs": [
+        0,
+        3
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        4,
+        1
+      ],
+      "seconds": "1098.47",
+      "states": "662700032"
+    },
+    {
+      "abs": [
+        0,
+        4
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        4,
+        0
+      ],
+      "seconds": "498.316",
+      "states": "310378496"
+    },
+    {
+      "abs": [
+        1,
+        1
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        3,
+        3
+      ],
+      "seconds": "526.07",
+      "states": "331350016"
+    },
+    {
+      "abs": [
+        1,
+        2
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        3,
+        2
+      ],
+      "seconds": "1157.95",
+      "states": "696254464"
+    },
+    {
+      "abs": [
+        1,
+        3
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        3,
+        1
+      ],
+      "seconds": "1010.59",
+      "states": "599785472"
+    },
+    {
+      "abs": [
+        1,
+        4
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        3,
+        0
+      ],
+      "seconds": "594.373",
+      "states": "297795584"
+    },
+    {
+      "abs": [
+        2,
+        2
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        2,
+        2
+      ],
+      "seconds": "670.47",
+      "states": "335544320"
+    },
+    {
+      "abs": [
+        2,
+        3
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        2,
+        1
+      ],
+      "seconds": "1110.95",
+      "states": "583008256"
+    },
+    {
+      "abs": [
+        2,
+        4
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        2,
+        0
+      ],
+      "seconds": "517.197",
+      "states": "268435456"
+    },
+    {
+      "abs": [
+        3,
+        3
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        1,
+        1
+      ],
+      "seconds": "563.742",
+      "states": "314572800"
+    },
+    {
+      "abs": [
+        3,
+        4
+      ],
+      "verdict": "FIRST_WIN",
+      "center_rel": [
+        1,
+        0
+      ],
+      "seconds": "507.064",
+      "states": "306184192"
+    }
+  ],
+  "center_documented": {
+    "abs": [
+      4,
+      4
+    ],
+    "verdict": "FIRST_WIN",
+    "center_rel": [
+      0,
+      0
+    ],
+    "note": "documented"
+  },
+  "transfer": [
+    {
+      "center_rel": [
+        2,
+        2
+      ],
+      "orbit_size_5": 4,
+      "outcome_5": "LOSS",
+      "win_count_5": 0,
+      "loss_count_5": 4,
+      "outcome_9": "WIN",
+      "match": false,
+      "examples_5": [
+        [
+          0,
+          0,
+          "L"
+        ],
+        [
+          4,
+          0,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        2,
+        1
+      ],
+      "orbit_size_5": 8,
+      "outcome_5": "LOSS",
+      "win_count_5": 0,
+      "loss_count_5": 8,
+      "outcome_9": "WIN",
+      "match": false,
+      "examples_5": [
+        [
+          1,
+          0,
+          "L"
+        ],
+        [
+          3,
+          0,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        2,
+        0
+      ],
+      "orbit_size_5": 4,
+      "outcome_5": "WIN",
+      "win_count_5": 4,
+      "loss_count_5": 0,
+      "outcome_9": "WIN",
+      "match": true,
+      "examples_5": [
+        [
+          2,
+          0,
+          "W"
+        ],
+        [
+          0,
+          2,
+          "W"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        1,
+        1
+      ],
+      "orbit_size_5": 4,
+      "outcome_5": "WIN",
+      "win_count_5": 4,
+      "loss_count_5": 0,
+      "outcome_9": "WIN",
+      "match": true,
+      "examples_5": [
+        [
+          1,
+          1,
+          "W"
+        ],
+        [
+          3,
+          1,
+          "W"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        1,
+        0
+      ],
+      "orbit_size_5": 4,
+      "outcome_5": "LOSS",
+      "win_count_5": 0,
+      "loss_count_5": 4,
+      "outcome_9": "WIN",
+      "match": false,
+      "examples_5": [
+        [
+          2,
+          1,
+          "L"
+        ],
+        [
+          1,
+          2,
+          "L"
+        ]
+      ]
+    },
+    {
+      "center_rel": [
+        0,
+        0
+      ],
+      "orbit_size_5": 1,
+      "outcome_5": "WIN",
+      "win_count_5": 1,
+      "loss_count_5": 0,
+      "outcome_9": "WIN",
+      "match": true,
+      "examples_5": [
+        [
+          2,
+          2,
+          "W"
+        ]
+      ]
+    }
+  ],
+  "absolute_5rule_check": [
+    {
+      "abs": [
+        0,
+        0
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        0,
+        1
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        0,
+        2
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        0,
+        3
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        0,
+        4
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        1,
+        1
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        1,
+        2
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        1,
+        3
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        1,
+        4
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        2,
+        2
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        2,
+        3
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    },
+    {
+      "abs": [
+        2,
+        4
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        3,
+        3
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "WIN",
+      "agrees": true
+    },
+    {
+      "abs": [
+        3,
+        4
+      ],
+      "actual": "FIRST_WIN",
+      "pred_5rule_even_minus_corners": "LOSS",
+      "agrees": false
+    }
+  ],
+  "nine_completed": 14,
+  "nine_win": 14,
+  "nine_loss": 0,
+  "nine_remaining_classes": [
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "notes": [
+    "5x5 center-rel (a,b) outcomes from complete cargo classification.",
+    "9x9 absolute classes mapped via (|a-4|,|b-4|) then max/min.",
+    "Absolute even-sum-minus-corners is a 5x5-only characterization; testing it on 9x9 absolute coords is a negative control, not the embedding transfer test.",
+    "Embedding transfer test asks whether the SAME center-rel orbit keeps outcome when embedded in a larger board."
+  ]
+}

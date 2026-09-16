@@ -1,0 +1,129 @@
+{
+  "table": [
+    {
+      "n": 1,
+      "winner": "F",
+      "winning_first_moves": 1,
+      "cells": 1,
+      "density": 1.0,
+      "status": "complete"
+    },
+    {
+      "n": 2,
+      "winner": "F",
+      "winning_first_moves": 4,
+      "cells": 4,
+      "density": 1.0,
+      "status": "complete"
+    },
+    {
+      "n": 3,
+      "winner": "F",
+      "winning_first_moves": 9,
+      "cells": 9,
+      "density": 1.0,
+      "status": "complete"
+    },
+    {
+      "n": 4,
+      "winner": "S",
+      "winning_first_moves": 0,
+      "cells": 16,
+      "density": 0.0,
+      "status": "complete"
+    },
+    {
+      "n": 5,
+      "winner": "F",
+      "winning_first_moves": 9,
+      "cells": 25,
+      "density": 0.36,
+      "status": "complete"
+    },
+    {
+      "n": 6,
+      "winner": "F",
+      "winning_first_moves": 36,
+      "cells": 36,
+      "density": 1.0,
+      "status": "complete"
+    },
+    {
+      "n": 7,
+      "winner": "S",
+      "winning_first_moves": 0,
+      "cells": 49,
+      "density": 0.0,
+      "status": "complete"
+    },
+    {
+      "n": 8,
+      "winner": "S",
+      "winning_first_moves": 0,
+      "cells": 64,
+      "density": 0.0,
+      "status": "complete"
+    },
+    {
+      "n": 9,
+      "winner": "F",
+      "winning_cells_known": 81,
+      "cells_known": 81,
+      "cells_total": 81,
+      "density_lower": 1.0,
+      "density_if_rest_loss": 1.0,
+      "density_if_rest_win": 1.0,
+      "status": "partial",
+      "orbits_done": 15,
+      "orbits_total": 15,
+      "orbit_wins": 15,
+      "orbit_losses": 0
+    },
+    {
+      "n": 10,
+      "winner": "S",
+      "winning_first_moves": 0,
+      "cells": 100,
+      "density": 0.0,
+      "status": "complete"
+    }
+  ],
+  "h_dense": {
+    "statement": "Among F-win boards n<=10, only n=5 has any losing first move.",
+    "known_F_win": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      9
+    ],
+    "n5_density": 0.36,
+    "others_complete_all_win": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "n9_partial_orbit_losses": 0,
+    "falsified": false,
+    "note": "Exploratory; same data as discovery. Independent test = remaining 9x9 orbits."
+  },
+  "h_abs_even_corners": {
+    "statement": "Winning first moves on odd n are even (x+y) minus corners.",
+    "status": "REJECTED on 9x9 absolute coords (4/8 disagreement among completed non-center orbits)",
+    "artifact": "cycle2-5x5-vs-9x9-transfer.json"
+  },
+  "h_embed": {
+    "statement": "Center-relative D4 orbit outcome transfers from 5x5 to 9x9.",
+    "status": "open; (0,0) matches; five orbits pending",
+    "five_pattern": {
+      "(0,0)": "W",
+      "(1,0)": "L",
+      "(1,1)": "W",
+      "(2,0)": "W",
+      "(2,1)": "L",
+      "(2,2)": "L"
+    }
+  }
+}

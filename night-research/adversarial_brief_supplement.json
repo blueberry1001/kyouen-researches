@@ -1,0 +1,162 @@
+{
+  "fisher_o1_vs_overlap": [
+    0.0798643688908234,
+    0.04750313015535243
+  ],
+  "fisher_o1_vs_o0": [
+    0.014919180323405204,
+    0.0066822585003223035
+  ],
+  "pos_motif_components_share2": [
+    [
+      "0,11,33,38",
+      "11,18,21,33",
+      "11,20,34,43",
+      "11,28,33,38",
+      "11,28,36,43"
+    ],
+    [
+      "2,4,27,30",
+      "2,4,36,41",
+      "2,27,34,41"
+    ],
+    [
+      "2,10,12,14"
+    ],
+    [
+      "2,17,35,43"
+    ],
+    [
+      "3,14,21,28",
+      "3,14,37,54"
+    ],
+    [
+      "9,10,27,46"
+    ]
+  ],
+  "pos_motif_components_share1": [
+    [
+      "0,11,33,38",
+      "2,4,27,30",
+      "2,4,36,41",
+      "2,10,12,14",
+      "2,17,35,43",
+      "2,27,34,41",
+      "3,14,21,28",
+      "3,14,37,54",
+      "9,10,27,46",
+      "11,18,21,33",
+      "11,20,34,43",
+      "11,28,33,38",
+      "11,28,36,43"
+    ]
+  ],
+  "stones_in_ge3_pos": {
+    "33": 3,
+    "11": 5,
+    "2": 5,
+    "27": 3,
+    "14": 3,
+    "43": 3,
+    "28": 3
+  },
+  "stones_in_ge2_pos": {
+    "33": 3,
+    "11": 5,
+    "38": 2,
+    "2": 5,
+    "27": 3,
+    "4": 2,
+    "41": 2,
+    "36": 2,
+    "10": 2,
+    "14": 3,
+    "43": 3,
+    "34": 2,
+    "3": 2,
+    "28": 3,
+    "21": 2
+  },
+  "nine_by_nine_artifacts": {
+    "9x9-factorial-population.csv": {
+      "rows": 5113,
+      "cols": [
+        "canonical_parent",
+        "top_T",
+        "top_TE",
+        "top_TO",
+        "top_raw",
+        "diff_E_at_O0",
+        "diff_O_at_E0",
+        "diff_E_at_O1",
+        "diff_O_at_E1"
+      ]
+    },
+    "9x9-factorial-holdout.csv": {
+      "rows": 2592,
+      "cols": [
+        "canonical_parent",
+        "top_T",
+        "top_TE",
+        "top_TO",
+        "top_raw",
+        "diff_E_at_O0",
+        "diff_O_at_E0",
+        "diff_E_at_O1",
+        "diff_O_at_E1",
+        "sample_E_at_O0",
+        "census_O_at_E0",
+        "sample_E_at_O1",
+        "census_O_at_E1"
+      ]
+    },
+    "9x9-confirmatory-1024.csv": {
+      "rows": 1024,
+      "cols": [
+        "canonical_parent",
+        "pair_top",
+        "true_unique_top"
+      ]
+    }
+  },
+  "population_top_identity": {
+    "total": 2340,
+    "T_eq_TE_and_TO_eq_raw": 151,
+    "fully_free_T_ne_TE_and_TO_ne_raw": 1932,
+    "note": "Only orbits with both O-change flags are in O-overlap; the force T==TE & TO==raw is extremely common across the eligible population."
+  },
+  "o1_subset_T_eq_TE": {
+    "n": 67,
+    "pos": 8,
+    "neg": 3,
+    "delta": 0.07462686567164178,
+    "mcnemar_p": 0.2265625
+  },
+  "o1_subset_T_ne_TE": {
+    "n": 35,
+    "pos": 5,
+    "neg": 1,
+    "delta": 0.11428571428571428,
+    "mcnemar_p": 0.21875
+  },
+  "o1_subset_TO_eq_raw": {
+    "n": 27,
+    "pos": 5,
+    "neg": 1,
+    "delta": 0.14814814814814814,
+    "mcnemar_p": 0.21875
+  },
+  "o1_subset_TO_ne_raw": {
+    "n": 75,
+    "pos": 8,
+    "neg": 3,
+    "delta": 0.06666666666666667,
+    "mcnemar_p": 0.2265625
+  },
+  "pos_with_collinear_triple_count": 4,
+  "o1_all_with_collinear_triple": 22,
+  "collinear_enrichment": {
+    "pos_frac": 0.3076923076923077,
+    "all_o1_frac": 0.21568627450980393
+  }
+}

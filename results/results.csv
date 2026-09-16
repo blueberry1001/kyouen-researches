@@ -7,4 +7,4 @@ n,verdict,forbidden_quadruples,winning_first_moves,search_states,max_search_dept
 6,first,2491,36,51958,11,21712,all first moves win
 7,second,6364,0,4060657,14,393550,verified by separate exact implementation
 8,second,14564,0,35961745,15,8744406,verified by two exact implementations
-9,first,29152,≥1 (centre),57078016,17,13457134,centre is a winning first move; other first moves not fully classified
+9,first,29152,81,57078016,17,13457134,all first moves win (D4 orbits classified; center was the certificate witness)

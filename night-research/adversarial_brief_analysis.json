@@ -1,0 +1,622 @@
+{
+  "o1_artifact_checks": {
+    "n_o1": 102,
+    "o1_cells": {
+      "n": 102,
+      "both_loss": 2,
+      "both_win": 83,
+      "baseline_only_loss": 4,
+      "added_only_loss": 13,
+      "discordant": 17,
+      "net_count": 9,
+      "delta": 0.08823529411764706,
+      "mcnemar_two_sided_p": 0.049041748046875,
+      "mcnemar_one_sided_p": 0.0245208740234375,
+      "flips_to_kill_positive_sign": 9
+    },
+    "required_outcomes_missing_total": 0,
+    "required_outcomes_missing_by_stratum": {},
+    "optional_top_lookups_missing": 28,
+    "note_missing_28": "primary-summary missing_outcomes=28 counts ALL four top-move lookups per parent, including tops that are not required for that stratum. Required contrasts are complete.",
+    "solve_completion_roots": "848/848",
+    "census_rows": 848,
+    "required_root_rows": 848,
+    "orbit_size_hist_strata_csv": {
+      "8": 102
+    },
+    "orbit_size_hist_pop": {
+      "8": 102
+    },
+    "orbit_weighted_cells": {
+      "n": 816,
+      "both_loss": 16,
+      "both_win": 664,
+      "baseline_only_loss": 32,
+      "added_only_loss": 104,
+      "discordant": 136,
+      "net_count": 72,
+      "delta": 0.08823529411764706,
+      "mcnemar_two_sided_p": 4.426263938479103e-10,
+      "mcnemar_one_sided_p": 2.2131319692395523e-10,
+      "flips_to_kill_positive_sign": 72
+    },
+    "d4_weighting_is_artifact": true,
+    "population_partition": {
+      "total_orbits": 2340,
+      "strata": {
+        "O1-only": 102,
+        "O0-only": 165,
+        "O-overlap": 155
+      },
+      "no_O_change_orbits": 1918,
+      "eligibility_is_outcome_free": true,
+      "o1_frac_of_population": 0.04358974358974359,
+      "o1_frac_of_O_changers": 0.24170616113744076
+    },
+    "multiplicity": {
+      "primary_contrasts": [
+        "O0-only Δ_O@E0",
+        "O-overlap Δ_O@E0",
+        "gap G"
+      ],
+      "secondary_contrasts": [
+        "O1-only Δ_O@E1",
+        "O-overlap Δ_O@E1",
+        "O-overlap I"
+      ],
+      "post_hoc_splits_in_prior_audit": [
+        "O1 median split pair_E_sum_top_TE",
+        "O1 median split pair_E_sum_top_raw",
+        "O1 median split diff_E_at_O1",
+        "O0 median split pair_E_sum_top_T"
+      ],
+      "o1_was_frozen_as_secondary": true,
+      "primary_failed": true,
+      "uncorrected_mcnemar_two_sided_p": 0.049041748046875,
+      "bonferroni_over_3_secondary": 0.147125244140625,
+      "bonferroni_over_6_looks": 0.29425048828125
+    }
+  },
+  "o1_motif_and_dependence": {
+    "discordant_n": 17,
+    "pos_n": 13,
+    "neg_n": 4,
+    "top_stones_among_pos": [
+      [
+        11,
+        5
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        33,
+        3
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        14,
+        3
+      ],
+      [
+        43,
+        3
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        38,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        36,
+        2
+      ]
+    ],
+    "pos_pairs_sharing_ge2_stones": [
+      {
+        "a": "0,11,33,38",
+        "b": "11,18,21,33",
+        "shared_stones": [
+          11,
+          33
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "0,11,33,38",
+        "b": "11,28,33,38",
+        "shared_stones": [
+          11,
+          33,
+          38
+        ],
+        "shared_count": 3
+      },
+      {
+        "a": "2,4,27,30",
+        "b": "2,4,36,41",
+        "shared_stones": [
+          2,
+          4
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "2,4,27,30",
+        "b": "2,27,34,41",
+        "shared_stones": [
+          2,
+          27
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "2,4,36,41",
+        "b": "2,27,34,41",
+        "shared_stones": [
+          2,
+          41
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "3,14,21,28",
+        "b": "3,14,37,54",
+        "shared_stones": [
+          3,
+          14
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "11,18,21,33",
+        "b": "11,28,33,38",
+        "shared_stones": [
+          11,
+          33
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "11,20,34,43",
+        "b": "11,28,36,43",
+        "shared_stones": [
+          11,
+          43
+        ],
+        "shared_count": 2
+      },
+      {
+        "a": "11,28,33,38",
+        "b": "11,28,36,43",
+        "shared_stones": [
+          11,
+          28
+        ],
+        "shared_count": 2
+      }
+    ],
+    "pos_pairs_sharing_ge2_count": 9,
+    "shared_child5_among_discordants": {},
+    "pos_with_collinear_triple": [
+      {
+        "parent": "2,10,12,14",
+        "collinear_triples": [
+          [
+            10,
+            12,
+            14
+          ]
+        ]
+      },
+      {
+        "parent": "2,27,34,41",
+        "collinear_triples": [
+          [
+            27,
+            34,
+            41
+          ]
+        ]
+      },
+      {
+        "parent": "3,14,21,28",
+        "collinear_triples": [
+          [
+            14,
+            21,
+            28
+          ]
+        ]
+      },
+      {
+        "parent": "3,14,37,54",
+        "collinear_triples": [
+          [
+            3,
+            37,
+            54
+          ]
+        ]
+      }
+    ],
+    "distinct_rows_hist_among_pos": {
+      "3": 5,
+      "2": 2,
+      "4": 6
+    },
+    "distinct_cols_hist_among_pos": {
+      "4": 6,
+      "3": 6,
+      "2": 1
+    },
+    "pos_parents": [
+      "0,11,33,38",
+      "2,4,27,30",
+      "2,4,36,41",
+      "2,10,12,14",
+      "2,17,35,43",
+      "2,27,34,41",
+      "3,14,21,28",
+      "3,14,37,54",
+      "9,10,27,46",
+      "11,18,21,33",
+      "11,20,34,43",
+      "11,28,33,38",
+      "11,28,36,43"
+    ],
+    "neg_parents": [
+      "2,5,25,37",
+      "2,20,32,50",
+      "2,29,36,52",
+      "10,20,33,38"
+    ]
+  },
+  "o1_sensitivity": {
+    "leave_k_out_delta": [
+      {
+        "remove_k_positives": 0,
+        "net": 9,
+        "n": 102,
+        "delta": 0.08823529411764706
+      },
+      {
+        "remove_k_positives": 1,
+        "net": 8,
+        "n": 101,
+        "delta": 0.07920792079207921
+      },
+      {
+        "remove_k_positives": 2,
+        "net": 7,
+        "n": 100,
+        "delta": 0.07
+      },
+      {
+        "remove_k_positives": 3,
+        "net": 6,
+        "n": 99,
+        "delta": 0.06060606060606061
+      },
+      {
+        "remove_k_positives": 4,
+        "net": 5,
+        "n": 98,
+        "delta": 0.05102040816326531
+      },
+      {
+        "remove_k_positives": 5,
+        "net": 4,
+        "n": 97,
+        "delta": 0.041237113402061855
+      },
+      {
+        "remove_k_positives": 6,
+        "net": 3,
+        "n": 96,
+        "delta": 0.03125
+      },
+      {
+        "remove_k_positives": 7,
+        "net": 2,
+        "n": 95,
+        "delta": 0.021052631578947368
+      },
+      {
+        "remove_k_positives": 8,
+        "net": 1,
+        "n": 94,
+        "delta": 0.010638297872340425
+      },
+      {
+        "remove_k_positives": 9,
+        "net": 0,
+        "n": 93,
+        "delta": 0.0
+      },
+      {
+        "remove_k_positives": 10,
+        "net": -1,
+        "n": 92,
+        "delta": -0.010869565217391304
+      },
+      {
+        "remove_k_positives": 11,
+        "net": -2,
+        "n": 91,
+        "delta": -0.02197802197802198
+      },
+      {
+        "remove_k_positives": 12,
+        "net": -3,
+        "n": 90,
+        "delta": -0.03333333333333333
+      },
+      {
+        "remove_k_positives": 13,
+        "net": -4,
+        "n": 89,
+        "delta": -0.0449438202247191
+      }
+    ],
+    "kill_positive_sign_requires_removing": 9,
+    "kill_p_lt_0.05_requires": "two-sided McNemar with 13:4 is p≈0.049; removing any 1 positive makes 12:4 → p≈0.077",
+    "p_after_remove_1_positive": 0.076812744140625,
+    "p_after_remove_2_positives": 0.11846923828125
+  },
+  "cross_stratum_same_estimand": {
+    "O1_only_O_at_E1": {
+      "n": 102,
+      "both_loss": 2,
+      "both_win": 83,
+      "baseline_only_loss": 4,
+      "added_only_loss": 13,
+      "discordant": 17,
+      "net_count": 9,
+      "delta": 0.08823529411764706,
+      "mcnemar_two_sided_p": 0.049041748046875,
+      "mcnemar_one_sided_p": 0.0245208740234375,
+      "flips_to_kill_positive_sign": 9
+    },
+    "O_overlap_O_at_E1": {
+      "n": 155,
+      "both_loss": 2,
+      "both_win": 137,
+      "baseline_only_loss": 9,
+      "added_only_loss": 7,
+      "discordant": 16,
+      "net_count": -2,
+      "delta": -0.012903225806451613,
+      "mcnemar_two_sided_p": 0.803619384765625,
+      "mcnemar_one_sided_p": 0.7727508544921875,
+      "flips_to_kill_positive_sign": 0
+    },
+    "O0_only_O_at_E0": {
+      "n": 165,
+      "both_loss": 3,
+      "both_win": 145,
+      "baseline_only_loss": 12,
+      "added_only_loss": 5,
+      "discordant": 17,
+      "net_count": -7,
+      "delta": -0.04242424242424243,
+      "mcnemar_two_sided_p": 0.143463134765625,
+      "mcnemar_one_sided_p": 0.9754791259765625,
+      "flips_to_kill_positive_sign": 0
+    },
+    "note": "O-overlap Δ@E1 is identical to Δ@E0 because I=0 for every overlap parent (and 151/155 are algebraically forced). Comparing O1-only (+0.088) to O-overlap@E1 (−0.013) is the right structural contrast, not to O0-only@E0."
+  },
+  "interaction_force_audit": {
+    "o_overlap_n": 155,
+    "fully_forced_I_always_0": 151,
+    "partially_collapsed": 4,
+    "fully_free": 0,
+    "force_patterns": {
+      "T==TE & TO==raw (I≡0)": 151,
+      "partial: TO==raw only": 4
+    },
+    "empirical_I_hist": {
+      "0": 155
+    },
+    "informative_parents_for_deep_identity": 4,
+    "prior_audit_bug": "night-research/analyze_8x8_structure.py checked te==raw and t==to, which NEVER holds on O-overlap (definitional inequality). Correct force is t==te and to==raw → 151/155 fully forced.",
+    "residual_free_cases": [
+      {
+        "parent": "3,37,53,54",
+        "tops": [
+          "39",
+          "30",
+          "49",
+          "49"
+        ],
+        "I": 0,
+        "pattern": "TO==raw only",
+        "collapsed_I_formula": "I = y00 - y10  (because y01=y11)"
+      },
+      {
+        "parent": "10,20,34,44",
+        "tops": [
+          "39",
+          "21",
+          "42",
+          "42"
+        ],
+        "I": 0,
+        "pattern": "TO==raw only",
+        "collapsed_I_formula": "I = y00 - y10  (because y01=y11)"
+      },
+      {
+        "parent": "11,19,38,52",
+        "tops": [
+          "46",
+          "43",
+          "16",
+          "16"
+        ],
+        "I": 0,
+        "pattern": "TO==raw only",
+        "collapsed_I_formula": "I = y00 - y10  (because y01=y11)"
+      },
+      {
+        "parent": "11,27,43,45",
+        "tops": [
+          "36",
+          "20",
+          "9",
+          "9"
+        ],
+        "I": 0,
+        "pattern": "TO==raw only",
+        "collapsed_I_formula": "I = y00 - y10  (because y01=y11)"
+      }
+    ],
+    "conclusion": "I=0 is an algebraic identity on 151/155 O-overlap parents. The remaining 4 (T!=TE, TO==raw) collapse to I=y00−y10; all 4 happen to be 0 (n=4, two-sided binomial p=0.125). There is no independent game-theoretic content."
+  },
+  "o_overlap_alias_patterns": {
+    "T==TE:True|TO==raw:True|T==TO:False|TE==raw:False": 151,
+    "T==TE:False|TO==raw:True|T==TO:False|TE==raw:False": 4
+  },
+  "o1_alias_patterns": {
+    "T==TE:True|T==TO:True|TE==raw:False|TO==raw:False|distinct:2": 67,
+    "T==TE:False|T==TO:True|TE==raw:False|TO==raw:True|distinct:2": 27,
+    "T==TE:False|T==TO:True|TE==raw:False|TO==raw:False|distinct:3": 8
+  },
+  "o1_definition_identity": {
+    "T_eq_TO_by_def": 102,
+    "TE_ne_raw_by_def": 102,
+    "T_eq_TE": 67,
+    "interpretation": "O1-only parents are exactly those where O is invisible at E=0 (same argmax) and only re-ranks at E=1. The measured estimand is therefore 'O flips the E=1 argmax', not a free geometric property of the 4-point set independent of the score decomposition."
+  },
+  "baseline_rate_trap": {
+    "O1_only_baseline_loss_rate": 0.058823529411764705,
+    "O0_only_baseline_loss_rate": 0.09090909090909091,
+    "O_overlap_baseline_loss_rate": 0.07096774193548387,
+    "note": "O1-only baseline LOSS rate is the lowest of the three strata. A positive Δ from a low baseline can be a floor/regression artifact rather than O-specific geometry. Compare added-LOSS rate absolute levels too.",
+    "O1_added_loss_rate": 0.14705882352941177,
+    "O0_added_loss_rate": 0.048484848484848485,
+    "O_overlap_added_loss_rate": 0.05806451612903226
+  },
+  "certificate_vs_winner": {
+    "table": [
+      {
+        "n": 1,
+        "forbidden": 0,
+        "proof_nodes": 2,
+        "winner": "F",
+        "proof_per_forbidden": null,
+        "log_proof": 0.6931471805599453
+      },
+      {
+        "n": 2,
+        "forbidden": 1,
+        "proof_nodes": 5,
+        "winner": "F",
+        "proof_per_forbidden": 5.0,
+        "log_proof": 1.6094379124341003
+      },
+      {
+        "n": 3,
+        "forbidden": 14,
+        "proof_nodes": 28,
+        "winner": "F",
+        "proof_per_forbidden": 2.0,
+        "log_proof": 3.332204510175204
+      },
+      {
+        "n": 4,
+        "forbidden": 194,
+        "proof_nodes": 135,
+        "winner": "S",
+        "proof_per_forbidden": 0.6958762886597938,
+        "log_proof": 4.90527477843843
+      },
+      {
+        "n": 5,
+        "forbidden": 826,
+        "proof_nodes": 1217,
+        "winner": "F",
+        "proof_per_forbidden": 1.473365617433414,
+        "log_proof": 7.104144092987527
+      },
+      {
+        "n": 6,
+        "forbidden": 2491,
+        "proof_nodes": 21712,
+        "winner": "F",
+        "proof_per_forbidden": 8.716178241670011,
+        "log_proof": 9.98562038207465
+      },
+      {
+        "n": 7,
+        "forbidden": 6364,
+        "proof_nodes": 393550,
+        "winner": "S",
+        "proof_per_forbidden": 61.84003771213074,
+        "log_proof": 12.882963403570596
+      },
+      {
+        "n": 8,
+        "forbidden": 14564,
+        "proof_nodes": 8744406,
+        "winner": "S",
+        "proof_per_forbidden": 600.4123867069486,
+        "log_proof": 15.983924739599562
+      },
+      {
+        "n": 9,
+        "forbidden": 29152,
+        "proof_nodes": 13457134,
+        "winner": "F",
+        "proof_per_forbidden": 461.61958013172335,
+        "log_proof": 16.415019932316962
+      }
+    ],
+    "proof_nodes_monotone": true,
+    "winner_alternation": "FFFSFFSSF",
+    "cheap_kills": [
+      "proof_nodes grows monotonically with n regardless of winner — raw size cannot encode winner",
+      "proof_nodes/forbidden drops from n=8 to n=9 while winner flips S→F — ratio not a winner function",
+      "certificate size depends on witness selection / memo / search order, not game value alone",
+      "only 9 labeled points (n=1..9); any fitted threshold is post-hoc with n=9",
+      "WIN certificates retain ~1 LOSS witness; size is a property of the proof algorithm, not the game"
+    ],
+    "n9_vs_n8_ratio_drop": 0.7688375362532823
+  },
+  "safe_child_predictor_trap": {
+    "definitional_coupling": "Outcome is an AND/OR function of the child multiset. LOSS ⇔ every safe child is WIN. Any feature that counts safe children or their outcomes is a partial re-encoding of the label.",
+    "already_falsified_family": "Immediate mobility / pair-mobility already failed as a general decision rule (9x9 pair-mobility scans; raw pair vs mobility disagree mainly via E).",
+    "required_beyond_correlation": "Must show residual predictive power AFTER conditioning on T/E/O scores and depth, and must beat 'argmax T' on a held-out board with a frozen threshold."
+  },
+  "context_pair_trap": {
+    "known_posthoc_pairs_10x10": {
+      "3_stone": "{90,91}",
+      "4_stone": "{61,66}",
+      "5_stone": "{13,91}",
+      "6_stone": "{61,66}"
+    },
+    "cheap_kills": [
+      "pairs were selected AFTER looking at LOSS enrichment — not preregistered",
+      "per-depth pair scan is a multiple-comparisons problem (C(100,2)*depths looks)",
+      "static pair weight already fails because cores swap with depth; a free-form w(a,b| |P|, P\\ab) is unfalsifiable without a frozen parametric form",
+      "10x10 subset labels inherit certificate sampling bias (WIN keeps 1 witness)"
+    ],
+    "discriminating_test": "Freeze a parametric interaction (e.g. w0(pair) + w1(pair)*1[|P|=k] with shrinkage) BEFORE computing enrichment; require held-out depth or held-out board."
+  },
+  "population_scale": {
+    "8x8_safe_4parents": 620812,
+    "8x8_eligible_d4_orbits": 2340,
+    "8x8_O_strata_orbits": 422,
+    "note": "Full 8x8 safe-parent census is 620812; factorial eligibility reduces to 2340 orbits. Overnight solvers on 8x8 children were 848 unique roots in 3.74s — cheap. 9x9/10x10 full parent censuses are NOT cheap; use D4 orbits + unique child roots."
+  }
+}
