@@ -1,32 +1,29 @@
 # Cycle 9 — working notes (branch cycle8-n7-structure)
 
-Base delivered: Cycle 8 @ `6c5969f` on `cycle8-n7-structure`.
-Side study: `f85ca7d` min_det=2 unique to n=7 among n=3..7 complete enums.
+Base: Cycle 8 delivered `6c5969f`. Side: `f85ca7d` min_det=2 unique to n=7.
+HEAD after H: `8cc286b`.
 
-## Completed this session (G1–G3)
+## Packages
 
 | pkg | status | evidence | artifact |
 |---|---|---|---|
-| G1 (2,2) geometry | done | COMPLETE local quads + blockers on 16; capacity probes COMPLETE via b_maxsafe.exe | `CYCLE9_G1_NOTES.md`, `cycle8_g1_result.json`, `results/cycle8_g1_quads_through_22.json` |
-| G2 union corridor | done | COMPLETE exact k=12,13,14 on A0∪B0 | `CYCLE9_G2_NOTES.md`, `results/cycle8_g2_bottleneck_12.json` |
-| G3 n=8 sample | done-cut | SAMPLE n=2 (hard); rho=1, (2,2) used, d=1 pair | `results/cycle8_g3_n8_sample.json`, `cycle8_g3_n8_sample.cpp` |
+| G1 (2,2) geometry | done | COMPLETE local; τ∈{3,4} on 16×4 | `CYCLE9_G1_NOTES.md` |
+| G2 union corridor | done | COMPLETE k=12,13,14 on A0∪B0; path-witness bottlenecks use (2,2) | `CYCLE9_G2_NOTES.md` |
+| G3 random n=8 | cut | 3 sets; not informative alone | `results/cycle8_g3_n8_sample.json` |
+| H occ n=8 | done | SAMPLE 53 sets / 45 occupancy patterns via `cycle8_b_maxsafe.exe occ` | `results/cycle8_h_n8_sample.json` |
+| K9 128-bit | design only | regression + protocol; **no UNSAT** | `CYCLE9H_K9_128BIT_DESIGN.md` |
 
-### Key Cycle 9 lemmas
+## Lemmas promoted
 
-1. **τ≥3 on (2,2)**: every n=7 max set blocks each empty (2,2) cell with τ∈{3,4}.
-   13-sets with (2,2) exist off the 1-edit neighborhood of the 16.
-2. **Union corridor**: size-14 on A0∪B0 = {A0,B0} only; size-12 both-phase growability = 0; restricted path width ≤11; full-board width 12.
-3. **min_det=2 only at n=7** among complete enums n=3..7; K_n=2n only at n=7 for n≤8.
-4. **n=8 sampling is hard**: 2 sets only in budget — do not overclaim n=8 structure.
+1. Every n=7 max set blocks each empty (2,2) with **τ≥3** (hist {3:40,4:24}).
+2. On A0∪B0, size-14 safe sets are exactly {A0,B0}; |core|=9 ⇒ grow-both=0 for k≥10;
+   edit-path bottleneck 12; restricted width 11.
+3. min_det=2 only at n=7 among complete enums n=3..7; K_n=2n only n=7 (n≤8).
+4. n=8 SAMPLE: occupancy heterogeneous (45/53); (2,2) often used — n=7 crystal does not transfer.
+5. Explicit A–B path dips use (2,2) and drop center (path-witness, not universal).
 
-### Subagent note
+## Next
 
-C9a/b/c subagents failed/cancelled; orchestrator ran leftover scripts
-(`cycle8_g1_22_geometry.py` after unhashable-key fix; wrote G2 fast; compiled G3 C++).
-
-## Next candidates
-
-1. Derive occupancy / K7=14 from forbidden quads without census (hard).
-2. n=8: longer C++ sample run or structured search under forced orbits.
-3. n=5 empty-orbit: already none; optional min_det witnesses.
-4. Still out of scope: full n=8 enum, σ7 full table, K9 UNSAT without regression tests.
+- Which n=7 occupancy vectors of sum 14 admit *any* safe set? (beyond A/B)
+- Longer n=8 harvest if needed; still no full n=8 enum.
+- K9: implement Mask128 + pass n=6/7 regression before any UNSAT.
