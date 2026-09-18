@@ -1,0 +1,22 @@
+{
+  "n": 5,
+  "forbidden_quads": 826,
+  "positions_evaluated": 151394,
+  "capped_at_stones": -1,
+  "empty_grundy": 1,
+  "max_grundy": 6,
+  "nimbers_seen": [0, 1, 2, 3, 4, 5, 6],
+  "missing_small_nimbers": [],
+  "layer_profiles": {
+    "0": {"count": 1, "grundy_hist": {"1": 1}, "max_grundy": 1, "zero_rate": 0.000000},
+    "1": {"count": 25, "grundy_hist": {"0": 9, "3": 16}, "max_grundy": 3, "zero_rate": 0.360000},
+    "2": {"count": 300, "grundy_hist": {"0": 20, "1": 208, "2": 72}, "max_grundy": 2, "zero_rate": 0.066667},
+    "3": {"count": 2300, "grundy_hist": {"0": 550, "1": 48, "2": 20, "3": 1506, "4": 4, "5": 100, "6": 72}, "max_grundy": 6, "zero_rate": 0.239130},
+    "4": {"count": 11824, "grundy_hist": {"0": 1250, "1": 3480, "2": 4232, "3": 150, "4": 1564, "5": 1148}, "max_grundy": 5, "zero_rate": 0.105717},
+    "5": {"count": 37272, "grundy_hist": {"0": 7144, "1": 4288, "2": 2144, "3": 18872, "4": 4824}, "max_grundy": 4, "zero_rate": 0.191672},
+    "6": {"count": 59192, "grundy_hist": {"0": 14108, "1": 17140, "2": 23112, "3": 4832}, "max_grundy": 3, "zero_rate": 0.238343},
+    "7": {"count": 35208, "grundy_hist": {"0": 12804, "1": 20888, "2": 1516}, "max_grundy": 2, "zero_rate": 0.363667},
+    "8": {"count": 5172, "grundy_hist": {"0": 4340, "1": 832}, "max_grundy": 1, "zero_rate": 0.839134},
+    "9": {"count": 100, "grundy_hist": {"0": 100}, "max_grundy": 0, "zero_rate": 1.000000}
+  }
+}

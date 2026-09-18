@@ -1,0 +1,154 @@
+{
+  "n4": {
+    "k2_total_pairs": 120,
+    "k2_unsafe_pairs": 0,
+    "k2_safe_pairs": 120,
+    "k2_nonzero_count": 36,
+    "k2_nonzero_orbits": [
+      {
+        "orbit_size": 8,
+        "grundy_values": [
+          5
+        ],
+        "uniform": true,
+        "example": [
+          "(0,0)",
+          "(2,0)"
+        ],
+        "count": 8
+      },
+      {
+        "orbit_size": 8,
+        "grundy_values": [
+          3
+        ],
+        "uniform": true,
+        "example": [
+          "(1,0)",
+          "(3,1)"
+        ],
+        "count": 8
+      },
+      {
+        "orbit_size": 8,
+        "grundy_values": [
+          2
+        ],
+        "uniform": true,
+        "example": [
+          "(1,0)",
+          "(1,2)"
+        ],
+        "count": 8
+      },
+      {
+        "orbit_size": 4,
+        "grundy_values": [
+          2
+        ],
+        "uniform": true,
+        "example": [
+          "(1,0)",
+          "(1,3)"
+        ],
+        "count": 4
+      },
+      {
+        "orbit_size": 4,
+        "grundy_values": [
+          2
+        ],
+        "uniform": true,
+        "example": [
+          "(1,0)",
+          "(3,2)"
+        ],
+        "count": 4
+      },
+      {
+        "orbit_size": 4,
+        "grundy_values": [
+          2
+        ],
+        "uniform": true,
+        "example": [
+          "(0,0)",
+          "(2,2)"
+        ],
+        "count": 4
+      }
+    ]
+  },
+  "n5": {
+    "orbit_table": [
+      {
+        "rep": "(0,0)",
+        "orbit_size": 4,
+        "grundy": 3,
+        "first_move_result": "LOSS"
+      },
+      {
+        "rep": "(1,0)",
+        "orbit_size": 8,
+        "grundy": 3,
+        "first_move_result": "LOSS"
+      },
+      {
+        "rep": "(2,0)",
+        "orbit_size": 4,
+        "grundy": 0,
+        "first_move_result": "WIN"
+      },
+      {
+        "rep": "(1,1)",
+        "orbit_size": 4,
+        "grundy": 0,
+        "first_move_result": "WIN"
+      },
+      {
+        "rep": "(2,1)",
+        "orbit_size": 4,
+        "grundy": 3,
+        "first_move_result": "LOSS"
+      },
+      {
+        "rep": "(2,2)",
+        "orbit_size": 1,
+        "grundy": 0,
+        "first_move_result": "WIN"
+      }
+    ],
+    "losing_first_uniform_grundy": [
+      3
+    ],
+    "losing_first_child_patterns_by_orbit": {
+      "(0,0)": {
+        "orbit_size": 4,
+        "grundy": 3,
+        "child_nimber_hist": {
+          "0": 4,
+          "1": 14,
+          "2": 6
+        }
+      },
+      "(1,0)": {
+        "orbit_size": 8,
+        "grundy": 3,
+        "child_nimber_hist": {
+          "0": 2,
+          "1": 18,
+          "2": 4
+        }
+      },
+      "(2,1)": {
+        "orbit_size": 4,
+        "grundy": 3,
+        "child_nimber_hist": {
+          "0": 2,
+          "1": 12,
+          "2": 10
+        }
+      }
+    }
+  }
+}

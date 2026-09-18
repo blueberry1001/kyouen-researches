@@ -1,0 +1,24 @@
+{
+  "n": 6,
+  "forbidden_quads": 2491,
+  "positions_evaluated": 5081289,
+  "capped_at_stones": 14,
+  "empty_grundy": 1,
+  "max_grundy": 8,
+  "nimbers_seen": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  "missing_small_nimbers": [],
+  "layer_profiles": {
+    "0": {"count": 1, "grundy_hist": {"1": 1}, "max_grundy": 1, "zero_rate": 0.000000},
+    "1": {"count": 36, "grundy_hist": {"0": 36}, "max_grundy": 0, "zero_rate": 1.000000},
+    "2": {"count": 630, "grundy_hist": {"1": 596, "3": 34}, "max_grundy": 3, "zero_rate": 0.000000},
+    "3": {"count": 7140, "grundy_hist": {"0": 5336, "1": 16, "2": 980, "3": 60, "5": 716, "6": 16, "7": 8, "8": 8}, "max_grundy": 8, "zero_rate": 0.747339},
+    "4": {"count": 56414, "grundy_hist": {"0": 612, "1": 29652, "2": 1228, "3": 10438, "4": 10532, "5": 40, "6": 1936, "7": 1976}, "max_grundy": 7, "zero_rate": 0.010848},
+    "5": {"count": 301952, "grundy_hist": {"0": 79748, "1": 10292, "2": 47724, "3": 36340, "4": 5068, "5": 87164, "6": 35616}, "max_grundy": 6, "zero_rate": 0.264108},
+    "6": {"count": 997796, "grundy_hist": {"0": 84160, "1": 304284, "2": 115664, "3": 160300, "4": 274948, "5": 58440}, "max_grundy": 5, "zero_rate": 0.084346},
+    "7": {"count": 1783296, "grundy_hist": {"0": 471360, "1": 210248, "2": 345712, "3": 693408, "4": 62568}, "max_grundy": 4, "zero_rate": 0.264320},
+    "8": {"count": 1459292, "grundy_hist": {"0": 379824, "1": 674492, "2": 361116, "3": 43860}, "max_grundy": 3, "zero_rate": 0.260280},
+    "9": {"count": 438952, "grundy_hist": {"0": 213080, "1": 217128, "2": 8744}, "max_grundy": 2, "zero_rate": 0.485429},
+    "10": {"count": 35316, "grundy_hist": {"0": 30492, "1": 4824}, "max_grundy": 1, "zero_rate": 0.863405},
+    "11": {"count": 464, "grundy_hist": {"0": 464}, "max_grundy": 0, "zero_rate": 1.000000}
+  }
+}

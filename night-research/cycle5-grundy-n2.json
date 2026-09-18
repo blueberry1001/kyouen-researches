@@ -1,0 +1,16 @@
+{
+  "n": 2,
+  "forbidden_quads": 1,
+  "positions_evaluated": 15,
+  "capped_at_stones": -1,
+  "empty_grundy": 1,
+  "max_grundy": 1,
+  "nimbers_seen": [0, 1],
+  "missing_small_nimbers": [],
+  "layer_profiles": {
+    "0": {"count": 1, "grundy_hist": {"1": 1}, "max_grundy": 1, "zero_rate": 0.000000},
+    "1": {"count": 4, "grundy_hist": {"0": 4}, "max_grundy": 0, "zero_rate": 1.000000},
+    "2": {"count": 6, "grundy_hist": {"1": 6}, "max_grundy": 1, "zero_rate": 0.000000},
+    "3": {"count": 4, "grundy_hist": {"0": 4}, "max_grundy": 0, "zero_rate": 1.000000}
+  }
+}

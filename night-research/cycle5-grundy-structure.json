@@ -1,0 +1,105 @@
+{
+  "boards": [
+    {
+      "n": 4,
+      "forbidden_quads": 194,
+      "positions_evaluated": 5811,
+      "capped_at_stones": null,
+      "empty_grundy": 0,
+      "max_grundy": 5,
+      "nimbers_seen": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "missing_small_nimbers": [],
+      "layer_profiles": {
+        "0": {
+          "count": 1,
+          "grundy_hist": {
+            "0": 1
+          },
+          "max_grundy": 0,
+          "zero_rate": 1.0
+        },
+        "1": {
+          "count": 16,
+          "grundy_hist": {
+            "1": 16
+          },
+          "max_grundy": 1,
+          "zero_rate": 0.0
+        },
+        "2": {
+          "count": 120,
+          "grundy_hist": {
+            "0": 84,
+            "2": 20,
+            "3": 8,
+            "5": 8
+          },
+          "max_grundy": 5,
+          "zero_rate": 0.7
+        },
+        "3": {
+          "count": 560,
+          "grundy_hist": {
+            "0": 16,
+            "1": 372,
+            "2": 24,
+            "3": 60,
+            "4": 88
+          },
+          "max_grundy": 4,
+          "zero_rate": 0.02857142857142857
+        },
+        "4": {
+          "count": 1626,
+          "grundy_hist": {
+            "0": 640,
+            "1": 64,
+            "2": 416,
+            "3": 506
+          },
+          "max_grundy": 3,
+          "zero_rate": 0.3936039360393604
+        },
+        "5": {
+          "count": 2360,
+          "grundy_hist": {
+            "0": 332,
+            "1": 1364,
+            "2": 664
+          },
+          "max_grundy": 2,
+          "zero_rate": 0.14067796610169492
+        },
+        "6": {
+          "count": 1064,
+          "grundy_hist": {
+            "0": 688,
+            "1": 376
+          },
+          "max_grundy": 1,
+          "zero_rate": 0.6466165413533834
+        },
+        "7": {
+          "count": 64,
+          "grundy_hist": {
+            "0": 64
+          },
+          "max_grundy": 0,
+          "zero_rate": 1.0
+        }
+      },
+      "seconds": 0.313,
+      "consistency": {
+        "checked": 5811,
+        "mex_violations": 0
+      }
+    }
+  ]
+}
