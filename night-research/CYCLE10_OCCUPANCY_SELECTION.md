@@ -106,6 +106,31 @@ inside A0 (examples listed in the probe run: e.g. `(3,0)` blocked by
 several using `(0,3)`/`(2,3)` stones — so B’s exclusive orbits are exactly
 what pin the center out.
 
+## Orbit necessity at K=14 (COMPLETE forbid-orbit tests)
+
+`first 7 14 --forbid-orbit X,Y` with complete=true and count=0 means **no**
+K=14 safe set omits that entire orbit.
+
+| orbit | forbid-orbit @14 | verdict |
+|---|---:|---|
+| `(0,0)` corners | **0** complete | **mandatory** |
+| `(0,1)` | **0** complete | **mandatory** |
+| `(0,2)` | **0** complete | **mandatory** |
+| `(1,1)` | **0** complete | **mandatory** |
+| `(1,2)` | **0** complete | **mandatory** |
+| `(1,3)` | 0 incomplete (4M nodes) | used by both phases; likely mandatory |
+| `(2,2)` | n/a (force=0) | **forbidden** (cannot be used) |
+| `(0,3)` | possible (phase A omits) | phase-B exclusive |
+| `(2,3)` | possible (phase A omits) | phase-B exclusive |
+| `(3,3)` center | possible (phase B omits) | phase-A exclusive |
+
+> **Necessity lemma (COMPLETE).** Every n=7 14-stone safe set meets each of
+> the five orbits `(0,0),(0,1),(0,2),(1,1),(1,2)`. None may use `(2,2)`.
+> The remaining three orbits `(3,3),(0,3),(2,3)` implement the A/B split:
+> center XOR (B-orbits), with ¬center forcing B-orbits on.
+
+Combined with corner strata and phase counts, occupancy is fully selected.
+
 ## Next probes
 
 1. COMPLETE count @14 under `no-center ∧ require (0,3) ∧ require (2,3)`
