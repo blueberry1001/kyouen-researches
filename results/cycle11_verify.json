@@ -1,0 +1,120 @@
+{
+  "checks": [
+    {
+      "name": "n7_count_16",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "name": "n6_count_464",
+      "pass": true,
+      "detail": 464
+    },
+    {
+      "name": "n7_two_occupancy",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "n7_split_8_8",
+      "pass": true,
+      "detail": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "n7_A_shape",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "n7_B_shape",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "n7_mandatory_six",
+      "pass": true,
+      "detail": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "n7_never_22",
+      "pass": true,
+      "detail": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "n6_occupancy_22",
+      "pass": true,
+      "detail": 22
+    },
+    {
+      "name": "n6_uses22_360",
+      "pass": true,
+      "detail": 360
+    },
+    {
+      "name": "n6_mandatory_four",
+      "pass": true,
+      "detail": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "n6_never_empty",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "n7_zero_1swap",
+      "pass": true,
+      "detail": 0
+    }
+  ],
+  "all_pass": true
+}
