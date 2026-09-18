@@ -131,6 +131,34 @@ K=14 safe set omits that entire orbit.
 
 Combined with corner strata and phase counts, occupancy is fully selected.
 
+### B-phase uniqueness (COMPLETE)
+
+`first 7 14 --forbid center --require-orbit 0,3 --require-orbit 2,3`
+→ **count=8, complete=true** (all B sets; first `1106400a29843`).
+
+So the 16 sets are **exactly**
+`{center ∧ corners=2}` ⊔ `{¬center ∧ require(0,3)∧require(2,3) ∧ corners=3}`
+with both branches COMPLETE-counted at 8.
+
+## n=8 contrast (SAMPLE, incomplete forbid-orbit first@15)
+
+| forbid orbit on n=8 K=15 | first-found count (cap 1.5M nodes) |
+|---|---:|
+| `(0,0)` corners | 0 incomplete |
+| `(0,1)` | **1** (orbit optional) |
+| `(0,2)` | 0 incomplete |
+| `(0,3)` | **3** |
+| `(1,1)` | **4** |
+| `(1,2)` | **6** |
+| `(1,3)` | **30** |
+| `(2,2)` | **5** — (2,2) is **usable** on n=8 |
+| `(2,3)` | **11** |
+| `(3,3)` 2×2 center block | **45** |
+
+**SAMPLE contrast:** n=7 forbidding five orbits or using (2,2) is COMPLETE
+impossible at K=14; n=8 already exhibits witnesses that omit most orbits and
+that use (2,2). The n=7 “crystal selection rule” does not transfer.
+
 ## Next probes
 
 1. COMPLETE count @14 under `no-center ∧ require (0,3) ∧ require (2,3)`
