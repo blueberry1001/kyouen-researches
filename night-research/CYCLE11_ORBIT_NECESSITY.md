@@ -69,6 +69,19 @@ Among complete max-set censuses n=4..7, **only n=7 has an entire cell orbit
 empty**, and only n=7 collapses occupancy to two vectors while forbidding
 that orbit.
 
+## n=5 forbid-orbit @K=9 (COMPLETE)
+
+| forbid orbit | count@9 | complete |
+|---|---:|---|
+| `(0,0)` corners | **0** | yes |
+| `(0,2)` | **0** | yes |
+| `(1,2)` | **0** | yes |
+| center `(2,2)` | **56** | yes (optional) |
+| force center | **44** | yes (matches census 44/100) |
+
+n=5 also has truly mandatory edge orbits, but the center is **optional** —
+unlike n=7’s empty (2,2) orbit at max.
+
 ## Capacity cost of omitting a mandatory orbit (n=7)
 
 `max 7 --forbid-orbit …` (node-capped; COMPLETE noted):
