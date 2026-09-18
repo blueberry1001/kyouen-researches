@@ -69,6 +69,21 @@ Among complete max-set censuses n=4..7, **only n=7 has an entire cell orbit
 empty**, and only n=7 collapses occupancy to two vectors while forbidding
 that orbit.
 
+## Capacity cost of omitting a mandatory orbit (n=7)
+
+`max 7 --forbid-orbit …` (node-capped; COMPLETE noted):
+
+| forbidden orbit | max safe size | status |
+|---|---:|---|
+| `(0,2)` | **12** | COMPLETE (3464 sets at 12) |
+| `(1,2)` | 12 | incomplete (2104 at 12; no 13/14 seen) |
+| `(1,1)` | 13 | incomplete (347 at 13) |
+| `(0,0)` corners | 13 | incomplete (16 at 13) |
+
+> Omitting the entire orbit `(0,2)` **costs two stones** vs K7=14
+> (COMPLETE max=12). Mandatory orbits are capacity-critical, not merely
+> census-correlated.
+
 ## Lemma
 
 > The n=7 +1 maximum family is a **highly selected** object: six cell orbits
