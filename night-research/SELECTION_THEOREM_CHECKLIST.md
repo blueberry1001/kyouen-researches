@@ -42,7 +42,7 @@ For each claim, evidence type and where to re-run.
 | require corners orbit @14 | ≥15 incomplete (census 16/16) |
 | corners=2 @14 | 8 COMPLETE (phase A via require center) |
 | corners=3 @14 | 8 COMPLETE (phase B) |
-| corners=2 ∧ forbid (0,3) @14 | ≥8 incomplete (census 8=A) |
+| corners=2 ∧ forbid (0,3) @14 | **8 COMPLETE** (=A) |
 | forbid (0,1) @14 | **0 COMPLETE** |
 | forbid (0,2) @14 | 0 COMPLETE |
 | forbid (1,2) @14 | 0 COMPLETE |
