@@ -1,0 +1,47 @@
+{
+  "package": "G3",
+  "evidence": "SAMPLE",
+  "n_samples": 2,
+  "stats": [
+    {
+      "mask": "0x89c0840005132060",
+      "rho_cap3": 1,
+      "swap_to_sample": 1,
+      "occ": {
+        "0,0": 2,
+        "0,1": 2,
+        "0,2": 3,
+        "0,3": 2,
+        "1,1": 1,
+        "1,2": 2,
+        "1,3": 0,
+        "2,2": 1,
+        "2,3": 2,
+        "3,3": 0
+      },
+      "corners": 2
+    },
+    {
+      "mask": "0x89c0842005130060",
+      "rho_cap3": 1,
+      "swap_to_sample": 1,
+      "occ": {
+        "0,0": 2,
+        "0,1": 2,
+        "0,2": 3,
+        "0,3": 2,
+        "1,1": 1,
+        "1,2": 1,
+        "1,3": 0,
+        "2,2": 1,
+        "2,3": 3,
+        "3,3": 0
+      },
+      "corners": 2
+    }
+  ],
+  "pair_d_hist": {
+    "1": 1
+  },
+  "note": "G3 C++ sampler found only 2 distinct K=15 sets (D4+1swap); DFS/greedy 0 hits in budget \u2014 n=8 max sets are sparse/hard to sample unlike n=7 census"
+}

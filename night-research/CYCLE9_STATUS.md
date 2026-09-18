@@ -1,33 +1,32 @@
 # Cycle 9 — working notes (branch cycle8-n7-structure)
 
 Base delivered: Cycle 8 @ `6c5969f` on `cycle8-n7-structure`.
+Side study: `f85ca7d` min_det=2 unique to n=7 among n=3..7 complete enums.
 
-## Side study complete (this session)
+## Completed this session (G1–G3)
 
-`night-research/cycle9_small_n_min_det.py` — complete enum of max safe sets
-for n=3,4,5 with min_det / occupancy / 1-swap counts.
-Artifact: `results/cycle9_small_n_min_det.json`.
+| pkg | status | evidence | artifact |
+|---|---|---|---|
+| G1 (2,2) geometry | done | COMPLETE local quads + blockers on 16; capacity probes COMPLETE via b_maxsafe.exe | `CYCLE9_G1_NOTES.md`, `cycle8_g1_result.json`, `results/cycle8_g1_quads_through_22.json` |
+| G2 union corridor | done | COMPLETE exact k=12,13,14 on A0∪B0 | `CYCLE9_G2_NOTES.md`, `results/cycle8_g2_bottleneck_12.json` |
+| G3 n=8 sample | done-cut | SAMPLE n=2 (hard); rho=1, (2,2) used, d=1 pair | `results/cycle8_g3_n8_sample.json`, `cycle8_g3_n8_sample.cpp` |
 
-Fact: min_det=2 occurs only at n=7 among n=3..7 (complete).
-K_n=2n only at n=7 for n≤8 (inherited K4..K8).
+### Key Cycle 9 lemmas
 
-## In flight (subagents)
+1. **τ≥3 on (2,2)**: every n=7 max set blocks each empty (2,2) cell with τ∈{3,4}.
+   13-sets with (2,2) exist off the 1-edit neighborhood of the 16.
+2. **Union corridor**: size-14 on A0∪B0 = {A0,B0} only; size-12 both-phase growability = 0; restricted path width ≤11; full-board width 12.
+3. **min_det=2 only at n=7** among complete enums n=3..7; K_n=2n only at n=7 for n≤8.
+4. **n=8 sampling is hard**: 2 sets only in budget — do not overclaim n=8 structure.
 
-- G1 / T8: (2,2) forbidden-quad geometry (`cycle8_g1_*`)
-- G2 / T9: size≤12 corridor (`cycle8_g2_*`)
-- G3 / T10: n=8 sample expansion (`cycle8_g3_*`)
+### Subagent note
 
-## Quick geometry peek (orchestrator)
+C9a/b/c subagents failed/cancelled; orchestrator ran leftover scripts
+(`cycle8_g1_22_geometry.py` after unhashable-key fix; wrote G2 fast; compiled G3 C++).
 
-- Forbidden quads through (2,2)-orbit: 1997/6364 on n=7.
-- On phase A0, blockers of (2,2): 7 triples; (4,2): 7; (2,4): 5; (4,4): 7.
-  Many blockers involve the center (3,3) — consistent with center exclusivity.
+## Next candidates
 
-## Next after G1–G3
-
-1. Fold G1–G3 lemmas into CYCLE8 report or CYCLE9_G*.md.
-2. If G1 yields a clean capacity lemma, try to state it without computer search
-   (diagram-level).
-3. Optional: n=5/n=6 orbit "never-used at max" check for all cell orbits
-   (n=6 already: none empty; n=5 check pending if needed).
-4. Still out of scope unless requested: full n=8 enum, σ7 full, K9 UNSAT.
+1. Derive occupancy / K7=14 from forbidden quads without census (hard).
+2. n=8: longer C++ sample run or structured search under forced orbits.
+3. n=5 empty-orbit: already none; optional min_det witnesses.
+4. Still out of scope: full n=8 enum, σ7 full table, K9 UNSAT without regression tests.

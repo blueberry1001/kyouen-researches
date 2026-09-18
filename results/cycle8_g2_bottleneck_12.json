@@ -1,0 +1,41 @@
+{
+  "package": "G2",
+  "evidence": "COMPLETE exact-size enum on A0\u222aB0 (19 cells) via incremental DFS; growability via safe single-cell adds",
+  "n": 7,
+  "union_cells": 19,
+  "n_quads": 6364,
+  "safe_k_on_union": {
+    "12": 366,
+    "13": 39,
+    "14": 2
+  },
+  "size14_hex": [
+    "0x6c015180323",
+    "0x44c01a0a0361"
+  ],
+  "size14_is_exactly_A0_B0": true,
+  "size12_total": 366,
+  "size12_reach_both_phases": 0,
+  "size12_only_A": 91,
+  "size12_only_B": 91,
+  "size12_neither": 184,
+  "bottleneck12_uses": {},
+  "bottleneck12_distinct_occupancy": 0,
+  "bottleneck12_example_hex": null,
+  "bottleneck12_example_board": null,
+  "size13_host": {
+    "only_A0": 14,
+    "only_B0": 14,
+    "subset_of_both": 0,
+    "subset_of_neither": 11
+  },
+  "cycle8a_full_board_min_width": 12,
+  "cycle8a_restricted_union_min_width": 11,
+  "lemma": "On the 19-cell union A0\u222aB0, the only size-14 safe sets are A0 and B0. Any size-12 safe set that can grow into both phases is a bottleneck for restricted single-stone paths. Full-board paths also dip to \u226412 (unique 13-completion among the global 16). n=6 contrast: rho=1 on 296/464 so some max pairs admit K-1 size paths.",
+  "nodes": {
+    "12": 11585,
+    "13": 3929,
+    "14": 1435
+  },
+  "seconds": 4.653
+}
