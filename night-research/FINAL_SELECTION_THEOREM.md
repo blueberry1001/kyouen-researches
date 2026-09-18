@@ -112,7 +112,9 @@ X.Xc...
 ..X...X
 ```
 
-Also COMPLETE: forbid `(2,2)∪(0,3)∪(2,3)` @14 → count=**8** (phase A).
+Also COMPLETE complementary counts @14:
+- forbid `(2,2)∪(0,3)∪(2,3)` → **8** (phase A)
+- forbid `(2,2)∪center` → **8** (phase B)
 
 ---
 
