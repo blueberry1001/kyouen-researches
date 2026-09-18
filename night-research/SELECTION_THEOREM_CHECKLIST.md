@@ -43,6 +43,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 @14 | 8 COMPLETE (phase A via require center) |
 | corners=3 @14 | 8 COMPLETE (phase B) |
 | corners=2 ∧ forbid (0,3) @14 | **8 COMPLETE** (=A) |
+| corners=2 ∧ forbid (2,3) @14 | **8 COMPLETE** (=A) |
 | forbid (0,1) @14 | **0 COMPLETE** |
 | forbid (0,2) @14 | 0 COMPLETE |
 | forbid (1,2) @14 | 0 COMPLETE |
