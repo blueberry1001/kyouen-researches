@@ -56,6 +56,19 @@ Witnesses exist that omit (0,1),(0,3),(1,1),(1,2),(1,3),(2,3) and that
 occ data shows many samples *with* (2,2)). n=7 crystal selection does not
 transfer.
 
+## Small-n extension (COMPLETE enums)
+
+| n | K | #max sets | mandatory orbits | never-used orbit | occupancy vectors |
+|---:|---:|---:|---|---|---:|
+| 4 | 7 | 64 | all 3: (0,0)(0,1)(1,1) | **none** | 4 |
+| 5 | 9 | 100 | 4: (0,0)(0,1)(0,2)(1,2) | **none** (center used 44/100) | 9 |
+| 6 | 11 | 464 | 4: (0,0)(0,1)(0,2)(1,2) | **none** (2,2 used 360/464) | 22 |
+| 7 | 14 | 16 | **6** + empty (2,2) | **(2,2)** | **2** |
+
+Among complete max-set censuses n=4..7, **only n=7 has an entire cell orbit
+empty**, and only n=7 collapses occupancy to two vectors while forbidding
+that orbit.
+
 ## Lemma
 
 > The n=7 +1 maximum family is a **highly selected** object: six cell orbits
