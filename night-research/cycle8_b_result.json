@@ -1,0 +1,1543 @@
+{
+  "conditional": {
+    "task": "cycle8_b_conditional_max",
+    "n": 7,
+    "K7": 14,
+    "exe": "D:\\ghq\\github.com\\yuubinnkyoku\\kyouen-1-to-9-classification\\night-research\\cycle8_b_maxsafe.exe",
+    "n_quads": 6364,
+    "rep_pids": {
+      "center": 24,
+      "o03": 3,
+      "o23": 17,
+      "o22": 16
+    },
+    "cases": [
+      {
+        "label": "a_force_center_(3,3)_pid24",
+        "constraint_args": [
+          "--force",
+          "24"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            0,
+            2,
+            5,
+            9,
+            10,
+            11,
+            12,
+            15
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 known sets",
+          "COMPLETE_independent_count@14: 8 nodes=1737957"
+        ],
+        "count_at_14": {
+          "count": 8,
+          "complete": true,
+          "nodes": 1737957,
+          "first": "6c015180323",
+          "runtime_s": 5.298
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "b_forbid_center_pid24",
+        "constraint_args": [
+          "--forbid",
+          "24"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            13,
+            14
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE_ENUM_FILTER",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 known nocenter sets",
+          "INCOMPLETE independent count@14 (node/timeout); known filter still pins max=14"
+        ],
+        "count_at_14": {
+          "count": null,
+          "complete": false,
+          "error": "timeout/cap in earlier run"
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "c_force_pid3_(3,0)_orbit_(0,3)",
+        "constraint_args": [
+          "--force",
+          "3"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            13,
+            14
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 sets have some (0,3) cell (orbit)",
+          "COMPLETE_independent_count@14 specific cell (3,0): 2 nodes=2139280"
+        ],
+        "count_at_14": {
+          "count": 2,
+          "complete": true,
+          "nodes": 2139280,
+          "first": "14410249a0289",
+          "runtime_s": 7.144
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "d_forbid_orbit_(0,3)",
+        "constraint_args": [
+          "--forbid-orbit",
+          "0,3"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            0,
+            2,
+            5,
+            9,
+            10,
+            11,
+            12,
+            15
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 (all A_center)",
+          "COMPLETE_independent_count@14: 8 nodes=4983224"
+        ],
+        "count_at_14": {
+          "count": 8,
+          "complete": true,
+          "nodes": 4983224,
+          "first": "6c015180323",
+          "runtime_s": 14.698
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "e_force_pid23_(3,2)_orbit_(2,3)",
+        "constraint_args": [
+          "--force",
+          "23"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            13,
+            14
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 sets have some (2,3) cell",
+          "COMPLETE_independent_count@14 specific cell (3,2): 4 nodes=2011399"
+        ],
+        "count_at_14": {
+          "count": 4,
+          "complete": true,
+          "nodes": 2011399,
+          "first": "1106400a29843",
+          "runtime_s": 6.373
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "f_forbid_orbit_(2,3)",
+        "constraint_args": [
+          "--forbid-orbit",
+          "2,3"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            0,
+            2,
+            5,
+            9,
+            10,
+            11,
+            12,
+            15
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 (all A_center)",
+          "COMPLETE_independent_count@14: 8 nodes=5779227"
+        ],
+        "count_at_14": {
+          "count": 8,
+          "complete": true,
+          "nodes": 5779227,
+          "first": "6c015180323",
+          "runtime_s": 17.058
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "g_force_pid16_(2,2)_orbit_(2,2)",
+        "constraint_args": [
+          "--force",
+          "16"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 13,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16 known sets contain (2,2)",
+          "COMPLETE_independent_no14: count@14=0 nodes=2153999 => max<=13",
+          "LOWER_BOUND_13: first mask=449020192407 count=160 nodes=3292499",
+          "CONFIRM_max_mode=13 complete nodes=3292499",
+          "COMPLETE_max=13"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 2153999,
+          "first": null,
+          "runtime_s": 6.469
+        },
+        "first_at_13": {
+          "count": 160,
+          "complete": true,
+          "nodes": 3292499,
+          "first": "449020192407",
+          "runtime_s": 10.716
+        },
+        "max_mode": {
+          "max_size": 13,
+          "complete": true,
+          "nodes": 3292499,
+          "runtime_s": 10.009
+        },
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "h_forbid_orbit_(2,2)",
+        "constraint_args": [
+          "--forbid-orbit",
+          "2,2"
+        ],
+        "known_filter": {
+          "n_hits": 16,
+          "hit_ids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 16/16 (no set uses (2,2), forbidding changes nothing)",
+          "COMPLETE_independent_count@14: 16 nodes=5905715"
+        ],
+        "count_at_14": {
+          "count": 16,
+          "complete": true,
+          "nodes": 5905715,
+          "first": "6c015180323",
+          "runtime_s": 17.0
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 16,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "i_corners_exact_0",
+        "constraint_args": [
+          "--corners",
+          "0"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 13,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_independent_no14: count@14=0 nodes=6803871 => max<=13",
+          "COMPLETE_via_full_K14_enum_filter: 0/16",
+          "first@13: see first13_corners_0",
+          "LOWER_BOUND_13 first=4b803510020a count=12",
+          "COMPLETE_max=13"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 6803871,
+          "runtime_s": 20.979
+        },
+        "first_at_13": {
+          "mode": "first",
+          "n": 7,
+          "K": 13,
+          "target": 13,
+          "count": 12,
+          "nodes": 4000001,
+          "complete": false,
+          "first": "4b803510020a",
+          "quads": 6364,
+          "force": "0",
+          "forbid": "0",
+          "corners": 0,
+          "require_orbits": 0,
+          "cmd": [
+            "first",
+            7,
+            13,
+            "--corners",
+            0
+          ],
+          "runtime_s": 11.009
+        },
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "i_corners_exact_1",
+        "constraint_args": [
+          "--corners",
+          "1"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 13,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16",
+          "independent count@14 incomplete or see run",
+          "first13_corners_1=96 complete=False"
+        ],
+        "count_at_14": {
+          "mode": "count",
+          "n": 7,
+          "K": 14,
+          "target": 14,
+          "count": 0,
+          "nodes": 4000001,
+          "complete": false,
+          "first": null,
+          "quads": 6364,
+          "force": "0",
+          "forbid": "0",
+          "corners": 1,
+          "require_orbits": 0,
+          "cmd": [
+            "count",
+            7,
+            14,
+            "--corners",
+            1
+          ],
+          "runtime_s": 11.327
+        },
+        "first_at_13": {
+          "mode": "first",
+          "n": 7,
+          "K": 13,
+          "target": 13,
+          "count": 96,
+          "nodes": 4000001,
+          "complete": false,
+          "first": "a80ac104207",
+          "quads": 6364,
+          "force": "0",
+          "forbid": "0",
+          "corners": 1,
+          "require_orbits": 0,
+          "cmd": [
+            "first",
+            7,
+            13,
+            "--corners",
+            1
+          ],
+          "runtime_s": 10.866
+        },
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "i_corners_exact_2",
+        "constraint_args": [
+          "--corners",
+          "2"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            0,
+            2,
+            5,
+            9,
+            10,
+            11,
+            12,
+            15
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE_ENUM_FILTER",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 (all A_center have corners=2)",
+          "INCOMPLETE independent count@14 (timeout)"
+        ],
+        "count_at_14": {
+          "count": null,
+          "complete": false,
+          "error": "timeout in earlier run"
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "i_corners_exact_3",
+        "constraint_args": [
+          "--corners",
+          "3"
+        ],
+        "known_filter": {
+          "n_hits": 8,
+          "hit_ids": [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            13,
+            14
+          ],
+          "max_among_known": 14
+        },
+        "max_size": 14,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 8/16 (all B_nocenter have corners=3)",
+          "COMPLETE_independent_count@14: 8 nodes=3313776"
+        ],
+        "count_at_14": {
+          "count": 8,
+          "complete": true,
+          "nodes": 3313776,
+          "first": "1106400a29843",
+          "runtime_s": 10.713
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 8,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "i_corners_exact_4",
+        "constraint_args": [
+          "--corners",
+          "4"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": null,
+        "search_status": "PARTIAL_NO14_NO13_YET",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16",
+          "COMPLETE_independent_no14: count@14=0 nodes=301988",
+          "first13_corners_4=0 complete=True first=None"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 301988,
+          "runtime_s": 0.977
+        },
+        "first_at_13": {
+          "mode": "first",
+          "n": 7,
+          "K": 13,
+          "target": 13,
+          "count": 0,
+          "nodes": 403979,
+          "complete": true,
+          "first": null,
+          "quads": 6364,
+          "force": "0",
+          "forbid": "0",
+          "corners": 4,
+          "require_orbits": 0,
+          "cmd": [
+            "first",
+            7,
+            13,
+            "--corners",
+            4
+          ],
+          "runtime_s": 1.122
+        },
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "excl_center+_(0,3)_pid24+3",
+        "constraint_args": [
+          "--force",
+          "24",
+          "--force",
+          "3"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 13,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16 (center exclusive with (0,3))",
+          "COMPLETE_independent_no14: count@14=0 nodes=244450",
+          "LOWER_BOUND_13: first=4b801510020b count=34",
+          "COMPLETE_max=13"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 244450,
+          "runtime_s": 0.802
+        },
+        "first_at_13": {
+          "count": 34,
+          "complete": true,
+          "nodes": 370963,
+          "first": "4b801510020b",
+          "runtime_s": 1.159
+        },
+        "max_mode": {
+          "mode": "max",
+          "n": 7,
+          "K": 0,
+          "max_size": 13,
+          "nodes": 370963,
+          "complete": true,
+          "n_at_best": 34,
+          "first": null,
+          "seed": 13,
+          "known_upper": 14,
+          "quads": 6364,
+          "force": "1000008",
+          "forbid": "0",
+          "corners": -1,
+          "require_orbits": 0,
+          "cmd": [
+            "max",
+            7,
+            "--force",
+            24,
+            "--force",
+            3,
+            "--seed",
+            13,
+            "--known-upper",
+            14
+          ],
+          "runtime_s": 1.224
+        },
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "excl_center+_(2,3)_pid24+23",
+        "constraint_args": [
+          "--force",
+          "24",
+          "--force",
+          "23"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 12,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16 (center exclusive with (2,3))",
+          "COMPLETE_independent_no14: count@14=0 nodes=148135",
+          "COMPLETE_independent_no13: first@13 count=0 nodes=216906 => max<=12",
+          "first@12=452 first=104c001882207 complete=True"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 148135,
+          "runtime_s": 0.535
+        },
+        "first_at_13": {
+          "count": 0,
+          "complete": true,
+          "nodes": 216906,
+          "runtime_s": 0.722
+        },
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      },
+      {
+        "label": "excl_center+_(2,2)_pid24+16",
+        "constraint_args": [
+          "--force",
+          "24",
+          "--force",
+          "16"
+        ],
+        "known_filter": {
+          "n_hits": 0,
+          "hit_ids": [],
+          "max_among_known": 0
+        },
+        "max_size": 13,
+        "search_status": "COMPLETE",
+        "evidence": [
+          "COMPLETE_via_full_K14_enum_filter: 0/16",
+          "COMPLETE_independent_no14: count@14=0 nodes=205688",
+          "LOWER_BOUND_13 first=920211412849"
+        ],
+        "count_at_14": {
+          "count": 0,
+          "complete": true,
+          "nodes": 205688,
+          "runtime_s": 0.712
+        },
+        "first_at_13": null,
+        "max_mode": null,
+        "input_counts": {
+          "known_sets": 16,
+          "known_hits": 0,
+          "quads": 6364
+        }
+      }
+    ],
+    "task3_independent_2_2": {
+      "known_filter_2_2_any": {
+        "n_hits": 0,
+        "hit_ids": [],
+        "max_among_known": 0
+      },
+      "note": "require-orbit (2,2) independent search timed out; equivalent specific-cell --force 16 COMPLETE max=13; D4 => any (2,2) cell same max",
+      "specific_cell_force_22_max": 13,
+      "specific_cell_count14": {
+        "count": 0,
+        "complete": true,
+        "nodes": 2153999,
+        "first": null,
+        "runtime_s": 6.469
+      },
+      "specific_cell_max_mode": {
+        "max_size": 13,
+        "complete": true,
+        "nodes": 3292499,
+        "runtime_s": 10.009
+      },
+      "specific_cell_first13": {
+        "count": 160,
+        "complete": true,
+        "nodes": 3292499,
+        "first": "449020192407",
+        "runtime_s": 10.716
+      },
+      "require_orbit_search": {
+        "count": null,
+        "complete": false,
+        "error": "timeout; superseded by force-cell max=13 + known filter"
+      },
+      "verdict": "No 14-set contains any (2,2) cell (complete 16-set filter 0/16 AND independent force-cell count@14=0 COMPLETE). Max safe size with a (2,2) cell occupied = 13 (COMPLETE: no14 + K13 witness + max-mode confirm)."
+    },
+    "task4_exclusivity": {
+      "known_set_exclusivity": {
+        "center_sets": 8,
+        "nocenter_sets": 8,
+        "center_and_0_3": 0,
+        "center_and_2_3": 0,
+        "center_and_2_2": 0,
+        "any_2_2": 0,
+        "sets_with_0_3": 8,
+        "sets_with_2_3": 8,
+        "corner_hist": {
+          "0": 0,
+          "1": 0,
+          "2": 8,
+          "3": 8,
+          "4": 0
+        }
+      },
+      "verdicts": {
+        "center_vs_0_3": "EXCLUSIVE on all 16 K14 sets. Independent: center+(0,3) count@14=0 COMPLETE; max=13 COMPLETE (witness exists).",
+        "center_vs_2_3": "EXCLUSIVE on all 16 K14 sets. Independent: center+(2,3) count@14=0 COMPLETE AND first@13=0 COMPLETE => max<=12 (stricter than 13).",
+        "center_vs_2_2": "EXCLUSIVE (and (2,2) unused anyway). count@14=0 COMPLETE.",
+        "center_forced_max": 14,
+        "0_3_forced_max": 14,
+        "2_3_forced_max": 14,
+        "2_2_forced_max": 13
+      }
+    },
+    "unconstrained_sanity": {
+      "note": "K7=14 from prior complete enum (16 sets in maxsafe_n7_K14.bin); K=15 UNSAT not re-run",
+      "all_is_safe": true,
+      "all_sum_14": true,
+      "solver_first_at_14": {
+        "mode": "first",
+        "n": 7,
+        "K": 14,
+        "target": 14,
+        "count": 10,
+        "nodes": 4000001,
+        "complete": false,
+        "first": "6c015180323",
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          14
+        ],
+        "runtime_s": 11.34
+      },
+      "solver_max_seed14": {
+        "mode": "max",
+        "n": 7,
+        "K": 0,
+        "max_size": 14,
+        "nodes": 4000001,
+        "complete": false,
+        "n_at_best": 10,
+        "first": null,
+        "seed": 14,
+        "known_upper": 14,
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "max",
+          7,
+          "--seed",
+          14,
+          "--known-upper",
+          14
+        ],
+        "runtime_s": 10.932
+      },
+      "interpretation": "max>=14 via known safe examples; max=14 via established complete K14 enum; solver does not claim >14"
+    },
+    "solver_runs": {
+      "count14_force_center": {
+        "count": 8,
+        "complete": true,
+        "nodes": 1737957,
+        "first": "6c015180323",
+        "runtime_s": 5.298
+      },
+      "count14_force_22": {
+        "count": 0,
+        "complete": true,
+        "nodes": 2153999,
+        "first": null,
+        "runtime_s": 6.469
+      },
+      "first13_force_22": {
+        "count": 160,
+        "complete": true,
+        "nodes": 3292499,
+        "first": "449020192407",
+        "runtime_s": 10.716
+      },
+      "max_force_22_seed13": {
+        "max_size": 13,
+        "complete": true,
+        "nodes": 3292499,
+        "runtime_s": 10.009
+      },
+      "count14_forbid_orbit_03": {
+        "count": 8,
+        "complete": true,
+        "nodes": 4983224,
+        "first": "6c015180323",
+        "runtime_s": 14.698
+      },
+      "count14_forbid_orbit_23": {
+        "count": 8,
+        "complete": true,
+        "nodes": 5779227,
+        "first": "6c015180323",
+        "runtime_s": 17.058
+      },
+      "count14_forbid_orbit_22": {
+        "count": 16,
+        "complete": true,
+        "nodes": 5905715,
+        "first": "6c015180323",
+        "runtime_s": 17.0
+      },
+      "count14_force_03": {
+        "count": 2,
+        "complete": true,
+        "nodes": 2139280,
+        "first": "14410249a0289",
+        "runtime_s": 7.144
+      },
+      "count14_force_23": {
+        "count": 4,
+        "complete": true,
+        "nodes": 2011399,
+        "first": "1106400a29843",
+        "runtime_s": 6.373
+      },
+      "count14_force_03_and_center": {
+        "count": 0,
+        "complete": true,
+        "nodes": 244450,
+        "runtime_s": 0.802
+      },
+      "count14_force_23_and_center": {
+        "count": 0,
+        "complete": true,
+        "nodes": 148135,
+        "runtime_s": 0.535
+      },
+      "count14_force_22_and_center": {
+        "count": 0,
+        "complete": true,
+        "nodes": 205688,
+        "runtime_s": 0.712
+      },
+      "first13_force_03_and_center": {
+        "count": 34,
+        "complete": true,
+        "nodes": 370963,
+        "first": "4b801510020b",
+        "runtime_s": 1.159
+      },
+      "first13_force_23_and_center": {
+        "count": 0,
+        "complete": true,
+        "nodes": 216906,
+        "runtime_s": 0.722
+      },
+      "count14_corners_0": {
+        "count": 0,
+        "complete": true,
+        "nodes": 6803871,
+        "runtime_s": 20.979
+      },
+      "count14_corners_3": {
+        "count": 8,
+        "complete": true,
+        "nodes": 3313776,
+        "first": "1106400a29843",
+        "runtime_s": 10.713
+      },
+      "count14_corners_4": {
+        "count": 0,
+        "complete": true,
+        "nodes": 301988,
+        "runtime_s": 0.977
+      },
+      "count14_forbid_center": {
+        "count": null,
+        "complete": false,
+        "error": "timeout/cap in earlier run"
+      },
+      "count14_corners_2": {
+        "count": null,
+        "complete": false,
+        "error": "timeout in earlier run"
+      },
+      "count14_require_orbit_22": {
+        "count": null,
+        "complete": false,
+        "error": "timeout; superseded by force-cell max=13 + known filter"
+      },
+      "first12_force_23_and_center": {
+        "mode": "first",
+        "n": 7,
+        "K": 12,
+        "target": 12,
+        "count": 452,
+        "nodes": 373244,
+        "complete": true,
+        "first": "104c001882207",
+        "quads": 6364,
+        "force": "1800000",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          12,
+          "--force",
+          24,
+          "--force",
+          23
+        ],
+        "runtime_s": 1.016
+      },
+      "first13_corners_0": {
+        "mode": "first",
+        "n": 7,
+        "K": 13,
+        "target": 13,
+        "count": 12,
+        "nodes": 4000001,
+        "complete": false,
+        "first": "4b803510020a",
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": 0,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          13,
+          "--corners",
+          0
+        ],
+        "runtime_s": 11.009
+      },
+      "first13_corners_4": {
+        "mode": "first",
+        "n": 7,
+        "K": 13,
+        "target": 13,
+        "count": 0,
+        "nodes": 403979,
+        "complete": true,
+        "first": null,
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": 4,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          13,
+          "--corners",
+          4
+        ],
+        "runtime_s": 1.122
+      },
+      "first13_corners_1": {
+        "mode": "first",
+        "n": 7,
+        "K": 13,
+        "target": 13,
+        "count": 96,
+        "nodes": 4000001,
+        "complete": false,
+        "first": "a80ac104207",
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": 1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          13,
+          "--corners",
+          1
+        ],
+        "runtime_s": 10.866
+      },
+      "count14_corners_1": {
+        "mode": "count",
+        "n": 7,
+        "K": 14,
+        "target": 14,
+        "count": 0,
+        "nodes": 4000001,
+        "complete": false,
+        "first": null,
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": 1,
+        "require_orbits": 0,
+        "cmd": [
+          "count",
+          7,
+          14,
+          "--corners",
+          1
+        ],
+        "runtime_s": 11.327
+      },
+      "first13_force_22_and_center": {
+        "mode": "first",
+        "n": 7,
+        "K": 13,
+        "target": 13,
+        "count": 6,
+        "nodes": 308255,
+        "complete": true,
+        "first": "920211412849",
+        "quads": 6364,
+        "force": "1010000",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          13,
+          "--force",
+          24,
+          "--force",
+          16
+        ],
+        "runtime_s": 0.981
+      },
+      "first12_force_22_and_center": {
+        "mode": "first",
+        "n": 7,
+        "K": 12,
+        "target": 12,
+        "count": 1376,
+        "nodes": 483677,
+        "complete": true,
+        "first": "2c021053007",
+        "quads": 6364,
+        "force": "1010000",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          12,
+          "--force",
+          24,
+          "--force",
+          16
+        ],
+        "runtime_s": 1.525
+      },
+      "max_force_03_and_center_seed13": {
+        "mode": "max",
+        "n": 7,
+        "K": 0,
+        "max_size": 13,
+        "nodes": 370963,
+        "complete": true,
+        "n_at_best": 34,
+        "first": null,
+        "seed": 13,
+        "known_upper": 14,
+        "quads": 6364,
+        "force": "1000008",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "max",
+          7,
+          "--force",
+          24,
+          "--force",
+          3,
+          "--seed",
+          13,
+          "--known-upper",
+          14
+        ],
+        "runtime_s": 1.224
+      },
+      "first14_unc": {
+        "mode": "first",
+        "n": 7,
+        "K": 14,
+        "target": 14,
+        "count": 10,
+        "nodes": 4000001,
+        "complete": false,
+        "first": "6c015180323",
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "first",
+          7,
+          14
+        ],
+        "runtime_s": 11.34
+      },
+      "max_unc_seed14": {
+        "mode": "max",
+        "n": 7,
+        "K": 0,
+        "max_size": 14,
+        "nodes": 4000001,
+        "complete": false,
+        "n_at_best": 10,
+        "first": null,
+        "seed": 14,
+        "known_upper": 14,
+        "quads": 6364,
+        "force": "0",
+        "forbid": "0",
+        "corners": -1,
+        "require_orbits": 0,
+        "cmd": [
+          "max",
+          7,
+          "--seed",
+          14,
+          "--known-upper",
+          14
+        ],
+        "runtime_s": 10.932
+      }
+    },
+    "method_notes": [
+      "cycle8_lib.max_safe_under() NOT used.",
+      "COMPLETE_via_full_K14_enum_filter = filter of complete 16-set K7=14 enumeration.",
+      "COMPLETE_independent_* = cycle8_b_maxsafe.exe DFS finished within node cap.",
+      "No K=15 full UNSAT grind; K7=14 accepted from prior complete enum.",
+      "cell-level force and orbit-level filter both reported; max-size equivalent by D4."
+    ]
+  },
+  "occupancy": {
+    "task": "cycle8_b_occupancy_vectors",
+    "n": 7,
+    "K": 14,
+    "n_sets": 16,
+    "n_distinct_vectors": 2,
+    "vectors": [
+      {
+        "label": "A_center",
+        "occupancy": {
+          "(0,0)": 2,
+          "(0,1)": 3,
+          "(0,2)": 2,
+          "(0,3)": 0,
+          "(1,1)": 1,
+          "(1,2)": 3,
+          "(1,3)": 2,
+          "(2,2)": 0,
+          "(2,3)": 0,
+          "(3,3)": 1
+        },
+        "sum": 14,
+        "n_sets": 8,
+        "set_ids": [
+          0,
+          2,
+          5,
+          9,
+          10,
+          11,
+          12,
+          15
+        ],
+        "center_occupied": true,
+        "corners": 2,
+        "uses_0_3": 0,
+        "uses_2_2": 0,
+        "uses_2_3": 0
+      },
+      {
+        "label": "B_nocenter",
+        "occupancy": {
+          "(0,0)": 3,
+          "(0,1)": 1,
+          "(0,2)": 2,
+          "(0,3)": 1,
+          "(1,1)": 1,
+          "(1,2)": 3,
+          "(1,3)": 1,
+          "(2,2)": 0,
+          "(2,3)": 2,
+          "(3,3)": 0
+        },
+        "sum": 14,
+        "n_sets": 8,
+        "set_ids": [
+          1,
+          3,
+          4,
+          6,
+          7,
+          8,
+          13,
+          14
+        ],
+        "center_occupied": false,
+        "corners": 3,
+        "uses_0_3": 1,
+        "uses_2_2": 0,
+        "uses_2_3": 2
+      }
+    ],
+    "expected_A": {
+      "(0,0)": 2,
+      "(0,1)": 3,
+      "(0,2)": 2,
+      "(0,3)": 0,
+      "(1,1)": 1,
+      "(1,2)": 3,
+      "(1,3)": 2,
+      "(2,2)": 0,
+      "(2,3)": 0,
+      "(3,3)": 1
+    },
+    "expected_B": {
+      "(0,0)": 3,
+      "(0,1)": 1,
+      "(0,2)": 2,
+      "(0,3)": 1,
+      "(1,1)": 1,
+      "(1,2)": 3,
+      "(1,3)": 1,
+      "(2,2)": 0,
+      "(2,3)": 2,
+      "(3,3)": 0
+    },
+    "match_expected_A": true,
+    "match_expected_B": true,
+    "match_expected": true,
+    "validation": {
+      "n_sets": 16,
+      "n_quads": 6364,
+      "all_is_safe": true,
+      "unsafe_ids": [],
+      "all_sum_14": true,
+      "sums": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ]
+    },
+    "exclusivity_on_known": {
+      "center_sets": 8,
+      "nocenter_sets": 8,
+      "center_and_0_3": 0,
+      "center_and_2_3": 0,
+      "center_and_2_2": 0,
+      "any_2_2": 0,
+      "sets_with_0_3": 8,
+      "sets_with_2_3": 8,
+      "corner_hist": {
+        "0": 0,
+        "1": 0,
+        "2": 8,
+        "3": 8,
+        "4": 0
+      }
+    },
+    "orbit_members": {
+      "(0,0)": [
+        0,
+        6,
+        42,
+        48
+      ],
+      "(0,1)": [
+        1,
+        5,
+        7,
+        13,
+        35,
+        41,
+        43,
+        47
+      ],
+      "(0,2)": [
+        2,
+        4,
+        14,
+        20,
+        28,
+        34,
+        44,
+        46
+      ],
+      "(0,3)": [
+        3,
+        21,
+        27,
+        45
+      ],
+      "(1,1)": [
+        8,
+        12,
+        36,
+        40
+      ],
+      "(1,2)": [
+        9,
+        11,
+        15,
+        19,
+        29,
+        33,
+        37,
+        39
+      ],
+      "(1,3)": [
+        10,
+        22,
+        26,
+        38
+      ],
+      "(2,2)": [
+        16,
+        18,
+        30,
+        32
+      ],
+      "(2,3)": [
+        17,
+        23,
+        25,
+        31
+      ],
+      "(3,3)": [
+        24
+      ]
+    },
+    "orbit_keys": [
+      "(0,0)",
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,1)",
+      "(1,2)",
+      "(1,3)",
+      "(2,2)",
+      "(2,3)",
+      "(3,3)"
+    ],
+    "compress": {
+      "size_14_achievable_patterns": {
+        "source": "complete 16-set enum occupancy",
+        "n_distinct": 2,
+        "patterns": [
+          {
+            "label": "A_center",
+            "occupancy": {
+              "(0,0)": 2,
+              "(0,1)": 3,
+              "(0,2)": 2,
+              "(0,3)": 0,
+              "(1,1)": 1,
+              "(1,2)": 3,
+              "(1,3)": 2,
+              "(2,2)": 0,
+              "(2,3)": 0,
+              "(3,3)": 1
+            },
+            "n_sets": 8
+          },
+          {
+            "label": "B_nocenter",
+            "occupancy": {
+              "(0,0)": 3,
+              "(0,1)": 1,
+              "(0,2)": 2,
+              "(0,3)": 1,
+              "(1,1)": 1,
+              "(1,2)": 3,
+              "(1,3)": 1,
+              "(2,2)": 0,
+              "(2,3)": 2,
+              "(3,3)": 0
+            },
+            "n_sets": 8
+          }
+        ],
+        "note": "exactly A and B; (2,2) never used at K=14"
+      },
+      "size_13": {
+        "note": "full K=13 occupancy census NOT run (not cheap). Size-13 structure from conditional maxima: force-(2,2)=13, center+(0,3)=13, center+(2,3)<=12.",
+        "evidence_runs": {
+          "first13_force_22": {
+            "count": 160,
+            "complete": true,
+            "nodes": 3292499,
+            "first": "449020192407",
+            "runtime_s": 10.716
+          },
+          "first13_center_plus_03": {
+            "count": 34,
+            "complete": true,
+            "nodes": 370963,
+            "first": "4b801510020b",
+            "runtime_s": 1.159
+          }
+        }
+      }
+    },
+    "runtime_s": 1789748032.9361484
+  }
+}
