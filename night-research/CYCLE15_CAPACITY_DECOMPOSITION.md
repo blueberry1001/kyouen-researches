@@ -129,6 +129,17 @@ size 13 upward.
 Only `(0,2)` is proven mandatory at 13; the other five “K=14 mandatory”
 orbits become required **only at the maximum layer**.
 
+### Why (0,2) is so heavy (COMPLETE local incidence)
+
+- Cells of orbit `(0,2)`: 8 (edge-distance-2 pattern).
+- Forbidden quads **touching** this orbit: **3082 / 6364 ≈ 48%**.
+- Top companion orbits among those quads: `(1,2)` 1536, `(0,1)` 1368,
+  `(2,2)` 960, `(1,1)` 940, `(1,3)` 936.
+
+Nearly half of all n=7 forbidden geometry involves `(0,2)`. That mass of
+local obstruction is a plausible geometric root of the COMPLETE fact that
+omitting the orbit collapses max safe size (12 at K-cap; 0 at K=13).
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
