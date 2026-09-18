@@ -33,9 +33,11 @@ For each claim, evidence type and where to re-run.
 | center+(2,3) | 12 |
 | forbid (0,2) | 12 |
 | corners=4 | ≤12 (no 13, no 14) |
-| skeleton M only | 13 |
-| M∪{center} | 14 (8 sets) |
-| M∪B-bundle | 14 (8 sets) |
+| skeleton M only | 13 COMPLETE |
+| M∪{center} | 14 (8 sets) COMPLETE |
+| M∪{(0,3)} only | 13 COMPLETE (288@13) |
+| M∪{(2,3)} only | 13 COMPLETE (304@13) |
+| M∪{(0,3),(2,3)} full B-bundle | 14 (8 sets) COMPLETE via require |
 
 ## Exchange / pinning (COMPLETE on the 16)
 
