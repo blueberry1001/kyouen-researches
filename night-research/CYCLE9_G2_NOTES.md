@@ -34,6 +34,23 @@ Size-13 subsets: only_A0=14, only_B0=14, subset of both=0, subset of neither=11
 > Full-board paths may use cells outside the union and have min width **12**
 > (Cycle 8A explicit path; unique 13-completion among the global 16).
 
+### Intersection-size obstruction (COMPLETE, almost tautological)
+
+|A0∩B0| = 9. Any size-k set that is a subset of A0 and also a subset of B0
+must lie in the intersection, so k ≤ 9. Hence for k ≥ 10, growability to
+*both* phases by additions alone is impossible on the union — confirmed by
+exact DFS: k=10 both=0 (onlyA=onlyB=1001), k=11 both=0 (364/364), k=12 both=0.
+
+The interesting path bottleneck is therefore about **edit-paths** (remove+add),
+not grow-paths. Cycle 8A explicit full-board path:
+
+```
+sizes: 14,13,12,13,12,13,12,13,12,13,12,13,12,13,14
+bottleneck: 12 (five separate dips to 12)
+```
+
+Restricted-union connectivity threshold: 11 (`connectivity_threshold_on_union`).
+
 ## n=6 contrast
 
 n=6 has 1-swap edges (ρ=1 on 296/464 max sets), so some distinct max pairs
