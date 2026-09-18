@@ -96,6 +96,14 @@ The +1 is therefore not blocked *on* the A-minus-center shape; it is that
 **only that shape** (among skeleton max-13 occupancy classes) can accept the
 center without creating a forbidden quad.
 
+### Phase-B reconstruction (verified)
+
+Phase-B representative B0 minus its three B-orbit stones `(0,3),(2,3)×2`
+is a **safe 11-set** on M with occupancy (3,1,2,1,3,1). Target DFS with that
+11-set forced **finds a size-14 completion** (includes B-orbit cells) — the
+B-phase +1 is realized by restoring the full B-bundle onto an M-core, not by
+center. Matches: partial bundle alone max=13; full bundle max=14.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
