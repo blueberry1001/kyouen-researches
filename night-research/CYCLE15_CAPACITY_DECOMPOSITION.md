@@ -83,6 +83,19 @@ commitment on top of a near-A / near-B 13-shape.
 n=5 reaches 2n−1 on a **reduced** orbit set (no phase extension needed).
 n=7’s 2n requires the exclusive A/B extension of a skeleton that only does 2n−1.
 
+## Skeleton internal geometry (COMPLETE local counts)
+
+- |M| = 36 cells (six mandatory orbits).
+- Forbidden quads **fully inside M**: **1771 / 6364**.
+- On the skeleton 13-set “A minus center” (occupancy (2,3,2,1,3,2)), the empty
+  center has **0** blocker triples — center is freely addable, recovering phase A.
+- Other skeleton 13-patterns do not yield 14 when center is added (phase A
+  count is only 8).
+
+The +1 is therefore not blocked *on* the A-minus-center shape; it is that
+**only that shape** (among skeleton max-13 occupancy classes) can accept the
+center without creating a forbidden quad.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
