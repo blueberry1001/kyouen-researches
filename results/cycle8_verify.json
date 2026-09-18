@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "name": "n7_16_safe_K14",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "name": "n7_two_occupancy_vectors",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "n7_orbit22_never",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "n7_center_excl_03_23_on16",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "d5_pair0_8_split_9_5_5",
+      "pass": true,
+      "detail": [
+        9,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "d5_pair_count_8",
+      "pass": true,
+      "detail": 8
+    },
+    {
+      "name": "d5_pair_d4_unique",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "name": "d5_symdiff_d4_unique",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "name": "d5_exchange_oriented_unique_or_2",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "unique_13_completion_224",
+      "pass": true,
+      "detail": [
+        224,
+        0
+      ]
+    },
+    {
+      "name": "min_det_all_2_n7",
+      "pass": true,
+      "detail": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "n6_no_min_det_le2",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "k13_witness_with_22",
+      "pass": 1,
+      "detail": "found"
+    },
+    {
+      "name": "n7_zero_1swap",
+      "pass": true,
+      "detail": 0
+    }
+  ],
+  "all_pass": true
+}
