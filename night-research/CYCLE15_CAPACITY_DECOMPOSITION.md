@@ -122,12 +122,13 @@ size 13 upward.
 | orbit | @13 verdict |
 |---|---|
 | `(0,2)` | **mandatory** (count=0 COMPLETE) |
+| `(1,2)` | **mandatory** (count=0 COMPLETE) |
 | `(0,1)` | optional (count=24 COMPLETE) |
 | `(0,0)` corners | optional (≥15 incomplete) |
-| `(1,2)`,`(1,3)`,`(1,1)` | optional/incomplete witnesses exist |
+| `(1,3)`,`(1,1)` | optional/incomplete witnesses exist |
 
-Only `(0,2)` is proven mandatory at 13; the other five “K=14 mandatory”
-orbits become required **only at the maximum layer**.
+Two orbits `(0,2)` and `(1,2)` are already hard requirements at size 13;
+the other “K=14 mandatory” orbits become required **only at the maximum layer**.
 
 ### Why (0,2) is so heavy (COMPLETE local incidence)
 
