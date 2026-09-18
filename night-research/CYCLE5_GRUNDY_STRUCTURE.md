@@ -169,11 +169,13 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
    $\sigma_4=2$, $\sigma_5=\sigma_6=3$ — the ceiling is reached with only
    2–3 stones on the board.
 4. **6×6 maximal safe sets have exactly 11 stones** (464 of them, all
-   terminal/LOSS), closing the Cycle-1 maximal-set timeout. Combined with
-   the Cycle-1 maximal-set data ($K_1=1, K_2=3, K_3=5, K_4=7, K_5=9$), the
-   maximal safe-set size is $K_n=2n-1$ for all $1\le n\le 6$; whether
-   $K_7=13$ is an open exact question (the 7×7 certificate root is LOSS, so
-   at least the empty board reaches $K_7$).
+   terminal/LOSS), closing the Cycle-1 maximal-set timeout. The maximal
+   safe-set sizes for n = 1..6 are $K_n = 1,3,5,7,9,11 = 2n-1$ (Cycle-1
+   exact maximal-set enumeration); whether $K_7 = 13$ remains open (the
+   7×7 certificate contains a 14-stone position, but certificate DAGs are
+   pruned and only store one path per proof obligation, so certificate
+   max-stones is a **lower bound** on $K_7$, not necessarily the exact
+   value).
 
 ## Artifacts
 
@@ -185,7 +187,42 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
   ceiling/deficit verification on n=4,5,6
 - `night-research/saturation_cycle6.cpp` — n=7 saturation witness search
   (K_7 + σ_7; implemented, needs an overnight run)
+- `night-research/cert_parity_check.py`, `cycle6-cert-parity.json` —
+  certificate-level K and parity scan for n=1..9
 - `night-research/CYCLE5_GRUNDY_STRUCTURE.md` — this file
+
+## F6. Certificate-level parity scan (n = 1..9)
+
+Reading the KYOENC3 certificates directly (`cert_parity_check.py`):
+
+| n | cert K | parity locked on cert | winner |
+|--:|--:|:--:|:--:|
+| 1 | 1 | mixed | F |
+| 2 | 3 | mixed | F |
+| 3 | 5 | mixed | F |
+| 4 | 6 | **LOCKED** | S |
+| 5 | 9 | mixed | F |
+| 6 | 11 | mixed | F |
+| 7 | 14 | **LOCKED** | S |
+| 8 | 14 | **LOCKED** | S |
+| 9 | 17 | mixed | F |
+
+("mixed" on F-boards is forced: the k = 0 empty board is WIN on F-boards but
+even, so the parity pattern "even k = LOSS" is broken at the root by
+definition.)
+
+**Observation**: the three S-win boards (n = 4, 7, 8) are exactly the three
+boards whose certificates are parity-locked, and the six F-win boards are
+exactly the six that are not. This correlation is consistent with the
+Cycle-4 finding that parity locking on n = 2, 3 does not separate F from S
+(those boards are F-win but parity-locked on the full reachable set); the
+certificate-level statement differs because certificates are pruned DAGs,
+not the full reachable graph.
+
+**Certificate-K is a lower bound**: e.g. on n = 4 the exact maximal safe
+set has 7 stones (Cycle 1) but the certificate only reaches 6. The
+certificate values 1,3,5,6,9,11,14,14,17 are therefore lower bounds on
+$K_n$, exact only where the certificate happens to contain a maximal path.
 
 ## Caveats and next steps
 

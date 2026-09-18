@@ -229,15 +229,25 @@ int main(int argc, char** argv) {
     N = argc > 1 ? atoi(argv[1]) : 7;
     unsigned memo_pow = argc > 2 ? (unsigned)atoi(argv[2]) : 27;
     long long budget = argc > 3 ? atoll(argv[3]) : 2000000;
+    int K_given = argc > 4 ? atoi(argv[4]) : -1; // skip K computation if given
     build_geometry();
     memo = new Memo(memo_pow);
     auto t0 = std::chrono::steady_clock::now();
 
-    int K = max_safe_size(0);
+    int K;
+    double secA;
+    if (K_given > 0) {
+        K = K_given;
+        secA = 0.0;
+        fprintf(stderr, "K_%d = %d (given, skipped)\n", N, K);
+    } else {
+        K = max_safe_size(0);
+        auto t1 = std::chrono::steady_clock::now();
+        secA = std::chrono::duration<double>(t1 - t0).count();
+        fprintf(stderr, "K_%d = %d (%.1fs)\n", N, K, secA);
+    }
     auto t1 = std::chrono::steady_clock::now();
-    double secA = std::chrono::duration<double>(t1 - t0).count();
     printf("{\"n\": %d, \"K\": %d, \"K_seconds\": %.2f,\n", N, K, secA);
-    fprintf(stderr, "K_%d = %d (%.1fs)\n", N, K, secA);
 
     printf(" \"layers\": [");
     bool first = true;
