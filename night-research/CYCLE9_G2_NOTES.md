@@ -51,6 +51,20 @@ bottleneck: 12 (five separate dips to 12)
 
 Restricted-union connectivity threshold: 11 (`connectivity_threshold_on_union`).
 
+### Path-witness occupancy of size-12 dips (one explicit path — NOT universal)
+
+On Cycle 8A's explicit full-board path, every size-12 board has:
+- **center = 0**
+- **(0,3) = 1**
+- **(2,3) = 0**
+- **(2,2) ≥ 1** (often 2)
+- corners = 2
+
+> Interpretation (path-witness): the phase-transition corridor dips into a
+> regime that **uses the (2,2) orbit forbidden at size 14**, and drops the
+> center. The +1 crystal's banned orbit becomes legal exactly when leaving
+> the max layer. Not claimed for every min-width path.
+
 ## n=6 contrast
 
 n=6 has 1-swap edges (ρ=1 on 296/464 max sets), so some distinct max pairs
