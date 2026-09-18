@@ -24,6 +24,7 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    Exactly two occupancy vectors occur:
    - **A** = (2,3,2,0,1,3,2,0,0,1) — center occupied, corners=2
    - **B** = (3,1,2,1,1,3,1,0,2,0) — no center, corners=3, uses both (0,3) and (2,3)
+   Corner count at K=14 is **only** 2 or 3 (corners=4 → 0 COMPLETE; corners=1 census 0).
 
 3. **Phase characterization (COMPLETE counts).**
    - \(\mathcal{M}_A = \{S : \#\text{corners}=2,\ (3,3)\in S\}\), \(|\mathcal{M}_A|=8\) COMPLETE.
