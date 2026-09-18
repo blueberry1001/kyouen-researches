@@ -250,10 +250,17 @@ exactly on n = 1..6 — is **refuted at n = 7**.
 (0,4) (2,5) (4,5) (5,6) (0,7) (4,7) (5,7)
 ```
 
-- n = 8 target 16 and n = 9 target 18: the single-word bitboard solver only
-  supports V ≤ 64 (n = 9 has V = 81 and needs 128-bit masks); n = 8 target 16
-  is running / results recorded in `cycle6-maxsafeset-n8-16.json`.
+- **n = 8, target 16: UNSAT** (exhaustive proof, 348,155,856 nodes) — so
 
+$$\boxed{K_8 = 15}$$
+
+  which happens to equal $2n-1$ at n = 8; the $2n-1$ pattern is broken
+  *only* at n = 7 so far.
+
+- n = 9 target 18: the single-word bitboard solver only supports V ≤ 64
+  (n = 9 has V = 81 and needs 128-bit masks); cert gives $K_9 \ge 17 = 2n-1$,
+  so deciding whether $K_9 = 17$ or $\ge 18$ needs the 128-bit solver
+  (open).
 
 ## Caveats and next steps
 

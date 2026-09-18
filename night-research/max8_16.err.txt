@@ -1,0 +1,2 @@
+n=8 V=64 quads=14564 target=16
+done: UNSAT after 348155856 nodes
