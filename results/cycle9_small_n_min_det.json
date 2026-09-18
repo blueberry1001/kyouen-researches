@@ -1,0 +1,54 @@
+{
+  "package": "cycle9_small_n_min_det",
+  "boards": [
+    {
+      "n": 4,
+      "K": 7,
+      "n_quads": 194,
+      "n_sets": 64,
+      "nodes": 4029,
+      "min_det_hist": {
+        "4": 48,
+        "5": 8,
+        "3": 8
+      },
+      "min_det_min": 3,
+      "distinct_occupancy": 4,
+      "one_swap_edge_endpoints": 144,
+      "seconds": 0.08,
+      "evidence": "complete enumeration of safe K-sets (K known max)"
+    },
+    {
+      "n": 3,
+      "K": 5,
+      "n_quads": 14,
+      "n_sets": 56,
+      "nodes": 341,
+      "min_det_hist": {
+        "4": 12,
+        "5": 44
+      },
+      "min_det_min": 4,
+      "distinct_occupancy": 5,
+      "one_swap_edge_endpoints": 512,
+      "seconds": 0.01,
+      "evidence": "complete enumeration of safe K-sets (K known max)"
+    },
+    {
+      "n": 5,
+      "K": 9,
+      "n_quads": 826,
+      "n_sets": 100,
+      "nodes": 68267,
+      "min_det_hist": {
+        "4": 28,
+        "3": 72
+      },
+      "min_det_min": 3,
+      "distinct_occupancy": 9,
+      "one_swap_edge_endpoints": 160,
+      "seconds": 1.96,
+      "evidence": "complete enumeration of safe K-sets (K known max)"
+    }
+  ]
+}
