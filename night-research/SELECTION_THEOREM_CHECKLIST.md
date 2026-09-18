@@ -17,7 +17,9 @@ For each claim, evidence type and where to re-run.
 | exactly 2 occupancy vectors A,B | enum of 16; `cycle11_verify.py` |
 | corners=2 ∧ require center @14 | 8 COMPLETE |
 | corners=3 ∧ require center @14 | 0 COMPLETE |
+| corners=2 ∧ require both B-orbits @14 | 0 seen (incomplete; census says 0) |
 | corners=3 ∧ require both B-orbits @14 | 8 COMPLETE (=B) |
+| require center ∧ corners=2 @14 | 8 COMPLETE (=A) |
 | require (0,2) ∧ corners=3 @14 | 8 COMPLETE (= all B) |
 | forbid B∪(2,2) @14 | 8 COMPLETE (=A) |
 | forbid center∪(2,2) @14 | 8 COMPLETE (=B) |
