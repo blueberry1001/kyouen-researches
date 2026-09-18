@@ -32,6 +32,7 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - `corners=3 ∧ require center` → **0 complete**.
    - center ∧ (0,3) or (2,3) or (2,2) @14 = 0 COMPLETE.
    - no-center ∧ forbid(0,3)∧forbid(2,3) @14 = 0 COMPLETE.
+   - forbid (0,3) alone @14 = **8 COMPLETE** (exactly phase A).
 
 4. **Mandatory / forbidden orbits (COMPLETE forbid-orbit).**
    Every S∈ℳ7 meets orbits `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)` @14.
