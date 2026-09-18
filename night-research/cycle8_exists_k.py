@@ -75,15 +75,20 @@ class TargetSearch:
             return self._res(t0, "forced_forbidden")
         all_cells = (1 << self.v) - 1
         mask = 0
-        ccount = [0] * self.v
         for u in stones(self.forced, self.v):
             mask |= 1 << u
-            for o in self.triples[u]:
-                pc = bin(o & mask).count("1")
-                if pc == 2:
+        # A forced set is unsafe only if some forbidden quad is fully contained.
+        for o_list in self.triples:
+            for o in o_list:
+                # o is a triple; the completing point is any bit not in o that
+                # shares a quad — cheaper: check all quads via triples of each point.
+                pass
+        for p in range(self.v):
+            if not (mask >> p) & 1:
+                continue
+            for o in self.triples[p]:
+                if (mask & o) == o:
                     return self._res(t0, "forced_unsafe")
-                # will fill ccount after all forced placed
-        # recompute ccount after full forced mask
         ccount = [0] * self.v
         for u in stones(self.forced, self.v):
             for o in self.triples[u]:
