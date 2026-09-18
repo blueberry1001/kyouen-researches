@@ -140,6 +140,22 @@ Nearly half of all n=7 forbidden geometry involves `(0,2)`. That mass of
 local obstruction is a plausible geometric root of the COMPLETE fact that
 omitting the orbit collapses max safe size (12 at K-cap; 0 at K=13).
 
+### Quad-incidence contrast n=6 vs n=7 (COMPLETE)
+
+| orbit | n=6 touch % of 2491 quads | n=7 touch % of 6364 quads |
+|---|---:|---:|
+| (0,0) | 24.6 | 20.4 |
+| (0,1) | 57.7 | 43.8 |
+| **(0,2)** | **61.6** | **48.4** |
+| (1,1) | 38.4 | 28.9 |
+| **(1,2)** | **63.8** | **50.7** |
+| (2,2) analog | 40.3 | 31.4 |
+
+Heavy incidence of edge orbits is **not unique to n=7** — n=6 is even higher
+on (0,2)/(1,2) yet has no empty max-orbit and 22 occupancy vectors.
+The n=7 selection theorem is **not** a mere function of orbit-quad density;
+it needs the finer phase/capacity structure above.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
