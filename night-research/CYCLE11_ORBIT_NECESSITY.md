@@ -84,6 +84,25 @@ that orbit.
 > (COMPLETE max=12). Mandatory orbits are capacity-critical, not merely
 > census-correlated.
 
+## n=6 forbid-orbit @K=11 (COMPLETE)
+
+Forbidding any of the census-mandatory orbits `(0,0),(0,1),(0,2),(1,2)`
+gives **count=0 complete** at K=11. n=6 mandatory orbits are truly
+mandatory, not just frequent.
+
+## n=7 size-13 layer (partial COMPLETE)
+
+| constraint @K=13 | result |
+|---|---:|
+| force one `(2,2)` cell | ≥141 sets (incomplete count) |
+| corners=4 | **0** complete |
+| center ∧ require `(2,2)` | **24** complete |
+
+> At K=14, center and (2,2) are incompatible (max 13 / force center+22 = 0
+> at 14). At K=13 they **coexist** (24 COMPLETE with center+(2,2)).
+> The exclusivity is a **maximum-layer** phenomenon, not a global ban on the
+> pair. Corners=4 is impossible already at 13.
+
 ## Lemma
 
 > The n=7 +1 maximum family is a **highly selected** object: six cell orbits
