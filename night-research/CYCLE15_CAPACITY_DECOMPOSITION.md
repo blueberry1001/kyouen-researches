@@ -167,7 +167,8 @@ it needs the finer phase/capacity structure above.
 | (0,0) corners | 13 | incomplete | −1 (seen) |
 | (2,2) forced | 13 | yes | −1 (cannot *use*) |
 | **(0,2)** | **12** | yes | **−2** |
-| (0,2)∧(1,2) | **11** | yes | **−3** |
+| (0,2)∧(1,2) | **11** | yes (also 0@12 COMPLETE) | **−3** |
+| (0,2)∧(0,1) | **11** | yes (696@11) | **−3** |
 | center+(2,3) together | 12 | yes | −2 |
 
 Edge orbits (0,2)/(1,2) carry the largest capacity; other K=14-mandatory
