@@ -47,6 +47,28 @@ K=13 SAMPLE occ: 150 patterns / 1116 seen; center+(2,2) legal at 13 (24 COMPLETE
 corners=4 still 0 at 13. Forbid (0,2) @size12 layer is diffuse (176 patterns) and uses (2,2).
 Selection/exclusivity are **K=14 peak phenomena**.
 
+## Capacity decomposition (Cycle 15 COMPLETE)
+
+Let M = six mandatory orbits. Then:
+- max on M only (forbid center, (0,3), (2,3), (2,2)) = **13** COMPLETE
+- max on M∪{center} (forbid B-bundle∪(2,2)) = **14** COMPLETE (8 = A)
+- max on M∪{(0,3),(2,3)} (forbid center∪(2,2)) = **14** COMPLETE (8 = B)
+- (2,2) never lifts above 13; center and B-bundle cannot combine at 14
+
+> K7=2n is bought by a **mutually exclusive** phase extension of a skeleton
+> that already supports 2n−1. See `CYCLE15_CAPACITY_DECOMPOSITION.md`.
+
+### n=6 skeleton contrast (COMPLETE)
+
+| n=6 constraint | max |
+|---|---:|
+| forbid (2,2) only | **11** COMPLETE (104 at 11) — full K achieved without (2,2) |
+| forbid (1,1)∧(2,2) | **10** COMPLETE (1272 at 10) |
+| forbid (1,1) at K=11 | **8** COMPLETE (some max sets omit (1,1)) |
+
+n=6 already attains 2n−1 on a reduced orbit set; n=7’s +1 requires the
+exclusive phase extension.
+
 ## What this does / does not prove
 
 **Does:** a finite COMPLETE selection theorem for the n=7 maximizing family,
@@ -70,6 +92,8 @@ full n=8 classification; K9; full Grundy n=7.
 - `night-research/CYCLE11_ORBIT_NECESSITY.md`
 - `night-research/CYCLE12_K13_LAYER.md`, `CYCLE12_OMIT_MANDATORY.md`
 - `night-research/CYCLE14_CAPACITY_NEIGHBORHOOD.md`
+- `night-research/CYCLE14H_N8_CONSTRAINED.md`
+- `night-research/CYCLE15_CAPACITY_DECOMPOSITION.md`
 - `night-research/CYCLE9_G1_NOTES.md`, `CYCLE9_G2_NOTES.md`
 - `night-research/CYCLE9H_K9_128BIT_DESIGN.md`
 - `docs/compose/spec/cycle8-n7-structure-explain.md`
