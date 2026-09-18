@@ -38,7 +38,8 @@ For each claim, evidence type and where to re-run.
 | (2,2) forced | 13 |
 | center+(0,3) | 13 |
 | center+(2,3) | 12 |
-| require corners orbit @14 | ≥14 incomplete (census 16/16) |
+| forbid (0,0) corners @14 | **0 COMPLETE** |
+| require corners orbit @14 | ≥15 incomplete (census 16/16) |
 | forbid (0,1) @14 | **0 COMPLETE** |
 | forbid (0,2) @14 | 0 COMPLETE |
 | forbid (1,2) @14 | 0 COMPLETE |
