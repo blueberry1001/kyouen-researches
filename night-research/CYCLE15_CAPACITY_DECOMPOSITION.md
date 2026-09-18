@@ -104,6 +104,19 @@ is a **safe 11-set** on M with occupancy (3,1,2,1,3,1). Target DFS with that
 B-phase +1 is realized by restoring the full B-bundle onto an M-core, not by
 center. Matches: partial bundle alone max=13; full bundle max=14.
 
+## Orbit (0,2) is already mandatory at K=13 (COMPLETE)
+
+| constraint | result |
+|---|---|
+| forbid orbit (0,2) @K=13 | **count=0 complete** |
+| forbid (0,2) @K=12 | max=**12** complete |
+| forbid (0,2)∧(1,2) | max=**11** complete (3592 @11) |
+
+Omitting `(0,2)` is impossible already at size 13; omitting it **and** `(1,2)`
+drops capacity to 11 = 2n−3. Mandatory-orbit structure is not merely a
+max-layer census artifact — `(0,2)` is a hard geometric requirement from
+size 13 upward.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
