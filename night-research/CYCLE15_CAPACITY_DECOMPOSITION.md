@@ -37,6 +37,27 @@ This is the closest available explanation of “why n=7 can do +1”: the +1 is
 not free on the skeleton; it is purchased by committing to one of two
 mutually exclusive orbit extensions.
 
+## Skeleton size-13 occupancy (COMPLETE occ)
+
+`occ 7 13` with forbid center,(0,3),(2,3),(2,2): **88 sets, only 6 patterns**.
+
+| occupancy on M-orbits (order 00,01,02,11,12,13) | count |
+|---|---:|
+| (2,2,3,1,3,2) | 8 |
+| (2,3,2,1,3,2) | 8 |
+| **(2,3,3,1,3,1)** | **32** |
+| (3,2,2,1,3,2) | 8 |
+| (3,2,3,1,3,1) | 24 |
+| (3,3,3,1,0,1) | 8 |
+
+Compare phase A @14: M-occupancy (2,3,2,1,3,2) + center=1 → the skeleton
+pattern (2,3,2,1,3,2) is exactly **A with the center stone removed** (size 13).
+Adding the center to that shape is how phase A buys the +1.
+
+Unrestricted K=13 (SAMPLE) had 150 patterns; skeleton-only K=13 has **6**
+(COMPLETE) — the skeleton is still selective, and the +1 is a single-orbit
+commitment on top of a near-A / near-B 13-shape.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
