@@ -58,6 +58,16 @@ Unrestricted K=13 (SAMPLE) had 150 patterns; skeleton-only K=13 has **6**
 (COMPLETE) — the skeleton is still selective, and the +1 is a single-orbit
 commitment on top of a near-A / near-B 13-shape.
 
+### n=5 skeleton contrast (COMPLETE)
+
+| n=5 constraint | max |
+|---|---:|
+| forbid all 4 mandatory orbits | **4** COMPLETE |
+| forbid (1,1)∧center `(2,2)` | **9** COMPLETE — full K=2n−1 without diagonals/center |
+
+n=5 reaches 2n−1 on a **reduced** orbit set (no phase extension needed).
+n=7’s 2n requires the exclusive A/B extension of a skeleton that only does 2n−1.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
