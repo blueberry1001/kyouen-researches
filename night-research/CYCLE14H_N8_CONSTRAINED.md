@@ -18,6 +18,20 @@ On n=7 K=14, require(2,2)=0 COMPLETE, require center XOR B-orbits, and five
 orbits are mandatory. On n=8 K=15 SAMPLE, **both** (2,2) and the center-block
 are freely usable, and most orbits are optional (witnesses omit them).
 
+## Harvest of 6 unique witnesses (SAMPLE)
+
+Constrained `first` runs produced 6 distinct K=15 masks
+(`results/cycle14h_n8_witnesses.json`):
+
+- ρ (cap3): **1 on 2 sets, 2 on 4 sets** (mixed — neither all-n=7 nor all-soft)
+- Occupancy: **6 distinct patterns**; (2,2) used on 5/6; center-block on 3/6
+- Corners: {1,2,3} appear
+- Pair-distance histogram among the 6 includes **d=4** (and 7,9–13)
+  — **unlike n=7**, where every pair of max sets has d≥5
+
+> SAMPLE contrast: n=8 max-safe pairs can sit at exchange distance 4;
+> n=7’s 16-set family has empty d≤4. Crystal isolation does not transfer.
+
 ## Non-claims
 - Counts are lower bounds under a node cap.
 - corners 0/4 may still exist at K=15 beyond the cap.
