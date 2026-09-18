@@ -41,6 +41,8 @@ For each claim, evidence type and where to re-run.
 | forbid (0,0) corners @14 | **0 COMPLETE** |
 | forbid (0,1) @14 | **0 COMPLETE** |
 | forbid (0,2) @14 | 0 COMPLETE |
+| forbid (1,2) @14 | 0 COMPLETE |
+| forbid (1,1) @14 | 0 seen (census 16/16) |
 | forbid (0,2) @13 | **0 COMPLETE** |
 | forbid (1,2) @13 | **0 COMPLETE** |
 | forbid (0,2)∧(1,2) | max **11** COMPLETE (3592@11; 0@12 COMPLETE) |
