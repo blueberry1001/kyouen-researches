@@ -37,6 +37,18 @@ This is the closest available explanation of “why n=7 can do +1”: the +1 is
 not free on the skeleton; it is purchased by committing to one of two
 mutually exclusive orbit extensions.
 
+## Partial phase extensions (COMPLETE)
+
+| allowed | max | complete? |
+|---|---:|---|
+| M ∪ {(0,3)} only (forbid center,(2,3),(2,2)) | **13** (288 @13) | yes |
+| M ∪ {(2,3)} only (forbid center,(0,3),(2,2)) | **13** (304 @13) | yes |
+| M ∪ {(0,3),(2,3)} (forbid center,(2,2)) | **14** (8 @14) | enum/require COMPLETE |
+| M ∪ {center} (forbid B∪(2,2)) | **14** (8 @14) | yes |
+
+> The B-phase +1 requires the **full B-bundle** `(0,3)∪(2,3)`. Either orbit
+> alone only reaches 2n−1=13. Center alone is sufficient for phase A.
+
 ## Skeleton size-13 occupancy (COMPLETE occ)
 
 `occ 7 13` with forbid center,(0,3),(2,3),(2,2): **88 sets, only 6 patterns**.
