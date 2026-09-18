@@ -117,6 +117,18 @@ drops capacity to 11 = 2n−3. Mandatory-orbit structure is not merely a
 max-layer census artifact — `(0,2)` is a hard geometric requirement from
 size 13 upward.
 
+### Orbit necessity at K=13 (forbid-orbit first@13)
+
+| orbit | @13 verdict |
+|---|---|
+| `(0,2)` | **mandatory** (count=0 COMPLETE) |
+| `(0,1)` | optional (count=24 COMPLETE) |
+| `(0,0)` corners | optional (≥15 incomplete) |
+| `(1,2)`,`(1,3)`,`(1,1)` | optional/incomplete witnesses exist |
+
+Only `(0,2)` is proven mandatory at 13; the other five “K=14 mandatory”
+orbits become required **only at the maximum layer**.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous

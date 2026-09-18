@@ -31,7 +31,10 @@ For each claim, evidence type and where to re-run.
 | (2,2) forced | 13 |
 | center+(0,3) | 13 |
 | center+(2,3) | 12 |
-| forbid (0,2) | 12 |
+| forbid (0,2) @14 | 0 COMPLETE |
+| forbid (0,2) @13 | **0 COMPLETE** |
+| forbid (0,2)∧(1,2) | max **11** COMPLETE |
+| forbid (0,1) @13 | 24 COMPLETE (optional at 13) |
 | corners=4 | ≤12 (no 13, no 14) |
 | skeleton M only | 13 COMPLETE |
 | M∪{center} | 14 (8 sets) COMPLETE |
