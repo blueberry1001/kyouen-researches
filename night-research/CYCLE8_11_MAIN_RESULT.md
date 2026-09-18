@@ -42,6 +42,12 @@ Evidence labels are mixed COMPLETE / SAMPLE; see per-cycle notes for detail.
 17. Occupancy vector counts: n=4:4, n=5:9, n=6:22, n=7:**2**.
 18. n=6 uses (2,2) in 360/464 max sets — n=7 crystal does not generalize.
 
+### Cycle 12 — maximum-layer sharpness
+19. K=13 SAMPLE occ: **150 patterns / 1116 seen** vs K=14’s 2 COMPLETE.
+20. center ∧ require(2,2) @13: **24 COMPLETE** — exclusivity relaxes below max.
+21. corners=4 still impossible at 13 (COMPLETE 0).
+22. Omitting orbit (0,2) costs exactly 2 stones: max=**12 COMPLETE**.
+
 ## Compressed lemma (main result candidate)
 
 > **n=7 Cycle 8–11 selection theorem (computer-assisted, complete censuses).**
