@@ -26,8 +26,10 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - **B** = (3,1,2,1,1,3,1,0,2,0) — no center, corners=3, uses both (0,3) and (2,3)
 
 3. **Phase characterization (COMPLETE counts).**
-   - \(\mathcal{M}_A = \{S : (3,3)\in S,\ \#\text{corners}=2\}\), \(|\mathcal{M}_A|=8\).
+   - \(\mathcal{M}_A = \{S : (3,3)\in S,\ \#\text{corners}=2\}\), \(|\mathcal{M}_A|=8\)
+     (`corners=2 ∧ require center` → 8 complete).
    - \(\mathcal{M}_B = \{S : (3,3)\notin S,\ \#\text{corners}=3,\ S\cap(0,3)\neq\emptyset,\ S\cap(2,3)\neq\emptyset\}\), \(|\mathcal{M}_B|=8\).
+   - `corners=3 ∧ require center` → **0 complete**.
    - center ∧ (0,3) or (2,3) or (2,2) @14 = 0 COMPLETE.
    - no-center ∧ forbid(0,3)∧forbid(2,3) @14 = 0 COMPLETE.
 
