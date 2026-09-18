@@ -57,6 +57,12 @@ Let M = six mandatory orbits. Then:
 
 > K7=2n is bought by a **mutually exclusive** phase extension of a skeleton
 > that already supports 2n−1. See `CYCLE15_CAPACITY_DECOMPOSITION.md`.
+>
+> Refined: partial B-bundle (only (0,3) or only (2,3)) peaks at **13** COMPLETE;
+> full B-bundle required for 14. Orbit `(0,2)` is mandatory already at **K=13**
+> COMPLETE; it touches **48%** of n=7 quads — but n=6 has even higher edge-orbit
+> incidence and still diffuse maxima, so **density alone is rejected** as the
+> explanation (see Cycle 16 note in the decomposition file).
 
 ### n=6 skeleton contrast (COMPLETE)
 
