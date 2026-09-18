@@ -1,9 +1,9 @@
 ---
 feature: cycle8-n7-structure-explain
-status: in-progress
+status: review-passed
 updated: 2026-09-19
 branch: cycle8-n7-structure
-commits: 2d3855a..HEAD  # filled at delivery
+commits: 2d3855a..dc14860 + review polish  # T6 still open if n=8 sample runs
 ---
 
 # Cycle 8 — Why only n=7 attains K=2n among nearby boards
@@ -124,4 +124,4 @@ UNSAT.
 - [x] T4: C determining sets — acceptance: for each of 16 n=7 sets, min determining |D| with witness D; A/B comparison (covers: S2.C)
 - [x] T5: D n=6 contrast — acceptance: same invariants on 464 n=6 sets; table of universal-n=7 vs n=6 failure counts (covers: S2.D)
 - [ ] T6: E/F/G opportunistic — acceptance: only if A–D strong; sample stats or design notes with clear sample-size labels (covers: S2.E)
-- [ ] T7: Verify + review + finalize — acceptance: independent scripts pass; reviewer criticals fixed; report+spec committed (covers: S2)
+- [x] T7: Verify + review + finalize — acceptance: independent scripts pass; reviewer criticals fixed; report+spec committed (covers: S2). Review 2026-09-19: `cycle8_verify_lemmas.py` all PASS; no critical errors; non-critical report fixes in `night-research/cycle8_review_notes.md`
