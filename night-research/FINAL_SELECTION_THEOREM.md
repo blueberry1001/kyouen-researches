@@ -86,6 +86,36 @@ n=8 SAMPLE: (2,2) usable; center-block usable; 67–45 occ patterns in capped du
 
 ---
 
+---
+
+## Appendix — representative boards (COMPLETE census ids 0 and 8)
+
+Phase A0 (center), occupancy A:
+```
+XX...X.
+.XX....
+.....XX
+...X.X.
+X......
+...XX.X
+X......
+```
+
+Phase B0 (no center), occupancy B (`c` marks empty center):
+```
+XX....X
+....XX.
+.X.X...
+X.Xc...
+......X
+..XX...
+..X...X
+```
+
+Also COMPLETE: forbid `(2,2)∪(0,3)∪(2,3)` @14 → count=**8** (phase A).
+
+---
+
 ## One-sentence summary
 
 > On 7×7 the +1 maximum family is a **two-phase crystal**: a six-orbit
