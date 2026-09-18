@@ -52,7 +52,10 @@ mutually exclusive orbit extensions.
 
 Compare phase A @14: M-occupancy (2,3,2,1,3,2) + center=1 → the skeleton
 pattern (2,3,2,1,3,2) is exactly **A with the center stone removed** (size 13).
-Adding the center to that shape is how phase A buys the +1.
+That skeleton class has **count=8**; M∪{center} @14 also has **count=8**
+COMPLETE — so only that 13-class extends by the center to K=14.
+The other 80 skeleton 13-sets (5 remaining patterns) do **not** become 14
+by adding center (phase A count is 8 total).
 
 Unrestricted K=13 (SAMPLE) had 150 patterns; skeleton-only K=13 has **6**
 (COMPLETE) — the skeleton is still selective, and the +1 is a single-orbit
