@@ -1,81 +1,75 @@
-# Cycle 8–11 — consolidated main result (n=7 K=14 structure)
+# Cycle 8–14 — consolidated main result (n=7 K=14 structure)
 
-Branch `cycle8-n7-structure`, base `2d3855a`, current tip see `git log`.
-This note is the human-readable compression the overnight cycle aimed for.
-Evidence labels are mixed COMPLETE / SAMPLE; see per-cycle notes for detail.
+Branch `cycle8-n7-structure`, base `2d3855a`.
+Independent verifies: `results/cycle8_verify.json`, `results/cycle11_verify.json` (all PASS).
+C++ regression gate: `results/cycle13_128bit_regression.json` (PASS: 16,464,8,0).
 
-## What is established (COMPLETE unless noted)
+## COMPLETE selection theorem (computer-assisted)
 
-### Inherited (not re-proved)
-- K7=14, 16 max safe sets, 2 D4 orbits (Cycle 6 enum)
-- K6=11 with 464 max sets; K8=15; K4=7; K5=9
-- Winner sequence and certificates unchanged
+On 7×7 kyouen, K7=14 and the maximizing family has **16 sets / 2 D4 phases**.
 
-### Cycle 8 — phase geometry
-1. Unique D4 class of 5→5 exchange between center phase A and no-center B.
-2. All 224 thirteen-subsets of max sets uniquely complete → edit-paths between
-   distinct max sets visit size ≤12 (full board); union-restricted width ≤11.
-3. **min_det=2** on all 16 n=7 max sets; **min_det≥3** on all max sets for
-   n=4,5,6 complete enums — locally pin-able only on n=7.
-4. Conditional maxima: (2,2)⇒13; center+(0,3)⇒13; center+(2,3)⇒**12**;
-   corners=4⇒≤12; K=14 corners ∈ {2,3}.
+**Occupancy order:** orbits `(0,0)(0,1)(0,2)(0,3)(1,1)(1,2)(1,3)(2,2)(2,3)(3,3)`.
 
-### Cycle 9 — obstruction depth
-5. Every max set blocks each empty (2,2) cell with **τ∈{3,4}** (not 1-edit).
-6. On A0∪B0, size-14 safe sets = {A0,B0} only; |core|=9 forces grow-both=0
-   for k≥10; explicit A–B path bottlenecks (path-witness) use (2,2) and drop center.
-7. n=8 SAMPLE occ: 53 sets / **45 occupancy patterns**; (2,2) often used.
+1. **Realized vectors (COMPLETE enum):**
+   - A = (2,3,2,0,1,3,2,0,0,1) — 8 sets
+   - B = (3,1,2,1,1,3,1,0,2,0) — 8 sets
+2. **Phase A ≡ center ∧ corners=2** (count=8 COMPLETE).
+3. **Phase B ≡ ¬center ∧ corners=3 ∧ require(0,3)∧require(2,3)** (count=8 COMPLETE).
+4. **Mandatory orbits** (forbid-orbit@14 = 0 COMPLETE for five of them; census 16/16 for all six):
+   `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)`.
+5. **Forbidden orbit:** `(2,2)` never used; force@14 count=0 COMPLETE.
+6. **Exclusivity (COMPLETE zeros):** center ∧ require(0,3)/(2,3)/(2,2) = 0;
+   ¬center ∧ forbid(0,3)∧forbid(2,3) = 0.
+7. **Capacity edges (COMPLETE):** (2,2)⇒max13; center+(0,3)⇒13; center+(2,3)⇒**12**;
+   forbid(0,2)⇒**12**; corners=4⇒≤12; K=14 corners ∈{2,3} only.
+8. **Exchange geometry (COMPLETE on the 16):** unique D4 5→5 template;
+   min_det=2 all 16; no 1-swap; d*=5; all 224 thirteen-subsets uniquely complete;
+   edit-paths between distinct max sets visit size ≤12 (full board) / ≤11 (union).
+9. **τ≥3** to free any empty (2,2) cell from any max set (COMPLETE blockers on 16×4).
 
-### Cycle 10 — occupancy selection rule (COMPLETE)
-8. Realized K=14 occupancy vectors: **exactly A and B**.
-9. **A ≡ center ∧ corners=2** (count=8 COMPLETE).
-10. **B ≡ ¬center ∧ corners=3 ∧ require(0,3)∧require(2,3)** (count=8 COMPLETE).
-11. center ∧ require(0,3)/(2,3)/(2,2) = **0** COMPLETE.
-12. ¬center ∧ forbid(0,3)∧forbid(2,3) = **0** COMPLETE.
-13. forbid-orbit @14 = 0 COMPLETE for orbits (0,0)(0,1)(0,2)(1,1)(1,2);
-    census also forces (1,3). (2,2) cannot be used.
-14. Theoretical sum=14 vectors under orbit-size caps: 304,752; realized: 2.
+## Contrast (COMPLETE censuses)
 
-### Cycle 11 — n=6 / small-n contrast (COMPLETE censuses)
-15. Mandatory orbit counts: n=4:3/3, n=5:4, n=6:4, n=7:**6**.
-16. Empty orbit at max: **only n=7** has one ((2,2)).
-17. Occupancy vector counts: n=4:4, n=5:9, n=6:22, n=7:**2**.
-18. n=6 uses (2,2) in 360/464 max sets — n=7 crystal does not generalize.
+| | n=4 K=7 | n=5 K=9 | n=6 K=11 | n=7 K=14 |
+|---|---:|---:|---:|---:|
+| # max sets | 64 | 100 | 464 | **16** |
+| mandatory orbits | 3/3 | 4 | 4 | **6** |
+| empty orbit at max | none | none (center optional 44/100) | none ((2,2) used 360/464) | **(2,2)** |
+| occupancy vectors | 4 | 9 | 22 | **2** |
+| min_det min | 3–4 | 3 | 3 | **2** |
+| K vs 2n−1 | 2n−1 | 2n−1 | 2n−1 | **2n** |
 
-### Cycle 12 — maximum-layer sharpness
-19. K=13 SAMPLE occ: **150 patterns / 1116 seen** vs K=14’s 2 COMPLETE.
-20. center ∧ require(2,2) @13: **24 COMPLETE** — exclusivity relaxes below max.
-21. corners=4 still impossible at 13 (COMPLETE 0).
-22. Omitting orbit (0,2) costs exactly 2 stones: max=**12 COMPLETE**.
+n=8 SAMPLE (not complete): 45 occupancy patterns / 53 sets via occ; (2,2) often used;
+forbid-orbit first@15 finds witnesses omitting most orbits — crystal does **not** transfer.
 
-## Compressed lemma (main result candidate)
+## Maximum-layer sharpness
 
-> **n=7 Cycle 8–11 selection theorem (computer-assisted, complete censuses).**
-> On the 7×7 kyouen board, the maximum safe size is K=14 and the maximizing
-> family has exactly 16 sets / 2 D4 phases. A size-14 safe set must meet each
-> of the six orbits (0,0),(0,1),(0,2),(1,1),(1,2),(1,3), must avoid the
-> entire orbit (2,2), and must fall into exactly one of
->   A: center ∧ exactly two corners, or
->   B: no center ∧ exactly three corners ∧ uses both (0,3) and (2,3).
-> The two phases are joined only by a unique D4-class 5→5 exchange; no
-> size-13 corridor exists between distinct max sets; every max set is
-> determined by two stones (min_det=2) yet is exchange-isolated (d*≥5).
-> On n=6 the analogous census is diffuse (4 mandatory orbits, (2,2) used,
-> 22 occupancy vectors, min_det≥3, 1-swap edges exist).
+K=13 SAMPLE occ: 150 patterns / 1116 seen; center+(2,2) legal at 13 (24 COMPLETE);
+corners=4 still 0 at 13. Forbid (0,2) @size12 layer is diffuse (176 patterns) and uses (2,2).
+Selection/exclusivity are **K=14 peak phenomena**.
 
-This is **not** yet a board-size proof of why K7=2n; it is a complete
-structural selection theorem for the maximizing family, with sharp n=6
-(and n=4/5, n=8-sample) contrast.
+## What this does / does not prove
 
-## Open (highest value)
-1. Derive the selection theorem from forbidden-quads geometry alone.
-2. Explain why n=7 reaches 2n while n=6/8 sit at 2n−1.
-3. n=8 complete orbit-necessity census if/when affordable.
-4. K9 only after 128-bit regression (design in `CYCLE9H_K9_128BIT_DESIGN.md`).
+**Does:** a finite COMPLETE selection theorem for the n=7 maximizing family,
+with sharp n=4/5/6 censuses and n=8 sample contrast; unique phase-exchange
+template; min_det / isolation paradox; capacity map around the peak.
 
-## Key files
-- `night-research/CYCLE8_N7_STRUCTURE.md`
+**Does not:** a board-size derivation of K7=2n from first principles;
+full n=8 classification; K9; full Grundy n=7.
+
+## Open (priority)
+1. Geometric proof of the selection theorem from forbidden quads alone.
+2. Why n=7 reaches 2n while neighbors sit at 2n−1.
+3. n=8 complete orbit-necessity if affordable.
+4. K9 128-bit implementation **after** keeping the C++ regression gate green
+   (`CYCLE9H_K9_128BIT_DESIGN.md`); no long UNSAT from design alone.
+
+## File index
+- `night-research/CYCLE8_N7_STRUCTURE.md` — cycle 8 narrative
+- `night-research/CYCLE8_11_MAIN_RESULT.md` — this family of summaries
 - `night-research/CYCLE10_OCCUPANCY_SELECTION.md`
 - `night-research/CYCLE11_ORBIT_NECESSITY.md`
+- `night-research/CYCLE12_K13_LAYER.md`, `CYCLE12_OMIT_MANDATORY.md`
+- `night-research/CYCLE14_CAPACITY_NEIGHBORHOOD.md`
 - `night-research/CYCLE9_G1_NOTES.md`, `CYCLE9_G2_NOTES.md`
+- `night-research/CYCLE9H_K9_128BIT_DESIGN.md`
 - `docs/compose/spec/cycle8-n7-structure-explain.md`
