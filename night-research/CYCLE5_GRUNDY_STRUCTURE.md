@@ -82,23 +82,70 @@ Orbit-uniformity is expected (D4 is a game automorphism), but the *absence*
 of g = 1 from an entire layer is a genuine mex-gap phenomenon: no 2-stone
 4×4 position is equivalent to a nim-heap of size 1.
 
-## F4. Layer-wise max nimber is unimodal with unit-slope decay
+## F4 (upgraded to theorem). Grundy ceiling and early saturation
 
-Max nimber per stone-count layer:
+Let $K_n$ be the maximal safe-set size on the n×n board and
 
-| n | k=1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
-|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| 4 | 1 | 5 | 4 | 3 | 2 | 1 | 0 | | | | |
-| 5 | 3 | 2 | 6 | 5 | 4 | 3 | 2 | 1 | 0 | | |
-| 6 | 0 | 3 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+$$M_n(k)=\max_{|S|=k} g(S)$$
 
-On n = 4, 5, 6 the max nimber per layer decreases **strictly by 1** per
-additional stone after the peak: `max_g(k) = peak − (k − peak_k)`, down to 0
-at the terminal layer. Peaks: k = 2 (n = 4), k = 3 (n = 5, 6).
+the maximum Grundy number over reachable safe k-stone positions. Every child
+of a k-stone position lies in layer k+1, and if $g(S)=m$ then mex requires a
+child with value $m-1$; hence
+
+$$M_n(k)\le M_n(k+1)+1.$$
+
+Since $M_n(K_n)=0$ at the terminal layer, induction gives the universal
+**Grundy ceiling**
+
+$$\boxed{\,M_n(k)\le K_n-k\,}$$
+
+and the ceiling deficit $D_n(k)=K_n-k-M_n(k)\ge0$ satisfies
+$D_n(k)\ge D_n(k+1)$: deficits never shrink with depth, and **once the
+ceiling is attained ($D_n(k)=0$), it is attained at every later layer**.
+Moreover, if a k-stone position $S$ attains the ceiling, $g(S)=K_n-k=m$,
+then mex forces its legal children to carry *exactly* the consecutive nimber
+set $\{0,1,\dots,m-1\}$ (none can exceed $m-1$ by the ceiling), so a
+**saturation chain** $m\to m-1\to\cdots\to1\to0$ runs from $S$ all the way
+to a terminal position.
+
+The measured max-nimber profiles
+
+| n | K | k=1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| 4 | 7 | 1 | **5** | 4 | 3 | 2 | 1 | 0 | | | | |
+| 5 | 9 | 3 | 2 | **6** | 5 | 4 | 3 | 2 | 1 | 0 | | |
+| 6 | 11 | 0 | 3 | **8** | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+
+are therefore **not** a coincidental "unit-slope decay": each bold entry is a
+single equality $M_n(k)=K_n-k$, and every later entry is forced by the
+theorem. The genuine experimental content is the **saturation onset**
+
+$$\boxed{\;\sigma_4=2,\qquad \sigma_5=3,\qquad \sigma_6=3\;}$$
+
+i.e. on 4×4 the ceiling is already attained with just 2 stones on the board,
+and on 5×5 / 6×6 with 3 stones. The sequences $5,4,3,2,1,0$ etc. after the
+peak carry no extra information.
 
 On n = 6 the k = 1 layer is uniformly g = 0 (all 36 first moves win, matching
 the known density-1 classification), and the k = 2 layer uses only g ∈ {1,3}
 — again with gaps ({0,2} absent).
+
+**Corollary (cheap n ≥ 7 test).** To extend the table one does *not* need the
+full Grundy distribution: determine $K_n$, then search shallow layers for a
+single position with $g(S)=K_n-|S|$. The first such layer is $\sigma_n$, and
+$M_n(k)=K_n-k$ for all $k\ge\sigma_n$ follows without further computation.
+
+**Verification on existing data** (`verify_saturation.py`,
+`cycle6-saturation-verify.json`): full deficit profiles
+
+| n | K | D(0) | D(1) | D(2) | D(3) | D(4..K) | σ |
+|--:|--:|--:|--:|--:|--:|:--:|--:|
+| 4 | 7 | 7 | 5 | **0** | 0 | all 0 | 2 |
+| 5 | 9 | 8 | 5 | 5 | **0** | all 0 | 3 |
+| 6 | 11 | 10 | 10 | 6 | **0** | all 0 | 3 |
+
+Deficits are non-increasing on every board, and no layer after σ has a
+positive deficit — the theorem's predictions hold on all three exact boards.
 
 ## F5. 6×6 maximal safe sets have exactly 11 stones (464 of them)
 
@@ -114,11 +161,19 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
    first-move set.
 2. **Layer nimber gaps**: on 4×4 the entire 120-position k = 2 layer omits
    g = 1 and g = 4; on 6×6 the k = 2 layer omits g = 0 and g = 2.
-3. **Unit-slope nimber decay**: on n = 4, 5, 6 the per-layer maximum nimber,
-   after its peak, decreases by exactly 1 per added stone down to 0 at the
-   terminal layer. Peak position is k = 2 (n = 4), k = 3 (n = 5, 6).
+3. **Grundy ceiling theorem + early saturation**: universally
+   $M_n(k)\le K_n-k$, the deficit $D_n(k)$ is non-increasing, and one
+   equality $M_n(\sigma)=K_n-\sigma$ forces equality at every deeper layer
+   (with a saturation chain of exact consecutive child nimbers
+   $\{0,\dots,m-1\}$ at each ceiling position). The measured onsets are
+   $\sigma_4=2$, $\sigma_5=\sigma_6=3$ — the ceiling is reached with only
+   2–3 stones on the board.
 4. **6×6 maximal safe sets have exactly 11 stones** (464 of them, all
-   terminal/LOSS), closing the Cycle-1 maximal-set timeout.
+   terminal/LOSS), closing the Cycle-1 maximal-set timeout. Combined with
+   the Cycle-1 maximal-set data ($K_1=1, K_2=3, K_3=5, K_4=7, K_5=9$), the
+   maximal safe-set size is $K_n=2n-1$ for all $1\le n\le 6$; whether
+   $K_7=13$ is an open exact question (the 7×7 certificate root is LOSS, so
+   at least the empty board reaches $K_7$).
 
 ## Artifacts
 
@@ -126,6 +181,10 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
 - `night-research/grundy_cycle5.py` — Python reference + mex verifier
 - `night-research/cycle5-grundy-n{2,3,4,5}.json`, `cycle5-grundy-n6-cap14.json`
 - `night-research/analyze_cycle5_grundy.py`, `cycle5-grundy-deepdive.json`
+- `night-research/verify_saturation.py`, `cycle6-saturation-verify.json` —
+  ceiling/deficit verification on n=4,5,6
+- `night-research/saturation_cycle6.cpp` — n=7 saturation witness search
+  (K_7 + σ_7; implemented, needs an overnight run)
 - `night-research/CYCLE5_GRUNDY_STRUCTURE.md` — this file
 
 ## Caveats and next steps
@@ -135,7 +194,12 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
 - n = 7 exact Grundy is plausibly feasible (n = 6 enumerated 5.1M reachable
   positions; expect ~10–100× for n = 7) — candidate for an overnight run.
 - Open: does unit-slope decay `max_g(k) = peak − (k − peak_k)` hold on n = 7?
-  What determines the peak nimber (5, 6, 8 for n = 4, 5, 6)?
+  Superseded by the ceiling theorem: the n = 7 question reduces to (a) exact
+  $K_7$ (conjectured 13 = 2·7−1 from the $K_n=2n-1$ pattern on n ≤ 6) and
+  (b) the saturation onset $\sigma_7$ — the first layer containing a position
+  with $g(S)=K_7-|S|$. Everything deeper is then forced.
+- Open: what determines the peak nimber / onset ($\sigma_4=2$,
+  $\sigma_5=\sigma_6=3$)?
 - Open: is the uniform losing-nimber phenomenon (F2) specific to n = 5?
   No other F-board n ≤ 9 has losing first moves, so the next test case is
   the smallest F-board n ≥ 11 that has any losing first move.
