@@ -1,0 +1,52 @@
+{
+  "package": "Cycle12-omit-0,2",
+  "evidence": "SAMPLE size-12 safe sets under forbid orbit (0,2); COMPLETE max=12 inherited",
+  "n_samples": 0,
+  "nodes": 365792,
+  "distinct_occupancy": 0,
+  "uses_22": 0,
+  "uses_center": 0,
+  "top_occupancy": [],
+  "keys": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      3
+    ]
+  ]
+}
