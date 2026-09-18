@@ -1,0 +1,49 @@
+{
+  "package": "Cycle13-128bit-regression",
+  "evidence": "COMPLETE C++ recounts of known values; gate for any future 128-bit K9 work",
+  "results": [
+    {
+      "tool": "night-research/maxsafe_enum.exe count 7 14",
+      "n": 7,
+      "K": 14,
+      "count": 16,
+      "nodes": 12826299,
+      "quads": 6364,
+      "expected": 16,
+      "pass": true
+    },
+    {
+      "tool": "night-research/maxsafe_enum.exe count 6 11",
+      "n": 6,
+      "K": 11,
+      "count": 464,
+      "nodes": 803710,
+      "quads": 2491,
+      "expected": 464,
+      "pass": true
+    },
+    {
+      "tool": "cycle8_b_maxsafe.exe count 7 14 --force 24",
+      "n": 7,
+      "K": 14,
+      "count": 8,
+      "complete": true,
+      "expected": 8,
+      "pass": true,
+      "note": "phase A center-forced"
+    },
+    {
+      "tool": "cycle8_b_maxsafe.exe count 7 14 --force 16",
+      "n": 7,
+      "K": 14,
+      "count": 0,
+      "complete": true,
+      "expected": 0,
+      "pass": true,
+      "note": "force (2,2) cell"
+    }
+  ],
+  "all_pass": true,
+  "k9": "not attempted; design-only in CYCLE9H_K9_128BIT_DESIGN.md; Python full recount timed out — use C++ enum for heavy counts",
+  "python_note": "cycle13_128bit_regression.py full Python DFS is too slow for K=14/11; C++ tools are the regression source of truth"
+}
