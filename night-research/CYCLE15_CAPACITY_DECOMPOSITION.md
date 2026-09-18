@@ -157,6 +157,22 @@ on (0,2)/(1,2) yet has no empty max-orbit and 22 occupancy vectors.
 The n=7 selection theorem is **not** a mere function of orbit-quad density;
 it needs the finer phase/capacity structure above.
 
+## Capacity cost ladder for omitting one orbit (n=7)
+
+| forbidden orbit | max safe | complete? | cost vs 14 |
+|---|---:|---|---:|
+| (0,1) | 13 | yes (24@13) | −1 |
+| (1,1) | 13 | incomplete (347@13) | −1 (seen) |
+| (1,3) | 13 | incomplete (106@13) | −1 (seen) |
+| (0,0) corners | 13 | incomplete | −1 (seen) |
+| (2,2) forced | 13 | yes | −1 (cannot *use*) |
+| **(0,2)** | **12** | yes | **−2** |
+| (0,2)∧(1,2) | **11** | yes | **−3** |
+| center+(2,3) together | 12 | yes | −2 |
+
+Edge orbits (0,2)/(1,2) carry the largest capacity; other K=14-mandatory
+orbits cost only 1 when omitted.
+
 ## Relation to n=6 / n=8
 
 - n=6: K=11=2n−1; no empty orbit; 22 occupancy vectors — no analogous
