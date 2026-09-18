@@ -1,0 +1,74 @@
+{
+  "1": {
+    "n": 1,
+    "nodes": 2,
+    "parity_violations": 0,
+    "deepest_k": 1,
+    "deepest_safe": true,
+    "stones_at_deepest": 1
+  },
+  "2": {
+    "n": 2,
+    "nodes": 5,
+    "parity_violations": 0,
+    "deepest_k": 3,
+    "deepest_safe": true,
+    "stones_at_deepest": 3
+  },
+  "3": {
+    "n": 3,
+    "nodes": 28,
+    "parity_violations": 0,
+    "deepest_k": 5,
+    "deepest_safe": true,
+    "stones_at_deepest": 5
+  },
+  "4": {
+    "n": 4,
+    "nodes": 135,
+    "parity_violations": 0,
+    "deepest_k": 6,
+    "deepest_safe": true,
+    "stones_at_deepest": 6
+  },
+  "5": {
+    "n": 5,
+    "nodes": 1217,
+    "parity_violations": 0,
+    "deepest_k": 9,
+    "deepest_safe": true,
+    "stones_at_deepest": 9
+  },
+  "6": {
+    "n": 6,
+    "nodes": 21712,
+    "parity_violations": 0,
+    "deepest_k": 11,
+    "deepest_safe": true,
+    "stones_at_deepest": 11
+  },
+  "7": {
+    "n": 7,
+    "nodes": 393550,
+    "parity_violations": 0,
+    "deepest_k": 14,
+    "deepest_safe": true,
+    "stones_at_deepest": 14
+  },
+  "8": {
+    "n": 8,
+    "nodes": 8744406,
+    "parity_violations": 0,
+    "deepest_k": 14,
+    "deepest_safe": true,
+    "stones_at_deepest": 14
+  },
+  "9": {
+    "n": 9,
+    "nodes": 13457134,
+    "parity_violations": 0,
+    "deepest_k": 17,
+    "deepest_safe": true,
+    "stones_at_deepest": 17
+  }
+}

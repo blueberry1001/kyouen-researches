@@ -171,11 +171,8 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
 4. **6×6 maximal safe sets have exactly 11 stones** (464 of them, all
    terminal/LOSS), closing the Cycle-1 maximal-set timeout. The maximal
    safe-set sizes for n = 1..6 are $K_n = 1,3,5,7,9,11 = 2n-1$ (Cycle-1
-   exact maximal-set enumeration); whether $K_7 = 13$ remains open (the
-   7×7 certificate contains a 14-stone position, but certificate DAGs are
-   pruned and only store one path per proof obligation, so certificate
-   max-stones is a **lower bound** on $K_7$, not necessarily the exact
-   value).
+   exact maximal-set enumeration) — but **$K_7 = 14 > 13$ refutes
+   $K_n = 2n-1$ at n = 7** (F7), and $K_8 \ge 15$.
 
 ## Artifacts
 
@@ -191,38 +188,72 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
   certificate-level K and parity scan for n=1..9
 - `night-research/CYCLE5_GRUNDY_STRUCTURE.md` — this file
 
-## F6. Certificate-level parity scan (n = 1..9)
+## F6 (corrected). Structural parity law of certificates — and a scan bug
 
-Reading the KYOENC3 certificates directly (`cert_parity_check.py`):
+The original "parity locked vs mixed" scan (`cert_parity_check.py`) was a
+**misreading**. The certificate format forces, on *every* board, that each
+certificate edge adds exactly one stone and flips the outcome
+(WIN → single LOSS witness child; LOSS → all WIN children). Hence every
+certificate node at stone count k satisfies
 
-| n | cert K | parity locked on cert | winner |
-|--:|--:|:--:|:--:|
-| 1 | 1 | mixed | F |
-| 2 | 3 | mixed | F |
-| 3 | 5 | mixed | F |
-| 4 | 6 | **LOCKED** | S |
-| 5 | 9 | mixed | F |
-| 6 | 11 | mixed | F |
-| 7 | 14 | **LOCKED** | S |
-| 8 | 14 | **LOCKED** | S |
-| 9 | 17 | mixed | F |
+$$\text{outcome} = \text{root\_outcome} \oplus (k \bmod 2),$$
 
-("mixed" on F-boards is forced: the k = 0 empty board is WIN on F-boards but
-even, so the parity pattern "even k = LOSS" is broken at the root by
-definition.)
+i.e. all certificates are structurally parity-locked, and the lock's
+*direction* is exactly the root outcome (S-board: even k = LOSS; F-board:
+even k = WIN). The scan labelled F-boards "mixed" only because it assumed
+the S-board pattern.
 
-**Observation**: the three S-win boards (n = 4, 7, 8) are exactly the three
-boards whose certificates are parity-locked, and the six F-win boards are
-exactly the six that are not. This correlation is consistent with the
-Cycle-4 finding that parity locking on n = 2, 3 does not separate F from S
-(those boards are F-win but parity-locked on the full reachable set); the
-certificate-level statement differs because certificates are pruned DAGs,
-not the full reachable graph.
+After fixing the scan bug, the law is verified with **zero violations** on
+all nine certificates (n=1: 2 nodes … n=9: 13,457,134 nodes;
+`verify_parity_law.py`, `cycle6-parity-law-verify.json`). This is therefore
+**not a game-theoretic finding** — it is a structural corollary of the
+certificate format, as anticipated in the review.
 
-**Certificate-K is a lower bound**: e.g. on n = 4 the exact maximal safe
-set has 7 stones (Cycle 1) but the certificate only reaches 6. The
-certificate values 1,3,5,6,9,11,14,14,17 are therefore lower bounds on
-$K_n$, exact only where the certificate happens to contain a maximal path.
+Each certificate's deepest node was also independently re-verified safe
+with our own integer geometry (0 forbidden quads inside):
+n=7: 14 stones, n=8: 14 stones, n=9: 17 stones — making the certificate-K
+values rigorously verified **lower bounds** on $K_n$
+(certificate-K = 1,3,5,6,9,11,14,14,17; e.g. exact $K_4=7$ vs cert 6).
+
+## F7. K_7 = 14 exactly — the K_n = 2n−1 conjecture is refuted
+
+`maxsafeset.cpp` (branch-and-bound over the 4-uniform hypergraph of
+forbidden quads, incremental conflict counters + candidate bitmask,
+validated against the exact values K_4 = 7 (UNSAT@8), K_5 = 9 (UNSAT@10),
+K_6 = 11 (UNSAT@12)) decides:
+
+- **n = 7, target 14: SAT** (direct witness, 14 points listed below),
+- **n = 7, target 15: UNSAT** (exhaustive proof, 8,509,396 nodes).
+
+Together with the certificate lower bound:
+
+$$\boxed{K_7 = 14}$$
+
+and since $2 \cdot 7 - 1 = 13 < 14$, the conjecture $K_n = 2n-1$ — which held
+exactly on n = 1..6 — is **refuted at n = 7**.
+
+7×7 witness (14 stones, independently re-verified 0/6364 quads inside):
+
+```
+(0,0) (1,0) (5,0) (1,1) (2,1) (5,2) (6,2) (3,3)
+(5,3) (0,4) (3,5) (4,5) (6,5) (0,6)
+```
+
+- **n = 8, target 15: SAT** — a 15-stone safe set exists on 8×8
+  (148,269 nodes; witness below, independently re-verified 0/14,564 quads
+  inside). So $K_8 \ge 15$ (cert gives ≥ 14).
+
+8×8 witness (15 stones):
+
+```
+(0,0) (1,0) (2,0) (1,1) (7,1) (3,2) (7,2) (5,3)
+(0,4) (2,5) (4,5) (5,6) (0,7) (4,7) (5,7)
+```
+
+- n = 8 target 16 and n = 9 target 18: the single-word bitboard solver only
+  supports V ≤ 64 (n = 9 has V = 81 and needs 128-bit masks); n = 8 target 16
+  is running / results recorded in `cycle6-maxsafeset-n8-16.json`.
+
 
 ## Caveats and next steps
 
