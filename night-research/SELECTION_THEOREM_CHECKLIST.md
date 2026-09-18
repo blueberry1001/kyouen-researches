@@ -40,6 +40,8 @@ For each claim, evidence type and where to re-run.
 | center+(2,3) | 12 |
 | forbid (0,0) corners @14 | **0 COMPLETE** |
 | require corners orbit @14 | ≥15 incomplete (census 16/16) |
+| corners=4 @14 | **0 COMPLETE** |
+| corners=1 @14 | 0 seen (census 0) |
 | corners=2 @14 | 8 COMPLETE (phase A via require center) |
 | corners=3 @14 | 8 COMPLETE (phase B) |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) |
