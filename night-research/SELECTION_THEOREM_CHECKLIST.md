@@ -65,8 +65,9 @@ For each claim, evidence type and where to re-run.
 ## Contrasts
 
 n=6: no empty orbit; (2,2) used 360/464; 22 occ vectors; min_det≥3;
-forbid(2,2) still max=11 COMPLETE.
-n=8 SAMPLE: (2,2) and center-block flexible; many occ patterns.
+forbid(2,2) still max=11 COMPLETE; higher edge-orbit quad incidence than n=7.
+n=5: center split 44/56 COMPLETE at K=9 — center alone ≠ crystal.
+n=8 SAMPLE: (2,2) and center-block flexible; many occ patterns; d=4 pair exists.
 
 ## Independent verifies
 - `results/cycle8_verify.json` PASS
