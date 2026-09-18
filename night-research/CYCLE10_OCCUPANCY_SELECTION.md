@@ -93,6 +93,19 @@ with the no-center branch *forcing* the B-side orbits on.
 - `night-research/cycle10_occupancy_probes.py`
 - Solver: `night-research/cycle8_b_maxsafe.exe`
 
+## Geometric side of center exclusivity (COMPLETE local lists)
+
+Forbidden quads through center `(3,3)` **and**:
+- some `(0,3)` cell: **180**
+- some `(2,3)` cell: **244**
+- some `(2,2)` cell: **216**
+
+On phase A0, each empty `(0,3)` cell has **5–8** blocker triples already
+inside A0 (examples listed in the probe run: e.g. `(3,0)` blocked by
+`(0,0),(1,0),(5,0)` etc.). On phase B0, the empty center has **7** blockers,
+several using `(0,3)`/`(2,3)` stones — so B’s exclusive orbits are exactly
+what pin the center out.
+
 ## Next probes
 
 1. COMPLETE count @14 under `no-center ∧ require (0,3) ∧ require (2,3)`
