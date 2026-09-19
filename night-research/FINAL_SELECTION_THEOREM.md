@@ -30,7 +30,8 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - \(\mathcal{M}_A = \{S : \#\text{corners}=2,\ (3,3)\in S\}\), \(|\mathcal{M}_A|=8\) COMPLETE.
      Equivalently: corners=2 ∧ forbid(0,3) → 8; corners=2 ∧ forbid(2,3) → 8.
    - \(\mathcal{M}_B = \{S : \#\text{corners}=3,\ (3,3)\notin S\}\), \(|\mathcal{M}_B|=8\) COMPLETE.
-     Further, every such S uses both (0,3) and (2,3) (require both → 8 COMPLETE).
+     Further, every such S uses both (0,3) and (2,3) (require each → 8 COMPLETE)
+     and every mandatory orbit (require each → 8 COMPLETE).
    - forbid center∪(2,2) @14 → 8 COMPLETE (=B).
    - forbid B∪(2,2) @14 → 8 COMPLETE (=A).
    - center ∧ (0,3) or (2,3) or (2,2) @14 = 0 COMPLETE.
