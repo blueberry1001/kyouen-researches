@@ -26,4 +26,5 @@ Solver `cycle8_b_maxsafe.exe first/count 7 13 …`.
 ## Artifacts
 - this note
 - `CYCLE12_K13_LAYER.md`, `CYCLE15_CAPACITY_DECOMPOSITION.md`
+- `CYCLE27_CORE_EXTENSION.md`
 - `FINAL_SELECTION_THEOREM.md`
