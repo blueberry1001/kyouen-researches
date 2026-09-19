@@ -58,7 +58,8 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - center+(2,3) = **12**; forbid(0,2) = **12**; corners=4 ≤ **12**
    - **Cores (Cycle 27):** A-core = A0\\center (13 safe) extends to A0;
      B-core = B0\\B-bundle (11 safe) extends to B0; A-core∪B-bundle unsafe;
-     B-core∪center unsafe.
+     B-core∪center unsafe — e.g. quad **{(3,3),(6,4),(2,6),(6,6)}**;
+     A-core+(0,3) fires {(0,0),(1,0),(2,1),(0,3)}.
 
 6. **Exchange / pinning (COMPLETE on the 16).**
    - Unique D4-class of 5→5 exchange A↔B; d*=5; no 1-swap; no pair with d≤4.
