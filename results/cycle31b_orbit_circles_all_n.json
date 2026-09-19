@@ -1,0 +1,655 @@
+{
+  "3": {
+    "n": 3,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          8
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 4,
+        "r2x4": [
+          4
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 1,
+        "r2x4": [
+          0
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": false,
+        "nzero": 0,
+        "tot": 0,
+        "local_ceiling": 1
+      }
+    },
+    "n_orbits": 3,
+    "n_orbits_ge4": 2,
+    "n_on_center_circle": 3,
+    "n_all_concyclic": 2,
+    "naive_ceiling_sum_ge4": 6
+  },
+  "4": {
+    "n": 4,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          18
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          10
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          2
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      }
+    },
+    "n_orbits": 3,
+    "n_orbits_ge4": 3,
+    "n_on_center_circle": 3,
+    "n_all_concyclic": 3,
+    "naive_ceiling_sum_ge4": 9
+  },
+  "5": {
+    "n": 5,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          32
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          20
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,2": {
+        "size": 4,
+        "r2x4": [
+          16
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          8
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,2": {
+        "size": 4,
+        "r2x4": [
+          4
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,2": {
+        "size": 1,
+        "r2x4": [
+          0
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": false,
+        "nzero": 0,
+        "tot": 0,
+        "local_ceiling": 1
+      }
+    },
+    "n_orbits": 6,
+    "n_orbits_ge4": 5,
+    "n_on_center_circle": 6,
+    "n_all_concyclic": 5,
+    "naive_ceiling_sum_ge4": 15
+  },
+  "6": {
+    "n": 6,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          50
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          34
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,2": {
+        "size": 8,
+        "r2x4": [
+          26
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          18
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,2": {
+        "size": 8,
+        "r2x4": [
+          10
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "2,2": {
+        "size": 4,
+        "r2x4": [
+          2
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      }
+    },
+    "n_orbits": 6,
+    "n_orbits_ge4": 6,
+    "n_on_center_circle": 6,
+    "n_all_concyclic": 6,
+    "naive_ceiling_sum_ge4": 18
+  },
+  "7": {
+    "n": 7,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          72
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          52
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,2": {
+        "size": 8,
+        "r2x4": [
+          40
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,3": {
+        "size": 4,
+        "r2x4": [
+          36
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          32
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,2": {
+        "size": 8,
+        "r2x4": [
+          20
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,3": {
+        "size": 4,
+        "r2x4": [
+          16
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,2": {
+        "size": 4,
+        "r2x4": [
+          8
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,3": {
+        "size": 4,
+        "r2x4": [
+          4
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "3,3": {
+        "size": 1,
+        "r2x4": [
+          0
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": false,
+        "nzero": 0,
+        "tot": 0,
+        "local_ceiling": 1
+      }
+    },
+    "n_orbits": 10,
+    "n_orbits_ge4": 9,
+    "n_on_center_circle": 10,
+    "n_all_concyclic": 9,
+    "naive_ceiling_sum_ge4": 27
+  },
+  "8": {
+    "n": 8,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          98
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          74
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,2": {
+        "size": 8,
+        "r2x4": [
+          58
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,3": {
+        "size": 8,
+        "r2x4": [
+          50
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          50
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,2": {
+        "size": 8,
+        "r2x4": [
+          34
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,3": {
+        "size": 8,
+        "r2x4": [
+          26
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "2,2": {
+        "size": 4,
+        "r2x4": [
+          18
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,3": {
+        "size": 8,
+        "r2x4": [
+          10
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "3,3": {
+        "size": 4,
+        "r2x4": [
+          2
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      }
+    },
+    "n_orbits": 10,
+    "n_orbits_ge4": 10,
+    "n_on_center_circle": 10,
+    "n_all_concyclic": 10,
+    "naive_ceiling_sum_ge4": 30
+  },
+  "9": {
+    "n": 9,
+    "orbits": {
+      "0,0": {
+        "size": 4,
+        "r2x4": [
+          128
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "0,1": {
+        "size": 8,
+        "r2x4": [
+          100
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,2": {
+        "size": 8,
+        "r2x4": [
+          80
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,3": {
+        "size": 8,
+        "r2x4": [
+          68
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "0,4": {
+        "size": 4,
+        "r2x4": [
+          64
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,1": {
+        "size": 4,
+        "r2x4": [
+          72
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "1,2": {
+        "size": 8,
+        "r2x4": [
+          52
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,3": {
+        "size": 8,
+        "r2x4": [
+          40
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "1,4": {
+        "size": 4,
+        "r2x4": [
+          36
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,2": {
+        "size": 4,
+        "r2x4": [
+          32
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "2,3": {
+        "size": 8,
+        "r2x4": [
+          20
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 70,
+        "tot": 70,
+        "local_ceiling": 3
+      },
+      "2,4": {
+        "size": 4,
+        "r2x4": [
+          16
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "3,3": {
+        "size": 4,
+        "r2x4": [
+          8
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "3,4": {
+        "size": 4,
+        "r2x4": [
+          4
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": true,
+        "nzero": 1,
+        "tot": 1,
+        "local_ceiling": 3
+      },
+      "4,4": {
+        "size": 1,
+        "r2x4": [
+          0
+        ],
+        "on_one_circle_center": true,
+        "all_4subsets_det0": false,
+        "nzero": 0,
+        "tot": 0,
+        "local_ceiling": 1
+      }
+    },
+    "n_orbits": 15,
+    "n_orbits_ge4": 14,
+    "n_on_center_circle": 15,
+    "n_all_concyclic": 14,
+    "naive_ceiling_sum_ge4": 42
+  }
+}

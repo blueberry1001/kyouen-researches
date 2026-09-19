@@ -10,6 +10,19 @@ For each claim, evidence type and where to re-run.
 | K6=11, 464 max sets | `maxsafe_enum.exe count 6 11` → 464 |
 | K8=15 | prior Cycle 5/6 |
 
+## Geometric root (Cycles 30–32)
+
+| claim | evidence |
+|---|---|
+| every D4-orbit on any n×n lies on a center circle | `cycle31b_orbit_circles_all_n.py` (constant r2x4; all-4-subset det0) COMPLETE |
+| local occupancy ≤3 on every orbit ≥4 | orbit–circle lemma (first principles) |
+| n=7 M-orbits all concyclic; pair max 6 or 5; selected triple max 9 | `cycle30b` solver COMPLETE |
+| α(M)=13, omit (1,2) in M → 11, omit (0,1)/(0,2) in M → 12 | `cycle30b` COMPLETE |
+| all C(6,4) 4-subsets of M max ≤12 COMPLETE; 5-subsets 11–13; M=13 | `cycle30c` COMPLETE |
+| LP local+4-orbit caps still allow spurious occ sum 14 | `cycle30c` integer LP |
+| center∧B-bundle co-occurring quads = 360 | `cycle30_skeleton_geometry.py` |
+| cross-shell multi-orbit quad fractions n=4..8 | `cycle32_cross_shell_quads.py` COMPLETE local |
+
 ## Occupancy / phases (COMPLETE)
 
 | claim | evidence |

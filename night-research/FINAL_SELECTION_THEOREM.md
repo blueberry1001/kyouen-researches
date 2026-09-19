@@ -80,13 +80,56 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
 
 ---
 
+## Geometric root (Cycles 30–32) — partial first principles
+
+**Orbit–circle lemma (COMPLETE, all n).** The board center for D4 is
+\(((n-1)/2,(n-1)/2)\). D4 preserves radius from that point, so **every
+D4-orbit lies on one circle centered at the board center**. Any 4 points
+on a circle are concyclic ⇒ forbidden ⇒ **occupancy ≤ 3** on every orbit
+with ≥4 cells. This holds for odd *and* even n (`CYCLE31B`).
+
+| n | #orbits | #≥4 all-concyclic | naive Σceil(≥4) | known K_n |
+|---:|---:|---:|---:|---:|
+| 5 | 6 | 5 | 15 | 9 |
+| 6 | 6 | 6 | 18 | 11 |
+| 7 | 10 | 9 | 27 | **14** |
+| 8 | 10 | 10 | 30 | 15 |
+
+Local ceilings alone do **not** single out n=7. What is special on n=7 is
+the **cross-shell interference pattern** on a ten-orbit radial
+stratification, measured by COMPLETE constrained capacities on the
+mandatory skeleton M (`CYCLE30B/C`):
+
+- α(M)=13=2n−1 despite Σceil(M)=18 (deficit **5** from multi-orbit quads).
+- Most pairs/triples of M-orbits **hit** local ceilings (max=6 or 9).
+- Every 4-subset of M already has COMPLETE max ≤12 (deficits 0–3); only
+  the full six-orbit skeleton realizes 13, and only exclusive phase
+  extensions (center or full B-bundle) lift to 14.
+- Integer occupancy bounds from local ceilings + COMPLETE 4-orbit maxima
+  still allow a spurious sum-14 vector — subset maxima alone are *not* a
+  complete geometric certificate; named cross-shell quads (Cycle 27) and
+  the COMPLETE capacity ladder remain necessary.
+
+Cross-shell (multi-orbit) quads as a fraction of all forbidden quads:
+see `CYCLE32_CROSS_SHELL_QUADS.md`.
+
+This is a **partial** first-principles explanation: the local ceiling is
+geometric and universal; the n=7 crystal is the COMPLETE statement that
+only this board’s shell lattice supports a 2n maximum via two exclusive
+extensions of a 2n−1 skeleton.
+
+---
+
 ## What is *not* claimed
 
-- A first-principles derivation of K_7=2n from board geometry alone.
+- A full first-principles derivation of K_7=2n from board geometry alone
+  (orbit–circle lemma + capacity table still leave a residual proof gap).
 - That orbit-quad density explains the crystal (**rejected**: n=6 has higher
   (0,2)/(1,2) incidence yet diffuse maxima).
 - That a unique center cell produces phases (**rejected**: n=5 center split
   44/56 COMPLETE without crystal collapse).
+- That concyclicity of orbits alone explains n=7 (**rejected**: universal
+  for all n by the orbit–circle lemma).
 - Complete n=8 classification (**SAMPLE** only: flexible orbits, d=4 pairs).
 - K_9 or full σ_7.
 
@@ -188,6 +231,9 @@ night-research/cycle8_b_maxsafe.exe first 7 14 --force 16 --max-nodes 3000000
 - `CYCLE24_N6_CAPACITY_CONTRAST.md`, `CYCLE25_N5_CAPACITY_CONTRAST.md`, `CYCLE26_N4_CAPACITY_CONTRAST.md`
 - `CYCLE27_CORE_EXTENSION.md` — phase cores + named quads
 - `CYCLE28_K13_OPTIONALITY.md` — K=12/13 layer
+- `CYCLE30B_ORBIT_CONCYCLICITY.md`, `CYCLE30C_MULTI_ORBIT_CAPACITY.md` — skeleton pair/4-orbit capacities
+- `CYCLE31B_ORBIT_CIRCLES_ALL_N.md` — orbit–circle lemma (all n)
+- `CYCLE32_CROSS_SHELL_QUADS.md` — single- vs multi-orbit quads
 - `SELECTION_THEOREM_CHECKLIST.md` — evidence matrix
 - `CYCLE10_OCCUPANCY_SELECTION.md`, `CYCLE11_ORBIT_NECESSITY.md`
 - `CYCLE12_K13_LAYER.md`, `CYCLE12_OMIT_MANDATORY.md`

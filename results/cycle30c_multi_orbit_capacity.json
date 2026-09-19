@@ -1,0 +1,217 @@
+{
+  "4": {
+    "0,0+0,1+0,2+1,1": {
+      "max": 10,
+      "n_at": 64,
+      "complete": true,
+      "nodes": 24781,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    },
+    "0,0+0,1+0,2+1,2": {
+      "max": 12,
+      "n_at": 8,
+      "complete": true,
+      "nodes": 75962,
+      "sum_ceiling": 12,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 0
+    },
+    "0,0+0,1+0,2+1,3": {
+      "max": 10,
+      "n_at": 360,
+      "complete": true,
+      "nodes": 36941,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    },
+    "0,0+0,1+1,1+1,2": {
+      "max": 10,
+      "n_at": 416,
+      "complete": true,
+      "nodes": 38054,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    },
+    "0,0+0,1+1,1+1,3": {
+      "max": 9,
+      "n_at": 736,
+      "complete": true,
+      "nodes": 14625,
+      "sum_ceiling": 12,
+      "sum_size": 20,
+      "deficit_vs_ceiling": 3
+    },
+    "0,0+0,1+1,2+1,3": {
+      "max": 11,
+      "n_at": 56,
+      "complete": true,
+      "nodes": 30472,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 1
+    },
+    "0,0+0,2+1,1+1,2": {
+      "max": 10,
+      "n_at": 368,
+      "complete": true,
+      "nodes": 36691,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    },
+    "0,0+0,2+1,1+1,3": {
+      "max": 9,
+      "n_at": 16,
+      "complete": true,
+      "nodes": 6201,
+      "sum_ceiling": 12,
+      "sum_size": 20,
+      "deficit_vs_ceiling": 3
+    },
+    "0,0+0,2+1,2+1,3": {
+      "max": 11,
+      "n_at": 32,
+      "complete": true,
+      "nodes": 24733,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 1
+    },
+    "0,0+1,1+1,2+1,3": {
+      "max": 9,
+      "n_at": 624,
+      "complete": true,
+      "nodes": 12081,
+      "sum_ceiling": 12,
+      "sum_size": 20,
+      "deficit_vs_ceiling": 3
+    },
+    "0,1+0,2+1,1+1,2": {
+      "max": 10,
+      "n_at": 1064,
+      "complete": true,
+      "nodes": 132446,
+      "sum_ceiling": 12,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 2
+    },
+    "0,1+0,2+1,1+1,3": {
+      "max": 9,
+      "n_at": 1480,
+      "complete": true,
+      "nodes": 49468,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 3
+    },
+    "0,1+0,2+1,2+1,3": {
+      "max": 11,
+      "n_at": 40,
+      "complete": true,
+      "nodes": 91747,
+      "sum_ceiling": 12,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 1
+    },
+    "0,1+1,1+1,2+1,3": {
+      "max": 10,
+      "n_at": 24,
+      "complete": true,
+      "nodes": 27241,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    },
+    "0,2+1,1+1,2+1,3": {
+      "max": 10,
+      "n_at": 16,
+      "complete": true,
+      "nodes": 22001,
+      "sum_ceiling": 12,
+      "sum_size": 24,
+      "deficit_vs_ceiling": 2
+    }
+  },
+  "5": {
+    "0,0+0,1+0,2+1,1+1,2": {
+      "max": 12,
+      "n_at": 112,
+      "complete": true,
+      "nodes": 319786,
+      "sum_ceiling": 15,
+      "sum_size": 32,
+      "deficit_vs_ceiling": 3
+    },
+    "0,0+0,1+0,2+1,1+1,3": {
+      "max": 11,
+      "n_at": 56,
+      "complete": true,
+      "nodes": 106937,
+      "sum_ceiling": 15,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 4
+    },
+    "0,0+0,1+0,2+1,2+1,3": {
+      "max": 13,
+      "n_at": 8,
+      "complete": true,
+      "nodes": 251851,
+      "sum_ceiling": 15,
+      "sum_size": 32,
+      "deficit_vs_ceiling": 2
+    },
+    "0,0+0,1+1,1+1,2+1,3": {
+      "max": 12,
+      "n_at": 8,
+      "complete": true,
+      "nodes": 82159,
+      "sum_ceiling": 15,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 3
+    },
+    "0,0+0,2+1,1+1,2+1,3": {
+      "max": 12,
+      "n_at": 8,
+      "complete": true,
+      "nodes": 72929,
+      "sum_ceiling": 15,
+      "sum_size": 28,
+      "deficit_vs_ceiling": 3
+    },
+    "0,1+0,2+1,1+1,2+1,3": {
+      "max": 12,
+      "n_at": 8,
+      "complete": true,
+      "nodes": 216305,
+      "sum_ceiling": 15,
+      "sum_size": 32,
+      "deficit_vs_ceiling": 3
+    }
+  },
+  "6": {
+    "0,0+0,1+0,2+1,1+1,2+1,3": {
+      "max": 13,
+      "n_at": 88,
+      "complete": true,
+      "nodes": 852415,
+      "sum_ceiling": 18,
+      "sum_size": 36,
+      "deficit_vs_ceiling": 5
+    }
+  },
+  "lp_integer_upper": {
+    "bound": 14,
+    "occ": {
+      "0,0": 2,
+      "0,1": 2,
+      "0,2": 3,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 3
+    }
+  }
+}
