@@ -35,8 +35,7 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - forbid B∪(2,2) @14 → 8 COMPLETE (=A).
    - center ∧ (0,3) or (2,3) or (2,2) @14 = 0 COMPLETE.
    - no-center ∧ forbid(0,3)∧forbid(2,3) @14 = 0 COMPLETE.
-   - A cannot require (0,3)/(2,3)/(2,2) — COMPLETE 0 for (0,3) and (2,2);
-     (2,3) census 0 / DFS pending.
+   - A cannot require (0,3)/(2,3)/(2,2) — all **0 COMPLETE**.
    - B cannot require center or (2,2) (COMPLETE 0).
 
 4. **Mandatory / forbidden orbits (COMPLETE forbid-orbit).**
