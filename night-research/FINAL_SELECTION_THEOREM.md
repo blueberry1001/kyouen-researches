@@ -132,11 +132,11 @@ Also COMPLETE complementary counts @14:
 
 > On 7×7 the +1 maximum family is a **two-phase crystal**: a six-orbit
 > mandatory skeleton that only reaches 2n−1=13 is lifted to 2n=14 solely by
-> a **mutually exclusive** commitment to the center (phase A) or to the full
-> (0,3)+(2,3) bundle (phase B), never by (2,2); the phases meet only through
-> a unique 5→5 exchange and are locally pinned by 2-stones yet globally
-> isolated — a selection pattern that fails on n=4,5,6 censuses and in n=8
-> samples.
+> a **mutually exclusive** commitment to the center (phase A: corners=2) or
+> to the full (0,3)+(2,3) bundle (phase B: corners=3, no center), never by
+> (2,2); the phases meet only through a unique 5→5 exchange and are locally
+> pinned by 2-stones yet globally isolated — a selection pattern that fails
+> on n=4,5,6 censuses and in n=8 samples.
 
 ---
 
