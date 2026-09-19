@@ -275,6 +275,10 @@ For each claim, evidence type and where to re-run.
 | forbid (0,1) @14 global | **0 COMPLETE** final |
 | forbid (1,1) @14 global | **0 COMPLETE** final |
 | forbid (1,3) @14 global | **0 COMPLETE** final |
+| forbid center @14 global | **8 COMPLETE** (=B; census) final |
+| forbid (2,2)∪(0,3)∪(2,3) @14 | **8 COMPLETE** (=A) final |
+| forbid (1,1) @14 global | **0 COMPLETE** final |
+| forbid (1,3) @14 global | **0 COMPLETE** final |
 | require center @14 global | **8 COMPLETE** (=A) final |
 | corners=2 ∧ require corners @14 | 8/8 incomplete @8–10M (census 8) |
 | corners=2 ∧ require (0,1) @14 | 8/8 incomplete @8–10M (census 8) |
