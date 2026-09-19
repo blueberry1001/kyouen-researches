@@ -74,7 +74,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ forbid (0,0) @14 | **0 COMPLETE** (A has 2 corners) |
 | corners=2 ∧ forbid (0,1) @14 | **0 COMPLETE** reconfirm |
 | corners=3 ∧ forbid (0,0) @14 | **0 COMPLETE** |
-| corners=3 ∧ forbid (0,1) @14 | **0 COMPLETE** |
+| corners=3 ∧ forbid (0,1) @14 | **0 COMPLETE** reconfirm |
 | corners=3 ∧ forbid (0,3) @14 | **0 COMPLETE** |
 | corners=3 ∧ forbid (2,3) @14 | **0 COMPLETE** |
 | corners=3 ∧ forbid (1,1) @14 | **0 COMPLETE** reconfirm |
