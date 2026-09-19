@@ -1,0 +1,23 @@
+{
+  "package": "G3-sampler",
+  "evidence": "SAMPLE",
+  "note": "stdout metadata from cycle8_g3_n8_sample.exe; --out PATH writes raw little-endian u64 masks (NOT JSON) despite a .json suffix",
+  "n": 8,
+  "K": 15,
+  "quads": 14564,
+  "seed": 37,
+  "after_d4": 1,
+  "after_dfs": 1,
+  "after_greedy": 4,
+  "after_swap": 8,
+  "after_all": 8,
+  "swap_added": 4,
+  "d4_canon_classes": 8,
+  "dfs_solutions": 0,
+  "greedy_trials": 2000,
+  "greedy_hits_ge_K": 3,
+  "max_sets_cap": 12,
+  "out": "results/cycle39_n8_g3.json",
+  "out_format": "binary_u64_le_masks",
+  "n_sets_written": 8
+}
