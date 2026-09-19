@@ -150,7 +150,8 @@ For each claim, evidence type and where to re-run.
 | require (1,2) @14 global | ≥15 incomplete (census 16/16) |
 | require corners @14 global | ≥15 incomplete (census 16/16) |
 | require (0,1) @14 global | ≥14 incomplete (census 16/16) |
-| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm |
+| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm3 |
+| corners=2 ∧ forbid center @14 | **0 COMPLETE** reconfirm |
 | forbid (0,3) alone @14 | **8 COMPLETE** (phase A remains) |
 | forbid (0,1) @13 | 24 COMPLETE (optional at 13) |
 | corners=4 | ≤12 (no 13, no 14) |
