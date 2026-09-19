@@ -98,8 +98,17 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
 | 6 | 11=2n−1 | 464 | 4 | none | 22 | 3 |
 | 7 | **14=2n** | **16** | **6** | **(2,2)** | **2** | **2** |
 
+Omit-cost at each board’s own maximum (COMPLETE max probes):
+
+| omitted | n=5 | n=6 | n=7 |
+|---|---:|---:|---:|
+| center/(2,2) | 0 (still K=9) | 0 (still K=11 without (2,2)) | forbidden @14 |
+| (0,2) | −1 | −1 | **−2** |
+| (1,2) | −1 | −1 | **−2** (with (0,2): −3) |
+
 n=6 independent: 296/464 sets have a d=1 partner (304 undirected pairs).
 n=8 SAMPLE: (2,2) usable; center-block usable; 67–45 occ patterns in capped dumps.
+Artifacts: `CYCLE24_N6_CAPACITY_CONTRAST.md`, `CYCLE25_N5_CAPACITY_CONTRAST.md`.
 
 ---
 
