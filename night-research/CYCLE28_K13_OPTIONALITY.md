@@ -9,9 +9,10 @@ Solver `cycle8_b_maxsafe.exe first/count 7 13 …`.
 | require orbit center (3,3) | **280** | **yes** |
 | forbid orbit center | ≥999 | no (cap 4M) |
 | forbid orbit (0,3) | ≥557 | no (cap 4M) |
+| corners=2 | ≥606 | no |
+| corners=3 | ≥524 | no |
 | require (0,2) | (prior) mandatory @13 | yes forbid=0 |
 | require (1,2) | (prior) mandatory @13 | yes forbid=0 |
-| require (2,2) | many witnesses | force K=13 exists COMPLETE via Package B/G1 |
 | corners=4 | **0** | yes |
 
 ## Lemma (13-layer vs 14-layer)
