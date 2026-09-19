@@ -65,7 +65,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ forbid (1,3) @14 | **0 COMPLETE** |
 | corners=2 ∧ forbid (1,1) @14 | **0 COMPLETE** |
 | corners=2 ∧ forbid (1,3) @14 | **0 COMPLETE** |
-| corners=2 ∧ require (0,3) @14 | running / census 0 |
+| corners=2 ∧ require (0,3) @14 | **0 COMPLETE** |
 | corners=2 ∧ require (2,3) @14 | running / census 0 |
 | corners=2 ∧ require (2,2) @14 | **0 COMPLETE** |
 | corners=3 ∧ require (2,2) @14 | **0 COMPLETE** |
