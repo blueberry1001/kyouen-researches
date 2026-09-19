@@ -181,6 +181,23 @@ n=8 SAMPLE: (2,2) and center-block flexible; many occ patterns; d=4 pair exists.
 | (0,2) | −1 (max 8) | −1 (max 10) | **−2** (max 12) |
 | (1,2) | −1 (max 8) | −1 (max 10) | **−2** |
 
+## Phase cores (Cycle 27)
+
+| test | result |
+|---|---|
+| A-core = A0\\center (13) extends to A0 | witness found |
+| B-core = B0\\B-bundle (11) extends to B0 | witness found |
+| A-core ∪ B-bundle | unsafe |
+| B-core ∪ center | unsafe |
+
+## K=13 layer (Cycle 28)
+
+| constraint @13 | result |
+|---|---|
+| require center | **280 COMPLETE** |
+| forbid (0,2) or (1,2) | **0 COMPLETE** (hard) |
+| corners=4 | **0 COMPLETE** |
+
 ## Independent verifies
 - `results/cycle8_verify.json` PASS
 - `results/cycle11_verify.json` PASS
