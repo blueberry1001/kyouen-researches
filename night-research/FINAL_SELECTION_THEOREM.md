@@ -80,6 +80,13 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
 - Complete n=8 classification (**SAMPLE** only: flexible orbits, d=4 pairs).
 - K_9 or full σ_7.
 
+## Branch status (research, not pushed)
+
+- Workspace: active checkout (worktree add blocked by shared-registry guard).
+- Branch: `cycle8-n7-structure` from base `2d3855a`.
+- Independent verifies PASS; C++ regression 16/464/8/0 PASS.
+- Closing action (merge/PR/push/keep) left to orchestrator/user.
+
 ---
 
 ## Sharp contrasts (COMPLETE censuses)
