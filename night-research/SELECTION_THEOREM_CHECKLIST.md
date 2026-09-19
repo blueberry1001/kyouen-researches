@@ -46,7 +46,8 @@ For each claim, evidence type and where to re-run.
 | corners=1 @14 | 0 seen (census 0) |
 | corners=2 @14 | 8 COMPLETE (phase A via require center) |
 | corners=3 @14 | 8 COMPLETE (phase B) |
-| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) |
+| corners=2 ∧ require center @14 | **8 COMPLETE** (=A) |
+| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm |
 | corners=3 ∧ require (1,3) @14 | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (1,2) @14 | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (0,2) @14 | **8 COMPLETE** (=B) |
