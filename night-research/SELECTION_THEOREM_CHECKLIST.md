@@ -257,6 +257,10 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require (2,2) @14 | **0 COMPLETE** final |
 | corners=2 ∧ require (2,2) @14 | **0 COMPLETE** final (7M prior) |
 | corners=2 ∧ forbid (0,3)∧(2,3) @14 | **8 COMPLETE** (=A) final |
+| forbid (2,2) @14 global | **16 COMPLETE** final |
+| forbid (0,3) @14 global | **8 COMPLETE** (=A) final |
+| forbid (2,3) @14 global | **8 COMPLETE** (=A) final |
+| require center @14 global | **8 COMPLETE** (=A) final |
 | corners=3 ∧ require both B-orbits @14 | **8 COMPLETE** (=B) final |
 | corners=3 ∧ forbid (0,3) @14 | **0 COMPLETE** final |
 | corners=3 ∧ forbid (2,3) @14 | **0 COMPLETE** final |
