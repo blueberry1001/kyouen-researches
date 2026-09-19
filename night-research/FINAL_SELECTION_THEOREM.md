@@ -36,6 +36,7 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - center ∧ (0,3) or (2,3) or (2,2) @14 = 0 COMPLETE.
    - no-center ∧ forbid(0,3)∧forbid(2,3) @14 = 0 COMPLETE.
    - A cannot require (0,3)/(2,3)/(2,2) — all **0 COMPLETE**.
+   - A ∧ forbid (0,3) alone → 8 COMPLETE; A ∧ forbid (2,3) alone → 8 COMPLETE.
    - B cannot require center or (2,2) (COMPLETE 0).
    - B **cannot omit** (0,3) or (2,3) (forbid → 0 COMPLETE).
    - B **must** use both (0,3) and (2,3) (each require → 8 COMPLETE).
