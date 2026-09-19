@@ -59,6 +59,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ forbid corners @14 | **0 COMPLETE** clean |
 | corners=3 ∧ forbid (0,3) @14 | **0 COMPLETE** clean |
 | corners=3 ∧ forbid (2,3) @14 | **0 COMPLETE** clean |
+| corners=3 ∧ forbid (2,2) @14 | **8 COMPLETE** (=B) clean |
 | corners=2 ∧ forbid center @14 | **0 COMPLETE** (9.2M) clean |
 | corners=2 ∧ forbid center ∧ require (0,3) @14 | 0 seen (census 0) |
 | corners=3 ∧ forbid center ∧ require center @14 | **0 COMPLETE** (contradiction) |
