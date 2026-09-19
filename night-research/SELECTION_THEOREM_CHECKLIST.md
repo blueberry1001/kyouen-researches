@@ -53,6 +53,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require corners orbit @14 | **8 COMPLETE** (=B) |
 | corners=2 ∧ forbid (0,3) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (2,3) @14 | **8 COMPLETE** (=A) |
+| corners=2 ∧ forbid (0,2) @14 | **0 COMPLETE** |
 | corners=2 ∧ require (1,3) @14 | ≥6 incomplete (census A has (1,3)=2) |
 | corners=2 ∧ require (0,2) @14 | ≥7 incomplete (census A has (0,2)=2) |
 | corners=2 ∧ require corners orbit @14 | ≥7 incomplete (census 8=A all have 2 corners) |
