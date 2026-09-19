@@ -65,6 +65,18 @@ M = six mandatory orbits; max(M)=13; max(M∪center)=14; max(M∪B-bundle)=14;
 partial B-bundle max=13; (0,2) omit max=12; (0,2)+(1,2) omit max=11;
 center+(2,3)=12; corners=4 ≤12.
 
+## Hard orbits (0,2)/(1,2) — COMPLETE deeper facts
+
+| constraint | result |
+|---|---|
+| forbid (0,2) @13 | **0 COMPLETE** (mandatory below max too) |
+| forbid (1,2) @13 | **0 COMPLETE** |
+| max with forbid (0,2) | **12 COMPLETE** (cost −2) |
+| max with forbid (1,2) | **12** seen / combined (0,2)+(1,2) max **11 COMPLETE** |
+| corners=3 ∧ require (0,2) | **8 COMPLETE** (=B) |
+| corners=3 ∧ require (1,2) | **8 COMPLETE** (=B) |
+| corners=2/3 ∧ forbid (0,2) or (1,2) @14 | **0 COMPLETE** |
+
 ## Related files
 
 - `FINAL_SELECTION_THEOREM.md`
