@@ -76,6 +76,9 @@ center+(2,3)=12; corners=4 ≤12.
 | corners=3 ∧ require (0,2) | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (1,2) | **8 COMPLETE** (=B) |
 | corners=2/3 ∧ forbid (0,2) or (1,2) @14 | **0 COMPLETE** |
+| corners=3 ∧ require (0,1) | **8 COMPLETE** (=B) |
+| corners=3 ∧ require corners | **8 COMPLETE** (=B) |
+| corners=3 ∧ forbid (1,2) | **0 COMPLETE** |
 
 ## Related files
 
