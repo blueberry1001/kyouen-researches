@@ -175,6 +175,9 @@ night-research/cycle8_b_maxsafe.exe first 7 14 --force 16 --max-nodes 3000000
 ## File index
 - `CYCLE8_11_MAIN_RESULT.md` — rolling consolidated notes
 - `CYCLE15_CAPACITY_DECOMPOSITION.md` — capacity table + geometry
+- `CYCLE24_N6_CAPACITY_CONTRAST.md`, `CYCLE25_N5_CAPACITY_CONTRAST.md`, `CYCLE26_N4_CAPACITY_CONTRAST.md`
+- `CYCLE27_CORE_EXTENSION.md` — phase cores + named quads
+- `CYCLE28_K13_OPTIONALITY.md` — K=12/13 layer
 - `SELECTION_THEOREM_CHECKLIST.md` — evidence matrix
 - `CYCLE10_OCCUPANCY_SELECTION.md`, `CYCLE11_ORBIT_NECESSITY.md`
 - `CYCLE12_K13_LAYER.md`, `CYCLE12_OMIT_MANDATORY.md`
