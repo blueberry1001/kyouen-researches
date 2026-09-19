@@ -10,11 +10,8 @@ Matches prior COMPLETE: full-board A–B edit path dips to size 12; path bottlen
 
 ## n=8 g3
 
-```json
-{
-  "raw_head_hex": "5130032402c082018405a8801202410351300324028082095130022402c08209",
-  "n_bytes": 64
-}
-```
+`cycle8_g3_n8_sample.exe` SAMPLE: 8 sets, 8 D4 classes.  
+`results/cycle39_n8_g3.json` is **binary** (LE u64 masks), not JSON — use
+`results/cycle39_n8_g3_meta.json` for stats. Do not UTF-8-decode the mask file.
 
-Artifact: `cycle39_corridor_n8.json`
+Artifact: `results/cycle39_corridor_n8.json`

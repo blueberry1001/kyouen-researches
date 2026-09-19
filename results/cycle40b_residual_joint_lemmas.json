@@ -1,0 +1,730 @@
+{
+  "n_residual": 7,
+  "residuals": [
+    {
+      "occ": [
+        2,
+        2,
+        3,
+        1,
+        3,
+        3
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 909,
+        "aborted": false,
+        "first_fail_orbit": [
+          0,
+          2
+        ],
+        "fail_depth": 4,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1405,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 485,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 5397,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 296,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 9133,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 101,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        2,
+        2,
+        3,
+        2,
+        3,
+        2
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 1021,
+        "aborted": false,
+        "first_fail_orbit": [
+          0,
+          2
+        ],
+        "fail_depth": 4,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1749,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 881,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1169,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 101,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1725,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1837,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        2,
+        3,
+        2,
+        1,
+        3,
+        3
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 537,
+        "aborted": false,
+        "first_fail_orbit": [
+          1,
+          2
+        ],
+        "fail_depth": 5,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 801,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 5397,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 509,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 264,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 8945,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 80,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        2,
+        3,
+        2,
+        2,
+        3,
+        2
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 193,
+        "aborted": false,
+        "first_fail_orbit": [
+          0,
+          1
+        ],
+        "fail_depth": 4,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 629,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 1169,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 481,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 80,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 509,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 725,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        2,
+        3,
+        3,
+        1,
+        3,
+        2
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 1421,
+        "aborted": false,
+        "first_fail_orbit": [
+          0,
+          2
+        ],
+        "fail_depth": 4,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 2957,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 101,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 80,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 628,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 3957,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 361,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        3,
+        2,
+        3,
+        1,
+        3,
+        2
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 917,
+        "aborted": false,
+        "first_fail_orbit": [
+          0,
+          2
+        ],
+        "fail_depth": 4,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 101,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 493,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 541,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 288,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 6485,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 191,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    },
+    {
+      "occ": [
+        3,
+        3,
+        2,
+        1,
+        3,
+        2
+      ],
+      "sum": 14,
+      "exact": {
+        "found": false,
+        "nodes": 533,
+        "aborted": false,
+        "first_fail_orbit": [
+          1,
+          2
+        ],
+        "fail_depth": 5,
+        "fail_tried_combs": 56
+      },
+      "drop_one": [
+        {
+          "drop_index": 0,
+          "orbit": [
+            0,
+            0
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 80,
+          "aborted": false
+        },
+        {
+          "drop_index": 1,
+          "orbit": [
+            0,
+            1
+          ],
+          "new_sum": 13,
+          "found": true,
+          "nodes": 541,
+          "aborted": false
+        },
+        {
+          "drop_index": 2,
+          "orbit": [
+            0,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 485,
+          "aborted": false
+        },
+        {
+          "drop_index": 3,
+          "orbit": [
+            1,
+            1
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 272,
+          "aborted": false
+        },
+        {
+          "drop_index": 4,
+          "orbit": [
+            1,
+            2
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 5141,
+          "aborted": false
+        },
+        {
+          "drop_index": 5,
+          "orbit": [
+            1,
+            3
+          ],
+          "new_sum": 13,
+          "found": false,
+          "nodes": 909,
+          "aborted": false
+        }
+      ],
+      "matches_known13": true
+    }
+  ],
+  "extra_chosen": [
+    {
+      "orbits": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "bound": 3,
+      "source": "known13max",
+      "kills_now": 4
+    },
+    {
+      "orbits": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "bound": 7,
+      "source": "known13max",
+      "kills_now": 1
+    },
+    {
+      "orbits": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "bound": 7,
+      "source": "known13max",
+      "kills_now": 1
+    },
+    {
+      "orbits": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "bound": 7,
+      "source": "known13max",
+      "kills_now": 1
+    }
+  ],
+  "LP": {
+    "max_sum": 13,
+    "attainer": [
+      2,
+      2,
+      3,
+      1,
+      3,
+      2
+    ],
+    "n_feasible": 2254,
+    "n_feasible_ge14": 0
+  },
+  "n_killed_by_proper_subset": 113
+}

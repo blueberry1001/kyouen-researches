@@ -109,15 +109,21 @@ mandatory skeleton M (`CYCLE30B/C`):
   the full six-orbit skeleton realizes 13, and only exclusive phase
   extensions (center or full B-bundle) lift to 14.
 
-**COMPLETE occupancy-lattice certificate for α(M)=13 (`CYCLE34`).**
+**COMPLETE occupancy-lattice certificate for α(M)=13 (`CYCLE34`,`CYCLE40`).**
 Order M-orbits `(0,0)(0,1)(0,2)(1,1)(1,2)(1,3)`. The orbit–circle lemma
 forces o_i≤3. There are exactly **120** vectors with Σ o_i=14 and o_i≤3.
-Exact-orbit decision search on M (COMPLETE, not node-capped) shows
-**none** of the 120 is realizable; known sum-13 patterns
-A-on-M `(2,3,2,1,3,2)`, dominant `(2,3,3,1,3,1)`, B-core `(3,1,2,1,3,1)`
-are realizable (controls). Hence
-**α(M)≤13** from local circle ceilings + cross-shell non-realizability,
-and the COMPLETE solver witness α(M)=13 completes equality.
+Exact-orbit decision search on M (COMPLETE) shows **none** is realizable.
+
+**Compressed form (Cycle 40):** COMPLETE **proper-subset** solver maxima
+(pairs/triples/4-/5-orbits; not the circular full-M bound) already kill
+**113/120**. The remaining **7** residual vectors each satisfy every
+proper-subset maximum yet are COMPLETE-unrealizable (joint lemmas).
+Hence local ceilings + proper-subset capacities + 7 named exceptions
+imply α(M)≤13. Known sum-13 patterns are realizable (controls).
+
+Do not use “known max-13 pattern” bounds as universal inequalities
+without a solver COMPLETE max on that subset (rejected: e.g. pair
+(1,1)+(1,3) max is 5, not 3).
 
 **COMPLETE phase-lift occupancy decision (`CYCLE35`).** Exact-occupancy
 search on the extended orbit sets:

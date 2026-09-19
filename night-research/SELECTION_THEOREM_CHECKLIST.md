@@ -21,8 +21,10 @@ For each claim, evidence type and where to re-run.
 | all C(6,4) 4-subsets of M max ≤12 COMPLETE; 5-subsets 11–13; M=13 | `cycle30c` COMPLETE |
 | LP local+4-orbit caps still allow spurious occ sum 14 | `cycle30c` integer LP |
 | **120/120 sum-14 occ vectors (o≤3) unrealizable on M** | `cycle34` COMPLETE decision |
+| proper-subset COMPLETE maxima kill **113/120**; **7 residuals** joint-lemma | `cycle40`/`cycle40b` COMPLETE |
+| rejected: known13max as universal ineq (pair (1,1)+(1,3) max=5) | `cycle40` solver |
 | known sum-13 occ A/dom/Bcore realizable (controls) | `cycle34` COMPLETE |
-| **α(M)≤13 occupancy-lattice certificate** | `CYCLE34_OCCUPANCY_LATTICE_CERTIFICATE.md` COMPLETE |
+| **α(M)≤13 occupancy-lattice certificate (compressed)** | `CYCLE40_COMPRESSED_CERTIFICATE.md` COMPLETE |
 | A/B phase occ Σ=14 realizable; mixed phase sums not | `cycle35` COMPLETE decision |
 | force (2,2) cell @14 max=13 COMPLETE n_at=160 | `cycle36b` solver COMPLETE |
 | structured sum-14 occ with o_(2,2)≥1 unrealizable (SAMPLE) | `cycle36b` decision |
