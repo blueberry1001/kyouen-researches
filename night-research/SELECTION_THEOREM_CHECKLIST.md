@@ -143,7 +143,8 @@ For each claim, evidence type and where to re-run.
 | forbid (1,2) @13 | **0 COMPLETE** |
 | forbid (0,2)∧(1,2) | max **11** COMPLETE (3592@11; 0@12 COMPLETE) |
 | forbid (2,2) @14 global | **16 COMPLETE** (all max sets remain) |
-| forbid (0,3) @14 global | **8 COMPLETE** (= phase A) |
+| forbid (0,3) @14 global | **8 COMPLETE** (=A) stable |
+| forbid (2,3) @14 global | **8 COMPLETE** (=A) stable |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
 | forbid (0,2) @14 global | **0 COMPLETE** |
