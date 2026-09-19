@@ -19,9 +19,11 @@ Solver: `night-research/cycle8_b_maxsafe.exe`. Boards n=6 (K=11=2n−1) vs n=7 (
 |---|---|---|
 | use orbit (2,2) at max | **impossible** (force@14=0 COMPLETE) | **common** (360/464 COMPLETE require) |
 | omit (2,2) still reach max | yes (all 16) | yes (104 sets) |
-| omit (0,2) | max **12** COMPLETE (−2) | max **?** census mandatory @11 (0 COMPLETE forbid) |
-| omit (1,2) | max **12** earlier COMPLETE combined; @14 forbid=0 | max **10** COMPLETE (−1) |
-| omit (1,1) | max 13 incomplete / @14 forbid=0 COMPLETE | max 11 still (8 sets omit (1,1)) |
+| omit (0,2) | max **12** COMPLETE (−2) | max **10** COMPLETE (−1; 136@10) |
+| omit (0,1) | @14 forbid=0 COMPLETE | max **10** COMPLETE (−1) |
+| omit (0,0) corners | @14 forbid=0 COMPLETE | max **10** COMPLETE (−1) |
+| omit (1,2) | @14 forbid=0 COMPLETE | max **10** COMPLETE (−1; 688@10) |
+| omit (1,1) | @14 forbid=0 COMPLETE | max 11 still (8 sets omit (1,1)) |
 | occupancy vectors at max | **2** COMPLETE | **22** COMPLETE |
 | empty orbit at max | **(2,2)** | **none** |
 
