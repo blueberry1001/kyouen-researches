@@ -158,6 +158,9 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ require (2,2) | **0 COMPLETE** stable |
 | corners=3 ∧ require (2,2) | **0 COMPLETE** stable |
 | corners=2 ∧ require (0,3) @14 | **0 COMPLETE** stable (prior 8–10M) |
+| corners=3 ∧ require both B-orbits @14 | **8 COMPLETE** (=B) stable |
+| corners=3 ∧ forbid (0,3) @14 | **0 COMPLETE** stable |
+| corners=3 ∧ forbid (2,3) @14 | **0 COMPLETE** stable |
 | corners=2 ∧ require (2,3) @14 | **0 COMPLETE** stable (prior 7M) |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
