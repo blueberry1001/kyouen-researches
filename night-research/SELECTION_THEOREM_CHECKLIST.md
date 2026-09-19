@@ -61,6 +61,9 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ forbid (0,0) @14 | **0 COMPLETE** |
 | corners=3 ∧ forbid (0,1) @14 | **0 COMPLETE** |
 | corners=3 ∧ forbid (0,2) @14 | **0 COMPLETE** |
+| corners=3 ∧ forbid (1,1) @14 | **0 COMPLETE** |
+| corners=3 ∧ forbid (1,3) @14 | **0 COMPLETE** |
+| corners=2 ∧ forbid (1,1) @14 | **0 COMPLETE** |
 | corners=2 ∧ require (1,3) @14 | ≥6 incomplete (census A has (1,3)=2) |
 | corners=2 ∧ require (0,2) @14 | ≥7 incomplete (census A has (0,2)=2) |
 | corners=2 ∧ require corners orbit @14 | ≥7 incomplete (census 8=A all have 2 corners) |
