@@ -244,6 +244,10 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ forbid (1,1) @14 | **0 COMPLETE** stable3 |
 | corners=2 ∧ forbid (1,3) @14 | **0 COMPLETE** stable3 |
 | corners=3 ∧ forbid (1,3) @14 | **0 COMPLETE** stable3 |
+| corners=2 ∧ require center @14 | **8 COMPLETE** (=A) final |
+| corners=3 ∧ require center @14 | **0 COMPLETE** final |
+| corners=2 ∧ forbid center @14 | **0 COMPLETE** final |
+| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) final |
 | forbid (2,2) @14 global | **16 COMPLETE** stable3 |
 | corners=2 ∧ require (2,3) @14 | **0 COMPLETE** stable (prior 7M) |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
