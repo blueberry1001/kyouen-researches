@@ -39,8 +39,9 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - A ∧ forbid (0,3) alone → 8 COMPLETE; A ∧ forbid (2,3) alone → 8 COMPLETE.
    - B cannot require center or (2,2) (COMPLETE 0).
    - B **cannot omit** (0,3) or (2,3) (forbid → 0 COMPLETE).
-   - B **must** use both (0,3) and (2,3) (each require → 8 COMPLETE).
+   - B **must** use both (0,3) and (2,3) (each require → 8 COMPLETE; global require census 8).
    - Every B uses all six mandatory orbits (require each → 8 COMPLETE).
+   - Global forbid (0,3) or (2,3) @14 → 8 COMPLETE (=A).
 
 4. **Mandatory / forbidden orbits (COMPLETE forbid-orbit).**
    Every S∈ℳ7 meets orbits `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)` @14.
