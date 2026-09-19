@@ -112,10 +112,25 @@ forces o_i≤3. There are exactly **120** vectors with Σ o_i=14 and o_i≤3.
 Exact-orbit decision search on M (COMPLETE, not node-capped) shows
 **none** of the 120 is realizable; known sum-13 patterns
 A-on-M `(2,3,2,1,3,2)`, dominant `(2,3,3,1,3,1)`, B-core `(3,1,2,1,3,1)`
-are realizable (controls). Hence **α(M)≤13** from local circle ceilings +
-cross-shell non-realizability, and the COMPLETE solver witness α(M)=13
-completes equality. This explains the skeleton peak at 2n−1 **without**
-using the full-board K=14 census.
+are realizable (controls). Hence
+**α(M)≤13** from local circle ceilings + cross-shell non-realizability,
+and the COMPLETE solver witness α(M)=13 completes equality.
+
+**COMPLETE phase-lift occupancy decision (`CYCLE35`).** Exact-occupancy
+search on the extended orbit sets:
+
+| configuration | Σocc | realizable? |
+|---|---:|---|
+| A phase (M-occ + center=1) | 14 | **yes** |
+| B phase (M-occ + (0,3)=1,(2,3)=2) | 14 | **yes** |
+| A + partial B | 15 | **no** COMPLETE |
+| B + center | 15 | **no** COMPLETE |
+| A + full B | 17 | **no** COMPLETE |
+
+So the exclusive phase lift is itself an occupancy-lattice fact, not only
+a max-size census. n=7 has the **lowest** K/Σceil among n=5,6,7
+(14/27≈0.52 vs 9/15=0.60, 11/18≈0.61) — cross-shell interference is
+tightest where the crystal appears.
 
 Cross-shell (multi-orbit) quads as a fraction of all forbidden quads:
 n=7 has **96.6%** multi-orbit quads (`CYCLE32`).
