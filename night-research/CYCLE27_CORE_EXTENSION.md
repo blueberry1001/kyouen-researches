@@ -35,6 +35,11 @@ Occupancy B without `(0,3),(2,3)`: (3,1,2,0,1,3,1,0,0,0).
 This is the concrete geometric content of “mutually exclusive phase
 extensions” behind the n=7 +1.
 
+## Independent recompute
+
+`is_safe` on the same masks agrees: A_wo safe pop13; B_wo safe pop11;
+A_wo|B_b unsafe; B_wo|center unsafe; both cores are subsets of their phases.
+
 ## Related
 - `CYCLE15_CAPACITY_DECOMPOSITION.md`
 - `CYCLE10_OCCUPANCY_SELECTION.md`
