@@ -28,6 +28,7 @@ For each claim, evidence type and where to re-run.
 | structured sum-14 occ with o_(2,2)≥1 unrealizable (SAMPLE) | `cycle36b` decision |
 | witness occ (2,2,3,0,1,3,1,1,0,0) Σ=13 with F=1 realizable | `cycle36b` control |
 | K/Σceil n=5/6/7 = 0.60 / 0.61 / **0.52** | `cycle35` COMPLETE local |
+| restricted widest A–B path on union=19 is **width 11** | `cycle39c` COMPLETE Dijkstra |
 | center∧B-bundle co-occurring quads = 360 | `cycle30_skeleton_geometry.py` |
 | cross-shell multi-orbit quad fractions n=4..8 | `cycle32_cross_shell_quads.py` COMPLETE local (n=7: 96.6%) |
 

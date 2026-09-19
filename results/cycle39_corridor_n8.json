@@ -1,0 +1,28 @@
+{
+  "A0_pop": 14,
+  "B0_pop": 14,
+  "sym_diff": 22,
+  "best_path_min_size": 3,
+  "occ_at_min": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "uses_22_at_min": false,
+  "uses_center_at_min": false,
+  "min_board": "XX.....\n.......\n.......\n.......\n.......\n...X...\n.......",
+  "A0_safe": true,
+  "B0_safe": true,
+  "n8_g3": {
+    "raw_head_hex": "5130032402c082018405a8801202410351300324028082095130022402c08209",
+    "n_bytes": 64
+  },
+  "n8_witness_occ": []
+}

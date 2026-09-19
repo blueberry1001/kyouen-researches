@@ -74,9 +74,12 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
      → single-stone paths between distinct max sets visit size ≤12.
 
 7. **Corridor (COMPLETE on union / path-witness).**
-   On A0∪B0 (19 cells): safe 14-sets = {A0,B0} only; restricted path width ≤11.
-   Explicit full-board A–B path dips to 12; path-witness bottlenecks use (2,2)
-   and drop center (not claimed for all min-width paths).
+   On min A–B pair (symdiff 10 = unique 5→5 exchange; union **19** cells):
+   restricted widest single-stone path has width **11** COMPLETE
+   (`CYCLE39C_WIDEST_PATH_FAST.md`; 59 quads inside union; bottleneck
+   states never use (2,2) — not in the union — and use center in only
+   ~30% of width-11 bottlenecks). Safe 14-sets on the union itself are
+   still {A,B}-type only. Explicit full-board A–B path dips to 12.
 
 ---
 
