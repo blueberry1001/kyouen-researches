@@ -173,6 +173,14 @@ forbid(2,2) still max=11 COMPLETE; higher edge-orbit quad incidence than n=7.
 n=5: center split 44/56 COMPLETE at K=9 — center alone ≠ crystal.
 n=8 SAMPLE: (2,2) and center-block flexible; many occ patterns; d=4 pair exists.
 
+## Cross-board omit-cost (COMPLETE max probes)
+
+| omitted | n=5 | n=6 | n=7 |
+|---|---:|---:|---:|
+| center/(2,2) | 0 still K=9 (56 without / 44 with) | 0 still K=11 (104 without / 360 with) | forbidden @14 |
+| (0,2) | −1 (max 8) | −1 (max 10) | **−2** (max 12) |
+| (1,2) | −1 (max 8) | −1 (max 10) | **−2** |
+
 ## Independent verifies
 - `results/cycle8_verify.json` PASS
 - `results/cycle11_verify.json` PASS
