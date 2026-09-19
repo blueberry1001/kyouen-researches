@@ -86,6 +86,10 @@ center+(2,3)=12; corners=4 ≤12.
 | forbid (2,2) global | **16 COMPLETE** |
 | corners=2/3 ∧ forbid center | **0 / 8 COMPLETE** (A/B) |
 | require center global | **8 COMPLETE** (=A) |
+| forbid (0,3) global | **8 COMPLETE** (=A) |
+| forbid (2,3) global | **8 COMPLETE** (=A) |
+| corners=2 ∧ require center | **8 COMPLETE** (=A) |
+| corners=3 ∧ require center | **0 COMPLETE** |
 
 ## Related files
 
