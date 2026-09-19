@@ -64,6 +64,12 @@ Let M = six mandatory orbits. Then:
 > incidence and still diffuse maxima, so **density alone is rejected** as the
 > explanation (see Cycle 16 note in the decomposition file).
 
+### Cycle 24–28 addenda
+- n=4/5/6 COMPLETE omit-cost mostly −1; n=7 (0,2) −2; n=4 omit(0,1) also −2 → omit-cost alone ≠ crystal.
+- n=6 require(2,2)@11=360 COMPLETE; forbid(2,2) still max=11 (104) COMPLETE.
+- Cycle 27: A-core/B-core explicit; cross-phase quads named; independent is_safe PASS.
+- Cycle 28: K=13 require center=280 COMPLETE; K=12 forbid(0,2)=3464 COMPLETE; forbid(2,2)@14 global=16 COMPLETE.
+
 ### n=6 skeleton contrast (COMPLETE)
 
 | n=6 constraint | max |
