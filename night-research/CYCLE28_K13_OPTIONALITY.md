@@ -20,7 +20,7 @@ Solver `cycle8_b_maxsafe.exe first/count 7 13 …`.
 > census/SAMPLE also show many without). The hard requirements that survive
 > to K=13 are `(0,2)` and `(1,2)` (COMPLETE forbid=0). At size 14 the
 > crystal adds six mandatory orbits, empty (2,2), and the exclusive A/B
-> phase split.
+> phase split. Cross-phase cores fire named quads (Cycle 27).
 
 ## Artifacts
 - this note
