@@ -20,6 +20,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ require both B-orbits @14 | 0 seen (incomplete; census says 0) |
 | corners=3 ∧ require (2,3) @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ require both B-orbits @14 | **8 COMPLETE** (=B) clean |
+| corners=2 ∧ require center @14 | **8 COMPLETE** (=A) clean |
 | corners=3 ∧ require (0,3) @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ require (2,3) @14 | **8 COMPLETE** (=B) clean |
 | require center ∧ corners=2 @14 | 8 COMPLETE (=A) |
