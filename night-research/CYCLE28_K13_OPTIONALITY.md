@@ -14,6 +14,8 @@ Solver `cycle8_b_maxsafe.exe first/count 7 13 …`.
 | require (0,2) | (prior) mandatory @13 | yes forbid=0 |
 | require (1,2) | (prior) mandatory @13 | yes forbid=0 |
 | corners=4 | **0** | yes |
+| forbid (0,2) @K=12 | **3464** | yes (max=12 COMPLETE when (0,2) omitted) |
+| require center @K=12 | ≥14344 | no (center optional at 12) |
 
 ## Lemma (13-layer vs 14-layer)
 
