@@ -20,8 +20,11 @@ For each claim, evidence type and where to re-run.
 | α(M)=13, omit (1,2) in M → 11, omit (0,1)/(0,2) in M → 12 | `cycle30b` COMPLETE |
 | all C(6,4) 4-subsets of M max ≤12 COMPLETE; 5-subsets 11–13; M=13 | `cycle30c` COMPLETE |
 | LP local+4-orbit caps still allow spurious occ sum 14 | `cycle30c` integer LP |
+| **120/120 sum-14 occ vectors (o≤3) unrealizable on M** | `cycle34` COMPLETE decision |
+| known sum-13 occ A/dom/Bcore realizable (controls) | `cycle34` COMPLETE |
+| **α(M)≤13 occupancy-lattice certificate** | `CYCLE34_OCCUPANCY_LATTICE_CERTIFICATE.md` COMPLETE |
 | center∧B-bundle co-occurring quads = 360 | `cycle30_skeleton_geometry.py` |
-| cross-shell multi-orbit quad fractions n=4..8 | `cycle32_cross_shell_quads.py` COMPLETE local |
+| cross-shell multi-orbit quad fractions n=4..8 | `cycle32_cross_shell_quads.py` COMPLETE local (n=7: 96.6%) |
 
 ## Occupancy / phases (COMPLETE)
 

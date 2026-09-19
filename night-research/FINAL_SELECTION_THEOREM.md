@@ -105,25 +105,34 @@ mandatory skeleton M (`CYCLE30B/C`):
 - Every 4-subset of M already has COMPLETE max ≤12 (deficits 0–3); only
   the full six-orbit skeleton realizes 13, and only exclusive phase
   extensions (center or full B-bundle) lift to 14.
-- Integer occupancy bounds from local ceilings + COMPLETE 4-orbit maxima
-  still allow a spurious sum-14 vector — subset maxima alone are *not* a
-  complete geometric certificate; named cross-shell quads (Cycle 27) and
-  the COMPLETE capacity ladder remain necessary.
+
+**COMPLETE occupancy-lattice certificate for α(M)=13 (`CYCLE34`).**
+Order M-orbits `(0,0)(0,1)(0,2)(1,1)(1,2)(1,3)`. The orbit–circle lemma
+forces o_i≤3. There are exactly **120** vectors with Σ o_i=14 and o_i≤3.
+Exact-orbit decision search on M (COMPLETE, not node-capped) shows
+**none** of the 120 is realizable; known sum-13 patterns
+A-on-M `(2,3,2,1,3,2)`, dominant `(2,3,3,1,3,1)`, B-core `(3,1,2,1,3,1)`
+are realizable (controls). Hence **α(M)≤13** from local circle ceilings +
+cross-shell non-realizability, and the COMPLETE solver witness α(M)=13
+completes equality. This explains the skeleton peak at 2n−1 **without**
+using the full-board K=14 census.
 
 Cross-shell (multi-orbit) quads as a fraction of all forbidden quads:
-see `CYCLE32_CROSS_SHELL_QUADS.md`.
+n=7 has **96.6%** multi-orbit quads (`CYCLE32`).
 
-This is a **partial** first-principles explanation: the local ceiling is
-geometric and universal; the n=7 crystal is the COMPLETE statement that
-only this board’s shell lattice supports a 2n maximum via two exclusive
-extensions of a 2n−1 skeleton.
+This is a **near-complete** first-principles explanation of the skeleton
+peak: the local ceiling is geometric and universal; the n=7 crystal is
+the COMPLETE statement that only this board’s shell lattice supports a
+2n maximum via two exclusive extensions of a 2n−1 skeleton. A residual
+gap remains for deriving the *phase lift* 13→14 and K_n=2n for other n
+purely from geometry without constrained solves.
 
 ---
 
 ## What is *not* claimed
 
 - A full first-principles derivation of K_7=2n from board geometry alone
-  (orbit–circle lemma + capacity table still leave a residual proof gap).
+  (skeleton peak is certified; phase lift + cross-n still use solver).
 - That orbit-quad density explains the crystal (**rejected**: n=6 has higher
   (0,2)/(1,2) incidence yet diffuse maxima).
 - That a unique center cell produces phases (**rejected**: n=5 center split
@@ -234,6 +243,7 @@ night-research/cycle8_b_maxsafe.exe first 7 14 --force 16 --max-nodes 3000000
 - `CYCLE30B_ORBIT_CONCYCLICITY.md`, `CYCLE30C_MULTI_ORBIT_CAPACITY.md` — skeleton pair/4-orbit capacities
 - `CYCLE31B_ORBIT_CIRCLES_ALL_N.md` — orbit–circle lemma (all n)
 - `CYCLE32_CROSS_SHELL_QUADS.md` — single- vs multi-orbit quads
+- `CYCLE34_OCCUPANCY_LATTICE_CERTIFICATE.md` — COMPLETE α(M)≤13 from o≤3 + 120-vector decision
 - `SELECTION_THEOREM_CHECKLIST.md` — evidence matrix
 - `CYCLE10_OCCUPANCY_SELECTION.md`, `CYCLE11_ORBIT_NECESSITY.md`
 - `CYCLE12_K13_LAYER.md`, `CYCLE12_OMIT_MANDATORY.md`

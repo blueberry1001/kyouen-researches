@@ -1,0 +1,122 @@
+{
+  "lp14_attainer": {
+    "caps": {
+      "0,0": 2,
+      "0,1": 2,
+      "0,2": 3,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 3
+    },
+    "sum": 14,
+    "found_safe": false,
+    "partial_nodes": 909,
+    "aborted": false,
+    "first_hex": null
+  },
+  "A_on_M": {
+    "caps": {
+      "0,0": 2,
+      "0,1": 3,
+      "0,2": 2,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 2
+    },
+    "sum": 13,
+    "found_safe": true,
+    "partial_nodes": 80,
+    "aborted": false,
+    "first_hex": "0x906a040081d1"
+  },
+  "B_on_M": {
+    "caps": {
+      "0,0": 3,
+      "0,1": 1,
+      "0,2": 2,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 1
+    },
+    "sum": 11,
+    "found_safe": true,
+    "partial_nodes": 25,
+    "aborted": false,
+    "first_hex": "0x48010180743"
+  },
+  "dom32": {
+    "caps": {
+      "0,0": 2,
+      "0,1": 3,
+      "0,2": 3,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 1
+    },
+    "sum": 13,
+    "found_safe": true,
+    "partial_nodes": 361,
+    "aborted": false,
+    "first_hex": "0x902e040081d1"
+  },
+  "alt14_a": {
+    "caps": {
+      "0,0": 3,
+      "0,1": 3,
+      "0,2": 2,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 2
+    },
+    "sum": 14,
+    "found_safe": false,
+    "partial_nodes": 533,
+    "aborted": false,
+    "first_hex": null
+  },
+  "alt14_b": {
+    "caps": {
+      "0,0": 3,
+      "0,1": 2,
+      "0,2": 3,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 2
+    },
+    "sum": 14,
+    "found_safe": false,
+    "partial_nodes": 917,
+    "aborted": false,
+    "first_hex": null
+  },
+  "alt14_c": {
+    "caps": {
+      "0,0": 2,
+      "0,1": 3,
+      "0,2": 3,
+      "1,1": 0,
+      "1,2": 3,
+      "1,3": 3
+    },
+    "sum": 14,
+    "found_safe": false,
+    "partial_nodes": 80,
+    "aborted": false,
+    "first_hex": null
+  },
+  "alt14_d": {
+    "caps": {
+      "0,0": 3,
+      "0,1": 2,
+      "0,2": 2,
+      "1,1": 1,
+      "1,2": 3,
+      "1,3": 3
+    },
+    "sum": 14,
+    "found_safe": false,
+    "partial_nodes": 3213,
+    "aborted": false,
+    "first_hex": null
+  }
+}
