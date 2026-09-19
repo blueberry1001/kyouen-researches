@@ -204,6 +204,8 @@ For each claim, evidence type and where to re-run.
 | forbid (2,2)∪center @14 | **8 COMPLETE** (=B) stable3 |
 | corners=2 ∧ require corners @14 | ≥7 incomplete (census A has 2 corners) |
 | corners=2 ∧ require (0,1) @14 | ≥7 incomplete (census A has (0,1)=3) |
+| corners=2 ∧ require (0,2) @14 | ≥7 incomplete (census A has (0,2)=2) |
+| corners=2 ∧ require (1,2) @14 | ≥7 incomplete (census A has (1,2)=3) |
 | corners=2 ∧ require (2,3) @14 | **0 COMPLETE** stable (prior 7M) |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
