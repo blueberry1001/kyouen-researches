@@ -67,7 +67,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ forbid (1,3) @14 | **0 COMPLETE** |
 | corners=2 ∧ require (0,3) @14 | 0 seen (census 0) |
 | corners=2 ∧ require (2,3) @14 | 0 seen (census 0) |
-| corners=2 ∧ require (2,2) @14 | 0 seen (census 0) |
+| corners=2 ∧ require (2,2) @14 | 0 seen incomplete (census 0) |
 | corners=3 ∧ require (2,2) @14 | **0 COMPLETE** |
 | corners=3 ∧ require center @14 | **0 COMPLETE** |
 | corners=2 ∧ require (0,2) @14 | ≥7 incomplete (census A has (0,2)=2) |
