@@ -93,7 +93,8 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid (0,3) alone @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid corners @14 | **0 COMPLETE** clean |
-| corners=3 ∧ forbid corners @14 | **0 COMPLETE** (need 3 corners) reconfirm |
+| corners=2 ∧ forbid corners @14 | **0 COMPLETE** clean |
+| corners=3 ∧ forbid corners @14 | **0 COMPLETE** clean |
 | corners=3 ∧ forbid (2,2) @14 | **8 COMPLETE** (=B) |
 | corners=2 ∧ forbid (2,3) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) |
