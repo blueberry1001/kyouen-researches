@@ -55,6 +55,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require corners orbit @14 | **8 COMPLETE** (=B) |
 | corners=2 ∧ forbid (0,3)∧(2,3) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (2,3) alone @14 | **8 COMPLETE** (=A) |
+| corners=2 ∧ forbid (0,3) alone @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (2,3) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ forbid (0,2) @14 | **0 COMPLETE** |
