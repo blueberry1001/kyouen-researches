@@ -92,6 +92,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ forbid (0,3) alone @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid (2,3) alone @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) clean reconfirm |
+| corners=3 ∧ forbid (2,2) @14 | **8 COMPLETE** (=B) clean |
 | corners=2 ∧ forbid both B-orbits @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) clean |
 | corners=3 ∧ forbid corners @14 | **0 COMPLETE** clean |
