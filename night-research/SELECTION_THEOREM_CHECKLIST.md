@@ -206,6 +206,9 @@ For each claim, evidence type and where to re-run.
 | forbid (1,3) @14 global | **0 COMPLETE** stable3 |
 | forbid (2,2)∪B-orbits @14 | **8 COMPLETE** (=A) stable3 |
 | forbid (2,2)∪center @14 | **8 COMPLETE** (=B) stable3 |
+| corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) stable3 |
+| corners=3 ∧ forbid (2,2) @14 | **8 COMPLETE** (=B) stable3 |
+| corners=3 ∧ require both B-orbits @14 | **8 COMPLETE** (=B) stable3 |
 | corners=2 ∧ require corners @14 | ≥7 incomplete (census A has 2 corners) |
 | corners=2 ∧ require (0,1) @14 | ≥7 incomplete (census A has (0,1)=3) |
 | corners=2 ∧ require (0,2) @14 | ≥7 incomplete (census A has (0,2)=2) |
