@@ -72,6 +72,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require (1,2) @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ require corners @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) clean |
+| corners=3 ∧ require both B-orbits @14 | **8 COMPLETE** (=B) clean |
 | corners=2 ∧ forbid center @14 | **0 COMPLETE** clean |
 | corners=3 ∧ require corners @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) clean |
