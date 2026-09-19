@@ -48,6 +48,7 @@ For each claim, evidence type and where to re-run.
 | corners=3 @14 | 8 COMPLETE (phase B) |
 | corners=2 ∧ require center @14 | **8 COMPLETE** (=A) |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) clean |
+| corners=2 ∧ require center @14 | **8 COMPLETE** (=A) clean |
 | corners=2 ∧ forbid center @14 | **0 COMPLETE** (9.2M) clean |
 | corners=2 ∧ forbid center ∧ require (0,3) @14 | 0 seen (census 0) |
 | corners=3 ∧ forbid center ∧ require center @14 | **0 COMPLETE** (contradiction) |
