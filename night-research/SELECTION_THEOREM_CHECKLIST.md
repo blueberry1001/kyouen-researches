@@ -151,6 +151,8 @@ For each claim, evidence type and where to re-run.
 | forbid (0,1) @14 global | **0 COMPLETE** stable |
 | forbid (1,1) @14 global | **0 COMPLETE** stable |
 | forbid (1,3) @14 global | **0 COMPLETE** stable |
+| forbid (2,2)∪(0,3)∪(2,3) @14 | **8 COMPLETE** (=A) stable |
+| forbid (2,2)∪center @14 | **8 COMPLETE** (=B) stable |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
 | forbid (0,2) @14 global | **0 COMPLETE** |
