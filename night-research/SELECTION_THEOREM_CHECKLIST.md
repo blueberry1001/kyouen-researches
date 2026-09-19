@@ -188,6 +188,9 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require (2,2) @14 | **0 COMPLETE** stable2 |
 | corners=2 ∧ require (0,3) @14 | **0 COMPLETE** stable2 |
 | corners=2 ∧ require (2,3) @14 | **0 COMPLETE** stable2 |
+| corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) stable3 |
+| corners=3 ∧ forbid (2,2) @14 | **8 COMPLETE** (=B) stable3 |
+| forbid (2,2) @14 global | **16 COMPLETE** stable3 |
 | corners=2 ∧ require (2,3) @14 | **0 COMPLETE** stable (prior 7M) |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
