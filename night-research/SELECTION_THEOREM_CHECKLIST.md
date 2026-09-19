@@ -285,6 +285,10 @@ For each claim, evidence type and where to re-run.
 | corners=3 ∧ require (2,3) @14 | **8 COMPLETE** (=B) ultra |
 | corners=3 ∧ forbid (0,3) @14 | **0 COMPLETE** ultra |
 | corners=2 ∧ forbid (0,3) alone @14 | **8 COMPLETE** (=A) ultra |
+| corners=2 ∧ forbid (2,3) alone @14 | **8 COMPLETE** (=A) ultra |
+| corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) ultra |
+| forbid (2,2) @14 global | **16 COMPLETE** ultra |
+| forbid (0,3) @14 global | **8 COMPLETE** (=A) ultra |
 | forbid (1,1) @14 global | **0 COMPLETE** final |
 | forbid (1,3) @14 global | **0 COMPLETE** final |
 | require center @14 global | **8 COMPLETE** (=A) final |
