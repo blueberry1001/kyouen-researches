@@ -144,6 +144,7 @@ For each claim, evidence type and where to re-run.
 | forbid (1,2) @14 global | **0 COMPLETE** |
 | forbid corners @14 global | **0 COMPLETE** |
 | forbid (1,1) @14 global | **0 COMPLETE** |
+| forbid (1,3) @14 global | **0 COMPLETE** |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm |
 | forbid (0,3) alone @14 | **8 COMPLETE** (phase A remains) |
 | forbid (0,1) @13 | 24 COMPLETE (optional at 13) |

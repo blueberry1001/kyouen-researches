@@ -47,7 +47,8 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    No S uses orbit `(2,2)`.
    Phase-level COMPLETE zeros: **neither** A nor B may omit **any** of
    `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)`.
-   Global COMPLETE zeros @14 also hold for forbid `(0,0),(0,1),(0,2),(1,1),(1,2)`.
+   Global COMPLETE zeros @14 hold for **all six** mandatory orbits
+   `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)` (forbid → count=0).
    Deeper: `(0,2)` **and** `(1,2)` are already mandatory at **size 13** COMPLETE.
 
 5. **Capacity decomposition (COMPLETE).** Let M be the six mandatory orbits.
