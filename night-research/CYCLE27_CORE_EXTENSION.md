@@ -40,6 +40,17 @@ extensions” behind the n=7 +1.
 `is_safe` on the same masks agrees: A_wo safe pop13; B_wo safe pop11;
 A_wo|B_b unsafe; B_wo|center unsafe; both cores are subsets of their phases.
 
+## Explicit forbidden quads on cross-extensions
+
+| configuration | example completed forbidden quad |
+|---|---|
+| B-core ∪ {center} | **{(3,3),(6,4),(2,6),(6,6)}** |
+| A-core ∪ {(3,2)∈B-bundle} | {(0,0),(1,1),(3,2),(6,2)} (and 4 more) |
+| A-core ∪ {(0,3)} | {(0,0),(1,0),(2,1),(0,3)} (and 6 more) |
+| A-core ∪ {(2,3)} | {(0,0),(2,1),(2,3),(0,4)} (and 3 more) |
+
+So exclusivity is witnessed by **named quads**, not only by max-size counts.
+
 ## Related
 - `CYCLE15_CAPACITY_DECOMPOSITION.md`
 - `CYCLE10_OCCUPANCY_SELECTION.md`
