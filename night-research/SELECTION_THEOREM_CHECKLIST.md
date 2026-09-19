@@ -54,7 +54,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ forbid (2,2) @14 | **8 COMPLETE** (=A) |
 | corners=2 ∧ require center @14 | **8 COMPLETE** (=A) |
 | corners=3 ∧ require (1,3) @14 | **8 COMPLETE** (=B) |
-| corners=3 ∧ require (1,2) @14 | **8 COMPLETE** (=B) |
+| corners=3 ∧ require (1,2) @14 | **8 COMPLETE** (=B) clean |
 | corners=3 ∧ require (0,2) @14 | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (0,1) @14 | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (1,1) @14 | **8 COMPLETE** (=B) |
