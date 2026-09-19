@@ -83,6 +83,9 @@ center+(2,3)=12; corners=4 ≤12.
 | corners=3 ∧ forbid (0,0)/(0,1)/(1,1)/(1,3) | **0 COMPLETE** each |
 | corners=2 ∧ forbid B-orbits alone / both | **8 COMPLETE** (=A) |
 | corners=3 ∧ require B-orbits alone / both | **8 COMPLETE** (=B) |
+| forbid (2,2) global | **16 COMPLETE** |
+| corners=2/3 ∧ forbid center | **0 / 8 COMPLETE** (A/B) |
+| require center global | **8 COMPLETE** (=A) |
 
 ## Related files
 
