@@ -39,8 +39,8 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
 4. **Mandatory / forbidden orbits (COMPLETE forbid-orbit).**
    Every S∈ℳ7 meets orbits `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)` @14.
    No S uses orbit `(2,2)`.
-   Phase-level COMPLETE zeros: **neither** A nor B may omit `(0,0),(0,1),(0,2),(1,2)`;
-   B also cannot omit `(1,1),(1,3)`.
+   Phase-level COMPLETE zeros: **neither** A nor B may omit **any** of
+   `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)`.
    Deeper: `(0,2)` **and** `(1,2)` are already mandatory at **size 13** COMPLETE.
 
 5. **Capacity decomposition (COMPLETE).** Let M be the six mandatory orbits.
