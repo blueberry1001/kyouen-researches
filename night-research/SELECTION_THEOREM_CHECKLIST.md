@@ -49,6 +49,7 @@ For each claim, evidence type and where to re-run.
 | corners=2 ∧ require center @14 | **8 COMPLETE** (=A) |
 | corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm |
 | corners=2 ∧ forbid center @14 | **0 COMPLETE** (9.2M nodes) |
+| corners=2 ∧ forbid center ∧ require (0,3) @14 | 0 seen (census 0) |
 | corners=2 ∧ require center @14 | **8 COMPLETE** (=A) |
 | corners=3 ∧ require (1,3) @14 | **8 COMPLETE** (=B) |
 | corners=3 ∧ require (1,2) @14 | **8 COMPLETE** (=B) |
