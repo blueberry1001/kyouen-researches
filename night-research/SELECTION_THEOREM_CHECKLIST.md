@@ -293,6 +293,10 @@ For each claim, evidence type and where to re-run.
 | forbid (0,2) @14 global | **0 COMPLETE** ultra |
 | forbid (1,2) @14 global | **0 COMPLETE** ultra |
 | require center @14 global | **8 COMPLETE** (=A) ultra |
+| forbid (0,0) @14 global | **0 COMPLETE** ultra |
+| forbid (0,1) @14 global | **0 COMPLETE** ultra |
+| forbid (1,1) @14 global | **0 COMPLETE** ultra |
+| forbid (1,3) @14 global | **0 COMPLETE** ultra |
 | forbid (1,1) @14 global | **0 COMPLETE** final |
 | forbid (1,3) @14 global | **0 COMPLETE** final |
 | require center @14 global | **8 COMPLETE** (=A) final |
