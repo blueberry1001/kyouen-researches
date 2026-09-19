@@ -145,6 +145,10 @@ X.Xc...
 Also COMPLETE complementary counts @14:
 - forbid `(2,2)∪(0,3)∪(2,3)` → **8** (phase A)
 - forbid `(2,2)∪center` → **8** (phase B)
+- forbid `(2,2)` alone → **16** (all max sets)
+- forbid `(0,3)` alone → **8** (phase A)
+- forbid `(2,3)` alone → **8** (phase A)
+- forbid center alone → **8** (phase B; census)
 
 ---
 
