@@ -140,6 +140,7 @@ For each claim, evidence type and where to re-run.
 | forbid (0,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid (2,3) @14 global | **8 COMPLETE** (= phase A) |
 | forbid center @14 global | **8 COMPLETE** (= phase B; corners=3∧forbid center) |
+| corners=3 ∧ forbid center @14 | **8 COMPLETE** (=B) reconfirm |
 | forbid (0,3) alone @14 | **8 COMPLETE** (phase A remains) |
 | forbid (0,1) @13 | 24 COMPLETE (optional at 13) |
 | corners=4 | ≤12 (no 13, no 14) |
