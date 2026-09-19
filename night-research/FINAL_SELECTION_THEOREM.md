@@ -37,6 +37,8 @@ Let \(\mathcal{M}_7\) be the family of safe 14-sets on 7×7. Then:
    - no-center ∧ forbid(0,3)∧forbid(2,3) @14 = 0 COMPLETE.
    - A cannot require (0,3)/(2,3)/(2,2) — all **0 COMPLETE**.
    - B cannot require center or (2,2) (COMPLETE 0).
+   - B **must** use both (0,3) and (2,3) (each require → 8 COMPLETE).
+   - Every B uses all six mandatory orbits (require each → 8 COMPLETE).
 
 4. **Mandatory / forbidden orbits (COMPLETE forbid-orbit).**
    Every S∈ℳ7 meets orbits `(0,0),(0,1),(0,2),(1,1),(1,2),(1,3)` @14.
