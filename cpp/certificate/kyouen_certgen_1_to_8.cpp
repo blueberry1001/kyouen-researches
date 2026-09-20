@@ -262,7 +262,13 @@ private:
         return x;
     }
 
-    static std::uint64_t flipV8(std::uint64_t x) { return __builtin_bswap64(x); }
+    static std::uint64_t flipV8(std::uint64_t x) {
+#if defined(_MSC_VER)
+        return _byteswap_uint64(x);
+#else
+        return __builtin_bswap64(x);
+#endif
+    }
 
     static std::uint64_t transpose8(std::uint64_t x) {
         std::uint64_t t;
