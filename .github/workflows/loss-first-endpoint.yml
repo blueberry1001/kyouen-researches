@@ -1,0 +1,35 @@
+name: loss-first blinded endpoint
+
+on:
+  push:
+    branches: [preregister-10x10-loss-first-only]
+    paths:
+      - '.github/workflows/loss-first-endpoint.yml'
+  workflow_dispatch:
+
+jobs:
+  endpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply frozen loss-first delta
+        run: python3 scripts/prepare_cache_aware_loss_first_only.py --apply
+      - name: Re-run frozen safety gate
+        run: |
+          g++ -O2 -std=c++20 -I. scripts/loss_first_order_test.cpp -o /tmp/loss_first_order_test
+          /tmp/loss_first_order_test
+      - name: Build single endpoint binary
+        run: |
+          mkdir -p tmp-kb
+          rm -f tmp-kb/order_ab_native
+          g++ -O2 -std=c++20 scripts/probe_cert_solver.cpp -o tmp-kb/order_ab_native
+      - name: Collect complete blinded 12x3 cohort then open endpoint
+        run: python3 scripts/run_loss_first_only_endpoint.py
+      - name: Preserve complete endpoint
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: loss-first-only-endpoint
+          path: results/10x10/cache-aware-loss-first-only/
+          if-no-files-found: error
