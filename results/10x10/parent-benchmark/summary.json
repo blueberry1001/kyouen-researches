@@ -1,0 +1,22 @@
+{
+  "parents": 12,
+  "agreement_A_B": 12,
+  "median_work_ratio": 1.8415133752594297,
+  "geometric_mean_work_ratio": 1.8856,
+  "arithmetic_mean_work_ratio": 2.7023089227881565,
+  "aggregate_work_ratio": 1.4918988027831332,
+  "aggregate_A_visited": 225422484,
+  "aggregate_B_work": 336307534,
+  "improved": 2,
+  "tie": 0,
+  "worse": 10,
+  "success_median_lt_1": false,
+  "success_ge7_improved": false,
+  "best_parent": "0,11,35",
+  "best_ratio": 0.5298870597170342,
+  "worst_parent": "12,32,55",
+  "worst_ratio": 12.21240187477399,
+  "median_seconds_ratio": 4.381349999999999,
+  "median_wall_ratio": 1.5496,
+  "median_exact_only_visited_ratio": 1.697
+}

@@ -1,0 +1,88 @@
+{
+  "parents": [
+    {
+      "parent": "12,57,58",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,15,23",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "11,25,64",
+      "children_count": 92,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,45,68",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "3,58,81",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "2,30,53",
+      "children_count": 92,
+      "batches_count": 5
+    },
+    {
+      "parent": "22,44,55",
+      "children_count": 90,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,32,64",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "12,44,46",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,16,41",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "1,27,54",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,13,67",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "2,59,87",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,55,78",
+      "children_count": 95,
+      "batches_count": 5
+    },
+    {
+      "parent": "2,50,69",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "3,36,62",
+      "children_count": 96,
+      "batches_count": 5
+    }
+  ],
+  "total_tasks": 1529,
+  "task_set_sha256": "660ee0f5cd7772d6ae9f83d249f0028d7cda6c8af44c5e4448465e420845d6df",
+  "geometry_only": true,
+  "labels_used": "none"
+}

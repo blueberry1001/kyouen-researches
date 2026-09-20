@@ -1,0 +1,9 @@
+{
+  "parents": 12,
+  "parents_where_10k_total_cheaper_than_1m": 12,
+  "parents_where_1m_total_cheaper": 0,
+  "mean_probe_cost_ratio_10k_over_1m": 0.11355833333333333,
+  "median_total_cost_ratio_10k_over_1m": 0.1676,
+  "aggregate_total_10k_s": 2002.37,
+  "aggregate_total_1m_s": 9916.09
+}

@@ -1,0 +1,27 @@
+{
+  "seed": "kyouen-10x10-ab-staged-v3-root-seed-20260913",
+  "universe_size": 20355,
+  "excluded_count": 5720,
+  "clean_universe_size": 14635,
+  "primary_sample_size": 16,
+  "primary_parents": [
+    "12,57,58",
+    "4,15,23",
+    "11,25,64",
+    "4,45,68",
+    "3,58,81",
+    "2,30,53",
+    "22,44,55",
+    "4,32,64",
+    "12,44,46",
+    "4,16,41",
+    "1,27,54",
+    "4,13,67",
+    "2,59,87",
+    "4,55,78",
+    "2,50,69",
+    "3,36,62"
+  ],
+  "selection_rule": "SHA256(seed:canonical_parent) ascending on clean universe; no outcomes inspected",
+  "excludes": "all 3-stone states referenced in git history at HEAD plus explicit V1/V2/V3 lists"
+}

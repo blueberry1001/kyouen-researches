@@ -1,0 +1,24 @@
+{
+  "h1_win_prefix_reduced_parents": 9,
+  "h1_of_those_improved": 7,
+  "cheap_A_probe_dominated_failures": [
+    "12,44,46",
+    "22,44,55",
+    "3,36,62",
+    "4,15,23",
+    "4,16,41",
+    "4,32,64"
+  ],
+  "exact_worse_parents": [
+    "12,57,58",
+    "2,59,87",
+    "22,44,55",
+    "3,36,62"
+  ],
+  "median_probe_over_A": 0.5130173106698257,
+  "classes": {
+    "cheap_A_probe_dominated": 6,
+    "expensive_A_wins": 7,
+    "loss_proof_cost_or_order": 3
+  }
+}

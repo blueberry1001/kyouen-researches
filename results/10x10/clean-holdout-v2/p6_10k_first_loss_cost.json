@@ -1,0 +1,12 @@
+{
+  "parents": 12,
+  "median_ratio_10k_over_file": 0.84745,
+  "geometric_mean_ratio_10k_over_file": 0.8497,
+  "mean_ratio_10k_over_file": 1.03755,
+  "improved": 8,
+  "tie": 0,
+  "worse": 4,
+  "aggregate_file_order_s": 2893.15,
+  "aggregate_total_10k_s": 2002.37,
+  "aggregate_probe_10k_s": 1067.96
+}

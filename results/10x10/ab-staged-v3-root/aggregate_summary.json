@@ -1,0 +1,55 @@
+{
+  "n_parents": 16,
+  "correctness": {
+    "outcome_agreement": "16/16",
+    "mismatches": [],
+    "pass": true
+  },
+  "primary_visited": {
+    "aggregate_ratio": 0.9081202889531576,
+    "median_ratio": 1.3669254135932665,
+    "gmean_ratio": 1.0145721525424662,
+    "improved": 7,
+    "tied": 0,
+    "worse": 9,
+    "worst_ratio": 3.289001760261815,
+    "sign_test_one_sided_p": 0.7727508544921875,
+    "aggregate_a_visited": 909006298,
+    "aggregate_b_exact_visited": 634197062,
+    "aggregate_probe_visited": 191290000,
+    "aggregate_b_total_visited": 825487062,
+    "aggregate_exact_only_ratio": 0.6976817029709953,
+    "probe_overhead_share_of_A": 0.21043858598216225
+  },
+  "secondary_seconds": {
+    "median_ratio": 1.710662292265151,
+    "aggregate_ratio": 1.1388461535118808
+  },
+  "gates": {
+    "correctness_16_of_16": true,
+    "aggregate_ratio_lt_1": true,
+    "median_ratio_lt_1": false,
+    "improved_parents_ge_13": false,
+    "worst_ratio_le_2": false
+  },
+  "confirmatory_success": false,
+  "verdict": "CORRECTNESS PASS; PERFORMANCE FAIL",
+  "per_parent_ratios": {
+    "1,27,54": 0.9565417623646715,
+    "11,25,64": 0.6681871345722054,
+    "12,44,46": 2.7964949722174155,
+    "12,57,58": 1.6647974035923898,
+    "2,30,53": 0.3946264448853483,
+    "2,50,69": 0.46789065058294127,
+    "2,59,87": 1.5516083030208971,
+    "22,44,55": 3.140530042643881,
+    "3,36,62": 3.289001760261815,
+    "3,58,81": 0.3408440285607066,
+    "4,13,67": 1.3260580275039473,
+    "4,15,23": 1.4077927996825854,
+    "4,16,41": 1.5171047994935458,
+    "4,32,64": 1.5950312942943519,
+    "4,45,68": 0.30924260453240027,
+    "4,55,78": 0.3006275316133681
+  }
+}
