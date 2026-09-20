@@ -26,7 +26,7 @@ direction/budget/parent/endpoint changes after outcomes.
 - 1020/1020 exact outcomes (shrink 0, load 90, unbounded, 0 failures,
   0 timeouts), merged into 55 analyzer-compatible batch files.
 - Input verification passes (1020 tasks / 1020 probe rows).
-- No holdout child overlapped previously classified repo states (0/1020).
+- **Interpretation correction (audit `3d87e8b`)**: The 11 parents were unused for the probe-ranking experiment, but each originated from pre-existing proof families (`two-stone-90-61-child-proof.csv` and `two-stone-90-66-child-proof.csv`) that already supplied at least one exact LOSS child (in eight cases a literal direct child; in three cases a D4-equivalent direct child). Therefore this experiment is a prospective ranking replication on previously certified WIN parents, not a fully child-outcome-blind holdout. See `docs/10X10_HOLDOUT_PREKNOWN_LOSS_CHILD_AUDIT.md` and `results/10x10/exhaustive_preknown_loss_audit.json`.
 
 ## Primary result: hypothesis CONFIRMED on the holdout
 
@@ -58,6 +58,12 @@ First-LOSS ranks under the preregistered rule:
   (randomization over candidate order within fixed parents), not a
   population-generalization probability. The replication effect size above
   (10/11 rank 1, 10 better / 1 tie / 0 worse) is what supports the claim.
+- **Sensitivity analysis** (`scripts/audit_and_sensitivity_exhaustive.py`):
+  after removing all 33 pre-known LOSS witnesses across the 11 parents,
+  9 parents still had remaining LOSS children; the memo-ascending rule
+  remained 8 better / 1 tie / 0 worse (sign $p = 0.0039$, mean AUC 0.813).
+  This reduces, but does not eliminate, the concern that the primary result
+  was driven by pre-existing witnesses.
 
 ## Secondary
 

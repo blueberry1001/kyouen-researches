@@ -1,0 +1,67 @@
+{
+  "parent_count": 12,
+  "total_tasks": 1136,
+  "task_set_sha256": "aeccb6662a37ef25faf3fe6d0ab6707a9677718889139123060fff4a48566bc7",
+  "parent_stats": [
+    {
+      "parent": "3,53,84",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "0,11,35",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "12,24,68",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "12,32,55",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "3,47,63",
+      "children_count": 92,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,24,26",
+      "children_count": 96,
+      "batches_count": 5
+    },
+    {
+      "parent": "4,42,54",
+      "children_count": 94,
+      "batches_count": 5
+    },
+    {
+      "parent": "23,44,45",
+      "children_count": 92,
+      "batches_count": 5
+    },
+    {
+      "parent": "11,78,87",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "14,64,74",
+      "children_count": 90,
+      "batches_count": 5
+    },
+    {
+      "parent": "11,38,44",
+      "children_count": 97,
+      "batches_count": 5
+    },
+    {
+      "parent": "13,52,57",
+      "children_count": 92,
+      "batches_count": 5
+    }
+  ]
+}

@@ -1,73 +1,98 @@
-# 10x10 fresh-parent holdout v2 preregistration
+# Preregistration: 10x10 Second Clean Holdout Validation (V2)
 
-Base SHA: `eaf40af27224ad5beb977dc401a787a59cefd2f0`
+Date: 2026-09-07
+Branch: `10x10-second-clean-holdout`
+Status: **FROZEN BEFORE PROBES OR EXACT OUTCOMES**
 
-Purpose: test the already-fixed fresh-solver `memo_used` ascending rule on 3-stone parents selected without using parent game value, child outcome, LOSS witness, proof-family membership, or probe results.
+## 1. Background and Objective
 
-## Parent universe and selection
+The initial 11-parent holdout evaluation demonstrated strong performance for the fresh-solver `memo_used` ascending ranking heuristic (ranks `1,1,1,1,1,1,1,6,1,1,1` vs random median, sign $p = 0.00098$, mean AUC 0.820). However, audit `3d87e8b` and sensitivity analysis `c7fc23c` revealed that all 11 parents came from previously classified proof families (`90-66` and `90-61`), and contained 33 pre-known exact LOSS child witnesses. While sensitivity analysis excluding all 33 pre-known witnesses retained $p = 0.0039$ and mean AUC 0.813, establishing external validity requires a strictly clean, child-outcome-blind holdout.
 
-Universe: every 3-cell subset of the 10x10 board, reduced to one lexicographically-minimal representative per D4 orbit.
+This V2 confirmatory holdout tests the identical ranking heuristic on a completely fresh, geometry-sampled parent cohort where **no child outcomes, parent game values, or proof witnesses were inspected prior to freezing**.
 
-Before hashing, conservatively exclude every D4 orbit whose 3-cell canonical key can be extracted from **any tracked text file** at the fixed base SHA. The implementation uses `git grep -I` over the entire tree rather than only selected directories, so a state appearing only in `tests/`, `cpp/`, `experiments/`, or another tracked path is still excluded. The exclusion parser is intentionally label-blind: it records state identities only and never reads WIN/LOSS fields, witness labels, probe scores, memo counts, or game values. Over-exclusion is acceptable; outcome-dependent inclusion is not.
+## 2. Parent Universe and Exclusion Rule
 
-This whole-tree exclusion rule was fixed before the v2 parent CSV was generated or any v2 probe/exact outcome was inspected.
+1. **Universe**: All D4-canonical safe 3-stone states on a $10 \times 10$ board. Total size: **20,355** canonical states. (All 3-stone states are non-terminal in Kyouen since co-circularity requires 4 stones).
+2. **Canonicalization**: For any 3 points $(p_1, p_2, p_3)$, standard D4 orbit reduction under 8 transformations:
+   $$\text{canonical}(p_1, p_2, p_3) = \min_{k \in [0, 7]} \text{sort}(T_k(p_1), T_k(p_2), T_k(p_3))$$
+3. **Exclusion List**: Exhaustive scan of the entire Git history at `HEAD` for any 3-stone state ever referenced in tests, proofs, tuning, or prior holdouts. Total excluded: **2,899** states (stored in `results/10x10/clean-holdout-v2/holdout_v2_exclusion_list.csv`).
+4. **Clean Universe**: $20,355 - 2,899 = \mathbf{17,456}$ completely untouched candidate parents.
 
-Seed: `kyouen-10x10-fresh-parent-holdout-v2-2026-09-07`
+## 3. Sampling Method and Frozen Cohort
 
-For each remaining canonical triple `a,b,c`, compute SHA-256 of
+- **PRNG / Hash Chaining**: Fully deterministic via SHA-256:
+  $$\text{hash}(P) = \text{SHA256}(\text{"kyouen-10x10-fresh-parent-holdout-v2-seed-20260907:"} + P)$$
+- **Primary Sample Size**: **12 parents** (approx. 1,100 children), ensuring exhaustive exact solving feasibility while matching/exceeding the first holdout sample size ($N=11$).
+- **Frozen Primary Cohort**:
+  1. `3,53,84` (97 children)
+  2. `0,11,35` (96 children)
+  3. `12,24,68` (96 children)
+  4. `12,32,55` (97 children)
+  5. `3,47,63` (92 children)
+  6. `4,24,26` (96 children)
+  7. `4,42,54` (94 children)
+  8. `23,44,45` (92 children)
+  9. `11,78,87` (97 children)
+  10. `14,64,74` (90 children)
+  11. `11,38,44` (97 children)
+  12. `13,52,57` (92 children)
+- **Total Child Tasks**: **1,136 tasks** (ordered task list digest: `7ca356a7453437448d301c53642df1ed49ad4f37f952dce7a0f96735f35c900c`).
 
-`seed + "|" + "a,b,c"`
+## 4. Ranking Rule (Frozen, Identical to V1)
 
-sort by `(digest, canonical triple)`, and take the first **24** parents. No parent may be replaced after any probe or exact outcome is inspected. If the exclusion parser leaves fewer than 24 parents, use all remaining parents and record that fact before probing.
+Each safe child is evaluated via a fresh Solver process with budget $1,000,000$ (shrink=3, load=80).
+Ranking key tuple:
+1. Probe resolved LOSS first.
+2. Unresolved probes: `memo_used` **ascending** (smallest memo table first).
+3. Probe resolved WIN last.
+4. Tie-breaker: 4th move board index **ascending** (deterministic).
 
-The selected parent list and a manifest containing the base SHA, seed, universe count, exclusion count, selected count, and SHA-256 of the CSV must be committed before probes are run.
+**Direction change is strictly forbidden** (remains `memo_used` ascending).
 
-## Probe protocol
+## 5. Hypotheses and Success Criteria
 
-Primary budget: **1,000,000 visited states per child**.
+### Primary Endpoint
+For each eligible parent having $\ge 1$ exact LOSS child ($l \ge 1$), compare the first LOSS rank $r_1$ against the exact median rank under the uniform random ordering null:
+$$\text{Med}_{\text{random}}(m, l) = \min \{ r \mid F_{\text{null}}(r; m, l) \ge 0.5 \}$$
+A parent is scored as:
+- **better**: $r_1 < \text{Med}_{\text{random}}$
+- **worse**: $r_1 > \text{Med}_{\text{random}}$
+- **tie**: $r_1 = \text{Med}_{\text{random}}$
 
-Each legal child is probed in a fresh solver process / fresh Solver instance. No memo table, timer, counter, or solver state may be shared between children.
+### Primary Hypothesis Test
+One-sided exact sign test on eligible parents with ties excluded:
+$$H_0: P(\text{better}) \le P(\text{worse}) \quad \text{vs.} \quad H_1: P(\text{better}) > P(\text{worse})$$
+Significance threshold: $\alpha = 0.05$.
 
-Primary ranking is frozen from the previous holdout:
+### Secondary Endpoints
+1. Rank sum statistic: $\sum r_1$ vs. null expectation.
+2. Normalized first LOSS rank: mean and median of $r_1 / m$.
+3. Child-level AUC: computed for parents with both $\ge 1$ LOSS and $\ge 1$ WIN.
+4. Individual parent outcomes and exact LOSS yield.
 
-1. probe-proved LOSS first;
-2. unresolved children by ascending independent `memo_used`;
-3. probe-proved WIN last;
-4. ties by ascending move/cell index.
+## 6. Execution Order and Stopping Rule
 
-If all candidates remain unresolved at 1M, this reduces to pure `memo_used` ascending. Direction must not be reversed on this holdout.
+1. Commit sampling code, seed, candidate list, task list, and this preregistration document before running probes.
+2. Execute fresh 1M probes on all 1,136 child tasks.
+3. Commit raw probe outputs and probe protocol manifest before running exact solver.
+4. Execute exact solver on all 1,136 child tasks.
+5. Compute preregistered evaluation metrics and compile reports.
+6. Stopping rule: All 12 parents are evaluated. No parents may be added or removed post-hoc based on exact outcomes.
 
-## Exact outcomes and endpoint
+## 7. Protocol Amendment A1 (format fix; frozen choices unchanged)
 
-Exact solving starts only after the complete 1M probe table and its protocol manifest are committed.
+After freezing, a format defect was found: the first generated children/task
+list used hyphen-separated states (`0-3-53-84`), which the solver `parse()`
+splits on commas only, so those tasks would have been misparsed as 1-stone
+roots. The entire first probe collection (1,136 rows) was therefore **invalid
+and discarded**, and the children/task list was regenerated with
+comma-separated states. Task-set SHA256 changed from
+`7ca356a7...` to `aeccb666...`. Probes were re-collected from scratch and
+re-frozen before the exact sweep began.
 
-Every sampled parent remains in the report regardless of exact game value.
-
-For a sampled parent having at least one exact LOSS child, primary endpoint is the rank of its first LOSS child under the frozen ranking. Parents having no LOSS child are reported as non-contributing to first-LOSS analysis rather than removed from the frozen sample.
-
-For a parent with `m` legal children and `l` LOSS children, use the exact random-permutation distribution and its exact median. Across contributing parents classify frozen rank as better / tie / worse than that median. Primary directional test is the one-sided exact sign test over non-ties, with hypothesis `memo ascending better than random`, alpha = 0.05.
-
-Always report individual ranks, LOSS counts, normalized rank, rank sum, and exact random expectation. Candidate-level AUC within each parent containing both LOSS and WIN children is secondary; report each AUC plus mean and median, not only pooled AUC.
-
-## No rescue rule
-
-The following are forbidden on this holdout after outcomes are observed:
-
-- reversing memo direction;
-- changing 1M primary budget;
-- dropping or replacing sampled parents;
-- choosing a subset based on LOSS density, proof family, solver difficulty, or effect size;
-- modifying the primary statistic or alpha;
-- promoting 10k/100k results to primary.
-
-Any heuristic discovered from this holdout is exploratory and requires another independent holdout.
-
-## Diagnostics
-
-Depth-resolved instrumentation and 10k/100k probes may be collected as secondary diagnostics, provided they do not alter the 1M primary solver behavior or ranking definition.
-
-`visited - memo_used` is not a memo-hit count and must not be interpreted as one.
-
-## Interpretation
-
-A favorable result supports repeatability beyond the proof-family-selected first holdout because parent identity is fixed without consulting outcomes. A null/adverse result weakens the generality of the memo-ascending signal and must be reported without post-hoc rescue.
+Disclosure: during format diagnosis, one V2 cohort child (`1,3,53,84`) was
+solved exactly (`WIN`, 51s) to confirm the parser hypothesis. This outcome
+was observed before the re-freeze but caused no change to any frozen choice:
+same 12 parents, same seed, same ranking rule, same budgets, same endpoints.
+The re-freeze was mandatory regardless of that outcome. All remaining 1,135
+exact outcomes were first observed after the re-freeze.
