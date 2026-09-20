@@ -39,24 +39,30 @@ def run_git(args: list[str]) -> subprocess.CompletedProcess[str]:
 
 
 def verify_frozen_files() -> None:
-    paths = [
-        str(SELECTION.relative_to(REPO_ROOT)),
-        str(CHILDREN_DIR.relative_to(REPO_ROOT)),
-    ]
+    selection_path = str(SELECTION.relative_to(REPO_ROOT))
+    children_path = str(CHILDREN_DIR.relative_to(REPO_ROOT))
 
-    # Compare the current tracked bytes against the exact pre-probe snapshot.
-    diff = run_git(["diff", "--no-ext-diff", "--quiet", FROZEN_INPUT_COMMIT, "--", *paths])
+    # The selection and the children batch files are frozen pre-probe inputs.
+    # Exact-outcome CSVs are the measured labels collected AFTER the freeze
+    # (b5172a4-era exacts were already tracked; holdout exacts are new), so
+    # they are verified structurally below, not byte-compared here.
+    diff = run_git(["diff", "--no-ext-diff", "--quiet", FROZEN_INPUT_COMMIT, "--",
+                    selection_path, f"{children_path}/children_*.txt"])
     if diff.returncode == 1:
         raise RuntimeError(
-            "selection/blind_probe_children differ from the frozen pre-probe commit "
+            "selection/children batch files differ from the frozen pre-probe commit "
             f"{FROZEN_INPUT_COMMIT}; refusing analysis"
         )
     if diff.returncode != 0:
         raise RuntimeError(f"git diff failed: {diff.stderr.strip()}")
 
     # git diff ignores untracked files, while glob-based loaders do not.  An
-    # untracked exact_*/children_* file could otherwise silently enter analysis.
-    untracked = run_git(["ls-files", "--others", "--exclude-standard", "--", *paths])
+    # untracked children_* file could otherwise silently enter analysis.
+    # (Untracked exact_* files are the expected post-freeze outcome payload;
+    # they are allow-listed by task identity in verify_task_manifest_and_probe_rows
+    # and cross-checked against the frozen children set in the analyzer.)
+    untracked = run_git(["ls-files", "--others", "--exclude-standard", "--",
+                         selection_path, f"{children_path}/children_*.txt"])
     if untracked.returncode != 0:
         raise RuntimeError(f"git ls-files failed: {untracked.stderr.strip()}")
     extras = [line for line in untracked.stdout.splitlines() if line.strip()]

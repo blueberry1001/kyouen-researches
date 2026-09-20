@@ -1,11 +1,20 @@
-"""Tests for scripts/kyouen9_pairsum.py (tasks 5-6).
+"""P6 regression: raw/filtered response-set separation + C++ cross-check.
 
-Covers:
-  - forbidden rule detects both collinear and concyclic quads (and matches
-    the solver determinant on random quads);
-  - on safe 3-stone parents, the 3 dangerous-response sets are pairwise
-    disjoint and S == newly-killed safe responses;
-  - 4-stone overlap O <= 3 on sampled safe parents (math claim of task 6).
+Covers the metric-definition correction
+(docs/9X9_PAIRSUM_METRIC_DEFINITION_CORRECTION.md):
+
+  - raw_response_sets has NO other-quad filter;
+  - filtered_response_sets keeps the old audit filter;
+  - filtered mode has E'=O'=0 by construction on sampled (P, v);
+  - raw mode exhibits O > 0 AND E > 0 examples (fixtures, not sampling luck);
+  - raw_decomposition satisfies raw_pair == T + E + O exactly;
+  - fast cached engine agrees with the reference engine on raw quantities;
+  - C++ analyzer identity: raw_ab(v) == completion(a,b,v) minus P+v, and
+    occupied/existing candidate exclusion matches analyze-9x9-pair-gap-
+    decomposition.cpp (v must be non-occupied AND non-existing-dangerous).
+
+The O>0 / E>0 fixtures below were found by search and are pinned so the
+regression cannot silently pass by sampling different parents.
 """
 
 import random
@@ -67,7 +76,28 @@ def _random_safe_parent(rng, k):
     raise AssertionError("no safe parent found")
 
 
-def test_3stone_disjoint_and_sum_identity():
+# Pinned fixtures: (parent, v) with raw O > 0, resp. raw E > 0.
+# Verified against the C++ raw definitions; pinned so the regression cannot
+# silently pass by sampling different parents.
+O_FIXTURE = ((3, 29, 58, 76), 59)
+E_FIXTURE = ((8, 17, 32, 72), 28)
+
+
+def _completion_reference(parent, v):
+    """Independent completion-table reference (no shared code with engines).
+
+    completion(a,b,v) = {r : forbidden(a,b,v,r)}, mirroring the C++ table.
+    """
+    out = {}
+    for a, b in combinations(sorted(parent), 2):
+        s = {r for r in range(k9.V)
+             if r not in set(parent) | {v} and k9.forbidden(a, b, v, r)}
+        out[(a, b)] = s
+    return out
+
+
+def test_3stone_filtered_disjoint_and_killed_subset():
+    """Filtered 3-stone sets are disjoint and ⊆ killed safe replies (old audit claim)."""
     rng = random.Random(999)
     checked = 0
     for _ in range(6):
@@ -76,7 +106,7 @@ def test_3stone_disjoint_and_sum_identity():
             Pv = tuple(sorted(P + (v,)))
             if not k9.is_safe(Pv):
                 continue
-            sets = k9.response_sets(P, v)
+            sets = k9.filtered_response_sets(P, v)
             assert len(sets) == 3
             vals = list(sets.values())
             assert vals[0] & vals[1] == set()
@@ -100,7 +130,8 @@ def test_3stone_disjoint_and_sum_identity():
     assert checked > 50
 
 
-def test_4stone_overlap_bound():
+def test_4stone_raw_overlap_bound_and_identity():
+    """Raw identity raw_pair == T + E + O; raw O <= 3 on sampled parents."""
     rng = random.Random(31337)
     worst = 0
     for _ in range(6):
@@ -109,8 +140,81 @@ def test_4stone_overlap_bound():
             Pv = tuple(sorted(P + (v,)))
             if not k9.is_safe(Pv):
                 continue
-            o = k9.overlap(P, v)
-            assert o >= 0
-            assert o <= 3, (P, v, o)
-            worst = max(worst, o)
-    print(f"max O observed: {worst}")
+            d = k9.raw_decomposition(P, v)
+            assert d["raw_pair"] == d["T"] + d["E"] + d["O"], (P, v, d)
+            assert 0 <= d["O"] <= 3, (P, v, d)
+            assert k9fast.raw_decomposition(P, v)["O"] == d["O"]
+            worst = max(worst, d["O"])
+    print(f"max raw O observed: {worst}")
+
+
+def test_raw_matches_completion_table_and_cpp_candidate_rule():
+    """Raw sets == completion table; candidate rule matches C++ analyzer."""
+    rng = random.Random(777)
+    for _ in range(10):
+        P = _random_safe_parent(rng, 4)
+        B = k9.existing_danger(P)
+        legal = [v for v in range(k9.V) if v not in set(P) and v not in B]
+        assert legal, P
+        v = rng.choice(legal)
+        assert k9.is_safe(tuple(sorted(P + (v,)))), (P, v)
+        ref = _completion_reference(P, v)
+        assert k9.raw_response_sets(P, v) == ref, (P, v)
+        assert k9fast.raw_response_sets(P, v) == ref, (P, v)
+        d = k9.raw_decomposition(P, v)
+        assert d["raw_pair"] == d["T"] + d["E"] + d["O"], (P, v, d)
+        assert d["union"] == set().union(*ref.values())
+        assert d["existing"] == B
+
+
+def _assert_safe4(parent):
+    assert len(parent) == 4 and k9.is_safe(parent), parent
+
+
+def test_raw_overlap_fixture():
+    P, v = O_FIXTURE
+    _assert_safe4(P)
+    assert k9.is_safe(tuple(sorted(P + (v,))))
+    d = k9.raw_decomposition(P, v)
+    assert d["O"] > 0, d
+    assert d["raw_pair"] == d["T"] + d["E"] + d["O"]
+    assert k9fast.raw_decomposition(P, v)["O"] == d["O"]
+    f_sets = k9.filtered_response_sets(P, v)
+    fS = sum(map(len, f_sets.values()))
+    fU = set().union(*f_sets.values()) if f_sets else set()
+    assert fS - len(fU) == 0
+
+
+def test_raw_existing_danger_fixture():
+    P, v = E_FIXTURE
+    _assert_safe4(P)
+    assert k9.is_safe(tuple(sorted(P + (v,))))
+    d = k9.raw_decomposition(P, v)
+    assert d["E"] > 0, d
+    assert d["raw_pair"] == d["T"] + d["E"] + d["O"]
+    assert k9fast.raw_decomposition(P, v)["E"] == d["E"]
+
+
+def test_filtered_has_no_overlap_or_existing_by_construction():
+    rng = random.Random(999)
+    for _ in range(6):
+        P = _random_safe_parent(rng, 4)
+        kids = [v for v in sorted(k9.legal_moves(P))
+                if k9.is_safe(tuple(sorted(P + (v,))))][:10]
+        for v in kids:
+            sets = k9.filtered_response_sets(P, v)
+            vals = list(sets.values())
+            for i in range(len(vals)):
+                for j in range(i + 1, len(vals)):
+                    assert vals[i] & vals[j] == set(), (P, v)
+            B = k9.existing_danger(P)
+            for s in vals:
+                assert s & B == set(), (P, v)
+
+
+def test_circle_line_split_adds_up_raw():
+    P, v = O_FIXTURE
+    d = k9.raw_decomposition(P, v)
+    dc = k9.raw_decomposition(P, v, "circle")
+    dl = k9.raw_decomposition(P, v, "line")
+    assert dc["raw_pair"] + dl["raw_pair"] == d["raw_pair"]

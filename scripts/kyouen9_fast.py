@@ -79,7 +79,24 @@ def is_safe(stones):
     return True
 
 
-def response_sets(parent, v, kind=None):
+def raw_response_sets(parent, v, kind=None):
+    """Raw mode via completion cache: completion(a,b,v) minus P+v. No filter."""
+    P = list(parent)
+    Pv = P + [v]
+    assert is_safe(Pv)
+    comp = load()
+    Pv_set = set(Pv)
+    out = {}
+    for a, b in combinations(sorted(P), 2):
+        key = tuple(sorted((a, b, v)))
+        s = set(comp[key]) - Pv_set
+        if kind is not None:
+            s = {r for r in s if k9.forbidden_kind(a, b, v, r) == kind}
+        out[(a, b)] = s
+    return out
+
+
+def filtered_response_sets(parent, v, kind=None):
     P = list(parent)
     Pv = P + [v]
     assert is_safe(Pv)
@@ -109,13 +126,43 @@ def response_sets(parent, v, kind=None):
     return out
 
 
+def response_sets(parent, v, kind=None):
+    """DEPRECATED alias for filtered_response_sets."""
+    return filtered_response_sets(parent, v, kind)
+
+
+def existing_danger(parent):
+    occ = set(parent)
+    comp = load()
+    out = set()
+    for triple in combinations(sorted(parent), 3):
+        out |= set(comp[triple])
+    return out - occ
+
+
+def raw_decomposition(parent, v, kind=None):
+    B = existing_danger(parent)
+    sets = raw_response_sets(parent, v, kind)
+    U = set().union(*sets.values()) if sets else set()
+    S = sum(len(s) for s in sets.values())
+    return {"raw_pair": S, "union_size": len(U), "T": len(U - B),
+            "E": len(U & B), "O": S - len(U),
+            "existing": B, "pair_sets": sets, "union": U}
+
+
+def raw_pair_sum(parent, v, kind=None):
+    return sum(len(s) for s in raw_response_sets(parent, v, kind).values())
+
+
 def pair_sum(parent, v, kind=None):
-    return sum(len(s) for s in response_sets(parent, v, kind).values())
+    """DEPRECATED (filtered-mode) alias. Use raw_pair_sum for raw heuristic."""
+    return sum(len(s) for s in filtered_response_sets(parent, v, kind).values())
 
 
 def exact_mobility(parent, v, kind=None):
+    """DEPRECATED (filtered-mode) alias."""
     u = set()
-    for s in response_sets(parent, v, kind).values():
+    for s in filtered_response_sets(parent, v, kind).values():
         u |= s
     return len(u)
 
