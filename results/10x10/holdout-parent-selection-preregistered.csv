@@ -1,0 +1,12 @@
+selection_index,parent,canonical_parent,source,reason
+1,"0,36,50","0,5,63",two-stone-90-66-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+2,"9,33,54","0,36,55",two-stone-90-66-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+3,"0,1,13","0,1,13",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+4,"0,7,31","0,7,31",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+5,"0,17,31","0,13,71",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+6,"0,13,34","0,13,34",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+7,"0,13,44","0,13,44",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+8,"0,2,13","0,2,13",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+9,"0,3,13","0,3,13",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+10,"0,10,13","0,1,31",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
+11,"0,13,21","0,12,31",two-stone-90-61-child-proof.csv,"eligible unused 3-stone parent from pre-existing blind parent-selection pool"
