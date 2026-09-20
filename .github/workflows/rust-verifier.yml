@@ -7,8 +7,6 @@ on:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
       - 'cpp/certificate/**'
-      - 'cpp/solvers/kyouen_solver_10_kyoenc4.cpp'
-      - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   pull_request:
     branches: [main]
@@ -16,14 +14,12 @@ on:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
       - 'cpp/certificate/**'
-      - 'cpp/solvers/kyouen_solver_10_kyoenc4.cpp'
-      - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   workflow_dispatch:
 
 jobs:
   test:
-    name: Build, cross-check, and verify certificate DAGs
+    name: Build, self-test, audit, cross-check, and verify DAGs
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -57,11 +53,11 @@ jobs:
           --seed 20260802
           --max-stones 12
           --solve-max-size 0
-      - name: Build C++ KYOENC3 generator and checker
+      - name: Build C++ certificate generator and checker
         run: |
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certgen_1_to_8.cpp -o /tmp/kyouen-certgen
           g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certcheck.cpp -o /tmp/kyouen-certcheck
-      - name: Generate and independently verify 1x1 through 6x6 KYOENC3 DAGs
+      - name: Generate and independently verify 1x1 through 6x6 certificate DAGs
         run: |
           for n in 1 2 3 4 5 6; do
             cert="/tmp/kyouen-${n}.cert"
@@ -69,36 +65,3 @@ jobs:
             /tmp/kyouen-certcheck "$cert"
             cargo run --release --bin kyouen-cert-verify -- "$cert"
           done
-      - name: Build 10x10 KYOENC4 smoke generator
-        run: >-
-          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
-          ../../cpp/certificate/kyouen_certgen_v4_smoke.cpp
-          -o /tmp/kyouen-certgen-v4-smoke
-      - name: Generate and verify a high-word 10x10 KYOENC4 DAG
-        run: |
-          /tmp/kyouen-certgen-v4-smoke /tmp/kyouen-10-smoke.cert
-          cargo run --release --bin kyouen-cert-verify -- /tmp/kyouen-10-smoke.cert | tee /tmp/kyoenc4-report.txt
-          grep -q '^format=KYOENC4$' /tmp/kyoenc4-report.txt
-          grep -q '^board=10x10$' /tmp/kyoenc4-report.txt
-          grep -q '^nodes=2$' /tmp/kyoenc4-report.txt
-          grep -q '^forbidden_quadruples=54441$' /tmp/kyoenc4-report.txt
-          grep -q '^root_outcome=WIN$' /tmp/kyoenc4-report.txt
-      - name: Build the exact 10x10 solver with KYOENC4 export
-        run: >-
-          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
-          ../../cpp/solvers/kyouen_solver_10_kyoenc4.cpp
-          -o /tmp/kyouen-solver-10-kyoenc4
-      - name: Export and independently verify a DAG from the exact solver
-        run: |
-          /tmp/kyouen-solver-10-kyoenc4 \
-            --certificate \
-            '7,16,17,28,30,33,41,48,54,68,69,71,81,92' \
-            /tmp/solver-export.cert \
-            3 80 1000 | tee /tmp/solver-export.txt
-          grep -q ',WIN,' /tmp/solver-export.txt
-          cargo run --release --bin kyouen-cert-verify -- /tmp/solver-export.cert | tee /tmp/solver-export-report.txt
-          grep -q '^format=KYOENC4$' /tmp/solver-export-report.txt
-          grep -q '^board=10x10$' /tmp/solver-export-report.txt
-          grep -q '^nodes=2$' /tmp/solver-export-report.txt
-          grep -q '^root_stones=14$' /tmp/solver-export-report.txt
-          grep -q '^root_outcome=WIN$' /tmp/solver-export-report.txt

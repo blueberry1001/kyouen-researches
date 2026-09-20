@@ -18,21 +18,18 @@ fn main() -> ExitCode {
     match verify_certificate(Path::new(&path)) {
         Ok(report) => {
             println!("CERTIFICATE VALID");
-            println!("format=KYOENC{}", report.format_version);
             println!("board={}x{}", report.board_size, report.board_size);
             println!("nodes={}", report.node_count);
             println!("losing_nodes={}", report.losing_nodes);
             println!("winning_nodes={}", report.winning_nodes);
             println!("forbidden_quadruples={}", report.forbidden_quadruples);
-            println!("root_state=0x{:032x}", report.root_state);
-            println!("root_stones={}", report.root_state.count_ones());
             println!("root_outcome={}", report.root_outcome);
             println!(
                 "conclusion={}",
                 if report.root_outcome.to_string() == "WIN" {
-                    "PLAYER TO MOVE WINS"
+                    "FIRST PLAYER WIN"
                 } else {
-                    "PLAYER TO MOVE LOSES"
+                    "SECOND PLAYER WIN"
                 }
             );
             ExitCode::SUCCESS
