@@ -1,0 +1,64 @@
+{
+  "experiment": "10x10-cache-aware-nohit-fastpath",
+  "status": "PREFLIGHT PASS; NO ENDPOINT PARENT RUN PERFORMED",
+  "recorded_at_utc": "2026-09-09T02:32:01Z",
+  "branch_preflight_commit": "be1336f474f760b91f36b7bb6c49405eb18e32b6",
+  "github_actions": {
+    "latest_smoke_run_id": 34303570893,
+    "latest_smoke_job_id": 102315450352,
+    "latest_smoke_conclusion": "success",
+    "earlier_integration_run_id": 34303328091,
+    "full_capacity_probe_run_id": 34303427001
+  },
+  "frozen_order_equivalence": {
+    "status": "PASS",
+    "cases": 38378,
+    "random_cases": 30000,
+    "seed": "0xA11CADED"
+  },
+  "source_audit": {
+    "status": "PASS",
+    "base": "d3b5e8ba02a6581787a444e463ff16766d1babfd",
+    "solver_paths_checked": 7,
+    "changed_solver_files": [
+      "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc",
+      "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc",
+      "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc"
+    ],
+    "resume_1_capacity_constructor_byte_identical_to_base": true,
+    "extra_memo_lookups": 0
+  },
+  "build": {
+    "status": "PASS",
+    "flags": ["-O2", "-std=c++20"],
+    "binary_sha256": "46b1e9c0b0972803964e42d1504fc05427fd2d1148ea3efbbf71879581ea8adb"
+  },
+  "capped_solver_integration": {
+    "status": "PASS",
+    "state": "0,12,34",
+    "state_in_frozen_endpoint_cohort": false,
+    "shrink": 8,
+    "load": 90,
+    "max_visited": 5000,
+    "below_root_all_uncached_nodes": 1813,
+    "exact_equal_fields": "all deterministic stdout fields except seconds; bench_root; full memo instrumentation",
+    "timing_interpreted": false
+  },
+  "full_capacity_allocation": {
+    "status": "PASS",
+    "endpoint_profile": {"shrink": 0, "load": 90},
+    "states_requested": 0,
+    "runner_ram": "7.8 GiB",
+    "runner_swap": "3.0 GiB",
+    "runner_nproc": 2,
+    "maximum_resident_set_kb": 6480188,
+    "swap_used_during_probe": 0,
+    "table_full": false
+  },
+  "endpoint_consumption": {
+    "frozen_parent_runs_performed": 0,
+    "semantic_parity_status": "NOT STARTED",
+    "timing_endpoint_status": "NOT STARTED",
+    "timing_gate_open": false
+  }
+}

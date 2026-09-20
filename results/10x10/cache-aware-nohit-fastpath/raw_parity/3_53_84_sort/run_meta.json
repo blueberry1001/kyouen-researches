@@ -1,0 +1,17 @@
+{
+  "command_semantics": {
+    "below_root_order": "cache-aware",
+    "cache_aware_order_impl": "sort",
+    "load": 90,
+    "root_depth": 3,
+    "shrink": 0
+  },
+  "implementation": "sort",
+  "order_index": 20,
+  "parent": "3,53,84",
+  "rank": 10,
+  "returncode": 0,
+  "started_at_utc": "2026-09-09T02:44:18.792427+00:00",
+  "timed_out": false,
+  "wall_seconds": 13.23175293700001
+}

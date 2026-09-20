@@ -1,0 +1,106 @@
+name: nohit-parity-endpoint
+
+on:
+  push:
+    branches:
+      - preregister-10x10-cache-aware-nohit-fastpath
+    paths:
+      - '.github/workflows/nohit-parity-endpoint.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nohit-parity-endpoint-frozen
+  cancel-in-progress: false
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configure provenance commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Frozen pre-endpoint gates
+        run: |
+          python3 scripts/test_cache_aware_nohit_fastpath_equivalence.py
+          python3 scripts/audit_cache_aware_nohit_fastpath_source_diff.py
+          python3 scripts/build_nohit_fastpath_binary.py
+
+      - name: Freeze build receipt before first endpoint parent
+        run: |
+          git add results/10x10/cache-aware-nohit-fastpath/build_receipt.json
+          git diff --cached --quiet && { echo 'build receipt unexpectedly unchanged/missing'; exit 1; }
+          git commit -m "Freeze no-hit parity endpoint build receipt"
+          git push origin HEAD:preregister-10x10-cache-aware-nohit-fastpath
+
+      - name: Collect frozen 24-run parity endpoint
+        id: collect
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/run_nohit_fastpath_parity.py 2>&1 | tee results/10x10/cache-aware-nohit-fastpath/parity_collection.log
+          rc=${PIPESTATUS[0]}
+          printf '{\n  "workflow_run_id": "%s",\n  "workflow_run_attempt": "%s",\n  "collector_returncode": %s,\n  "analysis_performed": false,\n  "timing_endpoint_started": false\n}\n' \
+            "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$rc" \
+            > results/10x10/cache-aware-nohit-fastpath/parity_workflow_status.json
+          echo "collector_rc=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit raw parity evidence before verification
+        run: |
+          git add results/10x10/cache-aware-nohit-fastpath/raw_parity \
+                  results/10x10/cache-aware-nohit-fastpath/parity_collection_receipt.json \
+                  results/10x10/cache-aware-nohit-fastpath/parity_collection.log \
+                  results/10x10/cache-aware-nohit-fastpath/parity_workflow_status.json || true
+          git diff --cached --quiet && { echo 'no parity evidence produced'; exit 1; }
+          git commit -m "Record frozen no-hit parity raw evidence"
+          git push origin HEAD:preregister-10x10-cache-aware-nohit-fastpath
+
+      - name: Stop closed on collection failure
+        if: steps.collect.outputs.collector_rc != '0'
+        run: |
+          echo "Parity collection failed; raw evidence was committed. Verification/timing forbidden."
+          exit 1
+
+      - name: Verify semantic parity only after raw commit
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/verify_nohit_fastpath_parity.py 2>&1 | tee results/10x10/cache-aware-nohit-fastpath/parity_verification.txt
+          rc=${PIPESTATUS[0]}
+          printf '{\n  "workflow_run_id": "%s",\n  "workflow_run_attempt": "%s",\n  "verifier_returncode": %s,\n  "timing_endpoint_started": false\n}\n' \
+            "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$rc" \
+            > results/10x10/cache-aware-nohit-fastpath/parity_verification_status.json
+          echo "verify_rc=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit parity verification result
+        run: |
+          git add results/10x10/cache-aware-nohit-fastpath/parity_verification.txt \
+                  results/10x10/cache-aware-nohit-fastpath/parity_verification_status.json
+          git diff --cached --quiet && { echo 'verification evidence missing'; exit 1; }
+          git commit -m "Record no-hit semantic parity verification"
+          git push origin HEAD:preregister-10x10-cache-aware-nohit-fastpath
+
+      - name: Enforce verification gate
+        if: steps.verify.outputs.verify_rc != '0'
+        run: |
+          echo "Semantic parity FAIL-SAFETY. Timing endpoint remains forbidden."
+          exit 1
+
+      - name: Parity gate passed; stop before timing
+        run: |
+          echo "SEMANTIC PARITY PASS. Timing gate may be prepared separately, but this workflow stops here."

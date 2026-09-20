@@ -1,0 +1,59 @@
+{
+  "experiment": "10x10-cache-aware-nohit-fastpath",
+  "date": "2026-09-09",
+  "base_commit": "d3b5e8ba02a6581787a444e463ff16766d1babfd",
+  "objective": "preserve the confirmed cache-aware total order while avoiding cached-class comparator work at nodes where every child is uncached",
+  "implementations": {
+    "S": "historical single std::sort by cached_class, legal_move_count, canonical_key",
+    "F": "if all generated children have cached==0, std::sort by legal_move_count,canonical_key only; otherwise historical S comparator unchanged"
+  },
+  "extra_memo_lookup_allowed": false,
+  "any_cached_source": "OR of the existing child prefetch result cv during child generation",
+  "root_depth": 3,
+  "root_unchanged": true,
+  "cache_blind_unchanged": true,
+  "semantic_parity_required": true,
+  "semantic_parity_cohort": "C1 original 12 parents from d9b9a0f",
+  "semantic_parity_fields": [
+    "outcome",
+    "exact_visited",
+    "exact_memo",
+    "maxdepth",
+    "depth_visited",
+    "root_unique",
+    "root_entered",
+    "root_first",
+    "root_witness",
+    "memo_instrumentation"
+  ],
+  "order_equivalence_test_required": true,
+  "timing_repetitions": 3,
+  "fresh_process_each_run": true,
+  "serial": true,
+  "timing_value_per_parent_impl": "median solver-reported seconds over 3 repetitions",
+  "primary_ratio": "median_seconds_S / median_seconds_F",
+  "primary_pass_all": [
+    "median_parent_ratio > 1",
+    "F_faster_count >= 7_of_12"
+  ],
+  "effect_size_threshold": null,
+  "visited_parity_is_hard_gate": true,
+  "timing_interpretation_allowed_if_parity_fails": false,
+  "historical_timing_reuse_allowed": false,
+  "failure_on_semantic_mismatch": "FAIL-SAFETY",
+  "forbidden_changes": [
+    "ordering semantics",
+    "memo capacity",
+    "shrink/load",
+    "memo semantics",
+    "duplicate elimination",
+    "canonicalization",
+    "game rules",
+    "root ordering",
+    "cache-blind ordering",
+    "legal_move_count",
+    "witness logic",
+    "search stopping rules",
+    "instrumentation semantics"
+  ]
+}

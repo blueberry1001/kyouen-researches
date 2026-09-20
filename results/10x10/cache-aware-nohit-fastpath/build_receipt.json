@@ -1,0 +1,46 @@
+{
+  "audit_script_sha256": "e227714b14c6341aff1daf69a684abc3430c8beb2ace7d21f1e0827481cffa2e",
+  "binary": "tmp-kb/nohit_fastpath_ab_native",
+  "binary_sha256": "46b1e9c0b0972803964e42d1504fc05427fd2d1148ea3efbbf71879581ea8adb",
+  "build_seconds": 3.75888,
+  "built_at_utc": "2026-09-09T02:34:22.117617+00:00",
+  "cli_smoke": "unknown implementation rejected",
+  "command": [
+    "g++",
+    "-O2",
+    "-std=c++20",
+    "scripts/probe_cert_solver.cpp",
+    "-o",
+    "/home/runner/work/kyouen-1-to-9-classification/kyouen-1-to-9-classification/tmp-kb/nohit_fastpath_ab_native"
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "compiler_full": [
+    "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "Copyright (C) 2023 Free Software Foundation, Inc.",
+    "This is free software; see the source for copying conditions.  There is NO",
+    "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    ""
+  ],
+  "experiment": "10x10-cache-aware-nohit-fastpath",
+  "flags": [
+    "-O2",
+    "-std=c++20"
+  ],
+  "git_head": "c3c52f984e2ea119cf3cf41079c3300e7c32d2cb",
+  "historical_timing_reused": false,
+  "impl_switch": "--cache-aware-order-impl sort|nohit",
+  "same_binary_required_for": [
+    "sort",
+    "nohit"
+  ],
+  "source_audit": "PASS",
+  "sources_sha256": {
+    "scripts/probe_cert_solver.cpp": "d74831f4030aa66ca2856c21b9cd11874d5469120839bc19893f217dfb4bca08",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_0.inc": "97b26d5af976f787e02e47ba3fd59872fdccf77590f1713a96ac3892b33ff897",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_1.inc": "41b3e106cab364afd17bbd0814804ca8aca2a82e1cb9da8f981ce978d42398cb",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc": "c6404aee80cd647ff86570bf12af463e122ec3885410a2b4e24e50f2b141ead5",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc": "d7aa1fce2d7d6155b0c4cfa1ea7e82d01fb8f60758897b63b92baf27ae8df348",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc": "83ed5a1efb941ae95bda4d9fa41778a6be8784b988a314616ff637f22ecb6507",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_witness_log.inc": "6b2174350812e3b1abff12e401ce5ea5cc7420e7068010fb0e7bd443bdb03c9d"
+  }
+}

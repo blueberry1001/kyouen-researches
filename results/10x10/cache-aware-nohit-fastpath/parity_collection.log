@@ -1,0 +1,33 @@
+NOHIT PARITY COLLECT START
+binary=tmp-kb/nohit_fastpath_ab_native
+binary_sha256=46b1e9c0b0972803964e42d1504fc05427fd2d1148ea3efbbf71879581ea8adb
+runs=24 fresh serial; timing analysis forbidden
+[01/24] rank=1 parent=0,11,35 impl=sort
+[02/24] rank=1 parent=0,11,35 impl=nohit
+[03/24] rank=2 parent=11,38,44 impl=nohit
+[04/24] rank=2 parent=11,38,44 impl=sort
+[05/24] rank=3 parent=11,78,87 impl=sort
+[06/24] rank=3 parent=11,78,87 impl=nohit
+[07/24] rank=4 parent=12,24,68 impl=nohit
+[08/24] rank=4 parent=12,24,68 impl=sort
+[09/24] rank=5 parent=12,32,55 impl=sort
+[10/24] rank=5 parent=12,32,55 impl=nohit
+[11/24] rank=6 parent=13,52,57 impl=nohit
+[12/24] rank=6 parent=13,52,57 impl=sort
+[13/24] rank=7 parent=14,64,74 impl=sort
+[14/24] rank=7 parent=14,64,74 impl=nohit
+[15/24] rank=8 parent=23,44,45 impl=nohit
+[16/24] rank=8 parent=23,44,45 impl=sort
+[17/24] rank=9 parent=3,47,63 impl=sort
+[18/24] rank=9 parent=3,47,63 impl=nohit
+[19/24] rank=10 parent=3,53,84 impl=nohit
+[20/24] rank=10 parent=3,53,84 impl=sort
+[21/24] rank=11 parent=4,24,26 impl=sort
+[22/24] rank=11 parent=4,24,26 impl=nohit
+[23/24] rank=12 parent=4,42,54 impl=nohit
+[24/24] rank=12 parent=4,42,54 impl=sort
+NOHIT PARITY COLLECT COMPLETE: 24/24
+semantic_status=UNVERIFIED
+timing_gate=CLOSED
+receipt=results/10x10/cache-aware-nohit-fastpath/parity_collection_receipt.json
+next=python3 scripts/verify_nohit_fastpath_parity.py

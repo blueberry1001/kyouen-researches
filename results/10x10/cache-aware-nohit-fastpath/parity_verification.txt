@@ -1,0 +1,8 @@
+NOHIT FASTPATH SEMANTIC PARITY VERIFIER: PASS
+cohort=12/12 frozen C1
+sort vs frozen C1=12/12 exact on semantic fields + instrumentation
+nohit vs frozen C1=12/12 exact on semantic fields + instrumentation
+sort == nohit=12/12 exact including memo capacities
+counter identities + depth_visited sums=PASS
+source-diff audit=PASS
+timing_gate=OPEN

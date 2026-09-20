@@ -1,0 +1,48 @@
+{
+  "binary": "tmp-kb/order_ab_native",
+  "binary_sha256": "3b52e510569861b79c3281a2274d57e38d0bd96b8128f78313ed41c52bde9758",
+  "build_seconds": 9.887862,
+  "built_at": "2026-09-08T17:54:01.223402+00:00",
+  "cli_smoke": "unknown impl value rejected with rc!=0",
+  "command": [
+    "g++",
+    "-O2",
+    "-std=c++20",
+    "scripts/probe_cert_solver.cpp",
+    "-o",
+    "/mnt/d/ghq/github.com/yuubinnkyoku/kyouen-9x9-confirmatory/tmp-kb/order_ab_native"
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "compiler_full": [
+    "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "Copyright (C) 2023 Free Software Foundation, Inc.",
+    "This is free software; see the source for copying conditions.  There is NO",
+    "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    ""
+  ],
+  "flags": [
+    "-O2",
+    "-std=c++20"
+  ],
+  "git_head": "967e81feb53d62b6286ef6a683f81eaeb50a23b6",
+  "impl_switch": {
+    "bucket": "B: 3-bucket cached-class partition + per-bucket sort",
+    "flag": "--cache-aware-order-impl",
+    "root_and_cache_blind": "not affected by this flag",
+    "sort": "S: single std::sort cache-aware comparator (historical)",
+    "values": [
+      "sort",
+      "bucket"
+    ]
+  },
+  "source_audit": "PASS",
+  "sources_sha256": {
+    "scripts/probe_cert_solver.cpp": "d74831f4030aa66ca2856c21b9cd11874d5469120839bc19893f217dfb4bca08",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_0.inc": "97b26d5af976f787e02e47ba3fd59872fdccf77590f1713a96ac3892b33ff897",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_1.inc": "41b3e106cab364afd17bbd0814804ca8aca2a82e1cb9da8f981ce978d42398cb",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc": "2d2532e8da32fe34a3236ef1b7803aeb7c719afa441af6c04e4bc9f37796c540",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc": "a867565f51e06e0128dd7b20739d645e9512806e3b661e46f8bea7853c7291be",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc": "86d115990abac2d7be438ecebf9567609ce332eb9169bcdef7f93e17b99c13d2",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_witness_log.inc": "6b2174350812e3b1abff12e401ce5ea5cc7420e7068010fb0e7bd443bdb03c9d"
+  }
+}

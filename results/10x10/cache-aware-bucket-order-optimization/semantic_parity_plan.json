@@ -1,0 +1,28 @@
+{
+  "experiment": "10x10-cache-aware-bucket-order-optimization",
+  "stage": "semantic-parity-hard-gate",
+  "base_prereg_commit": "e595a404c346b80c0252761113b381c3bda84321",
+  "cohort_file": "results/10x10/cache-aware-bucket-order-optimization/semantic_parity_cohort.json",
+  "fresh_process_each_run": true,
+  "serial": true,
+  "same_binary_required": true,
+  "implementations": ["single", "bucket"],
+  "run_order_rule": "odd 1-based parent rank: single then bucket; even rank: bucket then single",
+  "output_root": "results/10x10/cache-aware-bucket-order-optimization/semantic_parity/raw",
+  "runs": [
+    {"rank":1,"parent":"0,11,35","order":["single","bucket"]},
+    {"rank":2,"parent":"11,38,44","order":["bucket","single"]},
+    {"rank":3,"parent":"11,78,87","order":["single","bucket"]},
+    {"rank":4,"parent":"12,24,68","order":["bucket","single"]},
+    {"rank":5,"parent":"12,32,55","order":["single","bucket"]},
+    {"rank":6,"parent":"13,52,57","order":["bucket","single"]},
+    {"rank":7,"parent":"14,64,74","order":["single","bucket"]},
+    {"rank":8,"parent":"23,44,45","order":["bucket","single"]},
+    {"rank":9,"parent":"3,47,63","order":["single","bucket"]},
+    {"rank":10,"parent":"3,53,84","order":["bucket","single"]},
+    {"rank":11,"parent":"4,24,26","order":["single","bucket"]},
+    {"rank":12,"parent":"4,42,54","order":["bucket","single"]}
+  ],
+  "required_exact_fields": ["outcome","visited","memo","maxdepth","depth_visited","root_unique","root_entered","root_first_lo","root_first_hi","root_witness","memo_instrumentation"],
+  "failure_policy": "any semantic mismatch is FAIL-SAFETY; do not inspect or interpret timing"
+}

@@ -1,0 +1,53 @@
+{
+  "experiment": "10x10-cache-aware-bucket-order-optimization",
+  "date": "2026-09-08",
+  "base_commit": "e9d0460b55b7f058379da2a843ecea33525b86ea",
+  "objective": "implement the already-confirmed cache-aware total order more cheaply without changing the exact search tree",
+  "implementations": {
+    "S": "single std::sort by cached class, legal_move_count, canonical key",
+    "B": "below-root 3-way cached-class partition followed by per-bucket sort by legal_move_count, canonical key"
+  },
+  "root_depth": 3,
+  "root_implementation_unchanged": true,
+  "cache_blind_unchanged": true,
+  "semantic_parity_required": true,
+  "semantic_parity_cohort": "C1 original 12 parents from d9b9a0f",
+  "semantic_parity_fields": [
+    "outcome",
+    "exact_visited",
+    "exact_memo",
+    "maxdepth",
+    "depth_visited",
+    "root_unique",
+    "root_entered",
+    "root_first",
+    "root_witness",
+    "memo_instrumentation"
+  ],
+  "order_equivalence_test_required": true,
+  "timing_repetitions": 3,
+  "fresh_process_each_run": true,
+  "serial": true,
+  "timing_value_per_parent_impl": "median solver-reported seconds over 3 repetitions",
+  "primary_ratio": "median_seconds_S / median_seconds_B",
+  "primary_pass_all": [
+    "median_parent_ratio > 1",
+    "B_faster_count >= 7_of_12"
+  ],
+  "effect_size_threshold": null,
+  "visited_parity_is_hard_gate": true,
+  "timing_interpretation_allowed_if_parity_fails": false,
+  "historical_timing_reuse_allowed": false,
+  "forbidden_changes": [
+    "memo capacity",
+    "shrink/load",
+    "memo semantics",
+    "duplicate elimination",
+    "canonicalization",
+    "game rules",
+    "root ordering",
+    "legal_move_count",
+    "witness logic",
+    "search stopping rules"
+  ]
+}

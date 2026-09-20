@@ -1,0 +1,276 @@
+{
+  "B_faster": 5,
+  "S_faster": 7,
+  "aggregate_median_seconds_B": 980.9701,
+  "aggregate_median_seconds_S": 973.0536999999999,
+  "aggregate_median_wall_B": 1010.628,
+  "aggregate_median_wall_S": 1001.48,
+  "aggregate_seconds_saved": -7.916400000000067,
+  "aggregate_solver_time_ratio": 0.9919300292638888,
+  "aggregate_wall_saved": -9.148000000000025,
+  "cohort": "C1 original 12 parents (d9b9a0f)",
+  "experiment": "10x10 cache-aware bucket-order optimization timing",
+  "gmean_T_time": 0.9834845813130595,
+  "mean_T_time": 0.9845149441066957,
+  "median_T_time": 0.9826513184422786,
+  "paired_sign_test": {
+    "n_negative_S_faster": 7,
+    "n_nonzero": 12,
+    "n_positive_B_faster": 5,
+    "p_two_sided_exact_binomial": 0.7744140625
+  },
+  "per_parent": [
+    {
+      "T_time": 1.0039713359950486,
+      "faster": "B",
+      "median_seconds_B": 329.612,
+      "median_seconds_S": 330.921,
+      "parent": "0,11,35",
+      "rank": 1,
+      "seconds_B": [
+        326.268,
+        329.612,
+        333.706
+      ],
+      "seconds_S": [
+        327.524,
+        330.921,
+        340.192
+      ],
+      "visited": "85311102",
+      "wall_ratio": 1.0189862899875364
+    },
+    {
+      "T_time": 1.0222312719703845,
+      "faster": "B",
+      "median_seconds_B": 70.7202,
+      "median_seconds_S": 72.2924,
+      "parent": "11,38,44",
+      "rank": 2,
+      "seconds_B": [
+        69.1881,
+        70.7202,
+        72.29
+      ],
+      "seconds_S": [
+        69.9064,
+        72.2924,
+        72.8092
+      ],
+      "visited": "17051435",
+      "wall_ratio": 1.0173823569762654
+    },
+    {
+      "T_time": 0.9792907872270863,
+      "faster": "S",
+      "median_seconds_B": 44.0432,
+      "median_seconds_S": 43.1311,
+      "parent": "11,78,87",
+      "rank": 3,
+      "seconds_B": [
+        42.397,
+        44.0432,
+        44.5746
+      ],
+      "seconds_S": [
+        39.9485,
+        43.1311,
+        44.0945
+      ],
+      "visited": "9928498",
+      "wall_ratio": 0.9664154517749773
+    },
+    {
+      "T_time": 0.9500599250936329,
+      "faster": "S",
+      "median_seconds_B": 53.4,
+      "median_seconds_S": 50.7332,
+      "parent": "12,24,68",
+      "rank": 4,
+      "seconds_B": [
+        51.8955,
+        53.4,
+        53.5055
+      ],
+      "seconds_S": [
+        46.5483,
+        50.7332,
+        56.0765
+      ],
+      "visited": "11677827",
+      "wall_ratio": 0.9313651451553416
+    },
+    {
+      "T_time": 0.9692483364176873,
+      "faster": "S",
+      "median_seconds_B": 35.5558,
+      "median_seconds_S": 34.4624,
+      "parent": "12,32,55",
+      "rank": 5,
+      "seconds_B": [
+        32.0172,
+        35.5558,
+        36.1409
+      ],
+      "seconds_S": [
+        31.0836,
+        34.4624,
+        35.6181
+      ],
+      "visited": "7106990",
+      "wall_ratio": 0.9459994138335286
+    },
+    {
+      "T_time": 1.0185834046130655,
+      "faster": "B",
+      "median_seconds_B": 54.5971,
+      "median_seconds_S": 55.6117,
+      "parent": "13,52,57",
+      "rank": 6,
+      "seconds_B": [
+        52.7481,
+        54.5971,
+        60.9338
+      ],
+      "seconds_S": [
+        52.0468,
+        55.6117,
+        58.5323
+      ],
+      "visited": "11651703",
+      "wall_ratio": 1.0780771318033016
+    },
+    {
+      "T_time": 0.9721874512679808,
+      "faster": "S",
+      "median_seconds_B": 23.7267,
+      "median_seconds_S": 23.0668,
+      "parent": "14,64,74",
+      "rank": 7,
+      "seconds_B": [
+        22.6377,
+        23.7267,
+        27.4533
+      ],
+      "seconds_S": [
+        22.609,
+        23.0668,
+        23.7611
+      ],
+      "visited": "4342654",
+      "wall_ratio": 0.9464739517153749
+    },
+    {
+      "T_time": 1.0349859733771172,
+      "faster": "B",
+      "median_seconds_B": 39.7102,
+      "median_seconds_S": 41.0995,
+      "parent": "23,44,45",
+      "rank": 8,
+      "seconds_B": [
+        35.6347,
+        39.7102,
+        41.8201
+      ],
+      "seconds_S": [
+        40.7664,
+        41.0995,
+        41.7024
+      ],
+      "visited": "7188933",
+      "wall_ratio": 0.9741133779193653
+    },
+    {
+      "T_time": 0.9333465779278831,
+      "faster": "S",
+      "median_seconds_B": 33.2211,
+      "median_seconds_S": 31.0068,
+      "parent": "3,47,63",
+      "rank": 9,
+      "seconds_B": [
+        29.5308,
+        33.2211,
+        33.8029
+      ],
+      "seconds_S": [
+        24.5069,
+        31.0068,
+        34.5507
+      ],
+      "visited": "5711578",
+      "wall_ratio": 0.9431180978966184
+    },
+    {
+      "T_time": 1.0555984576406556,
+      "faster": "B",
+      "median_seconds_B": 37.8122,
+      "median_seconds_S": 39.9145,
+      "parent": "3,53,84",
+      "rank": 10,
+      "seconds_B": [
+        30.2636,
+        37.8122,
+        39.3991
+      ],
+      "seconds_S": [
+        33.536,
+        39.9145,
+        39.9246
+      ],
+      "visited": "7184954",
+      "wall_ratio": 0.99701247462884
+    },
+    {
+      "T_time": 0.9860118496574709,
+      "faster": "S",
+      "median_seconds_B": 216.04,
+      "median_seconds_S": 213.018,
+      "parent": "4,24,26",
+      "rank": 11,
+      "seconds_B": [
+        212.183,
+        216.04,
+        221.28
+      ],
+      "seconds_S": [
+        210.114,
+        213.018,
+        214.399
+      ],
+      "visited": "51289701",
+      "wall_ratio": 0.9981980241068625
+    },
+    {
+      "T_time": 0.8886639580923361,
+      "faster": "S",
+      "median_seconds_B": 42.5316,
+      "median_seconds_S": 37.7963,
+      "parent": "4,42,54",
+      "rank": 12,
+      "seconds_B": [
+        39.7344,
+        42.5316,
+        42.8247
+      ],
+      "seconds_S": [
+        36.2209,
+        37.7963,
+        39.4136
+      ],
+      "visited": "6977109",
+      "wall_ratio": 0.8554718320972069
+    }
+  ],
+  "primary": {
+    "B_faster_count": 5,
+    "PASS": false,
+    "criterion": [
+      "median T_time > 1",
+      "B faster >= 7 of 12"
+    ],
+    "median_T_time": 0.9826513184422786
+  },
+  "runs": 72,
+  "ties": 0,
+  "visited_parity": "exact (S==B all 12 parents)"
+}

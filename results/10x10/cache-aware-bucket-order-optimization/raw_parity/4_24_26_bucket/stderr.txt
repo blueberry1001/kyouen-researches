@@ -1,0 +1,8 @@
+below_root_order=cache-aware
+cache_aware_impl=bucket
+progress visited=16777216 memo=16731615 depth=14 maxdepth=18 seconds=78.0084
+progress visited=33554432 memo=33470137 depth=13 maxdepth=18 seconds=151.363
+progress visited=50331648 memo=50190724 depth=13 maxdepth=18 seconds=217.173
+bench_root unique=96 entered=9 first_lo=77687097867108352 first_hi=0 witness=24 outcome=WIN
+memo_by_depth 9:520101 10:2040612 11:6332493 12:12063083 13:14692256 14:11079850 15:3894852 16:501048 17:18929
+forbidden=54441 completed=1 requested=1 memo=51143224 seconds=221.641 table_full=0
