@@ -1,0 +1,32 @@
+name: Freeze 10x10 holdout v2 parents
+
+on:
+  push:
+    branches:
+      - 10x10-second-clean-holdout
+    paths:
+      - '.github/workflows/freeze-10x10-holdout-v2.yml'
+      - 'scripts/select_10x10_fresh_parent_holdout_v2.py'
+  workflow_dispatch:
+
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate frozen parent set
+        run: python3 scripts/select_10x10_fresh_parent_holdout_v2.py
+      - name: Show manifest and parents
+        run: |
+          cat results/10x10/fresh-parent-holdout-v2/selection_manifest.json
+          cat results/10x10/fresh-parent-holdout-v2/parents.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fresh-parent-holdout-v2-selection
+          path: results/10x10/fresh-parent-holdout-v2/
+          if-no-files-found: error

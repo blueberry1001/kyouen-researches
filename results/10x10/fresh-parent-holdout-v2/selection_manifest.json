@@ -1,0 +1,13 @@
+{
+  "base_sha": "eaf40af27224ad5beb977dc401a787a59cefd2f0",
+  "d4_universe_count": 20355,
+  "eligible_count": 16018,
+  "historical_identity_exclusion_count": 4337,
+  "historical_scan_scope": "all tracked text files at base_sha via git grep -I",
+  "historical_scan_semantics": "identity-only conservative blacklist; labels ignored",
+  "parents_csv_sha256": "f4b72e54c9d0301e7eacf9663b6d25ef915fec9860b8be8b8bb63ae7ad5ec95f",
+  "sample_n_requested": 24,
+  "seed": "kyouen-10x10-fresh-parent-holdout-v2-2026-09-07",
+  "selected_count": 24,
+  "selection_rule": "sha256(seed|canonical_parent), ascending"
+}
