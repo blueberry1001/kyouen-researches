@@ -1,0 +1,17 @@
+name: loss-first ordering safety gate
+
+on:
+  push:
+    branches:
+      - preregister-10x10-loss-first-only
+  workflow_dispatch:
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build safety harness
+        run: g++ -O2 -std=c++17 -I. scripts/loss_first_order_test.cpp -o /tmp/loss_first_order_test
+      - name: Run preregistered safety gate
+        run: /tmp/loss_first_order_test
