@@ -1,0 +1,23 @@
+name: Factorial recovery runner smoke
+
+on:
+  push:
+    branches: [factorial-union-child-solve]
+    paths:
+      - '.github/workflows/factorial-recovery-runner-smoke.yml'
+      - 'scripts/run-9x9-factorial-shard-with-recovery.py'
+      - 'scripts/split-9x9-factorial-recovery-shard.py'
+      - 'scripts/test-9x9-factorial-recovery-runner.py'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test deterministic recursive recovery without research outcomes
+        run: |
+          set -euo pipefail
+          python3 scripts/test-9x9-factorial-recovery-runner.py

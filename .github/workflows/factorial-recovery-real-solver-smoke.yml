@@ -1,0 +1,94 @@
+name: Factorial recovery real solver smoke
+
+on:
+  push:
+    branches: [factorial-union-child-solve]
+    paths:
+      - '.github/workflows/factorial-recovery-real-solver-smoke.yml'
+      - 'scripts/run-9x9-factorial-shard-with-recovery.py'
+      - 'scripts/split-9x9-factorial-recovery-shard.py'
+      - 'cpp/solvers/kyouen_solver_9_compare.cpp'
+      - 'CMakeLists.txt'
+      - 'results/9x9/pair-vs-true-unique-smoke.csv'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build compare solver
+        run: |
+          set -euo pipefail
+          cmake -S . -B build -DBUILD_RESEARCH_SOLVERS=ON -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --target kyouen-solver-9-compare --parallel 2
+          sha256sum build/kyouen-solver-9-compare
+
+      - name: Prepare known non-holdout LF input
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv
+          with open('results/9x9/pair-vs-true-unique-smoke.csv', newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          if len(rows) != 1:
+              raise SystemExit(f'expected one committed smoke row, got {len(rows)}')
+          r = rows[0]
+          with open('/tmp/smoke.csv', 'w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f, lineterminator='\n')
+              w.writerow(['canonical_parent', 'pair_top', 'union_top'])
+              w.writerow([r['canonical_parent'], r['pair_top'], r['true_unique_top']])
+          PY
+
+      - name: Run direct baseline
+        run: |
+          set -euo pipefail
+          ./build/kyouen-solver-9-compare /tmp/smoke.csv 20 \
+            > /tmp/direct.csv 2> /tmp/direct.stderr
+
+      - name: Run through deterministic recovery runner
+        run: |
+          set -euo pipefail
+          python3 scripts/run-9x9-factorial-shard-with-recovery.py \
+            ./build/kyouen-solver-9-compare \
+            /tmp/smoke.csv \
+            /tmp/recovery \
+            --memo-power 20 \
+            --max-recovery-level 6 \
+            --splitter scripts/split-9x9-factorial-recovery-shard.py
+
+      - name: Verify direct and runner semantics
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import csv, json
+          def one(path):
+              with open(path, newline='', encoding='utf-8') as f:
+                  rows = list(csv.DictReader(f))
+              if len(rows) != 1:
+                  raise SystemExit(f'{path}: expected one row, got {len(rows)}')
+              return rows[0]
+          direct = one('/tmp/direct.csv')
+          runner = one('/tmp/recovery/consolidated-results.csv')
+          cols = [
+              'canonical_parent', 'pair_top', 'union_top',
+              'pair_child_outcome', 'other_child_outcome',
+              'pair_visited', 'other_visited', 'memo_used',
+          ]
+          mismatch = [(c, direct[c], runner[c]) for c in cols if direct[c] != runner[c]]
+          if mismatch:
+              raise SystemExit(f'direct/runner semantic-work mismatch: {mismatch}')
+          manifest = json.load(open('/tmp/recovery/attempt-manifest.json', encoding='utf-8'))
+          statuses = [a['status'] for a in manifest['attempts']]
+          if statuses != ['success']:
+              raise SystemExit(f'unexpected recovery statuses: {statuses}')
+          receipt = open('/tmp/recovery/recovery-receipt.txt', encoding='utf-8').read()
+          if 'partial_failed_outputs_used=0' not in receipt:
+              raise SystemExit('missing partial-output exclusion receipt')
+          print('real_solver_runner_semantics=PASS')
+          print('single_process_no_recovery=PASS')
+          print('partial_failed_outputs_used=0')
+          PY
