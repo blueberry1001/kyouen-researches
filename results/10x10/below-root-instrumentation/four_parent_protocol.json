@@ -1,0 +1,68 @@
+{
+  "baseline_binary_sha256": "120bc590c8c8eec87577e0b0dbb005f8ea82c27072200c7a63a3cc024ca5d310",
+  "baseline_source_sha256": "f52c474a19dbb36944c1eed8360f50743e372803bcdd85bd1121fb843756fbca",
+  "comparisons": [
+    {
+      "maxdepth": 18,
+      "memo": 7061150,
+      "outcome": "WIN",
+      "state": "12,32,55",
+      "visited": 7106990,
+      "wall_seconds_pair": 22.65558839300001
+    },
+    {
+      "maxdepth": 17,
+      "memo": 4296010,
+      "outcome": "WIN",
+      "state": "14,64,74",
+      "visited": 4342654,
+      "wall_seconds_pair": 14.265916945
+    },
+    {
+      "maxdepth": 19,
+      "memo": 85151103,
+      "outcome": "WIN",
+      "state": "0,11,35",
+      "visited": 85311102,
+      "wall_seconds_pair": 261.18656222799996
+    },
+    {
+      "maxdepth": 18,
+      "memo": 11605528,
+      "outcome": "WIN",
+      "state": "13,52,57",
+      "visited": 11651703,
+      "wall_seconds_pair": 37.499240025000006
+    }
+  ],
+  "compile": [
+    "g++",
+    "-O2",
+    "-std=c++20"
+  ],
+  "exact": {
+    "load": 90,
+    "max_seconds": 0,
+    "max_visited": 0,
+    "shrink": 0
+  },
+  "format": 1,
+  "fresh_process_per_parent_and_binary": true,
+  "frozen_parents": [
+    "12,32,55",
+    "14,64,74",
+    "0,11,35",
+    "13,52,57"
+  ],
+  "git_head": "71b11a442d792646a4c3faad35edd81bdb698a59",
+  "instrumented_binary_sha256": "5a1b366ac97c15bdc92e8af3367a0917c182cffaf823afababeb08ce83e9631d",
+  "instrumented_source_sha256": "9f6990e6ec0ab8fccb4b128d626e1b8986e280caab486067bd5c83bf0a6433e4",
+  "raw_csv": "results/10x10/below-root-instrumentation/four_parent_raw.csv",
+  "semantic_equality_fields": [
+    "outcome",
+    "visited",
+    "maxdepth",
+    "memo",
+    "root_diag"
+  ]
+}
