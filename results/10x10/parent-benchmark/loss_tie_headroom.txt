@@ -1,0 +1,23 @@
+legal_move_count tie-break headroom
+parents=12
+native/global-oracle median=1.117860
+perfect-tie/global-oracle median=1.057307
+parents with tie opportunity=2/12
+global oracle already in min-legal bucket=5/12
+parents where perfect tie improves native=2/12
+median fraction of native regret removable by perfect tie (parents with native regret)=0.000000
+
+parent details
+parent,n_loss,min_legal,bucket,native_move,tie_move,global_move,native_ratio,tie_ratio,oracle_in_bucket,oracle_legal_gap,removable_regret
+0,11,35,10,86,1,77,77,36,1.181916,1.181916,0,6,0.000000
+11,38,44,38,83,1,88,88,83,1.456703,1.456703,0,13,0.000000
+11,78,87,47,83,1,18,18,77,1.922449,1.922449,0,6,0.000000
+12,24,68,23,80,1,82,82,61,1.121595,1.121595,0,5,0.000000
+12,32,55,18,79,1,82,82,82,1.000000,1.000000,1,0,0.000000
+13,52,57,50,75,2,21,50,83,2.102702,1.382263,0,5,0.653340
+14,64,74,78,72,1,69,69,69,1.000000,1.000000,1,0,0.000000
+23,44,45,90,76,1,53,53,56,1.114126,1.114126,0,1,0.000000
+3,47,63,43,74,1,73,73,73,1.000000,1.000000,1,0,0.000000
+3,53,84,63,79,1,83,83,83,1.000000,1.000000,1,0,0.000000
+4,24,26,9,84,3,25,74,94,1.507050,1.000488,0,2,0.999037
+4,42,54,47,76,1,64,64,64,1.000000,1.000000,1,0,0.000000

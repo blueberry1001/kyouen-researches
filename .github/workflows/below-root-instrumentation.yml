@@ -1,0 +1,24 @@
+name: Below-root instrumentation
+
+on:
+  push:
+    branches: [analyze-10x10-parent-loss-cost]
+    paths:
+      - 'cpp/solvers/kyouen_solver_10_kyoenc4.cpp'
+      - 'cpp/solvers/parts/**'
+      - 'scripts/check_below_root_instrumentation_csv.py'
+      - '.github/workflows/below-root-instrumentation.yml'
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build instrumented exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Syntax-check invariant checker
+        run: python3 -m py_compile scripts/check_below_root_instrumentation_csv.py

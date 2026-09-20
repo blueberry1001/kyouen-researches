@@ -1,0 +1,24 @@
+name: Loss tolerance headroom
+
+on:
+  push:
+    branches: [analyze-10x10-parent-loss-cost]
+    paths:
+      - 'scripts/analyze_loss_tolerance_headroom.py'
+      - 'results/10x10/parent-benchmark/loss_proof_cost_dataset.csv'
+      - '.github/workflows/loss-tolerance-headroom.yml'
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Quantify legal-count tolerance headroom
+        run: |
+          python3 scripts/analyze_loss_tolerance_headroom.py | tee /tmp/loss-tolerance-headroom.txt
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: loss-tolerance-headroom
+          path: /tmp/loss-tolerance-headroom.txt
