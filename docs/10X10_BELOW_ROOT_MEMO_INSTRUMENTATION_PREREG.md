@@ -1,240 +1,110 @@
 # 10x10 below-root memo instrumentation preregistration
 
-Branch: `preregister-10x10-below-root-memo-instrumentation`
-Base: `70befc94e43112bd7853d4c809fa5b8579eabdea`
+Branch: `instrument-10x10-below-root-memo`
 
-This document freezes the first below-root mechanism measurement **before any
-instrumented parent result is inspected**.  It is diagnostic only: no new root
-ordering rule is proposed here, and no 100k/1M probe cohort is authorized by
-this preregistration.
+This document freezes the next mechanism-measurement plan before any new
+instrumented solver result is inspected. It does **not** change any previous
+parent-benchmark endpoint and does not authorize a new 100k/1M probe cohort.
 
 ## Motivation
 
-The completed V2 parent benchmark and conditional-LOSS analysis established:
+The completed V2 proof-cost analysis showed:
 
-- 10k memo-ascending is a useful LOSS classifier but a poor root proof-cost
-  ordering;
-- native `(legal_move_count, canonical key)` is already close to the cheapest
-  LOSS available at the root (median about 1.12x oracle);
-- the 12-parent benchmark is explained by the entered root prefix to within
-  about 2%, so cross-root-child memo pollution is not the primary failure mode;
-- root-only heuristic headroom is therefore small.
+- native root ordering selects a LOSS at median 1.12x the cheapest exact LOSS;
+- 10k memo ordering selects a LOSS at median 1.79x oracle;
+- `legal_move_count` predicts exact LOSS proof cost much better than 10k memo;
+- an additive entered-prefix proxy reproduces parent exact-work ratios to about
+  2%, so root-order failure is already explained without a cross-child memo term.
 
-The next question is not another root heuristic.  It is:
+The remaining high-value question is therefore not root ranking but where memo
+reuse saves work *inside* the recursive solver.
 
-> Where, and by what mechanism, does the solver's shared memo actually save
-> exact work below the root?
+## Frozen counters
 
-The current recursive solver performs two logically different memo lookups:
+Instrumentation must not alter ordering, memo contents, stopping conditions, or
+returned outcomes. Counters are observational only.
 
-1. **node-entry lookup**: when `win(state, ...)` starts, return immediately if
-   that state has already been solved;
-2. **child-prefetch lookup**: while constructing a node's unique children, read
-   each child's cached outcome and use it both for ordering and possibly to
-   avoid a recursive call.
+For every exact solve, collect at least:
 
-It then stores a WIN or LOSS result with a **memo put**.  These events must be
-measured separately.  A single aggregate `memo_used` number cannot distinguish
-reuse from new storage and cannot say whether a hit changed search order.
+1. `entry_memo_queries`: calls to memo lookup on entry to `win`.
+2. `entry_memo_hits`: nonzero entry lookups.
+3. `entry_memo_hit_win` / `entry_memo_hit_loss`.
+4. `child_memo_queries`: lookups while constructing unique children.
+5. `child_memo_hits`, split into WIN and LOSS.
+6. `memo_put_win` / `memo_put_loss`.
+7. `children_generated`: legal moves considered before D4 deduplication.
+8. `children_unique`: unique canonical children retained.
+9. `children_duplicate`: canonical duplicates removed.
+10. `children_recurred`: children actually entered recursively because they were
+    not already memo-cached and were reached before cutoff.
+11. `winning_cutoffs`: WIN nodes that stop after discovering a LOSS child.
+12. depth-indexed versions of entry queries/hits, child queries/hits, puts, and
+    recursive entries for depths 0..19.
 
-## Frozen cohort
+Primary derived quantities:
 
-The first instrumented cohort is the same 12 frozen clean V2 3-stone parents
-used by the completed native parent benchmark.  No parent may be added, removed,
-or replaced after instrumented outputs are seen.
+- entry hit rate = `entry_memo_hits / entry_memo_queries`;
+- child pre-hit rate = `child_memo_hits / child_memo_queries`;
+- LOSS-hit share among memo hits;
+- recursive-entry avoidance = `1 - children_recurred / children_unique_reached`;
+- canonical-dedup fraction = `children_duplicate / children_generated`;
+- per-depth contribution of memo hits and puts.
 
-Root ordering remains the existing native ordering.  No 10k probe ordering is
-used in the primary instrumentation run.
+## First validation, before any cohort run
 
-The instrumented build must use the same game predicate, canonicalization,
-child deduplication, memo implementation/settings, and recursive ordering as the
-native benchmark solver.  Instrumentation must not alter any branch decision.
+Use only tiny regression states already present in repository tests/examples.
+For each state, instrumented and uninstrumented builds must agree on:
 
-## Required semantic parity before mechanism interpretation
+- outcome;
+- `visited`;
+- `maxdepth`;
+- final `memo_used`;
+- root diagnostics when enabled.
 
-For every instrumented parent run, compare against the existing uninstrumented
-native benchmark record.
+Counters must satisfy:
 
-Required exact invariants:
+- `entry_memo_hits <= entry_memo_queries`;
+- `child_memo_hits <= child_memo_queries`;
+- WIN+LOSS hit splits equal total hits;
+- WIN+LOSS puts equal total puts;
+- depth sums equal global counters;
+- `children_unique + children_duplicate == children_generated` for generated
+  canonical child candidates;
+- no counter overflow in the intended 64-bit range.
 
-- outcome identical;
-- root unique-child count identical;
-- root entered-child count identical;
-- root first-child canonical key identical;
-- root witness identical where recorded;
-- exact `visited` identical;
-- exact final `memo_used` identical.
+Any disagreement in solver outcome or `visited` invalidates the instrumented
+build until explained.
 
-If any invariant fails, the instrumented result is invalid for mechanism
-analysis.  Wall-clock and solver seconds are explicitly *not* parity criteria,
-because counters add overhead.
+## First scientific use
 
-## Counters to add
+Do **not** begin with the full 12-parent benchmark. Start with existing mechanism
+cases chosen before seeing instrumentation results:
 
-All counters are integer-only and aggregated by search depth.  Do not log a
-per-state trace in the primary run.
+- `14,64,74`: single-entry, native oracle LOSS, 10k selected ~4.17x-cost LOSS;
+- `3,53,84`: single-entry, native oracle LOSS, 10k selected ~2.05x-cost LOSS;
+- `13,52,57`: single-entry exception where 10k selected a cheaper LOSS;
+- `12,32,55`: multi-entry worst case with four WINs before B's first LOSS.
 
-### A. Node-entry memo lookup
+The first question is descriptive:
 
-For each depth:
+> Which memo events distinguish cheap and expensive LOSS proofs, after root
+> ordering has already selected the child?
 
-- `entry_lookup_calls`
-- `entry_hit_win`
-- `entry_hit_loss`
-- `entry_miss`
+No success threshold is preregistered yet. This stage is mechanism discovery,
+not a confirmatory speed claim.
 
-A hit here means an attempted recursive node evaluation was avoided immediately.
+## Hypotheses to test, without changing them after seeing results
 
-### B. Child-prefetch lookup
+H1. Cheap LOSS proofs have a higher *useful memo-hit density* than expensive
+LOSS proofs, where density is measured per visited state rather than final memo
+size.
 
-For each child depth:
+H2. The strongest separation occurs below the root, especially in child
+pre-hits and entry hits at intermediate depths, not in final `memo_used`.
 
-- `prefetch_calls`
-- `prefetch_hit_win`
-- `prefetch_hit_loss`
-- `prefetch_miss`
+H3. If memo hit-rate profiles are weak or inconsistent across the frozen four
+cases, root ordering should remain deprioritized and attention should move to
+proof/certificate structure rather than another probe budget.
 
-These are counted after canonical child deduplication, exactly where the native
-solver currently reads the child memo value used by ordering.
-
-### C. Memo writes
-
-For each solved-state depth:
-
-- `put_win`
-- `put_loss`
-
-These counters measure newly completed work, not reuse.  They must be kept
-separate from lookup hits.
-
-### D. Recursive child evaluations avoided
-
-For each parent-node depth:
-
-- `child_eval_from_cache_win`
-- `child_eval_from_cache_loss`
-- `child_eval_recursive`
-
-A child counts as `from_cache_*` only when the evaluation loop consumes the
-prefetched cached outcome instead of calling `win(child, ...)`.
-
-### E. Ordering influence
-
-At each visited nonterminal node, compute the order that would result from the
-cache-blind fallback `(legal_move_count, canonical key)` **without changing the
-actual evaluation order**.
-
-Count by node depth:
-
-- `nodes_with_any_prefetch_hit`
-- `nodes_cache_changes_first_child`
-- `nodes_cache_changes_full_order`
-- `actual_first_cached_loss`
-- `fallback_first_cached_loss`
-
-`nodes_cache_changes_full_order` means the sequence of canonical child keys under
-native cache-aware ordering differs anywhere from the cache-blind fallback.
-
-This is a diagnostic counterfactual only.  It must not be used to reorder the
-run being measured.
-
-### F. Immediate WIN short-circuit from cached LOSS
-
-Count by node depth:
-
-- `win_return_from_cached_loss_child`
-
-This is the strongest direct form of below-root memo benefit: the current node
-is proved WIN because its selected child is already cached LOSS, with no
-recursive call for that child.
-
-## Derived metrics frozen in advance
-
-Compute both overall and by depth:
-
-1. entry hit rate
-   `entry_hits / entry_lookup_calls`;
-2. prefetch hit rate
-   `prefetch_hits / prefetch_calls`;
-3. cached child-evaluation fraction
-   `(child_eval_from_cache_win + child_eval_from_cache_loss) /
-    total child evaluations consumed`;
-4. cache-order first-child change rate
-   `nodes_cache_changes_first_child / visited_nonterminal_nodes`;
-5. cache-order any-change rate
-   `nodes_cache_changes_full_order / visited_nonterminal_nodes`;
-6. cached-LOSS WIN-short-circuit rate
-   `win_return_from_cached_loss_child / solved_WIN_nodes`;
-7. write/reuse ratio
-   `(put_win + put_loss) / (entry_hits + prefetch_hits)`.
-
-No single arbitrary threshold defines success.  This is a mechanism study, not
-a treatment benchmark.  Interpret effect sizes and depth concentration.
-
-## Predeclared interpretation cases
-
-### M1: reuse is large and concentrated below root
-
-Evidence:
-
-- substantial entry/prefetch hit rates;
-- many child evaluations avoided;
-- or many WIN returns directly from cached LOSS children.
-
-Next priority: exploit memo layout / lookup / persistence / cross-branch reuse,
-not root ordering.
-
-### M2: hits are common but mostly do not alter work
-
-Evidence:
-
-- high prefetch hit rate;
-- low cached-evaluation fraction and low ordering-change rate.
-
-Next priority: distinguish informational memo hits from actionable hits; avoid
-optimizing raw hit rate.
-
-### M3: cache-aware ordering changes many nodes
-
-Evidence:
-
-- meaningful `nodes_cache_changes_first_child` or full-order rate.
-
-Next experiment may compare cache-aware vs cache-blind ordering below root, but
-that treatment must be separately preregistered before running it.
-
-### M4: reuse is weak
-
-Evidence:
-
-- low entry/prefetch hit rates and few avoided evaluations at all depths.
-
-Then memo optimization is unlikely to be the main remaining lever.  Shift to
-proof/certificate structure, stronger lower-level ordering, or representation
-cost.
-
-## What this preregistration does NOT permit
-
-Do not, on the basis of these counters alone:
-
-- change root ordering;
-- run another 10k/100k/1M probe-all cohort;
-- disable memo and call the resulting slowdown a causal estimate;
-- introduce per-state tracing into the primary 12-parent measurement;
-- tune instrumentation definitions after seeing results.
-
-A memo-disabled or cache-blind solver is a separate causal treatment and needs a
-new frozen experiment because it can radically change traversal and memory
-pressure.
-
-## Implementation rule
-
-Instrumentation should live in a dedicated solver variant or be guarded by a
-compile-time flag defaulting OFF.  The ordinary solver's behavior must remain
-unchanged.  Counter reporting goes to a separate machine-readable CSV/JSON
-section/file, not mixed into existing primary CSV columns in a way that breaks
-old parsers.
-
-The first code commit after this document may implement the counters, but no
-instrumented 12-parent outcomes should be committed before this preregistration
-commit exists on the branch.
+These are exploratory mechanism hypotheses. Any later predictor or optimization
+must be frozen on a new cohort before being called confirmatory.
