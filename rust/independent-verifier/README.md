@@ -14,7 +14,6 @@
 - 10×10探索から抜き出した浅い・軽い局面の照合
 - 共円判定、合法手判定、盤面対称性の単体検査
 - 10×10のCSV証拠一式の構造監査
-- C++版との局面単位の差分検査
 
 単純な `HashMap<u128, Outcome>` を使うため、10×10全体をこの実装だけで再探索するのは現実的ではありません。
 
@@ -90,41 +89,6 @@ cargo run --release -- solve --size 7 --coords '0,0;3,3' --node-limit 1000000
 ```bash
 cargo run --release -- classify-first --size 5 > first-moves-5x5.csv
 ```
-
-## C++版と差分検査する
-
-C++照会器をビルドします。
-
-```bash
-g++ -std=c++20 -O2 -Wall -Wextra -pedantic \
-  ../../cpp/tools/kyouen_query.cpp -o /tmp/kyouen-query
-```
-
-4×4では勝敗と双方の勝ち手まで照合できます。
-
-```bash
-cargo run --release --bin kyouen-cross-check -- \
-  --cpp /tmp/kyouen-query \
-  --size 4 \
-  --samples 40 \
-  --seed 20260801 \
-  --max-stones 8 \
-  --solve-max-size 4
-```
-
-10×10では巨大探索を再実行せず、合法手・禁止点・8対称・正規形・禁止四つ組数を照合します。
-
-```bash
-cargo run --release --bin kyouen-cross-check -- \
-  --cpp /tmp/kyouen-query \
-  --size 10 \
-  --samples 100 \
-  --seed 20260802 \
-  --max-stones 12 \
-  --solve-max-size 0
-```
-
-詳細は [`CROSS_CHECK.md`](CROSS_CHECK.md) を参照してください。
 
 ## 10×10証拠CSVを監査する
 
