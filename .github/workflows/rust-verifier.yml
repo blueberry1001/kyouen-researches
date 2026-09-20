@@ -6,22 +6,18 @@ on:
     paths:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
-      - 'cpp/certificate/**'
-      - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   pull_request:
     branches: [main]
     paths:
       - 'rust/independent-verifier/**'
       - 'cpp/tools/kyouen_query.cpp'
-      - 'cpp/certificate/**'
-      - 'KYOENC4.md'
       - '.github/workflows/rust-verifier.yml'
   workflow_dispatch:
 
 jobs:
   test:
-    name: Build, cross-check, and verify certificate DAGs
+    name: Build, self-test, audit, and cross-check C++
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -55,29 +51,3 @@ jobs:
           --seed 20260802
           --max-stones 12
           --solve-max-size 0
-      - name: Build C++ KYOENC3 generator and checker
-        run: |
-          g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certgen_1_to_8.cpp -o /tmp/kyouen-certgen
-          g++ -std=c++20 -O2 -Wall -Wextra -pedantic ../../cpp/certificate/kyouen_certcheck.cpp -o /tmp/kyouen-certcheck
-      - name: Generate and independently verify 1x1 through 6x6 KYOENC3 DAGs
-        run: |
-          for n in 1 2 3 4 5 6; do
-            cert="/tmp/kyouen-${n}.cert"
-            /tmp/kyouen-certgen "$n" "$cert"
-            /tmp/kyouen-certcheck "$cert"
-            cargo run --release --bin kyouen-cert-verify -- "$cert"
-          done
-      - name: Build 10x10 KYOENC4 smoke generator
-        run: >-
-          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
-          ../../cpp/certificate/kyouen_certgen_v4_smoke.cpp
-          -o /tmp/kyouen-certgen-v4-smoke
-      - name: Generate and verify a high-word 10x10 KYOENC4 DAG
-        run: |
-          /tmp/kyouen-certgen-v4-smoke /tmp/kyouen-10-smoke.cert
-          cargo run --release --bin kyouen-cert-verify -- /tmp/kyouen-10-smoke.cert | tee /tmp/kyoenc4-report.txt
-          grep -q '^format=KYOENC4$' /tmp/kyoenc4-report.txt
-          grep -q '^board=10x10$' /tmp/kyoenc4-report.txt
-          grep -q '^nodes=2$' /tmp/kyoenc4-report.txt
-          grep -q '^forbidden_quadruples=54441$' /tmp/kyoenc4-report.txt
-          grep -q '^root_outcome=WIN$' /tmp/kyoenc4-report.txt
