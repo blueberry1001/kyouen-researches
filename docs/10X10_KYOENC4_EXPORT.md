@@ -30,21 +30,15 @@ kyouen-solver-10-kyoenc4 \
   3 80 1000 proof.index
 ```
 
-The full certificate-mode argument list is:
+Arguments after the output path are:
 
-```text
-STATE OUTPUT.cert shrink load max_nodes proof_index_file resume checkpoint_after
-```
+1. memo-table shrink value;
+2. memo-table load limit percentage;
+3. maximum proof-node count;
+4. optional mmap proof-index path.
 
-The final three arguments are optional:
-
-- `proof_index_file`: mmap index path; omit it to use RAM;
-- `resume`: `1` reopens an existing compatible index, `0` recreates it;
-- `checkpoint_after`: intentionally stop after approximately this many completed
-  proof nodes; `0` disables the checkpoint.
-
-The solver first computes the exact root outcome. It then traverses only the
-proof DAG required for that outcome:
+The solver first computes the exact outcome. It then traverses only the proof
+DAG required for that outcome:
 
 - WIN node: retain one legal move to a LOSS child;
 - LOSS node: retain every distinct canonical legal child, all of which must be WIN.
@@ -65,14 +59,7 @@ Each 24-byte slot stores:
 - outcome;
 - witness;
 - rank;
-- lifecycle status.
-
-The lifecycle statuses are:
-
-1. `complete`: all proof obligations below the node are present;
-2. `pending`: extraction entered the node but did not finish it;
-3. `tombstone`: a pending record discarded during resume while preserving the
-   open-addressing probe chain.
+- occupancy marker.
 
 The table is sized to keep its maximum load below roughly two thirds. For
 example, `max_nodes=1000` creates a 2048-slot index of 49,216 bytes including
@@ -80,75 +67,44 @@ the header. A 100-million-node limit selects 268,435,456 slots, requiring about
 6.0 GiB of virtual file space. The file can be sparse, but touched pages still
 consume storage and operating-system page cache.
 
-## Checkpoint and resume
+The mmap table removes the requirement that every proof node live in the C++
+heap. It does not make disk access free: very large extractions should use a
+fast local SSD, and random lookups may still pressure the page cache.
 
-A controlled checkpoint is useful for testing or for dividing a long run:
-
-```bash
-kyouen-solver-10-kyoenc4 \
-  --certificate \
-  '90,61,2,73,69,66,13,91' \
-  proof.cert \
-  3 80 10000 proof.index 0 100
-```
-
-A checkpoint exits with status code `4`, writes `proof_checkpoint=1` to stderr,
-and leaves the mmap index intact. The final certificate is not written because
-the root proof is not yet complete.
-
-Resume with the same root and `max_nodes`:
-
-```bash
-kyouen-solver-10-kyoenc4 \
-  --certificate \
-  '90,61,2,73,69,66,13,91' \
-  proof.cert \
-  3 80 10000 proof.index 1 0
-```
-
-On open, the exporter validates the index version, slot size, capacity, root,
-maximum node count, and file size. Complete nodes are reused. Pending nodes from
-the interrupted call stack are changed to tombstones and recomputed, because
-their descendants may be incomplete.
-
-The log reports:
-
-- `resumed_nodes`: complete nodes retained from the previous run;
-- `discarded_pending`: interrupted nodes converted to tombstones.
-
-The exact root search itself currently runs again after restart. Resume applies
-to proof-DAG extraction, which is the persistent stage.
+The current index is recreated for each export. Crash-safe resume and merging
+multiple branch indexes are separate future extensions.
 
 ## Independent validation
 
-CI tests all of the following:
+CI uses a real 14-stone 10×10 position. The exact solver visits two states,
+classifies the root WIN, and exports the same two-node `KYOENC4` DAG twice:
 
-1. a two-node proof with the in-memory index;
-2. the same proof with the mmap index;
-3. a 6,524-node eight-stone LOSS proof;
-4. an interrupted and resumed extraction of that same 6,524-node proof.
+1. using the in-memory index;
+2. using the mmap-backed index.
 
-Every completed certificate passes the independent Rust verifier. The clean and
-resumed medium certificates are also compared as an unordered set of 24-byte
-nodes and must be identical.
-
-This tests the full chain:
+Both certificates pass the independent Rust verifier. CI also compares their
+headers and node sets while ignoring serialization order. This tests the full
+chain:
 
 ```text
 exact C++ search
 → proof-DAG extraction
-→ checkpointed mmap index
+→ memory or mmap index
 → KYOENC4 serialization
 → independent Rust local-proof verification
 ```
 
 ## Remaining scaling boundary
 
-Restartable disk indexing is now available, but the exporter may still need to
+The proof-node index is now disk-backed, but the exporter may still need to
 recompute many descendants because the search memo stores only compressed
 outcomes and not witnesses. For the previously solved three-stone 10×10
 branches, proof extraction can therefore approach another large search.
 
-The next major optimization is to retain the selected WIN witness during the
-original search, preferably in an append-only checkpoint file. That would avoid
-re-searching many WIN nodes when constructing very large certificates.
+The next useful measurements are:
+
+1. export several late-game and medium-size roots;
+2. record DAG nodes, recomputation count, index size, elapsed time, and peak RSS;
+3. decide whether to retain witnesses during the original search or checkpoint
+   them into a separate append-only file;
+4. add restart support before attempting all 98 children of a two-stone proof.
