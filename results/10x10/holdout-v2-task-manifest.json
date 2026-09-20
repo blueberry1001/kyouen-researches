@@ -1,0 +1,21 @@
+{
+  "base_sha": "2bcd387102874ee20ee641ebd7311c0101d849b5",
+  "design": "clean-holdout-v2-fresh-solver",
+  "parent_count": 20,
+  "task_count": 1914,
+  "task_set_sha256": "22ec3bf65379b64e8aa8a35dea8b2264a37bd9e9ebd42425d0932c7dfc2a8728",
+  "batch_size": 20,
+  "primary_probe": {
+    "budget": 1000000,
+    "shrink": 3,
+    "load": 80,
+    "fresh_solver_per_child": true
+  },
+  "exact": {
+    "budget": 0,
+    "shrink": 0,
+    "load": 90
+  },
+  "selection": "results/10x10/holdout-v2-parent-selection-preregistered.csv",
+  "preregistration": "docs/10X10_PROBE_HOLDOUT_V2_PREREGISTRATION.md"
+}
