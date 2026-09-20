@@ -1,0 +1,25 @@
+  12,21,58 cache-aware WIN visited=41253019 maxdepth=18 memo=41122898 seconds=147.454 wall=149.1s
+  12,21,58 cache-blind WIN visited=48565266 maxdepth=18 memo=48435076 seconds=168.389 wall=163.8s
+  0,19,95 cache-blind WIN visited=48122261 maxdepth=18 memo=48049452 seconds=167.58 wall=162.4s
+  0,19,95 cache-aware WIN visited=40334044 maxdepth=18 memo=40261292 seconds=163.156 wall=156.4s
+  2,11,61 cache-aware WIN visited=27789159 maxdepth=18 memo=27714828 seconds=95.2068 wall=95.9s
+  2,11,61 cache-blind WIN visited=32749276 maxdepth=18 memo=32674885 seconds=109.183 wall=107.9s
+  1,27,61 cache-blind WIN visited=18775664 maxdepth=18 memo=18717453 seconds=62.3056 wall=64.4s
+  1,27,61 cache-aware WIN visited=16020139 maxdepth=18 memo=15961949 seconds=54.5141 wall=55.6s
+  1,68,74 cache-aware WIN visited=14174908 maxdepth=18 memo=14120404 seconds=48.3407 wall=49.4s
+  1,68,74 cache-blind WIN visited=16534371 maxdepth=18 memo=16479864 seconds=57.1856 wall=58.3s
+  0,7,67 cache-blind WIN visited=39772866 maxdepth=19 memo=39674364 seconds=131.739 wall=128.8s
+  0,7,67 cache-aware WIN visited=33663004 maxdepth=19 memo=33564588 seconds=105.423 wall=102.0s
+  1,12,80 cache-aware LOSS visited=555114540 maxdepth=19 memo=554115735 seconds=1977.33 wall=1822.5s
+  1,12,80 cache-blind LOSS visited=669211681 maxdepth=19 memo=668210054 seconds=2424.54 wall=2223.5s
+  2,43,60 cache-blind WIN visited=12698786 maxdepth=18 memo=12658829 seconds=68.7551 wall=72.7s
+  2,43,60 cache-aware WIN visited=10890815 maxdepth=18 memo=10850859 seconds=59.3279 wall=67.0s
+  23,37,45 cache-aware WIN visited=11864773 maxdepth=18 memo=11801781 seconds=61.885 wall=67.8s
+  23,37,45 cache-blind WIN visited=13822908 maxdepth=18 memo=13759906 seconds=75.1587 wall=78.5s
+  1,6,51 cache-blind WIN visited=12786596 maxdepth=18 memo=12735501 seconds=66.749 wall=72.8s
+  1,6,51 cache-aware WIN visited=10931142 maxdepth=18 memo=10880049 seconds=58.5995 wall=61.1s
+  12,13,67 cache-aware WIN visited=6524427 maxdepth=18 memo=6489322 seconds=33.2098 wall=40.7s
+  12,13,67 cache-blind WIN visited=7563460 maxdepth=18 memo=7528352 seconds=38.6198 wall=46.6s
+  12,25,71 cache-blind WIN visited=15785216 maxdepth=18 memo=15733846 seconds=79.7038 wall=82.8s
+  12,25,71 cache-aware WIN visited=13528345 maxdepth=18 memo=13476977 seconds=70.1987 wall=71.6s
+capacity-rerun cohort runner finished: 24/24 complete

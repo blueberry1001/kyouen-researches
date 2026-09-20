@@ -45,4 +45,4 @@ private:static constexpr std::uint64_t Outcome=1ULL<<63;std::size_t capacity_,ma
 class MultiDepthMemo100{
  static unsigned p(unsigned base,unsigned shrink){if(base<=shrink+1)throw std::runtime_error("shrink too large");return base-shrink;}
 public:enum:std::uint32_t{Losing=1,Winning=2};
- MultiDepthMemo100(unsigned shrink,unsigned load):d9_(41,p(23,shrink),load),d10_(44,p(25,shrink),load),d11_(48,p(26,shrink),load),d11b_(48,p(24,shrink),load),d12a_(50,p(27,shrink),load),d12b_(50,p(24,shrink),load),d13a_(53,p(27,shrink>0?shrink-1:0),load),d13b_(53,p(25,shrink>0?shrink-1:0),load),d14a_(56,p(27,shrink),load),d14b_(56,p(24,shrink),load),d15_(58,p(26,shrink),load),d16_(61,p(23,shrink),load),d17_(p(19,shrink),load){build();}
+ MultiDepthMemo100(unsigned shrink,unsigned load):d9_(41,p(23,shrink),load),d10_(44,p(25,shrink),load),d11_(48,p(26,shrink),load),d11b_(48,p(24,shrink),load),d12a_(50,p(28,shrink),load),d12b_(50,p(25,shrink),load),d13a_(53,p(28,shrink>0?shrink-1:0),load),d13b_(53,p(26,shrink>0?shrink-1:0),load),d14a_(56,p(28,shrink),load),d14b_(56,p(25,shrink),load),d15_(58,p(27,shrink),load),d16_(61,p(24,shrink),load),d17_(p(19,shrink),load){build();}

@@ -1,0 +1,37 @@
+below_root_order=cache-aware
+progress visited=16777216 memo=16748625 depth=14 maxdepth=18 seconds=53.3201
+progress visited=33554432 memo=33501683 depth=14 maxdepth=18 seconds=105.586
+progress visited=50331648 memo=50253351 depth=12 maxdepth=18 seconds=159.213
+progress visited=67108864 memo=67010111 depth=14 maxdepth=19 seconds=212.508
+progress visited=83886080 memo=83758744 depth=11 maxdepth=19 seconds=274.103
+progress visited=100663296 memo=100510576 depth=12 maxdepth=19 seconds=331.837
+progress visited=117440512 memo=117263467 depth=15 maxdepth=19 seconds=392.248
+progress visited=134217728 memo=134015560 depth=12 maxdepth=19 seconds=450.011
+progress visited=150994944 memo=150769055 depth=14 maxdepth=19 seconds=510.615
+progress visited=167772160 memo=167522996 depth=15 maxdepth=19 seconds=571.669
+progress visited=184549376 memo=184256699 depth=13 maxdepth=19 seconds=633.821
+progress visited=201326592 memo=201012230 depth=14 maxdepth=19 seconds=687.016
+progress visited=218103808 memo=217759766 depth=12 maxdepth=19 seconds=744.13
+progress visited=234881024 memo=234504118 depth=14 maxdepth=19 seconds=801.385
+progress visited=251658240 memo=251240610 depth=12 maxdepth=19 seconds=858.763
+progress visited=268435456 memo=267996886 depth=11 maxdepth=19 seconds=913.504
+progress visited=285212672 memo=284743616 depth=14 maxdepth=19 seconds=967.886
+progress visited=301989888 memo=301487427 depth=14 maxdepth=19 seconds=1023.14
+progress visited=318767104 memo=318237659 depth=13 maxdepth=19 seconds=1084.98
+progress visited=335544320 memo=334981908 depth=12 maxdepth=19 seconds=1145.94
+progress visited=352321536 memo=351714056 depth=13 maxdepth=19 seconds=1207.95
+progress visited=369098752 memo=368455164 depth=12 maxdepth=19 seconds=1268.65
+progress visited=385875968 memo=385208446 depth=10 maxdepth=19 seconds=1329.57
+progress visited=402653184 memo=401959673 depth=13 maxdepth=19 seconds=1391.26
+progress visited=419430400 memo=418705708 depth=14 maxdepth=19 seconds=1451.85
+progress visited=436207616 memo=435447523 depth=12 maxdepth=19 seconds=1511.41
+progress visited=452984832 memo=452189956 depth=13 maxdepth=19 seconds=1579.44
+progress visited=469762048 memo=468937499 depth=11 maxdepth=19 seconds=1644.62
+progress visited=486539264 memo=485681710 depth=11 maxdepth=19 seconds=1706.44
+progress visited=503316480 memo=502431877 depth=13 maxdepth=19 seconds=1771.76
+progress visited=520093696 memo=519178222 depth=13 maxdepth=19 seconds=1835.14
+progress visited=536870912 memo=535918542 depth=11 maxdepth=19 seconds=1901.72
+progress visited=553648128 memo=552654283 depth=12 maxdepth=19 seconds=1969.96
+bench_root unique=97 entered=97 first_lo=4098 first_hi=33619968 witness=-1 outcome=LOSS
+memo_by_depth 9:3148322 10:15299843 11:52420524 12:118377579 13:160286809 14:138976253 15:56716618 16:8502947 17:386840
+forbidden=54441 completed=1 requested=1 memo=554115735 seconds=1977.33 table_full=0

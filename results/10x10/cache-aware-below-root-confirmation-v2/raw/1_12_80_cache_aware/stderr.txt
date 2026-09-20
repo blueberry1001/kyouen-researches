@@ -1,0 +1,31 @@
+below_root_order=cache-aware
+progress visited=16777216 memo=16748625 depth=14 maxdepth=18 seconds=47.2961
+progress visited=33554432 memo=33501683 depth=14 maxdepth=18 seconds=100.036
+progress visited=50331648 memo=50253351 depth=12 maxdepth=18 seconds=150.789
+progress visited=67108864 memo=67010111 depth=14 maxdepth=19 seconds=204.67
+progress visited=83886080 memo=83758744 depth=11 maxdepth=19 seconds=256.274
+progress visited=100663296 memo=100510576 depth=12 maxdepth=19 seconds=310.839
+progress visited=117440512 memo=117263467 depth=15 maxdepth=19 seconds=367.112
+progress visited=134217728 memo=134015560 depth=12 maxdepth=19 seconds=418.863
+progress visited=150994944 memo=150769055 depth=14 maxdepth=19 seconds=474.259
+progress visited=167772160 memo=167522996 depth=15 maxdepth=19 seconds=527.155
+progress visited=184549376 memo=184256699 depth=13 maxdepth=19 seconds=581.639
+progress visited=201326592 memo=201012230 depth=14 maxdepth=19 seconds=643.109
+progress visited=218103808 memo=217759766 depth=12 maxdepth=19 seconds=703.537
+progress visited=234881024 memo=234504118 depth=14 maxdepth=19 seconds=757.034
+progress visited=251658240 memo=251240610 depth=12 maxdepth=19 seconds=822.26
+progress visited=268435456 memo=267996886 depth=11 maxdepth=19 seconds=883.536
+progress visited=285212672 memo=284743616 depth=14 maxdepth=19 seconds=969.198
+progress visited=301989888 memo=301487427 depth=14 maxdepth=19 seconds=1032.5
+progress visited=318767104 memo=318237659 depth=13 maxdepth=19 seconds=1094.48
+progress visited=335544320 memo=334981908 depth=12 maxdepth=19 seconds=1169.82
+progress visited=352321536 memo=351714056 depth=13 maxdepth=19 seconds=1249.55
+progress visited=369098752 memo=368455164 depth=12 maxdepth=19 seconds=1322.74
+progress visited=385875968 memo=385208446 depth=10 maxdepth=19 seconds=1388.88
+progress visited=402653184 memo=401959673 depth=13 maxdepth=19 seconds=1459.46
+progress visited=419430400 memo=418705708 depth=14 maxdepth=19 seconds=1554.08
+progress visited=436207616 memo=435447523 depth=12 maxdepth=19 seconds=1633.69
+progress visited=452984832 memo=452189956 depth=13 maxdepth=19 seconds=1711.02
+progress visited=469762048 memo=468937499 depth=11 maxdepth=19 seconds=1791.39
+memo_by_depth 9:2677421 10:13016463 11:44671191 12:101194299 13:137885215 14:120425728 15:49655643 16:7549747 17:350081
+forbidden=54441 completed=0 requested=1 memo=477425788 seconds=1834.13 table_full=1

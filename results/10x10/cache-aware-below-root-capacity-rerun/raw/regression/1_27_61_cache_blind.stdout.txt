@@ -1,0 +1,4 @@
+below_root_order=cache-blind
+progress visited=16777216 memo=16725315 depth=13 maxdepth=18 seconds=57.8461
+bench_root unique=96 entered=3 first_lo=2308094809161596930 first_hi=0 witness=16 outcome=WIN
+…

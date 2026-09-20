@@ -1,3 +1,6 @@
+ std::string root_order_file;int root_order_depth=-1;
+ std::string memo_instr_out;for(int ai2=1;ai2<argc;){std::string a=argv[ai2];if(a=="--memo-instr-out"&&ai2+1<argc){memo_instr_out=argv[ai2+1];for(int aj=ai2;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai2;}std::string below_root_order="cache-aware";for(int ai3=1;ai3<argc;){std::string a=argv[ai3];if(a=="--below-root-order"&&ai3+1<argc){below_root_order=argv[ai3+1];for(int aj=ai3;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai3;}if(below_root_order!="cache-aware"&&below_root_order!="cache-blind")throw std::runtime_error("unknown --below-root-order (want cache-aware|cache-blind)");
+ for(int ai=1;ai<argc;){std::string a=argv[ai];if(a=="--root-order-file"&&ai+1<argc){root_order_file=argv[ai+1];for(int aj=ai;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else if(a=="--root-depth"&&ai+1<argc){root_order_depth=std::atoi(argv[ai+1]);for(int aj=ai;aj+2<argc;++aj)argv[aj]=argv[aj+2];argc-=2;}else ++ai;}
  unsigned shrink=argc>=3?std::atoi(argv[2]):3,load=argc>=4?std::atoi(argv[3]):80;
  std::uint64_t max_visited=argc>=5?std::strtoull(argv[4],nullptr,10):0;
  double max_seconds=argc>=6?std::strtod(argv[5],nullptr):0.0;
@@ -6,8 +9,13 @@
  std::ifstream in(argv[1]);if(!in)throw std::runtime_error("cannot open states file");
  std::vector<std::vector<int>>tasks;std::string line;
  while(std::getline(in,line))if(!line.empty())tasks.push_back(parse(line));
- Solver solver(shrink,load);
+ Solver solver(shrink,load);if(!memo_instr_out.empty())solver.set_memo_instr(memo_instr_out);if(below_root_order=="cache-blind")solver.set_below_root_order_blind(true);std::cerr<<"below_root_order="<<below_root_order<<"\n";
  solver.set_probe_budget(max_visited,max_seconds);
+ if(!root_order_file.empty()&&root_order_depth<0)throw std::runtime_error("--root-order-file requires --root-depth");
+ if(!root_order_file.empty()&&(int)tasks.size()!=1)throw std::runtime_error("--root-order-file requires a single-state file");
+ if(!memo_instr_out.empty()&&(int)tasks.size()!=1)throw std::runtime_error("--memo-instr-out requires a single-state file");
+ if(root_order_depth>=0)solver.set_root_diag(root_order_depth);
+ if(!root_order_file.empty()){std::ifstream rf(root_order_file);if(!rf)throw std::runtime_error("cannot open root order file");std::vector<Bits> rkeys;std::string rl;std::size_t rlines=0;while(std::getline(rf,rl)){if(rl.empty())continue;++rlines;rkeys.push_back(solver.canonical_key_of(parse(rl)));}std::vector<Bits> runiq;for(auto&k:rkeys){bool seen=false;for(auto&q:runiq)if(q==k){seen=true;break;}if(!seen)runiq.push_back(k);}std::cerr<<"root_order_file lines="<<rlines<<" unique="<<runiq.size()<<"\n";solver.set_root_order(root_order_depth,runiq);}
  std::cout<<"state,outcome,visited,maxdepth,memo,seconds";
  for(int i=0;i<20;++i)std::cout<<",depth_visited_"<<i;
  for(int i=9;i<=21;++i)std::cout<<",memo_used_d"<<i;
@@ -29,6 +37,7 @@
    std::cout<<','<<(w?"WIN":"LOSS");
    write_stats(st);
    std::cout<<"\n";
+   solver.print_bench_root(std::cerr,w?"WIN":"LOSS");
    std::cout.flush();
    ++done;
   }catch(const ProbeExhausted&){
@@ -36,6 +45,7 @@
    std::cout<<",PROBE";
    write_stats(st);
    std::cout<<"\n";
+   solver.print_bench_root(std::cerr,"PROBE");
    std::cout.flush();
    ++done;
   }catch(const TableFull&){
@@ -45,6 +55,7 @@
    return 3;
   }
  }
+ solver.write_memo_instr();
  solver.print(std::cerr);
  print_winning_witness_stats(std::cerr);
  std::cerr<<"forbidden="<<solver.forbidden_count()<<" completed="<<done<<" requested="<<tasks.size()<<" memo="<<solver.memo_used()<<" seconds="<<solver.seconds()<<" table_full=0\n";

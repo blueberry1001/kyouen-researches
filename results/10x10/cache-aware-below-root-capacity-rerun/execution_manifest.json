@@ -1,0 +1,261 @@
+{
+  "analysis_script_sha256": "864584fe5f53b1026722327378c1977ca55c85cfdef44746f6d765624c88513f",
+  "branch_base_sha": "5b501588d0e71807977ef69850ad78758295b031",
+  "capacity_change": {
+    "changed_depths": [
+      "d12a",
+      "d12b",
+      "d13a",
+      "d13b",
+      "d14a",
+      "d14b",
+      "d15",
+      "d16"
+    ],
+    "load": 90,
+    "old_power": {
+      "d10": 25,
+      "d11a": 26,
+      "d11b": 24,
+      "d12a": 27,
+      "d12b": 24,
+      "d13a": 27,
+      "d13b": 25,
+      "d14a": 27,
+      "d14b": 24,
+      "d15": 26,
+      "d16": 23,
+      "d17": 19,
+      "d9": 23
+    },
+    "physical_table_power": {
+      "d10": 25,
+      "d11a": 26,
+      "d11b": 24,
+      "d12a": 28,
+      "d12b": 25,
+      "d13a": 28,
+      "d13b": 26,
+      "d14a": 28,
+      "d14b": 25,
+      "d15": 27,
+      "d16": 24,
+      "d17": 19,
+      "d9": 23
+    },
+    "shrink": 0
+  },
+  "cohort": {
+    "parents": [
+      "12,21,58",
+      "0,19,95",
+      "2,11,61",
+      "1,27,61",
+      "1,68,74",
+      "0,7,67",
+      "1,12,80",
+      "2,43,60",
+      "23,37,45",
+      "1,6,51",
+      "12,13,67",
+      "12,25,71"
+    ]
+  },
+  "cohort_file": "results/10x10/cache-aware-below-root-capacity-rerun/cohort.csv",
+  "cohort_sha256": "9a0a8f89a53ccb4570ba5acf8f747b053b52e1de7ed273a30237501b5656ff39",
+  "command_templates": {
+    "cache-aware": [
+      "BIN",
+      "STATES_FILE",
+      "0",
+      "90",
+      "0",
+      "0",
+      "--root-depth",
+      "3",
+      "--below-root-order",
+      "cache-aware",
+      "--memo-instr-out",
+      "DEPTH_CSV"
+    ],
+    "cache-blind": [
+      "BIN",
+      "STATES_FILE",
+      "0",
+      "90",
+      "0",
+      "0",
+      "--root-depth",
+      "3",
+      "--below-root-order",
+      "cache-blind",
+      "--memo-instr-out",
+      "DEPTH_CSV"
+    ]
+  },
+  "condition_order": "counterbalanced by frozen cohort rank (odd rank: aware first; even rank: blind first)",
+  "conditions": {
+    "cache-aware": "native ordering at every depth: cached LOSS first, then uncached/unknown, then cached WIN, then legal_move_count ascending, then canonical key ascending",
+    "cache-blind": "root (depth 3) native cache-aware; depth >= 4 sorts by legal_move_count ascending then canonical key ascending only; memo prefetch still performed and cached outcomes still consumed without recursion"
+  },
+  "experiment": "cache-aware vs cache-blind below-root ordering (capacity-rescued confirmation rerun)",
+  "include_files_sha256": {
+    "scripts/probe_cert_solver.cpp": "d74831f4030aa66ca2856c21b9cd11874d5469120839bc19893f217dfb4bca08",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_0.inc": "dfe3e3a00ed4038d4eb44d98be8ca64f933d8eac6b0249eea3af8249a793e880",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_1.inc": "720b83d7a61c561ff4013001c122d33012b531c8f5017b3fd2fa865227768153",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc": "31cfb24f7e9b4f792ab8bb3dc154b2fdf91cefdb1254b930a07a5381c9d62fb6",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc": "735c36637051bff31e259499d36c881af3b576a4317a0a674cc9d3208aa44b0d",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc": "a49c04f8b030705c6ca0b6fc25bfefbeeab3ebf46483edbc526843a307e9d621",
+    "scripts/probe_parts/kyouen_solver_10_kyoenc4_witness_log.inc": "dbd75197e0cc3fccda8ab2f1a392cf3c2a681130f62a2c59f958680cfe87a507"
+  },
+  "old_c2_raw_reuse": "forbidden; old C2 outputs are regression expectations only, never endpoint inputs",
+  "output_schema": {
+    "depth": [
+      "parent",
+      "condition",
+      "depth",
+      "entry_lookup_calls",
+      "entry_hit_win",
+      "entry_hit_loss",
+      "entry_miss",
+      "prefetch_calls",
+      "prefetch_hit_win",
+      "prefetch_hit_loss",
+      "prefetch_miss",
+      "put_win",
+      "put_loss",
+      "child_eval_from_cache_win",
+      "child_eval_from_cache_loss",
+      "child_eval_recursive",
+      "visited_nonterminal_nodes",
+      "nodes_with_any_prefetch_hit",
+      "nodes_cache_changes_first_child",
+      "nodes_cache_changes_full_order",
+      "actual_first_cached_loss",
+      "fallback_first_cached_loss",
+      "solved_win_nodes",
+      "win_return_from_cached_loss_child"
+    ],
+    "depth_visited": [
+      "parent",
+      "condition",
+      "depth",
+      "visited"
+    ],
+    "summary": [
+      "parent",
+      "condition",
+      "order_index",
+      "outcome",
+      "exact_visited",
+      "exact_maxdepth",
+      "exact_memo",
+      "solver_seconds",
+      "wall_seconds",
+      "root_unique",
+      "root_entered",
+      "root_first_lo",
+      "root_first_hi",
+      "root_witness"
+    ]
+  },
+  "parent_solve": {
+    "below_root_min_depth": 4,
+    "binary": "tmp-kb/order_ab_native",
+    "binary_sha256": "a98ca5e41d67dfa988deaf491ff948cb4a82ae8596af8aea83376b9f259ebfd1",
+    "budget": 0,
+    "build_cmd": [
+      "g++",
+      "-O2",
+      "-std=c++20"
+    ],
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "fresh_process_per_parent_condition": true,
+    "instrumentation": "memo reuse counters ON in both conditions (same setting)",
+    "load": 90,
+    "root_depth": 3,
+    "root_order_override": null,
+    "shrink": 0,
+    "sources_sha256": "3ab6c565bbfdae9e4bda2ca7eb00e20be54d9b4315616221d39389326c8e16a8"
+  },
+  "prereg": "docs/10X10_CACHE_AWARE_BELOW_ROOT_CAPACITY_RERUN_PREREG.md; prereg commits b7a6649 (text) + 45af02f (machine manifest); branch base 5b50158 (C2 INCOMPLETE final receipt)",
+  "prereg_commit_shas": {
+    "machine": "45af02f059b6310d82f2a9ece8f220b4addff8bd",
+    "text": "b7a6649071464e377a8cad4b48c226e6ccd971dc"
+  },
+  "regression": {
+    "log_sha256": "3d0119d4e7cbfe5f072ef703f3623b566aa8a63c152b323c6d99e9808bea5987",
+    "script": "scripts/test_capacity_rerun_regression.py",
+    "script_sha256": "4883b97ba9478c280e4cfb517f230087f3d36d835a2e06e812bc5fb52c776a27"
+  },
+  "run_order": [
+    {
+      "first": "cache-aware",
+      "parent": "12,21,58",
+      "rank": 1
+    },
+    {
+      "first": "cache-blind",
+      "parent": "0,19,95",
+      "rank": 2
+    },
+    {
+      "first": "cache-aware",
+      "parent": "2,11,61",
+      "rank": 3
+    },
+    {
+      "first": "cache-blind",
+      "parent": "1,27,61",
+      "rank": 4
+    },
+    {
+      "first": "cache-aware",
+      "parent": "1,68,74",
+      "rank": 5
+    },
+    {
+      "first": "cache-blind",
+      "parent": "0,7,67",
+      "rank": 6
+    },
+    {
+      "first": "cache-aware",
+      "parent": "1,12,80",
+      "rank": 7
+    },
+    {
+      "first": "cache-blind",
+      "parent": "2,43,60",
+      "rank": 8
+    },
+    {
+      "first": "cache-aware",
+      "parent": "23,37,45",
+      "rank": 9
+    },
+    {
+      "first": "cache-blind",
+      "parent": "1,6,51",
+      "rank": 10
+    },
+    {
+      "first": "cache-aware",
+      "parent": "12,13,67",
+      "rank": 11
+    },
+    {
+      "first": "cache-blind",
+      "parent": "12,25,71",
+      "rank": 12
+    }
+  ],
+  "runner_script_sha256": "ab639fc44f3e2fbb6754790eb8752743a5eca92a2c7d4e71e0f0179c850734d6",
+  "runtime_switch": "--below-root-order",
+  "timeout_policy": {
+    "machine_interruption": "rerun same parent-condition from scratch",
+    "on_timeout": "report as failure; no replacement; endpoint incomplete if ratio missing",
+    "per_run_seconds": 10800.0
+  },
+  "verifier_script_sha256": "6bbf3ec00aa163b011ad9f62695452bd77457de9b36c86323a8201d819f42b97"
+}

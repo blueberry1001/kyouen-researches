@@ -1,0 +1,10 @@
+below_root_order=cache-blind
+progress visited=16777216 memo=16752079 depth=14 maxdepth=18 seconds=56.0761
+progress visited=33554432 memo=33496783 depth=12 maxdepth=18 seconds=109.438
+progress visited=50331648 memo=50250648 depth=13 maxdepth=18 seconds=163.304
+progress visited=67108864 memo=67006376 depth=11 maxdepth=19 seconds=215.378
+progress visited=83886080 memo=83755271 depth=12 maxdepth=19 seconds=268.773
+progress visited=100663296 memo=100504039 depth=14 maxdepth=19 seconds=323.442
+bench_root unique=96 entered=6 first_lo=17626545784833 first_hi=0 witness=72 outcome=WIN
+memo_by_depth 9:741813 10:3261574 11:11418081 12:23450485 13:30472332 14:23239393 15:7748450 16:925170 17:34959
+forbidden=54441 completed=1 requested=1 memo=101292257 seconds=326.314 table_full=0
