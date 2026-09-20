@@ -1,0 +1,84 @@
+name: Three-stone probe holdout v2 batches preflight
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - '.github/workflows/three-stone-probe-holdout-v2-batches-preflight.yml'
+      - 'scripts/freeze_three_stone_probe_holdout_v2_children.py'
+      - 'scripts/materialize_three_stone_probe_holdout_v2_batches.py'
+      - 'results/10x10/three-stone-probe-holdout-v2.csv'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild frozen children and materialize isolated-runner batches
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/v2-batches-a /tmp/v2-batches-b
+          python3 scripts/freeze_three_stone_probe_holdout_v2_children.py \
+            results/10x10/three-stone-probe-holdout-v2.csv \
+            /tmp/v2-children.csv \
+            > /tmp/v2-freeze.log
+
+          expected_children_sha='8cec2f9ae1bee65df13ed87b7f646e8c195ac29a444feb6e59d231e6c94c2a73'
+          test "$(sha256sum /tmp/v2-children.csv | cut -d' ' -f1)" = "$expected_children_sha"
+
+          python3 scripts/materialize_three_stone_probe_holdout_v2_batches.py \
+            /tmp/v2-children.csv /tmp/v2-batches-a \
+            | tee /tmp/v2-batches.log
+          python3 scripts/materialize_three_stone_probe_holdout_v2_batches.py \
+            /tmp/v2-children.csv /tmp/v2-batches-b \
+            > /tmp/v2-batches-second.log
+
+          diff -ru /tmp/v2-batches-a /tmp/v2-batches-b
+          test "$(find /tmp/v2-batches-a -maxdepth 1 -name 'children_*_batch*.txt' | wc -l)" -eq 60
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path('/tmp/v2-batches-a/v2-batch-manifest.csv')
+          with p.open(newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          if len(rows) != 60:
+              raise SystemExit(f'expected 60 manifest rows, got {len(rows)}')
+          parents = {r['parent'] for r in rows}
+          if len(parents) != 12:
+              raise SystemExit(f'expected 12 parents, got {len(parents)}')
+          counts = [int(r['rows']) for r in rows]
+          if sum(counts) != 1161:
+              raise SystemExit(f'expected 1161 rows, got {sum(counts)}')
+          if not all(1 <= n <= 20 for n in counts):
+              raise SystemExit('batch size outside 1..20')
+          by_parent = {}
+          for r in rows:
+              by_parent.setdefault(r['parent'], []).append(int(r['batch_index']))
+          for parent, batches in by_parent.items():
+              if sorted(batches) != list(range(len(batches))):
+                  raise SystemExit(f'non-contiguous batches for {parent}: {batches}')
+          print('manifest_csv_semantics=PASS')
+          PY
+          if head -n1 /tmp/v2-batches-a/v2-batch-manifest.csv | grep -Eqi 'loss|outcome|memo|visited|maxdepth|seconds'; then
+            echo 'result-bearing column leaked into batch preflight' >&2
+            exit 1
+          fi
+          sha256sum /tmp/v2-batches-a/v2-batch-manifest.csv | tee /tmp/v2-batch-manifest.sha256
+          echo 'v2_isolated_runner_batch_materialization=PASS'
+
+      - name: Upload outcome-free batch receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: three-stone-probe-holdout-v2-batches-preflight
+          path: |
+            /tmp/v2-freeze.log
+            /tmp/v2-batches.log
+            /tmp/v2-batches-second.log
+            /tmp/v2-batch-manifest.sha256
+            /tmp/v2-batches-a/v2-batch-manifest.csv
+          if-no-files-found: error
+          retention-days: 30

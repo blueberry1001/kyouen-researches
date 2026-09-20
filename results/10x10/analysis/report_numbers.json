@@ -1,0 +1,288 @@
+{
+  "visited": {
+    "WIN": {
+      "count": 661,
+      "min": 2,
+      "p25": 5696205.0,
+      "median": 8739606.0,
+      "mean": 27889272.55824508,
+      "p75": 19094374.0,
+      "p90": 62732202.0,
+      "p95": 127733631.0,
+      "max": 603662904
+    },
+    "LOSS": {
+      "count": 32,
+      "min": 10471,
+      "p25": 9556685.25,
+      "median": 12617634.0,
+      "mean": 123529951.4375,
+      "p75": 19003245.5,
+      "p90": 630570028.4000003,
+      "p95": 822445140.7,
+      "max": 827783863
+    }
+  },
+  "memo": {
+    "WIN": {
+      "count": 628,
+      "min": 1,
+      "p25": 5999420.0,
+      "median": 9186612.5,
+      "mean": 29281671.47133758,
+      "p75": 20087242.0,
+      "p90": 66436342.60000009,
+      "p95": 130010315.24999999,
+      "max": 602769989
+    },
+    "LOSS": {
+      "count": 27,
+      "min": 24499,
+      "p25": 10963933.0,
+      "median": 14270704.0,
+      "mean": 145131287.14814815,
+      "p75": 24108879.0,
+      "p90": 713313418.0000004,
+      "p95": 822752335.3,
+      "max": 826696649
+    }
+  },
+  "runtime": {
+    "WIN": {
+      "count": 628,
+      "min": 0,
+      "p25": 14.6357,
+      "median": 24.72,
+      "mean": 89.95480054458599,
+      "p75": 60.032,
+      "p90": 236.7289000000001,
+      "p95": 447.9286999999997,
+      "max": 1802
+    },
+    "LOSS": {
+      "count": 27,
+      "min": 1,
+      "p25": 18.813000000000002,
+      "median": 23.9274,
+      "mean": 373.93925000000013,
+      "p75": 41.1732,
+      "p90": 1832.530000000002,
+      "p95": 2446.712,
+      "max": 2474
+    }
+  },
+  "overlap": {
+    "min_loss": 10471,
+    "max_win": 603662904,
+    "max_win_exceeds_min_loss": true,
+    "wins_heavier_than_min_loss": 656,
+    "losses_lighter_than_max_win": 28,
+    "total_win_with_cost": 661,
+    "total_loss_with_cost": 32,
+    "heaviest_win_state": "1,39,80",
+    "heaviest_win_value": 603662904,
+    "lightest_loss_state": "90,61,2,73,69,66,13,91",
+    "lightest_loss_value": 10471
+  },
+  "thresholds": [
+    {
+      "threshold": 8999426,
+      "percentile": 50.072150072150066,
+      "precision": 0.07204610951008646,
+      "recall": 0.78125,
+      "fp": 322,
+      "fn": 7,
+      "tp": 25
+    },
+    {
+      "threshold": 19094374,
+      "percentile": 25.108225108225106,
+      "precision": 0.04597701149425287,
+      "recall": 0.25,
+      "fp": 166,
+      "fn": 24,
+      "tp": 8
+    },
+    {
+      "threshold": 27030124,
+      "percentile": 20.057720057720058,
+      "precision": 0.050359712230215826,
+      "recall": 0.21875,
+      "fp": 132,
+      "fn": 25,
+      "tp": 7
+    },
+    {
+      "threshold": 38634098,
+      "percentile": 15.007215007215008,
+      "precision": 0.04807692307692308,
+      "recall": 0.15625,
+      "fp": 99,
+      "fn": 27,
+      "tp": 5
+    },
+    {
+      "threshold": 65777799,
+      "percentile": 10.1010101010101,
+      "precision": 0.07142857142857142,
+      "recall": 0.15625,
+      "fp": 65,
+      "fn": 27,
+      "tp": 5
+    },
+    {
+      "threshold": 131916886,
+      "percentile": 5.194805194805195,
+      "precision": 0.1388888888888889,
+      "recall": 0.15625,
+      "fp": 31,
+      "fn": 27,
+      "tp": 5
+    },
+    {
+      "threshold": 505550558,
+      "percentile": 1.0101010101010102,
+      "precision": 0.5714285714285714,
+      "recall": 0.125,
+      "fp": 3,
+      "fn": 28,
+      "tp": 4
+    }
+  ],
+  "rank_concentration": {
+    "1%": {
+      "k": 6,
+      "loss_in_top": 4,
+      "recall": 0.125,
+      "random_expected": 0.27705627705627706,
+      "enrichment": 14.4375
+    },
+    "5%": {
+      "k": 34,
+      "loss_in_top": 5,
+      "recall": 0.15625,
+      "random_expected": 1.56998556998557,
+      "enrichment": 3.1847426470588234
+    },
+    "10%": {
+      "k": 69,
+      "loss_in_top": 5,
+      "recall": 0.15625,
+      "random_expected": 3.186147186147186,
+      "enrichment": 1.5692934782608696
+    },
+    "20%": {
+      "k": 138,
+      "loss_in_top": 7,
+      "recall": 0.21875,
+      "random_expected": 6.372294372294372,
+      "enrichment": 1.0985054347826086
+    }
+  },
+  "same_stone": [
+    {
+      "stones": 3,
+      "win_count": 287,
+      "loss_count": 5,
+      "win_median": 21154191.0,
+      "loss_median": 819209782.0,
+      "win_mean": 54924052.70731708,
+      "loss_mean": 724514234.6,
+      "min_loss": 504612782.0,
+      "max_win": 603662904
+    },
+    {
+      "stones": 4,
+      "win_count": 311,
+      "loss_count": 12,
+      "win_median": 7370958.0,
+      "loss_median": 15123359.5,
+      "win_mean": 8507992.958199358,
+      "loss_mean": 17412385.0,
+      "min_loss": 9559583.0,
+      "max_win": 35355700
+    },
+    {
+      "stones": 5,
+      "win_count": 29,
+      "loss_count": 11,
+      "win_median": 328248.0,
+      "loss_median": 11087821.0,
+      "win_mean": 714044.551724138,
+      "loss_mean": 10908919.727272727,
+      "min_loss": 7404873.0,
+      "max_win": 5620326
+    },
+    {
+      "stones": 6,
+      "win_count": 25,
+      "loss_count": 3,
+      "win_median": 168084.0,
+      "loss_median": 467339.0,
+      "win_mean": 193241.0,
+      "loss_mean": 476688.3333333333,
+      "min_loss": 432614.0,
+      "max_win": 451037
+    },
+    {
+      "stones": 7,
+      "win_count": 8,
+      "loss_count": 0,
+      "win_median": 8937.0,
+      "loss_median": NaN,
+      "win_mean": 10238.125,
+      "loss_mean": NaN,
+      "min_loss": NaN,
+      "max_win": 24847
+    }
+  ],
+  "parent_child": [
+    {
+      "parent": "69,91",
+      "children": 98,
+      "win_children": 95,
+      "loss_children": 3,
+      "win_median_visited": 42481748.0,
+      "loss_median_visited": 826399468.0,
+      "loss_max_visited": 827783863,
+      "win_max_visited": 603662904
+    },
+    {
+      "parent": "3,19,90",
+      "children": 97,
+      "win_children": 97,
+      "loss_children": 0,
+      "win_median_visited": 8011239.0,
+      "loss_median_visited": NaN,
+      "loss_max_visited": null,
+      "win_max_visited": 29093975
+    },
+    {
+      "parent": "9,10,30",
+      "children": 96,
+      "win_children": 96,
+      "loss_children": 0,
+      "win_median_visited": 6247452.5,
+      "loss_median_visited": NaN,
+      "loss_max_visited": null,
+      "win_max_visited": 35355700
+    },
+    {
+      "parent": "9,29,30",
+      "children": 97,
+      "win_children": 97,
+      "loss_children": 0,
+      "win_median_visited": 7229368.0,
+      "loss_median_visited": NaN,
+      "loss_max_visited": null,
+      "win_max_visited": 20653821
+    }
+  ],
+  "mann_whitney": {
+    "U": 13150.0,
+    "p": 0.019975806157410198,
+    "loss_n": 32,
+    "win_n": 661,
+    "rank_biserial_r": -0.2433812405446294
+  }
+}

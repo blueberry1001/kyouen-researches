@@ -1,0 +1,42 @@
+name: Fresh probe order invariance
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - 'scripts/run_blind_probe_batch_isolated.py'
+      - 'scripts/test_fresh_probe_order_invariance.py'
+      - 'scripts/probe_cert_solver.cpp'
+      - 'scripts/probe_parts/**'
+      - '.github/workflows/probe-fresh-process-order-invariance.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build native probe solver
+        run: |
+          set -euo pipefail
+          g++ -O3 -std=c++20 -DNDEBUG scripts/probe_cert_solver.cpp -o /tmp/probe_cert_solver
+          chmod +x /tmp/probe_cert_solver
+          sha256sum /tmp/probe_cert_solver
+
+      - name: Verify fresh-process order invariance
+        env:
+          KYOUEN_PROBE_SOLVER: /tmp/probe_cert_solver
+        run: |
+          set -euo pipefail
+          python3 scripts/test_fresh_probe_order_invariance.py | tee /tmp/fresh-probe-order-invariance.txt
+
+      - name: Upload validation receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-probe-order-invariance-${{ github.sha }}
+          path: /tmp/fresh-probe-order-invariance.txt
+          if-no-files-found: error
+          retention-days: 30

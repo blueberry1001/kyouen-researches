@@ -1,0 +1,12 @@
+progress visited=16777216 memo=24078734 depth=12 maxdepth=18 seconds=72.8543
+progress visited=33554432 memo=40820100 depth=13 maxdepth=18 seconds=123.012
+progress visited=16777216 memo=74737246 depth=13 maxdepth=18 seconds=219.012
+progress visited=16777216 memo=103308047 depth=11 maxdepth=18 seconds=325.366
+progress visited=16777216 memo=121658234 depth=14 maxdepth=18 seconds=395.873
+progress visited=16777216 memo=197217313 depth=14 maxdepth=18 seconds=639.723
+progress visited=33554432 memo=213957178 depth=14 maxdepth=18 seconds=693.227
+progress visited=16777216 memo=236279504 depth=11 maxdepth=18 seconds=763.914
+progress visited=16777216 memo=255898669 depth=11 maxdepth=18 seconds=845.013
+progress visited=16777216 memo=290857426 depth=15 maxdepth=18 seconds=981.592
+memo_by_depth 9:3001756 10:12002772 11:39276695 12:75676992 13:93678468 14:69990765 15:23735883 16:2971401 17:121208
+forbidden=54441 completed=20 requested=20 memo=320455940 seconds=1117.73 table_full=0

@@ -1,0 +1,136 @@
+name: Probe known LOSS isolated batch0
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - '.github/workflows/probe-known-loss-isolated-batch0.yml'
+      - 'scripts/run_blind_probe_batch_isolated.py'
+      - 'scripts/analyze_known_loss_isolated_probe.py'
+      - 'scripts/probe_cert_solver.cpp'
+      - 'scripts/probe_parts/**'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 7
+      matrix:
+        parent:
+          - '2,9,33'
+          - '4,9,33'
+          - '9,12,33'
+          - '9,19,33'
+          - '9,23,33'
+          - '0,31,36'
+          - '0,36,44'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build probe solver
+        run: |
+          set -euo pipefail
+          g++ -O3 -std=c++20 -DNDEBUG scripts/probe_cert_solver.cpp -o /tmp/probe_cert_solver
+          sha256sum /tmp/probe_cert_solver
+
+      - name: Run batch0 with one fresh process per child
+        env:
+          KYOUEN_PROBE_SOLVER: /tmp/probe_cert_solver
+        run: |
+          set -euo pipefail
+          python3 scripts/run_blind_probe_batch_isolated.py '${{ matrix.parent }}' 0 3
+
+      - name: Validate isolated output
+        run: |
+          set -euo pipefail
+          safe=$(echo '${{ matrix.parent }}' | tr ',' '_')
+          out="results/10x10/blind_probe_children/probe_isolated_${safe}_batch0_1000000.csv"
+          exact="results/10x10/blind_probe_children/exact_${safe}_batch0.csv"
+          python3 - "$out" "$exact" <<'PY'
+          import csv, sys
+          out, exact = sys.argv[1:]
+          with open(out, newline='', encoding='utf-8') as f:
+              rows = list(csv.DictReader(f))
+          with open(exact, newline='', encoding='utf-8') as f:
+              labels = {
+                  tuple(sorted(map(int, r['state'].replace(',', '-').split('-')))): r['outcome']
+                  for r in csv.DictReader(f)
+              }
+          if not rows:
+              raise SystemExit('empty isolated probe output')
+          states = [r['state'] for r in rows]
+          if len(states) != len(set(states)):
+              raise SystemExit('duplicate state in isolated output')
+          completed = 0
+          completed_loss = 0
+          for r in rows:
+              outcome = r['outcome']
+              visited = int(r['visited'])
+              if outcome not in {'PROBE', 'WIN', 'LOSS'}:
+                  raise SystemExit(f'unexpected outcome={outcome}')
+              if visited > 1_000_000:
+                  raise SystemExit(f'visited exceeds budget for {r["state"]}')
+              if outcome == 'PROBE' and visited != 1_000_000:
+                  raise SystemExit(f'cutoff PROBE did not consume full budget for {r["state"]}')
+              if outcome != 'PROBE':
+                  completed += 1
+                  key = tuple(sorted(map(int, r['state'].replace(',', '-').split('-'))))
+                  if labels.get(key) != outcome:
+                      raise SystemExit(
+                          f'isolated exact completion disagrees with existing exact label: '
+                          f'{r["state"]} probe={outcome} exact={labels.get(key)}'
+                      )
+                  completed_loss += outcome == 'LOSS'
+              if int(r['memo']) > 1_100_000:
+                  raise SystemExit('memo exceeds fresh-process sanity bound')
+          print(
+              f'validated children={len(rows)} completed={completed} completed_loss={completed_loss} '
+              f'memo_range={min(int(r["memo"]) for r in rows)}..{max(int(r["memo"]) for r in rows)}'
+          )
+          PY
+
+      - name: Upload raw isolated probe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: known-loss-isolated-${{ strategy.job-index }}
+          path: |
+            results/10x10/blind_probe_children/probe_isolated_*_batch0_1000000.csv
+            results/10x10/blind_probe_children/probe_isolated_*_batch0_1000000.err
+          if-no-files-found: error
+          retention-days: 30
+
+  analyze:
+    needs: probe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all isolated probe artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: known-loss-isolated-*
+          path: /tmp/known-loss-isolated
+          merge-multiple: true
+
+      - name: Analyze preregistered exploratory feature set
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/known-loss-analysis
+          python3 scripts/analyze_known_loss_isolated_probe.py \
+            /tmp/known-loss-isolated \
+            --exact-dir results/10x10/blind_probe_children \
+            --json-out /tmp/known-loss-analysis/analysis.json \
+            --csv-out /tmp/known-loss-analysis/per-parent.csv \
+            | tee /tmp/known-loss-analysis/summary.txt
+
+      - name: Upload analysis receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: known-loss-isolated-analysis
+          path: /tmp/known-loss-analysis/
+          if-no-files-found: error
+          retention-days: 30

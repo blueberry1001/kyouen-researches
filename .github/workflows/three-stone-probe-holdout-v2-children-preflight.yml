@@ -1,0 +1,58 @@
+name: Three-stone probe holdout v2 children preflight
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - '.github/workflows/three-stone-probe-holdout-v2-children-preflight.yml'
+      - 'scripts/freeze_three_stone_probe_holdout_v2_children.py'
+      - 'results/10x10/three-stone-probe-holdout-v2.csv'
+      - 'results/10x10/blind_probe_children/children_*.txt'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Reconstruct frozen child order without outcome data
+        run: |
+          set -euo pipefail
+          expected_sha='8cec2f9ae1bee65df13ed87b7f646e8c195ac29a444feb6e59d231e6c94c2a73'
+          python3 scripts/freeze_three_stone_probe_holdout_v2_children.py \
+            results/10x10/three-stone-probe-holdout-v2.csv \
+            /tmp/v2-children-a.csv \
+            --verify-existing-dir results/10x10/blind_probe_children \
+            | tee /tmp/v2-children.log
+
+          python3 scripts/freeze_three_stone_probe_holdout_v2_children.py \
+            results/10x10/three-stone-probe-holdout-v2.csv \
+            /tmp/v2-children-b.csv \
+            --verify-existing-dir results/10x10/blind_probe_children \
+            > /tmp/v2-children-second.log
+
+          cmp /tmp/v2-children-a.csv /tmp/v2-children-b.csv
+          test "$(($(wc -l < /tmp/v2-children-a.csv) - 1))" -eq 1161
+          if head -n1 /tmp/v2-children-a.csv | grep -Eqi 'loss|outcome|memo|visited|maxdepth|seconds'; then
+            echo 'result-bearing column leaked into child-order freeze' >&2
+            exit 1
+          fi
+          actual_sha=$(sha256sum /tmp/v2-children-a.csv | cut -d' ' -f1)
+          test "$actual_sha" = "$expected_sha"
+          printf '%s  %s\n' "$actual_sha" /tmp/v2-children-a.csv | tee /tmp/v2-children.sha256
+          echo 'frozen_child_order_hash=PASS'
+
+      - name: Upload outcome-free child-order receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: three-stone-probe-holdout-v2-children-preflight
+          path: |
+            /tmp/v2-children-a.csv
+            /tmp/v2-children.log
+            /tmp/v2-children-second.log
+            /tmp/v2-children.sha256
+          if-no-files-found: error
+          retention-days: 30

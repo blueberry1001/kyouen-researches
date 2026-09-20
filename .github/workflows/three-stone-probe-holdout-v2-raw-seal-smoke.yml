@@ -1,0 +1,124 @@
+name: Three-stone probe holdout v2 raw seal smoke
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - '.github/workflows/three-stone-probe-holdout-v2-raw-seal-smoke.yml'
+      - 'scripts/seal_three_stone_probe_holdout_v2_raw.py'
+      - 'scripts/run_blind_probe_batch_isolated.py'
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build synthetic complete raw set and test failure modes
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/raw-seal-smoke
+          mkdir -p /tmp/raw-seal-smoke/data
+          python3 - <<'PY'
+          import csv, hashlib, json
+          from pathlib import Path
+          d=Path('/tmp/raw-seal-smoke/data')
+          sizes=[20]*41+[18]*18+[17]
+          assert len(sizes)==60 and sum(sizes)==1161
+          manifest=[]
+          solver_sha='1'*64
+          runner_sha='2'*64
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          for i,n in enumerate(sizes):
+              parent=f'p{i//5}'
+              batch=i%5
+              slug=parent
+              child=d/f'children_{slug}_batch{batch}.txt'
+              states=[f'{i},{j}' for j in range(n)]
+              child.write_text('\n'.join(states)+'\n', encoding='ascii', newline='\n')
+              probe=d/f'probe_isolated_{slug}_batch{batch}_1000000.csv'
+              with probe.open('w', newline='', encoding='utf-8') as f:
+                  w=csv.writer(f, lineterminator='\n')
+                  w.writerow(['state','outcome','memo'])
+                  for j,s in enumerate(states): w.writerow([s,'PROBE',100+j])
+              err=d/f'probe_isolated_{slug}_batch{batch}_1000000.err'
+              err.write_text('synthetic\n')
+              meta=d/f'probe_isolated_{slug}_batch{batch}_1000000.meta.json'
+              payload={
+                  'schema':1,'parent':parent,'batch_index':batch,'stones':3,
+                  'budget':1000000,'shrink':3,'load':80,
+                  'solver_sha256':solver_sha,'runner_sha256':runner_sha,
+                  'child_input_sha256':sha(child),'probe_csv_sha256':sha(probe),
+                  'probe_err_sha256':sha(err),
+              }
+              meta.write_text(json.dumps(payload, sort_keys=True, separators=(',',':'))+'\n', encoding='ascii')
+              manifest.append({'parent':parent,'batch_index':batch,'rows':n,'sha256':sha(child),'path':child.name})
+          m=Path('/tmp/raw-seal-smoke/batches.csv')
+          with m.open('w', newline='', encoding='utf-8') as f:
+              w=csv.DictWriter(f, fieldnames=['parent','batch_index','rows','sha256','path'], lineterminator='\n')
+              w.writeheader(); w.writerows(manifest)
+          PY
+
+          python3 scripts/seal_three_stone_probe_holdout_v2_raw.py \
+            /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/sealed-a.csv
+          python3 scripts/seal_three_stone_probe_holdout_v2_raw.py \
+            /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/sealed-b.csv
+          cmp /tmp/raw-seal-smoke/sealed-a.csv /tmp/raw-seal-smoke/sealed-b.csv
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/missing
+          rm /tmp/raw-seal-smoke/missing/children_p0_batch0.txt
+          rm /tmp/raw-seal-smoke/missing/probe_isolated_p0_batch0_1000000.csv
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/missing /tmp/raw-seal-smoke/should-fail.csv; then
+            echo 'paired missing input+probe was not rejected' >&2; exit 1
+          fi
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/reordered
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/raw-seal-smoke/reordered/probe_isolated_p0_batch0_1000000.csv')
+          lines=p.read_text().splitlines(); lines[1],lines[2]=lines[2],lines[1]; p.write_text('\n'.join(lines)+'\n')
+          PY
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/reordered /tmp/raw-seal-smoke/should-fail2.csv; then
+            echo 'probe row reorder was not rejected' >&2; exit 1
+          fi
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/tampered
+          echo 'tamper' >> /tmp/raw-seal-smoke/tampered/children_p0_batch0.txt
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/tampered /tmp/raw-seal-smoke/should-fail3.csv; then
+            echo 'child SHA tamper was not rejected' >&2; exit 1
+          fi
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/mixed-solver
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/raw-seal-smoke/mixed-solver/probe_isolated_p0_batch1_1000000.meta.json')
+          x=json.loads(p.read_text()); x['solver_sha256']='3'*64
+          p.write_text(json.dumps(x, sort_keys=True, separators=(',',':'))+'\n')
+          PY
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/mixed-solver /tmp/raw-seal-smoke/should-fail4.csv; then
+            echo 'mixed solver identity was not rejected' >&2; exit 1
+          fi
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/bad-params
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/raw-seal-smoke/bad-params/probe_isolated_p0_batch0_1000000.meta.json')
+          x=json.loads(p.read_text()); x['shrink']=2
+          p.write_text(json.dumps(x, sort_keys=True, separators=(',',':'))+'\n')
+          PY
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/bad-params /tmp/raw-seal-smoke/should-fail5.csv; then
+            echo 'changed search parameters were not rejected' >&2; exit 1
+          fi
+
+          cp -a /tmp/raw-seal-smoke/data /tmp/raw-seal-smoke/missing-meta
+          rm /tmp/raw-seal-smoke/missing-meta/probe_isolated_p0_batch0_1000000.meta.json
+          if python3 scripts/seal_three_stone_probe_holdout_v2_raw.py /tmp/raw-seal-smoke/batches.csv /tmp/raw-seal-smoke/missing-meta /tmp/raw-seal-smoke/should-fail6.csv; then
+            echo 'missing execution provenance was not rejected' >&2; exit 1
+          fi
+
+          echo 'raw_probe_seal_failure_modes=PASS'
+          echo 'execution_provenance_guards=PASS'

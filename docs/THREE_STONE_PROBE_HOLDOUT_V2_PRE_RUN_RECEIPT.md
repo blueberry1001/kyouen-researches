@@ -1,0 +1,181 @@
+# 10x10 three-stone isolated-probe v2 holdout: pre-run receipt
+
+固定日: 2026-09-10
+
+このreceiptは新しい3-stone holdoutのprobeを開始する前に固定する。選抜元CSVには既知 `loss_child` が含まれるが、holdout選抜工程では `index` と `state` 以外を候補記録へ取り込まず、選抜後もラベル結合を実行していない。
+
+## 固定済み仮説・順位規則
+
+規則commit:
+
+```text
+eff2b36ca01d98842af8adad80cd19d4bd3cf186
+```
+
+各parentの合法childを、childごとに fresh process / fresh memo、node budget 1,000,000 でprobeする。
+
+順位は以下で固定する。
+
+1. probe中に exact `LOSS` まで完了したchildは最優先（発見時点でparentのLOSS child探索は成功扱い）。
+2. exact `WIN` まで完了したchildはLOSS候補から除外する。
+3. node budgetで未完了の `PROBE` childは `memo` 昇順。
+4. `memo` 同値はsolver既定入力順でtie-breakする。
+
+既知7 LOSS親はこの規則の仮説生成にのみ使い、新holdoutの評価には含めない。
+
+## Holdout選抜
+
+selector commit:
+
+```text
+beb44948a9db3ce2d9f0dfe7953029d20bb7c66a
+```
+
+seed:
+
+```text
+kyouen-three-stone-isolated-probe-v2-holdout-2026-09-10
+```
+
+source blobs:
+
+```text
+4dd8d1e2869b55406f0df06ffee2366f90ce50ef  results/10x10/two-stone-90-61-child-proof.csv
+ee53f63ca1d8c8bcc360144e0601f4c801057ee4  results/10x10/two-stone-90-66-child-proof.csv
+3ee4e2b2867c757eac79909a79cac29c8b42d95a  results/10x10/blind-probe-parent-selection.csv
+```
+
+各sourceから6 parent、計12 parentをSHA-256順で選ぶ。過去の3-stone blind-probe parent 19件を除外し、source間もparentで重複排除する。
+
+設計確認中に `two-stone-90-66-child-proof.csv` の先頭側（source index 0–38）のラベルが一部見える状態になったため、盲検性を保守的に守る目的で**両sourceとも index < 39 を候補集合から丸ごと除外した後に再抽選**した。この除外規則はholdout probe開始前に固定した。
+
+最終選抜:
+
+```text
+selected parents                  12
+eligible after quarantine/source  59 / 59
+historical overlap                 0
+quarantined rows selected          0
+selection SHA256                   80168e938d2dcd3a4f7f7d538f3ff9123d12722d221c30e7e7e43b38194aa625
+```
+
+固定ファイル:
+
+```text
+results/10x10/three-stone-probe-holdout-v2.csv
+```
+
+選抜再現CI run `34378337405` は、同じ選抜を2回生成してbyte一致、12 parentの一意性、ラベル/search-data列を含まないことを確認してSUCCESS。
+
+## Child集合・solver既定入力順の固定
+
+過去の盲検解析で `solver_default_rank` は、内部DFSの探索順ではなく `children_<parent>_batch*.txt` の行順として定義されていた。そこで3-stone parentへ第四手を加える合法性をsolverと同じ4点共円判定で再構成し、盤面indexの昇順で合法手を列挙する outcome-free generator を追加した。
+
+generator / freeze commit:
+
+```text
+0a1b8c1bb1317f1b5ca66db597b326323b8b294a
+```
+
+過去データとの独立照合:
+
+```text
+historical 3-stone parents with identical ordered child lines  19 / 19
+historical batch files whose concatenation is identical         95 / 95
+historical full files differing only in newline transport       19 / 19
+```
+
+したがって過去ファイルとの差はWindows由来のCRLF/LFだけであり、child集合と行順は完全一致した。新holdoutでは明示的にLFで固定する。
+
+新12 parentの固定child集合:
+
+```text
+total legal children  1161
+0,6,31                96
+9,38,71               97
+9,16,21               97
+9,16,81               96
+9,10,16               97
+9,16,20               97
+0,46,63               97
+9,66,71               97
+9,33,51               97
+9,32,33               96
+9,21,33               97
+0,36,53               97
+```
+
+child-order CSV SHA256:
+
+```text
+8cec2f9ae1bee65df13ed87b7f646e8c195ac29a444feb6e59d231e6c94c2a73
+```
+
+CI run `34390948966` は、過去19 parent / 95 batchとの意味的一致、1161行、結果列の非混入、2回生成のbyte一致、上記SHA256との一致を確認してSUCCESS。このSHAを変更する場合は同一blind holdout v2として扱わない。
+
+## Batch分割の固定
+
+固定済み1161-child列を、過去runnerと同じ最大20 child単位へ結果非依存で分割する。parent境界をまたがず、各parent内のsolver既定順をそのまま保持する。
+
+```text
+parents          12
+batches          60
+total children   1161
+batch size       1..20
+batch manifest SHA256  086c4d226e4511350924d3f12a78bd5fc438df9c95c2eec780d0c364deb94a69
+```
+
+CI run `34396169093` は、全batchの連番性、1161 childの完全なpartition、再結合時の固定child列との完全一致、二重生成byte一致、結果列非混入を確認してSUCCESS。
+
+## 順位生成前の完全性gate
+
+初期の順位生成器は、存在する `children_*.txt` と `probe_*.csv` の対応・行順は厳密に検査していた一方、**あるbatchの入力ファイルとprobe結果が両方欠落した場合**には、その欠落自体を検出できなかった。連続して残ったbatchだけで順位を作れる可能性があったため、holdout probe開始前に塞いだ。
+
+順位生成器は今後、固定child-order CSVを必須入力とし、各parentについて実測したchild列が固定列と**全件・同一順序で完全一致**しない限り順位CSVを出力しない。したがって、60 batch / 1161 childの一部が未実行、欠落、置換されている状態では順位SHAを固定できない。
+
+追加検査:
+
+- frozen child CSVに結果・ラベル列が混入していれば拒否
+- holdout外parent、重複child、非連続 `solver_default_rank` を拒否
+- child inputとprobe CSVの片方だけ欠けても拒否
+- **child inputとprobe CSVが対で欠けても固定1161-child列との照合で拒否**
+- 全parentの実測child総数が固定総数と一致しなければ拒否
+
+この変更は順位規則・標本・node budgetを変更せず、事前固定された実験集合の完全性だけを強制する。
+
+## 評価順序
+
+ラベル漏洩を避けるため、次の順序を変更しない。
+
+1. 12 parentについて上記SHAのchild集合・solver既定順を使用する。
+2. 全childを上記fresh-process probe条件で測定する。
+3. **固定1161-child列との完全一致を確認する。**
+4. `LOSS / WIN / PROBE` と `memo` からv2順位を作り、順位ファイルのSHA256を固定する。
+5. **ここまで完了するまでsource proofの `loss_child` をholdoutへjoinしない。**
+6. 順位固定後にだけ既知exact LOSS childラベルをjoinし、first LOSS rankを算出する。
+
+## 事前固定する主要評価
+
+各parentで v2順位・solver既定順について first exact LOSS rankを比較する。主報告値は次の4つとする。
+
+- v2 first LOSS rank の中央値
+- solver既定順 first LOSS rank の中央値
+- parent-wise `v2 better / tie / worse` の件数
+- v2とsolver既定順それぞれがfirst LOSSへ到達するまでの総探索順位（12 parent合計）
+
+主要な成功判定は、**(A) v2の中央値がsolver既定順より小さく、かつ (B) parent-wise better件数がworse件数を上回る**ことの両方を満たすこととする。差が小さい場合も値をそのまま報告し、結果確認後に別特徴量へ主要評価を変更しない。
+
+補助的に、各parentの合法child数から一様ランダム順のfirst LOSS rank期待値を計算し、probe中のexact completion数、visited総量、最大反例も報告する。ただし主要成功判定は上記(A)(B)から変更しない。
+
+## pre-run state
+
+```text
+holdout selection:      FROZEN
+holdout child order:    FROZEN (SHA256 8cec2f9a...c2a73)
+holdout batches:        FROZEN (60 batches / manifest SHA256 086c4d22...94a69)
+completeness gate:      IMPLEMENTED before holdout probe
+holdout probe:          NOT RUN
+holdout ranking:        NOT CREATED
+holdout label join:     NOT RUN
+holdout evaluation:     NOT RUN
+```

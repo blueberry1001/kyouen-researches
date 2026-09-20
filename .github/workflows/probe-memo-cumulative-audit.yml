@@ -1,0 +1,33 @@
+name: Probe memo cumulative audit
+
+on:
+  push:
+    branches: [probe-two-stone-subsets]
+    paths:
+      - 'scripts/audit_probe_memo_cumulative.py'
+      - '.github/workflows/probe-memo-cumulative-audit.yml'
+      - 'results/10x10/blind-probe-rankings.csv'
+      - 'results/10x10/blind_probe_children/probe_*_batch*_1000000.csv'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit cumulative memo semantics
+        run: |
+          set -euo pipefail
+          python3 scripts/audit_probe_memo_cumulative.py | tee /tmp/probe-memo-audit-summary.txt
+          cat results/10x10/probe-memo-cumulative-audit.json
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-memo-cumulative-audit
+          path: |
+            /tmp/probe-memo-audit-summary.txt
+            results/10x10/probe-memo-cumulative-audit.json
+          if-no-files-found: error
+          retention-days: 30

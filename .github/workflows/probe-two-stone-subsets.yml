@@ -1,0 +1,107 @@
+name: Retry two-stone roots with targeted third-stage expansion
+
+on:
+  workflow_dispatch:
+
+jobs:
+  retry:
+    strategy:
+      fail-fast: false
+      matrix:
+        state:
+          - '90,69'
+          - '90,66'
+          - '90,13'
+          - '61,2'
+          - '61,73'
+          - '61,69'
+          - '61,13'
+          - '61,91'
+          - '2,73'
+          - '2,69'
+          - '2,66'
+          - '2,13'
+          - '73,69'
+          - '73,66'
+          - '73,13'
+          - '69,13'
+          - '69,91'
+          - '66,13'
+          - '66,91'
+          - '13,91'
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - name: Expand saturated and near-saturated memo layers
+        shell: bash
+        run: |
+          file=cpp/solvers/parts/kyouen_solver_10_kyoenc4_resume_1.inc
+          grep -q 'd9_(41,p(23,shrink),load)' "$file"
+          grep -q 'd10_(44,p(25,shrink),load)' "$file"
+          grep -q 'd11b_(48,p(24,shrink),load)' "$file"
+          grep -q 'd12b_(50,p(24,shrink),load)' "$file"
+          grep -q 'd13b_(53,p(25,shrink>0?shrink-1:0),load)' "$file"
+          grep -q 'd14b_(56,p(24,shrink),load)' "$file"
+          grep -q 'd16_(61,p(23,shrink),load)' "$file"
+          sed -i \
+            -e 's/d9_(41,p(23,shrink),load)/d9_(41,p(24,shrink),load)/' \
+            -e 's/d10_(44,p(25,shrink),load)/d10_(44,p(26,shrink),load)/' \
+            -e 's/d11b_(48,p(24,shrink),load)/d11b_(48,p(25,shrink),load)/' \
+            -e 's/d12b_(50,p(24,shrink),load)/d12b_(50,p(25,shrink),load)/' \
+            -e 's/d13b_(53,p(25,shrink>0?shrink-1:0),load)/d13b_(53,p(27,shrink>0?shrink-1:0),load)/' \
+            -e 's/d14b_(56,p(24,shrink),load)/d14b_(56,p(25,shrink),load)/' \
+            -e 's/d16_(61,p(23,shrink),load)/d16_(61,p(24,shrink),load)/' \
+            "$file"
+      - name: Build exact solver
+        run: >-
+          g++ -std=c++20 -O2 -Wall -Wextra -pedantic
+          cpp/solvers/kyouen_solver_10_kyoenc4.cpp
+          -o /tmp/kyouen-solver-10-kyoenc4
+      - name: Solve independently with expanded profile
+        shell: bash
+        run: |
+          state='${{ matrix.state }}'
+          safe=${state//,/-}
+          printf '%s\n' "$state" > /tmp/one.state
+          set +e
+          /usr/bin/time -f 'wall=%e rss_kb=%M' -o /tmp/one.time \
+            timeout --signal=TERM --kill-after=30s 3600s \
+            /tmp/kyouen-solver-10-kyoenc4 /tmp/one.state 0 90 \
+            > /tmp/one.out 2> /tmp/one.err
+          rc=$?
+          set -e
+          cat /tmp/one.out
+          cat /tmp/one.err
+          cat /tmp/one.time
+          status=ERROR
+          case "$rc" in
+            0) status=COMPLETE ;;
+            3) status=TABLE_FULL ;;
+            124) status=TIMEOUT ;;
+            137) status=KILLED ;;
+          esac
+          outcome=''; visited=''; maxdepth=''; memo=''; solver_seconds=''
+          if [[ "$rc" = 0 ]]; then
+            line=$(tail -n 1 /tmp/one.out)
+            outcome=$(awk -F, '{print $2}' <<< "$line")
+            visited=$(awk -F, '{print $3}' <<< "$line")
+            maxdepth=$(awk -F, '{print $4}' <<< "$line")
+            memo=$(awk -F, '{print $5}' <<< "$line")
+            solver_seconds=$(awk -F, '{print $6}' <<< "$line")
+          else
+            memo=$(sed -n 's/.* memo=\([0-9][0-9]*\).*/\1/p' /tmp/one.err | tail -n 1)
+            solver_seconds=$(sed -n 's/.* seconds=\([0-9.eE+-][0-9.eE+-]*\).*/\1/p' /tmp/one.err | tail -n 1)
+          fi
+          wall=$(sed -n 's/wall=\([^ ]*\).*/\1/p' /tmp/one.time)
+          rss=$(sed -n 's/.*rss_kb=\([0-9][0-9]*\).*/\1/p' /tmp/one.time)
+          out="two-stone-targeted3-$safe.csv"
+          printf '%s\n' 'state,status,outcome,visited,maxdepth,memo,solver_seconds,exit_code,wall_seconds,max_rss_kb,shrink,load,search_profile' > "$out"
+          printf '"%s",%s,%s,%s,%s,%s,%s,%s,%s,%s,0,90,expanded-d9-d10-d11b-d12b-d13b2-d14b-d16\n' \
+            "$state" "$status" "$outcome" "$visited" "$maxdepth" "$memo" \
+            "$solver_seconds" "$rc" "$wall" "$rss" >> "$out"
+          cat "$out"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: two-stone-targeted3-${{ strategy.job-index }}
+          path: two-stone-targeted3-*.csv
