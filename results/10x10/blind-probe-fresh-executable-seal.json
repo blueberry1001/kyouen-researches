@@ -1,0 +1,108 @@
+{
+  "budget": 1000000,
+  "build_freshness_guard": {
+    "newest_source_mtime_ns": 1788921820272797221,
+    "scope": "accidental-stale-build guard only; not a reproducible-build proof",
+    "solver_is_elf": true,
+    "solver_mtime_ns": 1788921824338238972,
+    "solver_not_older_than_sources": true
+  },
+  "children": {
+    "0,31,36": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_0_31_36_batch0.txt",
+      "sha256": "dcf1b61ce35b95c9882111c6801362927e8ce65019d44447e1b8e9b948cb9839"
+    },
+    "0,36,44": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_0_36_44_batch0.txt",
+      "sha256": "a96333cdd4dced9465ae71215462b66d77b253635984d5593bc8d762257f007e"
+    },
+    "2,9,33": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_2_9_33_batch0.txt",
+      "sha256": "8c01219f4a034af2ce3d8a9ac132fcb1e8852ffc4b6e1164d671788f3a94cb07"
+    },
+    "4,9,33": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_4_9_33_batch0.txt",
+      "sha256": "f294d309e74886628471a57b8a053921b1ee111d433e6372d1ae51d7aae2bcb1"
+    },
+    "9,12,33": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_9_12_33_batch0.txt",
+      "sha256": "708ad240dcb828c5d35abc577d682fd081caff2ed480ed459b017b58869c8231"
+    },
+    "9,19,33": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_9_19_33_batch0.txt",
+      "sha256": "0f7c0af4833396f128db1fe567609e1b04b0c8557d2183df20c928bc2756d5b9"
+    },
+    "9,23,33": {
+      "count": 20,
+      "path": "results/10x10/blind_probe_children/children_9_23_33_batch0.txt",
+      "sha256": "c9b161f4a8a3eef4bd6af78b278fc07ac357b9e568e071bc98090bff963263c3"
+    }
+  },
+  "load": 80,
+  "outcomes_read": false,
+  "parents": [
+    "2,9,33",
+    "4,9,33",
+    "9,12,33",
+    "9,19,33",
+    "9,23,33",
+    "0,31,36",
+    "0,36,44"
+  ],
+  "protocol": "corrected-blind-probe-fresh-executable-seal-v1",
+  "runner": {
+    "path": "scripts/run_blind_probe_parent_fresh.py",
+    "sha256": "563f5fe6994d7532cf4e073f7158305b0db385a503d1afc3e8979283fdde8925"
+  },
+  "shrink": 3,
+  "solver": {
+    "format": "ELF",
+    "mtime_ns": 1788921824338238972,
+    "path": "scripts/probe_cert_solver",
+    "sha256": "c268a39a4a851635437cf93d91d2c9ad79e0a3817f9490c6c7f66c3ed590c77d",
+    "size": 110928
+  },
+  "solver_sources": [
+    {
+      "mtime_ns": 1788921820271905092,
+      "path": "scripts/probe_cert_solver.cpp",
+      "sha256": "d74831f4030aa66ca2856c21b9cd11874d5469120839bc19893f217dfb4bca08"
+    },
+    {
+      "mtime_ns": 1788921820271905092,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_0.inc",
+      "sha256": "97b26d5af976f787e02e47ba3fd59872fdccf77590f1713a96ac3892b33ff897"
+    },
+    {
+      "mtime_ns": 1788921820272797221,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_1.inc",
+      "sha256": "1eaf583229cb1472d36836d913b41deb798f3e173f60bc6299771cf6af5ee8ea"
+    },
+    {
+      "mtime_ns": 1788921820272797221,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_2.inc",
+      "sha256": "b390906cf8384a524c94f421ba536586570483313b0bbd3dbfec38a9af6724af"
+    },
+    {
+      "mtime_ns": 1788921820272797221,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_3.inc",
+      "sha256": "cda0d0ffe1bae12973d16c0f549ba24d2bd043101ce873cf6aa9cf970307ec38"
+    },
+    {
+      "mtime_ns": 1788921820272797221,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_resume_4.inc",
+      "sha256": "b6987e011545d8a6e6b9443a702660d65b2b0447eeae6020243d139f7d3e97f8"
+    },
+    {
+      "mtime_ns": 1788921820272797221,
+      "path": "scripts/probe_parts/kyouen_solver_10_kyoenc4_witness_log.inc",
+      "sha256": "6b2174350812e3b1abff12e401ce5ea5cc7420e7068010fb0e7bd443bdb03c9d"
+    }
+  ]
+}

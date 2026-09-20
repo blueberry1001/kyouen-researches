@@ -1,0 +1,35 @@
+{
+  "schema": "blind-probe-fresh-exact-input-seal-v1",
+  "protocol": "corrected-blind-probe-fresh-v1",
+  "note": "Sealed from Git blob metadata before corrected fresh-probe outcomes are revealed. The evaluator must verify every blob before parsing any exact outcome CSV.",
+  "files": {
+    "2,9,33": {
+      "path": "results/10x10/blind_probe_children/exact_2_9_33_batch0.csv",
+      "git_blob_sha1": "4bff6890013a68c698d84ee5805b30fac8a395e6"
+    },
+    "4,9,33": {
+      "path": "results/10x10/blind_probe_children/exact_4_9_33_batch0.csv",
+      "git_blob_sha1": "66ac52755978a2d110ba7ca05892b5bd979e5fe7"
+    },
+    "9,12,33": {
+      "path": "results/10x10/blind_probe_children/exact_9_12_33_batch0.csv",
+      "git_blob_sha1": "6e276d8648e39d868df6b90879f192d3abf9547c"
+    },
+    "9,19,33": {
+      "path": "results/10x10/blind_probe_children/exact_9_19_33_batch0.csv",
+      "git_blob_sha1": "f8d77d06be98a9c4767c5295d47fcdc452f15688"
+    },
+    "9,23,33": {
+      "path": "results/10x10/blind_probe_children/exact_9_23_33_batch0.csv",
+      "git_blob_sha1": "9bc9aa1612a263c75ddd9d0224101d1e7c81ec6b"
+    },
+    "0,31,36": {
+      "path": "results/10x10/blind_probe_children/exact_0_31_36_batch0.csv",
+      "git_blob_sha1": "899a3359748f36891049ee6982a784c2b5d52dcc"
+    },
+    "0,36,44": {
+      "path": "results/10x10/blind_probe_children/exact_0_36_44_batch0.csv",
+      "git_blob_sha1": "662fe8cc9cb78c6e397190a8529a5ec332d6d247"
+    }
+  }
+}
