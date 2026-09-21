@@ -1,0 +1,326 @@
+[
+  {
+    "parent": "0,11,35",
+    "condition": "F",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 85311102,
+    "solver_seconds": 143.214,
+    "wall_seconds": 144.63658248
+  },
+  {
+    "parent": "0,11,35",
+    "condition": "B",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 101452455,
+    "solver_seconds": 165.782,
+    "wall_seconds": 166.72405855699998
+  },
+  {
+    "parent": "0,11,35",
+    "condition": "L",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 85311102,
+    "solver_seconds": 141.591,
+    "wall_seconds": 142.430182666
+  },
+  {
+    "parent": "11,38,44",
+    "condition": "B",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 20031667,
+    "solver_seconds": 32.6864,
+    "wall_seconds": 33.51430272300007
+  },
+  {
+    "parent": "11,38,44",
+    "condition": "L",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 17051435,
+    "solver_seconds": 28.5276,
+    "wall_seconds": 29.367517873999986
+  },
+  {
+    "parent": "11,38,44",
+    "condition": "F",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 17051435,
+    "solver_seconds": 28.4975,
+    "wall_seconds": 29.328672812000036
+  },
+  {
+    "parent": "11,78,87",
+    "condition": "L",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 9928498,
+    "solver_seconds": 16.2941,
+    "wall_seconds": 17.120700946000056
+  },
+  {
+    "parent": "11,78,87",
+    "condition": "F",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 9928498,
+    "solver_seconds": 16.2788,
+    "wall_seconds": 17.109010835999925
+  },
+  {
+    "parent": "11,78,87",
+    "condition": "B",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 11509441,
+    "solver_seconds": 18.4334,
+    "wall_seconds": 19.257796827999982
+  },
+  {
+    "parent": "12,24,68",
+    "condition": "F",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 11677827,
+    "solver_seconds": 19.602,
+    "wall_seconds": 20.419696548999923
+  },
+  {
+    "parent": "12,24,68",
+    "condition": "B",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 13627620,
+    "solver_seconds": 22.3811,
+    "wall_seconds": 23.202499537999984
+  },
+  {
+    "parent": "12,24,68",
+    "condition": "L",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 11677827,
+    "solver_seconds": 19.6283,
+    "wall_seconds": 20.45193327200002
+  },
+  {
+    "parent": "12,32,55",
+    "condition": "B",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 8215176,
+    "solver_seconds": 13.3015,
+    "wall_seconds": 14.115147645999969
+  },
+  {
+    "parent": "12,32,55",
+    "condition": "L",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 7106990,
+    "solver_seconds": 11.8243,
+    "wall_seconds": 12.635869930000013
+  },
+  {
+    "parent": "12,32,55",
+    "condition": "F",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 7106990,
+    "solver_seconds": 11.8265,
+    "wall_seconds": 12.640564890000064
+  },
+  {
+    "parent": "13,52,57",
+    "condition": "L",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 11651703,
+    "solver_seconds": 20.1167,
+    "wall_seconds": 20.92839755500006
+  },
+  {
+    "parent": "13,52,57",
+    "condition": "F",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 11651703,
+    "solver_seconds": 20.2176,
+    "wall_seconds": 21.029493801000058
+  },
+  {
+    "parent": "13,52,57",
+    "condition": "B",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 13655602,
+    "solver_seconds": 23.167,
+    "wall_seconds": 23.97601647700003
+  },
+  {
+    "parent": "14,64,74",
+    "condition": "F",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 4342654,
+    "solver_seconds": 7.28405,
+    "wall_seconds": 8.092832841000018
+  },
+  {
+    "parent": "14,64,74",
+    "condition": "B",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 4988016,
+    "solver_seconds": 8.22158,
+    "wall_seconds": 9.03253961400003
+  },
+  {
+    "parent": "14,64,74",
+    "condition": "L",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 4342654,
+    "solver_seconds": 7.32107,
+    "wall_seconds": 8.130656724999994
+  },
+  {
+    "parent": "23,44,45",
+    "condition": "B",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 8356037,
+    "solver_seconds": 13.9152,
+    "wall_seconds": 14.719993577999958
+  },
+  {
+    "parent": "23,44,45",
+    "condition": "L",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 7188933,
+    "solver_seconds": 12.2463,
+    "wall_seconds": 13.047869212000023
+  },
+  {
+    "parent": "23,44,45",
+    "condition": "F",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 7188933,
+    "solver_seconds": 12.2317,
+    "wall_seconds": 13.039549429999965
+  },
+  {
+    "parent": "3,47,63",
+    "condition": "L",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 5711578,
+    "solver_seconds": 9.36409,
+    "wall_seconds": 10.16854612499992
+  },
+  {
+    "parent": "3,47,63",
+    "condition": "F",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 5711578,
+    "solver_seconds": 9.36515,
+    "wall_seconds": 10.169845964000046
+  },
+  {
+    "parent": "3,47,63",
+    "condition": "B",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 6586155,
+    "solver_seconds": 10.5244,
+    "wall_seconds": 11.33020827300004
+  },
+  {
+    "parent": "3,53,84",
+    "condition": "F",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 7184954,
+    "solver_seconds": 11.8894,
+    "wall_seconds": 12.698306675000026
+  },
+  {
+    "parent": "3,53,84",
+    "condition": "B",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 8346560,
+    "solver_seconds": 13.5794,
+    "wall_seconds": 14.384422413000038
+  },
+  {
+    "parent": "3,53,84",
+    "condition": "L",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 7184954,
+    "solver_seconds": 11.9202,
+    "wall_seconds": 12.721019920000003
+  },
+  {
+    "parent": "4,24,26",
+    "condition": "B",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 60604679,
+    "solver_seconds": 99.5933,
+    "wall_seconds": 100.39148142500005
+  },
+  {
+    "parent": "4,24,26",
+    "condition": "L",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 51289701,
+    "solver_seconds": 85.7257,
+    "wall_seconds": 86.52896873399982
+  },
+  {
+    "parent": "4,24,26",
+    "condition": "F",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 51289701,
+    "solver_seconds": 85.7164,
+    "wall_seconds": 86.5232758279999
+  },
+  {
+    "parent": "4,42,54",
+    "condition": "L",
+    "order_index": 0,
+    "outcome": "WIN",
+    "visited": 6977109,
+    "solver_seconds": 11.6517,
+    "wall_seconds": 12.445393519000163
+  },
+  {
+    "parent": "4,42,54",
+    "condition": "F",
+    "order_index": 1,
+    "outcome": "WIN",
+    "visited": 6977109,
+    "solver_seconds": 11.6462,
+    "wall_seconds": 12.435323828000037
+  },
+  {
+    "parent": "4,42,54",
+    "condition": "B",
+    "order_index": 2,
+    "outcome": "WIN",
+    "visited": 8096702,
+    "solver_seconds": 13.1992,
+    "wall_seconds": 13.996648481999955
+  }
+]

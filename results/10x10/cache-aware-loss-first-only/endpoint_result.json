@@ -1,0 +1,16 @@
+{
+  "L_equals_F_count": 12,
+  "L_improves_B_count": 12,
+  "cohort_complete": true,
+  "geomean_L_over_B": 0.8580463598417525,
+  "geomean_L_over_F": 1.0,
+  "median_L_over_B": 0.8605781106881454,
+  "median_L_over_F": 1.0,
+  "n_parents": 12,
+  "outcome_parity": true,
+  "primary_success": true,
+  "recovery": 1.0,
+  "sum_B": 265470110,
+  "sum_F": 225422484,
+  "sum_L": 225422484
+}
