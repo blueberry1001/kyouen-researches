@@ -29,3 +29,14 @@ union; classify size-≥12 safe sets meeting both phases.
   gap in the selection theorem proof chain (`CYCLE41`).
 
 Artifact: this note · `CYCLE39C_WIDEST_PATH_FAST.md` · `CYCLE41_PROOF_DEPENDENCIES.md`
+
+## Follow-up (2026-09-22)
+
+The restricted-union static barrier is now certified by the two occupancy
+difference layers d=2,3, each of capacity at most 12. A single-stone edge
+between these layers must therefore visit size at most 11. This uses
+point groups A\\B and B\\A, not just D4 cell-orbit occupancies.
+The new work also proves that the missing fourth corner is mandatory even
+on the full board at floor 12, and that the 16 maximum sets belong to
+eight disjoint 903-state components at that floor. See
+`DISCOVERY_CORNER_GATE_AND_COMPONENTS.md` and its independent checker.

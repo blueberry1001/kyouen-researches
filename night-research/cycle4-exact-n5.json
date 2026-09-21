@@ -1,0 +1,379 @@
+{
+  "board": {
+    "n": 5,
+    "empty_outcome": "WIN",
+    "empty_is_first_win": true,
+    "reachable_safe_sets": 151394,
+    "legal_cache_size": 151394,
+    "elapsed_sec": 14.434995174407959,
+    "depth_profile": [
+      {
+        "k": 0,
+        "safe": 1,
+        "loss": 0,
+        "win": 1,
+        "loss_rate": 0.0
+      },
+      {
+        "k": 1,
+        "safe": 25,
+        "loss": 9,
+        "win": 16,
+        "loss_rate": 0.36
+      },
+      {
+        "k": 2,
+        "safe": 300,
+        "loss": 20,
+        "win": 280,
+        "loss_rate": 0.06666666666666667
+      },
+      {
+        "k": 3,
+        "safe": 2300,
+        "loss": 550,
+        "win": 1750,
+        "loss_rate": 0.2391304347826087
+      },
+      {
+        "k": 4,
+        "safe": 11824,
+        "loss": 1250,
+        "win": 10574,
+        "loss_rate": 0.10571718538565629
+      },
+      {
+        "k": 5,
+        "safe": 37272,
+        "loss": 7144,
+        "win": 30128,
+        "loss_rate": 0.19167203262502683
+      },
+      {
+        "k": 6,
+        "safe": 59192,
+        "loss": 14108,
+        "win": 45084,
+        "loss_rate": 0.23834301932693608
+      },
+      {
+        "k": 7,
+        "safe": 35208,
+        "loss": 12804,
+        "win": 22404,
+        "loss_rate": 0.36366734832992503
+      },
+      {
+        "k": 8,
+        "safe": 5172,
+        "loss": 4340,
+        "win": 832,
+        "loss_rate": 0.8391337973704563
+      },
+      {
+        "k": 9,
+        "safe": 100,
+        "loss": 100,
+        "win": 0,
+        "loss_rate": 1.0
+      }
+    ],
+    "peak_loss_rate": {
+      "k": 9,
+      "safe": 100,
+      "loss": 100,
+      "win": 0,
+      "loss_rate": 1.0
+    },
+    "forbidden_quadruples": 826,
+    "expected_winner": "F",
+    "winner_match": true,
+    "mobility_winning_first_moves": 9,
+    "mobility_density": 0.36,
+    "mean_replies_if_first_win": 24.0,
+    "mean_replies_if_first_loss": 24.0
+  },
+  "first_move_mobility": [
+    {
+      "id": 0,
+      "x": 0,
+      "y": 0,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 4,
+      "winning_reply_ids": [
+        3,
+        4,
+        15,
+        20
+      ]
+    },
+    {
+      "id": 1,
+      "x": 1,
+      "y": 0,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        4,
+        17
+      ]
+    },
+    {
+      "id": 2,
+      "x": 2,
+      "y": 0,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 3,
+      "x": 3,
+      "y": 0,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        0,
+        17
+      ]
+    },
+    {
+      "id": 4,
+      "x": 4,
+      "y": 0,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 4,
+      "winning_reply_ids": [
+        0,
+        1,
+        19,
+        24
+      ]
+    },
+    {
+      "id": 5,
+      "x": 0,
+      "y": 1,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        13,
+        20
+      ]
+    },
+    {
+      "id": 6,
+      "x": 1,
+      "y": 1,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 7,
+      "x": 2,
+      "y": 1,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        21,
+        23
+      ]
+    },
+    {
+      "id": 8,
+      "x": 3,
+      "y": 1,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 9,
+      "x": 4,
+      "y": 1,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        11,
+        24
+      ]
+    },
+    {
+      "id": 10,
+      "x": 0,
+      "y": 2,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 11,
+      "x": 1,
+      "y": 2,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        9,
+        19
+      ]
+    },
+    {
+      "id": 12,
+      "x": 2,
+      "y": 2,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 13,
+      "x": 3,
+      "y": 2,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        5,
+        15
+      ]
+    },
+    {
+      "id": 14,
+      "x": 4,
+      "y": 2,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 15,
+      "x": 0,
+      "y": 3,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        0,
+        13
+      ]
+    },
+    {
+      "id": 16,
+      "x": 1,
+      "y": 3,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 17,
+      "x": 2,
+      "y": 3,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": 18,
+      "x": 3,
+      "y": 3,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 19,
+      "x": 4,
+      "y": 3,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        4,
+        11
+      ]
+    },
+    {
+      "id": 20,
+      "x": 0,
+      "y": 4,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 4,
+      "winning_reply_ids": [
+        0,
+        5,
+        23,
+        24
+      ]
+    },
+    {
+      "id": 21,
+      "x": 1,
+      "y": 4,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        7,
+        24
+      ]
+    },
+    {
+      "id": 22,
+      "x": 2,
+      "y": 4,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 23,
+      "x": 3,
+      "y": 4,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 2,
+      "winning_reply_ids": [
+        7,
+        20
+      ]
+    },
+    {
+      "id": 24,
+      "x": 4,
+      "y": 4,
+      "result_for_first_player": "LOSS",
+      "legal_reply_count": 24,
+      "second_player_winning_reply_count": 4,
+      "winning_reply_ids": [
+        4,
+        9,
+        20,
+        21
+      ]
+    }
+  ]
+}

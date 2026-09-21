@@ -1,0 +1,60 @@
+{
+  "board": "5x5",
+  "source": "night-research/cycle4-exact-n5.json + rust classify-first",
+  "d4_orbits_center_relative": [
+    {
+      "center_rel_abs": [0, 0],
+      "cells": [[2, 2]],
+      "size": 1,
+      "result_for_first_player": "WIN",
+      "opponent_winning_replies": 0,
+      "geometry": "center"
+    },
+    {
+      "center_rel_abs": [0, 1],
+      "cells": [[2, 1], [1, 2], [3, 2], [2, 3]],
+      "size": 4,
+      "result_for_first_player": "LOSS",
+      "opponent_winning_replies": 2,
+      "geometry": "interior axial"
+    },
+    {
+      "center_rel_abs": [0, 2],
+      "cells": [[2, 0], [0, 2], [4, 2], [2, 4]],
+      "size": 4,
+      "result_for_first_player": "WIN",
+      "opponent_winning_replies": 0,
+      "geometry": "edge-centers"
+    },
+    {
+      "center_rel_abs": [1, 1],
+      "cells": [[1, 1], [3, 1], [1, 3], [3, 3]],
+      "size": 4,
+      "result_for_first_player": "WIN",
+      "opponent_winning_replies": 0,
+      "geometry": "interior diagonal"
+    },
+    {
+      "center_rel_abs": [1, 2],
+      "cells": [[1, 0], [3, 0], [0, 1], [4, 1], [0, 3], [4, 3], [1, 4], [3, 4]],
+      "size": 8,
+      "result_for_first_player": "LOSS",
+      "opponent_winning_replies": 2,
+      "geometry": "edge non-centers"
+    },
+    {
+      "center_rel_abs": [2, 2],
+      "cells": [[0, 0], [4, 0], [0, 4], [4, 4]],
+      "size": 4,
+      "result_for_first_player": "LOSS",
+      "opponent_winning_replies": 4,
+      "geometry": "corners"
+    }
+  ],
+  "closed_form_winning_first_moves": "{(x,y): (x+y) even} \\ {(0,0),(0,4),(4,0),(4,4)}",
+  "closed_form_matches_orbits": true,
+  "legal_reply_count_after_any_first_move": 24,
+  "identity": "first move is WIN iff opponent_winning_replies == 0",
+  "loss_reply_multiplicities": [2, 4],
+  "embedding_note": "H-embed already REJECTED: these orbit outcomes do not transfer to 9x9 center-relative classes (Cycle 3: 3 MATCH / 3 FLIP; all 5x5 LOSS orbits flipped to WIN on 9x9)"
+}

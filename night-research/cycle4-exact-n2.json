@@ -1,0 +1,92 @@
+{
+  "board": {
+    "n": 2,
+    "empty_outcome": "WIN",
+    "empty_is_first_win": true,
+    "reachable_safe_sets": 15,
+    "legal_cache_size": 15,
+    "elapsed_sec": 0.0,
+    "depth_profile": [
+      {
+        "k": 0,
+        "safe": 1,
+        "loss": 0,
+        "win": 1,
+        "loss_rate": 0.0
+      },
+      {
+        "k": 1,
+        "safe": 4,
+        "loss": 4,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      {
+        "k": 2,
+        "safe": 6,
+        "loss": 0,
+        "win": 6,
+        "loss_rate": 0.0
+      },
+      {
+        "k": 3,
+        "safe": 4,
+        "loss": 4,
+        "win": 0,
+        "loss_rate": 1.0
+      }
+    ],
+    "peak_loss_rate": {
+      "k": 1,
+      "safe": 4,
+      "loss": 4,
+      "win": 0,
+      "loss_rate": 1.0
+    },
+    "forbidden_quadruples": 1,
+    "expected_winner": "F",
+    "winner_match": true,
+    "mobility_winning_first_moves": 4,
+    "mobility_density": 1.0,
+    "mean_replies_if_first_win": 3.0,
+    "mean_replies_if_first_loss": null
+  },
+  "first_move_mobility": [
+    {
+      "id": 0,
+      "x": 0,
+      "y": 0,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 3,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 1,
+      "x": 1,
+      "y": 0,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 3,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 2,
+      "x": 0,
+      "y": 1,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 3,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    },
+    {
+      "id": 3,
+      "x": 1,
+      "y": 1,
+      "result_for_first_player": "WIN",
+      "legal_reply_count": 3,
+      "second_player_winning_reply_count": 0,
+      "winning_reply_ids": []
+    }
+  ]
+}

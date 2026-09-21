@@ -1,0 +1,10 @@
+first_id,first_x,first_y,result_for_first_player,winning_reply_id,reply_x,reply_y
+0,0,0,WIN,,,
+1,1,0,WIN,,,
+2,2,0,WIN,,,
+3,0,1,WIN,,,
+4,1,1,WIN,,,
+5,2,1,WIN,,,
+6,0,2,WIN,,,
+7,1,2,WIN,,,
+8,2,2,WIN,,,

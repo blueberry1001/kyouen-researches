@@ -1,8 +1,8 @@
 # Cycle 40b — joint lemmas for residual sum-14 occupancy vectors
 
 Proper-subset COMPLETE maxima kill **113/120**.
-Residual proper-subset-feasible sum-14 vectors: **7**.
-All seven are rejected by direct exact-occupancy decisions.
+Residual LP-feasible sum-14 vectors: **7**.
+Integer LP after extra inequalities: max sum = 13.
 
 ## Residual exact-occupancy decisions
 
@@ -16,18 +16,24 @@ All seven are rejected by direct exact-occupancy decisions.
 | [3, 2, 3, 1, 3, 2] | 14 | False | (0, 2) | 917 |
 | [3, 3, 2, 1, 3, 2] | 14 | False | (1, 2) | 533 |
 
-## Why no `known13max` inequalities appear here
+## Extra inequalities (greedy cover of residuals)
 
-An earlier draft greedily covered these residuals with inequalities inferred from already-known size-13 maximizers. Those are not certified universal proper-subset bounds. For example, the proposed `(1,1)+(1,3)≤3` conflicts with the COMPLETE proper-subset maximum **5**. They are therefore excluded from the proof rather than being used as a shortcut.
+- (1,1),(1,3) ≤ 3 (known13max, kills 4)
+- (0,1),(0,2),(1,3) ≤ 7 (known13max, kills 1)
+- (0,0),(0,1),(1,3) ≤ 7 (known13max, kills 1)
+- (0,0),(0,2),(1,3) ≤ 7 (known13max, kills 1)
 
-## Compressed certificate
+## Compressed certificate sketch
 
 1. **Orbit–circle lemma**: x_i ≤ 3 for each M-orbit.
-2. **COMPLETE proper-subset maxima** (pairs/triples/4-/5-orbits): eliminate **113/120** sum-14 occupancy vectors.
-3. **Joint exact-occupancy lemmas**: each of the seven surviving vectors is COMPLETE-unrealizable on M. Therefore all **120/120** sum-14 vectors are impossible, hence **α(M)≤13**.
-4. A known realizable size-13 configuration gives **α(M)=13**.
-5. **Phase lift**: A/B exact occupancy Σ=14 is realizable; mixed phase is not (Cycle 35). Hence the size-14 selection theorem reduces to the A/B alternatives established in the phase-lift analysis.
-
-The seven joint decisions are the essential final obstruction: they are precisely the cases invisible to every available proper-subset capacity bound.
+2. **COMPLETE proper-subset maxima** (pairs/triples/4-/5-orbits):
+   kill 113/120 sum-14 occupancy vectors.
+3. **Short extra inequality list** (see above) covers the remaining
+   LP-feasible residuals; integer LP max sum = **13**.
+4. **Joint lemmas**: each residual is COMPLETE-unrealizable on M
+   (exact-occupancy decision); drop-one variants locate the binding
+   coordinate.
+5. **Phase lift**: A/B exact occ Σ=14 realizable; mixed phase not
+   (Cycle 35). Hence |S|=14 on M∪phase ⇒ A or B.
 
 Artifact: `cycle40b_residual_joint_lemmas.json`

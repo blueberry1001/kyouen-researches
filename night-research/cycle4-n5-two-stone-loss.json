@@ -1,0 +1,28 @@
+{
+  "board": "5x5",
+  "safe_2stone_positions": 300,
+  "loss_2stone_positions": 20,
+  "note": "All C(25,2) pairs are safe; 20 are LOSS for the player to move (0 winning replies; all legal replies lead to WIN for the opponent). Consistent with cycle4-exact-n5.json depth_profile k=2.",
+  "loss_pairs_coords": [
+    [[0, 0], [3, 0]],
+    [[0, 0], [4, 0]],
+    [[0, 0], [0, 3]],
+    [[0, 0], [0, 4]],
+    [[1, 0], [4, 0]],
+    [[1, 0], [2, 3]],
+    [[3, 0], [2, 3]],
+    [[4, 0], [4, 3]],
+    [[4, 0], [4, 4]],
+    [[0, 1], [3, 2]],
+    [[0, 1], [0, 4]],
+    [[2, 1], [1, 4]],
+    [[2, 1], [3, 4]],
+    [[4, 1], [1, 2]],
+    [[4, 1], [4, 4]],
+    [[1, 2], [4, 3]],
+    [[3, 2], [0, 3]],
+    [[0, 4], [3, 4]],
+    [[0, 4], [4, 4]],
+    [[1, 4], [4, 4]]
+  ]
+}

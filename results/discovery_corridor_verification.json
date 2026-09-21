@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "static_candidates": 6460,
+  "static_quads": 21,
+  "negative_auxiliary_cases": 29,
+  "positive_auxiliary_cells": [
+    48
+  ],
+  "closure_neighbor_checks": 130440,
+  "forbidden_full_board_swaps": 490,
+  "symmetry_related_pairs": 8,
+  "restricted_width": 11,
+  "full_board_width": 12,
+  "forbidden_corner_component_size": 250,
+  "full_board_component_size": 903,
+  "full_board_component_layers": {
+    "12": 817,
+    "13": 84,
+    "14": 2
+  },
+  "maximum_bearing_components": 8,
+  "maxima_per_component": 2,
+  "certificate_sha256": {
+    "discovery_corridor_static_certificate.json": "a0f9f6655c036ecb2dd60b8db2196a30472b1f2ee48944bd64b0f9939e1c92b3",
+    "discovery_corridor_auxiliary.json": "e86a91088e79160db2a752ab2b83b6f69aba89618b40a6c6dc79462cc7d5e1d7",
+    "discovery_full_board_forbid_48.json": "7dbd712b8021b8d12bf6514abb6c1362a723115bdd21876ce117533b2e9e9671",
+    "discovery_full_board_forbid_-1.json": "d4c87974c5968436dc6996294d9443d8c6133cfffe1ab298157bd4469e28f0af"
+  }
+}

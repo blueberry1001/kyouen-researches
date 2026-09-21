@@ -1,0 +1,63 @@
+{
+  "cross_board_exact": [
+    {
+      "n": 2,
+      "winner": "F",
+      "density": 1.0,
+      "k1_loss_rate": 1.0,
+      "k1_loss_equals_winning_first_moves": true,
+      "mid_peak": null,
+      "forbidden": 1
+    },
+    {
+      "n": 3,
+      "winner": "F",
+      "density": 1.0,
+      "k1_loss_rate": 1.0,
+      "k1_loss_equals_winning_first_moves": true,
+      "mid_peak": null,
+      "forbidden": 14
+    },
+    {
+      "n": 4,
+      "winner": "S",
+      "density": 0.0,
+      "k1_loss_rate": 0.0,
+      "k1_loss_equals_winning_first_moves": true,
+      "mid_peak": {
+        "k": 2,
+        "safe": 120,
+        "loss": 84,
+        "win": 36,
+        "loss_rate": 0.7
+      },
+      "forbidden": 194
+    },
+    {
+      "n": 5,
+      "winner": "F",
+      "density": 0.36,
+      "k1_loss_rate": 0.36,
+      "k1_loss_equals_winning_first_moves": true,
+      "mid_peak": {
+        "k": 8,
+        "safe": 5172,
+        "loss": 4340,
+        "win": 832,
+        "loss_rate": 0.8391337973704563
+      },
+      "forbidden": 826
+    }
+  ],
+  "standing_claims": {
+    "H_dense": "SUPPORTED on complete n<=10 first-move data (not a clean holdout)",
+    "parity_locking": "exact only n=2,3",
+    "mobility_discriminator": false,
+    "winning_reply_multiplicity_discriminator_on_n5": true,
+    "embedding_transfer": "REJECTED"
+  },
+  "github": {
+    "local_branch": "replicate-8x8-o-stratum @ db50e40",
+    "origin_main": "4152c1a factorial Holm (lags local Cycle 3)"
+  }
+}

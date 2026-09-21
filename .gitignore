@@ -23,3 +23,8 @@ kyouen-local-handoff/
 kyouen-local-handoff-extract/
 __pycache__/
 *.pyc
+
+# research scratch (large decompressed certificates etc.)
+scratch/
+research/__pycache__/
+

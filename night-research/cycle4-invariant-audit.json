@@ -1,0 +1,478 @@
+{
+  "exact_rows": [
+    {
+      "n": 2,
+      "winner": "F",
+      "forbidden": 1,
+      "reachable": 15,
+      "density": 1.0,
+      "winning_first_moves": 4,
+      "parity_locked_outcomes": true,
+      "interior_peak": {
+        "k": 1,
+        "safe": 4,
+        "loss": 4,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "win_reply_counts": {
+        "3": 4
+      },
+      "loss_second_win_reply_counts": {},
+      "win_second_win_reply_counts": {
+        "0": 4
+      },
+      "all_first_reply_counts": {
+        "3": 4
+      },
+      "profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 4,
+          "loss": 4,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 2,
+          "safe": 6,
+          "loss": 0,
+          "win": 6,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 3,
+          "safe": 4,
+          "loss": 4,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "winner": "F",
+      "forbidden": 14,
+      "reachable": 298,
+      "density": 1.0,
+      "winning_first_moves": 9,
+      "parity_locked_outcomes": true,
+      "interior_peak": {
+        "k": 1,
+        "safe": 9,
+        "loss": 9,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "win_reply_counts": {
+        "8": 9
+      },
+      "loss_second_win_reply_counts": {},
+      "win_second_win_reply_counts": {
+        "0": 9
+      },
+      "all_first_reply_counts": {
+        "8": 9
+      },
+      "profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 9,
+          "loss": 9,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 2,
+          "safe": 36,
+          "loss": 0,
+          "win": 36,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 3,
+          "safe": 84,
+          "loss": 84,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 4,
+          "safe": 112,
+          "loss": 0,
+          "win": 112,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 5,
+          "safe": 56,
+          "loss": 56,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "winner": "S",
+      "forbidden": 194,
+      "reachable": 5811,
+      "density": 0.0,
+      "winning_first_moves": 0,
+      "parity_locked_outcomes": false,
+      "interior_peak": {
+        "k": 2,
+        "safe": 120,
+        "loss": 84,
+        "win": 36,
+        "loss_rate": 0.7
+      },
+      "win_reply_counts": {},
+      "loss_second_win_reply_counts": {
+        "12": 8,
+        "9": 8
+      },
+      "win_second_win_reply_counts": {},
+      "all_first_reply_counts": {
+        "15": 16
+      },
+      "profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 1,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 1,
+          "safe": 16,
+          "loss": 0,
+          "win": 16,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 2,
+          "safe": 120,
+          "loss": 84,
+          "win": 36,
+          "loss_rate": 0.7
+        },
+        {
+          "k": 3,
+          "safe": 560,
+          "loss": 16,
+          "win": 544,
+          "loss_rate": 0.02857142857142857
+        },
+        {
+          "k": 4,
+          "safe": 1626,
+          "loss": 640,
+          "win": 986,
+          "loss_rate": 0.3936039360393604
+        },
+        {
+          "k": 5,
+          "safe": 2360,
+          "loss": 332,
+          "win": 2028,
+          "loss_rate": 0.14067796610169492
+        },
+        {
+          "k": 6,
+          "safe": 1064,
+          "loss": 688,
+          "win": 376,
+          "loss_rate": 0.6466165413533834
+        },
+        {
+          "k": 7,
+          "safe": 64,
+          "loss": 64,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "winner": "F",
+      "forbidden": 826,
+      "reachable": 151394,
+      "density": 0.36,
+      "winning_first_moves": 9,
+      "parity_locked_outcomes": false,
+      "interior_peak": {
+        "k": 8,
+        "safe": 5172,
+        "loss": 4340,
+        "win": 832,
+        "loss_rate": 0.8391337973704563
+      },
+      "win_reply_counts": {
+        "24": 9
+      },
+      "loss_second_win_reply_counts": {
+        "4": 4,
+        "2": 12
+      },
+      "win_second_win_reply_counts": {
+        "0": 9
+      },
+      "all_first_reply_counts": {
+        "24": 25
+      },
+      "profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 25,
+          "loss": 9,
+          "win": 16,
+          "loss_rate": 0.36
+        },
+        {
+          "k": 2,
+          "safe": 300,
+          "loss": 20,
+          "win": 280,
+          "loss_rate": 0.06666666666666667
+        },
+        {
+          "k": 3,
+          "safe": 2300,
+          "loss": 550,
+          "win": 1750,
+          "loss_rate": 0.2391304347826087
+        },
+        {
+          "k": 4,
+          "safe": 11824,
+          "loss": 1250,
+          "win": 10574,
+          "loss_rate": 0.10571718538565629
+        },
+        {
+          "k": 5,
+          "safe": 37272,
+          "loss": 7144,
+          "win": 30128,
+          "loss_rate": 0.19167203262502683
+        },
+        {
+          "k": 6,
+          "safe": 59192,
+          "loss": 14108,
+          "win": 45084,
+          "loss_rate": 0.23834301932693608
+        },
+        {
+          "k": 7,
+          "safe": 35208,
+          "loss": 12804,
+          "win": 22404,
+          "loss_rate": 0.36366734832992503
+        },
+        {
+          "k": 8,
+          "safe": 5172,
+          "loss": 4340,
+          "win": 832,
+          "loss_rate": 0.8391337973704563
+        },
+        {
+          "k": 9,
+          "safe": 100,
+          "loss": 100,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "invariant_audit": {
+    "exact_boards_measured": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "candidates": [
+      {
+        "quantity": "empty-board winner F/S",
+        "separates_F_S": true,
+        "note": "definitional, not predictive"
+      },
+      {
+        "quantity": "winning-first-move density",
+        "F": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "5": 0.36,
+          "6": 1.0,
+          "9": 1.0
+        },
+        "S": {
+          "4": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "10": 0.0
+        },
+        "separates_F_S": true,
+        "note": "density=0 on S-boards is definitional; non-trivial content is density=1 on all F n<=9 except n=5"
+      },
+      {
+        "quantity": "parity-locking of all reachable safe-set outcomes by k mod 2",
+        "exact": {
+          "2": true,
+          "3": true,
+          "4": false,
+          "5": false
+        },
+        "separates_F_S": false,
+        "note": "holds for n=2,3 (F-boards) and fails on n=4 (S) and n=5 (F); not an F/S separator"
+      },
+      {
+        "quantity": "legal reply count after any first move",
+        "exact": {
+          "2": {
+            "3": 4
+          },
+          "3": {
+            "8": 9
+          },
+          "4": {
+            "15": 16
+          },
+          "5": {
+            "24": 25
+          }
+        },
+        "separates_F_S": false,
+        "note": "on n=2..5 every first move leaves exactly n*n-1 legal replies (1-stone positions never illegal)"
+      },
+      {
+        "quantity": "mean legal replies after first move (win vs loss)",
+        "n5": {
+          "win": 24.0,
+          "loss": 24.0
+        },
+        "separates_F_S": false,
+        "note": "reply mobility does not distinguish winning vs losing first moves on n=5"
+      },
+      {
+        "quantity": "second-player winning-reply multiplicity after first move",
+        "n4_S_all_loss": "9 or 12 winning second replies depending on first-move orbit",
+        "n5_F": "0 on all 9 WIN first moves; 2 or 4 on LOSS first moves",
+        "separates_local_outcome": true,
+        "note": "sharp discriminator on n=5: WIN first move iff opponent winning-reply count = 0"
+      },
+      {
+        "quantity": "forbidden quadruple count",
+        "values": {
+          "2": 1,
+          "3": 14,
+          "4": 194,
+          "5": 826,
+          "6": 2491,
+          "7": 6364,
+          "8": 14564,
+          "9": 29152,
+          "10": 54441
+        },
+        "separates_F_S": false,
+        "note": "monotone in n; does not match F/S pattern"
+      },
+      {
+        "quantity": "H-dense (among F-win n<=10, only n=5 has a losing first move)",
+        "status": "SUPPORTED on complete data",
+        "separates_F_S": false,
+        "note": "characterizes exceptional F-board, not S-boards"
+      }
+    ],
+    "rows": [
+      {
+        "n": 2,
+        "winner": "F",
+        "density": 1.0,
+        "parity_locked": true,
+        "reachable": 15
+      },
+      {
+        "n": 3,
+        "winner": "F",
+        "density": 1.0,
+        "parity_locked": true,
+        "reachable": 298
+      },
+      {
+        "n": 4,
+        "winner": "S",
+        "density": 0.0,
+        "parity_locked": false,
+        "reachable": 5811
+      },
+      {
+        "n": 5,
+        "winner": "F",
+        "density": 0.36,
+        "parity_locked": false,
+        "reachable": 151394
+      }
+    ],
+    "larger_boards_from_prior_work": {
+      "6": {
+        "winner": "F",
+        "density": 1.0,
+        "winning_first_moves": 36,
+        "source": "certificates/prior"
+      },
+      "7": {
+        "winner": "S",
+        "density": 0.0,
+        "winning_first_moves": 0,
+        "source": "certificates/prior"
+      },
+      "8": {
+        "winner": "S",
+        "density": 0.0,
+        "winning_first_moves": 0,
+        "source": "certificates/prior"
+      },
+      "9": {
+        "winner": "F",
+        "density": 1.0,
+        "winning_first_moves": 81,
+        "source": "CYCLE3 first-moves-9x9.csv"
+      },
+      "10": {
+        "winner": "S",
+        "density": 0.0,
+        "winning_first_moves": 0,
+        "source": "10x10 probes"
+      }
+    }
+  }
+}

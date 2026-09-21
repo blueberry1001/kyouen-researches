@@ -1,0 +1,1586 @@
+{
+  "density": {
+    "table": [
+      {
+        "n": 1,
+        "winner": "F",
+        "winning_first_moves": 1,
+        "cells": 1,
+        "density": 1.0,
+        "status": "complete"
+      },
+      {
+        "n": 2,
+        "winner": "F",
+        "winning_first_moves": 4,
+        "cells": 4,
+        "density": 1.0,
+        "status": "complete"
+      },
+      {
+        "n": 3,
+        "winner": "F",
+        "winning_first_moves": 9,
+        "cells": 9,
+        "density": 1.0,
+        "status": "complete"
+      },
+      {
+        "n": 4,
+        "winner": "S",
+        "winning_first_moves": 0,
+        "cells": 16,
+        "density": 0.0,
+        "status": "complete"
+      },
+      {
+        "n": 5,
+        "winner": "F",
+        "winning_first_moves": 9,
+        "cells": 25,
+        "density": 0.36,
+        "status": "complete"
+      },
+      {
+        "n": 6,
+        "winner": "F",
+        "winning_first_moves": 36,
+        "cells": 36,
+        "density": 1.0,
+        "status": "complete"
+      },
+      {
+        "n": 7,
+        "winner": "S",
+        "winning_first_moves": 0,
+        "cells": 49,
+        "density": 0.0,
+        "status": "complete"
+      },
+      {
+        "n": 8,
+        "winner": "S",
+        "winning_first_moves": 0,
+        "cells": 64,
+        "density": 0.0,
+        "status": "complete"
+      },
+      {
+        "n": 9,
+        "winner": "F",
+        "winning_first_moves": 81,
+        "cells": 81,
+        "density": 1.0,
+        "status": "complete",
+        "orbits_done": 15,
+        "orbits_total": 15,
+        "source": "night-research/first-moves-9x9.csv + CYCLE3_RESULTS.md"
+      },
+      {
+        "n": 10,
+        "winner": "S",
+        "winning_first_moves": 0,
+        "cells": 100,
+        "density": 0.0,
+        "status": "complete"
+      }
+    ],
+    "h_dense": {
+      "statement": "Among F-win boards n<=10, only n=5 has any losing first move.",
+      "known_F_win": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        9
+      ],
+      "status": "SUPPORTED on complete n<=10 data (exploratory; 9x9 completed after hypothesis)",
+      "falsified": false
+    },
+    "h_embed": {
+      "statement": "Center-relative D4 orbit outcome transfers from 5x5 to 9x9.",
+      "status": "REJECTED (3 MATCH / 3 FLIP on complete transfer table)"
+    },
+    "github_origin_note": {
+      "local_head_example": "db50e40 Complete 9x9 first-move classification (replicate-8x8-o-stratum)",
+      "origin_main_latest_known": "4152c1a Document factorial Holm reachability criterion",
+      "origin_replicate_lag": "origin/replicate-8x8-o-stratum missing Cycle 3 commit"
+    }
+  },
+  "boards": [
+    {
+      "n": 2,
+      "empty_outcome": "WIN",
+      "empty_is_first_win": true,
+      "reachable_safe_sets": 15,
+      "legal_cache_size": 15,
+      "elapsed_sec": 0.0,
+      "depth_profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 4,
+          "loss": 4,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 2,
+          "safe": 6,
+          "loss": 0,
+          "win": 6,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 3,
+          "safe": 4,
+          "loss": 4,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ],
+      "peak_loss_rate": {
+        "k": 1,
+        "safe": 4,
+        "loss": 4,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "forbidden_quadruples": 1,
+      "expected_winner": "F",
+      "winner_match": true,
+      "mobility_winning_first_moves": 4,
+      "mobility_density": 1.0,
+      "mean_replies_if_first_win": 3.0,
+      "mean_replies_if_first_loss": null
+    },
+    {
+      "n": 3,
+      "empty_outcome": "WIN",
+      "empty_is_first_win": true,
+      "reachable_safe_sets": 298,
+      "legal_cache_size": 298,
+      "elapsed_sec": 0.000997304916381836,
+      "depth_profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 9,
+          "loss": 9,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 2,
+          "safe": 36,
+          "loss": 0,
+          "win": 36,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 3,
+          "safe": 84,
+          "loss": 84,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 4,
+          "safe": 112,
+          "loss": 0,
+          "win": 112,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 5,
+          "safe": 56,
+          "loss": 56,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ],
+      "peak_loss_rate": {
+        "k": 1,
+        "safe": 9,
+        "loss": 9,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "forbidden_quadruples": 14,
+      "expected_winner": "F",
+      "winner_match": true,
+      "mobility_winning_first_moves": 9,
+      "mobility_density": 1.0,
+      "mean_replies_if_first_win": 8.0,
+      "mean_replies_if_first_loss": null
+    },
+    {
+      "n": 4,
+      "empty_outcome": "LOSS",
+      "empty_is_first_win": false,
+      "reachable_safe_sets": 5811,
+      "legal_cache_size": 5811,
+      "elapsed_sec": 0.15281057357788086,
+      "depth_profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 1,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        {
+          "k": 1,
+          "safe": 16,
+          "loss": 0,
+          "win": 16,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 2,
+          "safe": 120,
+          "loss": 84,
+          "win": 36,
+          "loss_rate": 0.7
+        },
+        {
+          "k": 3,
+          "safe": 560,
+          "loss": 16,
+          "win": 544,
+          "loss_rate": 0.02857142857142857
+        },
+        {
+          "k": 4,
+          "safe": 1626,
+          "loss": 640,
+          "win": 986,
+          "loss_rate": 0.3936039360393604
+        },
+        {
+          "k": 5,
+          "safe": 2360,
+          "loss": 332,
+          "win": 2028,
+          "loss_rate": 0.14067796610169492
+        },
+        {
+          "k": 6,
+          "safe": 1064,
+          "loss": 688,
+          "win": 376,
+          "loss_rate": 0.6466165413533834
+        },
+        {
+          "k": 7,
+          "safe": 64,
+          "loss": 64,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ],
+      "peak_loss_rate": {
+        "k": 0,
+        "safe": 1,
+        "loss": 1,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "forbidden_quadruples": 194,
+      "expected_winner": "S",
+      "winner_match": true,
+      "mobility_winning_first_moves": 0,
+      "mobility_density": 0.0,
+      "mean_replies_if_first_win": null,
+      "mean_replies_if_first_loss": 15.0
+    },
+    {
+      "n": 5,
+      "empty_outcome": "WIN",
+      "empty_is_first_win": true,
+      "reachable_safe_sets": 151394,
+      "legal_cache_size": 151394,
+      "elapsed_sec": 14.434995174407959,
+      "depth_profile": [
+        {
+          "k": 0,
+          "safe": 1,
+          "loss": 0,
+          "win": 1,
+          "loss_rate": 0.0
+        },
+        {
+          "k": 1,
+          "safe": 25,
+          "loss": 9,
+          "win": 16,
+          "loss_rate": 0.36
+        },
+        {
+          "k": 2,
+          "safe": 300,
+          "loss": 20,
+          "win": 280,
+          "loss_rate": 0.06666666666666667
+        },
+        {
+          "k": 3,
+          "safe": 2300,
+          "loss": 550,
+          "win": 1750,
+          "loss_rate": 0.2391304347826087
+        },
+        {
+          "k": 4,
+          "safe": 11824,
+          "loss": 1250,
+          "win": 10574,
+          "loss_rate": 0.10571718538565629
+        },
+        {
+          "k": 5,
+          "safe": 37272,
+          "loss": 7144,
+          "win": 30128,
+          "loss_rate": 0.19167203262502683
+        },
+        {
+          "k": 6,
+          "safe": 59192,
+          "loss": 14108,
+          "win": 45084,
+          "loss_rate": 0.23834301932693608
+        },
+        {
+          "k": 7,
+          "safe": 35208,
+          "loss": 12804,
+          "win": 22404,
+          "loss_rate": 0.36366734832992503
+        },
+        {
+          "k": 8,
+          "safe": 5172,
+          "loss": 4340,
+          "win": 832,
+          "loss_rate": 0.8391337973704563
+        },
+        {
+          "k": 9,
+          "safe": 100,
+          "loss": 100,
+          "win": 0,
+          "loss_rate": 1.0
+        }
+      ],
+      "peak_loss_rate": {
+        "k": 9,
+        "safe": 100,
+        "loss": 100,
+        "win": 0,
+        "loss_rate": 1.0
+      },
+      "forbidden_quadruples": 826,
+      "expected_winner": "F",
+      "winner_match": true,
+      "mobility_winning_first_moves": 9,
+      "mobility_density": 0.36,
+      "mean_replies_if_first_win": 24.0,
+      "mean_replies_if_first_loss": 24.0
+    }
+  ],
+  "first_move_mobility": {
+    "2": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 3,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 1,
+        "x": 1,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 3,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 2,
+        "x": 0,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 3,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 3,
+        "x": 1,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 3,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      }
+    ],
+    "3": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 1,
+        "x": 1,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 2,
+        "x": 2,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 3,
+        "x": 0,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 4,
+        "x": 1,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 5,
+        "x": 2,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 6,
+        "x": 0,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 7,
+        "x": 1,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 8,
+        "x": 2,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 8,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      }
+    ],
+    "4": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          11
+        ]
+      },
+      {
+        "id": 1,
+        "x": 1,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          10,
+          12,
+          14
+        ]
+      },
+      {
+        "id": 2,
+        "x": 2,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          9,
+          12,
+          13
+        ]
+      },
+      {
+        "id": 3,
+        "x": 3,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ]
+      },
+      {
+        "id": 4,
+        "x": 0,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          1,
+          3,
+          5,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "id": 5,
+        "x": 1,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          9
+        ]
+      },
+      {
+        "id": 6,
+        "x": 2,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": 7,
+        "x": 3,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          2,
+          3,
+          6,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "id": 8,
+        "x": 0,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          12,
+          13
+        ]
+      },
+      {
+        "id": 9,
+        "x": 1,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ]
+      },
+      {
+        "id": 10,
+        "x": 2,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          11
+        ]
+      },
+      {
+        "id": 11,
+        "x": 3,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          10,
+          12,
+          14
+        ]
+      },
+      {
+        "id": 12,
+        "x": 0,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "id": 13,
+        "x": 1,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          2,
+          3,
+          6,
+          8,
+          9,
+          10,
+          12
+        ]
+      },
+      {
+        "id": 14,
+        "x": 2,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 9,
+        "winning_reply_ids": [
+          0,
+          1,
+          3,
+          5,
+          9,
+          10,
+          11,
+          13
+        ]
+      },
+      {
+        "id": 15,
+        "x": 3,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 15,
+        "second_player_winning_reply_count": 12,
+        "winning_reply_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          9
+        ]
+      }
+    ],
+    "5": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 4,
+        "winning_reply_ids": [
+          3,
+          4,
+          15,
+          20
+        ]
+      },
+      {
+        "id": 1,
+        "x": 1,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          4,
+          17
+        ]
+      },
+      {
+        "id": 2,
+        "x": 2,
+        "y": 0,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 3,
+        "x": 3,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          0,
+          17
+        ]
+      },
+      {
+        "id": 4,
+        "x": 4,
+        "y": 0,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 4,
+        "winning_reply_ids": [
+          0,
+          1,
+          19,
+          24
+        ]
+      },
+      {
+        "id": 5,
+        "x": 0,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          13,
+          20
+        ]
+      },
+      {
+        "id": 6,
+        "x": 1,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 7,
+        "x": 2,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          21,
+          23
+        ]
+      },
+      {
+        "id": 8,
+        "x": 3,
+        "y": 1,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 9,
+        "x": 4,
+        "y": 1,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          11,
+          24
+        ]
+      },
+      {
+        "id": 10,
+        "x": 0,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 11,
+        "x": 1,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          9,
+          19
+        ]
+      },
+      {
+        "id": 12,
+        "x": 2,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 13,
+        "x": 3,
+        "y": 2,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          5,
+          15
+        ]
+      },
+      {
+        "id": 14,
+        "x": 4,
+        "y": 2,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 15,
+        "x": 0,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          0,
+          13
+        ]
+      },
+      {
+        "id": 16,
+        "x": 1,
+        "y": 3,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 17,
+        "x": 2,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": 18,
+        "x": 3,
+        "y": 3,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 19,
+        "x": 4,
+        "y": 3,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          4,
+          11
+        ]
+      },
+      {
+        "id": 20,
+        "x": 0,
+        "y": 4,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 4,
+        "winning_reply_ids": [
+          0,
+          5,
+          23,
+          24
+        ]
+      },
+      {
+        "id": 21,
+        "x": 1,
+        "y": 4,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          7,
+          24
+        ]
+      },
+      {
+        "id": 22,
+        "x": 2,
+        "y": 4,
+        "result_for_first_player": "WIN",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 0,
+        "winning_reply_ids": []
+      },
+      {
+        "id": 23,
+        "x": 3,
+        "y": 4,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 2,
+        "winning_reply_ids": [
+          7,
+          20
+        ]
+      },
+      {
+        "id": 24,
+        "x": 4,
+        "y": 4,
+        "result_for_first_player": "LOSS",
+        "legal_reply_count": 24,
+        "second_player_winning_reply_count": 4,
+        "winning_reply_ids": [
+          4,
+          9,
+          20,
+          21
+        ]
+      }
+    ]
+  },
+  "invariant_audit": {
+    "exact_rows": [
+      {
+        "n": 2,
+        "winner": "F",
+        "forbidden": 1,
+        "reachable": 15,
+        "density": 1.0,
+        "winning_first_moves": 4,
+        "parity_locked_outcomes": true,
+        "interior_peak": {
+          "k": 1,
+          "safe": 4,
+          "loss": 4,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        "win_reply_counts": {
+          "3": 4
+        },
+        "loss_second_win_reply_counts": {},
+        "win_second_win_reply_counts": {
+          "0": 4
+        },
+        "all_first_reply_counts": {
+          "3": 4
+        },
+        "profile": [
+          {
+            "k": 0,
+            "safe": 1,
+            "loss": 0,
+            "win": 1,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 1,
+            "safe": 4,
+            "loss": 4,
+            "win": 0,
+            "loss_rate": 1.0
+          },
+          {
+            "k": 2,
+            "safe": 6,
+            "loss": 0,
+            "win": 6,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 3,
+            "safe": 4,
+            "loss": 4,
+            "win": 0,
+            "loss_rate": 1.0
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "winner": "F",
+        "forbidden": 14,
+        "reachable": 298,
+        "density": 1.0,
+        "winning_first_moves": 9,
+        "parity_locked_outcomes": true,
+        "interior_peak": {
+          "k": 1,
+          "safe": 9,
+          "loss": 9,
+          "win": 0,
+          "loss_rate": 1.0
+        },
+        "win_reply_counts": {
+          "8": 9
+        },
+        "loss_second_win_reply_counts": {},
+        "win_second_win_reply_counts": {
+          "0": 9
+        },
+        "all_first_reply_counts": {
+          "8": 9
+        },
+        "profile": [
+          {
+            "k": 0,
+            "safe": 1,
+            "loss": 0,
+            "win": 1,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 1,
+            "safe": 9,
+            "loss": 9,
+            "win": 0,
+            "loss_rate": 1.0
+          },
+          {
+            "k": 2,
+            "safe": 36,
+            "loss": 0,
+            "win": 36,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 3,
+            "safe": 84,
+            "loss": 84,
+            "win": 0,
+            "loss_rate": 1.0
+          },
+          {
+            "k": 4,
+            "safe": 112,
+            "loss": 0,
+            "win": 112,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 5,
+            "safe": 56,
+            "loss": 56,
+            "win": 0,
+            "loss_rate": 1.0
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "winner": "S",
+        "forbidden": 194,
+        "reachable": 5811,
+        "density": 0.0,
+        "winning_first_moves": 0,
+        "parity_locked_outcomes": false,
+        "interior_peak": {
+          "k": 2,
+          "safe": 120,
+          "loss": 84,
+          "win": 36,
+          "loss_rate": 0.7
+        },
+        "win_reply_counts": {},
+        "loss_second_win_reply_counts": {
+          "12": 8,
+          "9": 8
+        },
+        "win_second_win_reply_counts": {},
+        "all_first_reply_counts": {
+          "15": 16
+        },
+        "profile": [
+          {
+            "k": 0,
+            "safe": 1,
+            "loss": 1,
+            "win": 0,
+            "loss_rate": 1.0
+          },
+          {
+            "k": 1,
+            "safe": 16,
+            "loss": 0,
+            "win": 16,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 2,
+            "safe": 120,
+            "loss": 84,
+            "win": 36,
+            "loss_rate": 0.7
+          },
+          {
+            "k": 3,
+            "safe": 560,
+            "loss": 16,
+            "win": 544,
+            "loss_rate": 0.02857142857142857
+          },
+          {
+            "k": 4,
+            "safe": 1626,
+            "loss": 640,
+            "win": 986,
+            "loss_rate": 0.3936039360393604
+          },
+          {
+            "k": 5,
+            "safe": 2360,
+            "loss": 332,
+            "win": 2028,
+            "loss_rate": 0.14067796610169492
+          },
+          {
+            "k": 6,
+            "safe": 1064,
+            "loss": 688,
+            "win": 376,
+            "loss_rate": 0.6466165413533834
+          },
+          {
+            "k": 7,
+            "safe": 64,
+            "loss": 64,
+            "win": 0,
+            "loss_rate": 1.0
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "winner": "F",
+        "forbidden": 826,
+        "reachable": 151394,
+        "density": 0.36,
+        "winning_first_moves": 9,
+        "parity_locked_outcomes": false,
+        "interior_peak": {
+          "k": 8,
+          "safe": 5172,
+          "loss": 4340,
+          "win": 832,
+          "loss_rate": 0.8391337973704563
+        },
+        "win_reply_counts": {
+          "24": 9
+        },
+        "loss_second_win_reply_counts": {
+          "4": 4,
+          "2": 12
+        },
+        "win_second_win_reply_counts": {
+          "0": 9
+        },
+        "all_first_reply_counts": {
+          "24": 25
+        },
+        "profile": [
+          {
+            "k": 0,
+            "safe": 1,
+            "loss": 0,
+            "win": 1,
+            "loss_rate": 0.0
+          },
+          {
+            "k": 1,
+            "safe": 25,
+            "loss": 9,
+            "win": 16,
+            "loss_rate": 0.36
+          },
+          {
+            "k": 2,
+            "safe": 300,
+            "loss": 20,
+            "win": 280,
+            "loss_rate": 0.06666666666666667
+          },
+          {
+            "k": 3,
+            "safe": 2300,
+            "loss": 550,
+            "win": 1750,
+            "loss_rate": 0.2391304347826087
+          },
+          {
+            "k": 4,
+            "safe": 11824,
+            "loss": 1250,
+            "win": 10574,
+            "loss_rate": 0.10571718538565629
+          },
+          {
+            "k": 5,
+            "safe": 37272,
+            "loss": 7144,
+            "win": 30128,
+            "loss_rate": 0.19167203262502683
+          },
+          {
+            "k": 6,
+            "safe": 59192,
+            "loss": 14108,
+            "win": 45084,
+            "loss_rate": 0.23834301932693608
+          },
+          {
+            "k": 7,
+            "safe": 35208,
+            "loss": 12804,
+            "win": 22404,
+            "loss_rate": 0.36366734832992503
+          },
+          {
+            "k": 8,
+            "safe": 5172,
+            "loss": 4340,
+            "win": 832,
+            "loss_rate": 0.8391337973704563
+          },
+          {
+            "k": 9,
+            "safe": 100,
+            "loss": 100,
+            "win": 0,
+            "loss_rate": 1.0
+          }
+        ]
+      }
+    ],
+    "invariant_audit": {
+      "exact_boards_measured": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "candidates": [
+        {
+          "quantity": "empty-board winner F/S",
+          "separates_F_S": true,
+          "note": "definitional, not predictive"
+        },
+        {
+          "quantity": "winning-first-move density",
+          "F": {
+            "1": 1.0,
+            "2": 1.0,
+            "3": 1.0,
+            "5": 0.36,
+            "6": 1.0,
+            "9": 1.0
+          },
+          "S": {
+            "4": 0.0,
+            "7": 0.0,
+            "8": 0.0,
+            "10": 0.0
+          },
+          "separates_F_S": true,
+          "note": "density=0 on S-boards is definitional; non-trivial content is density=1 on all F n<=9 except n=5"
+        },
+        {
+          "quantity": "parity-locking of all reachable safe-set outcomes by k mod 2",
+          "exact": {
+            "2": true,
+            "3": true,
+            "4": false,
+            "5": false
+          },
+          "separates_F_S": false,
+          "note": "holds for n=2,3 (F-boards) and fails on n=4 (S) and n=5 (F); not an F/S separator"
+        },
+        {
+          "quantity": "legal reply count after any first move",
+          "exact": {
+            "2": {
+              "3": 4
+            },
+            "3": {
+              "8": 9
+            },
+            "4": {
+              "15": 16
+            },
+            "5": {
+              "24": 25
+            }
+          },
+          "separates_F_S": false,
+          "note": "on n=2..5 every first move leaves exactly n*n-1 legal replies (1-stone positions never illegal)"
+        },
+        {
+          "quantity": "mean legal replies after first move (win vs loss)",
+          "n5": {
+            "win": 24.0,
+            "loss": 24.0
+          },
+          "separates_F_S": false,
+          "note": "reply mobility does not distinguish winning vs losing first moves on n=5"
+        },
+        {
+          "quantity": "second-player winning-reply multiplicity after first move",
+          "n4_S_all_loss": "9 or 12 winning second replies depending on first-move orbit",
+          "n5_F": "0 on all 9 WIN first moves; 2 or 4 on LOSS first moves",
+          "separates_local_outcome": true,
+          "note": "sharp discriminator on n=5: WIN first move iff opponent winning-reply count = 0"
+        },
+        {
+          "quantity": "forbidden quadruple count",
+          "values": {
+            "2": 1,
+            "3": 14,
+            "4": 194,
+            "5": 826,
+            "6": 2491,
+            "7": 6364,
+            "8": 14564,
+            "9": 29152,
+            "10": 54441
+          },
+          "separates_F_S": false,
+          "note": "monotone in n; does not match F/S pattern"
+        },
+        {
+          "quantity": "H-dense (among F-win n<=10, only n=5 has a losing first move)",
+          "status": "SUPPORTED on complete data",
+          "separates_F_S": false,
+          "note": "characterizes exceptional F-board, not S-boards"
+        }
+      ],
+      "rows": [
+        {
+          "n": 2,
+          "winner": "F",
+          "density": 1.0,
+          "parity_locked": true,
+          "reachable": 15
+        },
+        {
+          "n": 3,
+          "winner": "F",
+          "density": 1.0,
+          "parity_locked": true,
+          "reachable": 298
+        },
+        {
+          "n": 4,
+          "winner": "S",
+          "density": 0.0,
+          "parity_locked": false,
+          "reachable": 5811
+        },
+        {
+          "n": 5,
+          "winner": "F",
+          "density": 0.36,
+          "parity_locked": false,
+          "reachable": 151394
+        }
+      ],
+      "larger_boards_from_prior_work": {
+        "6": {
+          "winner": "F",
+          "density": 1.0,
+          "winning_first_moves": 36,
+          "source": "certificates/prior"
+        },
+        "7": {
+          "winner": "S",
+          "density": 0.0,
+          "winning_first_moves": 0,
+          "source": "certificates/prior"
+        },
+        "8": {
+          "winner": "S",
+          "density": 0.0,
+          "winning_first_moves": 0,
+          "source": "certificates/prior"
+        },
+        "9": {
+          "winner": "F",
+          "density": 1.0,
+          "winning_first_moves": 81,
+          "source": "CYCLE3 first-moves-9x9.csv"
+        },
+        "10": {
+          "winner": "S",
+          "density": 0.0,
+          "winning_first_moves": 0,
+          "source": "10x10 probes"
+        }
+      }
+    }
+  },
+  "player_to_move_note": "Outcomes are for the player to move. At k=1, LOSS count equals winning-first-move count; WIN count equals losing-first-move count.",
+  "authoritative_per_board_files": [
+    "cycle4-exact-n2.json",
+    "cycle4-exact-n3.json",
+    "cycle4-exact-n4.json",
+    "cycle4-exact-n5.json"
+  ]
+}
