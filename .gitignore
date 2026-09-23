@@ -9,12 +9,8 @@ release-assets/*.cert.zst
 *.tmp
 
 # BEGIN oh-my-opencode-slim worktrees
-.slim/worktrees/
-.slim/worktrees.json
+.slim/
 # END oh-my-opencode-slim worktrees
-
-# Deepwork state
-.slim/deepwork/
 
 # Temporary / environment
 .commandcode/
@@ -24,7 +20,22 @@ kyouen-local-handoff-extract/
 __pycache__/
 *.pyc
 
+# build outputs
+*.exe
+**/target/
+
 # research scratch (large decompressed certificates etc.)
 scratch/
 research/__pycache__/
+
+# runtime scratch logs
+night-research/.EDITOR_PROBE_LIST.txt
+night-research/*_err.txt
+night-research/*_out.txt
+night-research/*.out.txt
+night-research/*_stderr.txt
+night-research/*_stderr2.txt
+night-research/*.err
+night-research/*.err.txt
+artifacts/*-stderr.txt
 
