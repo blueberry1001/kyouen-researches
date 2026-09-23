@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>7×7 共円禁止配置 — 研究ダッシュボード</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="eyebrow">night-research · codex/nontrivial-discovery</p>
+      <h1>7×7 安全配置の修復理論</h1>
+      <p class="lede">
+        四点が共円・同一直線に並ばない配置（安全配置）を、一点追加・削除で最大14石配置へ修復する問題。
+        全1.8億配置を列挙し、減石数の下限と最短手数を完全分類した。
+      </p>
+    </div>
+    <div class="legend">
+      <span><i class="swatch stone"></i>石</span>
+      <span><i class="swatch free"></i>空点</span>
+      <span><i class="swatch blocked"></i>追加不能</span>
+      <span><i class="swatch corner"></i>第四の角</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>最大配置と角ゲート</h2>
+      <p>
+        最大安全配置は14石でちょうど16個。7×7盤の未使用「第四の角」(6,6) を
+        一度使わないと、12石以上を保ったまま別成分へ移れない。
+      </p>
+      <div class="board-row">
+        <div>
+          <div class="board" id="board-demo" aria-label="7x7盤"></div>
+          <div class="board-meta" id="board-demo-meta">代表配置を選択</div>
+        </div>
+        <div class="chip-col" id="demo-chips"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>連結性の階層</h2>
+      <p>石数の下限を1つ変えるだけで、最大配置16個のグラフ構造が激変する。</p>
+      <div class="hierarchy" id="hierarchy"></div>
+    </section>
+
+    <section class="panel wide">
+      <h2>修復に必要な最大減石数</h2>
+      <p>
+        到着先は「どれかの最大配置」。最短手数（対称差）を保証する場合の、
+        初期石数からの最大減少。0は一度も初期石数を下回らないという意味。
+      </p>
+      <div class="table-wrap">
+        <table class="data" id="loss-table">
+          <thead>
+            <tr><th>初期石数</th><th>配置数</th><th>減石0</th><th>減石1</th><th>減石2</th><th>減石3</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">
+        段階境界は 6 · 9 · 11。修復だけなら最大2石減、絶対最短まで保証すると最大3石減。
+        三石減が本当に必要なのは全層で648配置のみ。
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>指定先と最近接トラップ</h2>
+      <p>
+        到着先を固定すると事情が変わる。11石ではちょうど3軌道（24配置）が、
+        <strong>一意の最近接最大配置へは3石減必須</strong>なのに、
+        より遠い最大配置なら1石減で届く。
+      </p>
+      <div class="trap-grid" id="trap-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>指定先の最悪減石数</h2>
+      <div class="bars" id="prescribed-bars"></div>
+      <p class="note">
+        10石では最悪でも2石減。11石で初めて3石減が必要になり、
+        14石どうしの移動では5石減が要る組もある。到着先を指定すると「修復」より厳しい。
+      </p>
+    </section>
+
+    <section class="panel wide">
+      <h2>距離と障壁の逆転</h2>
+      <p>
+        最近接最大配置との共通点数と、修復下限は単調に対応しない。
+        共通7点でも下限9が必要な配置があり、共通3点でも11石を保って修復できる配置がある。
+      </p>
+      <div class="table-wrap">
+        <table class="data" id="distance-table">
+          <thead>
+            <tr><th>共通点数（最大）</th><th>代表的な修復下限</th><th>備考</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>
+      証明書・再現コードは worktree
+      <code>codex/nontrivial-discovery</code> の
+      <code>night-research/</code> と <code>results/discovery_*.json</code>。
+    </p>
+    <p class="tiny">独立検証: 3×3 / 4×4 行列式の別実装照合 · 閉集合閉包 · SHA-256</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
