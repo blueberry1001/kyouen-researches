@@ -1,0 +1,760 @@
+{
+  "depth_pattern": [
+    {
+      "n": 1,
+      "max_depth": 1,
+      "2n_1": 1,
+      "2n": 2,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    },
+    {
+      "n": 2,
+      "max_depth": 3,
+      "2n_1": 3,
+      "2n": 4,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    },
+    {
+      "n": 3,
+      "max_depth": 5,
+      "2n_1": 5,
+      "2n": 6,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    },
+    {
+      "n": 4,
+      "max_depth": 7,
+      "2n_1": 7,
+      "2n": 8,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "S"
+    },
+    {
+      "n": 5,
+      "max_depth": 9,
+      "2n_1": 9,
+      "2n": 10,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    },
+    {
+      "n": 6,
+      "max_depth": 11,
+      "2n_1": 11,
+      "2n": 12,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    },
+    {
+      "n": 7,
+      "max_depth": 14,
+      "2n_1": 13,
+      "2n": 14,
+      "delta_from_2n_1": 1,
+      "delta_from_2n": 0,
+      "winner": "S"
+    },
+    {
+      "n": 8,
+      "max_depth": 15,
+      "2n_1": 15,
+      "2n": 16,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "S"
+    },
+    {
+      "n": 9,
+      "max_depth": 17,
+      "2n_1": 17,
+      "2n": 18,
+      "delta_from_2n_1": 0,
+      "delta_from_2n": -1,
+      "winner": "F"
+    }
+  ],
+  "collinear_exact": {
+    "2": {
+      "n": 2,
+      "line_size_hist": {
+        "1": 6
+      },
+      "n_lines_ge4": 0,
+      "expected_collinear_quads": 0,
+      "actual_collinear_quads": 0,
+      "match": true
+    },
+    "3": {
+      "n": 3,
+      "line_size_hist": {
+        "1": 12,
+        "2": 8
+      },
+      "n_lines_ge4": 0,
+      "expected_collinear_quads": 0,
+      "actual_collinear_quads": 0,
+      "match": true
+    },
+    "4": {
+      "n": 4,
+      "line_size_hist": {
+        "1": 48,
+        "2": 4,
+        "3": 10
+      },
+      "n_lines_ge4": 0,
+      "expected_collinear_quads": 0,
+      "actual_collinear_quads": 10,
+      "match": false
+    },
+    "5": {
+      "n": 5,
+      "line_size_hist": {
+        "1": 108,
+        "2": 16,
+        "3": 4,
+        "4": 12
+      },
+      "n_lines_ge4": 1,
+      "expected_collinear_quads": 1,
+      "actual_collinear_quads": 64,
+      "match": false
+    },
+    "6": {
+      "n": 6,
+      "line_size_hist": {
+        "1": 248,
+        "2": 36,
+        "3": 4,
+        "4": 4,
+        "5": 14
+      },
+      "n_lines_ge4": 2,
+      "expected_collinear_quads": 6,
+      "actual_collinear_quads": 234,
+      "match": false
+    },
+    "7": {
+      "n": 7,
+      "line_size_hist": {
+        "1": 428,
+        "2": 64,
+        "3": 20,
+        "4": 4,
+        "5": 4,
+        "6": 16
+      },
+      "n_lines_ge4": 3,
+      "expected_collinear_quads": 21,
+      "actual_collinear_quads": 660,
+      "match": false
+    },
+    "8": {
+      "n": 8,
+      "line_size_hist": {
+        "1": 764,
+        "2": 100,
+        "3": 44,
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 18
+      },
+      "n_lines_ge4": 4,
+      "expected_collinear_quads": 56,
+      "actual_collinear_quads": 1524,
+      "match": false
+    }
+  },
+  "concyclic_exact": {
+    "2": {
+      "n": 2,
+      "n_circles_ge3_points": 1,
+      "circle_point_size_hist": {
+        "4": 1
+      },
+      "max_points_on_circle": 4,
+      "quads_from_nondeg_circles": 1,
+      "actual_concyclic_quads": 1,
+      "actual_collinear_quads": 0,
+      "concyclic_match": true
+    },
+    "3": {
+      "n": 3,
+      "n_circles_ge3_points": 34,
+      "circle_point_size_hist": {
+        "3": 20,
+        "4": 14
+      },
+      "max_points_on_circle": 4,
+      "quads_from_nondeg_circles": 1,
+      "actual_concyclic_quads": 14,
+      "actual_collinear_quads": 0,
+      "concyclic_match": false
+    },
+    "4": {
+      "n": 4,
+      "n_circles_ge3_points": 223,
+      "circle_point_size_hist": {
+        "3": 164,
+        "4": 54,
+        "6": 4,
+        "8": 1
+      },
+      "max_points_on_circle": 8,
+      "quads_from_nondeg_circles": 86,
+      "actual_concyclic_quads": 184,
+      "actual_collinear_quads": 10,
+      "concyclic_match": false
+    },
+    "5": {
+      "n": 5,
+      "n_circles_ge3_points": 997,
+      "circle_point_size_hist": {
+        "3": 780,
+        "4": 192,
+        "5": 8,
+        "6": 12,
+        "8": 5
+      },
+      "max_points_on_circle": 8,
+      "quads_from_nondeg_circles": 91,
+      "actual_concyclic_quads": 762,
+      "actual_collinear_quads": 64,
+      "concyclic_match": false
+    },
+    "6": {
+      "n": 6,
+      "n_circles_ge3_points": 3402,
+      "circle_point_size_hist": {
+        "3": 2780,
+        "4": 547,
+        "5": 24,
+        "6": 36,
+        "8": 15
+      },
+      "max_points_on_circle": 8,
+      "quads_from_nondeg_circles": 91,
+      "actual_concyclic_quads": 2257,
+      "actual_collinear_quads": 234,
+      "concyclic_match": false
+    },
+    "7": {
+      "n": 7,
+      "n_circles_ge3_points": 9141,
+      "circle_point_size_hist": {
+        "3": 7560,
+        "4": 1414,
+        "5": 36,
+        "6": 92,
+        "8": 39
+      },
+      "max_points_on_circle": 8,
+      "quads_from_nondeg_circles": 91,
+      "actual_concyclic_quads": 5704,
+      "actual_collinear_quads": 660,
+      "concyclic_match": false
+    }
+  },
+  "maximal_n4": {
+    "safe_hist": {
+      "0": 1,
+      "1": 16,
+      "2": 120,
+      "3": 560,
+      "4": 1626,
+      "5": 2360,
+      "6": 1064,
+      "7": 64
+    },
+    "n_maximal": 928,
+    "maximal_size_hist": {
+      "5": 176,
+      "6": 688,
+      "7": 64
+    },
+    "max_safe": 7,
+    "min_maximal": 5,
+    "all_maximal_same_size": false
+  },
+  "saturation_construction": {
+    "3": {
+      "n": 3,
+      "constructions": [
+        {
+          "seed": [],
+          "saturated_sizes": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              3,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              8
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              6
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0
+          ],
+          "saturated_sizes": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              3,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              8
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              6
+            ]
+          ]
+        },
+        {
+          "seed": [
+            4
+          ],
+          "saturated_sizes": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "examples": [
+            [
+              4,
+              0,
+              1,
+              2,
+              6
+            ],
+            [
+              4,
+              0,
+              1,
+              2,
+              7
+            ],
+            [
+              4,
+              0,
+              1,
+              2,
+              8
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0,
+            8
+          ],
+          "saturated_sizes": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "examples": [
+            [
+              0,
+              8,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              8,
+              1,
+              2,
+              4
+            ],
+            [
+              0,
+              8,
+              1,
+              3,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    "4": {
+      "n": 4,
+      "constructions": [
+        {
+          "seed": [],
+          "saturated_sizes": [
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              4,
+              9,
+              12
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              9,
+              15
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              10,
+              15
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0
+          ],
+          "saturated_sizes": [
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              4,
+              9,
+              12
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              9,
+              15
+            ],
+            [
+              0,
+              1,
+              2,
+              4,
+              10,
+              15
+            ]
+          ]
+        },
+        {
+          "seed": [
+            10
+          ],
+          "saturated_sizes": [
+            6,
+            6,
+            5,
+            5,
+            6
+          ],
+          "examples": [
+            [
+              10,
+              0,
+              1,
+              2,
+              4,
+              15
+            ],
+            [
+              10,
+              0,
+              1,
+              2,
+              5,
+              14
+            ],
+            [
+              10,
+              0,
+              1,
+              2,
+              7
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0,
+            15
+          ],
+          "saturated_sizes": [
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "examples": [
+            [
+              0,
+              15,
+              1,
+              2,
+              4,
+              9
+            ],
+            [
+              0,
+              15,
+              1,
+              2,
+              4,
+              10
+            ],
+            [
+              0,
+              15,
+              1,
+              2,
+              5,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    "5": {
+      "n": 5,
+      "constructions": [
+        {
+          "seed": [],
+          "saturated_sizes": [
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              11,
+              22
+            ],
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              12,
+              14
+            ],
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              12,
+              18
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0
+          ],
+          "saturated_sizes": [
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "examples": [
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              11,
+              22
+            ],
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              12,
+              14
+            ],
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              12,
+              18
+            ]
+          ]
+        },
+        {
+          "seed": [
+            12
+          ],
+          "saturated_sizes": [
+            7,
+            7,
+            7,
+            7,
+            8
+          ],
+          "examples": [
+            [
+              12,
+              0,
+              1,
+              2,
+              5,
+              9,
+              14
+            ],
+            [
+              12,
+              0,
+              1,
+              2,
+              5,
+              9,
+              18
+            ],
+            [
+              12,
+              0,
+              1,
+              2,
+              5,
+              9,
+              22
+            ]
+          ]
+        },
+        {
+          "seed": [
+            0,
+            24
+          ],
+          "saturated_sizes": [
+            7,
+            8,
+            8,
+            7,
+            7
+          ],
+          "examples": [
+            [
+              0,
+              24,
+              1,
+              2,
+              5,
+              11,
+              15
+            ],
+            [
+              0,
+              24,
+              1,
+              2,
+              5,
+              11,
+              18,
+              21
+            ],
+            [
+              0,
+              24,
+              1,
+              2,
+              5,
+              11,
+              21,
+              18
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

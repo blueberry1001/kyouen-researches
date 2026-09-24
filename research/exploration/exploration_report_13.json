@@ -1,0 +1,204 @@
+{
+  "odd_repr": [
+    {
+      "N": 2,
+      "odd_repr": 4,
+      "m": 1,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 10,
+      "odd_repr": 8,
+      "m": 5,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 50,
+      "odd_repr": 12,
+      "m": 25,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 130,
+      "odd_repr": 16,
+      "m": 65,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 650,
+      "odd_repr": 24,
+      "m": 325,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 850,
+      "odd_repr": 24,
+      "m": 425,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 1250,
+      "odd_repr": 20,
+      "m": 625,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 2210,
+      "odd_repr": 32,
+      "m": 1105,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    },
+    {
+      "N": 3250,
+      "odd_repr": 32,
+      "m": 1625,
+      "m_mod_4": 1,
+      "note": "N=2·m with primes 1 mod 4 in m"
+    }
+  ],
+  "compression": [
+    {
+      "n": 1,
+      "nodes": 2,
+      "raw_bytes": 72,
+      "zst_bytes": 49,
+      "bytes_per_node": 36.0,
+      "zst_ratio": 0.6805555555555556
+    },
+    {
+      "n": 2,
+      "nodes": 5,
+      "raw_bytes": 120,
+      "zst_bytes": 68,
+      "bytes_per_node": 24.0,
+      "zst_ratio": 0.5666666666666667
+    },
+    {
+      "n": 3,
+      "nodes": 28,
+      "raw_bytes": 488,
+      "zst_bytes": 151,
+      "bytes_per_node": 17.428571428571427,
+      "zst_ratio": 0.3094262295081967
+    },
+    {
+      "n": 4,
+      "nodes": 135,
+      "raw_bytes": 2200,
+      "zst_bytes": 514,
+      "bytes_per_node": 16.296296296296298,
+      "zst_ratio": 0.23363636363636364
+    },
+    {
+      "n": 5,
+      "nodes": 1217,
+      "raw_bytes": 19512,
+      "zst_bytes": 4480,
+      "bytes_per_node": 16.032867707477404,
+      "zst_ratio": 0.22960229602296023
+    },
+    {
+      "n": 6,
+      "nodes": 21712,
+      "raw_bytes": 347432,
+      "zst_bytes": 81715,
+      "bytes_per_node": 16.001842299189388,
+      "zst_ratio": 0.23519710331805938
+    },
+    {
+      "n": 7,
+      "nodes": 393550,
+      "raw_bytes": 6296840,
+      "zst_bytes": 1517374,
+      "bytes_per_node": 16.00010163892771,
+      "zst_ratio": 0.24097388531390349
+    },
+    {
+      "n": 8,
+      "nodes": 8744406,
+      "raw_bytes": 139910536,
+      "zst_bytes": 33069195,
+      "bytes_per_node": 16.00000457435302,
+      "zst_ratio": 0.23635957623663167
+    },
+    {
+      "n": 9,
+      "nodes": 13457134,
+      "raw_bytes": 215314184,
+      "zst_bytes": 62027637,
+      "bytes_per_node": 16.000002972401106,
+      "zst_ratio": 0.28807966037202637
+    }
+  ],
+  "circle_max": {
+    "measured_n2_to_n31": {
+      "2": 4,
+      "3": 4,
+      "4": 8,
+      "5": 8,
+      "6": 8,
+      "7": 8,
+      "8": 12,
+      "9": 12,
+      "10": 12,
+      "11": 12,
+      "12": 16,
+      "13": 16,
+      "14": 16,
+      "15": 16,
+      "16": 16,
+      "17": 16,
+      "18": 16,
+      "19": 16,
+      "20": 16,
+      "21": 16,
+      "22": 16,
+      "23": 16,
+      "24": 16,
+      "25": 20,
+      "26": 24,
+      "27": 24,
+      "28": 24,
+      "29": 24,
+      "30": 24,
+      "31": 24
+    },
+    "plateaus": "16 for 12<=n<=24 (13 consecutive), 24 for 26<=n<=31",
+    "witness_N": {
+      "2": 2,
+      "4": 10,
+      "8": 50,
+      "12": 130,
+      "25": 650,
+      "26": 650
+    },
+    "rejected_formula": "4(floor(n/4)+1) fails at n=16",
+    "mechanism": "odd representations of N=a^2+b^2 times embedding |a|,|b| <= 2n-1"
+  },
+  "grundy": {
+    "empty_g": {
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 1,
+      "6": 1
+    },
+    "max_nimber": {
+      "2": 1,
+      "3": 1,
+      "4": 5,
+      "5": 6,
+      "6": 8
+    },
+    "interpretation": "g=0 iff second win. n=2,3 only nimbers {0,1}. n=5 losing first moves all have g=3.",
+    "open": "empty g for n=7,8,9 (expect 0 for 7,8 and 1 for 9)"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "n5_size5_reach": {
+    "size5_sets": [
+      {
+        "ids": [
+          2,
+          6,
+          7,
+          8,
+          22
+        ],
+        "xy": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "winning_cells_inside": [
+          2,
+          6,
+          8,
+          22
+        ],
+        "losing_cells_inside": [
+          7
+        ],
+        "contains_a_winning_first_move": true
+      },
+      {
+        "ids": [
+          2,
+          16,
+          17,
+          18,
+          22
+        ],
+        "xy": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "winning_cells_inside": [
+          2,
+          16,
+          18,
+          22
+        ],
+        "losing_cells_inside": [
+          17
+        ],
+        "contains_a_winning_first_move": true
+      },
+      {
+        "ids": [
+          6,
+          10,
+          11,
+          14,
+          16
+        ],
+        "xy": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "winning_cells_inside": [
+          6,
+          10,
+          14,
+          16
+        ],
+        "losing_cells_inside": [
+          11
+        ],
+        "contains_a_winning_first_move": true
+      },
+      {
+        "ids": [
+          8,
+          10,
+          13,
+          14,
+          18
+        ],
+        "xy": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "winning_cells_inside": [
+          8,
+          10,
+          14,
+          18
+        ],
+        "losing_cells_inside": [
+          13
+        ],
+        "contains_a_winning_first_move": true
+      }
+    ],
+    "all_size5_contain_winning_cell": true,
+    "interpretation": "5-stone maximals always include at least one winning first-move cell. They can appear as terminals after a losing first move (which lands on a losing cell), not after a winning first move under perfect play."
+  },
+  "collinear_share": {
+    "rows": [
+      {
+        "n": 4,
+        "collinear": 10,
+        "forbidden": 194,
+        "share": 0.05154639175257732
+      },
+      {
+        "n": 5,
+        "collinear": 64,
+        "forbidden": 826,
+        "share": 0.0774818401937046
+      },
+      {
+        "n": 6,
+        "collinear": 234,
+        "forbidden": 2491,
+        "share": 0.09393817743877961
+      },
+      {
+        "n": 7,
+        "collinear": 660,
+        "forbidden": 6364,
+        "share": 0.10370835952231301
+      },
+      {
+        "n": 8,
+        "collinear": 1524,
+        "forbidden": 14564,
+        "share": 0.10464158198297172
+      },
+      {
+        "n": 9,
+        "collinear": 3156,
+        "forbidden": 29152,
+        "share": 0.10826015367727772
+      },
+      {
+        "n": 10,
+        "collinear": 5928,
+        "forbidden": 54441,
+        "share": 0.10888852151870833
+      }
+    ],
+    "note": "share rises 0.05→0.11 and flattens; limit ~0.11–0.13 unknown"
+  }
+}

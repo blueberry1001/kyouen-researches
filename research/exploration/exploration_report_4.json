@@ -1,0 +1,418 @@
+{
+  "max_circle": {
+    "2": {
+      "n": 2,
+      "max_points": 4,
+      "witness": {
+        "center_x2": 1,
+        "center_y2": 1,
+        "r2_x4": 2,
+        "count": 4,
+        "repr_of_r2x4": 4
+      }
+    },
+    "3": {
+      "n": 3,
+      "max_points": 4,
+      "witness": {
+        "center_x2": 1,
+        "center_y2": 1,
+        "r2_x4": 2,
+        "count": 4,
+        "repr_of_r2x4": 4
+      }
+    },
+    "4": {
+      "n": 4,
+      "max_points": 8,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr_of_r2x4": 16
+      }
+    },
+    "5": {
+      "n": 5,
+      "max_points": 8,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr_of_r2x4": 16
+      }
+    },
+    "6": {
+      "n": 6,
+      "max_points": 8,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr_of_r2x4": 16
+      }
+    },
+    "7": {
+      "n": 7,
+      "max_points": 8,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr_of_r2x4": 16
+      }
+    },
+    "8": {
+      "n": 8,
+      "max_points": 12,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr_of_r2x4": 20
+      }
+    },
+    "9": {
+      "n": 9,
+      "max_points": 12,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr_of_r2x4": 20
+      }
+    },
+    "10": {
+      "n": 10,
+      "max_points": 12,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr_of_r2x4": 20
+      }
+    },
+    "11": {
+      "n": 11,
+      "max_points": 12,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr_of_r2x4": 20
+      }
+    },
+    "12": {
+      "n": 12,
+      "max_points": 16,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr_of_r2x4": 32
+      }
+    }
+  },
+  "two_square_top": [
+    [
+      64,
+      3145
+    ],
+    [
+      64,
+      2665
+    ],
+    [
+      64,
+      2465
+    ],
+    [
+      64,
+      2405
+    ],
+    [
+      64,
+      2210
+    ],
+    [
+      64,
+      2125
+    ],
+    [
+      64,
+      1885
+    ],
+    [
+      64,
+      1625
+    ],
+    [
+      64,
+      1105
+    ],
+    [
+      48,
+      3125
+    ],
+    [
+      48,
+      3050
+    ],
+    [
+      48,
+      2925
+    ],
+    [
+      48,
+      2900
+    ],
+    [
+      48,
+      2890
+    ],
+    [
+      48,
+      2873
+    ],
+    [
+      48,
+      2825
+    ],
+    [
+      48,
+      2725
+    ],
+    [
+      48,
+      2650
+    ],
+    [
+      48,
+      2600
+    ],
+    [
+      48,
+      2525
+    ]
+  ],
+  "collinear_by_slope": {
+    "3": {
+      "n": 3,
+      "collinear_quads": 0,
+      "by_slope": {}
+    },
+    "4": {
+      "n": 4,
+      "collinear_quads": 10,
+      "by_slope": {
+        "(0, 1)": 4,
+        "(1, -1)": 1,
+        "(1, 0)": 4,
+        "(1, 1)": 1
+      }
+    },
+    "5": {
+      "n": 5,
+      "collinear_quads": 64,
+      "by_slope": {
+        "(0, 1)": 25,
+        "(1, -1)": 7,
+        "(1, 0)": 25,
+        "(1, 1)": 7
+      }
+    },
+    "6": {
+      "n": 6,
+      "collinear_quads": 234,
+      "by_slope": {
+        "(0, 1)": 90,
+        "(1, -1)": 27,
+        "(1, 0)": 90,
+        "(1, 1)": 27
+      }
+    },
+    "7": {
+      "n": 7,
+      "collinear_quads": 660,
+      "by_slope": {
+        "(0, 1)": 245,
+        "(1, -2)": 4,
+        "(1, -1)": 77,
+        "(1, 0)": 245,
+        "(1, 1)": 77,
+        "(1, 2)": 4,
+        "(2, -1)": 4,
+        "(2, 1)": 4
+      }
+    },
+    "8": {
+      "n": 8,
+      "collinear_quads": 1524,
+      "by_slope": {
+        "(0, 1)": 560,
+        "(1, -2)": 10,
+        "(1, -1)": 182,
+        "(1, 0)": 560,
+        "(1, 1)": 182,
+        "(1, 2)": 10,
+        "(2, -1)": 10,
+        "(2, 1)": 10
+      }
+    }
+  },
+  "cert_structure": [
+    {
+      "n": 1,
+      "nodes": 2,
+      "loss": 1,
+      "win": 1,
+      "loss_fraction": 0.5,
+      "loss_win_ratio": 1.0,
+      "bytes_per_node_raw": 36,
+      "raw_bytes": 72,
+      "bytes_per_node": 36.0
+    },
+    {
+      "n": 2,
+      "nodes": 5,
+      "loss": 2,
+      "win": 3,
+      "loss_fraction": 0.4,
+      "loss_win_ratio": 0.6666666666666666,
+      "bytes_per_node_raw": 24,
+      "raw_bytes": 120,
+      "bytes_per_node": 24.0
+    },
+    {
+      "n": 3,
+      "nodes": 28,
+      "loss": 10,
+      "win": 18,
+      "loss_fraction": 0.35714285714285715,
+      "loss_win_ratio": 0.5555555555555556,
+      "bytes_per_node_raw": 17.4,
+      "raw_bytes": 488,
+      "bytes_per_node": 17.428571428571427
+    },
+    {
+      "n": 4,
+      "nodes": 135,
+      "loss": 47,
+      "win": 88,
+      "loss_fraction": 0.34814814814814815,
+      "loss_win_ratio": 0.5340909090909091,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 2200,
+      "bytes_per_node": 16.296296296296298
+    },
+    {
+      "n": 5,
+      "nodes": 1217,
+      "loss": 449,
+      "win": 768,
+      "loss_fraction": 0.3689400164338537,
+      "loss_win_ratio": 0.5846354166666666,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 19512,
+      "bytes_per_node": 16.032867707477404
+    },
+    {
+      "n": 6,
+      "nodes": 21712,
+      "loss": 7625,
+      "win": 14087,
+      "loss_fraction": 0.3511882829771555,
+      "loss_win_ratio": 0.5412791935827359,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 347432,
+      "bytes_per_node": 16.001842299189388
+    },
+    {
+      "n": 7,
+      "nodes": 393550,
+      "loss": 139217,
+      "win": 254333,
+      "loss_fraction": 0.35374666497268453,
+      "loss_win_ratio": 0.5473807960429831,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 6296840,
+      "bytes_per_node": 16.00010163892771
+    },
+    {
+      "n": 8,
+      "nodes": 8744406,
+      "loss": 2991713,
+      "win": 5752693,
+      "loss_fraction": 0.3421287849626378,
+      "loss_win_ratio": 0.5200543467207446,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 139910536,
+      "bytes_per_node": 16.00000457435302
+    },
+    {
+      "n": 9,
+      "nodes": 13457134,
+      "loss": 4630676,
+      "win": 8826458,
+      "loss_fraction": 0.34410566172559476,
+      "loss_win_ratio": 0.5246358165415844,
+      "bytes_per_node_raw": null,
+      "raw_bytes": 215314184,
+      "bytes_per_node": 16.000002972401106
+    }
+  ],
+  "K_and_winner": {
+    "K_n": {
+      "1": 1,
+      "2": 3,
+      "3": 5,
+      "4": 7,
+      "5": 9,
+      "6": 11,
+      "7": 14,
+      "8": 15,
+      "9": 17
+    },
+    "winner": {
+      "1": "F",
+      "2": "F",
+      "3": "F",
+      "4": "S",
+      "5": "F",
+      "6": "F",
+      "7": "S",
+      "8": "S",
+      "9": "F"
+    },
+    "K_odd": {
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": false,
+      "8": true,
+      "9": true
+    },
+    "F_iff_K_odd_in_data": false,
+    "n_max_sets": {
+      "1": 1,
+      "2": 4,
+      "3": 56,
+      "4": 928,
+      "5": 100,
+      "6": 464,
+      "7": 16
+    }
+  }
+}

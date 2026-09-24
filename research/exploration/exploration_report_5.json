@@ -1,0 +1,313 @@
+{
+  "max_circle_formula": [
+    {
+      "n": 2,
+      "max_points": 4,
+      "formula_4_floor_n4_plus_1": 4,
+      "match": true,
+      "witness": {
+        "center_x2": 1,
+        "center_y2": 1,
+        "r2_x4": 2,
+        "count": 4,
+        "repr": 4,
+        "repr_odd": 4
+      }
+    },
+    {
+      "n": 3,
+      "max_points": 4,
+      "formula_4_floor_n4_plus_1": 4,
+      "match": true,
+      "witness": {
+        "center_x2": 1,
+        "center_y2": 1,
+        "r2_x4": 2,
+        "count": 4,
+        "repr": 4,
+        "repr_odd": 4
+      }
+    },
+    {
+      "n": 4,
+      "max_points": 8,
+      "formula_4_floor_n4_plus_1": 8,
+      "match": true,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr": 16,
+        "repr_odd": 8
+      }
+    },
+    {
+      "n": 5,
+      "max_points": 8,
+      "formula_4_floor_n4_plus_1": 8,
+      "match": true,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr": 16,
+        "repr_odd": 8
+      }
+    },
+    {
+      "n": 6,
+      "max_points": 8,
+      "formula_4_floor_n4_plus_1": 8,
+      "match": true,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr": 16,
+        "repr_odd": 8
+      }
+    },
+    {
+      "n": 7,
+      "max_points": 8,
+      "formula_4_floor_n4_plus_1": 8,
+      "match": true,
+      "witness": {
+        "center_x2": 3,
+        "center_y2": 3,
+        "r2_x4": 10,
+        "count": 8,
+        "repr": 16,
+        "repr_odd": 8
+      }
+    },
+    {
+      "n": 8,
+      "max_points": 12,
+      "formula_4_floor_n4_plus_1": 12,
+      "match": true,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr": 20,
+        "repr_odd": 12
+      }
+    },
+    {
+      "n": 9,
+      "max_points": 12,
+      "formula_4_floor_n4_plus_1": 12,
+      "match": true,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr": 20,
+        "repr_odd": 12
+      }
+    },
+    {
+      "n": 10,
+      "max_points": 12,
+      "formula_4_floor_n4_plus_1": 12,
+      "match": true,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr": 20,
+        "repr_odd": 12
+      }
+    },
+    {
+      "n": 11,
+      "max_points": 12,
+      "formula_4_floor_n4_plus_1": 12,
+      "match": true,
+      "witness": {
+        "center_x2": 7,
+        "center_y2": 7,
+        "r2_x4": 50,
+        "count": 12,
+        "repr": 20,
+        "repr_odd": 12
+      }
+    },
+    {
+      "n": 12,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 16,
+      "match": true,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 13,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 16,
+      "match": true,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 14,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 16,
+      "match": true,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 15,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 16,
+      "match": true,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 16,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 20,
+      "match": false,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 17,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 20,
+      "match": false,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 18,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 20,
+      "match": false,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 19,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 20,
+      "match": false,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    },
+    {
+      "n": 20,
+      "max_points": 16,
+      "formula_4_floor_n4_plus_1": 24,
+      "match": false,
+      "witness": {
+        "center_x2": 11,
+        "center_y2": 11,
+        "r2_x4": 130,
+        "count": 16,
+        "repr": 32,
+        "repr_odd": 16
+      }
+    }
+  ],
+  "formula_holds_2_to_20": false,
+  "collinear_formula_note": "axis+diagonal complete for n<=6; slope 2 family starts at n=7",
+  "cert_parsers": [
+    "adversarial_brief_analysis.py",
+    "analyze_8x8_structure.py",
+    "build_corridor_certificate.py",
+    "cert_parity_check.py",
+    "cycle34_occupancy_lattice_certificate.py",
+    "cycle35_phase_lift_contrast.py",
+    "cycle40b_residual_joint_lemmas.py",
+    "cycle8_exists_k.py",
+    "exact_structure_cycle4.py",
+    "verify_parity_law.py",
+    "scripts\\analyze_holdout_excluding_selection_witnesses.py",
+    "scripts\\audit_and_sensitivity_exhaustive.py",
+    "scripts\\audit_bucket_order_source_diff.py",
+    "scripts\\compare_preknown_new_win_memo.py",
+    "scripts\\prepare_cache_aware_bucket_order_implementation.py",
+    "scripts\\run_ab_staged_v3.py",
+    "scripts\\run_below_root_instrumentation.py",
+    "scripts\\run_bucket_order_timing.py",
+    "scripts\\run_cache_aware_confirm_v2.py",
+    "scripts\\run_capacity_rerun.py",
+    "scripts\\select_10x10_fresh_parent_holdout_v2.py",
+    "scripts\\verify_nohit_fastpath_parity.py",
+    "scripts\\analysis\\cert_loss_ratio.py",
+    "scripts\\analysis\\cert_stats.py",
+    "scripts\\analysis\\cert_terminal.py",
+    "scripts\\analysis\\explore_circle_formula_and_collinear.py",
+    "scripts\\analysis\\explore_circle_number_theory.py"
+  ],
+  "probe_kyouen-3x3.cert": {
+    "size_bytes": 488,
+    "magic": "KYOENC3\u0000"
+  },
+  "probe_kyouen-4x4.cert": {
+    "size_bytes": 2200,
+    "magic": "KYOENC3\u0000"
+  },
+  "probe_kyouen-5x5.cert": {
+    "size_bytes": 19512,
+    "magic": "KYOENC3\u0000"
+  }
+}
