@@ -1,0 +1,283 @@
+{
+  "prereg": "docs/10X10_F_E_R_EXTERNAL_HOLDOUT_PREREG.md",
+  "seed": "kyouen-10x10-f-e-r-external-holdout-seed-20260922",
+  "baseline_commit": "224f0dae89f95bfafa20290e872d96b9567dc6d7",
+  "r_points": [
+    2,
+    13,
+    61,
+    66,
+    69,
+    73,
+    90,
+    91
+  ],
+  "excluded_canonical_keys": 24072,
+  "clean_universe_size": 460321,
+  "sigma_tertiles": {
+    "q33": 8538,
+    "q67": 8974
+  },
+  "stratum_universe_sizes": {
+    "low": 152253,
+    "middle": 156211,
+    "high": 151857
+  },
+  "per_stratum_sample": 12,
+  "sample_size": 36,
+  "labels_used_for_sampling": false,
+  "sample": [
+    {
+      "index": 1,
+      "stratum": "low",
+      "canonical_key": "2,4,27,88",
+      "sigma_d": 8463,
+      "hash": "0000f99c5e1f8fd0cbad8cd46051cb9443066ed2f1fb40f80f769203f0990cc2"
+    },
+    {
+      "index": 2,
+      "stratum": "low",
+      "canonical_key": "0,2,58,60",
+      "sigma_d": 7823,
+      "hash": "00017ebca8bc48203407c711b49af7ff51086975198edf07abb8cbfaf7a29536"
+    },
+    {
+      "index": 3,
+      "stratum": "low",
+      "canonical_key": "0,1,12,65",
+      "sigma_d": 7834,
+      "hash": "0001c6a048fa905bb8be01f535aae7b1ecf0f039404c6c0ea89ec92f2b5f5743"
+    },
+    {
+      "index": 4,
+      "stratum": "low",
+      "canonical_key": "1,6,69,79",
+      "sigma_d": 7817,
+      "hash": "0001f30db5c1f98621f75e01c4037693358d434e650e443b78a378bd41197289"
+    },
+    {
+      "index": 5,
+      "stratum": "low",
+      "canonical_key": "1,50,52,68",
+      "sigma_d": 8528,
+      "hash": "000202fb76c9820c68f5296a20971ec921bab5bd13c14ec7704ed2d5a85b1e5d"
+    },
+    {
+      "index": 6,
+      "stratum": "low",
+      "canonical_key": "1,2,8,55",
+      "sigma_d": 7788,
+      "hash": "000207252888668110005e38b6491cabb3a34b58a8fbd57bee6f95984f1aed0d"
+    },
+    {
+      "index": 7,
+      "stratum": "low",
+      "canonical_key": "1,58,64,88",
+      "sigma_d": 8501,
+      "hash": "0002376f2440a34f9f2afb9860027e8fdc9c593be3b1baf098fdf53a9c8b0bdc"
+    },
+    {
+      "index": 8,
+      "stratum": "low",
+      "canonical_key": "0,3,85,88",
+      "sigma_d": 7957,
+      "hash": "00034cf74eb24b346dca2aa17f9b16ab0ce177df8dbf100a8fa9cf484301ee50"
+    },
+    {
+      "index": 9,
+      "stratum": "low",
+      "canonical_key": "0,18,57,92",
+      "sigma_d": 7862,
+      "hash": "00036705e2b630d2d02e1fd4bfb73a8f2d46c937f26fd098ae3ca5e8b384895b"
+    },
+    {
+      "index": 10,
+      "stratum": "low",
+      "canonical_key": "0,2,8,44",
+      "sigma_d": 7573,
+      "hash": "000382d213c464908919d8c890314e076a88891675ed2f168d4d935e58810e0e"
+    },
+    {
+      "index": 11,
+      "stratum": "low",
+      "canonical_key": "2,7,12,39",
+      "sigma_d": 8114,
+      "hash": "0003b3cf23dbb00519c42facafb92125938c80f70ba61952863ec1a48898d92a"
+    },
+    {
+      "index": 12,
+      "stratum": "low",
+      "canonical_key": "0,1,84,89",
+      "sigma_d": 7276,
+      "hash": "0003be78b8099afa477b30447a37aa0c72a141c3f5bf813b870d269fe09815d4"
+    },
+    {
+      "index": 13,
+      "stratum": "middle",
+      "canonical_key": "1,36,48,77",
+      "sigma_d": 8855,
+      "hash": "00001cc72d4a948dd46bb2d592a684cf7f25e67054705a4f64e9c0bb6d6ef4fb"
+    },
+    {
+      "index": 14,
+      "stratum": "middle",
+      "canonical_key": "3,31,77,78",
+      "sigma_d": 8874,
+      "hash": "00005cb7264529a3b0574956b1bad41d902b6ed16784ae576b714d38c2cfa529"
+    },
+    {
+      "index": 15,
+      "stratum": "middle",
+      "canonical_key": "1,13,45,64",
+      "sigma_d": 8829,
+      "hash": "00009e1cb2b50dc770b7ce254b047ae4ce77c2306398816cdb2a75183f6cf9a8"
+    },
+    {
+      "index": 16,
+      "stratum": "middle",
+      "canonical_key": "1,38,42,43",
+      "sigma_d": 8787,
+      "hash": "0000d3ae9313483f039e2df3592547982ade399e9734e1eb1bfd6f47178baeb3"
+    },
+    {
+      "index": 17,
+      "stratum": "middle",
+      "canonical_key": "2,49,56,62",
+      "sigma_d": 8881,
+      "hash": "00015b0ec61a0eed118879863dd97e7bab3969ef06595ab3fb77de7f6732bdfc"
+    },
+    {
+      "index": 18,
+      "stratum": "middle",
+      "canonical_key": "1,32,65,76",
+      "sigma_d": 8929,
+      "hash": "0001ba9819fe983ddb9af74cc30b4c0a1fc15195b0e286c4bc8db4a014ee4c1c"
+    },
+    {
+      "index": 19,
+      "stratum": "middle",
+      "canonical_key": "2,28,39,43",
+      "sigma_d": 8596,
+      "hash": "000204d02bbdcda0bf5bf845db6325dddf01b1d4c70b42388e0e5fe2826b40e8"
+    },
+    {
+      "index": 20,
+      "stratum": "middle",
+      "canonical_key": "2,4,45,54",
+      "sigma_d": 8879,
+      "hash": "00023363cfca7142f944902610f70578e92515eda079db4143ff44cc27dd3587"
+    },
+    {
+      "index": 21,
+      "stratum": "middle",
+      "canonical_key": "0,16,46,75",
+      "sigma_d": 8572,
+      "hash": "0002721c5b8d7f8571003fd3eac42f7b6600c8fe5cd6bee8c5647513449b22fa"
+    },
+    {
+      "index": 22,
+      "stratum": "middle",
+      "canonical_key": "1,26,32,71",
+      "sigma_d": 8700,
+      "hash": "0002af8892c1ab0a5d48f2e54de4c17414fadfb55d3589f308f984f4b81b2aaa"
+    },
+    {
+      "index": 23,
+      "stratum": "middle",
+      "canonical_key": "2,26,31,42",
+      "sigma_d": 8970,
+      "hash": "000321b981a9e99b037ff2b640068cea5812f3bf8668ce3fa3739168f99c70ec"
+    },
+    {
+      "index": 24,
+      "stratum": "middle",
+      "canonical_key": "2,3,4,56",
+      "sigma_d": 8566,
+      "hash": "0003361d99a287d610b76e7ac315dc1a04dfddfd7e5c153eda758b6b03f338c9"
+    },
+    {
+      "index": 25,
+      "stratum": "high",
+      "canonical_key": "12,25,38,74",
+      "sigma_d": 9187,
+      "hash": "00002056528d5c7699a9ae385c6485bdb6d5032f3de1c7e0843dd86a38b4766d"
+    },
+    {
+      "index": 26,
+      "stratum": "high",
+      "canonical_key": "12,15,52,74",
+      "sigma_d": 9199,
+      "hash": "00007a54e3e86f40c8854e0cc6605e66ee08d8a6f141dae82dbd39a96ad5e03d"
+    },
+    {
+      "index": 27,
+      "stratum": "high",
+      "canonical_key": "22,26,44,73",
+      "sigma_d": 9516,
+      "hash": "0000caec8d2a259b59dfa51ca218e90cf7dcc36bb779228e26c209ecbdeeaf62"
+    },
+    {
+      "index": 28,
+      "stratum": "high",
+      "canonical_key": "3,34,62,84",
+      "sigma_d": 9185,
+      "hash": "0000d3aa06fb291299b975cb677a3c72973194fe4b9f8ff2b69a2c741784a730"
+    },
+    {
+      "index": 29,
+      "stratum": "high",
+      "canonical_key": "4,54,61,66",
+      "sigma_d": 9339,
+      "hash": "000107b473fe6c0fe0f46311694a26784caca3ed1366bf3bf07e483d63402b80"
+    },
+    {
+      "index": 30,
+      "stratum": "high",
+      "canonical_key": "3,41,47,85",
+      "sigma_d": 9041,
+      "hash": "00016ddb78d49df604ccc5a5e50d8d7d7e9e30039578dfb7f6092ec365a36378"
+    },
+    {
+      "index": 31,
+      "stratum": "high",
+      "canonical_key": "4,31,56,83",
+      "sigma_d": 9137,
+      "hash": "00017e81520672ed1630963ea37fe5dbe2f8cc5c805a379ba9acce8076d68ee5"
+    },
+    {
+      "index": 32,
+      "stratum": "high",
+      "canonical_key": "13,41,43,75",
+      "sigma_d": 9358,
+      "hash": "0001a7d29e7e3a07e706b409db053ec20b585df4351e805edf318eccec9184c2"
+    },
+    {
+      "index": 33,
+      "stratum": "high",
+      "canonical_key": "3,23,33,46",
+      "sigma_d": 9383,
+      "hash": "00022a04b2e4eb91a6659ee7062e584d4004d8f17c84067fd8f39c6cc947e99f"
+    },
+    {
+      "index": 34,
+      "stratum": "high",
+      "canonical_key": "4,44,45,46",
+      "sigma_d": 9361,
+      "hash": "00037f6dcf978c1e61279a5b6947c7d587689cdb63b10bf6f76dbfbdd1055cae"
+    },
+    {
+      "index": 35,
+      "stratum": "high",
+      "canonical_key": "3,36,53,95",
+      "sigma_d": 9138,
+      "hash": "00038285b078bbc2a7ef4c9c28cf7932d33aec62a2054065bc0fc98143712334"
+    },
+    {
+      "index": 36,
+      "stratum": "high",
+      "canonical_key": "3,44,66,77",
+      "sigma_d": 9305,
+      "hash": "0003e27077ded4556d6a73333507972999dd3e89748b3a4a359ddcaff1e9594d"
+    }
+  ]
+}
