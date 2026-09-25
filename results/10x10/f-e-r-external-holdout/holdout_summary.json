@@ -1,0 +1,64 @@
+{
+  "prereg": "docs/10X10_F_E_R_EXTERNAL_HOLDOUT_PREREG.md",
+  "decision": "reversal_supported_outside_R",
+  "decision_reasons": [
+    "AUC>0.5 and P(LOSS|high)>=P(LOSS|low) and mean(LOSS)>mean(WIN)"
+  ],
+  "n_total": 36,
+  "n_exact": 36,
+  "n_loss": 10,
+  "n_win": 26,
+  "n_nonexact": 0,
+  "sigma_d": {
+    "loss_mean": 9118.1,
+    "loss_median": 9161.5,
+    "loss_min": 8700.0,
+    "loss_max": 9516.0,
+    "win_mean": 8497.76923076923,
+    "win_median": 8569.0,
+    "win_min": 7276.0,
+    "win_max": 9383.0,
+    "mean_diff_loss_minus_win": 620.3307692307699
+  },
+  "auc": 0.8115384615384615,
+  "rank_biserial": 0.6230769230769231,
+  "p_loss_by_stratum": {
+    "low": {
+      "p": 0.0,
+      "loss": 0,
+      "n": 12
+    },
+    "middle": {
+      "p": 0.3333333333333333,
+      "loss": 4,
+      "n": 12
+    },
+    "high": {
+      "p": 0.5,
+      "loss": 6,
+      "n": 12
+    }
+  },
+  "p_loss_high_minus_low": 0.5,
+  "exact_random_label_upper_tail_on_loss_sum": {
+    "p": 0.0008535453147113162,
+    "tail": 216960,
+    "denom": 254186856
+  },
+  "r_internal_reference": {
+    "loss_n": 12,
+    "win_n": 58,
+    "loss_mean_sigma": 8732.833333333334,
+    "win_mean_sigma": 8285.275862068966,
+    "auc": 0.7593389830508475,
+    "rank_biserial": 0.5186779661016949,
+    "hedges_g": 0.957284,
+    "direction": "LOSS has higher sigma_d"
+  },
+  "direction_vs_r_internal": "same_as_R_internal",
+  "notes": [
+    "Holdout is stratified by sigma_d; permutation p is descriptive only.",
+    "No sampling rule changes after outcomes were observed."
+  ],
+  "nonexact_states": []
+}
