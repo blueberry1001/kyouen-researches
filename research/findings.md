@@ -55,7 +55,18 @@
 - 試した反証: 2石・3石・4石の全層で同じ集計を行い、傾向の反転を確認。4石については全 `C(70,12)` ラベル配置を動的計画法で厳密集計した。ただし70状態は同じRの重なり部分集合で独立標本ではなく、R自体も選択済みなので、この p 値は「固定R内でラベルがΣdからどれだけ分離するか」の記述量であり、母集団一般化の有意性とは解釈しない。
 - 成立範囲: 10×10、R の部分集合 (バイアス注意: cache の 4石WIN は 2 個しかなく、R内CSVを使った)。
 - 確信度: 中 (R 内のみ)
-- 今後の検証方法: R 外のランダム4石で LOSS/WIN を数個ずつ解いて確認する。
+- 今後の検証方法: R 外4石は F-F で確認済み。次は R 外2–3石で序盤側の逆方向を外部検証する。
+
+## F-F: F-E の4石 Σd→LOSS 反転は R 外 holdout でも再現する (R 固有ではない)
+
+- 発見: 8石LOSSルート R の部分集合ではない、安全な4石 canonical 層から Σd 三分位 (q33=8538, q67=8974) で層化した36局面 (各層12) を PREREG 後に exact solve したところ、LOSS 10 / WIN 26 で **Σd が高いほど LOSS に寄る** 方向が再現した。AUC=0.812 (R内 0.759 より強い)、rank-biserial=+0.623、mean(Σd|LOSS)-mean(Σd|WIN)=+620 (R内 +448)。層別 LOSS 率は low=0/12, middle=4/12, high=6/12 (P(LOSS|high)-P(LOSS|low)=+0.50)。事前登録した判定 eversal_supported_outside_R に全条件一致。
+- なぜ非自明なのか: F-E は R (特定の8石LOSSルート) 内の重なり部分集合のみで見た反転だった。R は選択済みで、70個の4石は独立標本ではない。R 外・D4重複排除・既知ラベル除外・Σd層化・固定seed の confirmatory cohort でも同じ方向が出て、反転は「R の subset lattice の産物」ではない。
+- 証拠: esults/10x10/f-e-r-external-holdout/{sampling_manifest,exact_outcomes,holdout_summary}.json|csv と docs/10X10_F_E_R_EXTERNAL_HOLDOUT_{PREREG,RESULT}.md。PREREG commit 4249e73 はラベル未参照。36/36 exact、TABLE_FULL/TIMEOUT なし。
+- 再現方法: python scripts/analysis/f_e_r_external_sample.py (要 d(p) 再計算) → python scripts/analysis/f_e_r_external_solve.py (flat memo 28, fresh process) → python scripts/analysis/f_e_r_external_analyze.py
+- 試した反証: (1) R部分集合と既知 outcome-cache/CSV/git 履歴の canonical key を除外 (24,072 keys)。(2) Σd で層化したので「Σd と outcome の無関係」のランダムラベル検定は記述扱い (p=0.00085)。(3) 中間で抽样規則を変更していない。(4) 初回 solve は CSV の state カンマで parse 壊れ → 廃棄して全件再 solve (frozen 36 は不変)。
+- 成立範囲: 10×10、安全な (非終端) R外4石 canonical 36サンプル。2–3石の「低 Σd = LOSS」という序盤傾向自体は R 内のみで未外部検証。
+- 確信度: 中〜高 (PREREG済み confirmatory, n=36, 全 exact)
+- 今後の検証方法: (a) 同 seed 規則で n=120 以上の第二 cohort。(b) R外 2–3石で序盤の逆方向が成り立つか確認。(c) Σd ではなく local danger (含有する危険4点組の共有度) で説明力を比較する。
 
 ## F-Z: 円上最大格子点数 = max 4τ(m)（m の全素因数が 1 mod 4 のとき）
 
