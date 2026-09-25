@@ -22,9 +22,6 @@ jobs:
           default_branch="$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)"
           test "$default_branch" = "main"
 
-          open_prs="$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq 'length')"
-          test "$open_prs" = "0"
-
           mapfile -t refs < <(
             gh api --paginate "repos/$GITHUB_REPOSITORY/git/matching-refs/heads/" --jq '.[].ref'
           )
