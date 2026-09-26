@@ -60,13 +60,18 @@ static void search_k(int k, int time_limit_s, int max_keep){
     if(elapsed()>time_limit_s){ complete=false; return; }
     int need = k - (int)occ.size();
     if(need==0){
-      // compute blocked set
+      // compute blocked set; reject if any triple is completed inside occ (unsafe)
       bitset<PTS> blocked;
-      for(int i=0;i<(int)occ.size();i++) for(int j=i+1;j<(int)occ.size();j++) for(int l=j+1;l<(int)occ.size();l++){
+      bool safe=true;
+      for(int i=0;i<(int)occ.size() && safe;i++) for(int j=i+1;j<(int)occ.size() && safe;j++) for(int l=j+1;l<(int)occ.size() && safe;l++){
         array<int,3> t{occ[i],occ[j],occ[l]};
         auto it=triple_comp.find(t);
-        if(it!=triple_comp.end()) blocked |= it->second;
+        if(it!=triple_comp.end()){
+          blocked |= it->second;
+          for(int m=0;m<(int)occ.size();m++) if(it->second.test(occ[m])){ safe=false; break; }
+        }
       }
+      if(!safe) return;
       // all points not in occ must be blocked
       bool ok=true;
       for(int p=0;p<PTS;p++) if(!in[p] && !blocked[p]){ ok=false; break; }

@@ -52,11 +52,16 @@ static bool search_k(int k, int time_limit_s, vector<int>& out, long long& nodes
     if(elapsed()>time_limit_s){ complete=false; return; }
     if((int)occ.size()==k){
       bitset<128> blocked;
-      for(int i=0;i<k;i++) for(int j=i+1;j<k;j++) for(int l=j+1;l<k;l++){
+      bool safe=true;
+      for(int i=0;i<k && safe;i++) for(int j=i+1;j<k && safe;j++) for(int l=j+1;l<k && safe;l++){
         array<int,3> t{occ[i],occ[j],occ[l]};
         auto it=triple_comp.find(t);
-        if(it!=triple_comp.end()) blocked |= it->second;
+        if(it!=triple_comp.end()){
+          blocked |= it->second;
+          for(int m=0;m<k;m++) if(it->second.test(occ[m])){ safe=false; break; }
+        }
       }
+      if(!safe) return;
       bool ok=true;
       for(int p=0;p<pts;p++) if(!in[p] && !blocked[p]){ ok=false; break; }
       if(ok){ out=occ; found=true; }

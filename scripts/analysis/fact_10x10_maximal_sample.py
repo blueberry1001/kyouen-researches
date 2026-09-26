@@ -74,8 +74,26 @@ class Engine:
                     return False
         return True
 
+    def is_safe(self, occ):
+        """True iff occ contains no forbidden 4-subset."""
+        from itertools import combinations
+
+        s = list(occ)
+        if len(s) < 4:
+            return True
+        # use pair_blocks: any pair + completed two both in s
+        S = set(s)
+        for a, b in combinations(s, 2):
+            key = (a, b) if a < b else (b, a)
+            for u, v in self.pair_blocks.get(key, ()):
+                if u in S and v in S:
+                    return False
+        return True
+
     def is_maximal(self, occ):
         s = set(occ)
+        if not self.is_safe(occ):
+            return False
         for p in range(PTS):
             if p not in s and self.safe_add(s, p):
                 return False

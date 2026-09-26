@@ -80,11 +80,11 @@ commits: 155a143..HEAD # filled at delivery
 - GitHub への push / PR 作成（ユーザーの finish 指示まで）
 
 ## Tasks
-- [ ] T1: 上流成果の取り込み — acceptance: gpcc 結果がブランチに commit され、origin/main との差分が発見作業の前提として文書化される (covers: S2)
-- [ ] T2: 仕様書作成 — acceptance: この文書が `docs/compose/spec/kyouen-10x10-fact-discovery.md` に存在し status=designed (covers: S2)
-- [ ] T3: 二石 D4 軌道完全幾何 — acceptance: 軌道数・代表・Σd を含む JSON/CSV が `research/exploration/` にあり、再現スクリプトが走る (covers: S2)
-- [ ] T4: 極小極大安全配置 — acceptance: 最小サイズと代表配置が整数列挙で確定し、complete フラグ付きで保存される (covers: S2)
-- [ ] T5: 最小飽和配置 — acceptance: 合法手 0 の最小石数と 1 例以上の構造が検証可能な形式で残る (covers: S2)
-- [ ] T6: 禁止 4 点組の局所構造 — acceptance: 円サイズ・点次数分布が n=9,10 で比較可能な JSON になる (covers: S2)
-- [ ] T7: findings.md への記録 — acceptance: F-AD 以降に各発見が既存形式で入り、再現コマンドが書かれている (covers: S2)
+- [x] T1: 上流成果の取り込み — acceptance: gpcc 結果がブランチに commit され、origin/main との差分が発見作業の前提として文書化される (covers: S2)
+- [x] T2: 仕様書作成 — acceptance: この文書が `docs/compose/spec/kyouen-10x10-fact-discovery.md` に存在し status=designed (covers: S2)
+- [x] T3: 二石 D4 軌道完全幾何 — acceptance: 軌道数・代表・Σd を含む JSON/CSV が `research/exploration/` にあり、再現スクリプトが走る (covers: S2)
+- [x] T4: 極小極大安全配置 — acceptance: 最小サイズと代表配置が整数列挙で確定し、complete フラグ付きで保存される (covers: S2)
+- [x] T5: 最小飽和配置 — acceptance: 合法手 0 の最小石数と 1 例以上の構造が検証可能な形式で残る (covers: S2)
+- [x] T6: 禁止 4 点組の局所構造 — acceptance: 円サイズ・点次数分布が n=9,10 で比較可能な JSON になる (covers: S2)
+- [x] T7: findings.md への記録 — acceptance: F-AD 以降に各発見が既存形式で入り、再現コマンドが書かれている (covers: S2)
 - [ ] T8: 検証とレビュー — acceptance: 主要スクリプトを再実行して数値一致を確認し、独立レビューで critical が残らない (covers: S2)
