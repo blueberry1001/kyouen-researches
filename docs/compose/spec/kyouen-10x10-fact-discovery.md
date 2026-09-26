@@ -3,7 +3,7 @@ feature: kyouen-10x10-fact-discovery
 status: delivered
 updated: 2026-09-26
 branch: research/kyouen-fact-discovery-20260926
-commits: 155a14363d1fd50640efd17cbf4c12dc94dbfd36..1583b06d60bf4e187b3a0629be1eb075ed10a366
+commits: 155a14363d1fd50640efd17cbf4c12dc94dbfd36..08f917207e1af700eed31fcd3f31b24593066d02
 ---
 
 # 共円ゲーム 10×10 非自明事実の発見
