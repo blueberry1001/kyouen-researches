@@ -87,4 +87,4 @@ commits: 155a143..HEAD # filled at delivery
 - [x] T5: 最小飽和配置 — acceptance: 合法手 0 の最小石数と 1 例以上の構造が検証可能な形式で残る (covers: S2)
 - [x] T6: 禁止 4 点組の局所構造 — acceptance: 円サイズ・点次数分布が n=9,10 で比較可能な JSON になる (covers: S2)
 - [x] T7: findings.md への記録 — acceptance: F-AD 以降に各発見が既存形式で入り、再現コマンドが書かれている (covers: S2)
-- [ ] T8: 検証とレビュー — acceptance: 主要スクリプトを再実行して数値一致を確認し、独立レビューで critical が残らない (covers: S2)
+- [x] T8: 検証とレビュー — acceptance: 主要スクリプトを再実行して数値一致を確認し、独立レビューで critical が残らない (covers: S2)
