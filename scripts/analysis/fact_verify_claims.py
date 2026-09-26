@@ -54,8 +54,16 @@ def main() -> None:
 
     n7 = json.loads((EXP / "fact_kmin_n7_safe.json").read_text(encoding="utf-8"))
     check("K_min 7 = 7 safe witness", n7.get("found") is True and len(n7.get("set", [])) == 7)
-    t10 = json.loads((EXP / "fact_10x10_two_stone_orbits.json").read_text(encoding="utf-8"))
-    check("AK size11 still listed", True)
+    # re-validate published witnesses for safety + maximality
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
+    from fact_10x10_maximal_sample import Engine, build_forbidden
+
+    eng = Engine(build_forbidden())
+    ak = [11, 20, 23, 32, 43, 50, 59, 63, 68, 81, 98]
+    check("F-AK size11 safe", eng.is_safe(ak))
+    check("F-AK size11 maximal", eng.is_maximal(ak))
 
     failed = [n for n, ok in checks if not ok]
     print(f"TOTAL {len(checks)} checks, failed={len(failed)}")

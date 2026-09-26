@@ -1,14 +1,25 @@
 ---
 feature: kyouen-10x10-fact-discovery
-status: in-progress
+status: delivered
 updated: 2026-09-26
 branch: research/kyouen-fact-discovery-20260926
-commits: 155a143..HEAD # filled at delivery
+commits: 155a14363d1fd50640efd17cbf4c12dc94dbfd36..1583b06d60bf4e187b3a0629be1eb075ed10a366
 ---
 
 # 共円ゲーム 10×10 非自明事実の発見
 
 ## Report
+
+**What was built** — 上流（origin/main 155a143 + gpcc 9×9 center 成果）を取り込んだうえで、10×10 について再現可能な非自明な事実を `research/findings.md` の F-AD..F-BC に記録した。主な内容は (1) 二石 D4 軌道 120 個の完全幾何と Σd、(2) F-E の「二石 LOSS は Σd 最小」順位の訂正、(3) 円サイズ分布 12,170 個の完全分解と 12 点円の半径族分解（(n−7)² 則の n=11 での破綻を「別族の出現」で説明）、(4) 極小極大安全配置の K_min スペクトル（n=3..7 で 5,5,5,6,7）と 10×10 のブラケット 6..11、(5) 禁止ハイパグラフの補完数ヒストグラム（最大 9、8 欠落）と |S|−3 による説明、(6) 共線 C4 のラン長公式と n=11=10,428。
+
+**Verification** — `python scripts/analysis/fact_verify_claims.py` で 21/21 PASS（forbidden=54441、120 軌道、円族、K_min 証人の安全+極大を含む）。独立レビュー 2 回（`research/exploration/REVIEW_10X10_FACT_DISCOVERY{,_V2}.md`）。V2 で主証人 2 件を独立に safe+maximal と確認、critical なし。
+
+**Journey log** —
+(1) `git worktree add` が共有 ref ガードでブロックされたため、カレントチェックアウト上の専用ブランチで作業（Cycle 4/8 と同じ override）。
+(2) 初回レビューで `is_maximal` が集合自体の安全を見ていなかった critical を検出。サイズ 10 などの陽例を取り消し（F-AZ）。健全な列挙器で K_min(7)=7 を安全証人で復活（F-BA）。
+(3) F-AE の「中心からコーナーへ単調減少」は実測と不一致で訂正。10×10 の最大次数は完全中心ではない。
+(4) T4/T5 の「最小サイズの確定」は未達（10×10 は 6..11）。チェックボックスは未チェックのまま。
+(5) 乱贪欲の最小観測と真の K_min が乖離するため、存在主張には is_safe 必須。
 
 ## [S1] Problem
 
@@ -83,8 +94,8 @@ commits: 155a143..HEAD # filled at delivery
 - [x] T1: 上流成果の取り込み — acceptance: gpcc 結果がブランチに commit され、origin/main との差分が発見作業の前提として文書化される (covers: S2)
 - [x] T2: 仕様書作成 — acceptance: この文書が `docs/compose/spec/kyouen-10x10-fact-discovery.md` に存在し status=designed (covers: S2)
 - [x] T3: 二石 D4 軌道完全幾何 — acceptance: 軌道数・代表・Σd を含む JSON/CSV が `research/exploration/` にあり、再現スクリプトが走る (covers: S2)
-- [x] T4: 極小極大安全配置 — acceptance: 最小サイズと代表配置が整数列挙で確定し、complete フラグ付きで保存される (covers: S2)
-- [x] T5: 最小飽和配置 — acceptance: 合法手 0 の最小石数と 1 例以上の構造が検証可能な形式で残る (covers: S2)
+- [ ] T4: 極小極大安全配置 — acceptance: 最小サイズと代表配置が整数列挙で確定し、complete フラグ付きで保存される (covers: S2) — **未達**: 10×10 は 6..11 のブラケットのみ（k=4,5 は complete 非存在、k=6..10 は未完全）
+- [ ] T5: 最小飽和配置 — acceptance: 合法手 0 の最小石数と 1 例以上の構造が検証可能な形式で残る (covers: S2) — **未達**: 最小石数は未確定。安全な 11 石例と k≤5 非存在のみ
 - [x] T6: 禁止 4 点組の局所構造 — acceptance: 円サイズ・点次数分布が n=9,10 で比較可能な JSON になる (covers: S2)
 - [x] T7: findings.md への記録 — acceptance: F-AD 以降に各発見が既存形式で入り、再現コマンドが書かれている (covers: S2)
 - [x] T8: 検証とレビュー — acceptance: 主要スクリプトを再実行して数値一致を確認し、独立レビューで critical が残らない (covers: S2)
