@@ -1,6 +1,6 @@
 ---
 feature: kyouen-10x10-fact-discovery
-status: designed
+status: in-progress
 updated: 2026-09-26
 branch: research/kyouen-fact-discovery-20260926
 commits: 155a143..HEAD # filled at delivery
