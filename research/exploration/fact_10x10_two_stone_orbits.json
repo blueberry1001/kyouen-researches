@@ -1,0 +1,4784 @@
+{
+  "summary": {
+    "board": "10x10",
+    "forbidden_total": 54441,
+    "collinear_quads": 5928,
+    "concyclic_quads": 48513,
+    "collinear_by_dir": {
+      "0,1": 2100,
+      "1,-3": 7,
+      "1,-2": 64,
+      "1,-1": 714,
+      "1,0": 2100,
+      "1,1": 714,
+      "1,2": 64,
+      "1,3": 7,
+      "2,-3": 4,
+      "2,-1": 64,
+      "2,1": 64,
+      "2,3": 4,
+      "3,-2": 4,
+      "3,-1": 7,
+      "3,1": 7,
+      "3,2": 4
+    },
+    "pair_orbits": 120,
+    "point_degree_min": 1515,
+    "point_degree_max": 2499,
+    "point_degree_mean": 2177.64,
+    "point_degree_by_radius": {
+      "40.5": {
+        "n": 4,
+        "deg_mean": 1515.0,
+        "deg_min": 1515,
+        "deg_max": 1515
+      },
+      "32.5": {
+        "n": 8,
+        "deg_mean": 1730.0,
+        "deg_min": 1730,
+        "deg_max": 1730
+      },
+      "26.5": {
+        "n": 8,
+        "deg_mean": 1927.0,
+        "deg_min": 1927,
+        "deg_max": 1927
+      },
+      "22.5": {
+        "n": 8,
+        "deg_mean": 2080.0,
+        "deg_min": 2080,
+        "deg_max": 2080
+      },
+      "20.5": {
+        "n": 8,
+        "deg_mean": 2150.0,
+        "deg_min": 2150,
+        "deg_max": 2150
+      },
+      "24.5": {
+        "n": 4,
+        "deg_mean": 2061.0,
+        "deg_min": 2061,
+        "deg_max": 2061
+      },
+      "18.5": {
+        "n": 8,
+        "deg_mean": 2180.0,
+        "deg_min": 2180,
+        "deg_max": 2180
+      },
+      "14.5": {
+        "n": 8,
+        "deg_mean": 2289.0,
+        "deg_min": 2289,
+        "deg_max": 2289
+      },
+      "12.5": {
+        "n": 12,
+        "deg_mean": 2309.0,
+        "deg_min": 2301,
+        "deg_max": 2325
+      },
+      "8.5": {
+        "n": 8,
+        "deg_mean": 2395.0,
+        "deg_min": 2395,
+        "deg_max": 2395
+      },
+      "6.5": {
+        "n": 8,
+        "deg_mean": 2359.0,
+        "deg_min": 2359,
+        "deg_max": 2359
+      },
+      "4.5": {
+        "n": 4,
+        "deg_mean": 2499.0,
+        "deg_min": 2499,
+        "deg_max": 2499
+      },
+      "2.5": {
+        "n": 8,
+        "deg_mean": 2409.0,
+        "deg_min": 2409,
+        "deg_max": 2409
+      },
+      "0.5": {
+        "n": 4,
+        "deg_mean": 2401.0,
+        "deg_min": 2401,
+        "deg_max": 2401
+      }
+    },
+    "sum_d_orbit_min": 3030,
+    "sum_d_orbit_max": 4998,
+    "quads_per_pair_orbit_min": 31,
+    "quads_per_pair_orbit_max": 165
+  },
+  "orbits": [
+    {
+      "orbit_key": 1,
+      "rep": [
+        0,
+        1
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 3245,
+      "d_p": 1515,
+      "d_q": 1730,
+      "quads_containing_pair": 87,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2,
+      "rep": [
+        0,
+        2
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 3442,
+      "d_p": 1515,
+      "d_q": 1927,
+      "quads_containing_pair": 69,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 3,
+      "rep": [
+        0,
+        3
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 3595,
+      "d_p": 1515,
+      "d_q": 2080,
+      "quads_containing_pair": 81,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 4,
+      "rep": [
+        0,
+        4
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        4,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -4,
+        0
+      ],
+      "chebyshev": 4,
+      "euclidean2": 16,
+      "sum_d": 3665,
+      "d_p": 1515,
+      "d_q": 2150,
+      "quads_containing_pair": 73,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 9,
+      "rep": [
+        0,
+        9
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0
+        ]
+      ],
+      "n_members": 6,
+      "dx_dy": [
+        9,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -9,
+        0
+      ],
+      "chebyshev": 9,
+      "euclidean2": 81,
+      "sum_d": 3030,
+      "d_p": 1515,
+      "d_q": 1515,
+      "quads_containing_pair": 105,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 11,
+      "rep": [
+        0,
+        11
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 3576,
+      "d_p": 1515,
+      "d_q": 2061,
+      "quads_containing_pair": 63,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 12,
+      "rep": [
+        0,
+        12
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 3695,
+      "d_p": 1515,
+      "d_q": 2180,
+      "quads_containing_pair": 42,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 13,
+      "rep": [
+        0,
+        13
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        1
+      ],
+      "primitive_dir": [
+        3,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 3804,
+      "d_p": 1515,
+      "d_q": 2289,
+      "quads_containing_pair": 55,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 14,
+      "rep": [
+        0,
+        14
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        4,
+        1
+      ],
+      "primitive_dir": [
+        4,
+        1
+      ],
+      "rel_canon": [
+        -4,
+        -1
+      ],
+      "chebyshev": 4,
+      "euclidean2": 17,
+      "sum_d": 3816,
+      "d_p": 1515,
+      "d_q": 2301,
+      "quads_containing_pair": 31,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 22,
+      "rep": [
+        0,
+        22
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 3840,
+      "d_p": 1515,
+      "d_q": 2325,
+      "quads_containing_pair": 59,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 23,
+      "rep": [
+        0,
+        23
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        2
+      ],
+      "primitive_dir": [
+        3,
+        2
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 3910,
+      "d_p": 1515,
+      "d_q": 2395,
+      "quads_containing_pair": 35,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 24,
+      "rep": [
+        0,
+        24
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        4,
+        2
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -4,
+        -2
+      ],
+      "chebyshev": 4,
+      "euclidean2": 20,
+      "sum_d": 3874,
+      "d_p": 1515,
+      "d_q": 2359,
+      "quads_containing_pair": 45,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 33,
+      "rep": [
+        0,
+        33
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        3,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -3
+      ],
+      "chebyshev": 3,
+      "euclidean2": 18,
+      "sum_d": 4014,
+      "d_p": 1515,
+      "d_q": 2499,
+      "quads_containing_pair": 71,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 34,
+      "rep": [
+        0,
+        34
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        4,
+        3
+      ],
+      "primitive_dir": [
+        4,
+        3
+      ],
+      "rel_canon": [
+        -4,
+        -3
+      ],
+      "chebyshev": 4,
+      "euclidean2": 25,
+      "sum_d": 3924,
+      "d_p": 1515,
+      "d_q": 2409,
+      "quads_containing_pair": 39,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 44,
+      "rep": [
+        0,
+        44
+      ],
+      "rep_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        4,
+        4
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -4,
+        -4
+      ],
+      "chebyshev": 4,
+      "euclidean2": 32,
+      "sum_d": 3916,
+      "d_p": 1515,
+      "d_q": 2401,
+      "quads_containing_pair": 99,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 258,
+      "rep": [
+        1,
+        2
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 3657,
+      "d_p": 1730,
+      "d_q": 1927,
+      "quads_containing_pair": 97,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 259,
+      "rep": [
+        1,
+        3
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 3810,
+      "d_p": 1730,
+      "d_q": 2080,
+      "quads_containing_pair": 80,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 260,
+      "rep": [
+        1,
+        4
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 3880,
+      "d_p": 1730,
+      "d_q": 2150,
+      "quads_containing_pair": 98,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 264,
+      "rep": [
+        1,
+        8
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        7,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -7,
+        0
+      ],
+      "chebyshev": 7,
+      "euclidean2": 49,
+      "sum_d": 3460,
+      "d_p": 1730,
+      "d_q": 1730,
+      "quads_containing_pair": 125,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 267,
+      "rep": [
+        1,
+        11
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 3791,
+      "d_p": 1730,
+      "d_q": 2061,
+      "quads_containing_pair": 79,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 268,
+      "rep": [
+        1,
+        12
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 3910,
+      "d_p": 1730,
+      "d_q": 2180,
+      "quads_containing_pair": 58,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 269,
+      "rep": [
+        1,
+        13
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4019,
+      "d_p": 1730,
+      "d_q": 2289,
+      "quads_containing_pair": 56,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 270,
+      "rep": [
+        1,
+        14
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        3,
+        1
+      ],
+      "primitive_dir": [
+        3,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4031,
+      "d_p": 1730,
+      "d_q": 2301,
+      "quads_containing_pair": 62,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 278,
+      "rep": [
+        1,
+        22
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4055,
+      "d_p": 1730,
+      "d_q": 2325,
+      "quads_containing_pair": 43,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 279,
+      "rep": [
+        1,
+        23
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4125,
+      "d_p": 1730,
+      "d_q": 2395,
+      "quads_containing_pair": 63,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 280,
+      "rep": [
+        1,
+        24
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        3,
+        2
+      ],
+      "primitive_dir": [
+        3,
+        2
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 4089,
+      "d_p": 1730,
+      "d_q": 2359,
+      "quads_containing_pair": 37,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 289,
+      "rep": [
+        1,
+        33
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        3
+      ],
+      "primitive_dir": [
+        2,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 4229,
+      "d_p": 1730,
+      "d_q": 2499,
+      "quads_containing_pair": 34,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 290,
+      "rep": [
+        1,
+        34
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        3,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -3
+      ],
+      "chebyshev": 3,
+      "euclidean2": 18,
+      "sum_d": 4139,
+      "d_p": 1730,
+      "d_q": 2409,
+      "quads_containing_pair": 82,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 300,
+      "rep": [
+        1,
+        44
+      ],
+      "rep_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        4
+      ],
+      "primitive_dir": [
+        3,
+        4
+      ],
+      "rel_canon": [
+        -4,
+        -3
+      ],
+      "chebyshev": 4,
+      "euclidean2": 25,
+      "sum_d": 4131,
+      "d_p": 1730,
+      "d_q": 2401,
+      "quads_containing_pair": 48,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 515,
+      "rep": [
+        2,
+        3
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4007,
+      "d_p": 1927,
+      "d_q": 2080,
+      "quads_containing_pair": 124,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 516,
+      "rep": [
+        2,
+        4
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4077,
+      "d_p": 1927,
+      "d_q": 2150,
+      "quads_containing_pair": 99,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 519,
+      "rep": [
+        2,
+        7
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        5,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -5,
+        0
+      ],
+      "chebyshev": 5,
+      "euclidean2": 25,
+      "sum_d": 3854,
+      "d_p": 1927,
+      "d_q": 1927,
+      "quads_containing_pair": 137,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 523,
+      "rep": [
+        2,
+        11
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 3988,
+      "d_p": 1927,
+      "d_q": 2061,
+      "quads_containing_pair": 135,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 524,
+      "rep": [
+        2,
+        12
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4107,
+      "d_p": 1927,
+      "d_q": 2180,
+      "quads_containing_pair": 73,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 525,
+      "rep": [
+        2,
+        13
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4216,
+      "d_p": 1927,
+      "d_q": 2289,
+      "quads_containing_pair": 62,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 526,
+      "rep": [
+        2,
+        14
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4228,
+      "d_p": 1927,
+      "d_q": 2301,
+      "quads_containing_pair": 63,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 534,
+      "rep": [
+        2,
+        22
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4252,
+      "d_p": 1927,
+      "d_q": 2325,
+      "quads_containing_pair": 55,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 535,
+      "rep": [
+        2,
+        23
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4322,
+      "d_p": 1927,
+      "d_q": 2395,
+      "quads_containing_pair": 51,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 536,
+      "rep": [
+        2,
+        24
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4286,
+      "d_p": 1927,
+      "d_q": 2359,
+      "quads_containing_pair": 64,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 545,
+      "rep": [
+        2,
+        33
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4426,
+      "d_p": 1927,
+      "d_q": 2499,
+      "quads_containing_pair": 64,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 546,
+      "rep": [
+        2,
+        34
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        3
+      ],
+      "primitive_dir": [
+        2,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 4336,
+      "d_p": 1927,
+      "d_q": 2409,
+      "quads_containing_pair": 33,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 556,
+      "rep": [
+        2,
+        44
+      ],
+      "rep_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        4
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -4,
+        -2
+      ],
+      "chebyshev": 4,
+      "euclidean2": 20,
+      "sum_d": 4328,
+      "d_p": 1927,
+      "d_q": 2401,
+      "quads_containing_pair": 51,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 772,
+      "rep": [
+        3,
+        4
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4230,
+      "d_p": 2080,
+      "d_q": 2150,
+      "quads_containing_pair": 150,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 774,
+      "rep": [
+        3,
+        6
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          0
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4160,
+      "d_p": 2080,
+      "d_q": 2080,
+      "quads_containing_pair": 133,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 779,
+      "rep": [
+        3,
+        11
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        -1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4141,
+      "d_p": 2080,
+      "d_q": 2061,
+      "quads_containing_pair": 114,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 780,
+      "rep": [
+        3,
+        12
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4260,
+      "d_p": 2080,
+      "d_q": 2180,
+      "quads_containing_pair": 112,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 781,
+      "rep": [
+        3,
+        13
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4369,
+      "d_p": 2080,
+      "d_q": 2289,
+      "quads_containing_pair": 70,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 782,
+      "rep": [
+        3,
+        14
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4381,
+      "d_p": 2080,
+      "d_q": 2301,
+      "quads_containing_pair": 71,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 790,
+      "rep": [
+        3,
+        22
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        -2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4405,
+      "d_p": 2080,
+      "d_q": 2325,
+      "quads_containing_pair": 77,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 791,
+      "rep": [
+        3,
+        23
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4475,
+      "d_p": 2080,
+      "d_q": 2395,
+      "quads_containing_pair": 53,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 792,
+      "rep": [
+        3,
+        24
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4439,
+      "d_p": 2080,
+      "d_q": 2359,
+      "quads_containing_pair": 55,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 801,
+      "rep": [
+        3,
+        33
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        3
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4579,
+      "d_p": 2080,
+      "d_q": 2499,
+      "quads_containing_pair": 85,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 802,
+      "rep": [
+        3,
+        34
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4489,
+      "d_p": 2080,
+      "d_q": 2409,
+      "quads_containing_pair": 62,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 812,
+      "rep": [
+        3,
+        44
+      ],
+      "rep_xy": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        4
+      ],
+      "primitive_dir": [
+        1,
+        4
+      ],
+      "rel_canon": [
+        -4,
+        -1
+      ],
+      "chebyshev": 4,
+      "euclidean2": 17,
+      "sum_d": 4481,
+      "d_p": 2080,
+      "d_q": 2401,
+      "quads_containing_pair": 31,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1029,
+      "rep": [
+        4,
+        5
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4300,
+      "d_p": 2150,
+      "d_q": 2150,
+      "quads_containing_pair": 165,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1035,
+      "rep": [
+        4,
+        11
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -3,
+        1
+      ],
+      "primitive_dir": [
+        3,
+        -1
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4211,
+      "d_p": 2150,
+      "d_q": 2061,
+      "quads_containing_pair": 105,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1036,
+      "rep": [
+        4,
+        12
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        -2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        -1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4330,
+      "d_p": 2150,
+      "d_q": 2180,
+      "quads_containing_pair": 110,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1037,
+      "rep": [
+        4,
+        13
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4439,
+      "d_p": 2150,
+      "d_q": 2289,
+      "quads_containing_pair": 94,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1038,
+      "rep": [
+        4,
+        14
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4451,
+      "d_p": 2150,
+      "d_q": 2301,
+      "quads_containing_pair": 64,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1046,
+      "rep": [
+        4,
+        22
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4475,
+      "d_p": 2150,
+      "d_q": 2325,
+      "quads_containing_pair": 100,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 1047,
+      "rep": [
+        4,
+        23
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        -1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        -2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4545,
+      "d_p": 2150,
+      "d_q": 2395,
+      "quads_containing_pair": 63,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1048,
+      "rep": [
+        4,
+        24
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4509,
+      "d_p": 2150,
+      "d_q": 2359,
+      "quads_containing_pair": 53,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 1057,
+      "rep": [
+        4,
+        33
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        -3
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4649,
+      "d_p": 2150,
+      "d_q": 2499,
+      "quads_containing_pair": 69,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1058,
+      "rep": [
+        4,
+        34
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        3
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4559,
+      "d_p": 2150,
+      "d_q": 2409,
+      "quads_containing_pair": 89,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 1068,
+      "rep": [
+        4,
+        44
+      ],
+      "rep_xy": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        4
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -4,
+        0
+      ],
+      "chebyshev": 4,
+      "euclidean2": 16,
+      "sum_d": 4551,
+      "d_p": 2150,
+      "d_q": 2401,
+      "quads_containing_pair": 86,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 2828,
+      "rep": [
+        11,
+        12
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4241,
+      "d_p": 2061,
+      "d_q": 2180,
+      "quads_containing_pair": 92,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2829,
+      "rep": [
+        11,
+        13
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4350,
+      "d_p": 2061,
+      "d_q": 2289,
+      "quads_containing_pair": 77,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 2830,
+      "rep": [
+        11,
+        14
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4362,
+      "d_p": 2061,
+      "d_q": 2301,
+      "quads_containing_pair": 102,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2834,
+      "rep": [
+        11,
+        18
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "n_members": 6,
+      "dx_dy": [
+        7,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -7,
+        0
+      ],
+      "chebyshev": 7,
+      "euclidean2": 49,
+      "sum_d": 4122,
+      "d_p": 2061,
+      "d_q": 2061,
+      "quads_containing_pair": 145,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2838,
+      "rep": [
+        11,
+        22
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4386,
+      "d_p": 2061,
+      "d_q": 2325,
+      "quads_containing_pair": 67,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2839,
+      "rep": [
+        11,
+        23
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4456,
+      "d_p": 2061,
+      "d_q": 2395,
+      "quads_containing_pair": 61,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2840,
+      "rep": [
+        11,
+        24
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        1
+      ],
+      "primitive_dir": [
+        3,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4420,
+      "d_p": 2061,
+      "d_q": 2359,
+      "quads_containing_pair": 68,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2849,
+      "rep": [
+        11,
+        33
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4560,
+      "d_p": 2061,
+      "d_q": 2499,
+      "quads_containing_pair": 81,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 2850,
+      "rep": [
+        11,
+        34
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        3,
+        2
+      ],
+      "primitive_dir": [
+        3,
+        2
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 4470,
+      "d_p": 2061,
+      "d_q": 2409,
+      "quads_containing_pair": 38,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 2860,
+      "rep": [
+        11,
+        44
+      ],
+      "rep_xy": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        3,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        -3
+      ],
+      "chebyshev": 3,
+      "euclidean2": 18,
+      "sum_d": 4462,
+      "d_p": 2061,
+      "d_q": 2401,
+      "quads_containing_pair": 107,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3085,
+      "rep": [
+        12,
+        13
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4469,
+      "d_p": 2180,
+      "d_q": 2289,
+      "quads_containing_pair": 118,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3086,
+      "rep": [
+        12,
+        14
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4481,
+      "d_p": 2180,
+      "d_q": 2301,
+      "quads_containing_pair": 92,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 3089,
+      "rep": [
+        12,
+        17
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        5,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -5,
+        0
+      ],
+      "chebyshev": 5,
+      "euclidean2": 25,
+      "sum_d": 4360,
+      "d_p": 2180,
+      "d_q": 2180,
+      "quads_containing_pair": 153,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3094,
+      "rep": [
+        12,
+        22
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4505,
+      "d_p": 2180,
+      "d_q": 2325,
+      "quads_containing_pair": 91,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3095,
+      "rep": [
+        12,
+        23
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4575,
+      "d_p": 2180,
+      "d_q": 2395,
+      "quads_containing_pair": 73,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3096,
+      "rep": [
+        12,
+        24
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4539,
+      "d_p": 2180,
+      "d_q": 2359,
+      "quads_containing_pair": 63,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3105,
+      "rep": [
+        12,
+        33
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4679,
+      "d_p": 2180,
+      "d_q": 2499,
+      "quads_containing_pair": 72,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3106,
+      "rep": [
+        12,
+        34
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4589,
+      "d_p": 2180,
+      "d_q": 2409,
+      "quads_containing_pair": 81,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 3116,
+      "rep": [
+        12,
+        44
+      ],
+      "rep_xy": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        3
+      ],
+      "primitive_dir": [
+        2,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -2
+      ],
+      "chebyshev": 3,
+      "euclidean2": 13,
+      "sum_d": 4581,
+      "d_p": 2180,
+      "d_q": 2401,
+      "quads_containing_pair": 36,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3342,
+      "rep": [
+        13,
+        14
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4590,
+      "d_p": 2289,
+      "d_q": 2301,
+      "quads_containing_pair": 144,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3344,
+      "rep": [
+        13,
+        16
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4578,
+      "d_p": 2289,
+      "d_q": 2289,
+      "quads_containing_pair": 129,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3350,
+      "rep": [
+        13,
+        22
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4614,
+      "d_p": 2289,
+      "d_q": 2325,
+      "quads_containing_pair": 125,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3351,
+      "rep": [
+        13,
+        23
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4684,
+      "d_p": 2289,
+      "d_q": 2395,
+      "quads_containing_pair": 92,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3352,
+      "rep": [
+        13,
+        24
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4648,
+      "d_p": 2289,
+      "d_q": 2359,
+      "quads_containing_pair": 81,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3361,
+      "rep": [
+        13,
+        33
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4788,
+      "d_p": 2289,
+      "d_q": 2499,
+      "quads_containing_pair": 72,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 3362,
+      "rep": [
+        13,
+        34
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4698,
+      "d_p": 2289,
+      "d_q": 2409,
+      "quads_containing_pair": 74,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3372,
+      "rep": [
+        13,
+        44
+      ],
+      "rep_xy": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        3
+      ],
+      "primitive_dir": [
+        1,
+        3
+      ],
+      "rel_canon": [
+        -3,
+        -1
+      ],
+      "chebyshev": 3,
+      "euclidean2": 10,
+      "sum_d": 4690,
+      "d_p": 2289,
+      "d_q": 2401,
+      "quads_containing_pair": 80,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3599,
+      "rep": [
+        14,
+        15
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4602,
+      "d_p": 2301,
+      "d_q": 2301,
+      "quads_containing_pair": 153,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3606,
+      "rep": [
+        14,
+        22
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        -1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4626,
+      "d_p": 2301,
+      "d_q": 2325,
+      "quads_containing_pair": 102,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3607,
+      "rep": [
+        14,
+        23
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4696,
+      "d_p": 2301,
+      "d_q": 2395,
+      "quads_containing_pair": 107,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3608,
+      "rep": [
+        14,
+        24
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4660,
+      "d_p": 2301,
+      "d_q": 2359,
+      "quads_containing_pair": 87,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3617,
+      "rep": [
+        14,
+        33
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        -2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4800,
+      "d_p": 2301,
+      "d_q": 2499,
+      "quads_containing_pair": 86,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 3618,
+      "rep": [
+        14,
+        34
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4710,
+      "d_p": 2301,
+      "d_q": 2409,
+      "quads_containing_pair": 76,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 3628,
+      "rep": [
+        14,
+        44
+      ],
+      "rep_xy": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        3
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4702,
+      "d_p": 2301,
+      "d_q": 2401,
+      "quads_containing_pair": 110,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5655,
+      "rep": [
+        22,
+        23
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4720,
+      "d_p": 2325,
+      "d_q": 2395,
+      "quads_containing_pair": 118,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5656,
+      "rep": [
+        22,
+        24
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4684,
+      "d_p": 2325,
+      "d_q": 2359,
+      "quads_containing_pair": 83,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 5659,
+      "rep": [
+        22,
+        27
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "n_members": 6,
+      "dx_dy": [
+        5,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -5,
+        0
+      ],
+      "chebyshev": 5,
+      "euclidean2": 25,
+      "sum_d": 4650,
+      "d_p": 2325,
+      "d_q": 2325,
+      "quads_containing_pair": 165,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5665,
+      "rep": [
+        22,
+        33
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4824,
+      "d_p": 2325,
+      "d_q": 2499,
+      "quads_containing_pair": 91,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5666,
+      "rep": [
+        22,
+        34
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        2,
+        1
+      ],
+      "primitive_dir": [
+        2,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4734,
+      "d_p": 2325,
+      "d_q": 2409,
+      "quads_containing_pair": 75,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5676,
+      "rep": [
+        22,
+        44
+      ],
+      "rep_xy": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        2,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        -2
+      ],
+      "chebyshev": 2,
+      "euclidean2": 8,
+      "sum_d": 4726,
+      "d_p": 2325,
+      "d_q": 2401,
+      "quads_containing_pair": 95,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 5912,
+      "rep": [
+        23,
+        24
+      ],
+      "rep_xy": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4754,
+      "d_p": 2395,
+      "d_q": 2359,
+      "quads_containing_pair": 140,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5914,
+      "rep": [
+        23,
+        26
+      ],
+      "rep_xy": [
+        [
+          3,
+          2
+        ],
+        [
+          6,
+          2
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4790,
+      "d_p": 2395,
+      "d_q": 2395,
+      "quads_containing_pair": 137,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5921,
+      "rep": [
+        23,
+        33
+      ],
+      "rep_xy": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4894,
+      "d_p": 2395,
+      "d_q": 2499,
+      "quads_containing_pair": 119,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5922,
+      "rep": [
+        23,
+        34
+      ],
+      "rep_xy": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4804,
+      "d_p": 2395,
+      "d_q": 2409,
+      "quads_containing_pair": 99,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 5932,
+      "rep": [
+        23,
+        44
+      ],
+      "rep_xy": [
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        2
+      ],
+      "primitive_dir": [
+        1,
+        2
+      ],
+      "rel_canon": [
+        -2,
+        -1
+      ],
+      "chebyshev": 2,
+      "euclidean2": 5,
+      "sum_d": 4796,
+      "d_p": 2395,
+      "d_q": 2401,
+      "quads_containing_pair": 80,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 6169,
+      "rep": [
+        24,
+        25
+      ],
+      "rep_xy": [
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4718,
+      "d_p": 2359,
+      "d_q": 2359,
+      "quads_containing_pair": 149,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 6177,
+      "rep": [
+        24,
+        33
+      ],
+      "rep_xy": [
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        -1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        -1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4858,
+      "d_p": 2359,
+      "d_q": 2499,
+      "quads_containing_pair": 124,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 6178,
+      "rep": [
+        24,
+        34
+      ],
+      "rep_xy": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 64,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4768,
+      "d_p": 2359,
+      "d_q": 2409,
+      "quads_containing_pair": 110,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 6188,
+      "rep": [
+        24,
+        44
+      ],
+      "rep_xy": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        2
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -2,
+        0
+      ],
+      "chebyshev": 2,
+      "euclidean2": 4,
+      "sum_d": 4760,
+      "d_p": 2359,
+      "d_q": 2401,
+      "quads_containing_pair": 89,
+      "mid_half_integer": false,
+      "mid_integer": true
+    },
+    {
+      "orbit_key": 8482,
+      "rep": [
+        33,
+        34
+      ],
+      "rep_xy": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4908,
+      "d_p": 2499,
+      "d_q": 2409,
+      "quads_containing_pair": 142,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 8484,
+      "rep": [
+        33,
+        36
+      ],
+      "rep_xy": [
+        [
+          3,
+          3
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "n_members": 6,
+      "dx_dy": [
+        3,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -3,
+        0
+      ],
+      "chebyshev": 3,
+      "euclidean2": 9,
+      "sum_d": 4998,
+      "d_p": 2499,
+      "d_q": 2499,
+      "quads_containing_pair": 129,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 8492,
+      "rep": [
+        33,
+        44
+      ],
+      "rep_xy": [
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 16,
+      "dx_dy": [
+        1,
+        1
+      ],
+      "primitive_dir": [
+        1,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        -1
+      ],
+      "chebyshev": 1,
+      "euclidean2": 2,
+      "sum_d": 4900,
+      "d_p": 2499,
+      "d_q": 2401,
+      "quads_containing_pair": 117,
+      "mid_half_integer": true,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 8739,
+      "rep": [
+        34,
+        35
+      ],
+      "rep_xy": [
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "n_members": 28,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4818,
+      "d_p": 2409,
+      "d_q": 2409,
+      "quads_containing_pair": 149,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 8748,
+      "rep": [
+        34,
+        44
+      ],
+      "rep_xy": [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "n_members": 32,
+      "dx_dy": [
+        0,
+        1
+      ],
+      "primitive_dir": [
+        0,
+        1
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4810,
+      "d_p": 2409,
+      "d_q": 2401,
+      "quads_containing_pair": 133,
+      "mid_half_integer": false,
+      "mid_integer": false
+    },
+    {
+      "orbit_key": 11309,
+      "rep": [
+        44,
+        45
+      ],
+      "rep_xy": [
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "n_members": 6,
+      "dx_dy": [
+        1,
+        0
+      ],
+      "primitive_dir": [
+        1,
+        0
+      ],
+      "rel_canon": [
+        -1,
+        0
+      ],
+      "chebyshev": 1,
+      "euclidean2": 1,
+      "sum_d": 4802,
+      "d_p": 2401,
+      "d_q": 2401,
+      "quads_containing_pair": 141,
+      "mid_half_integer": false,
+      "mid_integer": false
+    }
+  ],
+  "point_degrees": [
+    1515,
+    1730,
+    1927,
+    2080,
+    2150,
+    2150,
+    2080,
+    1927,
+    1730,
+    1515,
+    1730,
+    2061,
+    2180,
+    2289,
+    2301,
+    2301,
+    2289,
+    2180,
+    2061,
+    1730,
+    1927,
+    2180,
+    2325,
+    2395,
+    2359,
+    2359,
+    2395,
+    2325,
+    2180,
+    1927,
+    2080,
+    2289,
+    2395,
+    2499,
+    2409,
+    2409,
+    2499,
+    2395,
+    2289,
+    2080,
+    2150,
+    2301,
+    2359,
+    2409,
+    2401,
+    2401,
+    2409,
+    2359,
+    2301,
+    2150,
+    2150,
+    2301,
+    2359,
+    2409,
+    2401,
+    2401,
+    2409,
+    2359,
+    2301,
+    2150,
+    2080,
+    2289,
+    2395,
+    2499,
+    2409,
+    2409,
+    2499,
+    2395,
+    2289,
+    2080,
+    1927,
+    2180,
+    2325,
+    2395,
+    2359,
+    2359,
+    2395,
+    2325,
+    2180,
+    1927,
+    1730,
+    2061,
+    2180,
+    2289,
+    2301,
+    2301,
+    2289,
+    2180,
+    2061,
+    1730,
+    1515,
+    1730,
+    1927,
+    2080,
+    2150,
+    2150,
+    2080,
+    1927,
+    1730,
+    1515
+  ]
+}

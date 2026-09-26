@@ -1,0 +1,49 @@
+[
+  {
+    "board": "8x8",
+    "forbidden_total": 14564,
+    "collinear_quads": 1524,
+    "concyclic_quads": 13040,
+    "unique_circles": 3481,
+    "circle_lattice_size_hist": {
+      "4": 3155,
+      "5": 72,
+      "6": 168,
+      "8": 81,
+      "10": 4,
+      "12": 1
+    }
+  },
+  {
+    "board": "9x9",
+    "forbidden_total": 29152,
+    "collinear_quads": 3156,
+    "concyclic_quads": 25996,
+    "unique_circles": 6722,
+    "circle_lattice_size_hist": {
+      "4": 5996,
+      "5": 248,
+      "6": 316,
+      "7": 4,
+      "8": 146,
+      "10": 8,
+      "12": 4
+    }
+  },
+  {
+    "board": "10x10",
+    "forbidden_total": 54441,
+    "collinear_quads": 5928,
+    "concyclic_quads": 48513,
+    "unique_circles": 12170,
+    "circle_lattice_size_hist": {
+      "4": 10868,
+      "5": 400,
+      "6": 600,
+      "7": 16,
+      "8": 261,
+      "10": 16,
+      "12": 9
+    }
+  }
+]
