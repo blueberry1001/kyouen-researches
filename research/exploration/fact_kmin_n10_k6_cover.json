@@ -1,0 +1,93 @@
+{
+  "base_commit": "46551f2b0d4da650416acf8eb2defb4153a1b1ce",
+  "algorithm": "triple-completion coverage branch-and-bound",
+  "complete": true,
+  "conclusion": {
+    "k_min_10_lower_bound": 7,
+    "k_min_10_upper_bound": 11,
+    "bracket": [7, 11]
+  },
+  "proof_run": {
+    "n": 10,
+    "k": 6,
+    "complete": true,
+    "found": false,
+    "forbidden_quads": 54441,
+    "triple_completion_incidence": 217764,
+    "max_completion": 9,
+    "nodes": 106121110,
+    "nodes_by_depth": [1, 95, 4505, 142348, 3336566, 56634500, 46003095],
+    "coverage_prunes": [0, 10, 866, 36874, 1345605, 50137891, 0],
+    "score_prunes": [0, 0, 0, 0, 0, 5436286, 46003095],
+    "witness": []
+  },
+  "cross_validation": [
+    {
+      "n": 5,
+      "k": 4,
+      "complete": true,
+      "found": false,
+      "nodes": 1
+    },
+    {
+      "n": 5,
+      "k": 5,
+      "complete": true,
+      "found": true,
+      "nodes": 10592,
+      "witness": [2, 6, 7, 8, 22]
+    },
+    {
+      "n": 6,
+      "k": 5,
+      "complete": true,
+      "found": false,
+      "nodes": 94937
+    },
+    {
+      "n": 6,
+      "k": 6,
+      "complete": true,
+      "found": true,
+      "nodes": 119441,
+      "witness": [1, 2, 18, 19, 23, 31]
+    },
+    {
+      "n": 7,
+      "k": 6,
+      "complete": true,
+      "found": false,
+      "nodes": 3406317
+    },
+    {
+      "n": 7,
+      "k": 7,
+      "complete": true,
+      "found": true,
+      "nodes": 4604744,
+      "witness": [1, 9, 22, 23, 27, 44, 45]
+    },
+    {
+      "n": 10,
+      "k": 4,
+      "complete": true,
+      "found": false,
+      "nodes": 1
+    },
+    {
+      "n": 10,
+      "k": 5,
+      "complete": true,
+      "found": false,
+      "nodes": 1
+    }
+  ],
+  "notes": [
+    "For a safe set S, blocked(S) is the union of completion sets of triples in S.",
+    "Adding p is safe exactly when p is not already in blocked(S).",
+    "A safe k-set is maximal exactly when blocked(S) contains all n^2-k outside points.",
+    "The score bound uses |blocked(S)| <= sum_T completion_count(T).",
+    "Coverage pruning uses an optimistic union of every completion set any remaining 1/2/3 future stones could create; therefore it cannot remove a genuinely maximal extension.",
+    "The 10x10 k=7 run was not completed and is not used as evidence."
+  ]
+}
