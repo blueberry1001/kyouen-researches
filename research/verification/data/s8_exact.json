@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-27",
+  "claim": "s_8 = 8",
+  "definition": "minimum size of a maximal safe set on the 8x8 board",
+  "algorithm": "triple-completion coverage branch-and-bound",
+  "script": "scripts/analysis/fact_kmin_cover_bound.cpp",
+  "runs": [
+    {
+      "n": 8,
+      "k": 7,
+      "complete": true,
+      "found": false,
+      "forbidden_quads": 14564,
+      "triple_completion_incidence": 58256,
+      "max_completion": 9,
+      "nodes": 117206125,
+      "seconds_observed": 12.553916,
+      "nodes_by_depth": [1,58,1690,33043,478758,5212394,41065537,70414644],
+      "coverage_prunes": [0,6,313,8058,143394,1917438,36203277,8863335],
+      "score_prunes": [0,0,0,0,0,0,0,61551309],
+      "witness": []
+    },
+    {
+      "n": 8,
+      "k": 8,
+      "complete": true,
+      "found": true,
+      "forbidden_quads": 14564,
+      "triple_completion_incidence": 58256,
+      "max_completion": 9,
+      "nodes": 2760213,
+      "seconds_observed": 0.422914,
+      "nodes_by_depth": [1,1,1,5,221,5510,80222,725042,1949210],
+      "coverage_prunes": [0,0,0,0,24,1145,23608,565933,1227301],
+      "score_prunes": [0,0,0,0,0,0,0,0,721908],
+      "witness": [0,1,6,20,24,32,34,60]
+    }
+  ],
+  "conclusion": {
+    "lower_bound": 8,
+    "upper_bound": 8,
+    "s_8": 8
+  },
+  "checks": [
+    "forbidden_quads = 14564 matches the existing exact 8x8 value",
+    "triple_completion_incidence = 58256 = 4 * 14564",
+    "the k=8 witness is exactly the witness previously found during B001-B300 verification",
+    "k=7 is a complete non-existence result, not a timeout"
+  ]
+}
