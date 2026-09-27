@@ -1,0 +1,471 @@
+{
+  "n3_one_stone_g": {
+    "0": 9
+  },
+  "n4_one_stone_g": {
+    "1": 16
+  },
+  "n5_verify_loss_pairs": {
+    "computed": 20,
+    "known": 20,
+    "equal": true,
+    "only_computed": [],
+    "only_known": []
+  },
+  "n5_one_stone_g": {
+    "0": 9,
+    "3": 16
+  },
+  "j5_summary": {
+    "vertices": 25,
+    "edges": 20,
+    "winning_first_isolated": 9,
+    "nonisolated": 16,
+    "edges_among_noniso": 20,
+    "any_edge_touching_isolated": false
+  },
+  "b011_connected": {
+    "nonisolated": 16,
+    "components_on_noniso": [
+      16
+    ],
+    "isolated_not_counted": 9,
+    "connected": true,
+    "component_vertices": [
+      [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        23,
+        24
+      ]
+    ]
+  },
+  "b014_bipartite": {
+    "bipartite": false,
+    "odd_cycle_witness": [
+      17,
+      3,
+      0,
+      4,
+      1,
+      17
+    ]
+  },
+  "b012_cycle_space": {
+    "cycle_space_dim": 5,
+    "num_simple_cycles_len_le_4": 1,
+    "span_dim_of_len_le_4": 1,
+    "generated_by_len_le_4": false
+  },
+  "b013_aut": {
+    "num_automorphisms_noniso": 8,
+    "vertices_order": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      20,
+      21,
+      23,
+      24
+    ],
+    "d4_edge_orbits": 3,
+    "d4_edge_orbit_sizes": [
+      8,
+      8,
+      4
+    ],
+    "beyond_d4": false
+  },
+  "b015_perfect_matching": {
+    "exists": true,
+    "num_found_capped": 2,
+    "example": [
+      [
+        0,
+        15
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        17
+      ],
+      [
+        5,
+        13
+      ],
+      [
+        7,
+        21
+      ],
+      [
+        9,
+        24
+      ],
+      [
+        11,
+        19
+      ],
+      [
+        20,
+        23
+      ]
+    ]
+  },
+  "b017_common_neighbors": {
+    "P_pair_overlap_mean": 23.0,
+    "P_pair_overlap_values": [
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
+    ],
+    "nonP_pair_overlap_mean": 23.0,
+    "all_pair_overlap_mean": 23.0,
+    "P_pair_deg_C_mean": 24.0
+  },
+  "b020_pair_families": {
+    "families": {
+      "corner-boundary-dist3 (axis distance 3)": 8,
+      "corner-corner side (distance 4 axis-aligned)": 4,
+      "knight (1,3) among odd-sum losing cells": 8
+    },
+    "family_members": {
+      "corner-boundary-dist3 (axis distance 3)": [
+        [
+          0,
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          15,
+          0,
+          3
+        ],
+        [
+          1,
+          4,
+          3,
+          0
+        ],
+        [
+          4,
+          19,
+          0,
+          3
+        ],
+        [
+          5,
+          20,
+          0,
+          3
+        ],
+        [
+          9,
+          24,
+          0,
+          3
+        ],
+        [
+          20,
+          23,
+          3,
+          0
+        ],
+        [
+          21,
+          24,
+          3,
+          0
+        ]
+      ],
+      "corner-corner side (distance 4 axis-aligned)": [
+        [
+          0,
+          4,
+          4,
+          0
+        ],
+        [
+          0,
+          20,
+          0,
+          4
+        ],
+        [
+          4,
+          24,
+          0,
+          4
+        ],
+        [
+          20,
+          24,
+          4,
+          0
+        ]
+      ],
+      "knight (1,3) among odd-sum losing cells": [
+        [
+          1,
+          17,
+          1,
+          3
+        ],
+        [
+          3,
+          17,
+          1,
+          3
+        ],
+        [
+          5,
+          13,
+          3,
+          1
+        ],
+        [
+          7,
+          21,
+          1,
+          3
+        ],
+        [
+          7,
+          23,
+          1,
+          3
+        ],
+        [
+          9,
+          11,
+          3,
+          1
+        ],
+        [
+          11,
+          19,
+          3,
+          1
+        ],
+        [
+          13,
+          15,
+          3,
+          1
+        ]
+      ]
+    },
+    "pure_chebyshev_ge3_count": 66,
+    "pure_chebyshev_extra_not_P": [
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        0,
+        17
+      ],
+      [
+        0,
+        19
+      ],
+      [
+        0,
+        21
+      ],
+      [
+        0,
+        23
+      ],
+      [
+        0,
+        24
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        15
+      ],
+      [
+        1,
+        19
+      ],
+      [
+        1,
+        20
+      ],
+      [
+        1,
+        21
+      ]
+    ],
+    "P_not_in_chebyshev_ge3": []
+  },
+  "b016_j4": {
+    "edges": 84,
+    "components": [
+      16
+    ],
+    "connected": true,
+    "degrees": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12
+    ]
+  },
+  "b019_dom_n4": {
+    "n2": 16,
+    "domination_number": 2,
+    "dominating_set": [
+      0
+    ],
+    "ratio_to_n2": 0.125
+  },
+  "b019_dom_j5_noniso": {
+    "nverts": 16,
+    "domination_number": 6,
+    "set": [
+      0
+    ],
+    "note": "n=5 is F-win; B019 claims S-win boards, so this is informational"
+  },
+  "empty_and_W_table": {
+    "source": "cycle4-density-table.json + README + cycle5-grundy + 10x10-first-move-classification",
+    "n": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "winner": [
+      "F",
+      "F",
+      "F",
+      "S",
+      "F",
+      "F",
+      "S",
+      "S",
+      "F",
+      "S"
+    ],
+    "W_size": [
+      1,
+      4,
+      9,
+      0,
+      9,
+      36,
+      0,
+      0,
+      81,
+      0
+    ],
+    "partial_only_n5": true,
+    "empty_g_known": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 1,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": ">0 unknown",
+      "10": 0
+    },
+    "one_stone_nonzero_g": {
+      "2": [
+        0
+      ],
+      "3": [
+        0
+      ],
+      "4": [
+        1
+      ],
+      "5": [
+        3
+      ],
+      "6": [
+        0
+      ]
+    }
+  },
+  "b006_one_stone_nonzero_all_odd": {
+    "nonzero_values": [
+      1,
+      3
+    ],
+    "all_odd": true,
+    "range": "n=2..5 computed exact"
+  }
+}

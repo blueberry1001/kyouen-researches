@@ -1,0 +1,282 @@
+{
+  "kn": {
+    "K_n_table": [
+      {
+        "n": 1,
+        "K_n": 1,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.0,
+        "delta": null,
+        "delta_le_3": null
+      },
+      {
+        "n": 2,
+        "K_n": 3,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.5,
+        "delta": 2,
+        "delta_le_3": true
+      },
+      {
+        "n": 3,
+        "K_n": 5,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.6666666666666667,
+        "delta": 2,
+        "delta_le_3": true
+      },
+      {
+        "n": 4,
+        "K_n": 7,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.75,
+        "delta": 2,
+        "delta_le_3": true
+      },
+      {
+        "n": 5,
+        "K_n": 9,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.8,
+        "delta": 2,
+        "delta_le_3": true
+      },
+      {
+        "n": 6,
+        "K_n": 11,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.8333333333333333,
+        "delta": 2,
+        "delta_le_3": true
+      },
+      {
+        "n": 7,
+        "K_n": 14,
+        "K_n_minus_2n": 0,
+        "K_over_n": 2.0,
+        "delta": 3,
+        "delta_le_3": true
+      },
+      {
+        "n": 8,
+        "K_n": 15,
+        "K_n_minus_2n": -1,
+        "K_over_n": 1.875,
+        "delta": 1,
+        "delta_le_3": true
+      },
+      {
+        "n": 9,
+        "K_n_lb": 17,
+        "K_n_minus_2n_lb": -1,
+        "K_over_n_lb": 1.8888888888888888,
+        "delta_lb": 2,
+        "delta_le_3_possible": true
+      }
+    ],
+    "monotone_so_far": true,
+    "max_observed_delta": 3,
+    "max_observed_abs_K_minus_2n": 1
+  },
+  "sn": {
+    "confirmed": {
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "brackets": {
+      "8": {
+        "lower": 7,
+        "upper": 10,
+        "witness": [
+          1,
+          4,
+          7,
+          14,
+          20,
+          22,
+          38,
+          42,
+          53,
+          59
+        ],
+        "source": "F-AS greedy + complete k<=6 nonexist"
+      },
+      "9": {
+        "lower": null,
+        "upper": 11,
+        "witness": [
+          1,
+          4,
+          22,
+          29,
+          36,
+          40,
+          56,
+          62,
+          64,
+          70,
+          71
+        ],
+        "source": "F-AS greedy"
+      },
+      "10": {
+        "lower": 7,
+        "upper": 11,
+        "witness": [
+          11,
+          20,
+          23,
+          32,
+          43,
+          50,
+          59,
+          63,
+          68,
+          81,
+          98
+        ],
+        "source": "F-BE complete k=6 nonexist + F-AK 11-witness"
+      }
+    },
+    "sequence_so_far": [
+      5,
+      5,
+      5,
+      6,
+      7
+    ],
+    "deltas": [
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  "witnesses": {
+    "n5_s5": {
+      "n": 5,
+      "size": 5,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 10,
+      "collinear_triples": 2,
+      "noncollinear_triples": 8
+    },
+    "n6_s6": {
+      "n": 6,
+      "size": 6,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 20,
+      "collinear_triples": 2,
+      "noncollinear_triples": 18
+    },
+    "n7_s7": {
+      "n": 7,
+      "size": 7,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 35,
+      "collinear_triples": 3,
+      "noncollinear_triples": 32
+    },
+    "n10_s11": {
+      "n": 10,
+      "size": 11,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 165,
+      "collinear_triples": 5,
+      "noncollinear_triples": 160
+    },
+    "n10_s11b": {
+      "n": 10,
+      "size": 11,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 165,
+      "collinear_triples": 4,
+      "noncollinear_triples": 161
+    },
+    "n8_greedy10": {
+      "n": 8,
+      "size": 10,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 120,
+      "collinear_triples": 3,
+      "noncollinear_triples": 117
+    },
+    "n9_greedy11": {
+      "n": 9,
+      "size": 11,
+      "safe": true,
+      "maximal": true,
+      "n_free_if_not": 0,
+      "triples": 165,
+      "collinear_triples": 5,
+      "noncollinear_triples": 160
+    }
+  },
+  "spectrum": {
+    "3": {
+      "5": 56
+    },
+    "4": {
+      "5": 176,
+      "6": 688,
+      "7": 64
+    },
+    "5": {
+      "5": 4,
+      "6": 1136,
+      "7": 11280,
+      "8": 4340,
+      "9": 100
+    },
+    "6": {
+      "6": 8,
+      "7": 3952,
+      "8": 115496,
+      "9": 199184,
+      "10": 30492,
+      "11": 464
+    },
+    "interval_so_far": true,
+    "n7_incomplete": true,
+    "n8_incomplete": true
+  },
+  "s8_greedy": {
+    "found_size": 9,
+    "set": [
+      38,
+      12,
+      15,
+      36,
+      30,
+      21,
+      53,
+      16,
+      32
+    ],
+    "trials_done": 134,
+    "seconds": 8.565049648284912,
+    "hist": {
+      "12": 67,
+      "11": 26,
+      "13": 34,
+      "10": 3,
+      "14": 3,
+      "9": 1
+    }
+  }
+}

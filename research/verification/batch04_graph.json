@@ -1,0 +1,2512 @@
+{
+  "boards": {
+    "2x2": {
+      "n_safe": 15,
+      "checked": 15,
+      "step": 1,
+      "chrom_stats": {
+        "('3', 0)": 4
+      },
+      "b062_bad": 0,
+      "b064_hits": 0,
+      "b065_hits": 0,
+      "b067_checked": 5,
+      "b067_bad": 0,
+      "b061_within_k": {
+        "0": {
+          "n": 1,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "1": {
+          "n": 4,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "2": {
+          "n": 6,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": null,
+          "mean_tri_gpos": 0.0,
+          "mean_dens_g0": null,
+          "mean_dens_gpos": 0.0
+        },
+        "3": {
+          "n": 4,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        }
+      }
+    },
+    "3x3": {
+      "n_safe": 298,
+      "checked": 298,
+      "step": 1,
+      "chrom_stats": {
+        "('3', 3)": 58,
+        "('3', 2)": 26
+      },
+      "b062_bad": 0,
+      "b064_hits": 8,
+      "b065_hits": 0,
+      "b067_checked": 183,
+      "b067_bad": 0,
+      "b061_within_k": {
+        "0": {
+          "n": 1,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "1": {
+          "n": 9,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "2": {
+          "n": 36,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": null,
+          "mean_tri_gpos": 0.0,
+          "mean_dens_g0": null,
+          "mean_dens_gpos": 0.0
+        },
+        "3": {
+          "n": 84,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 2.2857142857142856,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.4122448979591839,
+          "mean_dens_gpos": null
+        },
+        "4": {
+          "n": 112,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": null,
+          "mean_tri_gpos": 3.0,
+          "mean_dens_g0": null,
+          "mean_dens_gpos": 0.6071428571428571
+        },
+        "5": {
+          "n": 56,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        }
+      }
+    },
+    "4x4": {
+      "n_safe": 5811,
+      "checked": 5811,
+      "step": 1,
+      "chrom_stats": {
+        "('3', 'chi_ge4')": 224,
+        "('3', 'greedy4_but_chi_le3')": 272,
+        "('3', 3)": 48,
+        "('3', 2)": 16
+      },
+      "b062_bad": 224,
+      "b064_hits": 16,
+      "b065_hits": 0,
+      "b067_checked": 3075,
+      "b067_bad": 8,
+      "b061_within_k": {
+        "0": {
+          "n": 1,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "1": {
+          "n": 16,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": null,
+          "mean_tri_gpos": 0.0,
+          "mean_dens_g0": null,
+          "mean_dens_gpos": 0.0
+        },
+        "2": {
+          "n": 120,
+          "spearman_dens_g": 0.08505109143200168,
+          "spearman_tri_g": 0.09448675859220713,
+          "mean_tri_g0": 15.428571428571429,
+          "mean_tri_gpos": 30.666666666666668,
+          "mean_dens_g0": 1.289192678666363,
+          "mean_dens_gpos": 1.7420059811364164
+        },
+        "3": {
+          "n": 560,
+          "spearman_dens_g": 0.5023123601418628,
+          "spearman_tri_g": 0.4096841928870957,
+          "mean_tri_g0": 24.0,
+          "mean_tri_gpos": 46.411764705882355,
+          "mean_dens_g0": 1.410714285714286,
+          "mean_dens_gpos": 1.9166055343057327
+        },
+        "4": {
+          "n": 1626,
+          "spearman_dens_g": 0.28790772192097014,
+          "spearman_tri_g": 0.2702864340727886,
+          "mean_tri_g0": 38.4375,
+          "mean_tri_gpos": 48.80324543610548,
+          "mean_dens_g0": 1.71203143721702,
+          "mean_dens_gpos": 2.39175970842186
+        },
+        "5": {
+          "n": 2360,
+          "spearman_dens_g": 0.5189983075243143,
+          "spearman_tri_g": 0.5495700513572462,
+          "mean_tri_g0": 0.14457831325301204,
+          "mean_tri_gpos": 7.088757396449704,
+          "mean_dens_g0": 0.024096385542168676,
+          "mean_dens_gpos": 0.8059412185447681
+        },
+        "6": {
+          "n": 1064,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": 0.0,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": 0.0
+        },
+        "7": {
+          "n": 64,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        }
+      }
+    },
+    "5x5": {
+      "n_safe": 151394,
+      "checked": 75697,
+      "step": 2,
+      "chrom_stats": {
+        "('3', 'greedy4_but_chi_le3')": 1117,
+        "('3', 3)": 20
+      },
+      "b062_bad": 0,
+      "b064_hits": 178,
+      "b065_hits": 0,
+      "b067_checked": 33480,
+      "b067_bad": 0,
+      "b061_within_k": {
+        "0": {
+          "n": 1,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "2": {
+          "n": 165,
+          "spearman_dens_g": -0.08968774598714675,
+          "spearman_tri_g": -0.18270630879720245,
+          "mean_tri_g0": 36.666666666666664,
+          "mean_tri_gpos": 38.07692307692308,
+          "mean_dens_g0": 1.9656002751977983,
+          "mean_dens_gpos": 1.817744765566095
+        },
+        "4": {
+          "n": 5853,
+          "spearman_dens_g": 0.10659816111981175,
+          "spearman_tri_g": 0.09864054413216924,
+          "mean_tri_g0": 132.66990291262135,
+          "mean_tri_gpos": 150.98510028653294,
+          "mean_dens_g0": 2.704305215439425,
+          "mean_dens_gpos": 2.9385457820703134
+        },
+        "6": {
+          "n": 29381,
+          "spearman_dens_g": 0.4725854945566547,
+          "spearman_tri_g": 0.47615242511962247,
+          "mean_tri_g0": 9.400684931506849,
+          "mean_tri_gpos": 20.19921333750503,
+          "mean_dens_g0": 0.567888995020689,
+          "mean_dens_gpos": 1.3191718960731236
+        },
+        "7": {
+          "n": 17689,
+          "spearman_dens_g": 0.27508225974566525,
+          "spearman_tri_g": 0.2760896513524507,
+          "mean_tri_g0": 0.01647575710026675,
+          "mean_tri_gpos": 0.9488335100742312,
+          "mean_dens_g0": 0.004707359171504786,
+          "mean_dens_gpos": 0.17668051137033144
+        },
+        "8": {
+          "n": 2566,
+          "spearman_dens_g": 0.11101664344570691,
+          "spearman_tri_g": 0.11101664344570691,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": 0.04390243902439024,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": 0.014634146341463415
+        },
+        "5": {
+          "n": 18848,
+          "spearman_dens_g": 0.2814231274078042,
+          "spearman_tri_g": 0.29792076765150133,
+          "mean_tri_g0": 67.77215893303695,
+          "mean_tri_gpos": 100.19260279362581,
+          "mean_dens_g0": 2.1972767895679284,
+          "mean_dens_gpos": 2.7528241849408532
+        },
+        "9": {
+          "n": 49,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": null,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": null
+        },
+        "3": {
+          "n": 1137,
+          "spearman_dens_g": -0.06522749819447206,
+          "spearman_tri_g": -0.09076065984852062,
+          "mean_tri_g0": 114.28222996515679,
+          "mean_tri_gpos": 92.83058823529412,
+          "mean_dens_g0": 2.464388995239489,
+          "mean_dens_gpos": 2.21269957350785
+        },
+        "1": {
+          "n": 8,
+          "spearman_dens_g": null,
+          "spearman_tri_g": null,
+          "mean_tri_g0": 0.0,
+          "mean_tri_gpos": 0.0,
+          "mean_dens_g0": 0.0,
+          "mean_dens_gpos": 0.0
+        }
+      }
+    }
+  },
+  "b061": {},
+  "b062": {
+    "checked": 1785,
+    "violations": [
+      {
+        "n": 4,
+        "S": [
+          0,
+          1,
+          2
+        ],
+        "greedy": 6,
+        "nv": 12,
+        "ne": 31,
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            10
+          ]
+        ]
+      },
+      {
+        "n": 4,
+        "S": [
+          0,
+          1,
+          4
+        ],
+        "greedy": 6,
+        "nv": 12,
+        "ne": 35,
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "n": 4,
+        "S": [
+          0,
+          1,
+          7
+        ],
+        "greedy": 6,
+        "nv": 13,
+        "ne": 34,
+        "edges": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      },
+      {
+        "n": 4,
+        "S": [
+          0,
+          1,
+          8
+        ],
+        "greedy": 6,
+        "nv": 12,
+        "ne": 28,
+        "edges": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            10
+          ]
+        ]
+      },
+      {
+        "n": 4,
+        "S": [
+          0,
+          1,
+          11
+        ],
+        "greedy": 6,
+        "nv": 12,
+        "ne": 28,
+        "edges": [
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ]
+        ]
+      }
+    ],
+    "greedy_le3": 172,
+    "exact_needed": 1613
+  },
+  "b063": {
+    "2x2": {
+      "k3_types": 1,
+      "k4_types": 0,
+      "k5_types": 0,
+      "k4_not_k3": [],
+      "k5_not_k4": [],
+      "note": "type = (nv, ne, degree_seq, tri, is_tree); induced-subgraph H question not fully resolved by type counts"
+    },
+    "3x3": {
+      "k3_types": 13,
+      "k4_types": 5,
+      "k5_types": 1,
+      "k4_not_k3": [
+        [
+          1,
+          0,
+          [
+            0
+          ],
+          0,
+          true
+        ],
+        [
+          2,
+          1,
+          [
+            1,
+            1
+          ],
+          0,
+          true
+        ],
+        [
+          3,
+          3,
+          [
+            2,
+            2,
+            2
+          ],
+          3,
+          false
+        ],
+        [
+          4,
+          6,
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          12,
+          false
+        ],
+        [
+          5,
+          10,
+          [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          30,
+          false
+        ]
+      ],
+      "k5_not_k4": [
+        [
+          0,
+          0,
+          [],
+          0,
+          true
+        ]
+      ],
+      "note": "type = (nv, ne, degree_seq, tri, is_tree); induced-subgraph H question not fully resolved by type counts"
+    },
+    "4x4": {
+      "k3_types": 68,
+      "k4_types": 166,
+      "k5_types": 27,
+      "k4_not_k3": [
+        [
+          2,
+          0,
+          [
+            0,
+            0
+          ],
+          0,
+          false
+        ],
+        [
+          3,
+          1,
+          [
+            0,
+            1,
+            1
+          ],
+          0,
+          false
+        ],
+        [
+          3,
+          2,
+          [
+            1,
+            1,
+            2
+          ],
+          0,
+          true
+        ],
+        [
+          3,
+          3,
+          [
+            2,
+            2,
+            2
+          ],
+          3,
+          false
+        ],
+        [
+          4,
+          2,
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          0,
+          false
+        ],
+        [
+          4,
+          3,
+          [
+            0,
+            2,
+            2,
+            2
+          ],
+          3,
+          false
+        ],
+        [
+          4,
+          3,
+          [
+            1,
+            1,
+            1,
+            3
+          ],
+          0,
+          true
+        ],
+        [
+          4,
+          3,
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          0,
+          true
+        ],
+        [
+          4,
+          4,
+          [
+            1,
+            2,
+            2,
+            3
+          ],
+          3,
+          false
+        ],
+        [
+          4,
+          5,
+          [
+            2,
+            2,
+            3,
+            3
+          ],
+          6,
+          false
+        ],
+        [
+          4,
+          6,
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          12,
+          false
+        ],
+        [
+          5,
+          4,
+          [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          3,
+          false
+        ]
+      ],
+      "k5_not_k4": [
+        [
+          0,
+          0,
+          [],
+          0,
+          true
+        ],
+        [
+          1,
+          0,
+          [
+            0
+          ],
+          0,
+          true
+        ],
+        [
+          2,
+          1,
+          [
+            1,
+            1
+          ],
+          0,
+          true
+        ],
+        [
+          4,
+          4,
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          0,
+          false
+        ],
+        [
+          5,
+          9,
+          [
+            3,
+            3,
+            4,
+            4,
+            4
+          ],
+          21,
+          false
+        ],
+        [
+          5,
+          10,
+          [
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          30,
+          false
+        ],
+        [
+          6,
+          12,
+          [
+            3,
+            4,
+            4,
+            4,
+            4,
+            5
+          ],
+          27,
+          false
+        ],
+        [
+          6,
+          13,
+          [
+            4,
+            4,
+            4,
+            4,
+            5,
+            5
+          ],
+          36,
+          false
+        ]
+      ],
+      "note": "type = (nv, ne, degree_seq, tri, is_tree); induced-subgraph H question not fully resolved by type counts"
+    },
+    "5x5": {
+      "k3_types": 311,
+      "k4_types": 1510,
+      "k5_types": 3594,
+      "k4_not_k3": [
+        [
+          5,
+          2,
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          0,
+          false
+        ],
+        [
+          7,
+          4,
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          0,
+          false
+        ],
+        [
+          7,
+          5,
+          [
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          3,
+          false
+        ],
+        [
+          7,
+          6,
+          [
+            0,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3
+          ],
+          3,
+          false
+        ],
+        [
+          7,
+          7,
+          [
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          3,
+          false
+        ],
+        [
+          7,
+          8,
+          [
+            0,
+            1,
+            2,
+            2,
+            3,
+            4,
+            4
+          ],
+          9,
+          false
+        ],
+        [
+          8,
+          9,
+          [
+            0,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ],
+          9,
+          false
+        ],
+        [
+          8,
+          18,
+          [
+            1,
+            3,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6
+          ],
+          63,
+          false
+        ],
+        [
+          9,
+          5,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            3,
+            3
+          ],
+          6,
+          false
+        ],
+        [
+          9,
+          6,
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          6,
+          false
+        ],
+        [
+          9,
+          8,
+          [
+            0,
+            0,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            4
+          ],
+          6,
+          false
+        ],
+        [
+          9,
+          8,
+          [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3
+          ],
+          3,
+          false
+        ]
+      ],
+      "k5_not_k4": [
+        [
+          0,
+          0,
+          [],
+          0,
+          true
+        ],
+        [
+          1,
+          0,
+          [
+            0
+          ],
+          0,
+          true
+        ],
+        [
+          2,
+          0,
+          [
+            0,
+            0
+          ],
+          0,
+          false
+        ],
+        [
+          2,
+          1,
+          [
+            1,
+            1
+          ],
+          0,
+          true
+        ],
+        [
+          3,
+          0,
+          [
+            0,
+            0,
+            0
+          ],
+          0,
+          false
+        ],
+        [
+          3,
+          1,
+          [
+            0,
+            1,
+            1
+          ],
+          0,
+          false
+        ],
+        [
+          3,
+          2,
+          [
+            1,
+            1,
+            2
+          ],
+          0,
+          true
+        ],
+        [
+          3,
+          3,
+          [
+            2,
+            2,
+            2
+          ],
+          3,
+          false
+        ]
+      ],
+      "note": "type = (nv, ne, degree_seq, tri, is_tree); induced-subgraph H question not fully resolved by type counts"
+    }
+  },
+  "b064": [
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        0,
+        1,
+        6
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        0,
+        2,
+        3
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        0,
+        2,
+        5
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        0,
+        6,
+        7
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        1,
+        2,
+        8
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        2,
+        7,
+        8
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        3,
+        6,
+        8
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        5,
+        6,
+        8
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        1,
+        2,
+        8,
+        10
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 6,
+      "res4": 1
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        1,
+        2,
+        9,
+        11
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 6,
+      "res4": 1
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        1,
+        4,
+        8,
+        9
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        1,
+        7,
+        9,
+        11
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 6,
+      "res4": 1
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        2,
+        4,
+        8,
+        10
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 6,
+      "res4": 1
+    },
+    {
+      "n": 4,
+      "k": 4,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        2,
+        7,
+        10,
+        11
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 1,
+      "g_2pt_only": 2,
+      "S": [
+        0,
+        1,
+        2,
+        13,
+        22,
+        24
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 2,
+      "res4": 1
+    },
+    {
+      "n": 5,
+      "k": 5,
+      "g_actual": 0,
+      "g_2pt_only": 3,
+      "S": [
+        0,
+        1,
+        3,
+        5,
+        13
+      ],
+      "nv": 5,
+      "ne": 4,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        0,
+        1,
+        3,
+        6,
+        10,
+        19
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 5,
+      "g_actual": 1,
+      "g_2pt_only": 2,
+      "S": [
+        0,
+        1,
+        3,
+        12,
+        19
+      ],
+      "nv": 7,
+      "ne": 6,
+      "res3": 5,
+      "res4": 3
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        0,
+        1,
+        3,
+        14,
+        17,
+        21
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 2,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        0,
+        1,
+        4,
+        9,
+        10,
+        22
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        0,
+        1,
+        6,
+        9,
+        11,
+        20
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 3,
+      "res4": 0
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "g_actual": 2,
+      "g_2pt_only": 1,
+      "S": [
+        0,
+        1,
+        6,
+        11,
+        20,
+        24
+      ],
+      "nv": 4,
+      "ne": 3,
+      "res3": 1,
+      "res4": 0
+    }
+  ],
+  "b065": [],
+  "b066": {
+    "2x2": {
+      "n_err": 4,
+      "n_ok": 11,
+      "n_unknown": 0,
+      "mean_share2_ratio_err": 0.0,
+      "mean_share2_ratio_ok": 0.0,
+      "mean_r3_err": 1.0,
+      "mean_r3_ok": 0.0
+    },
+    "3x3": {
+      "n_err": 75,
+      "n_ok": 223,
+      "n_unknown": 0,
+      "mean_share2_ratio_err": 0.5032175032175035,
+      "mean_share2_ratio_ok": 0.4457953394123607,
+      "mean_r3_err": 5.28,
+      "mean_r3_ok": 1.147982062780269
+    },
+    "4x4": {
+      "n_err": 352,
+      "n_ok": 4792,
+      "n_unknown": 667,
+      "mean_share2_ratio_err": 0.36907639813494164,
+      "mean_share2_ratio_ok": 0.5091073522688819,
+      "mean_r3_err": 19.772727272727273,
+      "mean_r3_ok": 4.354757929883139
+    },
+    "5x5": {
+      "n_err": 2748,
+      "n_ok": 58919,
+      "n_unknown": 14030,
+      "mean_share2_ratio_err": 0.38036846555129555,
+      "mean_share2_ratio_ok": 0.4412135127332512,
+      "mean_r3_err": 12.88646288209607,
+      "mean_r3_ok": 3.838812607138614
+    }
+  },
+  "b067": {
+    "checked": 33480,
+    "violations": [
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 6
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          0,
+          6,
+          9,
+          13
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 6
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          1,
+          5,
+          10,
+          12
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 6
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          2,
+          6,
+          9,
+          15
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 4
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          3,
+          4,
+          5,
+          10
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 7
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          3,
+          5,
+          10,
+          14
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 4
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          5,
+          10,
+          11,
+          12
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 6
+      },
+      {
+        "n": 4,
+        "k": 4,
+        "S": [
+          6,
+          8,
+          9,
+          15
+        ],
+        "odd": 7,
+        "nv": 8,
+        "K": 4
+      }
+    ]
+  },
+  "b068": {
+    "2x2": {
+      "n_degree_classes_with_both_outcomes": 0,
+      "examples": [],
+      "n_classes": 2
+    },
+    "3x3": {
+      "n_degree_classes_with_both_outcomes": 0,
+      "examples": [],
+      "n_classes": 4
+    },
+    "4x4": {
+      "n_degree_classes_with_both_outcomes": 0,
+      "examples": [],
+      "n_classes": 10
+    },
+    "5x5": {
+      "n_degree_classes_with_both_outcomes": 1,
+      "examples": [
+        {
+          "dseq": [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          "g0": {
+            "k": 5,
+            "g": 0,
+            "S": [
+              2,
+              6,
+              12,
+              13,
+              17
+            ],
+            "nv": 5
+          },
+          "gpos": {
+            "k": 5,
+            "g": 3,
+            "S": [
+              0,
+              1,
+              3,
+              18,
+              19
+            ],
+            "nv": 5
+          },
+          "n_g0": 16,
+          "n_gpos": 16
+        }
+      ],
+      "n_classes": 29
+    }
+  },
+  "b069": {
+    "2x2": {
+      "n_sample": 11,
+      "n_vc_le1": 11,
+      "n_vc_ge3": 0,
+      "mean_nv_vc_le1": 2.5454545454545454,
+      "mean_nv_vc_ge3": null,
+      "loss_rate_vc_le1": 0.45454545454545453,
+      "loss_rate_vc_ge3": null,
+      "note": "proxy only \u2014 strategy-proof-length not measured"
+    },
+    "3x3": {
+      "n_sample": 242,
+      "n_vc_le1": 74,
+      "n_vc_ge3": 80,
+      "mean_nv_vc_le1": 2.9324324324324325,
+      "mean_nv_vc_ge3": 5.65,
+      "loss_rate_vc_le1": 0.13513513513513514,
+      "loss_rate_vc_ge3": 0.65,
+      "note": "proxy only \u2014 strategy-proof-length not measured"
+    },
+    "4x4": {
+      "n_sample": 1615,
+      "n_vc_le1": 519,
+      "n_vc_ge3": 641,
+      "mean_nv_vc_le1": 1.7032755298651252,
+      "mean_nv_vc_ge3": 6.943837753510141,
+      "loss_rate_vc_le1": 0.10789980732177264,
+      "loss_rate_vc_ge3": 0.2745709828393136,
+      "note": "proxy only \u2014 strategy-proof-length not measured"
+    },
+    "5x5": {
+      "n_sample": 1354,
+      "n_vc_le1": 449,
+      "n_vc_ge3": 434,
+      "mean_nv_vc_le1": 1.77728285077951,
+      "mean_nv_vc_ge3": 7.0691244239631335,
+      "loss_rate_vc_le1": 0.15812917594654788,
+      "loss_rate_vc_ge3": 0.195852534562212,
+      "note": "proxy only \u2014 strategy-proof-length not measured"
+    }
+  },
+  "b070": {
+    "2x2": {
+      "0": {
+        "count": 1,
+        "nv_range": [
+          4,
+          4
+        ],
+        "tree_count": 0,
+        "tri_free": 1,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "1": {
+        "count": 4,
+        "nv_range": [
+          3,
+          3
+        ],
+        "tree_count": 0,
+        "tri_free": 4,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "2": {
+        "count": 6,
+        "nv_range": [
+          2,
+          2
+        ],
+        "tree_count": 6,
+        "tri_free": 6,
+        "max_tri": 0,
+        "max_ne": 1
+      },
+      "3": {
+        "count": 4,
+        "nv_range": [
+          0,
+          0
+        ],
+        "tree_count": 4,
+        "tri_free": 4,
+        "max_tri": 0,
+        "max_ne": 0
+      }
+    },
+    "3x3": {
+      "0": {
+        "count": 1,
+        "nv_range": [
+          9,
+          9
+        ],
+        "tree_count": 0,
+        "tri_free": 1,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "1": {
+        "count": 9,
+        "nv_range": [
+          8,
+          8
+        ],
+        "tree_count": 0,
+        "tri_free": 9,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "2": {
+        "count": 36,
+        "nv_range": [
+          7,
+          7
+        ],
+        "tree_count": 0,
+        "tri_free": 36,
+        "max_tri": 0,
+        "max_ne": 3
+      },
+      "3": {
+        "count": 84,
+        "nv_range": [
+          5,
+          6
+        ],
+        "tree_count": 8,
+        "tri_free": 26,
+        "max_tri": 6,
+        "max_ne": 8
+      },
+      "4": {
+        "count": 112,
+        "nv_range": [
+          1,
+          5
+        ],
+        "tree_count": 60,
+        "tri_free": 60,
+        "max_tri": 30,
+        "max_ne": 10
+      },
+      "5": {
+        "count": 56,
+        "nv_range": [
+          0,
+          0
+        ],
+        "tree_count": 56,
+        "tri_free": 56,
+        "max_tri": 0,
+        "max_ne": 0
+      }
+    },
+    "4x4": {
+      "0": {
+        "count": 1,
+        "nv_range": [
+          16,
+          16
+        ],
+        "tree_count": 0,
+        "tri_free": 1,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "1": {
+        "count": 16,
+        "nv_range": [
+          15,
+          15
+        ],
+        "tree_count": 0,
+        "tri_free": 16,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "2": {
+        "count": 120,
+        "nv_range": [
+          14,
+          14
+        ],
+        "tree_count": 0,
+        "tri_free": 40,
+        "max_tri": 72,
+        "max_ne": 23
+      },
+      "3": {
+        "count": 560,
+        "nv_range": [
+          8,
+          13
+        ],
+        "tree_count": 0,
+        "tri_free": 16,
+        "max_tri": 108,
+        "max_ne": 35
+      },
+      "4": {
+        "count": 1626,
+        "nv_range": [
+          2,
+          12
+        ],
+        "tree_count": 56,
+        "tri_free": 132,
+        "max_tri": 222,
+        "max_ne": 45
+      },
+      "5": {
+        "count": 2360,
+        "nv_range": [
+          0,
+          8
+        ],
+        "tree_count": 1252,
+        "tri_free": 1368,
+        "max_tri": 168,
+        "max_ne": 28
+      }
+    },
+    "5x5": {
+      "0": {
+        "count": 1,
+        "nv_range": [
+          25,
+          25
+        ],
+        "tree_count": 0,
+        "tri_free": 1,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "1": {
+        "count": 8,
+        "nv_range": [
+          24,
+          24
+        ],
+        "tree_count": 0,
+        "tri_free": 8,
+        "max_tri": 0,
+        "max_ne": 0
+      },
+      "2": {
+        "count": 165,
+        "nv_range": [
+          23,
+          23
+        ],
+        "tree_count": 0,
+        "tri_free": 24,
+        "max_tri": 123,
+        "max_ne": 36
+      },
+      "3": {
+        "count": 1137,
+        "nv_range": [
+          17,
+          22
+        ],
+        "tree_count": 0,
+        "tri_free": 0,
+        "max_tri": 267,
+        "max_ne": 75
+      },
+      "4": {
+        "count": 5853,
+        "nv_range": [
+          5,
+          21
+        ],
+        "tree_count": 0,
+        "tri_free": 5,
+        "max_tri": 639,
+        "max_ne": 106
+      },
+      "5": {
+        "count": 18848,
+        "nv_range": [
+          0,
+          20
+        ],
+        "tree_count": 237,
+        "tri_free": 969,
+        "max_tri": 933,
+        "max_ne": 115
+      }
+    }
+  }
+}

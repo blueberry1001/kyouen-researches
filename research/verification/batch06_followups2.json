@@ -1,0 +1,141 @@
+{
+  "B116_cover": {
+    "n_candidates": 0,
+    "n_candidates_certificate": 6460,
+    "n_u_quads": 59,
+    "cover_index_interp_ok": null,
+    "cover_direct_interp_ok": null,
+    "index_are_real_U_quads": true,
+    "direct_are_real_U_quads": false
+  },
+  "B112_B119": {
+    "n_seeds": 5,
+    "components": [
+      {
+        "seed": 184169612189696,
+        "seed_board": [
+          13,
+          20,
+          22,
+          26,
+          28,
+          30,
+          39,
+          40,
+          41,
+          42,
+          45,
+          47
+        ],
+        "component_size": 1,
+        "layers": {
+          "12": 1
+        },
+        "reaches_14": false,
+        "reaches_13": false,
+        "max_size_in_component": 12,
+        "overlaps_903_orbit": false
+      },
+      {
+        "seed": 352247995703296,
+        "seed_board": [
+          13,
+          19,
+          21,
+          23,
+          29,
+          33,
+          34,
+          35,
+          36,
+          38,
+          46,
+          48
+        ],
+        "component_size": 1,
+        "layers": {
+          "12": 1
+        },
+        "reaches_14": false,
+        "reaches_13": false,
+        "max_size_in_component": 12,
+        "overlaps_903_orbit": false
+      },
+      {
+        "seed": 304384339091456,
+        "seed_board": [
+          13,
+          19,
+          21,
+          22,
+          33,
+          34,
+          36,
+          38,
+          39,
+          42,
+          44,
+          48
+        ],
+        "component_size": 1,
+        "layers": {
+          "12": 1
+        },
+        "reaches_14": false,
+        "reaches_13": false,
+        "max_size_in_component": 12,
+        "overlaps_903_orbit": false
+      },
+      {
+        "seed": 22364035751936,
+        "seed_board": [
+          13,
+          19,
+          21,
+          22,
+          27,
+          32,
+          33,
+          34,
+          36,
+          38,
+          42,
+          44
+        ],
+        "component_size": 1,
+        "layers": {
+          "12": 1
+        },
+        "reaches_14": false,
+        "reaches_13": false,
+        "max_size_in_component": 12,
+        "overlaps_903_orbit": false
+      },
+      {
+        "seed": 147886278451200,
+        "seed_board": [
+          13,
+          19,
+          20,
+          24,
+          26,
+          28,
+          29,
+          30,
+          39,
+          41,
+          42,
+          47
+        ],
+        "component_size": 1,
+        "layers": {
+          "12": 1
+        },
+        "reaches_14": false,
+        "reaches_13": false,
+        "max_size_in_component": 12,
+        "overlaps_903_orbit": false
+      }
+    ]
+  }
+}

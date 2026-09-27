@@ -1,0 +1,46 @@
+{
+  "b087_n6_to_n7": {
+    "n_sets": 464,
+    "tested_embeddings": 1856,
+    "can_reach_14": 16,
+    "max_reach": 14,
+    "reach_hist": {"11": 1016, "12": 760, "13": 64, "14": 16},
+    "note": "n=6 does NOT witness B087; some embeddings reach K_7=14"
+  },
+  "b087_n7_to_n8": {
+    "n_sets": 16,
+    "tested_embeddings": 64,
+    "embeddings_with_at_least_one_add": 0,
+    "add_count_hist": {"0": 64},
+    "note": "n=7 WITNESSES B087: zero legal additions under all 4 translations"
+  },
+  "s8_witness": {
+    "set": [0, 1, 6, 20, 24, 32, 34, 60],
+    "coords": [[0,0],[1,0],[6,0],[4,2],[0,3],[0,4],[2,4],[4,7]],
+    "safe": true,
+    "maximal": true,
+    "source": "fact_kmin_general.exe 8 8 8 60",
+    "nodes": 26287374
+  },
+  "s8_greedy9": {
+    "set": [12, 15, 16, 21, 30, 32, 36, 38, 53],
+    "safe": true,
+    "maximal": true
+  },
+  "s9_search": {
+    "n": 9,
+    "k": 9,
+    "found": false,
+    "complete": false,
+    "nodes": 117814299,
+    "note": "no 9-stone maximal found in 60s; B092 existence unconfirmed"
+  },
+  "s8_k7_search": {
+    "n": 8,
+    "k": 7,
+    "found": false,
+    "complete": false,
+    "nodes": 18999547,
+    "note": "45s cap; prior runs 138M/309M also incomplete"
+  }
+}

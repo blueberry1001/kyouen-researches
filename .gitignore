@@ -43,3 +43,7 @@ artifacts/*-stderr.txt
 # oversized certificates (GitHub 100MB limit)
 night-research/kyouen-8x8.cert
 night-research/kyouen-9x9.cert
+
+# verification caches / regenerable dumps
+research/verification/*.pkl
+research/verification/data/*.bin

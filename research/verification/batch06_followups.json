@@ -1,0 +1,69 @@
+{
+  "B114_aux": {
+    "n_shortest_paths": 8,
+    "auxiliary_sets_per_path": [
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ],
+      [
+        48
+      ]
+    ],
+    "distinct_aux_sets": [
+      [
+        48
+      ]
+    ],
+    "all_use_only_48": true
+  },
+  "B116_cover": {
+    "n_cover_quads": 21,
+    "n_u_quads_total": 247,
+    "covers_are_real_U_quads": false,
+    "n_candidates_regenerated": 0,
+    "n_candidates_certificate": 6460,
+    "full_cover_ok": true,
+    "min_1minimal_cover_size": 0,
+    "pair_removal_19": {
+      "removed": [
+        0,
+        1
+      ],
+      "remaining": 19
+    },
+    "greedy_cover_size": 0
+  },
+  "B112_B119_other": {
+    "d4_orbit_of_903_size": 7224,
+    "d4_orbit_of_250_size": 2000,
+    "n_safe12_seen": 20,
+    "n_outside_orbit_found": 20,
+    "outside_examples": [
+      184169612189696,
+      352247995703296,
+      304384339091456,
+      22364035751936,
+      147886278451200
+    ],
+    "enumeration_complete": false,
+    "nodes": 1657968
+  }
+}

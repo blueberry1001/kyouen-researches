@@ -1,0 +1,127 @@
+[
+  {
+    "n": 5,
+    "n_collinear": 64,
+    "n_circles": 762,
+    "variants": {
+      "standard": {
+        "n_quads": 826,
+        "g0": 1,
+        "winner": "First",
+        "n_positions": 151394,
+        "max_g": 6,
+        "winning_first_moves": [
+          2,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          22
+        ],
+        "losing_first_moves": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          20,
+          21,
+          23,
+          24
+        ],
+        "misere_first_wins": false,
+        "misere_winner": "Second",
+        "seconds": 24.83
+      },
+      "circles_only": {
+        "n_quads": 762,
+        "g0": 1,
+        "winner": "First",
+        "n_positions": 172230,
+        "max_g": 6,
+        "winning_first_moves": [
+          12
+        ],
+        "losing_first_moves": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "misere_first_wins": false,
+        "misere_winner": "Second",
+        "seconds": 30.35
+      },
+      "lines_only": {
+        "n_quads": 64,
+        "g0": 2,
+        "winner": "First",
+        "n_positions": 4872798,
+        "max_g": 10,
+        "winning_first_moves": [
+          12
+        ],
+        "losing_first_moves": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "misere_first_wins": true,
+        "misere_winner": "First",
+        "seconds": 149.29
+      }
+    },
+    "seconds": 204.72
+  }
+]
