@@ -95,7 +95,7 @@
 
 ### 追補: s_8 の決定
 
-`script/analysis/fact_kmin_cover_bound.cpp` の補完集合枝刈りを 8×8 に適用し、k=7 を **117,206,125 nodes で完全非存在**と確認。k=8 では既知証人 `[0,1,6,20,24,32,34,60]` を再発見した。よって **s_8=8**。生ログは `research/verification/data/s8_exact.json`。
+`scripts/analysis/fact_kmin_cover_bound.cpp` の補完集合枝刈りを 8×8 に適用し、k=7 を **117,206,125 nodes で完全非存在**と確認。k=8 では既知証人 `[0,1,6,20,24,32,34,60]` を再発見した。よって **s_8=8**。生ログは `research/verification/data/s8_exact.json`。
 
 ## 成果物
 
