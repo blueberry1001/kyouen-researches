@@ -1,0 +1,14 @@
+{
+  "n": 6,
+  "forbidden_quads": 2491,
+  "grundy_states": 5081289,
+  "empty_grundy": 1,
+  "K_n": 11,
+  "Tstar_empty": [7, 9, 11],
+  "WFT_empty": [9],
+  "tstar_states": 2530155,
+  "wft_states": 2472115,
+  "all_36_first_moves": {"grundy": 0, "Tstar": [7, 9, 11], "WFT": [9]},
+  "observed_runtime_seconds": 25.88,
+  "observed_peak_rss_kib": 425600
+}
