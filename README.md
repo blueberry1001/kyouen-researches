@@ -1,14 +1,15 @@
-# 共円ゲーム 1×1～9×9 完全分類
+# 共円ゲーム 1×1～10×10 最適勝敗分類
 
-**Kyouen: a computer-assisted optimal-play classification for square boards of sizes 1 through 9**
+**Kyouen: a computer-assisted optimal-play classification for square boards of sizes 1 through 10**
 
-本リポジトリは、完全指摘ルールの共円ゲームについて、`n × n` 格子点盤の最適プレイ時の勝者を **`1 ≤ n ≤ 9` の全サイズで分類**した計算機援用証明を収録します。
+本リポジトリは、完全指摘ルールの共円ゲームについて、`n × n` 格子点盤の最適プレイ時の勝者を **`1 ≤ n ≤ 10` の全サイズで分類**した計算機援用研究を収録します。  
+`1 ≤ n ≤ 9` は空盤面を根とする共通形式の順位付きAND/OR証明書まで整備済みです。10×10は、100通りの初手をD4対称性で15代表に縮約して厳密探索した完全初手分類により後手必勝を確定しており、検証形式の違いは後述します。
 
 ## 主結果
 
-| 盤面 | 1×1 | 2×2 | 3×3 | 4×4 | 5×5 | 6×6 | 7×7 | 8×8 | 9×9 |
-|---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 最適プレイ時の勝者 | 先手 | 先手 | 先手 | 後手 | 先手 | 先手 | 後手 | 後手 | **先手** |
+| 盤面 | 1×1 | 2×2 | 3×3 | 4×4 | 5×5 | 6×6 | 7×7 | 8×8 | 9×9 | 10×10 |
+|---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 最適プレイ時の勝者 | 先手 | 先手 | 先手 | 後手 | 先手 | 先手 | 後手 | 後手 | **先手** | **後手** |
 
 したがって、先手必勝となるのは
 
@@ -19,7 +20,7 @@ n ∈ {1, 2, 3, 5, 6, 9}
 後手必勝となるのは
 
 ```text
-n ∈ {4, 7, 8}
+n ∈ {4, 7, 8, 10}
 ```
 
 です。
@@ -28,7 +29,7 @@ n ∈ {4, 7, 8}
 
 - **盤面サイズの奇偶では決まらない**：6×6は先手必勝、7×7は後手必勝
 - **盤面拡大に対して単調ではない**：6→7で先手から後手、8→9で後手から先手へ変わる
-- **すぐに見える短周期でもない**：4～9は `後・先・先・後・後・先`
+- **すぐに見える短周期でもない**：4～10は `後・先・先・後・後・先・後`
 - **最大安全配置数の偶奇だけでは決まらない**：勝敗は、相手をどの飽和配置へ誘導できるかに依存する
 
 より詳しい考察は [`docs/RESULTS_AND_IMPLICATIONS.md`](docs/RESULTS_AND_IMPLICATIONS.md) にあります。
@@ -48,9 +49,9 @@ n ∈ {4, 7, 8}
 | x²+y²  x  y  1 |
 ```
 
-## 証明の構成
+## 1×1〜9×9の証明書検証
 
-各サイズについて、空盤面を根とする順位付きAND/OR証明書を収録しています。
+1×1〜9×9の各サイズについて、空盤面を根とする順位付きAND/OR証明書を収録しています。
 
 - **winning局面**：証明書中のlosing局面へ進む合法手を1つ持つ
 - **losing局面**：すべての合法手が、証明書中のwinning局面へ進む
@@ -81,9 +82,22 @@ D4軌道14クラス（中心を除く）を独立に逐次探索した結果、*
 
 fixed rule / two-stone subset probe の盲検追試後に行った反例解析・訂正・棄却済み仮説・次の実験は [`docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md`](docs/9X9_TWO_STONE_PROBE_RESEARCH_NOTES.md) にまとめています。
 
+## 10×10について
+
+10×10では、100通りの初手を回転・反転（D4）で **15代表**に縮約し、15代表すべてについて先手のその初手が `LOSS` であることを厳密探索で確認しました。したがって、**100通りすべての初手が先手負けで、空盤面は後手必勝**です。
+
+完全表は [`rust/independent-verifier/evidence-sample/10x10-first-move-classification-complete.csv`](rust/independent-verifier/evidence-sample/10x10-first-move-classification-complete.csv) にあります。各代表について後手の勝ち応手を記録し、必要なケースではその後の第3手98通り（転置対称な場合は53代表で98通りを包含）を完全探索しています。
+
+10×10用には128-bit状態を扱う `KYOENC4` 証明書形式と独立Rust検査器も実装済みで、4〜8石などの実局面について最大180万ノード級の証明DAGを生成・独立検査しています。ただし、**10×10の空盤面分類全体を1本のKYOENC4証明書として統合したものはまだありません**。したがって検証境界は次のとおりです。
+
+- 1×1〜9×9：空盤面からの共通AND/OR証明書を独立検査
+- 10×10：15初手代表の厳密探索による完全分類＋証拠CSV監査＋一部局面のKYOENC4独立検査
+
+詳細は [`docs/PROOF_STATUS.md`](docs/PROOF_STATUS.md)、[`docs/10X10_KYOENC4_EXPORT.md`](docs/10X10_KYOENC4_EXPORT.md)、[`rust/independent-verifier/README.md`](rust/independent-verifier/README.md) を参照してください。
+
 ## 関連研究
 
-先行研究を広く調査した結果、3×3〜6×6の完全探索、最大安全配置数 k(1)〜k(9)、一般の必勝判定の計算量研究などは既知であることを確認しました。一方、2026-09-23までに確認できた公開資料では、完全指摘・2人制の7×7〜9×9の厳密な最適勝敗分類と独立検査可能な証明書の先行公開例は確認できていません。調査範囲、既知結果との境界、留保事項は [docs/RELATED_WORK.md](docs/RELATED_WORK.md) に記録しています。
+先行研究を広く調査した結果、3×3〜6×6の完全探索、最大安全配置数 k(1)〜k(9)、一般の必勝判定の計算量研究などは既知であることを確認しました。一方、2026-09-23までに確認できた公開資料では、完全指摘・2人制の7×7〜9×9の厳密な最適勝敗分類と独立検査可能な証明書の先行公開例は確認できていません。10×10の勝敗も本リポジトリでは確定していますが、同日の先行研究調査は7×7〜9×9の優先権確認を主眼としていたため、**10×10については同じ強さの新規性主張を現時点では行いません**。調査範囲、既知結果との境界、留保事項は [docs/RELATED_WORK.md](docs/RELATED_WORK.md) に記録しています。
 
 ## リポジトリ構成
 
@@ -97,7 +111,8 @@ fixed rule / two-stone subset probe の盲検追試後に行った反例解析�
 │   └── solvers/               完全探索器と独立検証用実装
 ├── docs/                      証明形式・結果の含意・検証報告
 ├── results/                   結果表、ハッシュ、実行記録
-├── release-assets/            圧縮証明書（GitHub Release向け）
+├── rust/independent-verifier/ 10×10証拠監査・KYOENC4独立検査
+├── release-assets/            1～9圧縮証明書（GitHub Release向け）
 ├── scripts/                   Linux/macOS・Windows用検証手順
 ├── CMakeLists.txt
 ├── lakefile.lean
@@ -174,6 +189,6 @@ Leanによる証明書方式の一般健全性定理
 
 ## English summary
 
-This repository gives a computer-assisted complete classification of optimal-play outcomes for Kyouen on `n × n` lattice-point boards for `1 ≤ n ≤ 9`.
+This repository gives a computer-assisted complete classification of optimal-play outcomes for Kyouen on `n × n` lattice-point boards for `1 ≤ n ≤ 10`.
 
-The first player wins for `n ∈ {1,2,3,5,6,9}`, while the second player wins for `n ∈ {4,7,8}`. Every result is accompanied by a ranked AND/OR certificate checked by a common independent verifier. A Lean development formalizes the general soundness argument for such certificates.
+The first player wins for `n ∈ {1,2,3,5,6,9}`, while the second player wins for `n ∈ {4,7,8,10}`. Boards 1×1 through 9×9 have ranked AND/OR certificates checked by a common independent verifier. The 10×10 outcome is established by an exact classification of all 15 D4 first-move representatives (covering all 100 first moves); its evidence is structurally audited by an independent Rust implementation, and selected 10×10 roots have independently checked KYOENC4 proof DAGs. A single empty-board KYOENC4 certificate for the full 10×10 classification has not yet been produced. A Lean development formalizes the general soundness argument for ranked certificates.
