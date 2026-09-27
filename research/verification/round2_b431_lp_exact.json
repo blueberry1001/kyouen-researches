@@ -1,0 +1,47 @@
+{
+  "claim": {
+    "integer_cover_optimum": 21,
+    "fractional_cover_optimum": "102/5",
+    "fractional_cover_optimum_decimal": 20.4,
+    "integrality_gap_additive": "3/5",
+    "integrality_gap_ratio": "35/34",
+    "B431": "SUPPORTED",
+    "B432": "REFUTED",
+    "B433": "SUPPORTED",
+    "B434": "REFUTED"
+  },
+  "universe": {
+    "board_n": 7,
+    "cells": [0,1,5,6,8,9,17,19,20,24,25,26,27,28,38,39,41,42,46],
+    "A_only": [1,20,24,26,41],
+    "B_only": [6,17,25,27,46],
+    "n_forbidden_quads_in_U": 59,
+    "n_candidates": 6460,
+    "candidate_size_hist": {"13":4175,"14":1675,"15":500,"16":100,"17":10},
+    "candidate_order": "sizes 13..19; itertools.combinations(cells, size) lexicographic; keep d=|S∩B_only|-|S∩A_only| in {2,3}",
+    "quad_order": "itertools.combinations(cells,4) lexicographic; keep exact circle/line determinant zero"
+  },
+  "integer_cover": {
+    "size": 21,
+    "quad_indices": [0,3,5,7,16,17,18,19,21,25,28,33,35,36,38,42,47,48,52,54,56]
+  },
+  "fractional_primal": {
+    "denominator": 5,
+    "objective_numerator": 102,
+    "terms": [[0,5],[3,5],[4,1],[5,5],[7,5],[12,3],[16,5],[17,1],[18,1],[19,5],[21,5],[25,5],[27,1],[28,5],[33,5],[34,2],[35,5],[36,1],[38,5],[42,5],[44,1],[45,2],[47,2],[48,4],[50,1],[52,3],[54,5],[56,5],[57,4]]
+  },
+  "fractional_dual": {
+    "denominator": 10,
+    "objective_numerator": 204,
+    "terms": [[100,10],[750,10],[768,10],[868,5],[906,10],[988,10],[1095,5],[1107,5],[1386,5],[1417,10],[1437,10],[1609,10],[1617,2],[1620,3],[1629,1],[1645,10],[1649,10],[1650,2],[1668,1],[1766,2],[1807,10],[2056,3],[2306,10],[2307,10],[2338,10],[2470,10],[2540,10],[2622,10]]
+  },
+  "exact_checks": {
+    "integer_cover_covers_all_candidates": true,
+    "fractional_primal_min_candidate_load_numerator": 5,
+    "fractional_dual_max_quad_load_numerator": 10,
+    "fractional_primal_objective": "102/5",
+    "fractional_dual_objective": "204/10=102/5",
+    "integer_lower_bound": "ceil(102/5)=21",
+    "packing_upper_bound": "floor(102/5)=20"
+  }
+}
