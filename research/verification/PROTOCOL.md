@@ -16,7 +16,7 @@
 
 | 事実 | 値・内容 | 出典 |
 |---|---|---|
-| 空盤勝者 n=1..9 | 先,先,先,後,先,先,後,後,先 | README / 証明書 |
+| 空盤勝者 n=1..10 | 先,先,先,後,先,先,後,後,先,後 | README / 1〜9証明書 / 10×10初手分類 |
 | 禁止4点組数 F_n n=2..9 | 1, 14, 194, 826, 2491, 6364, 14564, 29152 | README |
 | 空盤 g n=2..6 | 1, 1, 0, 1, 1 | CYCLE5 |
 | 最大 nimber n=2..6 | 1, 1, 5, 6, 8 | CYCLE5 |
@@ -25,13 +25,14 @@
 | n=5 負け初手の g | すべて 3 | CYCLE5 F2 |
 | n=4 全初手負け | 16/16 | CYCLE4 |
 | n=6,9 全初手勝ち | 36/36, 81/81 | README / first-moves |
-| K_6=11（極大464） | maxsafe_n6_K11.bin | CYCLE6 |
+| K_6=11（最大配置464。極大配置全体は349,596） | maxsafe_n6_K11.bin / F-U | CYCLE6 / findings |
 | K_7=14（極大16, 2軌道A/B） | maxsafe_n7_K14.bin, enum7 | CYCLE6 |
 | K_7 は 1-swap 剛性 ρ=2 | 交換辺0 | CYCLE6 |
-| K_8=15（15は存在、16は非発見） | cycle6-maxsafeset-n8-*.json | CYCLE6 |
-| K_9 ≥ 17（証明書末端17石飽和） | cert terminal | F-A |
+| K_8=15（15は存在、16は完全UNSAT） | cycle6-maxsafeset-n8-*.json / max8_16.err.txt | CYCLE5/6 |
+| K_9=18（2018年の公開既知値。本repo証明書からは独立に ≥17） | docs/RELATED_WORK.md / cert terminal | 先行研究 / F-A |
 | 7×7 後手勝ち・最大配置2相 | A=中心あり, B=中心なし | FINAL_SELECTION |
 | 9×9 中央初手は勝ち、全81勝ち | first-moves-9x9.csv | README |
+| 10×10 全100初手負け（15 D4代表） | rust/independent-verifier/evidence-sample/10x10-first-move-classification-complete.csv | CYCLE4 / evidence |
 | 5×5 J_5: 負け初手16点 | Pペア20本等 | cycle4-n5-two-stone-*.json |
 
 ## 判定ラベル（各仮説に必ず1つ）
