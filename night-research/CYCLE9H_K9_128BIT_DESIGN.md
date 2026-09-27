@@ -1,13 +1,17 @@
 # Cycle 9H — design notes: 128-bit max-safe solver for K9 (design only)
 
-Status: **design / regression plan only**. Do **not** launch long K9 UNSAT
-until n=7/n=8 known-value regression tests pass on the new representation.
+Status: **historical design / regression plan; project-level question superseded**.
+The later related-work audit established that **K9=18 was already published in
+2018**. Do not treat K9∈{17,≥18} as open. This file remains useful only as a
+128-bit implementation/regression plan for independently reproducing the known
+value or as groundwork for n≥10 maximum-safe searches.
 
 ## Why 128-bit
 
 - n=9 ⇒ V=81 cells. A safe set does not fit in `uint64_t`.
-- Certificates already show K9 ≥ 17 = 2n−1; deciding K9 ∈ {17, ≥18} needs
-  a max-safe solver that can try size 18 (existence) or prove UNSAT@18.
+- Certificates independently show K9 ≥ 17 = 2n−1. The published extremal
+  value is K9=18; a 128-bit max-safe solver can independently reproduce an
+  18-stone witness, but it is no longer needed to decide an unknown K9 value.
 - n=8 K=15 is proven (Cycle 5/6). n=7 K=14 proven.
 
 ## State representation
@@ -66,17 +70,22 @@ Constraints (port of `cycle8_b_maxsafe`):
 Cross-check: Python `cycle8_lib` geometry vs C++128 on n=7 quad count = 6364
 and n=8 = 14564.
 
-## K9 experiment protocol (when authorized)
+## K9 independent-reproduction protocol (optional)
 
 1. Implement Mask128 solver + unit tests (popcount/ctz/subset).
 2. Pass n=6/n=7 regression table.
 3. n=8: confirm first@15 witness; optional short count sample.
-4. n=9: search for size-18 witness with high node budget; if found, K9≥18.
-   If not found after agreed budget, record **incomplete**, not UNSAT.
-5. Full UNSAT@18 only with logging, checkpointing, and independent re-run plan.
+4. n=9: search for a size-18 witness as an independent reproduction of the
+   published K9=18 value. If not found after an agreed budget, record
+   **incomplete**, not a contradiction of the published value.
+5. Do **not** spend resources on UNSAT@18: K9=18 already supplies a size-18
+   witness externally, so UNSAT@18 would target a false statement.
 
 ## Explicit non-claims
 
-- This file does **not** decide K9.
+- This historical file does **not** establish K9 by itself.
 - Certificate lower bound K9≥17 is inherited, not re-proved here.
-- Do not start overnight K9 UNSAT from this design alone.
+- Project-level status uses the prior published value **K9=18** documented in
+  `docs/RELATED_WORK.md`.
+- Do not start K9 UNSAT@18; use the design only for witness reproduction or
+  larger-board tooling.
