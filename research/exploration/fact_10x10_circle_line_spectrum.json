@@ -1,0 +1,48 @@
+{
+  "board": "10x10",
+  "forbidden_total": 54441,
+  "collinear_quads": 5928,
+  "concyclic_quads": 48513,
+  "collinear_by_dir": {
+    "0,1": 2100,
+    "1,-3": 7,
+    "1,-2": 64,
+    "1,-1": 714,
+    "1,0": 2100,
+    "1,1": 714,
+    "1,2": 64,
+    "1,3": 7,
+    "2,-3": 4,
+    "2,-1": 64,
+    "2,1": 64,
+    "2,3": 4,
+    "3,-2": 4,
+    "3,-1": 7,
+    "3,1": 7,
+    "3,2": 4
+  },
+  "unique_circles": 12170,
+  "circle_lattice_size_hist": {
+    "4": 10868,
+    "5": 400,
+    "6": 600,
+    "7": 16,
+    "8": 261,
+    "10": 16,
+    "12": 9
+  },
+  "sum_C_k4_over_unique_circles": 48513,
+  "complete_circles": 12170,
+  "partial_circles": 0,
+  "size_when_complete": {
+    "4": 10868,
+    "5": 400,
+    "6": 600,
+    "7": 16,
+    "8": 261,
+    "10": 16,
+    "12": 9
+  },
+  "size_when_partial": {},
+  "matches_concyclic_quads": true
+}

@@ -1,0 +1,20 @@
+{
+  "board": "10x10",
+  "forbidden": 54441,
+  "total_triples": 161700,
+  "triples_with_completions": 82744,
+  "triples_zero_completions": 78956,
+  "completion_hist": {
+    "1": 43728,
+    "2": 4520,
+    "3": 12080,
+    "4": 700,
+    "5": 14840,
+    "6": 336,
+    "7": 4560,
+    "9": 1980
+  },
+  "pair_quad_min": 6,
+  "pair_quad_max": 197,
+  "pairs_in_quads": 4950
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "pair": "90,91",
+    "sum_d": 3245,
+    "quads_containing_pair": 87,
+    "d_p": 1515,
+    "d_q": 1730,
+    "orbit_key": 1,
+    "outcome": "WIN"
+  },
+  {
+    "pair": "90,2",
+    "sum_d": 3442,
+    "quads_containing_pair": 69,
+    "d_p": 1515,
+    "d_q": 1927,
+    "orbit_key": 2,
+    "outcome": "WIN"
+  },
+  {
+    "pair": "90,69",
+    "sum_d": 3595,
+    "quads_containing_pair": 81,
+    "d_p": 1515,
+    "d_q": 2080,
+    "orbit_key": 3,
+    "outcome": "?"
+  },
+  {
+    "pair": "2,91",
+    "sum_d": 3657,
+    "quads_containing_pair": 97,
+    "d_p": 1730,
+    "d_q": 1927,
+    "orbit_key": 258,
+    "outcome": "WIN"
+  },
+  {
+    "pair": "90,61",
+    "sum_d": 3804,
+    "quads_containing_pair": 55,
+    "d_p": 1515,
+    "d_q": 2289,
+    "orbit_key": 13,
+    "outcome": "LOSS"
+  },
+  {
+    "pair": "90,13",
+    "sum_d": 3804,
+    "quads_containing_pair": 55,
+    "d_p": 1515,
+    "d_q": 2289,
+    "orbit_key": 13,
+    "outcome": "?"
+  },
+  {
+    "pair": "69,91",
+    "sum_d": 3810,
+    "quads_containing_pair": 80,
+    "d_p": 1730,
+    "d_q": 2080,
+    "orbit_key": 259,
+    "outcome": "?"
+  },
+  {
+    "pair": "90,73",
+    "sum_d": 3910,
+    "quads_containing_pair": 35,
+    "d_p": 1515,
+    "d_q": 2395,
+    "orbit_key": 23,
+    "outcome": "WIN"
+  },
+  {
+    "pair": "2,69",
+    "sum_d": 4007,
+    "quads_containing_pair": 124,
+    "d_p": 1927,
+    "d_q": 2080,
+    "orbit_key": 515,
+    "outcome": "?"
+  },
+  {
+    "pair": "90,66",
+    "sum_d": 4014,
+    "quads_containing_pair": 71,
+    "d_p": 1515,
+    "d_q": 2499,
+    "orbit_key": 33,
+    "outcome": "?"
+  },
+  {
+    "pair": "61,91",
+    "sum_d": 4019,
+    "quads_containing_pair": 56,
+    "d_p": 1730,
+    "d_q": 2289,
+    "orbit_key": 269,
+    "outcome": "?"
+  },
+  {
+    "pair": "13,91",
+    "sum_d": 4019,
+    "quads_containing_pair": 56,
+    "d_p": 1730,
+    "d_q": 2289,
+    "orbit_key": 269,
+    "outcome": "?"
+  },
+  {
+    "pair": "73,91",
+    "sum_d": 4125,
+    "quads_containing_pair": 63,
+    "d_p": 1730,
+    "d_q": 2395,
+    "orbit_key": 279,
+    "outcome": "WIN"
+  },
+  {
+    "pair": "61,2",
+    "sum_d": 4216,
+    "quads_containing_pair": 62,
+    "d_p": 1927,
+    "d_q": 2289,
+    "orbit_key": 525,
+    "outcome": "?"
+  },
+  {
+    "pair": "2,13",
+    "sum_d": 4216,
+    "quads_containing_pair": 62,
+    "d_p": 1927,
+    "d_q": 2289,
+    "orbit_key": 525,
+    "outcome": "?"
+  },
+  {
+    "pair": "66,91",
+    "sum_d": 4229,
+    "quads_containing_pair": 34,
+    "d_p": 1730,
+    "d_q": 2499,
+    "orbit_key": 289,
+    "outcome": "?"
+  },
+  {
+    "pair": "2,73",
+    "sum_d": 4322,
+    "quads_containing_pair": 51,
+    "d_p": 1927,
+    "d_q": 2395,
+    "orbit_key": 535,
+    "outcome": "?"
+  },
+  {
+    "pair": "61,69",
+    "sum_d": 4369,
+    "quads_containing_pair": 70,
+    "d_p": 2080,
+    "d_q": 2289,
+    "orbit_key": 781,
+    "outcome": "?"
+  },
+  {
+    "pair": "69,13",
+    "sum_d": 4369,
+    "quads_containing_pair": 70,
+    "d_p": 2080,
+    "d_q": 2289,
+    "orbit_key": 781,
+    "outcome": "?"
+  },
+  {
+    "pair": "2,66",
+    "sum_d": 4426,
+    "quads_containing_pair": 64,
+    "d_p": 1927,
+    "d_q": 2499,
+    "orbit_key": 545,
+    "outcome": "?"
+  },
+  {
+    "pair": "73,69",
+    "sum_d": 4475,
+    "quads_containing_pair": 53,
+    "d_p": 2080,
+    "d_q": 2395,
+    "orbit_key": 791,
+    "outcome": "?"
+  },
+  {
+    "pair": "61,13",
+    "sum_d": 4578,
+    "quads_containing_pair": 129,
+    "d_p": 2289,
+    "d_q": 2289,
+    "orbit_key": 3344,
+    "outcome": "?"
+  },
+  {
+    "pair": "69,66",
+    "sum_d": 4579,
+    "quads_containing_pair": 85,
+    "d_p": 2080,
+    "d_q": 2499,
+    "orbit_key": 801,
+    "outcome": "?"
+  },
+  {
+    "pair": "61,73",
+    "sum_d": 4684,
+    "quads_containing_pair": 92,
+    "d_p": 2289,
+    "d_q": 2395,
+    "orbit_key": 3351,
+    "outcome": "?"
+  },
+  {
+    "pair": "73,13",
+    "sum_d": 4684,
+    "quads_containing_pair": 92,
+    "d_p": 2289,
+    "d_q": 2395,
+    "orbit_key": 3351,
+    "outcome": "?"
+  },
+  {
+    "pair": "61,66",
+    "sum_d": 4788,
+    "quads_containing_pair": 72,
+    "d_p": 2289,
+    "d_q": 2499,
+    "orbit_key": 3361,
+    "outcome": "LOSS"
+  },
+  {
+    "pair": "66,13",
+    "sum_d": 4788,
+    "quads_containing_pair": 72,
+    "d_p": 2289,
+    "d_q": 2499,
+    "orbit_key": 3361,
+    "outcome": "?"
+  },
+  {
+    "pair": "73,66",
+    "sum_d": 4894,
+    "quads_containing_pair": 119,
+    "d_p": 2395,
+    "d_q": 2499,
+    "orbit_key": 5921,
+    "outcome": "WIN"
+  }
+]
