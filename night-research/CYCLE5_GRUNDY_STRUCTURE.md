@@ -147,12 +147,18 @@ $M_n(k)=K_n-k$ for all $k\ge\sigma_n$ follows without further computation.
 Deficits are non-increasing on every board, and no layer after σ has a
 positive deficit — the theorem's predictions hold on all three exact boards.
 
-## F5. 6×6 maximal safe sets have exactly 11 stones (464 of them)
+## F5. 6×6 maximum safe-set size is 11 (464 maximum sets)
 
 The n = 6 enumeration terminated naturally at k = 11: no reachable safe
-position with ≥ 12 stones exists, and all 464 reachable 11-stone safe sets
-are terminal (LOSS, g = 0). This closes the Cycle-1 timeout: the maximal
-kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
+position with ≥ 12 stones exists, and there are 464 safe 11-stone sets.
+Thus the **maximum** kyouen-free set size on 6×6 is exactly 11, with 464
+maximum configurations.
+
+This does **not** mean that every inclusion-maximal safe set has 11 stones.
+A later exhaustive maximal-spectrum enumeration (F-U) found **349,596**
+inclusion-maximal safe sets across sizes 6 through 11. The earlier wording
+“all maximal safe sets have exactly 11 stones” was a maximum/maximal
+terminology error and is superseded by F-U.
 
 ## New non-trivial facts (summary)
 
@@ -168,11 +174,11 @@ kyouen-free set size on 6×6 is **exactly 11**, achieved by 464 sets.
    $\{0,\dots,m-1\}$ at each ceiling position). The measured onsets are
    $\sigma_4=2$, $\sigma_5=\sigma_6=3$ — the ceiling is reached with only
    2–3 stones on the board.
-4. **6×6 maximal safe sets have exactly 11 stones** (464 of them, all
-   terminal/LOSS), closing the Cycle-1 maximal-set timeout. The maximal
-   safe-set sizes for n = 1..6 are $K_n = 1,3,5,7,9,11 = 2n-1$ (Cycle-1
-   exact maximal-set enumeration) — but **$K_7 = 14 > 13$ refutes
-   $K_n = 2n-1$ at n = 7** (F7), and $K_8 \ge 15$.
+4. **6×6 maximum safe-set size is 11**, with 464 maximum 11-stone sets.
+   Inclusion-maximal sets are more numerous and occur at sizes 6–11 (F-U).
+   The maximum safe-set sizes for n = 1..6 are
+   $K_n = 1,3,5,7,9,11 = 2n-1$ — but **$K_7 = 14 > 13$ refutes
+   $K_n = 2n-1$ at n = 7**, and **$K_8=15$**.
 
 ## Artifacts
 
@@ -257,10 +263,12 @@ $$\boxed{K_8 = 15}$$
   which happens to equal $2n-1$ at n = 8; the $2n-1$ pattern is broken
   *only* at n = 7 so far.
 
-- n = 9 target 18: the single-word bitboard solver only supports V ≤ 64
-  (n = 9 has V = 81 and needs 128-bit masks); cert gives $K_9 \ge 17 = 2n-1$,
-  so deciding whether $K_9 = 17$ or $\ge 18$ needs the 128-bit solver
-  (open).
+- **Superseded status for n=9:** this local single-word solver cannot search
+  81-cell boards, and the certificate itself only gives the lower bound
+  $K_9\ge17$. However, the later related-work audit found the already-published
+  value **$K_9=18$** (2018). Therefore “$K_9=17$ or $\ge18$” is **not an open
+  project-level question**. A 128-bit search would only independently
+  reproduce the known value, not decide an unknown one.
 
 ## Caveats and next steps
 
@@ -269,10 +277,10 @@ $$\boxed{K_8 = 15}$$
 - n = 7 exact Grundy is plausibly feasible (n = 6 enumerated 5.1M reachable
   positions; expect ~10–100× for n = 7) — candidate for an overnight run.
 - Open: does unit-slope decay `max_g(k) = peak − (k − peak_k)` hold on n = 7?
-  Superseded by the ceiling theorem: the n = 7 question reduces to (a) exact
-  $K_7$ (conjectured 13 = 2·7−1 from the $K_n=2n-1$ pattern on n ≤ 6) and
-  (b) the saturation onset $\sigma_7$ — the first layer containing a position
-  with $g(S)=K_7-|S|$. Everything deeper is then forced.
+  Superseded by the ceiling theorem and the later exact maximum computation:
+  **$K_7=14$** (F7). The remaining n=7 Grundy question is the saturation onset
+  $\sigma_7$ — the first layer containing a position with
+  $g(S)=K_7-|S|$. Everything deeper is then forced.
 - Open: what determines the peak nimber / onset ($\sigma_4=2$,
   $\sigma_5=\sigma_6=3$)?
 - Open: is the uniform losing-nimber phenomenon (F2) specific to n = 5?
