@@ -39,3 +39,27 @@ for t in sorted({r["d2_sum"] for r in rows}):
     policy=[r["ratio"] if r["d2_sum"]>=t else 1.0 for r in rows]
     agg=sum(r["a"]*(r["ratio"] if r["d2_sum"]>=t else 1.0) for r in rows)/sum(r["a"] for r in rows)
     print(t,sum(r["d2_sum"]>=t for r in rows),f"median={median(policy):.6f}",f"improved={sum(x<1 for x in policy)}",f"worst={max(policy):.6f}",f"aggregate={agg:.6f}")
+
+
+# Leave-one-parent-out check of the post-hoc d2_sum threshold idea.
+# For each held-out parent, choose the threshold minimizing aggregate visited ratio
+# on the other 15 parents only; then evaluate that frozen threshold on the holdout.
+thresholds=sorted({r["d2_sum"] for r in rows})
+def aggregate(ds,t):
+    den=sum(r["a"] for r in ds)
+    return sum(r["a"]*(r["ratio"] if r["d2_sum"]>=t else 1.0) for r in ds)/den
+loo=[]
+for i,hold in enumerate(rows):
+    train=[r for j,r in enumerate(rows) if j!=i]
+    candidates=sorted({r["d2_sum"] for r in train})+[float("inf")]
+    t=min(candidates,key=lambda x: aggregate(train,x))
+    ratio=hold["ratio"] if hold["d2_sum"]>=t else 1.0
+    loo.append((hold,t,ratio))
+loo_aggregate=sum(r["a"]*ratio for r,t,ratio in loo)/sum(r["a"] for r,t,ratio in loo)
+loo_ratios=[ratio for r,t,ratio in loo]
+print("loo_threshold_d2_sum",
+      f"aggregate={loo_aggregate:.6f}",
+      f"median={median(loo_ratios):.6f}",
+      f"improved={sum(x<1 for x in loo_ratios)}/{len(loo_ratios)}",
+      f"worst={max(loo_ratios):.6f}")
+print("d2_sum_spearman_ratio",f"{spearman([r['d2_sum'] for r in rows],[r['ratio'] for r in rows]):.6f}")
