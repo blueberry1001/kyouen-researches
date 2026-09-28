@@ -1,0 +1,17 @@
+n= 4 triples=      560 circ>=3=     223 circ>=4=     59 conc=    184 coll=    10 F=    194 match=True M=8 q>=3=   4 t=0.0s
+n= 5 triples=     2300 circ>=3=     997 circ>=4=    217 conc=    762 coll=    64 F=    826 match=True M=8 q>=3=  48 t=0.0s
+n= 6 triples=     7140 circ>=3=    3402 circ>=4=    622 conc=   2257 coll=   234 F=   2491 match=True M=8 q>=3= 204 t=0.2s
+n= 7 triples=    18424 circ>=3=    9141 circ>=4=   1581 conc=   5704 coll=   660 F=   6364 match=True M=8 q>=3= 640 t=0.1s
+n= 8 triples=    41664 circ>=3=   21665 circ>=4=   3481 conc=  13040 coll=  1524 F=  14564 match=True M=12 q>=3=1584 t=0.4s
+n= 9 triples=    85320 circ>=3=   46390 circ>=4=   6722 conc=  25996 coll=  3156 F=  29152 match=True M=12 q>=3=3468 t=0.9s
+n=10 triples=   161700 circ>=3=   90874 circ>=4=  12170 conc=  48513 coll=  5928 F=  54441 match=True M=12 q>=3=6840 t=1.9s
+n=11 triples=   287980 circ>=3=  167539 circ>=4=  20847 conc=  85242 coll= 10428 F=  95670 match=True M=12 q>=3=12404 t=3.8s
+n=12 triples=   487344 circ>=3=  293443 circ>=4=  34031 conc= 141272 coll= 17154 F= 158426 match=True M=16 q>=3=21124 t=6.8s
+  brute-force n=4: 59 circles, {'4': 54, '6': 4, '8': 1} match=True (0.0s)
+  brute-force n=5: 217 circles, {'4': 192, '5': 8, '6': 12, '8': 5} match=True (0.1s)
+  brute-force n=6: 622 circles, {'4': 547, '5': 24, '6': 36, '8': 15} match=True (0.8s)
+  brute-force n=7: 1581 circles, {'4': 1414, '5': 36, '6': 92, '8': 39} match=True (3.0s)
+  brute-force n=8: 3481 circles, {'4': 3155, '5': 72, '6': 168, '8': 81, '10': 4, '12': 1} match=True (9.0s)
+  brute-force n=9: 6722 circles, {'4': 5996, '5': 248, '6': 316, '7': 4, '8': 146, '10': 8, '12': 4} match=True (21.9s)
+validation failures: []
+total runtime 49.6 s -> D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\round3_b451_census.json

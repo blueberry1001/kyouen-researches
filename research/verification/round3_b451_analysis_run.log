@@ -1,0 +1,13 @@
+  self-test OK: r2 formula (M<500), 25/2 -> 12 pts, 25 -> 12 pts, 65 splits 0/8/8/0 over the four q0=2 classes
+  cross-validation: 22736 census circles (n=4..10) checked against the catalogue, 0 mismatches
+  catalogue: 73083 circles with >=1 lattice point (M<=6000, q0<=10) in 1.6s
+  13495 circles with >=4 lattice points (6.7s)
+  m hist: {'4': 9175, '5': 44, '6': 672, '8': 2621, '9': 8, '10': 14, '12': 200, '16': 633, '18': 2, '20': 7, '24': 82, '32': 35, '36': 1, '48': 1}
+  by qclass: {'q1': 1707, 'q2': 2684, 'q2pow': 2500, 'q_even_nonpow': 1144, 'q_odd_ge3': 5460}
+Traceback (most recent call last):
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_b451_analysis.py", line 664, in <module>
+    main()
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_b451_analysis.py", line 392, in main
+    assert len(P) == c["m"], (c, len(P))
+           ^^^^^^^^^^^^^^^^
+AssertionError: ({'M': 8, 'q0': 2, 'alpha': 1, 'beta': 1, 'm': 4, 'r2': Fraction(2, 1), 'r2s': '2/1', 'qclass': 'q2', 'ft': {'v2': 1, 'p1mod4': [], 'p3mod4': [], 'label': '2^1'}}, 0)

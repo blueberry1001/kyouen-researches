@@ -1,0 +1,36 @@
+[n=7] V=49 F=6364 build 0.10s  spill=/tmp/l7
+    level  1:           49 states  out=  0.00 GB  edges=          49  rss=0.00GB peak=0.27GB  1.0s
+    level  2:         1176 states  out=  0.00 GB  edges=        2352  rss=0.00GB peak=0.27GB  1.6s
+    level  3:        18424 states  out=  0.00 GB  edges=       55272  rss=0.00GB peak=0.27GB  2.8s
+    level  4:       205512 states  out=  0.00 GB  edges=      822048  rss=0.00GB peak=0.27GB  2.0s
+    level  5:      1633048 states  out=  0.01 GB  edges=     8165240  rss=0.00GB peak=0.27GB  14.9s
+    level  6:      8796600 states  out=  0.07 GB  edges=    52779600  rss=0.02GB peak=0.27GB  33.0s
+    level  7:     29688640 states  out=  0.22 GB  edges=   207820480  rss=0.02GB peak=0.27GB  131.7s
+    level  8:     56927728 states  out=  0.42 GB  edges=   455421824  rss=0.02GB peak=0.46GB  436.8s
+    level  9:     55173324 states  out=  0.41 GB  edges=   496559916  rss=0.02GB peak=0.87GB  567.6s
+    level 10:     23478868 states  out=  0.17 GB  edges=   234788680  rss=0.02GB peak=0.87GB  523.3s
+    level 11:      3707028 states  out=  0.03 GB  edges=    40777308  rss=0.02GB peak=0.87GB  217.1s
+    level 12:       177760 states  out=  0.00 GB  edges=     2133120  rss=0.02GB peak=0.87GB  34.9s
+    level 13:         2176 states  out=  0.00 GB  edges=       28288  rss=0.02GB peak=0.87GB  3.7s
+    level 14:           16 states  out=  0.00 GB  edges=         224  rss=0.02GB peak=0.87GB  1.0s
+[n=7] safe subsets=179810350 K=14 enum 1972.28s rss=0.02GB peak=0.87GB
+    level_sizes = [1,49,1176,18424,205512,1633048,8796600,29688640,56927728,55173324,23478868,3707028,177760,2176,16]
+    widest level = 8 with 56927728 states
+    8B x widest                      = 0.42 GB
+    8B x (widest + predecessor)      = 0.65 GB
+    21B x (widest + predecessor) [DP] = 1.69 GB
+    k=13 M=        2176 E=         224 P=     1952 N=      224 Dbits=   0.0 best=0.000000000000 x0 edge=0.03s tot=0.14s rss=0.02GB peak=0.87GB
+    k=12 M=      177760 E=       28288 P=   154112 N=    23648 Dbits=   2.6 best=0.000000000000 x0 edge=0.02s tot=0.62s rss=0.02GB peak=0.87GB
+    k=11 M=     3707028 E=     2133120 P=  2223276 N=  1483752 Dbits=  19.9 best=0.000000000000 x0 edge=0.16s tot=13.57s rss=0.14GB peak=0.87GB
+    k=10 M=    23478868 E=    40777308 P=  7841580 N= 15637288 Dbits=  70.7 best=0.666666666046 x8 edge=1.22s tot=56.77s rss=0.58GB peak=0.93GB
+    k= 9 M=    55173324 E=   234788680 P= 15958432 N= 39214892 Dbits= 169.6 best=0.785000000149 x8 edge=7.45s tot=136.59s rss=1.41GB peak=2.46GB
+    k= 8 M=    56927728 E=   496559916 P=  9738176 N= 47189552 Dbits= 327.1 best=0.802813853137 x8 edge=16.41s tot=159.87s rss=1.79GB peak=3.10GB
+    k= 7 M=    29688640 E=   455421824 P=  4124140 N= 25564500 Dbits= 511.1 best=0.799999999814 x8 edge=24.64s tot=101.81s rss=1.27GB peak=3.10GB
+    k= 6 M=     8796600 E=   207820480 P=  1045508 N=  7751092 Dbits= 700.5 best=0.671212120913 x8 edge=11.67s tot=36.56s rss=0.54GB peak=3.10GB
+    k= 5 M=     1633048 E=    52779600 P=   138692 N=  1494356 Dbits= 895.3 best=0.603557095863 x8 edge=1.74s tot=7.51s rss=0.17GB peak=3.10GB
+    k= 4 M=      205512 E=     8165240 P=    37612 N=   167900 Dbits=1086.6 best=0.547563788481 x8 edge=0.25s tot=0.88s rss=0.08GB peak=3.10GB
+    k= 3 M=       18424 E=      822048 P=      566 N=    17858 Dbits=1161.8 best=0.533243197948 x8 edge=0.15s tot=0.70s rss=0.08GB peak=3.10GB
+    k= 2 M=        1176 E=       55272 P=      552 N=      624 Dbits=1167.4 best=0.509569392540 x8 edge=0.08s tot=0.50s rss=0.01GB peak=3.10GB
+    k= 1 M=          49 E=        2352 P=        0 N=       49 Dbits=1200.3 best=0.000000000000 x0 edge=0.04s tot=0.19s rss=0.01GB peak=3.10GB
+    k= 0 M=           1 E=          49 P=        1 N=        0 Dbits=1211.6 best=0.496114408597 x1 edge=0.05s tot=0.18s rss=0.01GB peak=3.10GB
+wrote /mnt/d/ghq/github.com/yuubinnkyoku/kyouen-researches/research/verification/data/n7_stream.json

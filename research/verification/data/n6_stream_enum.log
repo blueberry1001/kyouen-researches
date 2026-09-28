@@ -1,0 +1,18 @@
+[n=6] V=36 F=2491 build 0.02s  spill=/tmp/l6
+    level  1:           36 states  out=  0.00 GB  edges=          36  rss=0.00GB peak=0.27GB  0.6s
+    level  2:          630 states  out=  0.00 GB  edges=        1260  rss=0.00GB peak=0.27GB  0.5s
+    level  3:         7140 states  out=  0.00 GB  edges=       21420  rss=0.00GB peak=0.27GB  0.5s
+    level  4:        56414 states  out=  0.00 GB  edges=      225656  rss=0.00GB peak=0.27GB  0.6s
+    level  5:       301952 states  out=  0.00 GB  edges=     1509760  rss=0.00GB peak=0.27GB  0.8s
+    level  6:       997796 states  out=  0.01 GB  edges=     5986776  rss=0.00GB peak=0.27GB  1.5s
+    level  7:      1783296 states  out=  0.01 GB  edges=    12483072  rss=0.00GB peak=0.27GB  3.9s
+    level  8:      1459292 states  out=  0.01 GB  edges=    11674336  rss=0.02GB peak=0.27GB  6.2s
+    level  9:       438952 states  out=  0.00 GB  edges=     3950568  rss=0.03GB peak=0.28GB  4.9s
+    level 10:        35316 states  out=  0.00 GB  edges=      353160  rss=0.03GB peak=0.28GB  1.9s
+    level 11:          464 states  out=  0.00 GB  edges=        5104  rss=0.03GB peak=0.28GB  0.6s
+[n=6] safe subsets=5081289 K=11 enum 22.28s rss=0.03GB peak=0.28GB
+    level_sizes = [1,36,630,7140,56414,301952,997796,1783296,1459292,438952,35316,464]
+    widest level = 7 with 1783296 states
+    8B x widest                      = 0.01 GB
+    8B x (widest + predecessor)      = 0.02 GB
+    21B x (widest + predecessor) [DP] = 0.05 GB

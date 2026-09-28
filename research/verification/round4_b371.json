@@ -1,0 +1,67 @@
+{
+  "meta": {"n": 8, "k": 8, "V": 64, "forbidden_quads": 14564, "triples": 41664, "triple_completion_entries": 58256, "threads": 16, "seconds": 103.069, "dfs_seeds": 2016},
+  "count_maximal": 408,
+  "b371": {
+  "collinear_triple_count_hist": {"1": 24, "2": 112, "3": 176, "4": 88, "5": 8},
+    "sets_with_no_collinear_triple": 0, "witness_masks": []
+  },
+  "b372": {
+  "distinct_direction_hist": {"1": 26, "2": 146, "3": 175, "4": 57, "5": 4},
+    "sets_with_at_most_one_direction": 26, "witness_masks": [589971553469399056, 4653344316062765056, 1152959446633152544, 576535800548687876]
+  },
+  "b373": {
+  "sides_touched_hist": {"1": 72, "2": 160, "3": 160, "4": 16},
+    "sets_touching_at_most_one_side": 72, "witness_masks": [4611686346489331712, 1126484961923584, 9007272738965504, 17696674611712]
+  },
+  "b374": {
+  "corners_used_hist": {"0": 312, "1": 96},
+    "sets_using_no_corner": 312, "witness_masks": [576462952569257992, 4629718013424435216, 3458764930566848528, 4662483487031312]
+  },
+  "b375": {
+    "d4_orbits_of_size_8_maximal_sets": 309,
+  "orbit_signature_hist_all_sets": {"4:1|4:1|4:1|8:1|8:1|8:1|8:2": 8, "4:1|4:1|4:1|8:1|8:1|8:3": 16, "4:1|4:1|4:1|8:2|8:3": 8, "4:1|4:1|4:3|8:1|8:2": 8, "4:1|4:1|8:1|8:1|8:1|8:1|8:2": 8, "4:1|4:1|8:1|8:1|8:1|8:3": 32, "4:1|4:1|8:1|8:1|8:2|8:2": 16, "4:1|4:1|8:1|8:2|8:3": 16, "4:1|4:2|4:2|8:1|8:1|8:1": 8, "4:1|4:2|8:1|8:1|8:1|8:2": 8, "4:1|4:2|8:1|8:1|8:3": 8, "4:1|4:2|8:1|8:2|8:2": 16, "4:1|4:3|8:1|8:1|8:1|8:1": 8, "4:1|4:3|8:1|8:1|8:2": 16, "4:1|8:1|8:1|8:1|8:1|8:3": 24, "4:1|8:1|8:1|8:1|8:2|8:2": 16, "4:1|8:1|8:1|8:2|8:3": 32, "4:1|8:1|8:2|8:2|8:2": 40, "4:1|8:2|8:2|8:3": 8, "4:2|8:1|8:1|8:1|8:1|8:2": 24, "4:2|8:1|8:1|8:1|8:3": 16, "4:2|8:1|8:2|8:3": 8, "4:2|8:2|8:2|8:2": 8, "4:3|8:1|8:1|8:1|8:2": 8, "8:1|8:1|8:1|8:1|8:1|8:3": 8, "8:1|8:1|8:1|8:2|8:3": 8, "8:1|8:2|8:2|8:3": 32},
+  "orbit_signature_hist_per_d4_orbit": {"4:1|4:1|4:1|8:1|8:1|8:1|8:2": 8, "4:1|4:1|4:1|8:1|8:1|8:3": 8, "4:1|4:1|4:1|8:2|8:3": 5, "4:1|4:1|4:3|8:1|8:2": 7, "4:1|4:1|8:1|8:1|8:1|8:1|8:2": 5, "4:1|4:1|8:1|8:1|8:1|8:3": 19, "4:1|4:1|8:1|8:1|8:2|8:2": 13, "4:1|4:1|8:1|8:2|8:3": 10, "4:1|4:2|4:2|8:1|8:1|8:1": 6, "4:1|4:2|8:1|8:1|8:1|8:2": 7, "4:1|4:2|8:1|8:1|8:3": 6, "4:1|4:2|8:1|8:2|8:2": 12, "4:1|4:3|8:1|8:1|8:1|8:1": 6, "4:1|4:3|8:1|8:1|8:2": 11, "4:1|8:1|8:1|8:1|8:1|8:3": 20, "4:1|8:1|8:1|8:1|8:2|8:2": 12, "4:1|8:1|8:1|8:2|8:3": 28, "4:1|8:1|8:2|8:2|8:2": 30, "4:1|8:2|8:2|8:3": 7, "4:2|8:1|8:1|8:1|8:1|8:2": 18, "4:2|8:1|8:1|8:1|8:3": 12, "4:2|8:1|8:2|8:3": 6, "4:2|8:2|8:2|8:2": 7, "4:3|8:1|8:1|8:1|8:2": 7, "8:1|8:1|8:1|8:1|8:1|8:3": 7, "8:1|8:1|8:1|8:2|8:3": 7, "8:1|8:2|8:2|8:3": 25},
+  "d4_stabiliser_order_hist": {"0": 408},
+    "sets_with_trivial_d4_stabiliser": 408
+  },
+  "b378": {
+  "min_new_legal_after_one_deletion_hist": {"2": 8, "3": 8, "4": 64, "5": 104, "6": 88, "7": 64, "8": 56, "10": 16},
+    "sets_with_min_exactly_one": 0, "witness_masks": []
+  },
+  "b380": {
+  "sum_b_hist": {"86": 8, "88": 8, "89": 24, "92": 24, "93": 24, "95": 24, "97": 16, "99": 24, "100": 32, "101": 24, "102": 24, "103": 16, "104": 16, "105": 16, "106": 8, "107": 8, "108": 16, "109": 24, "110": 24, "111": 24, "113": 8, "116": 8, "118": 8},
+    "by_sum_b": {
+      "86": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [16,16], "si_range": [15,15], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "16/15 16/15 16/15 16/15 16/15 16/15 16/15 16/15"},
+      "88": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [10,10], "si_range": [25,25], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "10/25 10/25 10/25 10/25 10/25 10/25 10/25 10/25"},
+      "89": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [13,15], "si_range": [15,17], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "13/15 15/16 15/16 13/15 13/15 14/17 15/16 13/15 14/17 13/15 15/16 15/16 14/17 14/17 15/16 15/16 14/17 14/17 13/15 15/16 14/17 14/17 13/15 13/15"},
+      "92": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [11,17], "si_range": [12,16], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "15/14 15/14 17/12 11/16 15/14 17/12 17/12 17/12 15/14 11/16 17/12 17/12 11/16 11/16 11/16 11/16 17/12 11/16 17/12 15/14 15/14 15/14 15/14 11/16"},
+      "93": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [12,16], "si_range": [13,16], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "12/16 16/14 13/13 13/13 13/13 16/14 16/14 12/16 16/14 16/14 16/14 16/14 12/16 12/16 16/14 13/13 12/16 12/16 12/16 12/16 13/13 13/13 13/13 13/13"},
+      "95": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [15,20], "si_range": [5,11], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "15/11 15/11 20/5 20/5 20/5 17/11 20/5 17/11 20/5 17/11 15/11 15/11 17/11 20/5 17/11 17/11 20/5 20/5 15/11 17/11 15/11 15/11 17/11 15/11"},
+      "97": {"count": 16, "edge_type": 0, "interior_type": 0, "mixed": 16, "no_single_covered": 0, "se_range": [12,12], "si_range": [13,14], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "12/14 12/14 12/13 12/13 12/14 12/14 12/13 12/14 12/13 12/14 12/13 12/13 12/14 12/13 12/14 12/13"},
+      "99": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [16,17], "si_range": [10,11], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "16/10 17/11 17/11 17/11 16/10 16/10 17/11 17/11 17/11 16/10 16/11 17/11 16/11 16/11 16/11 17/11 16/11 16/10 16/11 16/11 16/11 16/10 16/10 16/10"},
+      "100": {"count": 32, "edge_type": 0, "interior_type": 0, "mixed": 32, "no_single_covered": 0, "se_range": [12,19], "si_range": [8,14], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "12/11 12/14 12/14 18/9 18/9 19/8 18/9 12/14 18/9 19/8 12/11 18/9 12/11 18/9 18/9 12/14 19/8 12/14 12/11 19/8 19/8 18/9 12/14 12/11"},
+      "101": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [8,14], "si_range": [10,19], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "11/10 8/19 8/19 14/13 14/13 11/10 14/13 8/19 8/19 14/13 11/10 14/13 11/10 11/10 8/19 8/19 14/13 14/13 8/19 8/19 14/13 11/10 11/10 11/10"},
+      "102": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [10,17], "si_range": [8,14], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "17/11 10/14 10/14 13/8 10/14 17/11 13/8 10/14 13/8 17/11 17/11 10/14 10/14 13/8 13/8 10/14 17/11 17/11 13/8 13/8 13/8 17/11 10/14 17/11"},
+      "103": {"count": 16, "edge_type": 0, "interior_type": 0, "mixed": 16, "no_single_covered": 0, "se_range": [12,16], "si_range": [9,10], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "12/9 12/9 16/10 16/10 12/9 16/10 16/10 16/10 12/9 12/9 16/10 16/10 16/10 12/9 12/9 12/9"},
+      "104": {"count": 16, "edge_type": 0, "interior_type": 0, "mixed": 16, "no_single_covered": 0, "se_range": [11,13], "si_range": [10,11], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "11/11 13/10 13/10 11/11 13/10 11/11 11/11 11/11 11/11 11/11 13/10 13/10 13/10 11/11 13/10 13/10"},
+      "105": {"count": 16, "edge_type": 0, "interior_type": 0, "mixed": 16, "no_single_covered": 0, "se_range": [14,14], "si_range": [8,11], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "14/11 14/8 14/11 14/8 14/8 14/11 14/11 14/11 14/11 14/8 14/11 14/8 14/8 14/8 14/8 14/11"},
+      "106": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [8,8], "si_range": [15,15], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "8/15 8/15 8/15 8/15 8/15 8/15 8/15 8/15"},
+      "107": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [13,13], "si_range": [6,6], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "13/6 13/6 13/6 13/6 13/6 13/6 13/6 13/6"},
+      "108": {"count": 16, "edge_type": 0, "interior_type": 0, "mixed": 16, "no_single_covered": 0, "se_range": [10,15], "si_range": [12,14], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "15/12 15/12 15/12 10/14 10/14 10/14 15/12 15/12 10/14 15/12 15/12 10/14 10/14 10/14 10/14 15/12"},
+      "109": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [10,16], "si_range": [6,11], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "10/11 16/6 10/11 16/6 10/11 16/6 10/11 10/11 10/11 16/6 16/6 14/9 14/9 14/9 10/11 14/9 14/9 14/9 16/6 14/9 14/9 16/6 10/11 16/6"},
+      "110": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [11,13], "si_range": [8,10], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "11/8 11/8 12/10 12/10 11/8 13/10 12/10 12/10 13/10 13/10 13/10 13/10 12/10 11/8 13/10 13/10 11/8 12/10 12/10 12/10 11/8 11/8 11/8 13/10"},
+      "111": {"count": 24, "edge_type": 0, "interior_type": 0, "mixed": 24, "no_single_covered": 0, "se_range": [11,15], "si_range": [6,10], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "11/10 14/10 15/6 14/10 14/10 11/10 15/6 15/6 15/6 15/6 15/6 14/10 15/6 14/10 11/10 11/10 14/10 14/10 11/10 15/6 11/10 11/10 11/10 14/10"},
+      "113": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [16,16], "si_range": [9,9], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "16/9 16/9 16/9 16/9 16/9 16/9 16/9 16/9"},
+      "116": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [13,13], "si_range": [3,3], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "13/3 13/3 13/3 13/3 13/3 13/3 13/3 13/3"},
+      "118": {"count": 8, "edge_type": 0, "interior_type": 0, "mixed": 8, "no_single_covered": 0, "se_range": [10,10], "si_range": [6,6], "edge_and_interior_types_both_present": false, "sample_edge_interior_pairs": "10/6 10/6 10/6 10/6 10/6 10/6 10/6 10/6"}
+    }
+  },
+  "auxiliary": {
+    "leaves_checked_against_core": 408, "maximality_disagreements": 0,
+  "min_b_hist": {"1": 408},
+  "max_b_hist": {"3": 56, "4": 256, "5": 88, "6": 8},
+  "rho_hist": {"1": 408},
+  "external_saturation_radius_hist_per_d4_orbit": {"1": 309},
+    "r_ext_definition": "smallest Chebyshev distance from the minimal axis-parallel bounding box of S to a point outside the board that is addable to S; 5 means >4"
+  }
+}

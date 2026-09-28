@@ -1,0 +1,24 @@
+=== round4_b228d : decisive pass ===
+
+## sec_core : full enumeration n=2..6
+  n=2 total_safe=15 K=3 maximal=4 max_grundy=1
+  Z_2(lam) coefficients: 1 4 6 4
+  n=3 total_safe=298 K=5 maximal=56 max_grundy=1
+  Z_3(lam) coefficients: 1 9 36 84 112 56
+  n=4 total_safe=5811 K=7 maximal=928 max_grundy=1
+  Z_4(lam) coefficients: 1 16 120 560 1626 2360 1064 64
+  n=5 total_safe=151394 K=9 maximal=16860 max_grundy=1
+  Z_5(lam) coefficients: 1 25 300 2300 11824 37272 59192 35208 5172 100
+  n=6 total_safe=5081289 K=11 maximal=349596 max_grundy=1
+  Z_6(lam) coefficients: 1 36 630 7140 56414 301952 997796 1783296 1459292 438952 35316 464
+
+## B231 max_grundy by n (exact, full enumeration)
+  n=2 max_grundy=1 K=3
+  n=3 max_grundy=1 K=5
+  n=4 max_grundy=1 K=7
+  n=5 max_grundy=1 K=9
+  n=6 max_grundy=1 K=11
+  PROTOCOL known max nimber n=2..6 = 1,1,5,6,8 (cross-check above)
+
+## sec_u : B261 B262 B263 B264 B265 B267 B268 B269 B270
+/mnt/c/Users/yuubi/AppData/Local/Temp/commandcode/D--ghq-github-com-yuubinnkyoku-kyouen-researches/c00a26c4-6668-4176-a11b-a6c040944b33/scratchpad/run_d.sh: 3 行:  8729 Segmentation fault      (コアダンプ) /tmp/r4d

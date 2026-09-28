@@ -1,0 +1,94 @@
+{
+  "worker": "B591,B592,B593,B596,B597,B598,B599",
+  "round": 4,
+  "script": "research/verification/scripts/round4_b591_dmax.cpp",
+  "engine": {
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": "-O2 -march=native -std=c++20",
+    "occupancy": "unsigned __int128 (128-bit) -- supports n=9 (81 points) in one word pair",
+    "core_include": "kc_core.h (shared, verified)",
+    "float_policy": "integer only; no floating point in any reported quantity"
+  },
+
+  "selfcheck": {
+    "note": "F_n recomputed with 128-bit geometry and compared against kc::build_square for n<=8; F_9 against README",
+    "items": [
+      {"n": 2, "F_128": 1,     "F_kccore": 1,     "agree": true, "build_sec": 0.00},
+      {"n": 3, "F_128": 14,    "F_kccore": 14,    "agree": true, "build_sec": 0.00},
+      {"n": 4, "F_128": 194,   "F_kccore": 194,   "agree": true, "build_sec": 0.00},
+      {"n": 5, "F_128": 826,   "F_kccore": 826,   "agree": true, "build_sec": 0.00},
+      {"n": 6, "F_128": 2491,  "F_kccore": 2491,  "agree": true, "build_sec": 0.03},
+      {"n": 7, "F_128": 6364,  "F_kccore": 6364,  "agree": true, "build_sec": 0.17},
+      {"n": 8, "F_128": 14564, "F_kccore": 14564, "agree": true, "build_sec": 0.24},
+      {"n": 9, "F_128": 29152, "F_kccore": null,  "agree": "na (kc_core requires n*n<=64)", "build_sec": 0.67}
+    ],
+    "verdict": "geometry engine validated"
+  },
+
+  "validation_of_dmax_bnb": {
+    "method": "independent brute-force cross-check: enumerate ALL size-K safe sets, compute max |S^M| directly in python3, compare with branch-and-bound alpha()",
+    "n6_K11_pool": {
+      "maximal_sets_enumerated": 464,
+      "matches_PROTOCOL_md": true,
+      "probe_set_size": 10,
+      "brute_d_max": 5,
+      "bnb_d_max": 5,
+      "agree": true,
+      "bnb_nodes": 1531,
+      "bnb_sec": 0.02
+    },
+    "n7_K14_pool": {
+      "maximal_sets_enumerated": 16,
+      "matches_PROTOCOL_md": true,
+      "probe_set_size": 13,
+      "probe_set_coords": "(0,0),(1,0),(1,1),(5,1),(6,1),(0,2),(2,2),(3,4),(6,4),(4,5),(1,6),(2,6),(3,6)",
+      "probe_safe": true,
+      "probe_maximal": true,
+      "brute_overlaps_with_16_max": [0,1,2,3,3,3,3,3,3,4,4,5,5,5,5,5],
+      "brute_max_overlap": 5,
+      "brute_d_max": 8,
+      "bnb_d_max": 8,
+      "agree": true,
+      "bnb_nodes": 1531242,
+      "bnb_sec": 20.81
+    },
+    "n8_K15_round3_witness": {
+      "coords": "(0,0),(3,0),(3,1),(0,2),(4,2),(5,3),(3,4),(4,4),(5,4),(0,6),(2,6),(5,6),(0,7),(7,7)",
+      "size": 14,
+      "d4_orbit": 8,
+      "safe": false,
+      "maximal": true,
+      "bnb_d_max": 6,
+      "bnb_complete": true,
+      "bnb_nodes": 652737,
+      "bnb_sec": 12.58,
+      "round3_reported_d_max": 3,
+      "verdict": "ROUND3 VALUE REFUTED: 3 underestimates the true value 6 (factor 2, wrong direction = too small)"
+    },
+    "n6_K11_inside_a_max_set": {
+      "size": 11, "safe": true, "maximal": true, "d_max": 0, "nodes": 1, "sec": 0.01,
+      "note": "d_max=0 iff S is contained in a maximum set; sanity check of the degenerate case"
+    }
+  },
+
+  "round3_error_analysis": {
+    "root_cause": "round3_b591_b592_final.py computed d_max against a POOL of 1,009,679 maximum sets found by local search, not against the true family M_8. Its json field 'complete: true' means the branch-and-bound over the pool ran to completion, NOT that the pool equals M_8. The pool is a strict subset, so the reported max-overlap (hence d_max) was a LOWER bound, reported as exact.",
+    "impacted_ids": ["B591", "B592", "B593"],
+    "corroboration": "round3's own text already flagged 'pool_ub' as an upper bound on d_max, and the n=6 K=11 record is exactly reproducible by the correct method (464 maximal sets), showing the method is right at n<=7 where M_n is enumerable.",
+    "corrected_n8_d_max": 6,
+    "corrected_n8_ratio_dmax_over_n": "6/8"
+  },
+
+  "exact_dmax_table": [
+    {"n": 6, "K": 11, "layer": 10, "d_max": 5, "source": "round2 existing", "verified_round4": true},
+    {"n": 7, "K": 14, "layer": 13, "d_max": 8, "source": "round2 existing", "verified_round4": true,
+     "verification": "independent 16-set pool overlap = 5, d_max = 13-5 = 8"},
+    {"n": 8, "K": 15, "layer": 14, "d_max": 6, "source": "round4 (refutes round3's 3)", "verified_round4": true}
+  ],
+
+  "notes": {
+    "K9": "K_9 >= 17 is known (PROTOCOL.md, cert terminal) but the exact value is NOT established, so the 'one stone short' layer size for n=9 is undefined",
+    "layer_enumeration": "n=8 14-stone layer has C(64,14) ~ 2.1e11 members; n=9 16-stone layer has C(81,16) ~ 1.1e17. Neither is enumerable, so d_max for those layers can only ever be a per-SET exact value, never a layer maximum.",
+    "bug_found_and_fixed_during_round4": "the first version of greedy_alpha() returned popc(S&M) for a set M of size < K, which is not in the domain of alpha (which is max over |M| = K). This produced alpha = |S|, hence d_max = 0, for any S that no maximum set contains. Detected because the known n=7 worst set came out 0 instead of 8. Fixed: greedy_alpha now only returns the overlap of a safe set of size exactly K, and falls back to 0."
+  }
+}

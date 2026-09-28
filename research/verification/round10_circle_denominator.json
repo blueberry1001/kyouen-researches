@@ -1,0 +1,2668 @@
+{
+  "B453": "SUPPORTED",
+  "norm_limit": 3000,
+  "denominators_checked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "primitive_residue_classes_checked": 73895,
+  "q1_q2_exact_count_checks": 1967,
+  "q3_q4_occupied_exact_count_checks": 5684,
+  "q3_q4_all_primitive_class_checks": 60000,
+  "q3_q4_common_minimum_norms_at_least_m": {
+    "1": 1,
+    "2": 5,
+    "3": 25,
+    "4": 65,
+    "5": 325,
+    "6": 325,
+    "7": 1105,
+    "8": 1105
+  },
+  "observed_maxima_not_universal_bounds": {
+    "1": 32,
+    "2": 32,
+    "3": 8,
+    "4": 8,
+    "5": 6,
+    "6": 8,
+    "7": 4,
+    "8": 4,
+    "9": 4,
+    "10": 4,
+    "11": 3,
+    "12": 4,
+    "13": 3,
+    "14": 4,
+    "15": 2,
+    "16": 3
+  },
+  "first_four_point_examples_within_scan": {
+    "1": {
+      "norm": 1,
+      "center_numerator": [
+        0,
+        0
+      ],
+      "q": 1,
+      "radius_squared": "1/1",
+      "points": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "2": {
+      "norm": 2,
+      "center_numerator": [
+        1,
+        1
+      ],
+      "q": 2,
+      "radius_squared": "2/4",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "3": {
+      "norm": 65,
+      "center_numerator": [
+        2,
+        2
+      ],
+      "q": 3,
+      "radius_squared": "65/9",
+      "points": [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    "4": {
+      "norm": 65,
+      "center_numerator": [
+        1,
+        0
+      ],
+      "q": 4,
+      "radius_squared": "65/16",
+      "points": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "6": {
+      "norm": 130,
+      "center_numerator": [
+        3,
+        5
+      ],
+      "q": 6,
+      "radius_squared": "130/36",
+      "points": [
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "5": {
+      "norm": 221,
+      "center_numerator": [
+        0,
+        4
+      ],
+      "q": 5,
+      "radius_squared": "221/25",
+      "points": [
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "8": {
+      "norm": 425,
+      "center_numerator": [
+        3,
+        0
+      ],
+      "q": 8,
+      "radius_squared": "425/64",
+      "points": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "10": {
+      "norm": 442,
+      "center_numerator": [
+        1,
+        9
+      ],
+      "q": 10,
+      "radius_squared": "442/100",
+      "points": [
+        [
+          -2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "7": {
+      "norm": 725,
+      "center_numerator": [
+        0,
+        2
+      ],
+      "q": 7,
+      "radius_squared": "725/49",
+      "points": [
+        [
+          -2,
+          -3
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          -3
+        ]
+      ]
+    },
+    "14": {
+      "norm": 1450,
+      "center_numerator": [
+        5,
+        5
+      ],
+      "q": 14,
+      "radius_squared": "1450/196",
+      "points": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    "9": {
+      "norm": 2173,
+      "center_numerator": [
+        0,
+        2
+      ],
+      "q": 9,
+      "radius_squared": "2173/81",
+      "points": [
+        [
+          -3,
+          -4
+        ],
+        [
+          -2,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          -4
+        ]
+      ]
+    },
+    "12": {
+      "norm": 2257,
+      "center_numerator": [
+        0,
+        7
+      ],
+      "q": 12,
+      "radius_squared": "2257/144",
+      "points": [
+        [
+          -3,
+          -2
+        ],
+        [
+          -2,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          -2
+        ]
+      ]
+    }
+  },
+  "exact_q3_q4_threshold_witnesses": [
+    {
+      "q": 3,
+      "center_numerator": [
+        1,
+        1
+      ],
+      "norm": 65,
+      "points": [
+        [
+          -2,
+          -1
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 4,
+      "center_numerator": [
+        1,
+        0
+      ],
+      "norm": 65,
+      "points": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  ],
+  "fixed_center_unbounded_family_checks": [
+    {
+      "q": 1,
+      "power": 1,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 5,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 2,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          4,
+          4
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          4,
+          -4
+        ]
+      ],
+      "radius_squared_numerator": 25,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 3,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          12,
+          -2
+        ],
+        [
+          -4,
+          10
+        ],
+        [
+          -4,
+          -10
+        ],
+        [
+          12,
+          2
+        ]
+      ],
+      "radius_squared_numerator": 125,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 4,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          8,
+          -24
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          -24,
+          0
+        ],
+        [
+          16,
+          -20
+        ],
+        [
+          8,
+          24
+        ]
+      ],
+      "radius_squared_numerator": 625,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 5,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -40,
+          -38
+        ],
+        [
+          56,
+          -10
+        ],
+        [
+          -24,
+          50
+        ],
+        [
+          -24,
+          -50
+        ],
+        [
+          56,
+          10
+        ],
+        [
+          -40,
+          38
+        ]
+      ],
+      "radius_squared_numerator": 3125,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 6,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -116,
+          44
+        ],
+        [
+          36,
+          -120
+        ],
+        [
+          76,
+          100
+        ],
+        [
+          -124,
+          0
+        ],
+        [
+          76,
+          -100
+        ],
+        [
+          36,
+          120
+        ],
+        [
+          -116,
+          -44
+        ]
+      ],
+      "radius_squared_numerator": 15625,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 7,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -28,
+          278
+        ],
+        [
+          -204,
+          -190
+        ],
+        [
+          276,
+          -50
+        ],
+        [
+          -124,
+          250
+        ],
+        [
+          -124,
+          -250
+        ],
+        [
+          276,
+          50
+        ],
+        [
+          -204,
+          190
+        ],
+        [
+          -28,
+          -278
+        ]
+      ],
+      "radius_squared_numerator": 78125,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 1,
+      "power": 8,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          528,
+          336
+        ],
+        [
+          -584,
+          220
+        ],
+        [
+          176,
+          -600
+        ],
+        [
+          376,
+          500
+        ],
+        [
+          -624,
+          0
+        ],
+        [
+          376,
+          -500
+        ],
+        [
+          176,
+          600
+        ],
+        [
+          -584,
+          -220
+        ],
+        [
+          528,
+          -336
+        ]
+      ],
+      "radius_squared_numerator": 390625,
+      "radius_squared_denominator": 1
+    },
+    {
+      "q": 2,
+      "power": 1,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 5,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 2,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          2,
+          2
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 25,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 3,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          6,
+          -1
+        ],
+        [
+          -2,
+          5
+        ],
+        [
+          -2,
+          -5
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "radius_squared_numerator": 125,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 4,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          4,
+          -12
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          -12,
+          0
+        ],
+        [
+          8,
+          -10
+        ],
+        [
+          4,
+          12
+        ]
+      ],
+      "radius_squared_numerator": 625,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 5,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -20,
+          -19
+        ],
+        [
+          28,
+          -5
+        ],
+        [
+          -12,
+          25
+        ],
+        [
+          -12,
+          -25
+        ],
+        [
+          28,
+          5
+        ],
+        [
+          -20,
+          19
+        ]
+      ],
+      "radius_squared_numerator": 3125,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 6,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -58,
+          22
+        ],
+        [
+          18,
+          -60
+        ],
+        [
+          38,
+          50
+        ],
+        [
+          -62,
+          0
+        ],
+        [
+          38,
+          -50
+        ],
+        [
+          18,
+          60
+        ],
+        [
+          -58,
+          -22
+        ]
+      ],
+      "radius_squared_numerator": 15625,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 7,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          -14,
+          139
+        ],
+        [
+          -102,
+          -95
+        ],
+        [
+          138,
+          -25
+        ],
+        [
+          -62,
+          125
+        ],
+        [
+          -62,
+          -125
+        ],
+        [
+          138,
+          25
+        ],
+        [
+          -102,
+          95
+        ],
+        [
+          -14,
+          -139
+        ]
+      ],
+      "radius_squared_numerator": 78125,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 2,
+      "power": 8,
+      "d": 2,
+      "guaranteed_points": [
+        [
+          264,
+          168
+        ],
+        [
+          -292,
+          110
+        ],
+        [
+          88,
+          -300
+        ],
+        [
+          188,
+          250
+        ],
+        [
+          -312,
+          0
+        ],
+        [
+          188,
+          -250
+        ],
+        [
+          88,
+          300
+        ],
+        [
+          -292,
+          -110
+        ],
+        [
+          264,
+          -168
+        ]
+      ],
+      "radius_squared_numerator": 390625,
+      "radius_squared_denominator": 4
+    },
+    {
+      "q": 3,
+      "power": 1,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 10,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 2,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          3,
+          2
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          3,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 100,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 3,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          9,
+          -6
+        ],
+        [
+          -3,
+          10
+        ],
+        [
+          -3,
+          -10
+        ],
+        [
+          9,
+          6
+        ]
+      ],
+      "radius_squared_numerator": 1000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 4,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          -9,
+          -32
+        ],
+        [
+          27,
+          20
+        ],
+        [
+          -33,
+          0
+        ],
+        [
+          27,
+          -20
+        ],
+        [
+          -9,
+          32
+        ]
+      ],
+      "radius_squared_numerator": 10000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 5,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          -105,
+          -4
+        ],
+        [
+          87,
+          -60
+        ],
+        [
+          -33,
+          100
+        ],
+        [
+          -33,
+          -100
+        ],
+        [
+          87,
+          60
+        ],
+        [
+          -105,
+          4
+        ]
+      ],
+      "radius_squared_numerator": 100000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 6,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          -117,
+          312
+        ],
+        [
+          -93,
+          -320
+        ],
+        [
+          267,
+          200
+        ],
+        [
+          -333,
+          0
+        ],
+        [
+          267,
+          -200
+        ],
+        [
+          -93,
+          320
+        ],
+        [
+          -117,
+          -312
+        ]
+      ],
+      "radius_squared_numerator": 1000000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 7,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          819,
+          664
+        ],
+        [
+          -1053,
+          -40
+        ],
+        [
+          867,
+          -600
+        ],
+        [
+          -333,
+          1000
+        ],
+        [
+          -333,
+          -1000
+        ],
+        [
+          867,
+          600
+        ],
+        [
+          -1053,
+          40
+        ],
+        [
+          819,
+          -664
+        ]
+      ],
+      "radius_squared_numerator": 10000000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 3,
+      "power": 8,
+      "d": 3,
+      "guaranteed_points": [
+        [
+          2811,
+          -1792
+        ],
+        [
+          -1173,
+          3120
+        ],
+        [
+          -933,
+          -3200
+        ],
+        [
+          2667,
+          2000
+        ],
+        [
+          -3333,
+          0
+        ],
+        [
+          2667,
+          -2000
+        ],
+        [
+          -933,
+          3200
+        ],
+        [
+          -1173,
+          -3120
+        ],
+        [
+          2811,
+          1792
+        ]
+      ],
+      "radius_squared_numerator": 100000000,
+      "radius_squared_denominator": 9
+    },
+    {
+      "q": 4,
+      "power": 1,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 17,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 2,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          4,
+          2
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          4,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 289,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 3,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          12,
+          -13
+        ],
+        [
+          -4,
+          17
+        ],
+        [
+          -4,
+          -17
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "radius_squared_numerator": 4913,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 4,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          -40,
+          -60
+        ],
+        [
+          64,
+          34
+        ],
+        [
+          -72,
+          0
+        ],
+        [
+          64,
+          -34
+        ],
+        [
+          -40,
+          60
+        ]
+      ],
+      "radius_squared_numerator": 83521,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 5,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          -280,
+          101
+        ],
+        [
+          200,
+          -221
+        ],
+        [
+          -72,
+          289
+        ],
+        [
+          -72,
+          -289
+        ],
+        [
+          200,
+          221
+        ],
+        [
+          -280,
+          -101
+        ]
+      ],
+      "radius_squared_numerator": 1419857,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 6,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          124,
+          1222
+        ],
+        [
+          -684,
+          -1020
+        ],
+        [
+          1084,
+          578
+        ],
+        [
+          -1228,
+          0
+        ],
+        [
+          1084,
+          -578
+        ],
+        [
+          -684,
+          1020
+        ],
+        [
+          124,
+          -1222
+        ]
+      ],
+      "radius_squared_numerator": 24137569,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 7,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          5012,
+          727
+        ],
+        [
+          -4764,
+          1717
+        ],
+        [
+          3396,
+          -3757
+        ],
+        [
+          -1228,
+          4913
+        ],
+        [
+          -1228,
+          -4913
+        ],
+        [
+          3396,
+          3757
+        ],
+        [
+          -4764,
+          -1717
+        ],
+        [
+          5012,
+          -727
+        ]
+      ],
+      "radius_squared_numerator": 410338673,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 4,
+      "power": 8,
+      "d": 4,
+      "guaranteed_points": [
+        [
+          7920,
+          -19320
+        ],
+        [
+          2104,
+          20774
+        ],
+        [
+          -11632,
+          -17340
+        ],
+        [
+          18424,
+          9826
+        ],
+        [
+          -20880,
+          0
+        ],
+        [
+          18424,
+          -9826
+        ],
+        [
+          -11632,
+          17340
+        ],
+        [
+          2104,
+          -20774
+        ],
+        [
+          7920,
+          19320
+        ]
+      ],
+      "radius_squared_numerator": 6975757441,
+      "radius_squared_denominator": 16
+    },
+    {
+      "q": 5,
+      "power": 1,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 26,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 2,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          5,
+          2
+        ],
+        [
+          -5,
+          0
+        ],
+        [
+          5,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 676,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 3,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          15,
+          -22
+        ],
+        [
+          -5,
+          26
+        ],
+        [
+          -5,
+          -26
+        ],
+        [
+          15,
+          22
+        ]
+      ],
+      "radius_squared_numerator": 17576,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 4,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          -95,
+          -96
+        ],
+        [
+          125,
+          52
+        ],
+        [
+          -135,
+          0
+        ],
+        [
+          125,
+          -52
+        ],
+        [
+          -95,
+          96
+        ]
+      ],
+      "radius_squared_numerator": 456976,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 5,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          -575,
+          380
+        ],
+        [
+          385,
+          -572
+        ],
+        [
+          -135,
+          676
+        ],
+        [
+          -135,
+          -676
+        ],
+        [
+          385,
+          572
+        ],
+        [
+          -575,
+          -380
+        ]
+      ],
+      "radius_squared_numerator": 11881376,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 6,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          1325,
+          3256
+        ],
+        [
+          -2475,
+          -2496
+        ],
+        [
+          3245,
+          1352
+        ],
+        [
+          -3515,
+          0
+        ],
+        [
+          3245,
+          -1352
+        ],
+        [
+          -2475,
+          2496
+        ],
+        [
+          1325,
+          -3256
+        ]
+      ],
+      "radius_squared_numerator": 308915776,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 7,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          17605,
+          -3368
+        ],
+        [
+          -14955,
+          9880
+        ],
+        [
+          10005,
+          -14872
+        ],
+        [
+          -3515,
+          17576
+        ],
+        [
+          -3515,
+          -17576
+        ],
+        [
+          10005,
+          14872
+        ],
+        [
+          -14955,
+          -9880
+        ],
+        [
+          17605,
+          3368
+        ]
+      ],
+      "radius_squared_numerator": 8031810176,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 5,
+      "power": 8,
+      "d": 5,
+      "guaranteed_points": [
+        [
+          765,
+          -91392
+        ],
+        [
+          34445,
+          84656
+        ],
+        [
+          -64355,
+          -64896
+        ],
+        [
+          84365,
+          35152
+        ],
+        [
+          -91395,
+          0
+        ],
+        [
+          84365,
+          -35152
+        ],
+        [
+          -64355,
+          64896
+        ],
+        [
+          34445,
+          -84656
+        ],
+        [
+          765,
+          91392
+        ]
+      ],
+      "radius_squared_numerator": 208827064576,
+      "radius_squared_denominator": 25
+    },
+    {
+      "q": 6,
+      "power": 1,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 37,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 2,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          6,
+          2
+        ],
+        [
+          -6,
+          0
+        ],
+        [
+          6,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 1369,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 3,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          18,
+          -33
+        ],
+        [
+          -6,
+          37
+        ],
+        [
+          -6,
+          -37
+        ],
+        [
+          18,
+          33
+        ]
+      ],
+      "radius_squared_numerator": 50653,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 4,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          -180,
+          -140
+        ],
+        [
+          216,
+          74
+        ],
+        [
+          -228,
+          0
+        ],
+        [
+          216,
+          -74
+        ],
+        [
+          -180,
+          140
+        ]
+      ],
+      "radius_squared_numerator": 1874161,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 5,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          -1020,
+          941
+        ],
+        [
+          660,
+          -1221
+        ],
+        [
+          -228,
+          1369
+        ],
+        [
+          -228,
+          -1369
+        ],
+        [
+          660,
+          1221
+        ],
+        [
+          -1020,
+          -941
+        ]
+      ],
+      "radius_squared_numerator": 69343957,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 6,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          4626,
+          7062
+        ],
+        [
+          -6666,
+          -5180
+        ],
+        [
+          7986,
+          2738
+        ],
+        [
+          -8442,
+          0
+        ],
+        [
+          7986,
+          -2738
+        ],
+        [
+          -6666,
+          5180
+        ],
+        [
+          4626,
+          -7062
+        ]
+      ],
+      "radius_squared_numerator": 2565726409,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 7,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          46998,
+          -20693
+        ],
+        [
+          -37746,
+          34817
+        ],
+        [
+          24414,
+          -45177
+        ],
+        [
+          -8442,
+          50653
+        ],
+        [
+          -8442,
+          -50653
+        ],
+        [
+          24414,
+          45177
+        ],
+        [
+          -37746,
+          -34817
+        ],
+        [
+          46998,
+          20693
+        ]
+      ],
+      "radius_squared_numerator": 94931877133,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 6,
+      "power": 8,
+      "d": 6,
+      "guaranteed_points": [
+        [
+          -77160,
+          -302680
+        ],
+        [
+          171156,
+          261294
+        ],
+        [
+          -246648,
+          -191660
+        ],
+        [
+          295476,
+          101306
+        ],
+        [
+          -312360,
+          0
+        ],
+        [
+          295476,
+          -101306
+        ],
+        [
+          -246648,
+          191660
+        ],
+        [
+          171156,
+          -261294
+        ],
+        [
+          -77160,
+          302680
+        ]
+      ],
+      "radius_squared_numerator": 3512479453921,
+      "radius_squared_denominator": 36
+    },
+    {
+      "q": 8,
+      "power": 1,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 65,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 2,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          8,
+          2
+        ],
+        [
+          -8,
+          0
+        ],
+        [
+          8,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 4225,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 3,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          24,
+          -61
+        ],
+        [
+          -8,
+          65
+        ],
+        [
+          -8,
+          -65
+        ],
+        [
+          24,
+          61
+        ]
+      ],
+      "radius_squared_numerator": 274625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 4,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          -464,
+          -252
+        ],
+        [
+          512,
+          130
+        ],
+        [
+          -528,
+          0
+        ],
+        [
+          512,
+          -130
+        ],
+        [
+          -464,
+          252
+        ]
+      ],
+      "radius_squared_numerator": 17850625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 5,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          -2480,
+          3461
+        ],
+        [
+          1552,
+          -3965
+        ],
+        [
+          -528,
+          4225
+        ],
+        [
+          -528,
+          -4225
+        ],
+        [
+          1552,
+          3965
+        ],
+        [
+          -2480,
+          -3461
+        ]
+      ],
+      "radius_squared_numerator": 1160290625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 6,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          25208,
+          23302
+        ],
+        [
+          -30168,
+          -16380
+        ],
+        [
+          33272,
+          8450
+        ],
+        [
+          -34328,
+          0
+        ],
+        [
+          33272,
+          -8450
+        ],
+        [
+          -30168,
+          16380
+        ],
+        [
+          25208,
+          -23302
+        ]
+      ],
+      "radius_squared_numerator": 75418890625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 7,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          211624,
+          -178361
+        ],
+        [
+          -161208,
+          224965
+        ],
+        [
+          100872,
+          -257725
+        ],
+        [
+          -34328,
+          274625
+        ],
+        [
+          -34328,
+          -274625
+        ],
+        [
+          100872,
+          257725
+        ],
+        [
+          -161208,
+          -224965
+        ],
+        [
+          211624,
+          178361
+        ]
+      ],
+      "radius_squared_numerator": 4902227890625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 8,
+      "power": 8,
+      "d": 8,
+      "guaranteed_points": [
+        [
+          -1215264,
+          -1871352
+        ],
+        [
+          1638512,
+          1514630
+        ],
+        [
+          -1960928,
+          -1064700
+        ],
+        [
+          2162672,
+          549250
+        ],
+        [
+          -2231328,
+          0
+        ],
+        [
+          2162672,
+          -549250
+        ],
+        [
+          -1960928,
+          1064700
+        ],
+        [
+          1638512,
+          -1514630
+        ],
+        [
+          -1215264,
+          1871352
+        ]
+      ],
+      "radius_squared_numerator": 318644812890625,
+      "radius_squared_denominator": 64
+    },
+    {
+      "q": 10,
+      "power": 1,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 101,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 2,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          10,
+          2
+        ],
+        [
+          -10,
+          0
+        ],
+        [
+          10,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 10201,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 3,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          30,
+          -97
+        ],
+        [
+          -10,
+          101
+        ],
+        [
+          -10,
+          -101
+        ],
+        [
+          30,
+          97
+        ]
+      ],
+      "radius_squared_numerator": 1030301,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 4,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          -940,
+          -396
+        ],
+        [
+          1000,
+          202
+        ],
+        [
+          -1020,
+          0
+        ],
+        [
+          1000,
+          -202
+        ],
+        [
+          -940,
+          396
+        ]
+      ],
+      "radius_squared_numerator": 104060401,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 5,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          -4900,
+          9005
+        ],
+        [
+          3020,
+          -9797
+        ],
+        [
+          -1020,
+          10201
+        ],
+        [
+          -1020,
+          -10201
+        ],
+        [
+          3020,
+          9797
+        ],
+        [
+          -4900,
+          -9005
+        ]
+      ],
+      "radius_squared_numerator": 10510100501,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 6,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          85150,
+          58006
+        ],
+        [
+          -94950,
+          -39996
+        ],
+        [
+          100990,
+          20402
+        ],
+        [
+          -103030,
+          0
+        ],
+        [
+          100990,
+          -20402
+        ],
+        [
+          -94950,
+          39996
+        ],
+        [
+          85150,
+          -58006
+        ]
+      ],
+      "radius_squared_numerator": 1061520150601,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 7,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          665210,
+          -793493
+        ],
+        [
+          -494910,
+          909505
+        ],
+        [
+          305010,
+          -989497
+        ],
+        [
+          -103030,
+          1030301
+        ],
+        [
+          -103030,
+          -1030301
+        ],
+        [
+          305010,
+          989497
+        ],
+        [
+          -494910,
+          -909505
+        ],
+        [
+          665210,
+          793493
+        ]
+      ],
+      "radius_squared_numerator": 107213535210701,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 10,
+      "power": 8,
+      "d": 10,
+      "guaranteed_points": [
+        [
+          -7269720,
+          -7445592
+        ],
+        [
+          8600140,
+          5858606
+        ],
+        [
+          -9589960,
+          -4039596
+        ],
+        [
+          10199980,
+          2060602
+        ],
+        [
+          -10406040,
+          0
+        ],
+        [
+          10199980,
+          -2060602
+        ],
+        [
+          -9589960,
+          4039596
+        ],
+        [
+          8600140,
+          -5858606
+        ],
+        [
+          -7269720,
+          7445592
+        ]
+      ],
+      "radius_squared_numerator": 10828567056280801,
+      "radius_squared_denominator": 100
+    },
+    {
+      "q": 12,
+      "power": 1,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "radius_squared_numerator": 145,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 2,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          12,
+          2
+        ],
+        [
+          -12,
+          0
+        ],
+        [
+          12,
+          -2
+        ]
+      ],
+      "radius_squared_numerator": 21025,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 3,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          36,
+          -141
+        ],
+        [
+          -12,
+          145
+        ],
+        [
+          -12,
+          -145
+        ],
+        [
+          36,
+          141
+        ]
+      ],
+      "radius_squared_numerator": 3048625,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 4,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          -1656,
+          -572
+        ],
+        [
+          1728,
+          290
+        ],
+        [
+          -1752,
+          0
+        ],
+        [
+          1728,
+          -290
+        ],
+        [
+          -1656,
+          572
+        ]
+      ],
+      "radius_squared_numerator": 442050625,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 5,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          -8520,
+          19301
+        ],
+        [
+          5208,
+          -20445
+        ],
+        [
+          -1752,
+          21025
+        ],
+        [
+          -1752,
+          -21025
+        ],
+        [
+          5208,
+          20445
+        ],
+        [
+          -8520,
+          -19301
+        ]
+      ],
+      "radius_squared_numerator": 64097340625,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 6,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          223092,
+          121542
+        ],
+        [
+          -240132,
+          -82940
+        ],
+        [
+          250548,
+          42050
+        ],
+        [
+          -254052,
+          0
+        ],
+        [
+          250548,
+          -42050
+        ],
+        [
+          -240132,
+          82940
+        ],
+        [
+          223092,
+          -121542
+        ]
+      ],
+      "radius_squared_numerator": 9294114390625,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 7,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          1681596,
+          -2555561
+        ],
+        [
+          -1235412,
+          2798645
+        ],
+        [
+          755148,
+          -2964525
+        ],
+        [
+          -254052,
+          3048625
+        ],
+        [
+          -254052,
+          -3048625
+        ],
+        [
+          755148,
+          2964525
+        ],
+        [
+          -1235412,
+          -2798645
+        ],
+        [
+          1681596,
+          2555561
+        ]
+      ],
+      "radius_squared_numerator": 1347646586640625,
+      "radius_squared_denominator": 144
+    },
+    {
+      "q": 12,
+      "power": 8,
+      "d": 12,
+      "guaranteed_points": [
+        [
+          -28985136,
+          -22734712
+        ],
+        [
+          32348328,
+          17623590
+        ],
+        [
+          -34819152,
+          -12026300
+        ],
+        [
+          36329448,
+          6097250
+        ],
+        [
+          -36837552,
+          0
+        ],
+        [
+          36329448,
+          -6097250
+        ],
+        [
+          -34819152,
+          12026300
+        ],
+        [
+          32348328,
+          -17623590
+        ],
+        [
+          -28985136,
+          22734712
+        ]
+      ],
+      "radius_squared_numerator": 195408755062890625,
+      "radius_squared_denominator": 144
+    }
+  ]
+}

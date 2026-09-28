@@ -1,0 +1,23 @@
+{
+  "script": "research/verification/scripts/round4_firstmoves.cpp",
+  "arithmetic": "exact integers only (det4 == 0 for forbidden 4-sets); no floating point",
+  "firstmove_question": {
+    "statement": "g(empty)=mex{g({p})}. So g(empty)=0 forces g({p})!=0 for every p, i.e. W_n = {} and all n^2 first moves lose.",
+    "consequence": "A second-player-win square board has ZERO winning first moves; the mixed case (some losing first moves) is impossible for it.",
+    "empty_winner_n1_to_10": ["F","F","F","S","F","F","S","S","F","S"],
+    "board_winner_table": {
+      "n=1": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 1, "n_squared": 1},
+      "n=2": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 4, "n_squared": 4},
+      "n=3": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 9, "n_squared": 9},
+      "n=4": {"winner": "second", "class": "all_first_moves_lose (0 winning, n^2 losing)", "W_size": 0, "n_squared": 16},
+      "n=5": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 25, "n_squared": 25},
+      "n=6": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 36, "n_squared": 36},
+      "n=7": {"winner": "second", "class": "all_first_moves_lose (0 winning, n^2 losing)", "W_size": 0, "n_squared": 49},
+      "n=8": {"winner": "second", "class": "all_first_moves_lose (0 winning, n^2 losing)", "W_size": 0, "n_squared": 64},
+      "n=9": {"winner": "first", "class": "all_first_moves_win (n^2 winning, 0 losing)", "W_size": 81, "n_squared": 81},
+      "n=10": {"winner": "second", "class": "all_first_moves_lose (0 winning, n^2 losing)", "W_size": 0, "n_squared": 100}
+    },
+    "n7_verdict": "SUPPORTED-BY-CONSTRUCTION: W_7 = {} ; all 49 first moves lose. No enumeration required.",
+    "n8_verdict": "SUPPORTED-BY-CONSTRUCTION: W_8 = {} ; all 64 first moves lose. No enumeration required.",
+    "caveat": "This settles the WIN/LOSS classification, not the nimber values. The nimber multiset {g({p})} is a strictly finer datum and is what Part 2 computes for n=7."
+  },

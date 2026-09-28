@@ -1,0 +1,7 @@
+=== round4_b228e : draft 4 (decisive weakening) ===
+
+## sec_core : full enumeration n=2..6 (exact Grundy)
+  n=2 total_safe=65 K=5 g0=0 max_grundy=1 maximal_sets=24 |W|=0
+  Z_2(lam) = 1 4 12 24 24
+  grundy histogram: 0:37 1:28
+  per-level P/N: L0(1/0) L1(0/4) L2(12/0) L3(0/24) L4(24/0)

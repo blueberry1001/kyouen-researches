@@ -1,0 +1,267 @@
+{
+  "candidate": "x=a*(r+w)^2+j-a*w^2; j=0,1,2; r=0,...,w-1",
+  "coefficient": 2,
+  "max_row_span": 39,
+  "shift_range": "ALL integer h >= span+1, solved exactly as polynomial roots",
+  "normalized_patterns": 645710,
+  "patterns_by_distinct_rows": {
+    "2": 546,
+    "3": 51129,
+    "4": 594035
+  },
+  "polynomial_degrees": {
+    "0": 234,
+    "1": 11167,
+    "2": 634309
+  },
+  "independent_determinant_checks": 1944,
+  "roots_below_family": {
+    "negative": 3025
+  },
+  "first_roots_below_family": [
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "polynomial": [
+        32,
+        112,
+        80
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "labels": [
+        1,
+        2,
+        2,
+        0
+      ],
+      "polynomial": [
+        32,
+        64,
+        32
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "labels": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "polynomial": [
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "labels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "polynomial": [
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "labels": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "polynomial": [
+        32,
+        64,
+        32
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "labels": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "polynomial": [
+        32,
+        16,
+        -16
+      ]
+    },
+    {
+      "h": -1,
+      "row_offsets": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "labels": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "polynomial": [
+        96,
+        408,
+        312
+      ]
+    },
+    {
+      "h": -2,
+      "row_offsets": [
+        0,
+        2,
+        3,
+        3
+      ],
+      "labels": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "polynomial": [
+        96,
+        168,
+        -48
+      ]
+    },
+    {
+      "h": -2,
+      "row_offsets": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "labels": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "polynomial": [
+        0,
+        128,
+        256
+      ]
+    },
+    {
+      "h": -2,
+      "row_offsets": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "labels": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "polynomial": [
+        0,
+        512,
+        1024
+      ]
+    },
+    {
+      "h": -2,
+      "row_offsets": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "labels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "polynomial": [
+        0,
+        -2304,
+        -4608
+      ]
+    },
+    {
+      "h": -2,
+      "row_offsets": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "labels": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "polynomial": [
+        0,
+        -1600,
+        -3200
+      ]
+    }
+  ],
+  "family_counterexamples": [],
+  "verified_w_max": 40,
+  "status": "PARTIAL; unbounded row span NOT proved",
+  "complete": true
+}

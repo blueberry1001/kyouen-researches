@@ -1,0 +1,26 @@
+{
+  "complete": true,
+  "a": 2,
+  "span": 39,
+  "patterns": 645710,
+  "negative_roots": 3025,
+  "nonnegative_roots": 0,
+  "family_counterexamples": 0,
+  "by_rows": [
+    546,
+    51129,
+    594035
+  ],
+  "degrees": [
+    234,
+    11167,
+    634309
+  ],
+  "first_nonnegative": [],
+  "elapsed_seconds": 2.797000000005937,
+  "progress_log": [
+    "span 32 patterns 357072 nonnegative 0"
+  ],
+  "status": "bounded row-span certificate, NOT an unbounded-span proof",
+  "round6_independent_match": true
+}

@@ -1,0 +1,27 @@
+{
+  "n": 4,
+  "V": 16,
+  "F": 194,
+  "method": "sort-free v-max partition (no sort, no edge-sized buffer); levels spilled to disk; 2-layer rolling window; num mod 2^61-1 (8B) + u32 fixed point (4B) + grundy (1B); lower_bound child index",
+  "n_safe_subsets": 5811,
+  "level_sizes": [1,16,120,560,1626,2360,1064,64],
+  "max_safe_size": 7,
+  "edge_total": 27072,
+  "n_P": 1825,
+  "n_N": 3986,
+  "P_max_level": 4,
+  "P_max_filter_value": "0.562963",
+  "thresholds_exact_all_levels": false,
+  "levels": [
+    {"k": 0, "size": 1, "edges": 16, "n_P": 1, "n_N": 0, "D_bits": 106.25, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 1, "best_filter": 0.30187562294304371, "secs": 0.16},
+    {"k": 1, "size": 16, "edges": 240, "n_P": 0, "n_N": 16, "D_bits": 91.25, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.12},
+    {"k": 2, "size": 120, "edges": 1680, "n_P": 84, "n_N": 36, "D_bits": 83.43, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 4, "best_filter": 0.41777478624135256, "secs": 0.12},
+    {"k": 3, "size": 560, "edges": 6504, "n_P": 16, "n_N": 544, "D_bits": 75.82, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.46189594361931086, "secs": 0.12},
+    {"k": 4, "size": 1626, "edges": 11800, "n_P": 640, "n_N": 986, "D_bits": 50.72, "thresholds_exact": false, "best_frac_exact": "1776353133023882748/1854081073152000", "best_count": 4, "best_filter": 0.56296296324580908, "secs": 0.10},
+    {"k": 5, "size": 2360, "edges": 6384, "n_P": 332, "n_N": 2028, "D_bits": 18.30, "thresholds_exact": true, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.12},
+    {"k": 6, "size": 1064, "edges": 448, "n_P": 688, "n_N": 376, "D_bits": 1.00, "thresholds_exact": true, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.13},
+    {"k": 7, "size": 64, "edges": 0, "n_P": 64, "n_N": 0, "D_bits": 0.00, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.00}
+  ],
+  "timing_s": {"build": 0.00, "enumerate": 4.10, "solve": 0.87, "total": 4.96},
+  "peak_rss_gb": 0.270
+}

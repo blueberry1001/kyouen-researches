@@ -1,0 +1,61 @@
+{
+"binspec": {
+  "n3": {"n_sets": 56, "s_n": 5, "K_n": 5, "contiguous": true, "n_distinct_sizes": 1, "spectrum": {"5":56}, "min_witness_xy": [[0,0],[1,0],[2,0],[0,1],[1,2]]},
+  "n3_b099": {"take": 56, "line_triples": 0, "circle_triples": 304, "line_cap": 0, "circle_cap": 304, "line_cap_share": "0/304"},
+  "n4": {"n_sets": 928, "s_n": 5, "K_n": 7, "contiguous": true, "n_distinct_sizes": 3, "spectrum": {"5":176,"6":688,"7":64}, "min_witness_xy": [[0,0],[1,0],[2,0],[3,1],[2,2]]},
+  "n4_b099": {"take": 60, "line_triples": 39, "circle_triples": 398, "line_cap": 39, "circle_cap": 780, "line_cap_share": "39/819"},
+  "n5": {"n_sets": 16860, "s_n": 5, "K_n": 9, "contiguous": true, "n_distinct_sizes": 5, "spectrum": {"5":4,"6":1136,"7":11280,"8":4340,"9":100}, "min_witness_xy": [[2,0],[1,1],[2,1],[3,1],[2,4]]},
+  "n5_b099": {"take": 60, "line_triples": 71, "circle_triples": 745, "line_cap": 140, "circle_cap": 1569, "line_cap_share": "140/1709"},
+  "n6": {"n_sets": 349596, "s_n": 6, "K_n": 11, "contiguous": true, "n_distinct_sizes": 6, "spectrum": {"6":8,"7":3952,"8":115496,"9":199184,"10":30492,"11":464}, "min_witness_xy": [[1,0],[2,0],[0,3],[1,3],[5,3],[1,5]]},
+  "n6_b099": {"take": 60, "line_triples": 125, "circle_triples": 1188, "line_cap": 356, "circle_cap": 2587, "line_cap_share": "356/2943"},
+  },
+}
+{
+"rnd": {
+  "n": 8, "iters": 3000, "min_size": 9, "min_witness": "[6,21,39,40,41,46,49,59,61]", "size_hist": {"9":3,"10":104,"11":791,"12":1467,"13":585,"14":46,"15":4}, "witness_by_size": {"9":"[6,21,39,40,41,46,49,59,61]","10":"[2,11,12,22,29,42,48,50,54,56]","11":"[0,1,2,21,27,33,38,43,49,60,61]","12":"[6,8,17,23,31,34,37,42,43,48,54,56]","13":"[1,2,9,15,21,29,30,31,40,48,56,60,61]","14":"[1,6,12,13,18,29,32,40,42,43,54,55,56,60]","15":"[4,6,7,8,9,17,27,29,37,39,40,42,43,50,58]"}},
+  },
+}
+{
+"rnd": {
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 7407, "identical": false},
+  "n5": {"ref": 16860, "mine": 6213004, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 7407, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 1105, "identical": false},
+  "n5": {"ref": 16860, "mine": 59259, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 1105, "identical": false},
+  "n5": {"ref": 16860, "mine": 59259, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 1105, "identical": false},
+  "n5": {"ref": 16860, "mine": 59259, "identical": false},
+  "n6": {"ref": 349596, "mine": 3579760, "identical": false},
+  "n6": {"ref": 349596, "mine": 4888615, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 1105, "identical": false},
+  "n5": {"ref": 16860, "mine": 59259, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 1, "identical": false},
+  "n4": {"ref": 928, "mine": 1105, "identical": false},
+  "n5": {"ref": 16860, "mine": 59259, "identical": false},
+{
+"selfcheck": {
+  "n3": {"ref": 56, "mine": 56, "identical": true},
+  "n4": {"ref": 928, "mine": 928, "identical": true},
+  "n5": {"ref": 16860, "mine": 16860, "identical": true},
+  "n6": {"ref": 349596, "mine": 349596, "identical": true},

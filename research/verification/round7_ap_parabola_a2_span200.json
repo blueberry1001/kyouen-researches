@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "a": 2,
+  "span": 200,
+  "patterns": 86746900,
+  "negative_roots": 348390,
+  "nonnegative_roots": 0,
+  "family_counterexamples": 0,
+  "by_rows": [
+    2800,
+    1373100,
+    85371000
+  ],
+  "degrees": [
+    1200,
+    1357168,
+    85388532
+  ],
+  "first_nonnegative": [],
+  "elapsed_seconds": 44.48399999999674,
+  "progress_log": [
+    "span 32 patterns 357072 nonnegative 0",
+    "span 64 patterns 2848160 nonnegative 0",
+    "span 96 patterns 9603184 nonnegative 0",
+    "span 128 patterns 22752064 nonnegative 0",
+    "span 160 patterns 44424720 nonnegative 0",
+    "span 192 patterns 76751072 nonnegative 0"
+  ],
+  "status": "bounded row-span certificate, NOT an unbounded-span proof"
+}

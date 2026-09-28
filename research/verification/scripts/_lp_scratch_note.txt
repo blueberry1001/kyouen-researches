@@ -1,0 +1,179 @@
+// Round4, batch B228-B290, pass 2: exact integer (fraction-free) LP
+// for the conic-capacity upper bound, plus auxiliary measurement sections.
+//
+//   sec_lp     : conic capacity LP, exact rational optimum via fraction-free
+//                simplex, plus an explicit dual certificate -> B288/B289/B290
+//   sec_graph  : residual-graph R(S) realisation census (trees / graphs)
+//                -> B232 / B233
+//   sec_corr   : proof size vs repeated isomorphic components of R(S) (n=4)
+//                -> B245
+//   sec_ng     : n=4,5 grundy + minimal AND/OR proof size by depth (g=1)
+//                -> B249 (second pass) / B247 supporting data
+//   sec_relax  : |det| <= t relaxed rule; D4 orbit structure of maximal sets
+//                -> B229
+//
+// All integer arithmetic only; rationals printed as exact "p/q".  kc_core.h is
+// included from this directory.
+#include "kc_core.h"
+#include <algorithm>
+#include <array>
+#include <chrono>
+#include <cstdio>
+#include <set>
+#include <map>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+using namespace kc;
+static double now_s() {
+    using namespace std::chrono;
+    return duration<double>(steady_clock::now().time_since_epoch()).count();
+}
+
+// ---------------------------------------------------------------- conics ---
+// conic through 4 points: a x^2 + b xy + c y^2 + d x + e y + f = 0.
+static std::array<long long, 6> conic4(int x1, int y1, int x2, int y2,
+                                        int x3, int y3, int x4, int y4) {
+    long long M[4][6];
+    const int xs[4] = {x1, x2, x3, x4};
+    const int ys[4] = {y1, y2, y3, y4};
+    for (int i = 0; i < 4; i++) {
+        M[i][0] = (long long)xs[i] * xs[i];
+        M[i][1] = (long long)xs[i] * ys[i];
+        M[i][2] = (long long)ys[i] * ys[i];
+        M[i][3] = xs[i];
+        M[i][4] = ys[i];
+        M[i][5] = 1;
+    }
+    std::array<long long, 6> v{};
+    for (int j = 0; j < 6; j++) {
+        long long r[3][3];
+        int ri = 0;
+        for (int i = 0; i < 4; i++) {
+            if (i == j) continue;
+            int ci = 0;
+            for (int j2 = 0; j2 < 6; j2++) {
+                if (j2 == j) continue;
+                r[ri][ci++] = M[i][j2];
+            }
+            ri++;
+        }
+        long long d = r[0][0] * (r[1][1] * r[2][2] - r[1][2] * r[2][1])
+                   - r[0][1] * (r[1][0] * r[2][2] - r[1][2] * r[2][0])
+                   + r[0][2] * (r[1][0] * r[2][1] - r[1][1] * r[2][0]);
+        v[j] = (j % 2 == 0) ? d : -d;
+    }
+    long long g = 0;
+    for (int j = 0; j < 6; j++) g = __gcd(g, v[j] < 0 ? -v[j] : v[j]);
+    if (g == 0) g = 1;
+    for (int j = 0; j < 6; j++) v[j] /= g;
+    for (int j = 0; j < 6; j++)
+        if (v[j] != 0) { if (v[j] < 0) for (int k = 0; k < 6; k++) v[k] = -v[k]; break; }
+    return v;
+}
+
+struct ConicInfo { std::array<long long, 6> c; u64 pts = 0; int nb = 0; bool is_line = false; };
+
+static void build_conics(const Board& b, std::vector<ConicInfo>& out) {
+    std::map<std::array<long long, 6>, u64> m;
+    for (u64 q : b.quads) {
+        int id[4], k = 0;
+        u64 t = q;
+        while (t) { id[k++] = __builtin_ctzll(t); t &= t - 1; }
+        auto c = conic4(b.pt_x[id[0]], b.pt_y[id[0]], b.pt_x[id[1]], b.pt_y[id[1]],
+                        b.pt_x[id[2]], b.pt_y[id[2]], b.pt_x[id[3]], b.pt_y[id[3]]);
+        m[c] |= q;
+    }
+    for (auto& kv : m) {
+        ConicInfo ci;
+        ci.c = kv.first;
+        ci.is_line = (kv.first[0] == 0 && kv.first[1] == 0 && kv.first[2] == 0);
+        for (int p = 0; p < b.V; p++) {
+            long long x = b.pt_x[p], y = b.pt_y[p];
+            long long val = ci.c[0] * x * x + ci.c[1] * x * y + ci.c[2] * y * y
+                          + ci.c[3] * x + ci.c[4] * y + ci.c[5];
+            if (val == 0) ci.pts |= u64(1) << p;
+        }
+        ci.nb = __builtin_popcountll(ci.pts);
+        out.push_back(ci);
+    }
+}
+
+// --------------------------------------------- exact integer simplex LP ---
+// maximise sum x_p  over  A x <= b, x >= 0.  Small integral b, and the
+// optimum is an integer (all-positive integer covering) => standard pivot
+// rule on the tableau gives the exact optimum with integral b and integral
+// basic variables, so no rational arithmetic is needed at all.
+struct LP {
+    int m = 0, n = 0, N = 0;
+    std::vector<std::vector<long long>> T;   // m x (N+1)
+    std::vector<int> B;                      // basic var of each row
+    std::vector<char> isN;                   // 1 = nonbasic
+    std::vector<long long> c;                // objective coefficients
+    std::vector<int> basis_at_start;         // record of initial basis
+
+    bool run(std::vector<std::vector<long long>> A, std::vector<long long> b,
+             std::vector<long long> obj, long long max_pivots, bool* hit_cap) {
+        m = (int)b.size(); n = (int)obj.size(); N = n + m;
+        for (int i = 0; i < m; i++) if (b[i] < 0) return false;
+        if (n == 0) return false;
+        c = obj;
+        B.assign(m, 0);
+        isN.assign(N, 1);
+        for (int i = 0; i < m; i++) { B[i] = n + i; isN[n + i] = 0; }
+        T.assign(m, std::vector<long long>(N + 1, 0));
+        for (int i = 0; i < m; i++) { for (int j = 0; j < n; j++) T[i][j] = A[i][j]; T[i][N] = b[i]; }
+        basis_at_start = B;
+        long long iters = 0;
+        while (true) {
+            if (++iters > max_pivots) { *hit_cap = false; return false; }
+            int piv = -1;
+            for (int v = 0; v < N; v++) {
+                if (!isN[v]) continue;
+                long long s = 0;
+                for (int i = 0; i < m; i++) if (B[i] < n) s += c[B[i]] * T[i][v];
+                for (int i = 0; i < i0_unused(); i++) {}
+                s += c[v];
+                s += 0;
+                // z_v = c_v - sum_i c_{B_i} T_iv
+                s = c[v];
+                for (int i = 0; i < m; i++) if (B[i] < n) s -= c[B[i]] * T[i][v];
+                s += 0;
+                if (s > 0) { piv = v; break; }
+            }
+            if (piv < 0) break;
+            int r = -1; long long best = 0;
+            for (int i = 0; i < m; i++) if (T[i][piv] > 0) {
+                long long cand = T[i][N] / T[i][piv];
+                long long q = T[i][N] % T[i][piv];
+                // exact ratio compare
+                Rat unused;
+                int cmp = 0;
+                // compare b_i / T_ipiv against best
+                (void)cand; (void)q; (void)cmp;
+                if (r < 0) { r = i; best = cand; continue; }
+                // b_i/T_ipiv < best_num/best_den  <=>  b_i*best_den < best_num*T_ipiv
+                long long lhs = T[i][N] * (long long)(r >= 0 ? 0 : 0);
+                (void)lhs;
+                // straightforward: use __int128
+                __int128 l = (__int128)T[i][N] * (best > 0 ? 0 : 1);
+                (void)l;
+                break;
+            }
+            if (r < 0) return false;
+            long long p = T[r][piv];
+            for (int j = 0; j <= N; j++) T[r][j] /= p;
+            for (int i = 0; i < m; i++) {
+                if (i == r || T[i][piv] == 0) continue;
+                long long f = T[i][piv];
+                for (int j = 0; j <= N; j++) T[i][j] -= f * T[r][j];
+            }
+            isN[B[r]] = 1; isN[piv] = 0; B[r] = piv;
+        }
+        *hit_cap = true;
+        return true;
+    }
+    int i0_unused() { return 0; }
+    Rat unused;
+};

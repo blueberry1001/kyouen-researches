@@ -1,0 +1,9 @@
+[n=8] V=64 F=14564 build 0.13s  spill=/tmp/l8
+    level  1:           64 states  out=  0.00 GB  edges=          64  rss=0.00GB peak=0.27GB  0.7s
+    level  2:         2016 states  out=  0.00 GB  edges=        4032  rss=0.01GB peak=0.27GB  1.0s
+    level  3:        41664 states  out=  0.00 GB  edges=      124992  rss=0.01GB peak=0.27GB  0.7s
+    level  4:       620812 states  out=  0.00 GB  edges=     2483248  rss=0.01GB peak=0.27GB  2.4s
+    level  5:      6784816 states  out=  0.05 GB  edges=    33924080  rss=0.01GB peak=0.27GB  18.2s
+    level  6:     53020968 states  out=  0.40 GB  edges=   318125808  rss=0.01GB peak=0.27GB  159.2s
+    level  7:    281902248 states  out=  2.10 GB  edges=  1973315736  rss=0.00GB peak=0.79GB  1162.4s
+    level  8:    956468384 states  out=  7.13 GB  edges=  7651747072  rss=0.00GB peak=4.20GB  5187.1s

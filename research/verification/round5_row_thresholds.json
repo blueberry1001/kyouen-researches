@@ -1,0 +1,357 @@
+{
+  "row_triple_engine": [
+    {
+      "w": 2,
+      "m": 4,
+      "AP_only": false,
+      "found": false,
+      "complete": true,
+      "nodes": 5,
+      "determinant_checks": 0,
+      "seconds": 1.704e-06,
+      "rows": []
+    },
+    {
+      "w": 2,
+      "m": 5,
+      "AP_only": false,
+      "found": true,
+      "complete": true,
+      "nodes": 3,
+      "determinant_checks": 0,
+      "seconds": 2.439e-06,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "independent_python_quad_checks": 15
+    },
+    {
+      "w": 3,
+      "m": 6,
+      "AP_only": false,
+      "found": false,
+      "complete": true,
+      "nodes": 85,
+      "determinant_checks": 0,
+      "seconds": 1.0911e-05,
+      "rows": []
+    },
+    {
+      "w": 3,
+      "m": 7,
+      "AP_only": false,
+      "found": true,
+      "complete": true,
+      "nodes": 4,
+      "determinant_checks": 81,
+      "seconds": 8.888e-06,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1,
+          5,
+          6
+        ]
+      ],
+      "independent_python_quad_checks": 126
+    },
+    {
+      "w": 4,
+      "m": 8,
+      "AP_only": false,
+      "found": false,
+      "complete": true,
+      "nodes": 2091,
+      "determinant_checks": 227844,
+      "seconds": 0.00294291,
+      "rows": []
+    },
+    {
+      "w": 4,
+      "m": 9,
+      "AP_only": false,
+      "found": true,
+      "complete": true,
+      "nodes": 1267,
+      "determinant_checks": 338820,
+      "seconds": 0.00388521,
+      "rows": [
+        [
+          0,
+          1,
+          6
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          2,
+          6,
+          8
+        ]
+      ],
+      "independent_python_quad_checks": 495
+    },
+    {
+      "w": 5,
+      "m": 11,
+      "AP_only": false,
+      "found": false,
+      "complete": true,
+      "nodes": 218022,
+      "determinant_checks": 224305329,
+      "seconds": 4.20731,
+      "rows": []
+    },
+    {
+      "w": 5,
+      "m": 12,
+      "AP_only": false,
+      "found": true,
+      "complete": true,
+      "nodes": 3502,
+      "determinant_checks": 9336848,
+      "seconds": 0.131568,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          5,
+          7
+        ],
+        [
+          6,
+          10,
+          11
+        ],
+        [
+          0,
+          4,
+          10
+        ],
+        [
+          0,
+          9,
+          11
+        ]
+      ],
+      "independent_python_quad_checks": 1365
+    },
+    {
+      "w": 4,
+      "m": 9,
+      "AP_only": true,
+      "found": false,
+      "complete": true,
+      "nodes": 293,
+      "determinant_checks": 21305,
+      "seconds": 0.00025738,
+      "rows": []
+    },
+    {
+      "w": 4,
+      "m": 10,
+      "AP_only": true,
+      "found": true,
+      "complete": true,
+      "nodes": 5,
+      "determinant_checks": 405,
+      "seconds": 8.431e-06,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          8
+        ],
+        [
+          1,
+          5,
+          9
+        ],
+        [
+          7,
+          8,
+          9
+        ]
+      ],
+      "independent_python_quad_checks": 495
+    },
+    {
+      "w": 5,
+      "m": 13,
+      "AP_only": true,
+      "found": false,
+      "complete": true,
+      "nodes": 9229,
+      "determinant_checks": 5434763,
+      "seconds": 0.0729264,
+      "rows": []
+    },
+    {
+      "w": 5,
+      "m": 14,
+      "AP_only": true,
+      "found": true,
+      "complete": true,
+      "nodes": 79,
+      "determinant_checks": 83829,
+      "seconds": 0.000911279,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          6,
+          12
+        ],
+        [
+          2,
+          5,
+          8
+        ],
+        [
+          9,
+          11,
+          13
+        ],
+        [
+          3,
+          8,
+          13
+        ]
+      ],
+      "independent_python_quad_checks": 1365
+    }
+  ],
+  "hypergraph_engine": [
+    {
+      "w": 5,
+      "m": 11,
+      "AP_only": false,
+      "found": false,
+      "complete": true,
+      "nodes": 1422974,
+      "full_row_prefixes": 218022,
+      "hyperedges": 8455,
+      "seconds": 1.50695,
+      "rows": []
+    },
+    {
+      "w": 5,
+      "m": 12,
+      "AP_only": false,
+      "found": true,
+      "complete": true,
+      "nodes": 19757,
+      "full_row_prefixes": 3502,
+      "hyperedges": 10981,
+      "seconds": 0.021099,
+      "rows": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          5,
+          7
+        ],
+        [
+          6,
+          10,
+          11
+        ],
+        [
+          0,
+          4,
+          10
+        ],
+        [
+          0,
+          9,
+          11
+        ]
+      ],
+      "independent_python_quad_checks": 1365
+    },
+    {
+      "w": 5,
+      "m": 13,
+      "AP_only": true,
+      "found": false,
+      "complete": true,
+      "nodes": 121290,
+      "full_row_prefixes": 9229,
+      "hyperedges": 13968,
+      "seconds": 0.169903,
+      "rows": []
+    }
+  ],
+  "edge_files": [
+    {
+      "w": 5,
+      "m": 11,
+      "path": "data\\round5_forbidden_w5_m11.txt",
+      "count": 8455,
+      "sha256": "393d0186df5750c007d9cc2c28a135078517d6d789ae44cd5192025d9a6b23fb"
+    },
+    {
+      "w": 5,
+      "m": 12,
+      "path": "data\\round5_forbidden_w5_m12.txt",
+      "count": 10981,
+      "sha256": "94f1dbd6742fd7b500f37f138a4543b55e1da9b4e355bfc35127b30dc8bfef41"
+    },
+    {
+      "w": 5,
+      "m": 13,
+      "path": "data\\round5_forbidden_w5_m13.txt",
+      "count": 13968,
+      "sha256": "78500a3d4328e15234f1ee451d3d58c582696286eb0d93c67633279b95d31f69"
+    }
+  ],
+  "source_hashes": {
+    "round5_row_triples.cpp": "b82a12ca61aa5b0829ab9a7dffe3b5cc0f1f39923d530a83b355905ae253180b",
+    "round5_row_hypergraph.cpp": "090ffb402763b6287cedf837f47488333b18890634969b6b2abe9999345d77c5",
+    "kyouen_core.py": "fef7526c28f2b5bc08e8de37772fe5a2bf4599fb5ac67e218266fc5cd5bca32b"
+  },
+  "all_checks_passed": true
+}

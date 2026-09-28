@@ -1,0 +1,28 @@
+n=4  E[X]=6.112230  K=7  E/K=0.873176
+   boarddeg_hist=[[38, 8], [59, 8]]
+   d=38   lastcount=126831   lastshare=0.634155  boardshare=8/16=0.500000  ratio=1.2683
+   d=59   lastcount=73169    lastshare=0.365845  boardshare=8/16=0.500000  ratio=0.7317
+   E[firstmove] max=309571 min=301909 spread=7662 relspread=78.373305
+   var=0.289614 sd=0.538158  CV^2=var/mu^2=0.007752  skew=0.085373  exkurt=0.268982
+   dist=[[5, 18998], [6, 139558], [7, 41444]]
+   n^(2/3)=2.519842  n^(2/3)*log(n)^(1/3)=2.809690  n=4.000000
+   ratio to n^(2/3)ln^(1/3) = 2.175410
+
+n=5  E[X]=7.512680  K=9  E/K=0.834742
+   boarddeg_hist=[[100, 4], [116, 1]]
+   d=100  lastcount=47160    lastshare=0.235800  boardshare=4/25=0.160000  ratio=1.4738
+   d=116  lastcount=8736     lastshare=0.043680  boardshare=1/25=0.040000  ratio=1.0920
+   E[firstmove] max=378228 min=368875 spread=9353 relspread=49.813931
+   var=0.394509 sd=0.628100  CV^2=var/mu^2=0.006990  skew=0.007247  exkurt=-0.254497
+   dist=[[5, 30], [6, 6659], [7, 91774], [8, 93819], [9, 7718]]
+   n^(2/3)=2.924018  n^(2/3)*log(n)^(1/3)=3.426663  n=5.000000
+   ratio to n^(2/3)ln^(1/3) = 2.192419
+
+n=6  E[X]=9.079425  K=11  E/K=0.825402
+   boarddeg_hist=[]
+   lastdeg_hist EMPTY
+   E[firstmove] max=114616 min=112606 spread=2010 relspread=6.148609
+   var=0.485297 sd=0.696632  CV^2=var/mu^2=0.005887  skew=0.017954  exkurt=-0.081822
+   dist=[[6, 1], [7, 1082], [8, 35454], [9, 112469], [10, 48482], [11, 2512]]
+   n^(2/3)=3.301927  n^(2/3)*log(n)^(1/3)=4.010459  n=6.000000
+   ratio to n^(2/3)ln^(1/3) = 2.263937

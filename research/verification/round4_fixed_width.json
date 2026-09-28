@@ -1,0 +1,789 @@
+{
+  "method": "Integer pair-sum DP, independently checked by determinant DP",
+  "theorem_not_inferred_from_finite_data": true,
+  "two_rows": [
+    {
+      "m": 1,
+      "safe_states": 4,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 2,
+        "1": 2
+      },
+      "max_g": 1,
+      "max_g_witness_rows": [
+        [],
+        [
+          0
+        ]
+      ],
+      "terminal_size_histogram": {
+        "2": 1
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          0
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 0,
+      "three_by_three_separated": 0,
+      "mixed_witness": null,
+      "parity_formula_failures": 0
+    },
+    {
+      "m": 2,
+      "safe_states": 15,
+      "empty_g": 1,
+      "g_histogram": {
+        "0": 8,
+        "1": 7
+      },
+      "max_g": 1,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          1
+        ]
+      ],
+      "terminal_size_histogram": {
+        "3": 4
+      },
+      "opposite_row_winning_replies": {
+        "0": [],
+        "1": []
+      },
+      "first_row_winning_columns": [
+        0,
+        1
+      ],
+      "three_by_three_count": 0,
+      "three_by_three_separated": 0,
+      "mixed_witness": null,
+      "parity_formula_failures": 15
+    },
+    {
+      "m": 3,
+      "safe_states": 54,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 28,
+        "1": 26
+      },
+      "max_g": 1,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "terminal_size_histogram": {
+        "4": 12
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          0,
+          1,
+          2
+        ],
+        "1": [
+          0,
+          1,
+          2
+        ],
+        "2": [
+          0,
+          1,
+          2
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 0,
+      "three_by_three_separated": 0,
+      "mixed_witness": null,
+      "parity_formula_failures": 0
+    },
+    {
+      "m": 4,
+      "safe_states": 169,
+      "empty_g": 1,
+      "g_histogram": {
+        "0": 56,
+        "1": 81,
+        "2": 32
+      },
+      "max_g": 2,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "terminal_size_histogram": {
+        "4": 8,
+        "5": 16
+      },
+      "opposite_row_winning_replies": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": []
+      },
+      "first_row_winning_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "three_by_three_count": 0,
+      "three_by_three_separated": 0,
+      "mixed_witness": null,
+      "parity_formula_failures": 161
+    },
+    {
+      "m": 5,
+      "safe_states": 470,
+      "empty_g": 1,
+      "g_histogram": {
+        "0": 171,
+        "1": 189,
+        "2": 58,
+        "3": 52
+      },
+      "max_g": 3,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "terminal_size_histogram": {
+        "5": 72,
+        "6": 6
+      },
+      "opposite_row_winning_replies": {
+        "0": [],
+        "1": [
+          1
+        ],
+        "2": [
+          2
+        ],
+        "3": [
+          3
+        ],
+        "4": []
+      },
+      "first_row_winning_columns": [
+        0,
+        4
+      ],
+      "three_by_three_count": 6,
+      "three_by_three_separated": 6,
+      "mixed_witness": null,
+      "parity_formula_failures": 411
+    },
+    {
+      "m": 6,
+      "safe_states": 1167,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 349,
+        "1": 386,
+        "2": 276,
+        "3": 156
+      },
+      "max_g": 3,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "terminal_size_histogram": {
+        "5": 108,
+        "6": 64
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          1,
+          3
+        ],
+        "1": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "3": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "4": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "5": [
+          2,
+          4
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 64,
+      "three_by_three_separated": 44,
+      "mixed_witness": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ]
+      ],
+      "parity_formula_failures": 622
+    },
+    {
+      "m": 7,
+      "safe_states": 2674,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 1124,
+        "1": 1294,
+        "2": 224,
+        "3": 32
+      },
+      "max_g": 3,
+      "max_g_witness_rows": [
+        [],
+        [
+          0,
+          4,
+          5
+        ]
+      ],
+      "terminal_size_histogram": {
+        "5": 60,
+        "6": 320
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "1": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "6": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 320,
+      "three_by_three_separated": 178,
+      "mixed_witness": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ]
+      ],
+      "parity_formula_failures": 324
+    },
+    {
+      "m": 8,
+      "safe_states": 5635,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 2723,
+        "1": 2832,
+        "2": 80
+      },
+      "max_g": 2,
+      "max_g_witness_rows": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          5
+        ]
+      ],
+      "terminal_size_histogram": {
+        "5": 16,
+        "6": 1058
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "7": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 1058,
+      "three_by_three_separated": 540,
+      "mixed_witness": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ]
+      ],
+      "parity_formula_failures": 96
+    },
+    {
+      "m": 9,
+      "safe_states": 11130,
+      "empty_g": 0,
+      "g_histogram": {
+        "0": 5704,
+        "1": 5426
+      },
+      "max_g": 1,
+      "max_g_witness_rows": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "terminal_size_histogram": {
+        "6": 2846
+      },
+      "opposite_row_winning_replies": {
+        "0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "1": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "6": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "7": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "8": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "first_row_winning_columns": [],
+      "three_by_three_count": 2846,
+      "three_by_three_separated": 1360,
+      "mixed_witness": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          5
+        ]
+      ],
+      "parity_formula_failures": 0
+    }
+  ],
+  "independent_geometry_checks": [
+    {
+      "m": 1,
+      "states_checked": 4,
+      "quadruples_checked": 0,
+      "forbidden_quadruples": 0,
+      "mismatches": 0
+    },
+    {
+      "m": 2,
+      "states_checked": 15,
+      "quadruples_checked": 1,
+      "forbidden_quadruples": 1,
+      "mismatches": 0
+    },
+    {
+      "m": 3,
+      "states_checked": 54,
+      "quadruples_checked": 15,
+      "forbidden_quadruples": 3,
+      "mismatches": 0
+    },
+    {
+      "m": 4,
+      "states_checked": 169,
+      "quadruples_checked": 70,
+      "forbidden_quadruples": 10,
+      "mismatches": 0
+    },
+    {
+      "m": 5,
+      "states_checked": 470,
+      "quadruples_checked": 210,
+      "forbidden_quadruples": 26,
+      "mismatches": 0
+    },
+    {
+      "m": 6,
+      "states_checked": 1167,
+      "quadruples_checked": 495,
+      "forbidden_quadruples": 59,
+      "mismatches": 0
+    },
+    {
+      "m": 7,
+      "states_checked": 2674,
+      "quadruples_checked": 1001,
+      "forbidden_quadruples": 117,
+      "mismatches": 0
+    },
+    {
+      "m": 8,
+      "states_checked": 5635,
+      "quadruples_checked": 1820,
+      "forbidden_quadruples": 212,
+      "mismatches": 0
+    }
+  ],
+  "sufficient_length_bound": {
+    "1": 3,
+    "2": 9,
+    "3": 69,
+    "4": 237,
+    "5": 567,
+    "6": 1113,
+    "7": 1929,
+    "8": 3069,
+    "9": 4587,
+    "10": 6537
+  },
+  "B546": {
+    "m": 30,
+    "shifted_row_A": [
+      0,
+      4,
+      8
+    ],
+    "fixed_row_B": [
+      4,
+      16,
+      28
+    ],
+    "pair_sums_A": [
+      4,
+      8,
+      12
+    ],
+    "pair_sums_B": [
+      20,
+      32,
+      44
+    ],
+    "board_admissible_shift_range": [
+      0,
+      21
+    ],
+    "forbidden_shifts": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "allowed_shift_runs": [
+      [
+        0,
+        3
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        11,
+        11
+      ],
+      [
+        13,
+        13
+      ],
+      [
+        15,
+        15
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        19,
+        19
+      ],
+      [
+        21,
+        21
+      ]
+    ],
+    "number_of_runs": 10,
+    "determinant_checks": 330
+  }
+}

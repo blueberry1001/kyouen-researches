@@ -1,0 +1,2126 @@
+{
+ "B228": {
+  "n": 4,
+  "n_quads": 194,
+  "order_rule": "add forbidden quads by DECREASING conic board-point count",
+  "conic_kind_counts": {
+   "line": 10,
+   "circle": 184
+  },
+  "conic_point_counts_present": [
+   0,
+   1,
+   2,
+   4,
+   6,
+   8
+  ],
+  "n_winner_flips": 12,
+  "first_flip_after_adding": 1,
+  "second_flip_after_adding": 2,
+  "winners_along_sequence": [
+   "Second",
+   "First",
+   "Second",
+   "Second",
+   "Second",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "Second",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "First",
+   "Second",
+   "Second",
+   "Second",
+   "Second",
+   "Second",
+   "Second",
+   "Second",
+   "First",
+   "Second",
+   "First",
+   "First"
+  ],
+  "n_distinct_winners": 2,
+  "seconds": 206.3
+ },
+ "B229": {
+  "n": 4,
+  "min_abs_det_nonzero": 2,
+  "abs_det_histogram": {
+   "2": 256,
+   "4": 228,
+   "6": 312,
+   "8": 180,
+   "10": 144,
+   "12": 212,
+   "14": 32,
+   "16": 32,
+   "18": 120,
+   "20": 16,
+   "22": 8,
+   "24": 46,
+   "30": 24,
+   "36": 16
+  },
+  "by_threshold": [
+   {
+    "t": 0,
+    "n_quads": 194,
+    "n_new_quads": 0,
+    "winner": "Second",
+    "max_safe_K": 7,
+    "n_maximal_at_K": 64,
+    "n_D4_orbits": 8,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     8
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 1,
+    "n_quads": 194,
+    "n_new_quads": 0,
+    "winner": "Second",
+    "max_safe_K": 7,
+    "n_maximal_at_K": 64,
+    "n_D4_orbits": 8,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     8
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 2,
+    "n_quads": 450,
+    "n_new_quads": 256,
+    "winner": "First",
+    "max_safe_K": 7,
+    "n_maximal_at_K": 8,
+    "n_D4_orbits": 1,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     1
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       3
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 3,
+    "n_quads": 450,
+    "n_new_quads": 256,
+    "winner": "First",
+    "max_safe_K": 7,
+    "n_maximal_at_K": 8,
+    "n_D4_orbits": 1,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     1
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       3
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 4,
+    "n_quads": 678,
+    "n_new_quads": 484,
+    "winner": "First",
+    "max_safe_K": 6,
+    "n_maximal_at_K": 96,
+    "n_D4_orbits": 12,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     12
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 6,
+    "n_quads": 990,
+    "n_new_quads": 796,
+    "winner": "First",
+    "max_safe_K": 5,
+    "n_maximal_at_K": 212,
+    "n_D4_orbits": 28,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     25,
+     3
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 8,
+    "n_quads": 1170,
+    "n_new_quads": 976,
+    "winner": "First",
+    "max_safe_K": 5,
+    "n_maximal_at_K": 100,
+    "n_D4_orbits": 13,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     12,
+     1
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       2,
+       2
+      ],
+      [
+       3,
+       1
+      ]
+     ]
+    ]
+   },
+   {
+    "t": 12,
+    "n_quads": 1526,
+    "n_new_quads": 1332,
+    "winner": "First",
+    "max_safe_K": 5,
+    "n_maximal_at_K": 16,
+    "n_D4_orbits": 2,
+    "n_D4_fixed_maximals": 0,
+    "orbit_size_multiset": [
+     2
+    ],
+    "maximal_sets": [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       3,
+       0
+      ],
+      [
+       3,
+       3
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "B230": {
+  "n": 4,
+  "variants": {
+   "drop_all_conics_with_at_most_0_board_points": {
+    "n_dropped": 126,
+    "n_kept": 68,
+    "winner": "First",
+    "fully_preserved_layers": [],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 7,
+      "frac": 0.4375
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 49,
+      "frac": 0.4083
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 398,
+      "frac": 0.7107
+     },
+     "4": {
+      "n_states": 1752,
+      "preserved": 936,
+      "frac": 0.5342
+     },
+     "5": {
+      "n_states": 3600,
+      "preserved": 1630,
+      "frac": 0.4528
+     },
+     "6": {
+      "n_states": 4594,
+      "preserved": 496,
+      "frac": 0.108
+     },
+     "7": {
+      "n_states": 3658,
+      "preserved": 30,
+      "frac": 0.0082
+     },
+     "8": {
+      "n_states": 1964,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 709,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 147,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 12,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   },
+   "drop_all_conics_with_at_most_1_board_points": {
+    "n_dropped": 128,
+    "n_kept": 66,
+    "winner": "First",
+    "fully_preserved_layers": [],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 12,
+      "frac": 0.75
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 51,
+      "frac": 0.425
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 445,
+      "frac": 0.7946
+     },
+     "4": {
+      "n_states": 1754,
+      "preserved": 946,
+      "frac": 0.5393
+     },
+     "5": {
+      "n_states": 3624,
+      "preserved": 1696,
+      "frac": 0.468
+     },
+     "6": {
+      "n_states": 4695,
+      "preserved": 502,
+      "frac": 0.1069
+     },
+     "7": {
+      "n_states": 3822,
+      "preserved": 28,
+      "frac": 0.0073
+     },
+     "8": {
+      "n_states": 2071,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 739,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 150,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 12,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   },
+   "drop_all_conics_with_at_most_2_board_points": {
+    "n_dropped": 136,
+    "n_kept": 58,
+    "winner": "First",
+    "fully_preserved_layers": [],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 14,
+      "frac": 0.875
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 47,
+      "frac": 0.3917
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 462,
+      "frac": 0.825
+     },
+     "4": {
+      "n_states": 1762,
+      "preserved": 913,
+      "frac": 0.5182
+     },
+     "5": {
+      "n_states": 3720,
+      "preserved": 1727,
+      "frac": 0.4642
+     },
+     "6": {
+      "n_states": 5083,
+      "preserved": 476,
+      "frac": 0.0936
+     },
+     "7": {
+      "n_states": 4453,
+      "preserved": 18,
+      "frac": 0.004
+     },
+     "8": {
+      "n_states": 2537,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 895,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 170,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 12,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   },
+   "drop_all_conics_with_at_most_4_board_points": {
+    "n_dropped": 163,
+    "n_kept": 31,
+    "winner": "Second",
+    "fully_preserved_layers": [
+     0,
+     1
+    ],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 1,
+      "frac": 1.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 16,
+      "frac": 1.0
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 53,
+      "frac": 0.4417
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 499,
+      "frac": 0.8911
+     },
+     "4": {
+      "n_states": 1789,
+      "preserved": 840,
+      "frac": 0.4695
+     },
+     "5": {
+      "n_states": 4044,
+      "preserved": 1544,
+      "frac": 0.3818
+     },
+     "6": {
+      "n_states": 6518,
+      "preserved": 476,
+      "frac": 0.073
+     },
+     "7": {
+      "n_states": 7451,
+      "preserved": 46,
+      "frac": 0.0062
+     },
+     "8": {
+      "n_states": 5940,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 3194,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 1088,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 207,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "12": {
+      "n_states": 16,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   },
+   "drop_all_conics_with_at_most_6_board_points": {
+    "n_dropped": 193,
+    "n_kept": 1,
+    "winner": "First",
+    "fully_preserved_layers": [],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 36,
+      "frac": 0.3
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 16,
+      "frac": 0.0286
+     },
+     "4": {
+      "n_states": 1819,
+      "preserved": 986,
+      "frac": 0.5421
+     },
+     "5": {
+      "n_states": 4356,
+      "preserved": 332,
+      "frac": 0.0762
+     },
+     "6": {
+      "n_states": 7942,
+      "preserved": 376,
+      "frac": 0.0473
+     },
+     "7": {
+      "n_states": 11220,
+      "preserved": 64,
+      "frac": 0.0057
+     },
+     "8": {
+      "n_states": 12375,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 10648,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 7084,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 3576,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "12": {
+      "n_states": 1325,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "13": {
+      "n_states": 340,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "14": {
+      "n_states": 54,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "15": {
+      "n_states": 4,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   },
+   "drop_all_conics_with_at_most_8_board_points": {
+    "n_dropped": 194,
+    "n_kept": 0,
+    "winner": "Second",
+    "fully_preserved_layers": [
+     0,
+     1
+    ],
+    "per_layer": {
+     "0": {
+      "n_states": 1,
+      "preserved": 1,
+      "frac": 1.0
+     },
+     "1": {
+      "n_states": 16,
+      "preserved": 16,
+      "frac": 1.0
+     },
+     "2": {
+      "n_states": 120,
+      "preserved": 84,
+      "frac": 0.7
+     },
+     "3": {
+      "n_states": 560,
+      "preserved": 544,
+      "frac": 0.9714
+     },
+     "4": {
+      "n_states": 1820,
+      "preserved": 640,
+      "frac": 0.3516
+     },
+     "5": {
+      "n_states": 4368,
+      "preserved": 2028,
+      "frac": 0.4643
+     },
+     "6": {
+      "n_states": 8008,
+      "preserved": 688,
+      "frac": 0.0859
+     },
+     "7": {
+      "n_states": 11440,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "8": {
+      "n_states": 12870,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "9": {
+      "n_states": 11440,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "10": {
+      "n_states": 8008,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "11": {
+      "n_states": 4368,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "12": {
+      "n_states": 1820,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "13": {
+      "n_states": 560,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "14": {
+      "n_states": 120,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "15": {
+      "n_states": 16,
+      "preserved": 0,
+      "frac": 0.0
+     },
+     "16": {
+      "n_states": 1,
+      "preserved": 0,
+      "frac": 0.0
+     }
+    }
+   }
+  },
+  "seconds": 13.9
+ },
+ "B231": {
+  "squares": {
+   "2x2": {
+    "max_g": 1,
+    "n_states": 15,
+    "values_present": [
+     0,
+     1
+    ],
+    "g1_positions_count": 7
+   },
+   "3x3": {
+    "max_g": 1,
+    "n_states": 298,
+    "values_present": [
+     0,
+     1
+    ],
+    "g1_positions_count": 149
+   },
+   "4x4": {
+    "max_g": 5,
+    "n_states": 5811,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "g1_positions_count": 2192
+   },
+   "5x5": {
+    "max_g": 6,
+    "n_states": 151394,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "g1_positions_count": 46885
+   }
+  },
+  "rects": {
+   "3x4": {
+    "V": 12,
+    "n_quads": 57,
+    "n_states": 1199,
+    "max_g": 3,
+    "values_present": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "K_max": 6,
+    "seconds": 0.1
+   },
+   "4x3": {
+    "V": 12,
+    "n_quads": 57,
+    "n_states": 1199,
+    "max_g": 3,
+    "values_present": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "K_max": 6,
+    "seconds": 0.1
+   },
+   "3x5": {
+    "V": 15,
+    "n_quads": 118,
+    "n_states": 4672,
+    "max_g": 5,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "K_max": 7,
+    "seconds": 0.4
+   },
+   "5x3": {
+    "V": 15,
+    "n_quads": 118,
+    "n_states": 4672,
+    "max_g": 5,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "K_max": 7,
+    "seconds": 0.4
+   },
+   "4x5": {
+    "V": 20,
+    "n_quads": 387,
+    "n_states": 28473,
+    "max_g": 6,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "K_max": 9,
+    "seconds": 5.2
+   },
+   "5x4": {
+    "V": 20,
+    "n_quads": 387,
+    "n_states": 28473,
+    "max_g": 6,
+    "values_present": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "K_max": 9,
+    "seconds": 5.5
+   },
+   "2x6": {
+    "V": 12,
+    "n_quads": 59,
+    "n_states": 1167,
+    "max_g": 3,
+    "values_present": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "K_max": 6,
+    "seconds": 0.1
+   },
+   "6x2": {
+    "V": 12,
+    "n_quads": 59,
+    "n_states": 1167,
+    "max_g": 3,
+    "values_present": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "K_max": 6,
+    "seconds": 0.1
+   }
+  },
+  "note": "max g over all boards tried; the quantifier 'for every m' needs boards with unbounded number of points and is not reachable by brute force here."
+ }
+}

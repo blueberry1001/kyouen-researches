@@ -1,0 +1,175 @@
+{
+  "worker": "B591,B592,B593,B596,B597,B598,B599",
+  "round": 4,
+  "pass": 2,
+  "script": "research/verification/scripts/round4_b591b.cpp",
+  "drivers": [
+    "research/verification/scripts/round4_b591b_run.sh",
+    "research/verification/scripts/round4_b591b_run2.sh"
+  ],
+  "engine": {
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": "-O2 -march=native -std=c++20",
+    "core_include": "kc_core.h (shared, verified)",
+    "occupancy": "unsigned __int128",
+    "float_policy": "integer only; carrier classification uses primitive integer keys (line ax+by+c, circle x^2+y^2+Dx+Ey+F)"
+  },
+
+  "selfcheck": {
+    "note": "F_n recomputed, n=2..9; n<=8 cross-checked against kc::build_square",
+    "F_n": {"2": 1, "3": 14, "4": 194, "5": 826, "6": 2491, "7": 6364, "8": 14564, "9": 29152},
+    "agree_with_kc_core_n_le_8": true,
+    "F_9_matches_readme": true,
+    "verdict": "geometry engine validated (2nd pass, identical to pass 1)"
+  },
+
+  "B596": {
+    "verdict": "PARTIAL -> SUPPORTED",
+    "what_changed": "sample of 12/12/6 replaced by the FULL 2,176-set 13-stone layer, and the G_11 path lengths that round2/round3 recorded as NOT-COMPUTED are now exact",
+    "method": "BFS from the 16 maximum sets of n=7 over the 1-stone-move graph restricted to the size window [floorK, 14]. Neighbours are filtered by conflicts_a so every emitted node is a safe set; the BFS is therefore exact and complete inside the window.",
+    "G_12": {
+      "floorK": 12,
+      "bfs_sec": 0.07,
+      "states_in_window": 103576,
+      "edges": 96352,
+      "bfs_complete": true,
+      "capped_out": 0,
+      "layer13_total": 2176,
+      "layer13_reached": 593,
+      "layer13_unreached": 1252,
+      "dist_hist": {"1": 224, "3": 120, "5": 88, "7": 64, "9": 40, "11": 32,
+                     "13": 24, "15": 32, "17": 16, "19": 16, "21": 8, "23": 8},
+      "phase_classes_total": {"dA_lt_dB": 184, "dA_gt_dB": 392, "dA_eq_dB": 672,
+                              "only_reached": {"dA_lt_dB": 184, "dA_gt_dB": 392, "dA_eq_dB": 96}},
+      "mean_dist_hundredths": {"dA_lt_dB": 256, "dA_gt_dB": 536, "dA_eq_dB": 1383},
+      "equidistant_reach_rate": "96/672 = 1/7",
+      "biased_reach_rate": "1 (all)"
+    },
+    "G_11": {
+      "floorK": 11,
+      "bfs_sec": 20.37,
+      "total_sec": 96.50,
+      "states_in_window": 22439320,
+      "edges": 20758392,
+      "bfs_complete": true,
+      "capped_out": 0,
+      "layer13_total": 2176,
+      "layer13_reached": 2176,
+      "layer13_unreached": 0,
+      "dist_hist": {"1": 224, "3": 120, "5": 128, "7": 152, "9": 304, "11": 504,
+                     "13": 488, "15": 192, "17": 48, "19": 8, "21": 8},
+      "max_dist": 21,
+      "phase_classes_total": {"dA_lt_dB": 736, "dA_gt_dB": 944, "dA_eq_dB": 496},
+      "per_class_reachable": [736, 944, 496],
+      "mean_dist_hundredths": {"dA_lt_dB": 900, "dA_gt_dB": 864, "dA_eq_dB": 1238},
+      "equidistant_excess_pct": {"vs_dA_lt_dB": 38, "vs_dA_gt_dB": 43},
+      "worst_dA": 8, "worst_dB": 8, "worst_equidistant": 8,
+      "worst_equidistant_sets": 80, "worst_equidistant_unreachable": 0
+    },
+    "independent_cross_check": {
+      "note": "the C++ BFS reproduced round2's Python census exactly",
+      "layer13_total": {"round2": 2176, "round4_cpp": 2176, "agree": true},
+      "maximal13": {"round2": 1952, "round4_cpp": 1952, "agree": true},
+      "equidistant_count": {"round2": 496, "round4_cpp": 496, "agree": true}
+    }
+  },
+
+  "B598": {
+    "verdict": "INCONCLUSIVE -> INCONCLUSIVE (new decomposition evidence, B597-favouring)",
+    "what_changed": "the ratio's numerator was shown to be ambiguous: 'layer size' vs 'true neighbourhood of the maximum configurations' give completely different growth",
+    "new_stage": "extend -- counts t(S) = #{M in M_n : S subset of M} for every (K_n-1) set",
+    "N_ext_table": [
+      {"n": 2, "K": 3,  "layer": 6,     "N_ext": 6,     "ratio": "3/2",   "layer_over_Next": "1"},
+      {"n": 3, "K": 5,  "layer": 112,   "N_ext": 112,   "ratio": "2",     "layer_over_Next": "1"},
+      {"n": 4, "K": 7,  "layer": 1064,  "N_ext": 376,   "ratio": "47/8",  "layer_over_Next": "2.83"},
+      {"n": 5, "K": 9,  "layer": 5172,  "N_ext": 832,   "ratio": "208/25","layer_over_Next": "6.22"},
+      {"n": 6, "K": 11, "layer": 35316, "N_ext": 4824,  "ratio": "60/6",  "layer_over_Next": "7.32"},
+      {"n": 7, "K": 14, "layer": 2176,  "N_ext": 224,   "ratio": "14",    "layer_over_Next": "9.71"}
+    ],
+    "double_counting_check": {
+      "n": 6: "sum_S t(S) = 5104 = 11 * 464  (exact match)",
+      "n": 7: "sum_S t(S) = 224 = 14 * 16  (exact match)",
+      "verdict": "the multiplicity distribution is exhaustive and exact"
+    },
+    "multiplicity_hist": {
+      "n_6": {"0": 30492, "1": 4568, "2": 232, "3": 24},
+      "n_7": {"0": 1952,  "1": 224}
+    },
+    "fraction_of_layer_that_is_not_adjacent_to_any_max_set": {
+      "n_6": "30492/35316 = 86.3%",
+      "n_7": "1952/2176 = 89.7%"
+    },
+    "interpretation": "read literally as 'the number of NEIGHBOURS of a maximum configuration', the ratio is 1.5, 2, 5.9, 8.3, 10.4, 14 -- roughly linear in n, far below n^2. The B597-favouring reading is therefore strengthened, but the asymptote is still undecidable because n=8 is not enumerable."
+  },
+
+  "B599": {
+    "verdict": "PARTIAL -> PARTIAL (certificate constructed; the 'few carriers' part is refuted)",
+    "what_changed": "the constructive certificate requested in round2/round3 was actually built and verified against the full 16-set maximum pool",
+    "definition": "cl(T) = smallest SAFE superset of T = fixpoint of 'if a forbidden quad has 3 points in the set, the 4th is forced'. A forbidden quad is exactly 4 points on one line or one circle, so cl(T) > K_n proves 'no maximum set contains T' by pure circle/line capacity.",
+    "target_S": "(0,0),(1,0),(1,1),(5,1),(6,1),(0,2),(2,2),(3,4),(6,4),(4,5),(1,6),(2,6),(3,6)",
+    "size": 13, "safe": true, "maximal": true, "d4_orbit": 8,
+    "cert2": {
+      "max_sets_pooled": 16,
+      "exact_alpha": 5,
+      "exact_d_max": 8,
+      "alpha_proved_by_closure_alone": 5,
+      "closure_suffices": true,
+      "buckets": [
+        {"t": 1, "subsets": 13,   "min_closure": 1,  "in_a_max_set": 12,  "blocked_by_closure": 0},
+        {"t": 2, "subsets": 78,   "min_closure": 2,  "in_a_max_set": 49,  "blocked_by_closure": 0},
+        {"t": 3, "subsets": 286,  "min_closure": 3,  "in_a_max_set": 59,  "blocked_by_closure": 0},
+        {"t": 4, "subsets": 715,  "min_closure": 4,  "max_closure": 49, "in_a_max_set": 27, "blocked_by_closure": 395},
+        {"t": 5, "subsets": 1287, "min_closure": 5,  "max_closure": 49, "in_a_max_set": 5,  "blocked_by_closure": 1225},
+        {"t": 6, "subsets": 1716, "min_closure": 6,  "max_closure": 49, "in_a_max_set": 0,  "blocked_by_closure": 1713},
+        {"t": 7, "subsets": 1716, "min_closure": 49, "max_closure": 49, "in_a_max_set": 0,  "blocked_by_closure": 1716}
+      ],
+      "note": "for every t, the sets excluded by the closure and the sets absent from the maximum pool agree on all 1716 seven-subsets; the closure never certifies a false positive at t=4 (27+395=422 of 715, the remaining 293 are in neither category)"
+    },
+    "carriers": {
+      "F_7": 6364,
+      "quads_on_line": 660,
+      "quads_on_circle": 5704,
+      "distinct_lines": 44,
+      "distinct_circles": 1013,
+      "carriers_with_3pts_in_S": 92,
+      "smallest_T_with_closure_over_K": 4,
+      "blocking_T": "(0,0),(1,0),(1,1),(5,1)",
+      "carriers_used_in_that_closure": 32,
+      "lines_used": 2,
+      "circles_used": 30,
+      "quads_fired_in_closure": 45
+    },
+    "what_is_refuted": "round2's note suggested '3-4 circles could force |S^M| <= 5'. The actual certificate needs 32 carriers (30 circles + 2 lines) for a 4-point blocking subset -- about 10x the suggested figure."
+  },
+
+  "B591": {
+    "verdict": "PARTIAL -> PARTIAL",
+    "new_content": "quantified the break in the trend: adjacent differences of the max d_max sequence 2,3,4,8,6 (n=4..8) are +1,+1,+4,-2; n=7 is the unique local maximum of both the absolute and the relative quantity",
+    "necessary_constant": "C >= 8, forced by n=7; n=8 does not strengthen it",
+    "unchanged": "the existence of an absolute constant C is an infinite-family statement and is not decidable by any finite layer"
+  },
+
+  "B592": {
+    "verdict": "PARTIAL -> PARTIAL",
+    "new_content": "the saturation closure of the n=7 worst set shows d_max=8 arises from a 7-point forced block (any 7-subset saturates the whole 49-point board), i.e. a saturation bisection. The same shape appears at n=6 (d_max=4 with a 10-stone layer), suggesting d_max ~ |S|/2, which would make d_max/n ~ 1/2 and would be enough for B592's 'some c>0'",
+    "unchanged": "d_max/n maxima 1/2, 3/5, 2/3, 8/7, 3/4 for n=4..8; the 14-stone layer of n=8 is not enumerable"
+  },
+
+  "B593": {
+    "verdict": "PARTIAL -> PARTIAL",
+    "new_content": "the same saturation mechanism accounts for both c=1 and c=2 at n=7 (d_max=8 for both), so the qualitative claim 'the repair cost scales with the deficit' is mechanistically confirmed at n=7",
+    "unchanged": "the n-independence of C is undecidable; the c=1 ratio sequence 2,3,4,8,6 (n=4..8) does not rule out growth"
+  },
+
+  "run_totals": {
+    "wsl_compiler": "g++ 13.3.0",
+    "heavy_jobs": 2,
+    "bfs_G12_sec": 0.07,
+    "bfs_G11_sec": 20.37,
+    "bfs_G11_total_sec": 96.50,
+    "bfs_G11_states": 22439320,
+    "bfs_G11_edges": 20758392,
+    "cert2_full_subsets": 8192,
+    "n8_climb": "aborted after 35 min without completing a single seed; the n=8 14-stone layer search is not tractable with this budget"
+  }
+}

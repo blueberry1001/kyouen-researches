@@ -1,0 +1,506 @@
+{
+ "KNOWN_F": {
+  "2": 1,
+  "3": 14,
+  "4": 194,
+  "5": 826,
+  "6": 2491,
+  "7": 6364,
+  "8": 14564,
+  "9": 29152
+ },
+ "selfcheck_sum_C_m4_equals_C_n": [
+  {
+   "n": 3,
+   "sum_C_m4": 14,
+   "C_n": 14,
+   "match": true
+  },
+  {
+   "n": 4,
+   "sum_C_m4": 184,
+   "C_n": 184,
+   "match": true
+  },
+  {
+   "n": 5,
+   "sum_C_m4": 762,
+   "C_n": 762,
+   "match": true
+  },
+  {
+   "n": 6,
+   "sum_C_m4": 2257,
+   "C_n": 2257,
+   "match": true
+  },
+  {
+   "n": 7,
+   "sum_C_m4": 5704,
+   "C_n": 5704,
+   "match": true
+  },
+  {
+   "n": 8,
+   "sum_C_m4": 13040,
+   "C_n": 13040,
+   "match": true
+  },
+  {
+   "n": 9,
+   "sum_C_m4": 25996,
+   "C_n": 25996,
+   "match": true
+  }
+ ],
+ "B474": {
+  "claim": "the n->n+1 increment of C_n is better explained by the number of NEWLY appearing primitive circle types (A,D,E,F) than by the jump of the max point count M(n)",
+  "rows": [
+   {
+    "n": 3,
+    "C_n": 14,
+    "dC": null,
+    "M": 4,
+    "dM": null,
+    "n_circles": 14,
+    "n_types_cum": 14,
+    "new_types": 14
+   },
+   {
+    "n": 4,
+    "C_n": 184,
+    "dC": 170,
+    "M": 8,
+    "dM": 4,
+    "n_circles": 59,
+    "n_types_cum": 59,
+    "new_types": 45
+   },
+   {
+    "n": 5,
+    "C_n": 762,
+    "dC": 578,
+    "M": 8,
+    "dM": 0,
+    "n_circles": 217,
+    "n_types_cum": 217,
+    "new_types": 158
+   },
+   {
+    "n": 6,
+    "C_n": 2257,
+    "dC": 1495,
+    "M": 8,
+    "dM": 0,
+    "n_circles": 622,
+    "n_types_cum": 622,
+    "new_types": 405
+   },
+   {
+    "n": 7,
+    "C_n": 5704,
+    "dC": 3447,
+    "M": 8,
+    "dM": 0,
+    "n_circles": 1581,
+    "n_types_cum": 1581,
+    "new_types": 959
+   },
+   {
+    "n": 8,
+    "C_n": 13040,
+    "dC": 7336,
+    "M": 12,
+    "dM": 4,
+    "n_circles": 3481,
+    "n_types_cum": 3481,
+    "new_types": 1900
+   },
+   {
+    "n": 9,
+    "C_n": 25996,
+    "dC": 12956,
+    "M": 12,
+    "dM": 0,
+    "n_circles": 6722,
+    "n_types_cum": 6722,
+    "new_types": 3241
+   }
+  ],
+  "C_series": {
+   "3": 14,
+   "4": 184,
+   "5": 762,
+   "6": 2257,
+   "7": 5704,
+   "8": 13040,
+   "9": 25996
+  },
+  "pearson_dC_vs_new_types": {
+   "sum_xy": "30891042",
+   "sum_xx": "370931788/3",
+   "sum_yy": "7725232",
+   "approx": 0.9995174794655679
+  },
+  "spearman_dC_vs_new_types": 1.0,
+  "spearman_dC_vs_dM": -0.20701966780270628,
+  "n_points_corr": 6,
+  "note": "circle TYPES are the true primitive (A,D,E,F) with gcd=1, not the ad-hoc (m,q,F) used in round2; the earlier count was an artefact."
+ },
+ "B477": {
+  "claim": "decomposing circles by the primitive type of a chord gives a formula with LESS duplication than decomposing by radius",
+  "by_n": {
+   "3": {
+    "n_circles": 14,
+    "modes": {
+     "lexmin": {
+      "n_quads": 14,
+      "n_chords": 3,
+      "n_collisions": 3,
+      "max_circles_per_chord": 8,
+      "median_circles_per_chord": 4,
+      "quads_per_chord_num": 14,
+      "quads_per_chord_den": 3
+     },
+     "lexmax": {
+      "n_quads": 14,
+      "n_chords": 9,
+      "n_collisions": 4,
+      "max_circles_per_chord": 3,
+      "median_circles_per_chord": 2,
+      "quads_per_chord_num": 14,
+      "quads_per_chord_den": 9
+     },
+     "longest": {
+      "n_quads": 14,
+      "n_chords": 6,
+      "n_collisions": 5,
+      "max_circles_per_chord": 4,
+      "median_circles_per_chord": 2,
+      "quads_per_chord_num": 14,
+      "quads_per_chord_den": 6
+     },
+     "shortest": {
+      "n_quads": 14,
+      "n_chords": 5,
+      "n_collisions": 3,
+      "max_circles_per_chord": 7,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 14,
+      "quads_per_chord_den": 5
+     },
+     "shortdir": {
+      "n_quads": 14,
+      "n_chords": 5,
+      "n_collisions": 2,
+      "max_circles_per_chord": 8,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 14,
+      "quads_per_chord_den": 5
+     }
+    }
+   },
+   "4": {
+    "n_circles": 59,
+    "modes": {
+     "lexmin": {
+      "n_quads": 184,
+      "n_chords": 16,
+      "n_collisions": 5,
+      "max_circles_per_chord": 25,
+      "median_circles_per_chord": 13,
+      "quads_per_chord_num": 184,
+      "quads_per_chord_den": 16
+     },
+     "lexmax": {
+      "n_quads": 184,
+      "n_chords": 38,
+      "n_collisions": 27,
+      "max_circles_per_chord": 7,
+      "median_circles_per_chord": 2,
+      "quads_per_chord_num": 184,
+      "quads_per_chord_den": 38
+     },
+     "longest": {
+      "n_quads": 184,
+      "n_chords": 16,
+      "n_collisions": 14,
+      "max_circles_per_chord": 12,
+      "median_circles_per_chord": 6,
+      "quads_per_chord_num": 184,
+      "quads_per_chord_den": 16
+     },
+     "shortest": {
+      "n_quads": 184,
+      "n_chords": 39,
+      "n_collisions": 16,
+      "max_circles_per_chord": 15,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 184,
+      "quads_per_chord_den": 39
+     },
+     "shortdir": {
+      "n_quads": 184,
+      "n_chords": 12,
+      "n_collisions": 7,
+      "max_circles_per_chord": 25,
+      "median_circles_per_chord": 8,
+      "quads_per_chord_num": 184,
+      "quads_per_chord_den": 12
+     }
+    }
+   },
+   "5": {
+    "n_circles": 217,
+    "modes": {
+     "lexmin": {
+      "n_quads": 762,
+      "n_chords": 39,
+      "n_collisions": 31,
+      "max_circles_per_chord": 65,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 762,
+      "quads_per_chord_den": 39
+     },
+     "lexmax": {
+      "n_quads": 762,
+      "n_chords": 96,
+      "n_collisions": 88,
+      "max_circles_per_chord": 14,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 762,
+      "quads_per_chord_den": 96
+     },
+     "longest": {
+      "n_quads": 762,
+      "n_chords": 30,
+      "n_collisions": 20,
+      "max_circles_per_chord": 29,
+      "median_circles_per_chord": 13,
+      "quads_per_chord_num": 762,
+      "quads_per_chord_den": 30
+     },
+     "shortest": {
+      "n_quads": 762,
+      "n_chords": 107,
+      "n_collisions": 62,
+      "max_circles_per_chord": 37,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 762,
+      "quads_per_chord_den": 107
+     },
+     "shortdir": {
+      "n_quads": 762,
+      "n_chords": 30,
+      "n_collisions": 17,
+      "max_circles_per_chord": 65,
+      "median_circles_per_chord": 14,
+      "quads_per_chord_num": 762,
+      "quads_per_chord_den": 30
+     }
+    }
+   },
+   "6": {
+    "n_circles": 622,
+    "modes": {
+     "lexmin": {
+      "n_quads": 2257,
+      "n_chords": 71,
+      "n_collisions": 66,
+      "max_circles_per_chord": 139,
+      "median_circles_per_chord": 5,
+      "quads_per_chord_num": 2257,
+      "quads_per_chord_den": 71
+     },
+     "lexmax": {
+      "n_quads": 2257,
+      "n_chords": 231,
+      "n_collisions": 200,
+      "max_circles_per_chord": 22,
+      "median_circles_per_chord": 4,
+      "quads_per_chord_num": 2257,
+      "quads_per_chord_den": 231
+     },
+     "longest": {
+      "n_quads": 2257,
+      "n_chords": 52,
+      "n_collisions": 30,
+      "max_circles_per_chord": 63,
+      "median_circles_per_chord": 31,
+      "quads_per_chord_num": 2257,
+      "quads_per_chord_den": 52
+     },
+     "shortest": {
+      "n_quads": 2257,
+      "n_chords": 256,
+      "n_collisions": 176,
+      "max_circles_per_chord": 61,
+      "median_circles_per_chord": 3,
+      "quads_per_chord_num": 2257,
+      "quads_per_chord_den": 256
+     },
+     "shortdir": {
+      "n_quads": 2257,
+      "n_chords": 44,
+      "n_collisions": 31,
+      "max_circles_per_chord": 139,
+      "median_circles_per_chord": 10,
+      "quads_per_chord_num": 2257,
+      "quads_per_chord_den": 44
+     }
+    }
+   },
+   "7": {
+    "n_circles": 1581,
+    "modes": {
+     "lexmin": {
+      "n_quads": 5704,
+      "n_chords": 112,
+      "n_collisions": 101,
+      "max_circles_per_chord": 275,
+      "median_circles_per_chord": 7,
+      "quads_per_chord_num": 5704,
+      "quads_per_chord_den": 112
+     },
+     "lexmax": {
+      "n_quads": 5704,
+      "n_chords": 421,
+      "n_collisions": 401,
+      "max_circles_per_chord": 34,
+      "median_circles_per_chord": 5,
+      "quads_per_chord_num": 5704,
+      "quads_per_chord_den": 421
+     },
+     "longest": {
+      "n_quads": 5704,
+      "n_chords": 86,
+      "n_collisions": 56,
+      "max_circles_per_chord": 123,
+      "median_circles_per_chord": 8,
+      "quads_per_chord_num": 5704,
+      "quads_per_chord_den": 86
+     },
+     "shortest": {
+      "n_quads": 5704,
+      "n_chords": 473,
+      "n_collisions": 369,
+      "max_circles_per_chord": 110,
+      "median_circles_per_chord": 4,
+      "quads_per_chord_num": 5704,
+      "quads_per_chord_den": 473
+     },
+     "shortdir": {
+      "n_quads": 5704,
+      "n_chords": 73,
+      "n_collisions": 44,
+      "max_circles_per_chord": 275,
+      "median_circles_per_chord": 16,
+      "quads_per_chord_num": 5704,
+      "quads_per_chord_den": 73
+     }
+    }
+   },
+   "8": {
+    "n_circles": 3481,
+    "modes": {
+     "lexmin": {
+      "n_quads": 13040,
+      "n_chords": 195,
+      "n_collisions": 152,
+      "max_circles_per_chord": 472,
+      "median_circles_per_chord": 8,
+      "quads_per_chord_num": 13040,
+      "quads_per_chord_den": 195
+     },
+     "lexmax": {
+      "n_quads": 13040,
+      "n_chords": 756,
+      "n_collisions": 734,
+      "max_circles_per_chord": 47,
+      "median_circles_per_chord": 6,
+      "quads_per_chord_num": 13040,
+      "quads_per_chord_den": 756
+     },
+     "longest": {
+      "n_quads": 13040,
+      "n_chords": 176,
+      "n_collisions": 106,
+      "max_circles_per_chord": 218,
+      "median_circles_per_chord": 9,
+      "quads_per_chord_num": 13040,
+      "quads_per_chord_den": 176
+     },
+     "shortest": {
+      "n_quads": 13040,
+      "n_chords": 849,
+      "n_collisions": 696,
+      "max_circles_per_chord": 157,
+      "median_circles_per_chord": 4,
+      "quads_per_chord_num": 13040,
+      "quads_per_chord_den": 849
+     },
+     "shortdir": {
+      "n_quads": 13040,
+      "n_chords": 148,
+      "n_collisions": 78,
+      "max_circles_per_chord": 472,
+      "median_circles_per_chord": 8,
+      "quads_per_chord_num": 13040,
+      "quads_per_chord_den": 148
+     }
+    }
+   },
+   "9": {
+    "n_circles": 6722,
+    "modes": {
+     "lexmin": {
+      "n_quads": 25996,
+      "n_chords": 303,
+      "n_collisions": 224,
+      "max_circles_per_chord": 777,
+      "median_circles_per_chord": 11,
+      "quads_per_chord_num": 25996,
+      "quads_per_chord_den": 303
+     },
+     "lexmax": {
+      "n_quads": 25996,
+      "n_chords": 1212,
+      "n_collisions": 1186,
+      "max_circles_per_chord": 63,
+      "median_circles_per_chord": 7,
+      "quads_per_chord_num": 25996,
+      "quads_per_chord_den": 1212
+     },
+     "longest": {
+      "n_quads": 25996,
+      "n_chords": 288,
+      "n_collisions": 158,
+      "max_circles_per_chord": 366,
+      "median_circles_per_chord": 12,
+      "quads_per_chord_num": 25996,
+      "quads_per_chord_den": 288
+     },
+     "shortest": {
+      "n_quads": 25996,
+      "n_chords": 1380,
+      "n_collisions": 1195,
+      "max_circles_per_chord": 232,
+      "median_circles_per_chord": 5,
+      "quads_per_chord_num": 25996,
+      "quads_per_chord_den": 1380
+     },
+     "shortdir": {
+      "n_quads": 25996,
+      "n_chords": 218,
+      "n_collisions": 118,
+      "max_circles_per_chord": 777,
+      "median_circles_per_chord": 8,
+      "quads_per_chord_num": 25996,
+      "quads_per_chord_den": 218
+     }
+    }
+   }
+  },
+  "note": "a chord signature is the canonical primitive direction (pdx,pdy) of a pair plus the line intercept c. A collision = two different circles carrying the same standard chord, i.e. the decomposition is not a unique labelling."
+ }
+}

@@ -1,0 +1,2015 @@
+=== Stage A: s_n random maximal census ===
+  n=5: min=6 hist={6: 41, 7: 542, 8: 567, 9: 50} (2.6s)
+  n=6: min=8 hist={8: 216, 9: 692, 10: 273, 11: 19} (13.3s)
+  n=7: min=8 hist={8: 4, 9: 100, 10: 531, 11: 478, 12: 84, 13: 3} (45.0s)
+  n=8: min=10 hist={10: 36, 11: 322, 12: 557, 13: 262, 14: 22, 15: 1} (146.2s)
+  n=9: min=11 hist={11: 13, 12: 170, 13: 561, 14: 373, 15: 78, 16: 5} (327.0s)
+  n=10: min=12 hist={12: 9, 13: 104, 14: 416, 15: 500, 16: 162, 17: 9} (684.7s)
+  n=11: min=13 hist={13: 6, 14: 50, 15: 306, 16: 510, 17: 276, 18: 46, 19: 6} (1300.0s)
+
+=== Stage B: maximal size spectrum (constructive) ===
+Traceback (most recent call last):
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 208, in <module>
+    main()
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 201, in main
+    stage_b(rep)
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 105, in stage_b
+    add(m)
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 96, in add
+    add(shrink(t))
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 92, in add
+    add(shrink(m | (1 << v)))
+        ^^^^^^^^^^^^^^^^^^^^
+  File "D:\ghq\github.com\yuubinnkyoku\kyouen-researches\research\verification\scripts\round3_chunk2_saturation.py", line 79, in shrink
+    rng.shuffle(order)
+  File "C:\Python311\Lib\random.py", line 382, in shuffle
+    j = randbelow(i + 1)
+        ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\random.py", line 239, in _randbelow_with_getrandbits
+    k = n.bit_length()  # don't use (n-1) here because n can be 1
+        ^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded while calling a Python object

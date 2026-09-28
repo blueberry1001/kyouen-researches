@@ -1,0 +1,50 @@
+{
+  "script": "research/verification/scripts/round4_n7_layers.cpp",
+  "estimate_correction": {
+    "claim_rejected": "K_7 = 14 with 16 maximal safe sets implies a state space of at most 16 * 2^14 = 262144, so a full n=7 Grundy is cheap.",
+    "measurement": "A plain enumerate-all-safe-subsets recursion on n=7 reached 134217731 subsets in about 3 minutes on one core and was still climbing when stopped. That is over 500x the naive bound.",
+    "why": "The recorded 16 counts the maximal safe sets OF SIZE K_7 = 14. Safe sets of sizes 8 to 13 number in the tens of millions and dominate the space. Moreover a maximal safe set of size less than 14 exists, so a safe set need not be contained in any 14-point maximal set and 16 * 2^14 was never an upper bound.",
+    "consequence": "n=7 is excluded from the full recursion, exactly like n=6. n=7 questions are answered either by the mex identity (win/loss) or not at all."
+  },
+  "full_boards": {
+    "n=2": {"V": 4, "F_n": 1, "safe_sets_total": 15, "maximal_safe_sets": 4, "K_n": 3,
+      "safe_sets_by_size": {0: 1, 1: 4, 2: 6, 3: 4, 4: 0},
+      "g_empty": 0, "W_size": 4, "g1_histogram": {0: 4}, "g1_by_point": [0, 0, 0, 0],
+      "d4_point_orbits": 1, "d4_orbit_constant_on_g1": true, "d4_orbit_g_values": [0],
+      "layer_profile_M_by_k": {0: 0, 1: 0, 2: 0, 3: 0}, "sigma_n": 3, "d4_orbit_constancy": true}
+    },
+    "n=3": {"V": 9, "F_n": 14, "safe_sets_total": 298, "maximal_safe_sets": 56, "K_n": 5,
+      "safe_sets_by_size": {0: 1, 1: 9, 2: 36, 3: 84, 4: 112, 5: 56, 6: 0, 7: 0, 8: 0, 9: 0},
+      "g_empty": 0, "W_size": 9, "g1_histogram": {0: 9}, "g1_by_point": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "d4_point_orbits": 2, "d4_orbit_constant_on_g1": true, "d4_orbit_g_values": [0, 0],
+      "layer_profile_M_by_k": {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}, "sigma_n": 5, "d4_orbit_constancy": true}
+    },
+    "n=4": {"V": 16, "F_n": 194, "safe_sets_total": 5811, "maximal_safe_sets": 928, "K_n": 7,
+      "safe_sets_by_size": {0: 1, 1: 16, 2: 120, 3: 560, 4: 1626, 5: 2360, 6: 1064, 7: 64, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0},
+      "g_empty": 0, "W_size": 16, "g1_histogram": {0: 16}, "g1_by_point": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "d4_point_orbits": 3, "d4_orbit_constant_on_g1": true, "d4_orbit_g_values": [0, 0, 0],
+      "layer_profile_M_by_k": {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}, "sigma_n": 7, "d4_orbit_constancy": true}
+    },
+    "n=5": {"V": 25, "F_n": 826, "safe_sets_total": 151394, "maximal_safe_sets": 16860, "K_n": 9,
+      "safe_sets_by_size": {0: 1, 1: 25, 2: 300, 3: 2300, 4: 11824, 5: 37272, 6: 59192, 7: 35208, 8: 5172, 9: 100, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 0},
+      "g_empty": 0, "W_size": 25, "g1_histogram": {0: 25}, "g1_by_point": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "d4_point_orbits": 4, "d4_orbit_constant_on_g1": true, "d4_orbit_g_values": [0, 0, 0, 0],
+      "layer_profile_M_by_k": {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}, "sigma_n": 9, "d4_orbit_constancy": true}
+    },
+    "n=6": {"V": 36, "F_n": 2491, "safe_sets_total": 5081289, "maximal_safe_sets": 349596, "K_n": 11,
+      "safe_sets_by_size": {0: 1, 1: 36, 2: 630, 3: 7140, 4: 56414, 5: 301952, 6: 997796, 7: 1783296, 8: 1459292, 9: 438952, 10: 35316, 11: 464, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0, 21: 0, 22: 0, 23: 0, 24: 0, 25: 0, 26: 0, 27: 0, 28: 0, 29: 0, 30: 0, 31: 0, 32: 0, 33: 0, 34: 0, 35: 0, 36: 0},
+      "g_empty": 0, "W_size": 36, "g1_histogram": {0: 36}, "g1_by_point": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "d4_point_orbits": 5, "d4_orbit_constant_on_g1": true, "d4_orbit_g_values": [0, 0, 0, 0, 0],
+      "layer_profile_M_by_k": {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0}, "sigma_n": 11, "d4_orbit_constancy": true}
+    }
+  },
+  "n8_partial": {
+    "V": 64, "F_8": 14564, "K_n8": 15,
+    "safe_sets_by_size_upto_2": {0: 1, 1: 64, 2: 2016},
+    "safe_sets_total_upto_2": 2081,
+    "d4_point_orbits": 7,
+    "d4_orbit_reps_xy": [[0,0], [2,0], [3,0], [4,0], [5,0], [6,0], [7,0]],
+    "d4_orbit_sizes": [28, 3, 7, 11, 9, 5, 1],
+    "note": "n=8 has 64 points and F_8 = 14564, so the board fits one uint64, but the state space is the set of all safe subsets, which is far beyond reach; the k<=2 layers alone already contain 1 + 64 + C(64,2) minus the forbidden pairs. The first-move WIN/LOSS verdict for n=8 comes from the mex identity, not from enumeration."
+  }
+}

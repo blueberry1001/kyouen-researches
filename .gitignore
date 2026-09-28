@@ -48,3 +48,14 @@ night-research/kyouen-9x9.cert
 research/verification/*.pkl
 research/verification/data/*.bin
 research/verification/scripts/_rel_marker.txt
+
+# Root-level shell smoke-test output (research logs stay versioned)
+/$null
+/err_test.txt
+/hit2.log
+/n6.log
+/n6b.log
+/out.txt
+/out_test.txt
+/runlog.txt
+/scratch_scan.txt
