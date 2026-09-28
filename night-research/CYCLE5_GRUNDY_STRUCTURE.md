@@ -260,8 +260,9 @@ exactly on n = 1..6 — is **refuted at n = 7**.
 
 $$\boxed{K_8 = 15}$$
 
-  which happens to equal $2n-1$ at n = 8; the $2n-1$ pattern is broken
-  *only* at n = 7 so far.
+  which happens to equal $2n-1$ at n = 8. The later prior-art audit gives
+  $K_9=18=2n$, so the $2n-1$ pattern is broken at **n=7 and n=9** among
+  n≤9.
 
 - **Superseded status for n=9:** this local single-word solver cannot search
   81-cell boards, and the certificate itself only gives the lower bound
