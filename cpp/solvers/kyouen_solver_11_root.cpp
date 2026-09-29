@@ -155,9 +155,10 @@ public:
     std::uint64_t forbidden_count() const { return forbidden_count_; }
     std::uint64_t visited() const { return visited_; }
     void child_stats(std::uint64_t& probe_hit, std::uint64_t& used,
-                     std::uint64_t& unused, std::uint64_t& loss_cut) const {
+                     std::uint64_t& unused, std::uint64_t& loss_cut,
+                     std::uint64_t& rec_cut) const {
         probe_hit=child_probe_hit_; used=child_used_;
-        unused=child_unused_; loss_cut=child_loss_cut_;
+        unused=child_unused_; loss_cut=child_loss_cut_; rec_cut=rec_loss_cut_;
     }
     std::size_t memo_used() const { return memo_.used(); }
     std::size_t memo_capacity() const { return memo_.capacity(); }
@@ -170,6 +171,22 @@ public:
         deadline_s_=s;
         t0_=std::chrono::steady_clock::now();
     }
+    void set_log(const std::string& path){
+        if(path.empty()) return;
+        log_file_.open(path, std::ios::out | std::ios::app);
+        if(!log_file_) throw std::runtime_error("cannot open log file");
+        log_= &log_file_;
+    }
+    void set_csv(const std::string& path){
+        if(path.empty()) return;
+        csv_file_.open(path, std::ios::out | std::ios::app);
+        if(!csv_file_) throw std::runtime_error("cannot open csv file");
+        csv_= &csv_file_;
+    }
+    std::ostream& log() { return *log_; }
+    std::ostream& csv() { return *csv_; }
+    void log_flush() { log_->flush(); }
+    void csv_flush() { csv_->flush(); }
     void depth_hist(std::uint64_t* out, int n) const {
         for(int i=0;i<n;++i) out[i]=depth_hist_[i<64?i:63];
     }
@@ -197,11 +214,22 @@ private:
     //                     i.e. its cached value decided something.
     // child_unused    = ... but the loop returned before reaching it.
     // child_loss_cut  = ... and it was a cached LOSS that ended the node.
+    // rec_loss_cut    = uncached child explored recursively, returned LOSS,
+    //                     and ended the node.
+    // cached_loss_cut / (cached_loss_cut + rec_loss_cut) = how much of the
+    // tree-shrinking work the TT does. A cached LOSS kills not just that
+    // child but every remaining sibling, so it is worth far more than one
+    // saved node.
     std::uint64_t child_probe_hit_=0, child_used_=0, child_unused_=0, child_loss_cut_=0;
+    std::uint64_t rec_loss_cut_=0;
     int max_depth_=0;
     double deadline_s_=0;
     std::chrono::steady_clock::time_point t0_;
     bool timed_out_=false;
+    std::ostream* log_=&std::cerr;
+    std::ofstream log_file_;
+    std::ostream* csv_=&std::cout;
+    std::ofstream csv_file_;
 
     void heartbeat(int depth){
         if(deadline_s_<=0) return;
@@ -213,7 +241,9 @@ private:
         double total=(double)(hits+misses);
         double hr = total>0 ? 100.0*(double)hits/total : 0.0;
         double cused = visited_ ? 100.0*(double)child_used_/(double)visited_ : 0.0;
-        std::cerr << "[hb] t=" << (long long)el << "s"
+        std::uint64_t tot_cut = child_loss_cut_+rec_loss_cut_;
+        double cfrac = tot_cut ? 100.0*(double)child_loss_cut_/(double)tot_cut : -1.0;
+        *log_ << "[hb] t=" << (long long)el << "s"
                   << " visited=" << visited_
                   << " depth=" << depth << " maxdepth=" << max_depth_
                   << " memo=" << memo_.used() << "/" << memo_.capacity()
@@ -221,8 +251,11 @@ private:
                   << " puts_new=" << pn << " evict=" << ev
                   << " avgprobe=" << ap
                   << " child_used/vis=" << cused << "%"
-                  << " loss_cut=" << child_loss_cut_
-                  << std::endl;
+                  << " loss_cut_cached=" << child_loss_cut_
+                  << " loss_cut_rec=" << rec_loss_cut_;
+        if(cfrac>=0) *log_ << " cached_cut_frac=" << cfrac << "%";
+        *log_ << std::endl;
+        log_->flush();
         if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
     }
 
@@ -298,6 +331,12 @@ private:
             bool dup=false;for(int i=0;i<n;++i)if(ch[i].key==nk){dup=true;break;}if(dup)continue;
             auto cv=memo_.get(nk.lo,nk.hi);
             if(cv) ++child_probe_hit_;
+            // Per-depth pre-probe hit%: of the positions generated as children
+            // of depth-dd nodes (i.e. living at depth cd), what fraction was
+            // already known. d_hit_/d_miss_ are fed ONLY here -- the win()
+            // entry probe was removed as redundant, so nothing else writes them.
+            int cd = dd<63?dd+1:63;
+            if(cv) ++d_hit_[cd]; else ++d_miss_[cd];
             ch[n++]={ns,nl,nk,popcount(nl),v,cv};
         }
         d_moves_[dd]+= (std::uint64_t)n;
@@ -319,6 +358,7 @@ private:
             }
             bool cw=win(ch[i].ts,ch[i].legal,depth+1);
             if(!cw){
+                ++rec_loss_cut_;
                 for(int j=i+1;j<n;++j) if(ch[j].cached) ++child_unused_;
                 memo_.put(key.lo,key.hi,ReplaceMemo121::Winning);++d_put_[dd];return true;
             }
@@ -349,29 +389,38 @@ int main(int argc,char**argv){
         bool reps=false;
         std::string only="";
         double budget_s=0;
+        std::string log_path="", csv_path="";
         for(int i=1;i<argc;++i){
             std::string a=argv[i];
             if(a=="--reps")reps=true;
             else if(a.rfind("--memo=",0)==0)pow=unsigned(std::stoul(a.substr(7)));
             else if(a.rfind("--only=",0)==0)only=a.substr(7);
             else if(a.rfind("--budget=",0)==0)budget_s=std::stod(a.substr(9));
-            else { std::cerr<<"usage: "<<argv[0]<<" [--reps] [--memo=N] [--only=v,...] [--budget=SEC]\n"; return 2; }
+            else if(a.rfind("--log=",0)==0)log_path=a.substr(6);
+            else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
+            else { std::cerr<<"usage: "<<argv[0]<<" [--reps] [--memo=N] [--only=v,...] [--budget=SEC] [--log=PATH] [--csv=PATH]\n"; return 2; }
         }
         Solver11 solver(pow);
         solver.set_deadline(budget_s);
-        std::cerr<<"built forbidden="<<solver.forbidden_count()
+        solver.set_log(log_path);
+        solver.set_csv(csv_path);
+        auto& L = solver.log();
+        auto& C = solver.csv();
+        L<<"built forbidden="<<solver.forbidden_count()
                  <<" (expect 95670)"<<std::endl;
+        L.flush();
         if(solver.forbidden_count()!=95670){
-            std::cerr<<"F_11 mismatch, abort\n";return 1;
+            L<<"F_11 mismatch, abort\n";return 1;
         }
-        if(!reps){ std::cerr<<"nothing to do without --reps\n"; return 2; }
-        std::cout<<"v,x,y,outcome,visited,seconds,memo_used\n";
-        std::cout.flush();
+        if(!reps){ L<<"nothing to do without --reps\n"; return 2; }
+        C<<"v,x,y,outcome,visited,seconds,memo_used\n";
+        solver.csv_flush();
         auto wall0 = std::chrono::steady_clock::now();
         auto prev_visited = solver.visited();
         auto prev_t = wall0;
         std::uint64_t prev_puts=0, prev_evict=0;
-        std::cerr << "[heartbeat] starting, solver ready" << std::endl;
+        L << "[heartbeat] starting, solver ready" << std::endl;
+        L.flush();
         int n_timeout=0, n_done=0;
         for(int v : first_move_reps()){
             if(!only.empty()){
@@ -391,10 +440,16 @@ int main(int argc,char**argv){
                 solver.memo_counters(hits,misses,pn,pu,ev,ap);
                 double total=(double)(hits+misses);
                 double hr = total>0 ? 100.0*(double)hits/total : 0.0;
-                std::uint64_t cph,cu,cun,clc;
-                solver.child_stats(cph,cu,cun,clc);
+                std::uint64_t cph,cu,cun,clc,rclc;
+                solver.child_stats(cph,cu,cun,clc,rclc);
                 double cused = solver.visited() ? 100.0*(double)cu/(double)solver.visited() : 0.0;
-                std::cerr << "[timeout] v=" << v
+                std::uint64_t tot_cut = clc+rclc;
+                double cfrac = tot_cut ? 100.0*(double)clc/(double)tot_cut : -1.0;
+                // Hits consumed by the abort itself: probed but neither used
+                // nor counted unused. ~0 on clean completion; on TIME_BUDGET it
+                // is the "work left hanging by the measurement" count.
+                std::uint64_t pending = (cph>cu+cun) ? (cph-cu-cun) : 0;
+                L << "[timeout] v=" << v
                           << " reason=" << e.what()
                           << " visited=" << solver.visited()
                           << " memo=" << solver.memo_used() << "/" << solver.memo_capacity()
@@ -404,22 +459,26 @@ int main(int argc,char**argv){
                           << " child_probe_hit=" << cph
                           << " child_used=" << cu << " (" << cused << "%/vis)"
                           << " child_unused=" << cun
-                          << " loss_cut=" << clc
+                          << " loss_cut_cached=" << clc
+                          << " loss_cut_rec=" << rclc;
+                if(cfrac>=0) L << " cached_cut_frac=" << cfrac << "%";
+                L << " pending_abort=" << pending
                           << " wall_s=" << (long long)wall << std::endl;
                 {
                     std::uint64_t dh[64], mv[64]; double dhr[64];
                     solver.depth_stats(dh, mv, dhr, 64);
                     std::uint64_t p=0;
                     for(int d=0;d<22;++d){ p+=dh[d]; }
-                    std::cerr<<"[depth] total="<<p;
+                    L<<"[depth] total="<<p;
                     for(int d=0;d<22;++d){
                         if(dh[d]==0) continue;
                         double avgm = dh[d] ? (double)mv[d]/(double)dh[d] : 0.0;
-                        std::cerr<<" d"<<d<<"="<<dh[d]<<"/"<<avgm<<"mv";
-                        if(dhr[d]>=0) std::cerr<<"/"<<dhr[d]<<"%h";
+                        L<<" d"<<d<<"="<<dh[d]<<"/"<<avgm<<"mv";
+                        if(dhr[d]>=0) L<<"/"<<dhr[d]<<"%h";
                     }
-                    std::cerr<<"\n";
+                    L<<"\n";
                 }
+                L.flush();
                 prev_visited=solver.visited(); prev_t=std::chrono::steady_clock::now();
                 prev_puts=pn; prev_evict=ev;
                 ++n_timeout;
@@ -430,12 +489,14 @@ int main(int argc,char**argv){
             solver.memo_counters(hits,misses,pn,pu,ev,ap);
             double total=(double)(hits+misses);
             double hr = total>0 ? 100.0*(double)hits/total : 0.0;
-            std::uint64_t cph,cu,cun,clc;
-            solver.child_stats(cph,cu,cun,clc);
+            std::uint64_t cph,cu,cun,clc,rclc;
+            solver.child_stats(cph,cu,cun,clc,rclc);
             double cused = solver.visited() ? 100.0*(double)cu/(double)solver.visited() : 0.0;
+            std::uint64_t tot_cut = clc+rclc;
+            double cfrac = tot_cut ? 100.0*(double)clc/(double)tot_cut : -1.0;
             double dt=std::chrono::duration<double>(std::chrono::steady_clock::now()-prev_t).count();
             std::uint64_t dv=solver.visited()-prev_visited;
-            std::cerr << "[progress] v=" << v << " (" << (v%11) << "," << (v/11) << ") "
+            L << "[progress] v=" << v << " (" << (v%11) << "," << (v/11) << ") "
                       << outcome(r.win)
                       << " visited_total=" << solver.visited()
                       << " rate=" << (dt>0?(long long)(dv/dt):0) << "/s"
@@ -445,20 +506,24 @@ int main(int argc,char**argv){
                       << " evict_delta=" << (ev-prev_evict)
                       << " avgprobe=" << ap
                       << " child_used=" << cu << " (" << cused << "%/vis)"
-                      << " loss_cut=" << clc
-                      << " maxdepth=" << solver.max_depth()
+                      << " loss_cut_cached=" << clc
+                      << " loss_cut_rec=" << rclc;
+            if(cfrac>=0) L << " cached_cut_frac=" << cfrac << "%";
+            L << " maxdepth=" << solver.max_depth()
                       << " wall_s=" << (long long)wall << std::endl;
+            L.flush();
             prev_visited=solver.visited(); prev_t=std::chrono::steady_clock::now();
             prev_puts=pn; prev_evict=ev;
             ++n_done;
-            std::cout<<v<<","<<(v%11)<<","<<(v/11)<<","
+            C<<v<<","<<(v%11)<<","<<(v/11)<<","
                      <<outcome(r.win)<<","<<r.visited_delta<<","
                      <<r.seconds<<","<<r.memo_used<<"\n";
-            std::cout.flush();
+            solver.csv_flush();
             // A single LOSS (P-position) one-stone move proves the empty
             // board N: the first player wins. Stop early.
             if(!r.win){
-                std::cout<<"# FIRST_PLAYER_WIN via "<<v<<"\n";
+                C<<"# FIRST_PLAYER_WIN via "<<v<<"\n";
+                solver.csv_flush();
                 return 0;
             }
         }
@@ -467,17 +532,19 @@ int main(int argc,char**argv){
             solver.depth_stats(dh, mv, hr, 64);
             std::uint64_t p=0;
             for(int d=0;d<22;++d){ p+=dh[d]; }
-            std::cerr<<"[depth] total_visited_nodes="<<p;
+            L<<"[depth] total_visited_nodes="<<p;
             for(int d=0;d<22;++d){
                 if(dh[d]==0) continue;
                 double avgm = dh[d] ? (double)mv[d]/(double)dh[d] : 0.0;
-                std::cerr<<" d"<<d<<"="<<dh[d]<<"/"<<avgm<<"mv";
-                if(hr[d]>=0) std::cerr<<"/"<<hr[d]<<"%hit";
+                L<<" d"<<d<<"="<<dh[d]<<"/"<<avgm<<"mv";
+                if(hr[d]>=0) L<<"/"<<hr[d]<<"%hit";
             }
-            std::cerr<<"\n";
+            L<<"\n";
+            L.flush();
         }
-        std::cout<<"# done="<<n_done<<" timeout="<<n_timeout
+        C<<"# done="<<n_done<<" timeout="<<n_timeout
                  <<" (all 21 first moves WIN => SECOND_PLAYER_WIN)\n";
+        solver.csv_flush();
         return 0;
     }catch(const std::exception&e){
         std::cerr<<"error: "<<e.what()<<"\n";return 1;
