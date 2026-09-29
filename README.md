@@ -94,7 +94,7 @@ fixed rule / two-stone subset probe の盲検追試後に行った反例解析�
 
 - 1×1〜9×9：空盤面からの共通AND/OR証明書を独立検査
 - 10×10：15初手代表の厳密探索による完全分類＋証拠CSV監査＋一部局面のKYOENC4独立検査
-- 11×11：1石局面のP/N分割による勝敗判定（層0〜5の層サイズを厳密確定。層6以降未走査）
+- 11×11：**勝敗未確定**。層0〜5の安全局面数は厳密確定済みだが、層5を終端扱いしたP/N分割は打ち切りゲームの値にすぎない。現在は全層列挙ではなく128-bit AND/OR証明探索へ移行中
 
 詳細は [`docs/PROOF_STATUS.md`](docs/PROOF_STATUS.md)、[`docs/10X10_KYOENC4_EXPORT.md`](docs/10X10_KYOENC4_EXPORT.md)、[`rust/independent-verifier/README.md`](rust/independent-verifier/README.md) を参照してください。
 
