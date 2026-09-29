@@ -170,8 +170,12 @@ public:
         std::uint32_t pn=1,dn=1; std::uint8_t st=0;
     };
     struct Gen { std::array<GChild,V> ch; int n=0; };
-    static_assert(sizeof(Gen) < 200000,
-        "Gen too large for frame-local use; keep child buffers on the heap");
+    // sizeof(Gen) sanity per N: GChild=176 B (8x16 B TState + 48 B).
+    // n=6: 36*176+4 = 6,340. n=11: 121*176+4 = 21,300. If Gen ever grows
+    // past ~64 KB the frame-heap buffers need auditing (not the stack --
+    // frames are already heap/box-allocated -- but TT-adjacent RSS).
+    static_assert(sizeof(Gen) < 65536,
+        "Gen unexpectedly large; audit GChild/TState layout");
     struct Result {
         int outcome=0;
         std::uint64_t expansions=0;
@@ -313,8 +317,17 @@ private:
     void gen_into(const TState& state,int stones,Bits legal,Gen& g){
         g.n=0;
         Bits moves=legal;
+        // Mask hygiene: legal must never carry bits >= V. take_lsb on a
+        // stray hi bit returns v>=V -> bitof(v) shifts UB -> the move loop
+        // walks off into garbage children (the roots-csv overflow: 36-move
+        // roots grew >36 "children"). Mask once here so every caller is safe
+        // even if its legal mask came from a different path.
+        if(V<64){ if(V==0){moves.lo=0;} else moves.lo &= ((1ULL<<V)-1ULL); moves.hi = 0; }
+        else if(V==64){ moves.hi = 0; }
+        else { moves.hi &= HI_MASK; }
         while(any(moves)){
             int v=take_lsb(moves);
+            if(v<0||v>=V) throw std::runtime_error("gen_into: move index out of range");
             Bits bit=bitof(v);
             TState ns=add(state,v);
             Bits nl=(legal&~bit)&~added_bans(state.t[0],v);
@@ -324,6 +337,11 @@ private:
             int nn=g.n;
             for(int i=0;i<nn;++i)if(g.ch[(std::size_t)i].key==nk){dup=true;break;}
             if(dup)continue;
+            // BOUNDS CHECK (ASan found this): a Gen holds exactly V GChild.
+            // children <= legal moves <= V, so g.n>=V means the move loop
+            // produced a duplicate-free child beyond the array -- a logic bug
+            // (stale Gen reuse, corrupted legal mask, ...). Fail loud.
+            if(g.n<0 || g.n>=V) throw std::runtime_error("gen_into: child index out of range");
             GChild& c=g.ch[(std::size_t)g.n];
             c.ts=ns; c.legal=nl; c.key=nk; c.count=popcount(nl);
             int cs=stones+1;
@@ -436,13 +454,16 @@ private:
         mid_iter(key,state,stones,legal,depth,tp,td,scratch);
     }
 
-    // Scratch Gens: ONE buffer PER LIVE FRAME, owned BY the frame (unique_ptr
-    // member). Keying by depth or stack slot both alias: the parent's Gen is
-    // still being read (b1 selection, threshold math, child extraction) when
-    // the child's expand()/gen reuses the same buffer -- the n=4 crash at
-    // gen_into+305, where g.ch[] was garbage mid-read. Owning the buffer in
-    // the Frame makes aliasing structurally impossible: each frame's Gen
-    // lives exactly as long as the frame.
+    // Child-list buffers: ONE Gen PER mid() FRAME, heap-allocated on FIRST
+    // use and NEVER reallocated. vector<Frame> may RELOCATE on push_back
+    // (move-constructing every Frame); unique_ptr<Gen> moves the POINTER, so
+    // the buffer address is stable. But gen() must NEVER be called twice on
+    // the same frame expecting a fresh buffer... it isn't: gen_into resets
+    // g.n=0 each call, and the frame's buffer is only read while the frame
+    // is live. The ACTUAL invariant: expand() uses a THROWAWAY Gen, never
+    // the frame's buffer, so a child's expand cannot clobber the parent's
+    // in-progress child list. (The roots-csv crash: expand() wrote into the
+    // frame buffer via a shared path; fixed by keeping expand heap-local.)
     struct Frame {
         Bits key; TState state; Bits legal;
         int stones=0, depth=0;
@@ -643,14 +664,10 @@ private:
         }
     }
 
-    // Scratch Gens are keyed by STACK POSITION (st.size()-1), not by game
-    // depth: the same depth recurs across different branches, but a stack
-    // slot is unique to the live frame using it. Keying by depth aliased a
-    // parent's Gen with its child's (both depth d at different times... and
-    // worse, gen_scratch(frd) returned the buffer the parent was still
-    // reading via `g` when the child's expand() reused it -- the n=4 crash
-    // at gen_into+305: g.ch[] garbage because g.n/g.ch belonged to a buffer
-    // being overwritten mid-read).
+    // DEAD CODE (kept for the comment): scratch Gens keyed by stack slot
+    // aliased parent/child buffers and caused the n=4 crash at gen_into+305.
+    // Frames now own their Gen buffers; expand() uses a heap-local throwaway.
+    // gen_scratch is no longer called; left in place so the history is clear.
     Gen& gen_scratch(int slot,std::vector<std::unique_ptr<Gen>>& scratch){
         if((int)scratch.size()<=slot) scratch.resize((std::size_t)slot+1);
         if(!scratch[(std::size_t)slot]) scratch[(std::size_t)slot]=std::make_unique<Gen>();
@@ -792,7 +809,8 @@ static std::string outcome_str(int o){ return o>0?"WIN":(o<0?"LOSS":"TIMEOUT"); 
 template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
                bool do_empty,bool do_reps,std::ostream& L,std::ostream& C,
-               std::uint64_t* total_exp){
+               std::uint64_t* total_exp,
+               const std::string& csv_roots_path=""){
     DfPn<N> solver(memo_power);
     // SINGLE-STREAM wiring: the solver writes heartbeat/timeout/completion
     // through the SAME L/C objects run() uses. Previously the solver held
@@ -856,6 +874,40 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
         ++n_done;
     };
     if(do_empty) run_one("empty",{});
+    // Arbitrary multi-stone roots from a CSV file (cross-check vs DFS).
+    // Format: header "canonical_parent,move" then rows "a,b,c",m meaning the
+    // root {a,b,c,m}. Unsafe rows (forbidden quadruple inside) are reported
+    // as UNSAFE and skipped -- they are not legal positions.
+    if(!csv_roots_path.empty()){
+        std::ifstream f(csv_roots_path);
+        if(!f){ L<<"cannot open --roots-csv\n"; L.flush(); return 1; }
+        std::string header;
+        if(!std::getline(f,header)){ L<<"empty --roots-csv\n"; L.flush(); return 1; }
+        std::string line;
+        while(std::getline(f,line)){
+            if(line.empty()) continue;
+            if(line[0]!='"'){ L<<"bad roots row (want quoted parent): "<<line<<"\n"; L.flush(); continue; }
+            auto q=line.find('"',1);
+            if(q==std::string::npos){ L<<"bad roots row: "<<line<<"\n"; L.flush(); continue; }
+            std::string ptext=line.substr(1,q-1);
+            std::vector<int> stones;
+            {
+                std::stringstream ss(ptext); std::string tok;
+                while(std::getline(ss,tok,',')) if(!tok.empty()) stones.push_back(std::stoi(tok));
+            }
+            if(q+1>=line.size()||line[q+1]!=','){ L<<"bad roots row: "<<line<<"\n"; L.flush(); continue; }
+            stones.push_back(std::stoi(line.substr(q+2)));
+            std::stringstream tag;
+            tag<<"roots{";
+            for(std::size_t i=0;i<stones.size();++i){ if(i)tag<<","; tag<<stones[i]; }
+            tag<<"}";
+            try{
+                run_one(tag.str(),stones);
+            }catch(const std::exception& e){
+                L<<"[roots] "<<tag.str()<<" UNSAFE ("<<e.what()<<")\n"; L.flush();
+            }
+        }
+    }
     if(do_reps){
         for(int v: first_move_reps<N>()){
             if(!only.empty()){
@@ -881,7 +933,7 @@ int main(int argc,char**argv){
         bool reps=false, empty=false;
         std::string only="";
         double budget_s=0;
-        std::string log_path="", csv_path="";
+        std::string log_path="", csv_path="", roots_path="";
         for(int i=1;i<argc;++i){
             std::string a=argv[i];
             if(a=="--reps")reps=true;
@@ -892,13 +944,14 @@ int main(int argc,char**argv){
             else if(a.rfind("--budget=",0)==0)budget_s=std::stod(a.substr(9));
             else if(a.rfind("--log=",0)==0)log_path=a.substr(6);
             else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
+            else if(a.rfind("--roots-csv=",0)==0)roots_path=a.substr(12);
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P]\n";
                 return 2;
             }
         }
-        if(!reps && !empty){
-            std::cerr<<"nothing to do without --empty/--reps\n";
+        if(!reps && !empty && roots_path.empty()){
+            std::cerr<<"nothing to do without --empty/--reps/--roots-csv\n";
             return 2;
         }
         std::ostream* lp=&std::cerr;
@@ -918,11 +971,11 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp); break;
+            case 4: rc=run<4>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
+            case 5: rc=run<5>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
+            case 6: rc=run<6>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
+            case 7: rc=run<7>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
+            case 11: rc=run<11>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
