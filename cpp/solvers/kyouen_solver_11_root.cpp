@@ -217,6 +217,20 @@ private:
 
 static std::string outcome(bool win){ return win?"WIN":"LOSS"; }
 
+static bool memo_key_width_self_test(){
+    FlatMemo121 memo(4);
+    const std::uint64_t lo=0x0123456789abcdefULL;
+    const std::uint64_t high_hi=(1ULL<<56)|1234567ULL;
+    const std::uint64_t low_hi=1234567ULL;
+    memo.put(lo,high_hi,FlatMemo121::Losing);
+    if(memo.get(lo,high_hi)!=FlatMemo121::Losing) return false;
+    if(memo.get(lo,low_hi)!=0) return false;
+    memo.put(lo,low_hi,FlatMemo121::Winning);
+    return memo.get(lo,high_hi)==FlatMemo121::Losing &&
+           memo.get(lo,low_hi)==FlatMemo121::Winning &&
+           memo.used()==2;
+}
+
 // D4-distinct one-stone first moves: fundamental domain {(x,y): 0<=x<=5, 0<=y<=x}.
 // 1+2+3+4+5+6 = 21 orbits. Center (5,5) first: strongest candidate for a P-move.
 static std::vector<int> first_move_reps(){
@@ -233,6 +247,11 @@ static std::vector<int> first_move_reps(){
 
 int main(int argc,char**argv){
     try{
+        if(argc==2 && std::string(argv[1])=="--memo-self-test"){
+            const bool ok=memo_key_width_self_test();
+            std::cout<<"memo_key_width_self_test="<<(ok?"PASS":"FAIL")<<"\n";
+            return ok?0:1;
+        }
         unsigned pow=27;
         bool reps=false;
         for(int i=1;i<argc;++i){
