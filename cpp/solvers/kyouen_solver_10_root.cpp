@@ -28,6 +28,9 @@ static inline int take_lsb(Bits& a){
     int p=std::countr_zero(a.hi);a.hi&=a.hi-1;return p+64;
 }
 
+// 10x10 needs all 36 high bits of the 100-bit position key.
+ // Packing (key.hi << 2) into uint32_t silently discarded the top 6 bits,
+ // turning those entries into permanent memo misses and wasting capacity.
 class FlatMemo81 {
 public:
     enum : std::uint32_t { Losing=1, Winning=2 };
@@ -37,15 +40,15 @@ public:
     inline std::uint32_t get(Bits key) const {
         std::size_t i=mix(key)&mask_;
         while(metas_[i]){
-            std::uint32_t m=metas_[i];
-            if(lows_[i]==key.lo && (m>>2)==key.hi) return m&3;
+            std::uint64_t m=metas_[i];
+            if(lows_[i]==key.lo && (m>>2)==key.hi) return std::uint32_t(m&3);
             i=(i+1)&mask_;
         }
         return 0;
     }
     inline void put(Bits key,std::uint32_t value){
         std::size_t i=mix(key)&mask_;
-        const std::uint32_t meta=(std::uint32_t(key.hi)<<2)|value;
+        const std::uint64_t meta=(key.hi<<2)|value;
         while(metas_[i]){
             if(lows_[i]==key.lo && (metas_[i]>>2)==key.hi){metas_[i]=meta;return;}
             i=(i+1)&mask_;
@@ -56,7 +59,7 @@ public:
     std::size_t used()const{return used_;}
 private:
     std::vector<std::uint64_t> lows_;
-    std::vector<std::uint32_t> metas_;
+    std::vector<std::uint64_t> metas_;
     std::size_t mask_,used_=0;
     static inline std::uint64_t mix64(std::uint64_t x){
         x^=x>>30;x*=0xbf58476d1ce4e5b9ULL;
