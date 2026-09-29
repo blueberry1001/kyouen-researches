@@ -52,19 +52,26 @@ static inline int take_lsb(Bits& a) {
     return p + 64;
 }
 
+// 10x10 uses 36 bits in key.hi. The original uint32_t packing only
+// retained 30 of them after reserving two bits for the outcome.
+// Keep those top six bits separately so memo equality uses the full key.
 class FlatMemo81 {
 public:
     enum : std::uint32_t { Losing = 1, Winning = 2 };
     explicit FlatMemo81(unsigned power)
         : lows_(std::size_t{1} << power),
           metas_(std::size_t{1} << power),
+          hi_tops_(std::size_t{1} << power),
           mask_((std::size_t{1} << power) - 1) {}
 
     inline std::uint32_t get(Bits key) const {
         std::size_t i = mix(key) & mask_;
         while (metas_[i]) {
             std::uint32_t m = metas_[i];
-            if (lows_[i] == key.lo && (m >> 2) == key.hi) return m & 3;
+            if (lows_[i] == key.lo &&
+                hi_tops_[i] == std::uint8_t(key.hi >> 30) &&
+                (m >> 2) == std::uint32_t(key.hi & ((1ULL << 30) - 1)))
+                return m & 3;
             i = (i + 1) & mask_;
         }
         return 0;
@@ -72,9 +79,13 @@ public:
 
     inline void put(Bits key, std::uint32_t value) {
         std::size_t i = mix(key) & mask_;
-        const std::uint32_t meta = (std::uint32_t(key.hi) << 2) | value;
+        const std::uint32_t meta =
+            (std::uint32_t(key.hi & ((1ULL << 30) - 1)) << 2) | value;
+        const std::uint8_t hi_top = std::uint8_t(key.hi >> 30);
         while (metas_[i]) {
-            if (lows_[i] == key.lo && (metas_[i] >> 2) == key.hi) {
+            if (lows_[i] == key.lo &&
+                hi_tops_[i] == hi_top &&
+                (metas_[i] >> 2) == std::uint32_t(key.hi & ((1ULL << 30) - 1))) {
                 metas_[i] = meta;
                 return;
             }
@@ -82,6 +93,7 @@ public:
         }
         lows_[i] = key.lo;
         metas_[i] = meta;
+        hi_tops_[i] = hi_top;
         ++used_;
         if (used_ * 10 > metas_.size() * 8) throw std::runtime_error("memo table over 80%");
     }
@@ -91,6 +103,7 @@ public:
 private:
     std::vector<std::uint64_t> lows_;
     std::vector<std::uint32_t> metas_;
+    std::vector<std::uint8_t> hi_tops_;
     std::size_t mask_;
     std::size_t used_ = 0;
 
@@ -362,6 +375,19 @@ private:
     }
 };
 
+static bool memo_key_width_self_test() {
+    FlatMemo81 memo(4);
+    const Bits high{0x0123456789abcdefULL, (1ULL << 35) | 12345ULL};
+    const Bits low{0x0123456789abcdefULL, 12345ULL};
+    memo.put(high, FlatMemo81::Losing);
+    if (memo.get(high) != FlatMemo81::Losing) return false;
+    if (memo.get(low) != 0) return false;
+    memo.put(low, FlatMemo81::Winning);
+    return memo.get(high) == FlatMemo81::Losing &&
+           memo.get(low) == FlatMemo81::Winning &&
+           memo.used() == 2;
+}
+
 static std::vector<int> parse_points(const std::string& s) {
     std::vector<int> out;
     std::stringstream ss(s);
@@ -384,6 +410,11 @@ static std::string format_points(const std::vector<int>& pts) {
 
 int main(int argc, char** argv) {
     try {
+        if (argc == 2 && std::string(argv[1]) == "--memo-self-test") {
+            const bool ok = memo_key_width_self_test();
+            std::cout << "memo_key_width_self_test=" << (ok ? "PASS" : "FAIL") << "\n";
+            return ok ? 0 : 1;
+        }
         if (argc < 2 || argc > 3) {
             std::cerr << "usage: " << argv[0] << " INPUT.txt [memo_power]\n";
             return 2;

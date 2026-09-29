@@ -1,5 +1,11 @@
 # F-E R-external 4-stone holdout result
 
+> **2026-09-29 memo-width revalidation:** the historical FlatMemo81 implementation
+> truncated 6 high key bits on 10x10. All **36/36 frozen states were re-solved**
+> with the corrected full-width key and all WIN/LOSS labels were unchanged.
+> The preregistered decision below therefore remains valid. See
+> [10X10_F_E_R_EXTERNAL_HOLDOUT_MEMO_REVALIDATION.md](10X10_F_E_R_EXTERNAL_HOLDOUT_MEMO_REVALIDATION.md).
+
 Baseline: `224f0da`
 Preregister commit: `4249e73` (sample frozen before any holdout label)
 Branch: `analysis/f-e-r-external-holdout`

@@ -21,8 +21,10 @@ jobs:
         run: |
           c++ -std=c++20 -O2 -Wall -Wextra -Wpedantic cpp/solvers/kyouen_solver_10_root.cpp -o /tmp/kyouen_solver_10_root
           c++ -std=c++20 -O2 -Wall -Wextra -Wpedantic cpp/solvers/kyouen_solver_11_root.cpp -o /tmp/kyouen_solver_11_root
+          c++ -std=c++20 -O2 -Wall -Wextra -Wpedantic cpp/solvers/kyouen_solver_10_f_e_plain.cpp -o /tmp/kyouen_solver_10_f_e_plain
           /tmp/kyouen_solver_10_root --memo-self-test
           /tmp/kyouen_solver_11_root --memo-self-test
+          /tmp/kyouen_solver_10_f_e_plain --memo-self-test
           printf 'canonical_parent,move\n"14,64",74\n' > /tmp/root10-regression.csv
           /tmp/kyouen_solver_10_root /tmp/root10-regression.csv 25 | tee /tmp/root10-regression.out
           grep -q '^"14,64",74,WIN,' /tmp/root10-regression.out
