@@ -81,14 +81,14 @@ public:
         vis_.assign(n_,0); st_.assign(n_,0);
     }
     void set_root(std::uint64_t lo,std::uint64_t hi){ rlo_=lo; rhi_=hi; }
-    int find(std::uint64_t klo,std::uint64_t khi) const {
+    int find(std::uint64_t klo,std::uint64_t khi) {
         std::size_t i=mix(klo,khi)&mask_;
         for(int j=0;j<PROBE;++j){
-            if(!st_[i]){ return -1; }
-            if(lo_[i]==klo && hi_[i]==khi){ return (int)i; }
+            if(!st_[i]){ ++misses_; probe_sum_+=std::uint64_t(j+1); ++probe_n_; return -1; }
+            if(lo_[i]==klo && hi_[i]==khi){ ++hits_; probe_sum_+=std::uint64_t(j+1); ++probe_n_; return (int)i; }
             i=(i+1)&mask_;
         }
-        return -1;
+        ++misses_; probe_sum_+=PROBE; ++probe_n_; return -1;
     }
     int acquire(std::uint64_t klo,std::uint64_t khi){
         std::size_t h=mix(klo,khi)&mask_;
@@ -128,11 +128,21 @@ public:
     std::size_t capacity()const{return n_;}
     std::uint64_t solved_count()const{return solved_;}
     void mark_solved(int s,std::uint8_t v){ if(st_[(std::size_t)s]<WIN)++solved_; st_[(std::size_t)s]=v; }
+    void counters(std::uint64_t& hits,std::uint64_t& misses,
+                  std::uint64_t& puts_new,std::uint64_t& puts_update,
+                  std::uint64_t& ev,std::uint64_t& evs,double& ap) const {
+        hits=hits_; misses=misses_; puts_new=puts_new_; puts_update=0;
+        ev=evictions_; evs=evict_solved_; ap=avg_probe();
+    }
+    double avg_probe() const {
+        return probe_n_ ? (double)probe_sum_/(double)probe_n_ : 0.0;
+    }
     std::vector<std::uint64_t> lo_,hi_;
     std::vector<std::uint32_t> pn_,dn_,vis_;
     std::vector<std::uint8_t> st_;
     std::uint64_t used_=0;
     std::uint64_t hits_=0, misses_=0, puts_new_=0, evictions_=0, evict_solved_=0, solved_=0;
+    std::uint64_t probe_sum_=0, probe_n_=0;
 private:
     std::size_t n_,mask_;
     std::uint64_t rlo_=~0ULL, rhi_=~0ULL;
@@ -209,6 +219,11 @@ private:
     int max_depth_=0;
     double deadline_s_=0;
     Clock::time_point t0_;
+    // Heartbeat rate state (per-solver, reset per root in solve_common).
+    std::uint64_t hb_last_vis_=0;
+    double hb_last_t_=0;
+    double hb_prev_t_=0;
+    std::uint64_t hb_prev_exp_=0;
     Bits root_key_{};
     int root_stones_=0;
     // Partial-progress fallback: written by the catch in solve_common when
@@ -282,8 +297,7 @@ private:
 
     void child_bound(const Bits& nk,int child_stones,int* n_out,std::uint32_t* pnp,std::uint32_t* dnp,std::uint8_t* stp){
         int s=tt_.find(nk.lo,nk.hi);
-        if(s>=0){ ++tt_.hits_; *pnp=tt_.pn_[(std::size_t)s]; *dnp=tt_.dn_[(std::size_t)s]; *stp=tt_.st_[(std::size_t)s]; return; }
-        ++tt_.misses_;
+        if(s>=0){ *pnp=tt_.pn_[(std::size_t)s]; *dnp=tt_.dn_[(std::size_t)s]; *stp=tt_.st_[(std::size_t)s]; return; }
         *pnp=1; *dnp=1; *stp=PnTT::OPEN;
         (void)n_out; (void)child_stones;
     }
@@ -315,10 +329,8 @@ private:
             int cs=stones+1;
             int s=tt_.find(nk.lo,nk.hi);
             if(s>=0){
-                ++tt_.hits_;
                 c.pn=tt_.pn_[(std::size_t)s]; c.dn=tt_.dn_[(std::size_t)s]; c.st=tt_.st_[(std::size_t)s];
             }else{
-                ++tt_.misses_;
                 if(!any(nl)){
                     if(is_or(cs)){ c.pn=INF; c.dn=0; c.st=PnTT::LOSS; }
                     else{ c.pn=0; c.dn=INF; c.st=PnTT::WIN; }
@@ -367,25 +379,49 @@ private:
     void heartbeat(){
         if(deadline_s_<=0) return;
         double el=std::chrono::duration<double>(Clock::now()-t0_).count();
-        // NOTE: no early throw here. The 2^20-visited gate below means the
-        // throw only fires after real work; the entry check in mid() covers
+        // NOTE: no early throw here. The gate below means the throw only
+        // fires after real work; the entry check in mid() covers
         // already-expired budgets. Throwing here before the gate would kill
-        // roots that never reach 2^20 visits (the "expansions=1" ghost).
+        // roots that never reach the first gate (the "expansions=1" ghost).
         //
         // The hb line doubles as the ROOT PN/DN TIME SERIES: root bounds are
         // re-read from the TT on every heartbeat, so the log shows whether
         // the proof is moving one-sidedly long before it completes.
-        if(el < 5.0 && visited_ < (std::uint64_t(1)<<20)) return;
+        //
+        // TIME-BASED gating: fire at the next 10 s mark after at least
+        // 2^16 iterations since the last beat. Iteration-count gating alone
+        // starves the log on slow phases; pure wall-clock polling every
+        // iteration costs a clock read each node. 2^16 amortizes the clock
+        // to ~1/65536 nodes while guaranteeing a beat within ~10 s.
+        // Elapsed t=0 is solver construction end (set_deadline time).
+        if(visited_ - hb_last_vis_ < (std::uint64_t(1)<<16)) return;
+        if(el - hb_last_t_ < 10.0) return;
+        hb_last_vis_ = visited_;
+        hb_last_t_ = el;
         int rs=tt_.find(root_key_.lo,root_key_.hi);
         std::uint32_t rpn=INF,rdn=INF;
         if(rs>=0){ rpn=tt_.pn_[(std::size_t)rs]; rdn=tt_.dn_[(std::size_t)rs]; }
+        std::uint64_t open = tt_open();
+        double pndn = (rpn>0 && rdn<INF) ? (double)rpn/(double)rdn : -1.0;
+        std::uint64_t hits,misses,pn_put,pu_put,ev,evs; double ap;
+        tt_.counters(hits,misses,pn_put,pu_put,ev,evs,ap);
+        double dt = el - hb_prev_t_;
+        std::uint64_t dexp = expanded_ - hb_prev_exp_;
+        double exprate = dt>0 ? (double)dexp/dt : 0.0;
+        hb_prev_t_ = el; hb_prev_exp_ = expanded_;
         *log_ << "[hb] t=" << (long long)el << "s"
               << " visited=" << visited_ << " expanded=" << expanded_
+              << " exprate=" << (long long)exprate << "/s"
               << " root_pn=" << rpn << " root_dn=" << rdn
+              << " pndn=" << pndn
               << " memo=" << tt_.used() << "/" << tt_.capacity()
+              << " open=" << open
               << " solved=" << tt_.solved_count()
-              << " evict=" << tt_.evictions_ << "+" << tt_.evict_solved_
-              << " maxdepth=" << max_depth_ << std::endl;
+              << " evict_open=" << tt_.evictions_
+              << " evict_solved=" << tt_.evict_solved_
+              << " maxdepth=" << max_depth_
+              << " tthit=" << hits << " ttmiss=" << misses
+              << " avgprobe=" << ap << std::endl;
         log_->flush();
         if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
     }
@@ -488,7 +524,6 @@ private:
                     st.back().slot=s;
                     st.back().stage=1;
                 } else {
-                    ++tt_.hits_;
                     if(tt_.st_[(std::size_t)s]>=PnTT::WIN){ st.pop_back(); continue; }
                     st.back().slot=s;
                     st.back().stage=1;
@@ -631,6 +666,30 @@ private:
         const auto start=t0_;
         const auto before_exp=expanded_;
         const auto before_vis=visited_;
+        // Reset per-root heartbeat rate state (TT is shared across roots).
+        hb_last_vis_=visited_; hb_last_t_=0.0;
+        hb_prev_t_=0.0; hb_prev_exp_=before_exp;
+        // Emit the t=0 series point immediately: roots that finish or die
+        // before the first 10 s gate would otherwise leave no series at all
+        // (the missing-hb bug: only [timeout]/[done] survived).
+        {
+            int rs=tt_.find(key.lo,key.hi);
+            std::uint32_t rpn=INF,rdn=INF;
+            if(rs>=0){ rpn=tt_.pn_[(std::size_t)rs]; rdn=tt_.dn_[(std::size_t)rs]; }
+            *log_ << "[hb] t=0s"
+                  << " visited=" << visited_ << " expanded=" << expanded_
+                  << " exprate=0/s"
+                  << " root_pn=" << rpn << " root_dn=" << rdn
+                  << " pndn=-1"
+                  << " memo=" << tt_.used() << "/" << tt_.capacity()
+                  << " open=" << tt_open()
+                  << " solved=" << tt_.solved_count()
+                  << " evict_open=" << tt_.evictions_
+                  << " evict_solved=" << tt_.evict_solved_
+                  << " maxdepth=" << max_depth_
+                  << " tthit=0 ttmiss=0 avgprobe=0" << std::endl;
+            log_->flush();
+        }
         // Reset the partial-progress fallback BEFORE running: the TT is
         // shared across roots, so a stale fallback from a previous root
         // would otherwise masquerade as this root's progress
@@ -670,6 +729,11 @@ public:
         deadline_s_=s;
         t0_=Clock::now();
     }
+    // Attach caller-owned streams. The solver never owns these; main() keeps
+    // the ofstreams alive for the whole run. After attach, ALL solver output
+    // (heartbeat, timeout, completion, depth lines) goes to the same sink.
+    void attach_log(std::ostream& os){ log_=&os; }
+    void attach_csv(std::ostream& os){ csv_=&os; }
     void set_log(const std::string& path){
         if(path.empty()) return;
         log_file_.open(path, std::ios::out | std::ios::app);
@@ -684,7 +748,11 @@ public:
     }
     std::ostream& log() { return *log_; }
     std::ostream& csv() { return *csv_; }
+    void log_flush() { log_->flush(); }
     void csv_flush() { csv_->flush(); }
+    std::uint64_t tt_open() const {
+        return tt_.used_ >= tt_.solved_ ? tt_.used_ - tt_.solved_ : 0;
+    }
     std::uint64_t memo_used() const { return tt_.used(); }
     std::uint64_t memo_solved() const { return tt_.solved_count(); }
     std::size_t memo_capacity() const { return tt_.capacity(); }
@@ -726,6 +794,13 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
                bool do_empty,bool do_reps,std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp){
     DfPn<N> solver(memo_power);
+    // SINGLE-STREAM wiring: the solver writes heartbeat/timeout/completion
+    // through the SAME L/C objects run() uses. Previously the solver held
+    // its own log_/csv_ (default cerr/cout, or --log/--csv files) while
+    // run() wrote to L/C -- so heartbeat went wherever log_ pointed and the
+    // --log file only ever saw [timeout]/[done]. Now everything converges.
+    solver.attach_log(L);
+    solver.attach_csv(C);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()<<std::endl;
     L.flush();
     // Deadline counts from the first root actually started, not from solver
