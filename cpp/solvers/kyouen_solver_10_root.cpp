@@ -195,6 +195,19 @@ private:
     }
 };
 
+static bool memo_key_width_self_test(){
+    FlatMemo81 memo(4);
+    const Bits high{0x0123456789abcdefULL,(1ULL<<35)|12345ULL};
+    const Bits low {0x0123456789abcdefULL,12345ULL};
+    memo.put(high,FlatMemo81::Losing);
+    if(memo.get(high)!=FlatMemo81::Losing) return false;
+    if(memo.get(low)!=0) return false;
+    memo.put(low,FlatMemo81::Winning);
+    return memo.get(high)==FlatMemo81::Losing &&
+           memo.get(low)==FlatMemo81::Winning &&
+           memo.used()==2;
+}
+
 struct InputRow {
     std::string parent_text;
     std::vector<int> parent;
@@ -220,6 +233,11 @@ static std::string outcome(bool win){ return win?"WIN":"LOSS"; }
 
 int main(int argc,char**argv){
     try{
+        if(argc==2 && std::string(argv[1])=="--memo-self-test"){
+            const bool ok=memo_key_width_self_test();
+            std::cout<<"memo_key_width_self_test="<<(ok?"PASS":"FAIL")<<"\n";
+            return ok?0:1;
+        }
         if(argc<2 || argc>3){
             std::cerr<<"usage: "<<argv[0]<<" INPUT.csv [memo_power]\n";
             return 2;
