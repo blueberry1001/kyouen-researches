@@ -53,5 +53,6 @@
 
 検算: [scripts/round18_local_geometry.py](scripts/round18_local_geometry.py)、
 [round18_local_geometry.json](round18_local_geometry.json)。
-標準小盤の全安全局面、両者の権利r=0,1,2、終端パス可/不可の両規約を、
-独立な拡張状態DPで確認する。
+標準n=1,…,4の全6,126安全局面、両者の権利r=0,1,2、終端パス可/不可の両規約を、
+独立な拡張状態DPで確認した。合計36,756比較が全て通常版のgの零非零と一致した。
+全盤の結論の根拠は第1節の対応戦略であり、有限検算の外挿ではない。

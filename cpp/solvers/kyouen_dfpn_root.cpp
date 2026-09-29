@@ -371,6 +371,10 @@ private:
         // throw only fires after real work; the entry check in mid() covers
         // already-expired budgets. Throwing here before the gate would kill
         // roots that never reach 2^20 visits (the "expansions=1" ghost).
+        //
+        // The hb line doubles as the ROOT PN/DN TIME SERIES: root bounds are
+        // re-read from the TT on every heartbeat, so the log shows whether
+        // the proof is moving one-sidedly long before it completes.
         if(el < 5.0 && visited_ < (std::uint64_t(1)<<20)) return;
         int rs=tt_.find(root_key_.lo,root_key_.hi);
         std::uint32_t rpn=INF,rdn=INF;
@@ -461,13 +465,12 @@ private:
                 if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
             }
             if((visited_ & ((std::uint64_t(1)<<20)-1))==0) heartbeat();
-            // Depth guard FIRST: df-pn thresholds can propose descents hundreds
-            // of plies deep before the 2^20 heartbeat fires. Anything past 256
-            // plies is beyond any plausible K_11 and almost surely a
-            // threshold-cycle rather than proof progress: treat as threshold
-            // return (pop) so ancestors re-aggregate instead of descending.
-            // 256 also bounds the explicit stack's TState memory (~256*128 B).
-            if(st.back().depth>256){ st.pop_back(); continue; }
+            // Depth guard: a legal game never exceeds V stones. Past V+8 is a
+            // BUG (threshold cycle or phantom descent), not proof progress.
+            // Throw loud instead of silently popping: silent pops hide cycles
+            // as slow progress. (V is the template board's point count, so
+            // this is exact for every N, not just 11.)
+            if(st.back().depth>V+8){ throw std::runtime_error("depth guard: legality exceeded"); }
             if(st.back().stage==0){
                 Bits fk=st.back().key;
                 int s=tt_.find(fk.lo,fk.hi);
@@ -516,14 +519,18 @@ private:
             if(pn>=frtp || dn>=frtd){ st.pop_back(); continue; }
             int b1=-1,b2=-1;
             bool isor=is_or(frs);
-            // NOTE: b2 MUST stay -1 when every child ties b1. pn2/dn2 then
-            // read INF and the child threshold stays loose (tp_c = min(tp,
-            // INF) = tp): with all children tied there is no second best to
-            // tighten against. The else-branch therefore tracks the runner-up
-            // by pn/dn ONLY (never by the count/key tie-break): a tied child
-            // must not count as "strictly worse", or thresholds collapse to
-            // (best+1) and the search descends forever (n=4: visited=1.9e8,
-            // expanded=221 frozen).
+            // b1 = best child (pn/dn, tie-broken by count then key).
+            // b2 = TRUE second minimum INCLUDING ties: the minimum over all
+            // children except b1 itself. If every child ties b1, b2 points at
+            // another tied child and pn2/dn2 equal b1's value -- NOT INF.
+            // Standard df-pn needs this: with children (1,1,1,...) the chosen
+            // child gets threshold min(parent, 1+1) = 2, i.e. "come back to
+            // the parent as soon as this child's number rises to 2, because
+            // it is no longer uniquely best". The old code left b2=-1 on ties
+            // (-> INF threshold), which dug one child almost to solution
+            // before returning -- near-DFS behaviour. It also made b2 depend
+            // on generation order (only set when a tie later stole b1), so
+            // identical number-multisets gave 1 or INF by accident.
             for(int i=0;i<g.n;++i){
                 bool better=false;
                 if(b1<0) better=true;
@@ -541,17 +548,14 @@ private:
                            g.ch[(std::size_t)i].key<g.ch[(std::size_t)b1].key))) better=true;
                 }
                 if(better){ b2=b1; b1=i; }
-                else if(isor){
-                    if(b2<0){
-                        if(g.ch[(std::size_t)i].pn>g.ch[(std::size_t)b1].pn) b2=i;
-                    } else if(g.ch[(std::size_t)i].pn>g.ch[(std::size_t)b1].pn &&
-                              g.ch[(std::size_t)i].pn<g.ch[(std::size_t)b2].pn) b2=i;
-                }
                 else{
-                    if(b2<0){
-                        if(g.ch[(std::size_t)i].dn>g.ch[(std::size_t)b1].dn) b2=i;
-                    } else if(g.ch[(std::size_t)i].dn>g.ch[(std::size_t)b1].dn &&
-                              g.ch[(std::size_t)i].dn<g.ch[(std::size_t)b2].dn) b2=i;
+                    // Runner-up by number ONLY (no count/key tie-break): any
+                    // non-best child qualifies, tied or not.
+                    if(isor){
+                        if(b2<0 || g.ch[(std::size_t)i].pn<g.ch[(std::size_t)b2].pn) b2=i;
+                    }else{
+                        if(b2<0 || g.ch[(std::size_t)i].dn<g.ch[(std::size_t)b2].dn) b2=i;
+                    }
                 }
             }
             std::uint32_t tp_c,td_c;
