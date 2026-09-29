@@ -53,37 +53,40 @@ static inline int take_lsb(Bits& a){
     int p=std::countr_zero(a.hi);a.hi&=a.hi-1;return p+64;
 }
 
-// Full 121-bit key memo. power=27 -> 1.34e8 slots x 17 B ~= 2.2 GB.
-// power=24 -> 1.68e7 slots x 17 B ~= 285 MB (for 16-way parallel runs).
+// Full 121-bit key memo. The 57-bit high word plus a 2-bit value fit in
+// one uint64_t, so each slot is 16 B (8 B low + 8 B packed high/value).
+// power=27 -> 1.34e8 slots ~= 2.0 GiB.
+// power=24 -> 1.68e7 slots ~= 256 MiB (useful for parallel runs).
 class FlatMemo121 {
 public:
     enum : std::uint32_t { Unknown=0, Losing=1, Winning=2 };
     explicit FlatMemo121(unsigned power)
       : n_(std::size_t{1}<<power), mask_(n_-1),
-        lo_(n_,0), hi_(n_,0), st_(n_,0) {}
+        lo_(n_,0), meta_(n_,0) {}
     inline std::uint32_t get(std::uint64_t klo,std::uint64_t khi) const {
         std::size_t i=mix(klo,khi)&mask_;
-        while(st_[i]){
-            if(lo_[i]==klo && hi_[i]==khi) return st_[i];
+        while(meta_[i]){
+            const std::uint64_t m=meta_[i];
+            if(lo_[i]==klo && (m>>2)==khi) return std::uint32_t(m&3);
             i=(i+1)&mask_;
         }
         return 0;
     }
     inline void put(std::uint64_t klo,std::uint64_t khi,std::uint32_t value){
         std::size_t i=mix(klo,khi)&mask_;
-        while(st_[i]){
-            if(lo_[i]==klo && hi_[i]==khi){st_[i]=(std::uint8_t)value;return;}
+        const std::uint64_t m=(khi<<2)|value;
+        while(meta_[i]){
+            if(lo_[i]==klo && (meta_[i]>>2)==khi){meta_[i]=m;return;}
             i=(i+1)&mask_;
         }
-        lo_[i]=klo; hi_[i]=khi; st_[i]=(std::uint8_t)value; ++used_;
+        lo_[i]=klo; meta_[i]=m; ++used_;
         if(used_*10 > n_*8) throw std::runtime_error("memo table over 80%");
     }
     std::size_t used()const{return used_;}
     std::size_t capacity()const{return n_;}
 private:
     std::size_t n_,mask_,used_=0;
-    std::vector<std::uint64_t> lo_,hi_;
-    std::vector<std::uint8_t> st_;
+    std::vector<std::uint64_t> lo_,meta_;
     static inline std::uint64_t mix64(std::uint64_t x){
         x^=x>>30;x*=0xbf58476d1ce4e5b9ULL;
         x^=x>>27;x*=0x94d049bb133111ebULL;
@@ -214,6 +217,20 @@ private:
 
 static std::string outcome(bool win){ return win?"WIN":"LOSS"; }
 
+static bool memo_key_width_self_test(){
+    FlatMemo121 memo(4);
+    const std::uint64_t lo=0x0123456789abcdefULL;
+    const std::uint64_t high_hi=(1ULL<<56)|1234567ULL;
+    const std::uint64_t low_hi=1234567ULL;
+    memo.put(lo,high_hi,FlatMemo121::Losing);
+    if(memo.get(lo,high_hi)!=FlatMemo121::Losing) return false;
+    if(memo.get(lo,low_hi)!=0) return false;
+    memo.put(lo,low_hi,FlatMemo121::Winning);
+    return memo.get(lo,high_hi)==FlatMemo121::Losing &&
+           memo.get(lo,low_hi)==FlatMemo121::Winning &&
+           memo.used()==2;
+}
+
 // D4-distinct one-stone first moves: fundamental domain {(x,y): 0<=x<=5, 0<=y<=x}.
 // 1+2+3+4+5+6 = 21 orbits. Center (5,5) first: strongest candidate for a P-move.
 static std::vector<int> first_move_reps(){
@@ -230,6 +247,11 @@ static std::vector<int> first_move_reps(){
 
 int main(int argc,char**argv){
     try{
+        if(argc==2 && std::string(argv[1])=="--memo-self-test"){
+            const bool ok=memo_key_width_self_test();
+            std::cout<<"memo_key_width_self_test="<<(ok?"PASS":"FAIL")<<"\n";
+            return ok?0:1;
+        }
         unsigned pow=27;
         bool reps=false;
         for(int i=1;i<argc;++i){

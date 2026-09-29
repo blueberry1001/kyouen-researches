@@ -17,6 +17,12 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build
         run: cmake --build build --parallel 2
+      - name: Compile and self-test 10x10/11x11 root research solvers
+        run: |
+          c++ -std=c++20 -O2 -Wall -Wextra -Wpedantic cpp/solvers/kyouen_solver_10_root.cpp -o /tmp/kyouen_solver_10_root
+          c++ -std=c++20 -O2 -Wall -Wextra -Wpedantic cpp/solvers/kyouen_solver_11_root.cpp -o /tmp/kyouen_solver_11_root
+          /tmp/kyouen_solver_10_root --memo-self-test
+          /tmp/kyouen_solver_11_root --memo-self-test
       - name: Generate and check 1x1 through 6x6
         run: |
           mkdir -p /tmp/kyouen-certs
