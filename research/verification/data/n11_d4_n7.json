@@ -1,0 +1,32 @@
+{
+  "n": 7,
+  "V": 49,
+  "F": 6364,
+  "K": 14,
+  "symmetry": "D4",
+  "d4_point_orbits": 3,
+  "g_empty": 0,
+  "winner": "second",
+  "level_sizes_raw": [1,49,1176,18424,205512,1633048,8796600,29688640,56927728,55173324,23478868,3707028,177760,2176,16],
+  "level_sizes_orbits": [1,10,171,2397,25930,204481,1099717,3711197,7116237,6896789,2934998,463397,22229,272,2],
+  "levels": [
+    {"k": 0, "orbits": 1, "raw": 1, "P_orbits": 1, "N_orbits": 0, "gen_s": 0.00, "dp_s": 0.05},
+    {"k": 1, "orbits": 10, "raw": 49, "P_orbits": 0, "N_orbits": 10, "gen_s": 0.41, "dp_s": 0.05},
+    {"k": 2, "orbits": 171, "raw": 1176, "P_orbits": 80, "N_orbits": 91, "gen_s": 0.20, "dp_s": 0.07},
+    {"k": 3, "orbits": 2397, "raw": 18424, "P_orbits": 78, "N_orbits": 2319, "gen_s": 0.21, "dp_s": 0.08},
+    {"k": 4, "orbits": 25930, "raw": 205512, "P_orbits": 4763, "N_orbits": 21167, "gen_s": 0.77, "dp_s": 0.23},
+    {"k": 5, "orbits": 204481, "raw": 1633048, "P_orbits": 17411, "N_orbits": 187070, "gen_s": 5.28, "dp_s": 1.48},
+    {"k": 6, "orbits": 1099717, "raw": 8796600, "P_orbits": 130707, "N_orbits": 969010, "gen_s": 22.68, "dp_s": 6.16},
+    {"k": 7, "orbits": 3711197, "raw": 29688640, "P_orbits": 515583, "N_orbits": 3195614, "gen_s": 25.34, "dp_s": 30.92},
+    {"k": 8, "orbits": 7116237, "raw": 56927728, "P_orbits": 1217361, "N_orbits": 5898876, "gen_s": 66.76, "dp_s": 15.01},
+    {"k": 9, "orbits": 6896789, "raw": 55173324, "P_orbits": 1994898, "N_orbits": 4901891, "gen_s": 58.69, "dp_s": 9.23},
+    {"k": 10, "orbits": 2934998, "raw": 23478868, "P_orbits": 980288, "N_orbits": 1954710, "gen_s": 49.22, "dp_s": 3.40},
+    {"k": 11, "orbits": 463397, "raw": 3707028, "P_orbits": 277928, "N_orbits": 185469, "gen_s": 15.90, "dp_s": 0.58},
+    {"k": 12, "orbits": 22229, "raw": 177760, "P_orbits": 19273, "N_orbits": 2956, "gen_s": 1.84, "dp_s": 0.10},
+    {"k": 13, "orbits": 272, "raw": 2176, "P_orbits": 244, "N_orbits": 28, "gen_s": 0.64, "dp_s": 0.10},
+    {"k": 14, "orbits": 2, "raw": 16, "P_orbits": 2, "N_orbits": 0, "gen_s": 0.50, "dp_s": 0.00}
+  ],
+  "threads": 12,
+  "total_seconds": 327.31,
+  "peak_rss_mb": 2240
+}

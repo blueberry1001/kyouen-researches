@@ -1,0 +1,413 @@
+{
+  "modulus": 11,
+  "generator": [
+    6,
+    3
+  ],
+  "cosets": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        8,
+        5
+      ]
+    ]
+  ],
+  "prime_characters": {
+    "5": 1,
+    "13": 2,
+    "17": 1,
+    "29": 1
+  },
+  "cases": [
+    {
+      "e": 0,
+      "M": 6409,
+      "representations": 32,
+      "orbit_counts": [
+        3,
+        3,
+        2
+      ],
+      "direct_norm_scan": true
+    },
+    {
+      "e": 1,
+      "M": 32045,
+      "representations": 64,
+      "orbit_counts": [
+        5,
+        6,
+        5
+      ],
+      "direct_norm_scan": true
+    },
+    {
+      "e": 2,
+      "M": 160225,
+      "representations": 96,
+      "orbit_counts": [
+        8,
+        8,
+        8
+      ],
+      "direct_norm_scan": true
+    },
+    {
+      "e": 3,
+      "M": 801125,
+      "representations": 128,
+      "orbit_counts": [
+        11,
+        11,
+        10
+      ],
+      "direct_norm_scan": true
+    },
+    {
+      "e": 4,
+      "M": 4005625,
+      "representations": 160,
+      "orbit_counts": [
+        13,
+        14,
+        13
+      ],
+      "direct_norm_scan": true
+    },
+    {
+      "e": 5,
+      "M": 20028125,
+      "representations": 192,
+      "orbit_counts": [
+        16,
+        16,
+        16
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 6,
+      "M": 100140625,
+      "representations": 224,
+      "orbit_counts": [
+        19,
+        19,
+        18
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 7,
+      "M": 500703125,
+      "representations": 256,
+      "orbit_counts": [
+        21,
+        22,
+        21
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 8,
+      "M": 2503515625,
+      "representations": 288,
+      "orbit_counts": [
+        24,
+        24,
+        24
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 9,
+      "M": 12517578125,
+      "representations": 320,
+      "orbit_counts": [
+        27,
+        27,
+        26
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 10,
+      "M": 62587890625,
+      "representations": 352,
+      "orbit_counts": [
+        29,
+        30,
+        29
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 11,
+      "M": 312939453125,
+      "representations": 384,
+      "orbit_counts": [
+        32,
+        32,
+        32
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 12,
+      "M": 1564697265625,
+      "representations": 416,
+      "orbit_counts": [
+        35,
+        35,
+        34
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 13,
+      "M": 7823486328125,
+      "representations": 448,
+      "orbit_counts": [
+        37,
+        38,
+        37
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 14,
+      "M": 39117431640625,
+      "representations": 480,
+      "orbit_counts": [
+        40,
+        40,
+        40
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 15,
+      "M": 195587158203125,
+      "representations": 512,
+      "orbit_counts": [
+        43,
+        43,
+        42
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 16,
+      "M": 977935791015625,
+      "representations": 544,
+      "orbit_counts": [
+        45,
+        46,
+        45
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 17,
+      "M": 4889678955078125,
+      "representations": 576,
+      "orbit_counts": [
+        48,
+        48,
+        48
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 18,
+      "M": 24448394775390625,
+      "representations": 608,
+      "orbit_counts": [
+        51,
+        51,
+        50
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 19,
+      "M": 122241973876953125,
+      "representations": 640,
+      "orbit_counts": [
+        53,
+        54,
+        53
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 20,
+      "M": 611209869384765625,
+      "representations": 672,
+      "orbit_counts": [
+        56,
+        56,
+        56
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 21,
+      "M": 3056049346923828125,
+      "representations": 704,
+      "orbit_counts": [
+        59,
+        59,
+        58
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 22,
+      "M": 15280246734619140625,
+      "representations": 736,
+      "orbit_counts": [
+        61,
+        62,
+        61
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 23,
+      "M": 76401233673095703125,
+      "representations": 768,
+      "orbit_counts": [
+        64,
+        64,
+        64
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 24,
+      "M": 382006168365478515625,
+      "representations": 800,
+      "orbit_counts": [
+        67,
+        67,
+        66
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 25,
+      "M": 1910030841827392578125,
+      "representations": 832,
+      "orbit_counts": [
+        69,
+        70,
+        69
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 26,
+      "M": 9550154209136962890625,
+      "representations": 864,
+      "orbit_counts": [
+        72,
+        72,
+        72
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 27,
+      "M": 47750771045684814453125,
+      "representations": 896,
+      "orbit_counts": [
+        75,
+        75,
+        74
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 28,
+      "M": 238753855228424072265625,
+      "representations": 928,
+      "orbit_counts": [
+        77,
+        78,
+        77
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 29,
+      "M": 1193769276142120361328125,
+      "representations": 960,
+      "orbit_counts": [
+        80,
+        80,
+        80
+      ],
+      "direct_norm_scan": false
+    },
+    {
+      "e": 30,
+      "M": 5968846380710601806640625,
+      "representations": 992,
+      "orbit_counts": [
+        83,
+        83,
+        82
+      ],
+      "direct_norm_scan": false
+    }
+  ],
+  "claim_scope": "general proof in round12-q11-counts.md; these are finite integer cross-checks"
+}

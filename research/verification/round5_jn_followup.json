@@ -1,0 +1,5537 @@
+{
+  "n_analyses": {
+    "2": {
+      "n": 2,
+      "V": 4,
+      "n_states": 15,
+      "K": 3,
+      "K_given": 3,
+      "sigma": 2,
+      "sigma_given": 2,
+      "sigma_match": true,
+      "g_empty": 1,
+      "layer_max_g": {
+        "0": 1,
+        "1": 0,
+        "2": 1,
+        "3": 0
+      },
+      "layer_counts": {
+        "0": {
+          "1": 1
+        },
+        "1": {
+          "0": 4
+        },
+        "2": {
+          "1": 6
+        },
+        "3": {
+          "0": 4
+        }
+      },
+      "sigma_layer_holes": {
+        "bound": 1,
+        "present": [
+          1
+        ],
+        "missing": [
+          0
+        ],
+        "consecutive_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": []
+      },
+      "all_layer_holes": {
+        "0": {
+          "bound": 3,
+          "present": [
+            1
+          ],
+          "missing": [
+            0,
+            2
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            2
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "1": {
+          "bound": 2,
+          "present": [
+            0
+          ],
+          "missing": [
+            1
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            1
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "2": {
+          "bound": 1,
+          "present": [
+            1
+          ],
+          "missing": [
+            0
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "3": {
+          "bound": 0,
+          "present": [
+            0
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        }
+      },
+      "one_stone_hist": {
+        "0": 4
+      },
+      "two_stone_hist": {
+        "1": 6
+      },
+      "uniform_one": true,
+      "uniform_one_h": 0,
+      "thm_uniform_h_absent_in_two": true,
+      "thm_violations": 0,
+      "thm_j_empty_if_h0": true,
+      "n_P_pairs": 0,
+      "n_isolated_vertices_J": 4,
+      "two_missing": [
+        0,
+        2
+      ]
+    },
+    "3": {
+      "n": 3,
+      "V": 9,
+      "n_states": 298,
+      "K": 5,
+      "K_given": 5,
+      "sigma": 4,
+      "sigma_given": 4,
+      "sigma_match": true,
+      "g_empty": 1,
+      "layer_max_g": {
+        "0": 1,
+        "1": 0,
+        "2": 1,
+        "3": 0,
+        "4": 1,
+        "5": 0
+      },
+      "layer_counts": {
+        "0": {
+          "1": 1
+        },
+        "1": {
+          "0": 9
+        },
+        "2": {
+          "1": 36
+        },
+        "3": {
+          "0": 84
+        },
+        "4": {
+          "1": 112
+        },
+        "5": {
+          "0": 56
+        }
+      },
+      "sigma_layer_holes": {
+        "bound": 1,
+        "present": [
+          1
+        ],
+        "missing": [
+          0
+        ],
+        "consecutive_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": []
+      },
+      "all_layer_holes": {
+        "0": {
+          "bound": 5,
+          "present": [
+            1
+          ],
+          "missing": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "consecutive_pairs": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "positive_missing": [
+            2,
+            3,
+            4
+          ],
+          "positive_missing_non_pow2": [
+            3
+          ]
+        },
+        "1": {
+          "bound": 4,
+          "present": [
+            0
+          ],
+          "missing": [
+            1,
+            2,
+            3
+          ],
+          "consecutive_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "positive_missing": [
+            1,
+            2,
+            3
+          ],
+          "positive_missing_non_pow2": [
+            3
+          ]
+        },
+        "2": {
+          "bound": 3,
+          "present": [
+            1
+          ],
+          "missing": [
+            0,
+            2
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            2
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "3": {
+          "bound": 2,
+          "present": [
+            0
+          ],
+          "missing": [
+            1
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            1
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "4": {
+          "bound": 1,
+          "present": [
+            1
+          ],
+          "missing": [
+            0
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "5": {
+          "bound": 0,
+          "present": [
+            0
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        }
+      },
+      "one_stone_hist": {
+        "0": 9
+      },
+      "two_stone_hist": {
+        "1": 36
+      },
+      "uniform_one": true,
+      "uniform_one_h": 0,
+      "thm_uniform_h_absent_in_two": true,
+      "thm_violations": 0,
+      "thm_j_empty_if_h0": true,
+      "n_P_pairs": 0,
+      "n_isolated_vertices_J": 9,
+      "two_missing": [
+        0,
+        2
+      ]
+    },
+    "4": {
+      "n": 4,
+      "V": 16,
+      "n_states": 5811,
+      "K": 7,
+      "K_given": 7,
+      "sigma": 2,
+      "sigma_given": 2,
+      "sigma_match": true,
+      "g_empty": 0,
+      "layer_max_g": {
+        "0": 0,
+        "1": 1,
+        "2": 5,
+        "3": 4,
+        "4": 3,
+        "5": 2,
+        "6": 1,
+        "7": 0
+      },
+      "layer_counts": {
+        "0": {
+          "0": 1
+        },
+        "1": {
+          "1": 16
+        },
+        "2": {
+          "0": 84,
+          "2": 20,
+          "3": 8,
+          "5": 8
+        },
+        "3": {
+          "0": 16,
+          "1": 372,
+          "2": 24,
+          "3": 60,
+          "4": 88
+        },
+        "4": {
+          "0": 640,
+          "1": 64,
+          "2": 416,
+          "3": 506
+        },
+        "5": {
+          "0": 332,
+          "1": 1364,
+          "2": 664
+        },
+        "6": {
+          "0": 688,
+          "1": 376
+        },
+        "7": {
+          "0": 64
+        }
+      },
+      "sigma_layer_holes": {
+        "bound": 5,
+        "present": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "missing": [
+          1,
+          4
+        ],
+        "consecutive_pairs": [],
+        "positive_missing": [
+          1,
+          4
+        ],
+        "positive_missing_non_pow2": []
+      },
+      "all_layer_holes": {
+        "0": {
+          "bound": 7,
+          "present": [
+            0
+          ],
+          "missing": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "consecutive_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "positive_missing": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "positive_missing_non_pow2": [
+            3,
+            5,
+            6
+          ]
+        },
+        "1": {
+          "bound": 6,
+          "present": [
+            1
+          ],
+          "missing": [
+            0,
+            2,
+            3,
+            4,
+            5
+          ],
+          "consecutive_pairs": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "positive_missing": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "positive_missing_non_pow2": [
+            3,
+            5
+          ]
+        },
+        "2": {
+          "bound": 5,
+          "present": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "missing": [
+            1,
+            4
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            1,
+            4
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "3": {
+          "bound": 4,
+          "present": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "4": {
+          "bound": 3,
+          "present": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "5": {
+          "bound": 2,
+          "present": [
+            0,
+            1,
+            2
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "6": {
+          "bound": 1,
+          "present": [
+            0,
+            1
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "7": {
+          "bound": 0,
+          "present": [
+            0
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        }
+      },
+      "one_stone_hist": {
+        "1": 16
+      },
+      "two_stone_hist": {
+        "0": 84,
+        "5": 8,
+        "2": 20,
+        "3": 8
+      },
+      "uniform_one": true,
+      "uniform_one_h": 1,
+      "thm_uniform_h_absent_in_two": true,
+      "thm_violations": 0,
+      "thm_j_empty_if_h0": false,
+      "n_P_pairs": 84,
+      "n_isolated_vertices_J": 0,
+      "two_missing": [
+        1,
+        4,
+        6
+      ]
+    },
+    "5": {
+      "n": 5,
+      "V": 25,
+      "n_states": 151394,
+      "K": 9,
+      "K_given": 9,
+      "sigma": 3,
+      "sigma_given": 3,
+      "sigma_match": true,
+      "g_empty": 1,
+      "layer_max_g": {
+        "0": 1,
+        "1": 3,
+        "2": 2,
+        "3": 6,
+        "4": 5,
+        "5": 4,
+        "6": 3,
+        "7": 2,
+        "8": 1,
+        "9": 0
+      },
+      "layer_counts": {
+        "0": {
+          "1": 1
+        },
+        "1": {
+          "0": 9,
+          "3": 16
+        },
+        "2": {
+          "0": 20,
+          "1": 208,
+          "2": 72
+        },
+        "3": {
+          "0": 550,
+          "1": 48,
+          "2": 20,
+          "3": 1506,
+          "4": 4,
+          "5": 100,
+          "6": 72
+        },
+        "4": {
+          "0": 1250,
+          "1": 3480,
+          "2": 4232,
+          "3": 150,
+          "4": 1564,
+          "5": 1148
+        },
+        "5": {
+          "0": 7144,
+          "1": 4288,
+          "2": 2144,
+          "3": 18872,
+          "4": 4824
+        },
+        "6": {
+          "0": 14108,
+          "1": 17140,
+          "2": 23112,
+          "3": 4832
+        },
+        "7": {
+          "0": 12804,
+          "1": 20888,
+          "2": 1516
+        },
+        "8": {
+          "0": 4340,
+          "1": 832
+        },
+        "9": {
+          "0": 100
+        }
+      },
+      "sigma_layer_holes": {
+        "bound": 6,
+        "present": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "missing": [],
+        "consecutive_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": []
+      },
+      "all_layer_holes": {
+        "0": {
+          "bound": 9,
+          "present": [
+            1
+          ],
+          "missing": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "consecutive_pairs": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "positive_missing": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "positive_missing_non_pow2": [
+            3,
+            5,
+            6,
+            7
+          ]
+        },
+        "1": {
+          "bound": 8,
+          "present": [
+            0,
+            3
+          ],
+          "missing": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "consecutive_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "positive_missing": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "positive_missing_non_pow2": [
+            5,
+            6,
+            7
+          ]
+        },
+        "2": {
+          "bound": 7,
+          "present": [
+            0,
+            1,
+            2
+          ],
+          "missing": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "consecutive_pairs": [
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "positive_missing": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "positive_missing_non_pow2": [
+            3,
+            5,
+            6
+          ]
+        },
+        "3": {
+          "bound": 6,
+          "present": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "4": {
+          "bound": 5,
+          "present": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "5": {
+          "bound": 4,
+          "present": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "6": {
+          "bound": 3,
+          "present": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "7": {
+          "bound": 2,
+          "present": [
+            0,
+            1,
+            2
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "8": {
+          "bound": 1,
+          "present": [
+            0,
+            1
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "9": {
+          "bound": 0,
+          "present": [
+            0
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        }
+      },
+      "one_stone_hist": {
+        "3": 16,
+        "0": 9
+      },
+      "two_stone_hist": {
+        "1": 208,
+        "0": 20,
+        "2": 72
+      },
+      "uniform_one": false,
+      "uniform_one_h": null,
+      "thm_uniform_h_absent_in_two": null,
+      "thm_violations": 0,
+      "thm_j_empty_if_h0": null,
+      "n_P_pairs": 20,
+      "n_isolated_vertices_J": 9,
+      "two_missing": [
+        3
+      ]
+    }
+  },
+  "b312": {
+    "n": 4,
+    "n_P": 84,
+    "n_TD": 40,
+    "n_nonTD": 44,
+    "singles": {
+      "d2": {
+        "td_only_values": [
+          9,
+          18
+        ],
+        "nontd_only_values": [
+          13
+        ],
+        "mixed_values": [
+          1,
+          2,
+          5,
+          10
+        ],
+        "perfect": false
+      },
+      "linf": {
+        "td_only_values": [],
+        "nontd_only_values": [],
+        "mixed_values": [
+          1,
+          2,
+          3
+        ],
+        "perfect": false
+      },
+      "manh": {
+        "td_only_values": [
+          6
+        ],
+        "nontd_only_values": [
+          5
+        ],
+        "mixed_values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "perfect": false
+      },
+      "corners": {
+        "td_only_values": [
+          2
+        ],
+        "nontd_only_values": [],
+        "mixed_values": [
+          0,
+          1
+        ],
+        "perfect": false
+      },
+      "deg_a": {
+        "td_only_values": [],
+        "nontd_only_values": [],
+        "mixed_values": [
+          9,
+          12
+        ],
+        "perfect": false
+      },
+      "deg_b": {
+        "td_only_values": [],
+        "nontd_only_values": [],
+        "mixed_values": [
+          9,
+          12
+        ],
+        "perfect": false
+      },
+      "deg_sum": {
+        "td_only_values": [
+          24
+        ],
+        "nontd_only_values": [
+          18
+        ],
+        "mixed_values": [
+          21
+        ],
+        "perfect": false
+      },
+      "deg_min": {
+        "td_only_values": [
+          12
+        ],
+        "nontd_only_values": [],
+        "mixed_values": [
+          9
+        ],
+        "perfect": false
+      },
+      "deg_max": {
+        "td_only_values": [],
+        "nontd_only_values": [
+          9
+        ],
+        "mixed_values": [
+          12
+        ],
+        "perfect": false
+      },
+      "n_union": {
+        "td_only_values": [
+          16
+        ],
+        "nontd_only_values": [
+          14,
+          15
+        ],
+        "mixed_values": [],
+        "perfect": true
+      },
+      "n_inter": {
+        "td_only_values": [
+          5,
+          8
+        ],
+        "nontd_only_values": [
+          4,
+          6,
+          7
+        ],
+        "mixed_values": [],
+        "perfect": true
+      },
+      "cov1": {
+        "td_only_values": [
+          11,
+          14
+        ],
+        "nontd_only_values": [
+          6,
+          13
+        ],
+        "mixed_values": [
+          8,
+          9,
+          10,
+          12
+        ],
+        "perfect": false
+      }
+    },
+    "pairs_notable": {
+      "d2+corners": {
+        "td_only": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            18,
+            2
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            1
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            13,
+            1
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "perfect": false
+      },
+      "d2+deg_sum": {
+        "td_only": [
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            21
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            5,
+            24
+          ],
+          [
+            9,
+            24
+          ],
+          [
+            10,
+            21
+          ],
+          [
+            18,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            21
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            5,
+            21
+          ],
+          [
+            10,
+            18
+          ],
+          [
+            13,
+            21
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "d2+deg_min": {
+        "td_only": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            18,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            9
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            2,
+            9
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "d2+deg_max": {
+        "td_only": [
+          [
+            2,
+            12
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            18,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            12
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            12
+          ],
+          [
+            5,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "d2+n_union": {
+        "td_only": [
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            5,
+            16
+          ],
+          [
+            9,
+            16
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            18,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            13,
+            14
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "d2+n_inter": {
+        "td_only": [
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            18,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            10,
+            4
+          ],
+          [
+            13,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "d2+cov1": {
+        "td_only": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            18,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            5,
+            13
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            13,
+            10
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "linf+deg_sum": {
+        "td_only": [
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            18
+          ],
+          [
+            2,
+            21
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            21
+          ],
+          [
+            3,
+            21
+          ]
+        ],
+        "perfect": false
+      },
+      "linf+deg_min": {
+        "td_only": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            2,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            9
+          ],
+          [
+            3,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "linf+n_union": {
+        "td_only": [
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            3,
+            14
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "linf+n_inter": {
+        "td_only": [
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "linf+cov1": {
+        "td_only": [
+          [
+            1,
+            11
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            9
+          ],
+          [
+            3,
+            10
+          ]
+        ],
+        "perfect": false
+      },
+      "manh+corners": {
+        "td_only": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "perfect": false
+      },
+      "manh+deg_sum": {
+        "td_only": [
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            21
+          ],
+          [
+            2,
+            24
+          ],
+          [
+            3,
+            24
+          ],
+          [
+            4,
+            21
+          ],
+          [
+            6,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            21
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            18
+          ],
+          [
+            5,
+            21
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "manh+deg_min": {
+        "td_only": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            6,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            9
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            5,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            2,
+            9
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "manh+deg_max": {
+        "td_only": [
+          [
+            2,
+            12
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            6,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            12
+          ]
+        ],
+        "mixed": [
+          [
+            1,
+            12
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "manh+n_union": {
+        "td_only": [
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            16
+          ],
+          [
+            4,
+            16
+          ],
+          [
+            6,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            15
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            5,
+            14
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "manh+n_inter": {
+        "td_only": [
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "manh+cov1": {
+        "td_only": [
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            11
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            5,
+            10
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "corners+deg_sum": {
+        "td_only": [
+          [
+            0,
+            24
+          ],
+          [
+            1,
+            24
+          ],
+          [
+            2,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            0,
+            18
+          ]
+        ],
+        "mixed": [
+          [
+            0,
+            21
+          ],
+          [
+            1,
+            21
+          ]
+        ],
+        "perfect": false
+      },
+      "corners+deg_min": {
+        "td_only": [
+          [
+            0,
+            12
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            12
+          ]
+        ],
+        "nontd_only": [],
+        "mixed": [
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "corners+deg_max": {
+        "td_only": [
+          [
+            2,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            0,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            0,
+            12
+          ],
+          [
+            1,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "corners+n_union": {
+        "td_only": [
+          [
+            0,
+            16
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            1,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "corners+n_inter": {
+        "td_only": [
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "corners+cov1": {
+        "td_only": [
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            9
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        "mixed": [
+          [
+            0,
+            12
+          ],
+          [
+            1,
+            10
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_a+deg_b": {
+        "td_only": [
+          [
+            12,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_a+deg_sum": {
+        "td_only": [
+          [
+            12,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            18
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            21
+          ],
+          [
+            12,
+            21
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_a+deg_min": {
+        "td_only": [
+          [
+            12,
+            12
+          ]
+        ],
+        "nontd_only": [],
+        "mixed": [
+          [
+            9,
+            9
+          ],
+          [
+            12,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_a+deg_max": {
+        "td_only": [],
+        "nontd_only": [
+          [
+            9,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_a+n_union": {
+        "td_only": [
+          [
+            9,
+            16
+          ],
+          [
+            12,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            12,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_a+n_inter": {
+        "td_only": [
+          [
+            9,
+            5
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_b+deg_sum": {
+        "td_only": [
+          [
+            12,
+            24
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            18
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            21
+          ],
+          [
+            12,
+            21
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_b+deg_min": {
+        "td_only": [
+          [
+            12,
+            12
+          ]
+        ],
+        "nontd_only": [],
+        "mixed": [
+          [
+            9,
+            9
+          ],
+          [
+            12,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_b+deg_max": {
+        "td_only": [],
+        "nontd_only": [
+          [
+            9,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_b+n_union": {
+        "td_only": [
+          [
+            9,
+            16
+          ],
+          [
+            12,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            12,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_b+n_inter": {
+        "td_only": [
+          [
+            9,
+            5
+          ],
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_sum+deg_min": {
+        "td_only": [
+          [
+            24,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            18,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            21,
+            9
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_sum+deg_max": {
+        "td_only": [
+          [
+            24,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            18,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            21,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_sum+n_union": {
+        "td_only": [
+          [
+            21,
+            16
+          ],
+          [
+            24,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            18,
+            14
+          ],
+          [
+            21,
+            14
+          ],
+          [
+            21,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_sum+n_inter": {
+        "td_only": [
+          [
+            21,
+            5
+          ],
+          [
+            24,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            18,
+            4
+          ],
+          [
+            21,
+            6
+          ],
+          [
+            21,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_sum+cov1": {
+        "td_only": [
+          [
+            21,
+            11
+          ],
+          [
+            24,
+            8
+          ],
+          [
+            24,
+            9
+          ],
+          [
+            24,
+            11
+          ],
+          [
+            24,
+            12
+          ],
+          [
+            24,
+            14
+          ]
+        ],
+        "nontd_only": [
+          [
+            18,
+            8
+          ],
+          [
+            18,
+            12
+          ],
+          [
+            21,
+            6
+          ],
+          [
+            21,
+            9
+          ],
+          [
+            21,
+            13
+          ]
+        ],
+        "mixed": [
+          [
+            21,
+            10
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_min+deg_max": {
+        "td_only": [
+          [
+            12,
+            12
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            9
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            12
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_min+n_union": {
+        "td_only": [
+          [
+            9,
+            16
+          ],
+          [
+            12,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_min+n_inter": {
+        "td_only": [
+          [
+            9,
+            5
+          ],
+          [
+            12,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_min+cov1": {
+        "td_only": [
+          [
+            9,
+            11
+          ],
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            12,
+            14
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            13
+          ]
+        ],
+        "mixed": [
+          [
+            9,
+            10
+          ]
+        ],
+        "perfect": false
+      },
+      "deg_max+n_union": {
+        "td_only": [
+          [
+            12,
+            16
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            14
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            12,
+            15
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_max+n_inter": {
+        "td_only": [
+          [
+            12,
+            5
+          ],
+          [
+            12,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            4
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            7
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "deg_max+cov1": {
+        "td_only": [
+          [
+            12,
+            8
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            12,
+            14
+          ]
+        ],
+        "nontd_only": [
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            13
+          ]
+        ],
+        "mixed": [
+          [
+            12,
+            9
+          ],
+          [
+            12,
+            10
+          ]
+        ],
+        "perfect": false
+      },
+      "n_union+n_inter": {
+        "td_only": [
+          [
+            16,
+            5
+          ],
+          [
+            16,
+            8
+          ]
+        ],
+        "nontd_only": [
+          [
+            14,
+            4
+          ],
+          [
+            14,
+            7
+          ],
+          [
+            15,
+            6
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "n_union+cov1": {
+        "td_only": [
+          [
+            16,
+            8
+          ],
+          [
+            16,
+            9
+          ],
+          [
+            16,
+            10
+          ],
+          [
+            16,
+            11
+          ],
+          [
+            16,
+            12
+          ],
+          [
+            16,
+            14
+          ]
+        ],
+        "nontd_only": [
+          [
+            14,
+            8
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            14,
+            10
+          ],
+          [
+            14,
+            12
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            15,
+            13
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      },
+      "n_inter+cov1": {
+        "td_only": [
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            8,
+            12
+          ],
+          [
+            8,
+            14
+          ]
+        ],
+        "nontd_only": [
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            10
+          ]
+        ],
+        "mixed": [],
+        "perfect": true
+      }
+    },
+    "best_pair": {
+      "n_mixed": 0,
+      "keys": [
+        "d2",
+        "deg_sum"
+      ],
+      "td_only": [
+        [
+          1,
+          24
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          2,
+          24
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          18,
+          24
+        ]
+      ],
+      "nontd_only": [
+        [
+          1,
+          18
+        ],
+        [
+          1,
+          21
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          5,
+          21
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          13,
+          21
+        ]
+      ],
+      "mixed": [],
+      "perfect": true
+    },
+    "td_rows": [
+      {
+        "d2": 9,
+        "linf": 3,
+        "manh": 3,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          0,
+          3
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          0,
+          5
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          0,
+          6
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          0,
+          7
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          0,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 9,
+        "linf": 3,
+        "manh": 3,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          0,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          0,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 18,
+        "linf": 3,
+        "manh": 6,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          0,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          1,
+          6
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          1,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          2,
+          5
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          2,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          3,
+          4
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          3,
+          5
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          3,
+          6
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          3,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 18,
+        "linf": 3,
+        "manh": 6,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          3,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          3,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 9,
+        "linf": 3,
+        "manh": 3,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          3,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          4,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          5,
+          6
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          5,
+          8
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          5,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 14,
+        "is_P": true,
+        "pair": [
+          5,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          5,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 14,
+        "is_P": true,
+        "pair": [
+          6,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          6,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          6,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          6,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          7,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          8,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          9,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          9,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          9,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          9,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          10,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 11,
+        "is_P": true,
+        "pair": [
+          10,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          10,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 5,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          11,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 9,
+        "linf": 3,
+        "manh": 3,
+        "corners": 2,
+        "deg_a": 12,
+        "deg_b": 12,
+        "deg_sum": 24,
+        "deg_min": 12,
+        "deg_max": 12,
+        "n_union": 16,
+        "n_inter": 8,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          12,
+          15
+        ],
+        "d4": null
+      }
+    ],
+    "nontd_rows": [
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          0,
+          1
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          0,
+          4
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          0,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          0,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          1,
+          2
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          1,
+          4
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          1,
+          5
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          1,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          1,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          1,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          2,
+          3
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          2,
+          6
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          2,
+          7
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          2,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          2,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          2,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          3,
+          7
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          3,
+          8
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          3,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          4,
+          5
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          4,
+          8
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          4,
+          10
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          4,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          4,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          5,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          5,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          6,
+          7
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          6,
+          8
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          6,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 10,
+        "linf": 3,
+        "manh": 4,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 12,
+        "is_P": true,
+        "pair": [
+          7,
+          8
+        ],
+        "d4": null
+      },
+      {
+        "d2": 5,
+        "linf": 2,
+        "manh": 3,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 13,
+        "is_P": true,
+        "pair": [
+          7,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          7,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 13,
+        "linf": 3,
+        "manh": 5,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 10,
+        "is_P": true,
+        "pair": [
+          7,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          8,
+          9
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          8,
+          12
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          8,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          9,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          10,
+          11
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 14,
+        "n_inter": 7,
+        "cov1": 9,
+        "is_P": true,
+        "pair": [
+          10,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 2,
+        "linf": 1,
+        "manh": 2,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          11,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          11,
+          15
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 12,
+        "deg_b": 9,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          12,
+          13
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 0,
+        "deg_a": 9,
+        "deg_b": 9,
+        "deg_sum": 18,
+        "deg_min": 9,
+        "deg_max": 9,
+        "n_union": 14,
+        "n_inter": 4,
+        "cov1": 8,
+        "is_P": true,
+        "pair": [
+          13,
+          14
+        ],
+        "d4": null
+      },
+      {
+        "d2": 1,
+        "linf": 1,
+        "manh": 1,
+        "corners": 1,
+        "deg_a": 9,
+        "deg_b": 12,
+        "deg_sum": 21,
+        "deg_min": 9,
+        "deg_max": 12,
+        "n_union": 15,
+        "n_inter": 6,
+        "cov1": 6,
+        "is_P": true,
+        "pair": [
+          14,
+          15
+        ],
+        "d4": null
+      }
+    ]
+  },
+  "b320": {
+    "n": 5,
+    "n_pairs": 300,
+    "n_P": 20,
+    "n_nonP": 280,
+    "n_mixed_keys": 2,
+    "mixed_keys": {
+      "((3, 3), 16)": {
+        "n": 8,
+        "nP": 4,
+        "nN": 4
+      },
+      "((3, 3), 10)": {
+        "n": 16,
+        "nP": 8,
+        "nN": 8
+      }
+    },
+    "mixed_detail": {
+      "((3, 3), 16)": {
+        "n": 8,
+        "n_P": 4,
+        "n_nonP": 4,
+        "stats": {
+          "has0": {
+            "P": {
+              "false": 4
+            },
+            "nonP": {
+              "true": 4
+            }
+          },
+          "has1": {
+            "P": {
+              "true": 4
+            },
+            "nonP": {
+              "false": 4
+            }
+          },
+          "n_child": {
+            "P": {
+              "23": 4
+            },
+            "nonP": {
+              "23": 4
+            }
+          },
+          "child_mex": {
+            "P": {
+              "0": 4
+            },
+            "nonP": {
+              "1": 4
+            }
+          },
+          "child_min": {
+            "P": {
+              "1": 4
+            },
+            "nonP": {
+              "0": 4
+            }
+          },
+          "child_max": {
+            "P": {
+              "5": 4
+            },
+            "nonP": {
+              "6": 4
+            }
+          },
+          "child_sets_P": [
+            [
+              1,
+              3,
+              5
+            ]
+          ],
+          "child_sets_nonP": [
+            [
+              0,
+              3,
+              5,
+              6
+            ]
+          ],
+          "mex_eq_g2_check": true,
+          "R1_0_not_in_children_iff_P": true
+        },
+        "examples_P": [
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "1": 2,
+              "3": 17,
+              "5": 4
+            },
+            "child_set": [
+              1,
+              3,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              0,
+              20
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "1": 2,
+              "3": 17,
+              "5": 4
+            },
+            "child_set": [
+              1,
+              3,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              4,
+              24
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "1": 2,
+              "3": 17,
+              "5": 4
+            },
+            "child_set": [
+              1,
+              3,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          }
+        ],
+        "examples_nonP": [
+          {
+            "pair": [
+              1,
+              21
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "0": 14,
+              "3": 6,
+              "5": 1,
+              "6": 2
+            },
+            "child_set": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 6,
+            "has0": true,
+            "has1": false
+          },
+          {
+            "pair": [
+              3,
+              23
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "0": 14,
+              "3": 6,
+              "5": 1,
+              "6": 2
+            },
+            "child_set": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 6,
+            "has0": true,
+            "has1": false
+          },
+          {
+            "pair": [
+              5,
+              9
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "0": 14,
+              "3": 6,
+              "5": 1,
+              "6": 2
+            },
+            "child_set": [
+              0,
+              3,
+              5,
+              6
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 6,
+            "has0": true,
+            "has1": false
+          }
+        ]
+      },
+      "((3, 3), 10)": {
+        "n": 16,
+        "n_P": 8,
+        "n_nonP": 8,
+        "stats": {
+          "has0": {
+            "P": {
+              "false": 8
+            },
+            "nonP": {
+              "true": 8
+            }
+          },
+          "has1": {
+            "P": {
+              "true": 8
+            },
+            "nonP": {
+              "false": 8
+            }
+          },
+          "n_child": {
+            "P": {
+              "23": 8
+            },
+            "nonP": {
+              "23": 8
+            }
+          },
+          "child_mex": {
+            "P": {
+              "0": 8
+            },
+            "nonP": {
+              "1": 8
+            }
+          },
+          "child_min": {
+            "P": {
+              "1": 8
+            },
+            "nonP": {
+              "0": 8
+            }
+          },
+          "child_max": {
+            "P": {
+              "5": 8
+            },
+            "nonP": {
+              "3": 8
+            }
+          },
+          "child_sets_P": [
+            [
+              1,
+              3,
+              4,
+              5
+            ]
+          ],
+          "child_sets_nonP": [
+            [
+              0,
+              3
+            ]
+          ],
+          "mex_eq_g2_check": true,
+          "R1_0_not_in_children_iff_P": true
+        },
+        "examples_P": [
+          {
+            "pair": [
+              1,
+              17
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "1": 1,
+              "3": 20,
+              "4": 1,
+              "5": 1
+            },
+            "child_set": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              3,
+              17
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "1": 1,
+              "3": 20,
+              "4": 1,
+              "5": 1
+            },
+            "child_set": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              5,
+              13
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "1": 1,
+              "3": 20,
+              "4": 1,
+              "5": 1
+            },
+            "child_set": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          }
+        ],
+        "examples_nonP": [
+          {
+            "pair": [
+              1,
+              9
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "0": 5,
+              "3": 18
+            },
+            "child_set": [
+              0,
+              3
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 3,
+            "has0": true,
+            "has1": false
+          },
+          {
+            "pair": [
+              1,
+              15
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "0": 5,
+              "3": 18
+            },
+            "child_set": [
+              0,
+              3
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 3,
+            "has0": true,
+            "has1": false
+          },
+          {
+            "pair": [
+              3,
+              5
+            ],
+            "g2": 1,
+            "is_P": false,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "0": 5,
+              "3": 18
+            },
+            "child_set": [
+              0,
+              3
+            ],
+            "child_mex": 1,
+            "child_min": 0,
+            "child_max": 3,
+            "has0": true,
+            "has1": false
+          }
+        ]
+      }
+    },
+    "accuracy": {
+      "0_not_in_children": {
+        "correct": 300,
+        "total": 300,
+        "perfect": true
+      },
+      "1_in_children": {
+        "correct": 228,
+        "total": 300,
+        "perfect": false
+      }
+    },
+    "two_hist": {
+      "1": 208,
+      "0": 20,
+      "2": 72
+    }
+  },
+  "summary": {
+    "B321_all_n_sigma_layer_no_consecutive": true,
+    "B321_all_layers_no_consecutive": {
+      "2": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "3": {
+        "0": false,
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "4": {
+        "0": false,
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true
+      },
+      "5": {
+        "0": false,
+        "1": false,
+        "2": false,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true
+      }
+    },
+    "B322_sigma_positive_missing_pow2_only": true,
+    "B322_all_layers": {
+      "2": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "3": {
+        "0": false,
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "4": {
+        "0": false,
+        "1": false,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true
+      },
+      "5": {
+        "0": false,
+        "1": false,
+        "2": false,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true
+      }
+    },
+    "B318_uniform_theorem_ok": {
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": null
+    }
+  }
+}

@@ -1,0 +1,713 @@
+{
+  "base": {
+    "K": 5,
+    "g0": 1,
+    "W": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "line_results": [
+    {
+      "label": "line[0, 1, 2]",
+      "deleted_idx": [
+        0,
+        1,
+        2
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[3, 4, 5]",
+      "deleted_idx": [
+        3,
+        4,
+        5
+      ],
+      "deleted_xy": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[6, 7, 8]",
+      "deleted_idx": [
+        6,
+        7,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[0, 3, 6]",
+      "deleted_idx": [
+        0,
+        3,
+        6
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[1, 4, 7]",
+      "deleted_idx": [
+        1,
+        4,
+        7
+      ],
+      "deleted_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[2, 5, 8]",
+      "deleted_idx": [
+        2,
+        5,
+        8
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[0, 4, 8]",
+      "deleted_idx": [
+        0,
+        4,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "line[2, 4, 6]",
+      "deleted_idx": [
+        2,
+        4,
+        6
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    }
+  ],
+  "Kdrop_3pt": [
+    {
+      "label": "c(0, 1, 2)",
+      "deleted_idx": [
+        0,
+        1,
+        2
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(0, 3, 6)",
+      "deleted_idx": [
+        0,
+        3,
+        6
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(0, 4, 8)",
+      "deleted_idx": [
+        0,
+        4,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(1, 4, 7)",
+      "deleted_idx": [
+        1,
+        4,
+        7
+      ],
+      "deleted_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(2, 4, 6)",
+      "deleted_idx": [
+        2,
+        4,
+        6
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(2, 5, 8)",
+      "deleted_idx": [
+        2,
+        5,
+        8
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(3, 4, 5)",
+      "deleted_idx": [
+        3,
+        4,
+        5
+      ],
+      "deleted_xy": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    },
+    {
+      "label": "c(6, 7, 8)",
+      "deleted_idx": [
+        6,
+        7,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second",
+      "winner_preserved": false
+    }
+  ],
+  "Kdrop_count": 8,
+  "winner_changes": [
+    {
+      "label": "c(0, 1, 2)",
+      "deleted_idx": [
+        0,
+        1,
+        2
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(0, 3, 6)",
+      "deleted_idx": [
+        0,
+        3,
+        6
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(0, 4, 8)",
+      "deleted_idx": [
+        0,
+        4,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(1, 4, 7)",
+      "deleted_idx": [
+        1,
+        4,
+        7
+      ],
+      "deleted_xy": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(2, 4, 6)",
+      "deleted_idx": [
+        2,
+        4,
+        6
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(2, 5, 8)",
+      "deleted_idx": [
+        2,
+        5,
+        8
+      ],
+      "deleted_xy": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(3, 4, 5)",
+      "deleted_idx": [
+        3,
+        4,
+        5
+      ],
+      "deleted_xy": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    },
+    {
+      "label": "c(6, 7, 8)",
+      "deleted_idx": [
+        6,
+        7,
+        8
+      ],
+      "deleted_xy": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "V": 6,
+      "K": 4,
+      "g0": 0,
+      "W_count": 0,
+      "W": [],
+      "winner": "Second"
+    }
+  ],
+  "winner_change_count": 8
+}

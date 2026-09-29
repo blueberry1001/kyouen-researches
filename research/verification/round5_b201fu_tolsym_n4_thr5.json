@@ -1,0 +1,78 @@
+{
+  "det_min_nonzero": 0,
+  "levels": {
+    "0": {
+      "K": 7,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 0,
+      "n_high_sym_orbits": 0,
+      "n_max": 64,
+      "n_orbits": 8,
+      "n_quads": 194,
+      "orbit_sizes_hist": {
+        "8": 8
+      }
+    },
+    "1": {
+      "K": 7,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 0,
+      "n_high_sym_orbits": 0,
+      "n_max": 64,
+      "n_orbits": 8,
+      "n_quads": 194,
+      "orbit_sizes_hist": {
+        "8": 8
+      }
+    },
+    "2": {
+      "K": 7,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 256,
+      "n_high_sym_orbits": 0,
+      "n_max": 8,
+      "n_orbits": 1,
+      "n_quads": 450,
+      "orbit_sizes_hist": {
+        "8": 1
+      }
+    },
+    "3": {
+      "K": 7,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 256,
+      "n_high_sym_orbits": 0,
+      "n_max": 8,
+      "n_orbits": 1,
+      "n_quads": 450,
+      "orbit_sizes_hist": {
+        "8": 1
+      }
+    },
+    "4": {
+      "K": 6,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 484,
+      "n_high_sym_orbits": 0,
+      "n_max": 96,
+      "n_orbits": 12,
+      "n_quads": 678,
+      "orbit_sizes_hist": {
+        "8": 12
+      }
+    },
+    "5": {
+      "K": 6,
+      "frac_high_sym_orbits": 0.0,
+      "n_extra_quads": 484,
+      "n_high_sym_orbits": 0,
+      "n_max": 96,
+      "n_orbits": 12,
+      "n_quads": 678,
+      "orbit_sizes_hist": {
+        "8": 12
+      }
+    }
+  },
+  "n": 4
+}

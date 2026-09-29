@@ -1,0 +1,7 @@
+{
+  "n_sets": 408,
+  "2out1in": {"total": 639744, "fail_forbidden_quad": 348896, "fail_uncovered_point": 290848, "success_maximal": 0},
+  "3out2in": {"total": 35185920, "fail_forbidden_quad": 21851472, "fail_uncovered_point": 13334448, "success_maximal": 0},
+  "1out1in": {"total": 182784, "fail_forbidden_quad": 145256, "fail_uncovered_point": 37448, "success_maximal": 80},
+  "1out2in": {"total": 5026560, "fail_forbidden_quad": 4891000, "fail_uncovered_point": 132160, "success_maximal": 3400}
+}

@@ -1,0 +1,375 @@
+{
+ "3": [
+  {
+   "label": "full_sig",
+   "n_multi_keys": 38,
+   "coll_g": 0,
+   "coll_mu": 0,
+   "coll_h": 0,
+   "sep_g": true,
+   "sep_mu": true,
+   "sep_h": true,
+   "ex_g": null,
+   "ex_mu": null,
+   "ex_h": null
+  },
+  {
+   "label": "no_hist",
+   "n_multi_keys": 38,
+   "coll_g": 0,
+   "coll_mu": 0,
+   "coll_h": 0,
+   "sep_g": true,
+   "sep_mu": true,
+   "sep_h": true,
+   "ex_g": null,
+   "ex_mu": null,
+   "ex_h": null
+  },
+  {
+   "label": "k_nL_nB1_bhist",
+   "n_multi_keys": 13,
+   "coll_g": 0,
+   "coll_mu": 0,
+   "coll_h": 0,
+   "sep_g": true,
+   "sep_mu": true,
+   "sep_h": true,
+   "ex_g": null,
+   "ex_mu": null,
+   "ex_h": null
+  },
+  {
+   "label": "k_nL_umax_umin_uhist",
+   "n_multi_keys": 25,
+   "coll_g": 0,
+   "coll_mu": 0,
+   "coll_h": 0,
+   "sep_g": true,
+   "sep_mu": true,
+   "sep_h": true,
+   "ex_g": null,
+   "ex_mu": null,
+   "ex_h": null
+  },
+  {
+   "label": "perfect_axis_triples",
+   "best": {
+    "g": {
+     "combo": [
+      "k"
+     ],
+     "coll_mu": 0,
+     "coll_h": 0
+    },
+    "mu": {
+     "combo": [
+      "k"
+     ],
+     "coll_g": 0,
+     "coll_h": 0
+    },
+    "h": {
+     "combo": [
+      "k"
+     ],
+     "coll_g": 0,
+     "coll_mu": 0
+    }
+   }
+  }
+ ],
+ "4": [
+  {
+   "label": "full_sig",
+   "n_multi_keys": 455,
+   "coll_g": 14,
+   "coll_mu": 2,
+   "coll_h": 5,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(4, 4, 1, 8, 1, 8, 0.2222, 3, 3, 1, 1.3209, (0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 16
+   },
+   "ex_mu": {
+    "key": "(4, 4, 1, 8, 1, 8, 0.2222, 3, 3, 1, 1.3209, (0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 16
+   },
+   "ex_h": {
+    "key": "(4, 6, 1, 6, 1, 6, 0.25, 4, 5, 2, 1.7354, (0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1), ",
+    "hs": [
+     2,
+     3
+    ],
+    "n": 16
+   }
+  },
+  {
+   "label": "no_hist",
+   "n_multi_keys": 455,
+   "coll_g": 14,
+   "coll_mu": 2,
+   "coll_h": 5,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(4, 4, 1, 8, 1, 8, 0.2222, 3, 3, 1, 1.3209)",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 16
+   },
+   "ex_mu": {
+    "key": "(4, 4, 1, 8, 1, 8, 0.2222, 3, 3, 1, 1.3209)",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 16
+   },
+   "ex_h": {
+    "key": "(4, 6, 1, 6, 1, 6, 0.25, 4, 5, 2, 1.7354)",
+    "hs": [
+     2,
+     3
+    ],
+    "n": 16
+   }
+  },
+  {
+   "label": "k_nL_nB1_bhist",
+   "n_multi_keys": 122,
+   "coll_g": 34,
+   "coll_mu": 24,
+   "coll_h": 32,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(5, 2, 6, (0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2))",
+    "gs": [
+     0,
+     1
+    ],
+    "n": 120
+   },
+   "ex_mu": {
+    "key": "(5, 2, 6, (0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2))",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 120
+   },
+   "ex_h": {
+    "key": "(5, 2, 6, (0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2))",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 120
+   }
+  },
+  {
+   "label": "k_nL_umax_umin_uhist",
+   "n_multi_keys": 333,
+   "coll_g": 15,
+   "coll_mu": 3,
+   "coll_h": 6,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(4, 4, 3, 1, (1, 2, 2, 3))",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 16
+   },
+   "ex_mu": {
+    "key": "(4, 4, 3, 1, (1, 2, 2, 3))",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 16
+   },
+   "ex_h": {
+    "key": "(5, 4, 4, 3, (3, 3, 4, 4))",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 40
+   }
+  },
+  {
+   "label": "perfect_axis_triples",
+   "best": {
+    "g": null,
+    "mu": null,
+    "h": null
+   }
+  }
+ ],
+ "5": [
+  {
+   "label": "full_sig",
+   "n_multi_keys": 11814,
+   "coll_g": 325,
+   "coll_mu": 194,
+   "coll_h": 167,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(6, 4, 1, 8, 3, 15, 0.6925, 3, 4, 2, 1.358, (0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 64
+   },
+   "ex_mu": {
+    "key": "(6, 4, 1, 8, 3, 15, 0.6925, 3, 4, 2, 1.358, (0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 64
+   },
+   "ex_h": {
+    "key": "(6, 4, 1, 7, 3, 15, 0.8476, 2, 4, 3, 1.3761, (0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 40
+   }
+  },
+  {
+   "label": "no_hist",
+   "n_multi_keys": 11711,
+   "coll_g": 328,
+   "coll_mu": 196,
+   "coll_h": 168,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(6, 4, 1, 8, 3, 15, 0.6925, 3, 4, 2, 1.358)",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 64
+   },
+   "ex_mu": {
+    "key": "(6, 4, 1, 8, 3, 15, 0.6925, 3, 4, 2, 1.358)",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 64
+   },
+   "ex_h": {
+    "key": "(6, 4, 1, 7, 3, 15, 0.8476, 2, 4, 3, 1.3761)",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 40
+   }
+  },
+  {
+   "label": "k_nL_nB1_bhist",
+   "n_multi_keys": 2140,
+   "coll_g": 521,
+   "coll_mu": 434,
+   "coll_h": 484,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(6, 3, 6, (0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3))",
+    "gs": [
+     0,
+     1,
+     2
+    ],
+    "n": 96
+   },
+   "ex_mu": {
+    "key": "(6, 3, 6, (0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3))",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 96
+   },
+   "ex_h": {
+    "key": "(6, 3, 6, (0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3))",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 96
+   }
+  },
+  {
+   "label": "k_nL_umax_umin_uhist",
+   "n_multi_keys": 7238,
+   "coll_g": 502,
+   "coll_mu": 263,
+   "coll_h": 309,
+   "sep_g": false,
+   "sep_mu": false,
+   "sep_h": false,
+   "ex_g": {
+    "key": "(5, 5, 4, 2, (2, 2, 3, 3, 4))",
+    "gs": [
+     0,
+     2
+    ],
+    "n": 112
+   },
+   "ex_mu": {
+    "key": "(5, 5, 4, 2, (2, 2, 3, 3, 4))",
+    "ms": [
+     1,
+     2
+    ],
+    "n": 112
+   },
+   "ex_h": {
+    "key": "(6, 4, 5, 3, (3, 4, 4, 5))",
+    "hs": [
+     1,
+     2
+    ],
+    "n": 488
+   }
+  },
+  {
+   "label": "perfect_axis_triples",
+   "best": {
+    "g": null,
+    "mu": null,
+    "h": null
+   }
+  }
+ ]
+}

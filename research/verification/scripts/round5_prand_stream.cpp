@@ -136,6 +136,11 @@ struct Ctx {
     std::vector<u64> quads;
     u64 FULL = 0;
     double build_s = 0;
+    // Fast legal-one lookup: for each 3-subset (p1<p2<p3), a bitmask of 4th
+    // points of quads containing that triple.  Size 64^3 * 8 = 2 MB.
+    // legal_one_fast enumerates C(k,3) triples of occ instead of scanning all
+    // F quads -- typically 100x fewer operations.
+    u64 triple_blk[64][64][64] = {};
 };
 static void build_ctx(Ctx& ctx, int n) {
     double t0 = now_s();
@@ -143,13 +148,39 @@ static void build_ctx(Ctx& ctx, int n) {
     ctx.n = n; ctx.V = ctx.board.V; ctx.FULL = ctx.board.full;
     ctx.quads = ctx.board.quads;
     std::sort(ctx.quads.begin(), ctx.quads.end());
+    // Build triple → blocked-4th-point table from quads.
+    memset(ctx.triple_blk, 0, sizeof(ctx.triple_blk));
+    for (u64 q : ctx.quads) {
+        int p[4], cnt = 0;
+        u64 t = q;
+        while (t) { p[cnt++] = __builtin_ctzll(t); t &= t - 1; }
+        if (cnt != 4) continue;
+        // p[0]<p[1]<p[2]<p[3] since ctz order
+        // For each 3-subset, the remaining point is blocked.
+        ctx.triple_blk[p[0]][p[1]][p[2]] |= (u64(1) << p[3]);
+        ctx.triple_blk[p[0]][p[1]][p[3]] |= (u64(1) << p[2]);
+        ctx.triple_blk[p[0]][p[2]][p[3]] |= (u64(1) << p[1]);
+        ctx.triple_blk[p[1]][p[2]][p[3]] |= (u64(1) << p[0]);
+    }
     ctx.build_s = now_s() - t0;
 }
 static inline u64 legal_one(const Ctx& ctx, u64 occ) {
     u64 empty = ctx.FULL & ~occ;
     u64 blocked = 0;
-    for (u64 q : ctx.quads)
-        if (__builtin_popcountll(occ & q) == 3) blocked |= (q & ~occ);
+    // Enumerate 3-subsets of occ: for each, look up the 4th-point mask.
+    u64 o1 = occ;
+    while (o1) {
+        int p1 = __builtin_ctzll(o1); o1 &= o1 - 1;
+        u64 o2 = o1;
+        while (o2) {
+            int p2 = __builtin_ctzll(o2); o2 &= o2 - 1;
+            u64 o3 = o2;
+            while (o3) {
+                int p3 = __builtin_ctzll(o3); o3 &= o3 - 1;
+                blocked |= ctx.triple_blk[p1][p2][p3];
+            }
+        }
+    }
     return empty & ~blocked;
 }
 static void legal_level(const Ctx& ctx, const u64* A, size_t M, u64* out) {
@@ -204,10 +235,27 @@ struct Spiller {
         if (!dir.empty()) { std::string c = "mkdir -p '" + dir + "'"; if (system(c.c_str())) {} }
     }
     std::string path(int k) const { return dir + "/level_" + std::to_string(k) + ".occ"; }
+    std::string okpath(int k) const { return dir + "/level_" + std::to_string(k) + ".ok"; }
+    // Mark level k as complete (call AFTER successful write).
+    void mark_ok(int k, size_t states) const {
+        FILE* f = fopen(okpath(k).c_str(), "w");
+        if (f) { fprintf(f, "%zu\n", states); fclose(f); }
+    }
+    void clear_ok(int k) const { unlink(okpath(k).c_str()); }
+    bool is_ok(int k, size_t* out_states = nullptr) const {
+        FILE* f = fopen(okpath(k).c_str(), "r");
+        if (!f) return false;
+        size_t s = 0;
+        if (fscanf(f, "%zu", &s) != 1) { fclose(f); return false; }
+        fclose(f);
+        if (out_states) *out_states = s;
+        return true;
+    }
 };
 
 static size_t gen_next_spill(const Ctx& ctx, const std::string& inpath, size_t M,
-                             const std::string& outpath, size_t* out_bytes) {
+                             const std::string& outpath, size_t* out_bytes,
+                             size_t* out_edges = nullptr) {
     const int V = ctx.V;
     const size_t CHUNK = 1u << 20;                  // 1M states = 8 MB per read
     const size_t WBUF  = 1u << 19;                  // 512 K states = 4 MB per write stream
@@ -215,7 +263,8 @@ static size_t gen_next_spill(const Ctx& ctx, const std::string& inpath, size_t M
     if (fd_in < 0) { fprintf(stderr, "cannot open %s\n", inpath.c_str()); exit(7); }
     std::vector<u64> rin(CHUNK), lmin(CHUNK);
     std::vector<size_t> pcnt(64, 0);
-    // ---- pass 1: count buckets by streaming A ----
+    size_t edge_cnt = 0;
+    // ---- pass 1: count buckets and edges by streaming A ----
     for (size_t done = 0; done < M; ) {
         size_t want = std::min(CHUNK, M - done);
         ssize_t got = 0, want_b = (ssize_t)(want * 8);
@@ -228,12 +277,14 @@ static size_t gen_next_spill(const Ctx& ctx, const std::string& inpath, size_t M
         legal_level(ctx, rin.data(), want, lmin.data());
         for (size_t i = 0; i < want; ++i) {
             u64 S = rin[i], lm = lmin[i];
+            edge_cnt += __builtin_popcountll(lm);
             if (!lm) continue;
             int hb = hib(S);
             while (lm) { int v = __builtin_ctzll(lm); lm &= lm - 1; if (v > hb) ++pcnt[v]; }
         }
         done += want;
     }
+    if (out_edges) *out_edges = edge_cnt;
     std::vector<size_t> off(65, 0);
     for (int v = 0; v < V; ++v) off[v + 1] = off[v] + pcnt[v];
     size_t tot = off[V];
@@ -359,19 +410,19 @@ int main(int argc, char** argv) {
     lsizes.push_back(1); ledges.push_back(ctx.V); total_states = 1;
     double t_enum = now_s();
 
-    // --resume: adopt spill files that already exist, so a run killed mid-level
-    // restarts at the first missing level instead of redoing hours of work.  A
-    // level file is only trusted if its size is a multiple of 8 and does not
-    // exceed the previous level's size (levels grow until the peak, so a larger
-    // file means the run died partway through writing it).
+    // --resume: adopt spill files that already exist AND have a .ok marker
+    // (the marker is written only after the level is fully generated, so a
+    // half-written .occ from a killed run is correctly ignored).
     if (resume) {
         std::vector<size_t> szs;
         for (int k = 0; k <= ctx.V + 2; ++k) {
+            size_t ok_sz = 0;
+            if (!sp.is_ok(k, &ok_sz)) break;
             struct stat stb;
             if (stat(sp.path(k).c_str(), &stb) != 0) break;
             if (stb.st_size <= 0 || (stb.st_size % 8) != 0) break;
             size_t sz = (size_t)(stb.st_size / 8);
-            if (!szs.empty() && sz > szs.back()) break;   // partial file
+            if (sz != ok_sz) break;   // .ok doesn't match file size
             szs.push_back(sz);
         }
         if (!szs.empty()) {
@@ -389,25 +440,33 @@ int main(int argc, char** argv) {
     }
 
     if (!spill.empty()) {
-        // level 0
-        std::vector<u64> a0(1, 0u);
-        int fd = open(sp.path(0).c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0644);
-        if (fd < 0) { fprintf(stderr, "cannot write %s\n", sp.path(0).c_str()); exit(7); }
-        ssize_t w = write(fd, a0.data(), 8); (void)w; close(fd);
-        for (int step = 0; step <= ctx.V && (int)lsizes.size() - 1 < maxlevel; ++step) {
+        // Start from the last complete level when resuming; otherwise write level 0.
+        int start_step = 0;
+        if (resume && lsizes.size() > 1) {
+            start_step = (int)lsizes.size() - 1;
+            fprintf(stderr, "    [resume] starting loop at level %d\n", start_step);
+        } else {
+            std::vector<u64> a0(1, 0u);
+            int fd = open(sp.path(0).c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0644);
+            if (fd < 0) { fprintf(stderr, "cannot write %s\n", sp.path(0).c_str()); exit(7); }
+            ssize_t w = write(fd, a0.data(), 8); (void)w; close(fd);
+            sp.mark_ok(0, 1);
+        }
+        for (int step = start_step; step <= ctx.V && (int)lsizes.size() - 1 < maxlevel; ++step) {
             double t0 = now_s();
-            size_t M = lsizes.back();
-            std::vector<u64> A; load_level(sp.path(step), A);
-            if (A.size() != M) { fprintf(stderr, "size mismatch level %d\n", step); exit(7); }
-            std::vector<u64> LM(M);
-            legal_level(ctx, A.data(), M, LM.data());
-            size_t E = 0;
-            for (size_t i = 0; i < M; ++i) E += __builtin_popcountll(LM[i]);
+            if (step >= (int)lsizes.size()) {
+                fprintf(stderr, "INTERNAL: step %d beyond lsizes %zu\n", step, lsizes.size());
+                exit(7);
+            }
+            size_t M = lsizes[(size_t)step];
+            // Generate next level and count edges in one streaming pass
+            // (no full-level load — that OOMs for |L| > ~300M).
+            sp.clear_ok(step + 1);
+            size_t bytes = 0, E = 0;
+            size_t ns = gen_next_spill(ctx, sp.path(step), M, sp.path(step + 1), &bytes, &E);
             ledges[step] = E;
-            std::vector<u64>().swap(A); std::vector<u64>().swap(LM);
-            if (E == 0) break;
-            size_t bytes = 0;
-            size_t ns = gen_next_spill(ctx, sp.path(step), M, sp.path(step + 1), &bytes);
+            if (ns == 0 && E == 0) break;   // no legal moves from this level
+            sp.mark_ok(step + 1, ns);
             total_states += ns; lsizes.push_back(ns); ledges.push_back(0);
             fprintf(stderr, "    level %2d: %12zu states  out=%6.2f GB  edges=%12zu  "
                     "rss=%.2fGB peak=%.2fGB  %.1fs\n",

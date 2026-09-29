@@ -1,0 +1,561 @@
+{
+  "analytic_identities": {
+    "covariance_identities": 2601,
+    "covariance_bounds": 879,
+    "tail_polynomial_identities": 171,
+    "tail_remainder_bounds": 61
+  },
+  "small_boards": [
+    {
+      "n": 3,
+      "curve_count": 14,
+      "size_histogram": {
+        "4": 14
+      },
+      "G": {
+        "4": 14,
+        "5": 0,
+        "6": 0
+      },
+      "collinear_five_sets": 0,
+      "forbidden_edges_independently_checked": 14,
+      "five_edge_pair_intersections": {},
+      "curve_pair_histogram": [
+        [
+          4,
+          4,
+          0,
+          5
+        ],
+        [
+          4,
+          4,
+          1,
+          22
+        ],
+        [
+          4,
+          4,
+          2,
+          64
+        ]
+      ],
+      "all_subsets_checked": 512,
+      "exact_probability_checks": [
+        {
+          "p": {
+            "numerator": 1,
+            "denominator": 7
+          },
+          "Lambda": {
+            "numerator": 2,
+            "denominator": 343
+          },
+          "variance": {
+            "numerator": 40008,
+            "denominator": 5764801
+          },
+          "sum_q_squared_plus_ordered_covariances": {
+            "numerator": 6422,
+            "denominator": 5764801
+          },
+          "safe_probability": {
+            "numerator": 819072,
+            "denominator": 823543
+          },
+          "moment_identity_pass": true,
+          "five_set_mean": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "five_set_second_binomial_moment": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "bundle_probability": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "bonferroni_pass": true
+        },
+        {
+          "p": {
+            "numerator": 1,
+            "denominator": 11
+          },
+          "Lambda": {
+            "numerator": 14,
+            "denominator": 14641
+          },
+          "variance": {
+            "numerator": 220760,
+            "denominator": 214358881
+          },
+          "sum_q_squared_plus_ordered_covariances": {
+            "numerator": 15814,
+            "denominator": 214358881
+          },
+          "safe_probability": {
+            "numerator": 214160000,
+            "denominator": 214358881
+          },
+          "moment_identity_pass": true,
+          "five_set_mean": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "five_set_second_binomial_moment": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "bundle_probability": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "bonferroni_pass": true
+        }
+      ],
+      "fixed_k_five_set_moments_all_pass": true,
+      "safe_sets_by_size": {
+        "0": 1,
+        "1": 9,
+        "2": 36,
+        "3": 84,
+        "4": 112,
+        "5": 56,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      }
+    },
+    {
+      "n": 4,
+      "curve_count": 69,
+      "size_histogram": {
+        "4": 64,
+        "6": 4,
+        "8": 1
+      },
+      "G": {
+        "4": 194,
+        "5": 80,
+        "6": 32
+      },
+      "collinear_five_sets": 0,
+      "forbidden_edges_independently_checked": 194,
+      "five_edge_pair_intersections": {
+        "0": 344,
+        "1": 832,
+        "2": 664,
+        "3": 840,
+        "4": 480
+      },
+      "curve_pair_histogram": [
+        [
+          4,
+          4,
+          0,
+          628
+        ],
+        [
+          4,
+          4,
+          1,
+          824
+        ],
+        [
+          4,
+          4,
+          2,
+          564
+        ],
+        [
+          4,
+          6,
+          0,
+          16
+        ],
+        [
+          4,
+          6,
+          1,
+          80
+        ],
+        [
+          4,
+          6,
+          2,
+          160
+        ],
+        [
+          4,
+          8,
+          0,
+          8
+        ],
+        [
+          4,
+          8,
+          2,
+          56
+        ],
+        [
+          6,
+          6,
+          0,
+          2
+        ],
+        [
+          6,
+          6,
+          2,
+          4
+        ],
+        [
+          6,
+          8,
+          2,
+          4
+        ]
+      ],
+      "all_subsets_checked": 65536,
+      "exact_probability_checks": [
+        {
+          "p": {
+            "numerator": 1,
+            "denominator": 7
+          },
+          "Lambda": {
+            "numerator": 52947,
+            "denominator": 823543
+          },
+          "variance": {
+            "numerator": 69812044896,
+            "denominator": 678223072849
+          },
+          "sum_q_squared_plus_ordered_covariances": {
+            "numerator": 26793872757,
+            "denominator": 678223072849
+          },
+          "safe_probability": {
+            "numerator": 4503198302208,
+            "denominator": 4747561509943
+          },
+          "moment_identity_pass": true,
+          "five_set_mean": {
+            "numerator": 80,
+            "denominator": 16807
+          },
+          "five_set_second_binomial_moment": {
+            "numerator": 1479304,
+            "denominator": 282475249
+          },
+          "bundle_probability": {
+            "numerator": 116139345793,
+            "denominator": 33232930569601
+          },
+          "bonferroni_pass": true
+        },
+        {
+          "p": {
+            "numerator": 1,
+            "denominator": 11
+          },
+          "Lambda": {
+            "numerator": 2451429,
+            "denominator": 214358881
+          },
+          "variance": {
+            "numerator": 655854941512800,
+            "denominator": 45949729863572161
+          },
+          "sum_q_squared_plus_ordered_covariances": {
+            "numerator": 131834011160229,
+            "denominator": 45949729863572161
+          },
+          "safe_probability": {
+            "numerator": 45472704000000000,
+            "denominator": 45949729863572161
+          },
+          "moment_identity_pass": true,
+          "five_set_mean": {
+            "numerator": 80,
+            "denominator": 161051
+          },
+          "five_set_second_binomial_moment": {
+            "numerator": 8235560,
+            "denominator": 25937424601
+          },
+          "bundle_probability": {
+            "numerator": 18885967572161,
+            "denominator": 45949729863572161
+          },
+          "bonferroni_pass": true
+        }
+      ],
+      "fixed_k_five_set_moments_all_pass": true,
+      "safe_sets_by_size": {
+        "0": 1,
+        "1": 16,
+        "2": 120,
+        "3": 560,
+        "4": 1626,
+        "5": 2360,
+        "6": 1064,
+        "7": 64,
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 0
+      }
+    },
+    {
+      "n": 5,
+      "curve_count": 233,
+      "size_histogram": {
+        "5": 20,
+        "4": 196,
+        "6": 12,
+        "8": 5
+      },
+      "G": {
+        "4": 826,
+        "5": 372,
+        "6": 152
+      },
+      "collinear_five_sets": 12,
+      "forbidden_edges_independently_checked": 826,
+      "five_edge_pair_intersections": {
+        "0": 21322,
+        "1": 29510,
+        "2": 11694,
+        "3": 4200,
+        "4": 2280
+      },
+      "curve_pair_histogram": [
+        [
+          4,
+          4,
+          0,
+          9260
+        ],
+        [
+          4,
+          4,
+          1,
+          7662
+        ],
+        [
+          4,
+          4,
+          2,
+          2188
+        ],
+        [
+          4,
+          5,
+          0,
+          1672
+        ],
+        [
+          4,
+          5,
+          1,
+          1392
+        ],
+        [
+          4,
+          5,
+          2,
+          856
+        ],
+        [
+          4,
+          6,
+          0,
+          732
+        ],
+        [
+          4,
+          6,
+          1,
+          1056
+        ],
+        [
+          4,
+          6,
+          2,
+          564
+        ],
+        [
+          4,
+          8,
+          0,
+          180
+        ],
+        [
+          4,
+          8,
+          1,
+          328
+        ],
+        [
+          4,
+          8,
+          2,
+          472
+        ],
+        [
+          5,
+          5,
+          0,
+          50
+        ],
+        [
+          5,
+          5,
+          1,
+          102
+        ],
+        [
+          5,
+          5,
+          2,
+          38
+        ],
+        [
+          5,
+          6,
+          0,
+          56
+        ],
+        [
+          5,
+          6,
+          1,
+          56
+        ],
+        [
+          5,
+          6,
+          2,
+          128
+        ],
+        [
+          5,
+          8,
+          0,
+          32
+        ],
+        [
+          5,
+          8,
+          2,
+          68
+        ],
+        [
+          6,
+          6,
+          0,
+          8
+        ],
+        [
+          6,
+          6,
+          1,
+          24
+        ],
+        [
+          6,
+          6,
+          2,
+          34
+        ],
+        [
+          6,
+          8,
+          0,
+          12
+        ],
+        [
+          6,
+          8,
+          2,
+          48
+        ],
+        [
+          8,
+          8,
+          2,
+          10
+        ]
+      ]
+    }
+  ],
+  "collinear_five_set_counts": [
+    {
+      "n": 8,
+      "D5": 1120,
+      "D5_over_n6": {
+        "numerator": 35,
+        "denominator": 8192
+      }
+    },
+    {
+      "n": 16,
+      "D5": 185616,
+      "D5_over_n6": {
+        "numerator": 11601,
+        "denominator": 1048576
+      }
+    },
+    {
+      "n": 32,
+      "D5": 17886272,
+      "D5_over_n6": {
+        "numerator": 279473,
+        "denominator": 16777216
+      }
+    },
+    {
+      "n": 64,
+      "D5": 1393161920,
+      "D5_over_n6": {
+        "numerator": 21768155,
+        "denominator": 1073741824
+      }
+    },
+    {
+      "n": 128,
+      "D5": 98318750448,
+      "D5_over_n6": {
+        "numerator": 6144921903,
+        "denominator": 274877906944
+      }
+    },
+    {
+      "n": 256,
+      "D5": 6609440931024,
+      "D5_over_n6": {
+        "numerator": 413090058189,
+        "denominator": 17592186044416
+      }
+    },
+    {
+      "n": 512,
+      "D5": 433614786675792,
+      "D5_over_n6": {
+        "numerator": 27100924167237,
+        "denominator": 1125899906842624
+      }
+    }
+  ],
+  "script_sha256": "792348468103b7c437763b8fd19468c31ceb7df9b15e48e8d1a98f4696b97090",
+  "scope": "Exact finite cross-checks only. General proofs and external inputs are in round14-safety-correction.md."
+}

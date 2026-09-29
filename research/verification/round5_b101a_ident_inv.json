@@ -1,0 +1,482 @@
+{
+  "b106_n4": {
+    "n": 4,
+    "K": 7,
+    "n_max": 64,
+    "min_det": 3,
+    "max_det": 5,
+    "mean_det": 4.0,
+    "ident_curve": {
+      "1": 0,
+      "2": 0,
+      "3": 8,
+      "4": 56,
+      "5": 64,
+      "6": 64
+    },
+    "n_unidentified_within_c": 0,
+    "log2_nmax": 6,
+    "min_det_vs_log": 0.5
+  },
+  "b106_n5": {
+    "n": 5,
+    "K": 9,
+    "n_max": 100,
+    "min_det": 3,
+    "max_det": 4,
+    "mean_det": 3.28,
+    "ident_curve": {
+      "1": 0,
+      "2": 0,
+      "3": 72,
+      "4": 100,
+      "5": 100,
+      "6": 100
+    },
+    "n_unidentified_within_c": 0,
+    "log2_nmax": 6,
+    "min_det_vs_log": 0.5
+  },
+  "b106_n6": {
+    "n": 6,
+    "K": 11,
+    "n_max": 464,
+    "min_det": 3,
+    "max_det": 6,
+    "mean_det": 3.8448275862068964,
+    "ident_curve": {
+      "1": 0,
+      "2": 0,
+      "3": 160,
+      "4": 400,
+      "5": 440,
+      "6": 464
+    },
+    "n_unidentified_within_c": 0,
+    "log2_nmax": 8,
+    "min_det_vs_log": 0.375
+  },
+  "b107_correlation": {
+    "pairs_n_nmax_mindet": [
+      [
+        4,
+        64,
+        3
+      ],
+      [
+        5,
+        100,
+        3
+      ],
+      [
+        6,
+        464,
+        3
+      ],
+      [
+        7,
+        16,
+        2
+      ]
+    ],
+    "sorted_by_nmax": [
+      [
+        7,
+        16,
+        2
+      ],
+      [
+        4,
+        64,
+        3
+      ],
+      [
+        5,
+        100,
+        3
+      ],
+      [
+        6,
+        464,
+        3
+      ]
+    ],
+    "min_det_monotone_nondecreasing_in_nmax": true
+  },
+  "b140_n4": {
+    "n": 4,
+    "n_trials": 20,
+    "n_inversion_ok": 0,
+    "n_safe": 0,
+    "n_maximal": 0,
+    "examples": [
+      {
+        "chosen": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "inversion_ok": false,
+        "R2": 40
+      },
+      {
+        "chosen": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "inversion_ok": false,
+        "R2": 104
+      },
+      {
+        "chosen": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "inversion_ok": false,
+        "R2": 90
+      },
+      {
+        "chosen": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "inversion_ok": false,
+        "R2": 90
+      },
+      {
+        "chosen": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "inversion_ok": false,
+        "R2": 90
+      }
+    ]
+  },
+  "b140_n5": {
+    "n": 5,
+    "n_trials": 4,
+    "n_inversion_ok": 4,
+    "n_safe": 0,
+    "n_maximal": 0,
+    "examples": [
+      {
+        "chosen": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "inversion_ok": true,
+        "R2": 20,
+        "inv_pts": [
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "board_n": 11,
+        "safe_on_board": false,
+        "note": "board too large"
+      },
+      {
+        "chosen": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "inversion_ok": true,
+        "R2": 2340,
+        "inv_pts": [
+          [
+            936,
+            0
+          ],
+          [
+            0,
+            702
+          ],
+          [
+            126,
+            540
+          ],
+          [
+            156,
+            390
+          ],
+          [
+            0,
+            468
+          ]
+        ],
+        "board_n": 937,
+        "safe_on_board": false,
+        "note": "board too large"
+      },
+      {
+        "chosen": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "inversion_ok": true,
+        "R2": 20,
+        "inv_pts": [
+          [
+            10,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "board_n": 11,
+        "safe_on_board": false,
+        "note": "board too large"
+      },
+      {
+        "chosen": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "inversion_ok": true,
+        "R2": 2340,
+        "inv_pts": [
+          [
+            702,
+            0
+          ],
+          [
+            0,
+            936
+          ],
+          [
+            540,
+            126
+          ],
+          [
+            468,
+            0
+          ],
+          [
+            390,
+            156
+          ]
+        ],
+        "board_n": 937,
+        "safe_on_board": false,
+        "note": "board too large"
+      }
+    ]
+  },
+  "b104_n4": {
+    "n": 4,
+    "n_orbits": 3,
+    "n_never_used_orbits": 0,
+    "n_never_used_points": 0,
+    "never_used_orbits": [],
+    "usage_min": 1432
+  },
+  "b104_n5": {
+    "n": 5,
+    "n_orbits": 6,
+    "n_never_used_orbits": 0,
+    "n_never_used_points": 0,
+    "never_used_orbits": [],
+    "usage_min": 5116
+  },
+  "b104_n6": {
+    "n": 6,
+    "n_orbits": 6,
+    "n_never_used_orbits": 0,
+    "n_never_used_points": 0,
+    "never_used_orbits": [],
+    "usage_min": 296704
+  }
+}

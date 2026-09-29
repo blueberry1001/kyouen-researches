@@ -1,0 +1,27 @@
+{
+ "n": 4,
+ "V": 16,
+ "F": 194,
+ "base_g": 0,
+ "bucket_sizes": {
+  "empty": 5811,
+  "single": 6734,
+  "pair": 5160,
+  "exact3": 4112,
+  "ge4": 43719
+ },
+ "B522": {
+  "n_keys3_tested": 3356,
+  "n_extra_tested": 0,
+  "n_flips": 0,
+  "flips": [],
+  "delta_quad_bounds": {
+   "lower": 3,
+   "upper": 70,
+   "note": "B521: all pairs keep second win; circle-bundle 70 flips"
+  }
+ },
+ "timing_s": {
+  "total": 86.3
+ }
+}

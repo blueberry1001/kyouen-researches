@@ -1,0 +1,2847 @@
+{
+  "five_point_lemma": {
+    "systems": 243,
+    "rank4": 243,
+    "minor_determinant_hist": {
+      "1": 78,
+      "-1": 66,
+      "-3": 39,
+      "3": 42,
+      "-5": 12,
+      "5": 6
+    },
+    "certificates": [
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          0,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          0,
+          1,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          0,
+          2,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          0,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          1,
+          1,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          1,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          0,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          2,
+          1,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 5
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          0,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -5
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          0,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          0,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          1,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 3
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          2,
+          0
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "omitted_row": 0,
+        "determinant": -1
+      },
+      {
+        "choices": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "omitted_row": 0,
+        "determinant": 1
+      }
+    ]
+  },
+  "small_hypergraphs": [
+    {
+      "n": 3,
+      "forbidden_quads": 14,
+      "max_codegrees": {
+        "1": 7,
+        "2": 3,
+        "3": 1
+      },
+      "edge_pair_intersections": {
+        "2": 64,
+        "1": 22,
+        "0": 5
+      },
+      "five_set_edge_histogram": {
+        "1": 70,
+        "0": 56
+      },
+      "G5": 0,
+      "A3": 0,
+      "p5_coefficient": 0,
+      "identities_pass": true
+    },
+    {
+      "n": 4,
+      "forbidden_quads": 194,
+      "max_codegrees": {
+        "1": 59,
+        "2": 23,
+        "3": 5
+      },
+      "edge_pair_intersections": {
+        "2": 4308,
+        "1": 8296,
+        "0": 5317,
+        "3": 800
+      },
+      "five_set_edge_histogram": {
+        "1": 1928,
+        "0": 2360,
+        "5": 80
+      },
+      "G5": 80,
+      "A3": 800,
+      "p5_coefficient": 320,
+      "identities_pass": true
+    },
+    {
+      "n": 5,
+      "forbidden_quads": 826,
+      "max_codegrees": {
+        "1": 156,
+        "2": 36,
+        "3": 5
+      },
+      "edge_pair_intersections": {
+        "3": 3720,
+        "2": 35560,
+        "1": 137842,
+        "0": 163603
+      },
+      "five_set_edge_histogram": {
+        "5": 372,
+        "1": 15486,
+        "0": 37272
+      },
+      "G5": 372,
+      "A3": 3720,
+      "p5_coefficient": 1488,
+      "identities_pass": true
+    }
+  ],
+  "rich_circle_catalog_check": {
+    "source": "round3_b451_census.json",
+    "sha256": "b904ccc224c213713edc708972eaa9707e38341d683a740ce726845869e9f970",
+    "boards": [
+      {
+        "n": 4,
+        "rich_circles": 5,
+        "quad_contribution": 130,
+        "asymmetric_quad_contribution": 88,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 5,
+        "rich_circles": 25,
+        "quad_contribution": 570,
+        "asymmetric_quad_contribution": 392,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 6,
+        "rich_circles": 75,
+        "quad_contribution": 1710,
+        "asymmetric_quad_contribution": 1176,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 7,
+        "rich_circles": 167,
+        "quad_contribution": 4290,
+        "asymmetric_quad_contribution": 2968,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 8,
+        "rich_circles": 326,
+        "quad_contribution": 9885,
+        "asymmetric_quad_contribution": 7088,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 9,
+        "rich_circles": 726,
+        "quad_contribution": 20000,
+        "asymmetric_quad_contribution": 14592,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 10,
+        "rich_circles": 1302,
+        "quad_contribution": 37645,
+        "asymmetric_quad_contribution": 27928,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 11,
+        "rich_circles": 2074,
+        "quad_contribution": 66469,
+        "asymmetric_quad_contribution": 50176,
+        "each_circle_bound_pass": true
+      },
+      {
+        "n": 12,
+        "rich_circles": 3266,
+        "quad_contribution": 110507,
+        "asymmetric_quad_contribution": 84704,
+        "each_circle_bound_pass": true
+      }
+    ]
+  },
+  "scope": "finite cross-checks only; asymptotic proofs are in the two round13 markdown files",
+  "external_inputs": [
+    {
+      "authors": "Ghosal, Goenka, Keevash",
+      "url": "https://link.springer.com/article/10.1007/s00454-026-00853-7",
+      "used": [
+        "Theorem 1.3: C_n=Theta(n^5)",
+        "Lemma 4.1: asymmetric count O_epsilon(n^(4+18/29+epsilon))"
+      ]
+    },
+    {
+      "authors": "Arratia, Goldstein, Gordon",
+      "year": 1989,
+      "theorem": 1,
+      "url": "https://dornsife.usc.edu/larry-goldstein/wp-content/uploads/sites/221/2023/06/AGG.pdf"
+    }
+  ]
+}

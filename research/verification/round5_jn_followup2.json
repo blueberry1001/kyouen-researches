@@ -1,0 +1,1340 @@
+{
+  "b312": {
+    "n": 4,
+    "n_P": 84,
+    "n_TD": 40,
+    "n_nonTD": 44,
+    "td_n_inter_hist": {
+      "5": 16,
+      "8": 24
+    },
+    "nontd_n_inter_hist": {
+      "4": 12,
+      "6": 16,
+      "7": 16
+    },
+    "n_inter_perfect": true,
+    "td_n_union_hist": {
+      "16": 40
+    },
+    "nontd_n_union_hist": {
+      "14": 28,
+      "15": 16
+    },
+    "n_union_perfect": true,
+    "td_examples": [
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "n_inter": 8,
+        "n_union": 16,
+        "d2": 9,
+        "deg_a": 12,
+        "deg_b": 12
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "n_inter": 8,
+        "n_union": 16,
+        "d2": 2,
+        "deg_a": 12,
+        "deg_b": 12
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "n_inter": 8,
+        "n_union": 16,
+        "d2": 5,
+        "deg_a": 12,
+        "deg_b": 12
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "n_inter": 5,
+        "n_union": 16,
+        "d2": 10,
+        "deg_a": 12,
+        "deg_b": 9
+      }
+    ],
+    "nontd_examples": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "n_inter": 6,
+        "n_union": 15,
+        "d2": 1,
+        "deg_a": 12,
+        "deg_b": 9
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "n_inter": 6,
+        "n_union": 15,
+        "d2": 1,
+        "deg_a": 12,
+        "deg_b": 9
+      },
+      {
+        "pair": [
+          0,
+          11
+        ],
+        "n_inter": 7,
+        "n_union": 14,
+        "d2": 13,
+        "deg_a": 12,
+        "deg_b": 9
+      },
+      {
+        "pair": [
+          0,
+          14
+        ],
+        "n_inter": 7,
+        "n_union": 14,
+        "d2": 13,
+        "deg_a": 12,
+        "deg_b": 9
+      }
+    ]
+  },
+  "one_stone_J": {
+    "2": {
+      "one_hist": {
+        "0": 4
+      },
+      "two_hist": {
+        "1": 6
+      },
+      "uniform": true,
+      "uniform_h": 0,
+      "thm_h_absent_in_two": true,
+      "thm_violations": 0,
+      "g0_iff_J_isolated": true,
+      "cells_g_hasP": {
+        "g=0,hasP=False": 4
+      },
+      "g_empty": 1
+    },
+    "3": {
+      "one_hist": {
+        "0": 9
+      },
+      "two_hist": {
+        "1": 36
+      },
+      "uniform": true,
+      "uniform_h": 0,
+      "thm_h_absent_in_two": true,
+      "thm_violations": 0,
+      "g0_iff_J_isolated": true,
+      "cells_g_hasP": {
+        "g=0,hasP=False": 9
+      },
+      "g_empty": 1
+    },
+    "4": {
+      "one_hist": {
+        "1": 16
+      },
+      "two_hist": {
+        "0": 84,
+        "5": 8,
+        "2": 20,
+        "3": 8
+      },
+      "uniform": true,
+      "uniform_h": 1,
+      "thm_h_absent_in_two": true,
+      "thm_violations": 0,
+      "g0_iff_J_isolated": true,
+      "cells_g_hasP": {
+        "g=1,hasP=True": 16
+      },
+      "g_empty": 0
+    },
+    "5": {
+      "one_hist": {
+        "3": 16,
+        "0": 9
+      },
+      "two_hist": {
+        "1": 208,
+        "0": 20,
+        "2": 72
+      },
+      "uniform": false,
+      "uniform_h": null,
+      "thm_h_absent_in_two": null,
+      "thm_violations": null,
+      "g0_iff_J_isolated": true,
+      "cells_g_hasP": {
+        "g=0,hasP=False": 9,
+        "g=3,hasP=True": 16
+      },
+      "g_empty": 1
+    },
+    "6": {
+      "one_hist": {
+        "0": 36
+      },
+      "two_hist": {
+        "1": 596,
+        "3": 34
+      },
+      "uniform": true,
+      "uniform_h": 0,
+      "thm_h_absent_in_two": true,
+      "thm_violations": 0,
+      "g0_iff_J_isolated": true,
+      "note": "from round5_b301_j6 / prior batch; J_6 empty is a theorem consequence"
+    }
+  },
+  "b321_b322_n6": {
+    "holes_by_n": {
+      "2": {
+        "K": 3,
+        "sigma_given": 2,
+        "sigma_computed": 2,
+        "sigma_match": true,
+        "layer_k": 2,
+        "K_minus_sigma": 1,
+        "present": [
+          1
+        ],
+        "missing": [
+          0
+        ],
+        "consecutive_missing_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": [],
+        "zero_missing": true,
+        "layer_hist": {
+          "1": 6
+        }
+      },
+      "3": {
+        "K": 5,
+        "sigma_given": 4,
+        "sigma_computed": 4,
+        "sigma_match": true,
+        "layer_k": 4,
+        "K_minus_sigma": 1,
+        "present": [
+          1
+        ],
+        "missing": [
+          0
+        ],
+        "consecutive_missing_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": [],
+        "zero_missing": true,
+        "layer_hist": {
+          "1": 112
+        }
+      },
+      "4": {
+        "K": 7,
+        "sigma_given": 2,
+        "sigma_computed": 2,
+        "sigma_match": true,
+        "layer_k": 2,
+        "K_minus_sigma": 5,
+        "present": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "missing": [
+          1,
+          4
+        ],
+        "consecutive_missing_pairs": [],
+        "positive_missing": [
+          1,
+          4
+        ],
+        "positive_missing_non_pow2": [],
+        "zero_missing": false,
+        "layer_hist": {
+          "0": 84,
+          "2": 20,
+          "3": 8,
+          "5": 8
+        }
+      },
+      "5": {
+        "K": 9,
+        "sigma_given": 3,
+        "sigma_computed": 3,
+        "sigma_match": true,
+        "layer_k": 3,
+        "K_minus_sigma": 6,
+        "present": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "missing": [],
+        "consecutive_missing_pairs": [],
+        "positive_missing": [],
+        "positive_missing_non_pow2": [],
+        "zero_missing": false,
+        "layer_hist": {
+          "0": 550,
+          "1": 48,
+          "2": 20,
+          "3": 1506,
+          "4": 4,
+          "5": 100,
+          "6": 72
+        }
+      },
+      "6": {
+        "K": 11,
+        "sigma_given": 3,
+        "sigma_computed": 3,
+        "sigma_match": true,
+        "layer_k": 3,
+        "K_minus_sigma": 8,
+        "present": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8
+        ],
+        "missing": [
+          4
+        ],
+        "consecutive_missing_pairs": [],
+        "positive_missing": [
+          4
+        ],
+        "positive_missing_non_pow2": [],
+        "zero_missing": false,
+        "layer_hist": {
+          "0": 5336,
+          "1": 16,
+          "2": 980,
+          "3": 60,
+          "5": 716,
+          "6": 16,
+          "7": 8,
+          "8": 8
+        }
+      }
+    },
+    "B321": {
+      "all_n_no_consecutive_missing": true,
+      "details": {
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": []
+      }
+    },
+    "B322": {
+      "all_missing_positive_are_pow2": true,
+      "positive_missing": {
+        "2": [],
+        "3": [],
+        "4": [
+          1,
+          4
+        ],
+        "5": [],
+        "6": [
+          4
+        ]
+      }
+    }
+  },
+  "b320": {
+    "n": 5,
+    "mixed_keys": {
+      "((3, 3), 16)": {
+        "n": 8,
+        "nP": 4,
+        "nN": 4
+      },
+      "((3, 3), 10)": {
+        "n": 16,
+        "nP": 8,
+        "nN": 8
+      }
+    },
+    "per_key": {
+      "((3, 3), 16)": {
+        "n_P": 4,
+        "n_nonP": 4,
+        "has0": {
+          "P": {
+            "false": 4
+          },
+          "nonP": {
+            "true": 4
+          }
+        },
+        "has1": {
+          "P": {
+            "true": 4
+          },
+          "nonP": {
+            "false": 4
+          }
+        },
+        "child_sets_P": [
+          [
+            1,
+            3,
+            5
+          ]
+        ],
+        "child_sets_nonP": [
+          [
+            0,
+            3,
+            5,
+            6
+          ]
+        ],
+        "R1": true,
+        "examples_P": [
+          {
+            "pair": [
+              0,
+              4
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "1": 2,
+              "3": 17,
+              "5": 4
+            },
+            "child_set": [
+              1,
+              3,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              0,
+              20
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 16,
+            "n_child": 23,
+            "child_hist": {
+              "1": 2,
+              "3": 17,
+              "5": 4
+            },
+            "child_set": [
+              1,
+              3,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          }
+        ]
+      },
+      "((3, 3), 10)": {
+        "n_P": 8,
+        "n_nonP": 8,
+        "has0": {
+          "P": {
+            "false": 8
+          },
+          "nonP": {
+            "true": 8
+          }
+        },
+        "has1": {
+          "P": {
+            "true": 8
+          },
+          "nonP": {
+            "false": 8
+          }
+        },
+        "child_sets_P": [
+          [
+            1,
+            3,
+            4,
+            5
+          ]
+        ],
+        "child_sets_nonP": [
+          [
+            0,
+            3
+          ]
+        ],
+        "R1": true,
+        "examples_P": [
+          {
+            "pair": [
+              1,
+              17
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "1": 1,
+              "3": 20,
+              "4": 1,
+              "5": 1
+            },
+            "child_set": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          },
+          {
+            "pair": [
+              3,
+              17
+            ],
+            "g2": 0,
+            "is_P": true,
+            "one": [
+              3,
+              3
+            ],
+            "one_key": [
+              3,
+              3
+            ],
+            "d2": 10,
+            "n_child": 23,
+            "child_hist": {
+              "1": 1,
+              "3": 20,
+              "4": 1,
+              "5": 1
+            },
+            "child_set": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "child_mex": 0,
+            "child_min": 1,
+            "child_max": 5,
+            "has0": false,
+            "has1": true
+          }
+        ]
+      }
+    }
+  },
+  "b321_b322_all_layers": {
+    "n_analyses_holes": {
+      "2": {
+        "sigma": 2,
+        "K": 3,
+        "sigma_layer_holes": {
+          "bound": 1,
+          "present": [
+            1
+          ],
+          "missing": [
+            0
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "all_layer_holes": {
+          "0": {
+            "bound": 3,
+            "present": [
+              1
+            ],
+            "missing": [
+              0,
+              2
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [
+              2
+            ],
+            "positive_missing_non_pow2": []
+          },
+          "1": {
+            "bound": 2,
+            "present": [
+              0
+            ],
+            "missing": [
+              1
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [
+              1
+            ],
+            "positive_missing_non_pow2": []
+          },
+          "2": {
+            "bound": 1,
+            "present": [
+              1
+            ],
+            "missing": [
+              0
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "3": {
+            "bound": 0,
+            "present": [
+              0
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          }
+        }
+      },
+      "3": {
+        "sigma": 4,
+        "K": 5,
+        "sigma_layer_holes": {
+          "bound": 1,
+          "present": [
+            1
+          ],
+          "missing": [
+            0
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "all_layer_holes": {
+          "0": {
+            "bound": 5,
+            "present": [
+              1
+            ],
+            "missing": [
+              0,
+              2,
+              3,
+              4
+            ],
+            "consecutive_pairs": [
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "positive_missing": [
+              2,
+              3,
+              4
+            ],
+            "positive_missing_non_pow2": [
+              3
+            ]
+          },
+          "1": {
+            "bound": 4,
+            "present": [
+              0
+            ],
+            "missing": [
+              1,
+              2,
+              3
+            ],
+            "consecutive_pairs": [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "positive_missing": [
+              1,
+              2,
+              3
+            ],
+            "positive_missing_non_pow2": [
+              3
+            ]
+          },
+          "2": {
+            "bound": 3,
+            "present": [
+              1
+            ],
+            "missing": [
+              0,
+              2
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [
+              2
+            ],
+            "positive_missing_non_pow2": []
+          },
+          "3": {
+            "bound": 2,
+            "present": [
+              0
+            ],
+            "missing": [
+              1
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [
+              1
+            ],
+            "positive_missing_non_pow2": []
+          },
+          "4": {
+            "bound": 1,
+            "present": [
+              1
+            ],
+            "missing": [
+              0
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "5": {
+            "bound": 0,
+            "present": [
+              0
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          }
+        }
+      },
+      "4": {
+        "sigma": 2,
+        "K": 7,
+        "sigma_layer_holes": {
+          "bound": 5,
+          "present": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "missing": [
+            1,
+            4
+          ],
+          "consecutive_pairs": [],
+          "positive_missing": [
+            1,
+            4
+          ],
+          "positive_missing_non_pow2": []
+        },
+        "all_layer_holes": {
+          "0": {
+            "bound": 7,
+            "present": [
+              0
+            ],
+            "missing": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "consecutive_pairs": [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "positive_missing": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "positive_missing_non_pow2": [
+              3,
+              5,
+              6
+            ]
+          },
+          "1": {
+            "bound": 6,
+            "present": [
+              1
+            ],
+            "missing": [
+              0,
+              2,
+              3,
+              4,
+              5
+            ],
+            "consecutive_pairs": [
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ]
+            ],
+            "positive_missing": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "positive_missing_non_pow2": [
+              3,
+              5
+            ]
+          },
+          "2": {
+            "bound": 5,
+            "present": [
+              0,
+              2,
+              3,
+              5
+            ],
+            "missing": [
+              1,
+              4
+            ],
+            "consecutive_pairs": [],
+            "positive_missing": [
+              1,
+              4
+            ],
+            "positive_missing_non_pow2": []
+          },
+          "3": {
+            "bound": 4,
+            "present": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "4": {
+            "bound": 3,
+            "present": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "5": {
+            "bound": 2,
+            "present": [
+              0,
+              1,
+              2
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "6": {
+            "bound": 1,
+            "present": [
+              0,
+              1
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "7": {
+            "bound": 0,
+            "present": [
+              0
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          }
+        }
+      },
+      "5": {
+        "sigma": 3,
+        "K": 9,
+        "sigma_layer_holes": {
+          "bound": 6,
+          "present": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "missing": [],
+          "consecutive_pairs": [],
+          "positive_missing": [],
+          "positive_missing_non_pow2": []
+        },
+        "all_layer_holes": {
+          "0": {
+            "bound": 9,
+            "present": [
+              1
+            ],
+            "missing": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "consecutive_pairs": [
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                6
+              ],
+              [
+                6,
+                7
+              ],
+              [
+                7,
+                8
+              ]
+            ],
+            "positive_missing": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "positive_missing_non_pow2": [
+              3,
+              5,
+              6,
+              7
+            ]
+          },
+          "1": {
+            "bound": 8,
+            "present": [
+              0,
+              3
+            ],
+            "missing": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "consecutive_pairs": [
+              [
+                1,
+                2
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                6
+              ],
+              [
+                6,
+                7
+              ]
+            ],
+            "positive_missing": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "positive_missing_non_pow2": [
+              5,
+              6,
+              7
+            ]
+          },
+          "2": {
+            "bound": 7,
+            "present": [
+              0,
+              1,
+              2
+            ],
+            "missing": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "consecutive_pairs": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                6
+              ]
+            ],
+            "positive_missing": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "positive_missing_non_pow2": [
+              3,
+              5,
+              6
+            ]
+          },
+          "3": {
+            "bound": 6,
+            "present": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "4": {
+            "bound": 5,
+            "present": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "5": {
+            "bound": 4,
+            "present": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "6": {
+            "bound": 3,
+            "present": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "7": {
+            "bound": 2,
+            "present": [
+              0,
+              1,
+              2
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "8": {
+            "bound": 1,
+            "present": [
+              0,
+              1
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          },
+          "9": {
+            "bound": 0,
+            "present": [
+              0
+            ],
+            "missing": [],
+            "consecutive_pairs": [],
+            "positive_missing": [],
+            "positive_missing_non_pow2": []
+          }
+        }
+      }
+    },
+    "summary": {
+      "B321_all_n_sigma_layer_no_consecutive": true,
+      "B321_all_layers_no_consecutive": {
+        "2": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "3": {
+          "0": false,
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "4": {
+          "0": false,
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true
+        },
+        "5": {
+          "0": false,
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true,
+          "8": true,
+          "9": true
+        }
+      },
+      "B322_sigma_positive_missing_pow2_only": true,
+      "B322_all_layers": {
+        "2": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "3": {
+          "0": false,
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "4": {
+          "0": false,
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true
+        },
+        "5": {
+          "0": false,
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true,
+          "8": true,
+          "9": true
+        }
+      },
+      "B318_uniform_theorem_ok": {
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": null
+      }
+    }
+  }
+}

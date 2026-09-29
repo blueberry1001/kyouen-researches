@@ -1,0 +1,21 @@
+{
+  "n": 4,
+  "g_empty": 0,
+  "V": 16,
+  "E": 84,
+  "num_PMs": 112212,
+  "TD_pairs": 40,
+  "TD_are_P": 40,
+  "P_d4_types": 15,
+  "TD_d4_types": 8,
+  "B317_unbreakable": 2508,
+  "B317_min_breaks": 0,
+  "B317_max_breaks": 160,
+  "B317_total_breaks": 2836080,
+  "B317_pairing_wins": 0,
+  "B317_pairing_wins_unbreakable": 0,
+  "TD_d2_hist": {"1": 4, "2": 14, "5": 8, "9": 4, "10": 8, "18": 2},
+  "nonTD_d2_hist": {"1": 20, "2": 4, "5": 8, "10": 4, "13": 8},
+  "TD_corner": 26,
+  "nonTD_corner": 16
+}

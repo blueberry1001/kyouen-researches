@@ -1,0 +1,31 @@
+{
+  "n": 6,
+  "V": 36,
+  "F": 2491,
+  "method": "sort-free v-max partition (no sort, no edge-sized buffer); levels spilled to disk; 2-layer rolling window; num mod 2^61-1 (8B) + u32 fixed point (4B) + grundy (1B); lower_bound child index",
+  "n_safe_subsets": 5081289,
+  "level_sizes": [1,36,630,7140,56414,301952,997796,1783296,1459292,438952,35316,464],
+  "max_safe_size": 11,
+  "edge_total": 36211148,
+  "n_P": 1265112,
+  "n_N": 3816177,
+  "P_max_level": 5,
+  "P_max_filter_value": "0.780348",
+  "thresholds_exact_all_levels": false,
+  "levels": [
+    {"k": 0, "size": 1, "edges": 36, "n_P": 0, "n_N": 1, "D_bits": 636.23, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.26},
+    {"k": 1, "size": 36, "edges": 1260, "n_P": 36, "n_N": 0, "D_bits": 607.79, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.42223132215440273, "secs": 0.29},
+    {"k": 2, "size": 630, "edges": 21420, "n_P": 0, "n_N": 630, "D_bits": 597.54, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.32},
+    {"k": 3, "size": 7140, "edges": 225656, "n_P": 5336, "n_N": 1804, "D_bits": 587.36, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.46301219426095486, "secs": 0.38},
+    {"k": 4, "size": 56414, "edges": 1509760, "n_P": 612, "n_N": 55802, "D_bits": 522.85, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.57525878399610519, "secs": 0.48},
+    {"k": 5, "size": 301952, "edges": 5986776, "n_P": 79748, "n_N": 222204, "D_bits": 393.70, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.78034769464284182, "secs": 0.94},
+    {"k": 6, "size": 997796, "edges": 12483072, "n_P": 84160, "n_N": 913636, "D_bits": 270.54, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.74000000022351742, "secs": 1.74},
+    {"k": 7, "size": 1783296, "edges": 11674336, "n_P": 471360, "n_N": 1311936, "D_bits": 152.34, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 8, "best_filter": 0.72592592611908913, "secs": 1.94},
+    {"k": 8, "size": 1459292, "edges": 3950568, "n_P": 379824, "n_N": 1079468, "D_bits": 66.72, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 16, "best_filter": 0.5, "secs": 0.85},
+    {"k": 9, "size": 438952, "edges": 353160, "n_P": 213080, "n_N": 225872, "D_bits": 15.88, "thresholds_exact": true, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.22},
+    {"k": 10, "size": 35316, "edges": 5104, "n_P": 30492, "n_N": 4824, "D_bits": 2.58, "thresholds_exact": true, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.14},
+    {"k": 11, "size": 464, "edges": 0, "n_P": 464, "n_N": 0, "D_bits": 0.00, "thresholds_exact": false, "best_frac_exact": "0", "best_count": 0, "best_filter": 0, "secs": 0.00}
+  ],
+  "timing_s": {"build": 0.00, "enumerate": 13.01, "solve": 7.64, "total": 20.65},
+  "peak_rss_gb": 0.278
+}

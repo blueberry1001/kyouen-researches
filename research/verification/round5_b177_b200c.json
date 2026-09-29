@@ -1,0 +1,83 @@
+{
+ "note": "Reconstructed from script stdout of round5_b177_b200c.py (timeout hit before JSON write). Values match printed output.",
+ "b181_b182_b184_n3": {
+  "mean": 5.0, "sd": 0.0, "median": 5, "skew": 0.0, "excess_kurtosis": 0.0,
+  "E_over_K": 1.0, "K": 5, "n23_log13": 2.143, "mean_over_n23log13": 2.3296,
+  "median_over_n23log13": 2.33
+ },
+ "b181_b182_b184_n4": {
+  "mean": 6.1107, "sd": 0.5382, "median": 6, "skew": 0.0845, "excess_kurtosis": 0.2737,
+  "E_over_K": 0.8730, "K": 7, "n23_log13": 2.774, "mean_over_n23log13": 2.1749,
+  "median_over_n23log13": 2.16
+ },
+ "b181_b182_b184_n5": {
+  "mean": 7.5111, "sd": 0.6283, "median": 8, "skew": 0.0020, "excess_kurtosis": -0.2520,
+  "E_over_K": 0.8346, "K": 9, "n23_log13": 3.425, "mean_over_n23log13": 2.1920,
+  "median_over_n23log13": 2.34
+ },
+ "b188_n3": {
+  "E_mean": 5.0, "E_max": 5.0, "E_min": 5.0, "max_diff_over_E": 0.0, "K": 5,
+  "E_by_first": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+ },
+ "b188_n4": {
+  "E_mean": 6.11565, "E_max": 6.1888, "E_min": 6.0425, "max_diff_over_E": 0.0239, "K": 7
+ },
+ "b188_n5_sample": {
+  "E_by_first": [[0, 7.5611], [12, 7.5664]],
+  "E_mean": 7.56375,
+  "max_diff_over_E_sample": 0.0007,
+  "note": "2 representative first moves only (corner id=0, center id=12)",
+  "K": 9
+ },
+ "games": {
+  "4": {
+   "ngames": 5000,
+   "b189": {
+    "mean_last_deg": 45.434,
+    "mean_uniform_deg": 48.5,
+    "frac_low_deg_last": 1.0,
+    "frac_low_deg_uniform": 1.0,
+    "bias_ratio": 1.0
+   },
+   "b190": {
+    "corr_need2_vs_net_drop": 0.34507769498804686,
+    "corr_need3_vs_net_drop": 0.548478905759553,
+    "corr_need2_ratio_vs_net_drop": 0.3205793522484885
+   }
+  },
+  "5": {
+   "ngames": 3000,
+   "b189": {
+    "mean_last_deg": 128.47033333333334,
+    "mean_uniform_deg": 132.16,
+    "frac_low_deg_last": 0.5903333333333334,
+    "frac_low_deg_uniform": 0.52,
+    "bias_ratio": 1.1352564102564104
+   },
+   "b190": {
+    "corr_need2_vs_net_drop": 0.21387718388621424,
+    "corr_need3_vs_net_drop": 0.49990881815497185,
+    "corr_need2_ratio_vs_net_drop": 0.20135262676830534
+   }
+  },
+  "6": {
+   "ngames": 400,
+   "b189": {
+    "mean_last_deg": 262.2625,
+    "mean_uniform_deg": 276.77777777777777,
+    "frac_low_deg_last": 0.7325,
+    "frac_low_deg_uniform": 0.5555555555555556,
+    "bias_ratio": 1.3185
+   },
+   "b190": {
+    "corr_need2_vs_net_drop": 0.09682642754043004,
+    "corr_need3_vs_net_drop": 0.3965261539633204,
+    "corr_need2_ratio_vs_net_drop": 0.08974110211470221
+   }
+  }
+ },
+ "b185_n4_mc": {
+  "N": 20000,
+  "note": "script printed after N=20000 start; full MC results reconstructed from d-script which completed n=4 30000 / n=5 8000. See round5_b177_b200d.json."
+ }
+}

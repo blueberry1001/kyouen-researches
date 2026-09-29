@@ -1,0 +1,357 @@
+{
+  "ugains_n4": {
+    "n": 4,
+    "g0": 0,
+    "nstates": 5811,
+    "B261_positions_two_small_u_big_joint": 7568,
+    "B261_max_joint_observed": 11,
+    "B261_max_joint_with_both_u_le_1": 10,
+    "B262_positions": 4506,
+    "B262_witness": {
+      "|S|": 5,
+      "p": 1,
+      "q": 9,
+      "up": 4,
+      "uq": 4
+    },
+    "B263_positions_compared": 2202,
+    "B263_win_move_higher_min_child_u": 1356,
+    "B264_positions": 0,
+    "B264_witness": {
+      "|S|": -1,
+      "|L|": -1,
+      "nwin": -1
+    },
+    "B265_positions": 176,
+    "B265_witness": {
+      "|S|": 4,
+      "p": 9,
+      "up": 5,
+      "nsmall": 4,
+      "nbig": 2
+    },
+    "B267_pairs_tested": 0,
+    "B267_counterexamples": 0,
+    "B267_witness": {
+      "|S|": -1,
+      "p": -1,
+      "q": -1
+    },
+    "B268_positions": 5292,
+    "B268_witness": {
+      "|S|": 4,
+      "|T|": 5,
+      "extra": 2
+    },
+    "B269_flat_u_P": 117,
+    "B269_flat_u_positions": 1905,
+    "B269_nonflat_u_P": 780,
+    "B269_nonflat_u_positions": 2978
+  },
+  "corr_n4": {
+    "n": 4,
+    "V": 16,
+    "n_safe_total": 5811,
+    "max_safe_k": 7,
+    "level_counts": [
+      1,
+      16,
+      120,
+      560,
+      1626,
+      2360,
+      1064,
+      64,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "B271_pairs_total": 120,
+    "B271_pairs_in_some_quad": 120,
+    "B271_cov_sign_flips": 120,
+    "B271_pos_at_lambda_1597": 68,
+    "B271_neg_at_lambda_1597": 52,
+    "B271_zero_at_lambda_1597": 0,
+    "B271_flip_examples": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "B272_quad_pairs_pos_at_large_lambda": 68,
+    "B272_quad_pairs_neg_at_large_lambda": 52,
+    "B272_quad_pairs_sign_flips": 120,
+    "B272_pos_examples": [
+      [
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        3
+      ]
+    ],
+    "done": true
+  },
+  "ugains_n5": {
+    "n": 5,
+    "g0": 1,
+    "nstates": 151394,
+    "B261_positions_two_small_u_big_joint": 63996,
+    "B261_max_joint_observed": 20,
+    "B261_max_joint_with_both_u_le_1": 13,
+    "B262_positions": 133698,
+    "B262_witness": {
+      "|S|": 7,
+      "p": 3,
+      "q": 13,
+      "up": 4,
+      "uq": 4
+    },
+    "B263_positions_compared": 71455,
+    "B263_win_move_higher_min_child_u": 37340,
+    "B264_positions": 112,
+    "B264_witness": {
+      "|S|": 5,
+      "|L|": 5,
+      "nwin": 1
+    },
+    "B265_positions": 7560,
+    "B265_witness": {
+      "|S|": 6,
+      "p": 12,
+      "up": 2,
+      "nsmall": 2,
+      "nbig": 2
+    },
+    "B267_pairs_tested": 0,
+    "B267_counterexamples": 0,
+    "B267_witness": {
+      "|S|": -1,
+      "p": -1,
+      "q": -1
+    },
+    "B268_positions": 261966,
+    "B268_witness": {
+      "|S|": 6,
+      "|T|": 7,
+      "extra": 14
+    },
+    "B269_flat_u_P": 5137,
+    "B269_flat_u_positions": 43708,
+    "B269_nonflat_u_P": 18328,
+    "B269_nonflat_u_positions": 90826
+  },
+  "corr_n5": {
+    "n": 5,
+    "V": 25,
+    "n_safe_total": 151394,
+    "max_safe_k": 9,
+    "level_counts": [
+      1,
+      25,
+      300,
+      2300,
+      11824,
+      37272,
+      59192,
+      35208,
+      5172,
+      100,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "B271_pairs_total": 300,
+    "B271_pairs_in_some_quad": 300,
+    "B271_cov_sign_flips": 300,
+    "B271_pos_at_lambda_1597": 126,
+    "B271_neg_at_lambda_1597": 174,
+    "B271_zero_at_lambda_1597": 0,
+    "B271_flip_examples": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        1
+      ]
+    ],
+    "B272_quad_pairs_pos_at_large_lambda": 126,
+    "B272_quad_pairs_neg_at_large_lambda": 174,
+    "B272_quad_pairs_sign_flips": 300,
+    "B272_pos_examples": [
+      [
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        4,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        2
+      ],
+      [
+        0,
+        0,
+        4,
+        2
+      ]
+    ],
+    "done": true
+  },
+  "singles_n4": {
+    "n": 4,
+    "V": 16,
+    "nquads": 194,
+    "nstates": 5811,
+    "g0_std": 0,
+    "B251_singles": 194,
+    "B251_flips": 0,
+    "B251_g0_after_flip": 0,
+    "B252_pairs_tested": 18721,
+    "B252_pairs_flip": 0,
+    "B253_pair_flip_no_single": 0,
+    "done": true
+  }
+}

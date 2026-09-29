@@ -1,0 +1,159 @@
+{
+ "b129_n5": {
+  "n_maximal": 16860,
+  "smin": 5,
+  "smax": 9,
+  "n_min_sets": 4,
+  "n_max_sets": 100,
+  "min_swap_mean": 0.0,
+  "min_swap_norm": 0.0,
+  "max_swap_mean": 1.6,
+  "max_swap_norm": 0.17777777777777778
+ },
+ "b166_167_n5": {
+  "n_max_sets": 100,
+  "prime_hits": {
+   "2": 0,
+   "3": 0,
+   "5": 0,
+   "7": 0,
+   "11": 0,
+   "13": 4,
+   "17": 0,
+   "19": 24,
+   "23": 48,
+   "29": 16
+  },
+  "b167_sizes": {
+   "min": 9,
+   "max": 9,
+   "mean": 9.0
+  }
+ },
+ "b157_n5": {
+  "n_pairs": 300,
+  "deg_sum_pn": {
+   "200": {
+    "P": 4,
+    "N": 2,
+    "shared_min": 16,
+    "shared_max": 17
+   },
+   "216": {
+    "P": 0,
+    "N": 4,
+    "shared_min": 16,
+    "shared_max": 16
+   },
+   "232": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 11,
+    "shared_max": 13
+   },
+   "235": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 5,
+    "shared_max": 11
+   },
+   "237": {
+    "P": 8,
+    "N": 24,
+    "shared_min": 4,
+    "shared_max": 18
+   },
+   "248": {
+    "P": 0,
+    "N": 4,
+    "shared_min": 8,
+    "shared_max": 8
+   },
+   "251": {
+    "P": 0,
+    "N": 4,
+    "shared_min": 19,
+    "shared_max": 19
+   },
+   "253": {
+    "P": 0,
+    "N": 8,
+    "shared_min": 13,
+    "shared_max": 13
+   },
+   "256": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 8,
+    "shared_max": 20
+   },
+   "264": {
+    "P": 0,
+    "N": 6,
+    "shared_min": 20,
+    "shared_max": 22
+   },
+   "267": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 9,
+    "shared_max": 35
+   },
+   "269": {
+    "P": 0,
+    "N": 32,
+    "shared_min": 4,
+    "shared_max": 24
+   },
+   "270": {
+    "P": 0,
+    "N": 6,
+    "shared_min": 12,
+    "shared_max": 22
+   },
+   "272": {
+    "P": 8,
+    "N": 28,
+    "shared_min": 9,
+    "shared_max": 24
+   },
+   "274": {
+    "P": 0,
+    "N": 28,
+    "shared_min": 17,
+    "shared_max": 34
+   },
+   "288": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 22,
+    "shared_max": 23
+   },
+   "291": {
+    "P": 0,
+    "N": 16,
+    "shared_min": 23,
+    "shared_max": 24
+   },
+   "293": {
+    "P": 0,
+    "N": 32,
+    "shared_min": 6,
+    "shared_max": 27
+   },
+   "312": {
+    "P": 0,
+    "N": 6,
+    "shared_min": 16,
+    "shared_max": 36
+   }
+  }
+ },
+ "b158_n5": {
+  "deg_min": 100,
+  "deg_max": 156,
+  "L_min": 24,
+  "L_max": 24,
+  "claim_witness": null
+ }
+}

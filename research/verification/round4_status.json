@@ -1,1558 +1,6002 @@
 {
- "rows": [
-  [
-   "B071",
-   null,
-   "REFUTED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B075",
-   null,
-   "REFUTED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B072",
-   null,
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B077",
-   null,
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B002",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B007",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B008",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B009",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B010",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B016",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B020",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B021",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B022",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B023",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B024",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B029",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B031",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B032",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B034",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B037",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B039",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B040",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B043",
-   "INCONCLUSIVE",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B045",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B047",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B050",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B054",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B058",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B059",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B060",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B063",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B065",
-   "INCONCLUSIVE",
-   "REFUTED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B066",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B069",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B070",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B074",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B079",
-   "PARTIAL",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B081",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B082",
-   "INCONCLUSIVE",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B083",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B084",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B085",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B088",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B089",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B090",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b002-b091.md"
-  ],
-  [
-   "B103",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B104",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B106",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B107",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B110",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B115",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B120",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B118",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B111",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b092-b127.md"
-  ],
-  [
-   "B168",
-   "NOT-CHECKED",
-   "REFUTED",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B176",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B170",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B174",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B179",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B226",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B227",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B195",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B169",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B175",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B196",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B221",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B222",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B213",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B216",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B219",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B220",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B218",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B181",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B182",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B184",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B178",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B180",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B190",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B193",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B197",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B198",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B199",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B200",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B189",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B188",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B185",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B203",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B205",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B209",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B210",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B207",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B206",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B201",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B202",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b168-b227.md"
-  ],
-  [
-   "B228",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B229",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B230",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B231",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B232",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B233",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B234",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B235",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B236",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B237",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B238",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B239",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B240",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B241",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B242",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B243",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B244",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B245",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B246",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B247",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B248",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B249",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B250",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B251",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B252",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B253",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B254",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B255",
-   "NOT-CHECKED",
-   "INCONCLUSIVE",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B256",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B257",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B258",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B260",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B261",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B262",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B263",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B264",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B265",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B266",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B267",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B268",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B269",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B270",
-   "NOT-CHECKED",
-   "SUPPORTED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B271",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B272",
-   "INCONCLUSIVE",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B273",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B274",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B275",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B276",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B277",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B278",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B279",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B280",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B281",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B282",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B283",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B284",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B285",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B286",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B287",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B288",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B289",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B290",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b228-b290.md"
-  ],
-  [
-   "B291",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B292",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B293",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B294",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B295",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B296",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B297",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B298",
-   "SUPPORTED",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B299",
-   "SUPPORTED",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B300",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B336",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B338",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B339",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B340",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B341",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B343",
-   "INCONCLUSIVE",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B344",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B347",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B348",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B349",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B351",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B352",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B353",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B354",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B355",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B356",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B358",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B359",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B360",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B315",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B357",
-   null,
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B361",
-   null,
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B362",
-   null,
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B364",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b291-b360.md"
-  ],
-  [
-   "B365",
-   "NOT-CHECKED",
-   null,
-   "?"
-  ],
-  [
-   "B371",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B372",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B373",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B374",
-   "INCONCLUSIVE",
-   "SUPPORTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B375",
-   "INCONCLUSIVE",
-   "SUPPORTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B378",
-   "INCONCLUSIVE",
-   "REFUTED",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B380",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b371-b380.md"
-  ],
-  [
-   "B400",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B402",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B404",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B405",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B406",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B407",
-   "NOT-CHECKED",
-   "NOT-CHECKED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B408",
-   "NOT-CHECKED",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B410",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B416",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B425",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B426",
-   "INCONCLUSIVE",
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B428",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B429",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B437",
-   "PARTIAL",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B440",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B442",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B450",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B458",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B459",
-   "INCONCLUSIVE",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B460",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B463",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B464",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B467",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B468",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B469",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B470",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B472",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B473",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B471",
-   null,
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B474",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B477",
-   "PARTIAL",
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B478",
-   null,
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B479",
-   null,
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B480",
-   null,
-   "SUPPORTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B481",
-   null,
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B482",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B483",
-   "INCONCLUSIVE",
-   "REFUTED",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B484",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B485",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b400-b600.md"
-  ],
-  [
-   "B543",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B544",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B545",
-   null,
-   "SUPPORTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B547",
-   null,
-   "SUPPORTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B548",
-   null,
-   "SUPPORTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B549",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B542",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B550",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B551",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B552",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B553",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B554",
-   null,
-   "REFUTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B555",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B556",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B557",
-   null,
-   "SUPPORTED",
-   "round4-batch-b536-b600.md"
-  ],
-  [
-   "B591",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B592",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B593",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B596",
-   "PARTIAL",
-   "SUPPORTED",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B597",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B598",
-   "INCONCLUSIVE",
-   "INCONCLUSIVE",
-   "round4-batch-b591-b599.md"
-  ],
-  [
-   "B599",
-   "PARTIAL",
-   "PARTIAL",
-   "round4-batch-b591-b599.md"
-  ]
- ]
+ "B001": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 21,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B002": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 27,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 204,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B003": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 33,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B004": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 39,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B005": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 45,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B006": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 51,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B007": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 57,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 213,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B008": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 63,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 222,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B009": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 69,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 231,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B010": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 75,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b100-followup.md",
+  "r3r4_line": 148,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B011": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 81,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B012": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 87,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B013": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 93,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B014": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 99,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B015": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 105,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B016": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 111,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 240,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B017": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 117,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B018": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 123,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B019": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 129,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B020": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-01.md",
+  "r1r2_line": 135,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 13,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B021": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 12,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 19,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B022": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 18,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 249,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B023": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 24,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 258,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B024": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 30,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 37,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B025": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 36,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B026": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 46,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B027": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 52,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B028": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 58,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B029": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 64,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 18,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B030": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 70,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B031": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 76,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b002-b091.md",
+  "r3r4_line": 401,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B032": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 82,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 276,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B033": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 88,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B034": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 94,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 55,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B035": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 100,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp1.md",
+  "r3r4_line": 585,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B036": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 106,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B037": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 112,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 285,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B038": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 118,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B039": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 124,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 67,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B040": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-02.md",
+  "r1r2_line": 132,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090.md",
+  "r3r4_line": 82,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B041": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 16,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B042": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 27,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp1.md",
+  "r3r4_line": 314,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B043": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 39,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 294,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B044": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 46,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B045": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 58,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 79,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B046": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 71,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B047": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 84,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b100-push3.md",
+  "r3r4_line": 198,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B048": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 95,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B049": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 106,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B050": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 116,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090.md",
+  "r3r4_line": 110,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B051": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 126,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B052": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 135,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B053": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 146,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B054": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 159,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 91,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B055": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 168,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B056": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 177,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B057": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 186,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B058": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 196,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 25,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B059": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 207,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 103,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B060": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-03.md",
+  "r1r2_line": 215,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090-followup.md",
+  "r3r4_line": 118,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B061": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 11,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B062": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 18,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B063": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 25,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 321,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B064": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 32,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B065": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 39,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b002-b091.md",
+  "r3r4_line": 754,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B066": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 46,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 34,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B067": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 53,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp2.md",
+  "r3r4_line": 91,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B068": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 60,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B069": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 67,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 39,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B070": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 74,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 46,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B071": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 81,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b002-b091.md",
+  "r3r4_line": 22,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B072": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 88,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090.md",
+  "r3r4_line": 173,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B073": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 95,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B074": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 102,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 357,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B075": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 109,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b002-b091.md",
+  "r3r4_line": 34,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B076": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 116,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B077": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 126,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b020-b090.md",
+  "r3r4_line": 187,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B078": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 133,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B079": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 140,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 55,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B080": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-04.md",
+  "r1r2_line": 147,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B081": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 69,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b020-b090.md",
+  "r3r4_line": 201,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B082": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 75,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 21,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B083": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 81,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 30,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B084": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 87,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 39,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B085": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 93,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 48,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B086": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 99,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B087": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 105,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B088": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 111,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 57,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B089": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 117,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 60,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B090": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 123,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 75,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B091": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 129,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp3.md",
+  "r3r4_line": 55,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B092": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 135,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 88,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B093": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 141,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 97,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B094": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 147,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 106,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B095": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 153,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 115,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B096": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 159,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 124,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B097": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 165,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 133,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B098": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 171,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b200-weak.md",
+  "r3r4_line": 142,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B099": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 177,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b100-followup.md",
+  "r3r4_line": 31,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B100": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-05.md",
+  "r1r2_line": 183,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b001-b100-followup.md",
+  "r3r4_line": 50,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B101": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 12,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B102": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 18,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B103": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 24,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b092-b127.md",
+  "r3r4_line": 27,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B104": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 35,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 114,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B105": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 41,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B106": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 50,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 122,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B107": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 56,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 128,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B108": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 62,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B109": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 68,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B110": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 74,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 134,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B111": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 80,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 140,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B112": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 86,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B113": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 92,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B114": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 98,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B115": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 104,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 146,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B116": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 110,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp3.md",
+  "r3r4_line": 62,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B117": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 116,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B118": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 122,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 69,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B119": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 128,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B120": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-06.md",
+  "r1r2_line": 134,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 152,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B121": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 22,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 158,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B122": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 32,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 76,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B123": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 39,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 48,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B124": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 46,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 164,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B125": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 53,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 55,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B126": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 60,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B127": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 70,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 83,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B128": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 77,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B129": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 90,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b120-b160.md",
+  "r3r4_line": 82,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B130": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 97,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 12,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B131": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 106,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 170,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B132": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 123,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 176,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B133": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 130,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 69,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B134": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 137,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B135": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 153,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B136": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 163,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b120-b160.md",
+  "r3r4_line": 129,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B137": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 173,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B138": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 189,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200.md",
+  "r3r4_line": 579,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B139": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 198,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B140": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-07.md",
+  "r1r2_line": 215,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 90,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B141": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 46,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b142-docs.md",
+  "r3r4_line": 84,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B142": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 52,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b142-docs.md",
+  "r3r4_line": 13,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B143": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 58,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B144": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 64,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B145": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 70,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-collinear-asymptotic.md",
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B146": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 76,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B147": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 82,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B148": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 88,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B149": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 94,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b120-b160.md",
+  "r3r4_line": 167,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B150": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 100,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-collinear-asymptotic.md",
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B151": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 106,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B152": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 112,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B153": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 118,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 97,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B154": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 124,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 182,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B155": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 130,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B156": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 136,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B157": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 144,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 395,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B158": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 150,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b151-b200.md",
+  "r3r4_line": 34,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B159": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 156,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 388,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B160": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 162,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 104,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B161": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 170,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B162": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 176,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 188,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B163": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 182,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B164": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 188,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B165": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 194,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b151-b200.md",
+  "r3r4_line": 78,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B166": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 200,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 402,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B167": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 206,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 409,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B168": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 212,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b168-b227.md",
+  "r3r4_line": 47,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B169": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 218,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 82,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B170": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 224,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 111,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B171": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 232,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B172": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 238,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B173": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 244,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B174": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 250,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b151-b200.md",
+  "r3r4_line": 125,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B175": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 256,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 194,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B176": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 262,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b168-b227.md",
+  "r3r4_line": 68,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B177": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 268,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b177-b200.md",
+  "r3r4_line": 10,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B178": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 274,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 200,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B179": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 280,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 206,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B180": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-08.md",
+  "r1r2_line": 286,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 212,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B181": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 19,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 218,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B182": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 37,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 224,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B183": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 46,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B184": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 54,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 118,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B185": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 62,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b177-b200.md",
+  "r3r4_line": 220,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B186": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 71,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B187": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 80,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B188": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 89,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 125,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B189": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 97,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-followup.md",
+  "r3r4_line": 89,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B190": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 104,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 130,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B191": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 113,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B192": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 122,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B193": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 131,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 137,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B194": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 140,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B195": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 149,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 230,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B196": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 158,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 236,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B197": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 167,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 144,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B198": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 176,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b101-b200-weak.md",
+  "r3r4_line": 242,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B199": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 184,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b177-b200.md",
+  "r3r4_line": 102,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B200": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 194,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b177-b200.md",
+  "r3r4_line": 118,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B201": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 206,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 16,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B202": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 215,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 26,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B203": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 224,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 34,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B204": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 231,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B205": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 245,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 42,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B206": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 253,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 49,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B207": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 260,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 56,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B208": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 269,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 64,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B209": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 276,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 71,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B210": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 285,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 151,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B211": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 294,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B212": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 303,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B213": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 312,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 85,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B214": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 320,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B215": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 330,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B216": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 339,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 93,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B217": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 347,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B218": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 356,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 100,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B219": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 366,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 108,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B220": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-09.md",
+  "r1r2_line": 378,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 158,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B221": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 14,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 123,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B222": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 20,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 133,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B223": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 26,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 165,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B224": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 32,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 148,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B225": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 38,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 156,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B226": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 44,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 163,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B227": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 50,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 170,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B228": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 56,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b228-b290.md",
+  "r3r4_line": 11,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B229": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 62,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 177,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B230": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 68,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b228-b290.md",
+  "r3r4_line": 25,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B231": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 74,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 17,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B232": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 80,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 25,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B233": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 86,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-followup.md",
+  "r3r4_line": 24,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B234": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 92,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 32,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B235": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 98,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 39,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B236": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 104,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 46,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B237": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 110,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 53,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B238": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 116,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250.md",
+  "r3r4_line": 61,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B239": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 122,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 60,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B240": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 128,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250.md",
+  "r3r4_line": 76,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B241": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 134,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-followup.md",
+  "r3r4_line": 48,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B242": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 140,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-followup.md",
+  "r3r4_line": 72,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B243": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 146,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 172,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B244": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 152,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250.md",
+  "r3r4_line": 104,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B245": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 158,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-followup.md",
+  "r3r4_line": 54,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B246": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 164,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 65,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B247": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 170,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250.md",
+  "r3r4_line": 126,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B248": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 176,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 72,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B249": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 182,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b231-b250-push3.md",
+  "r3r4_line": 81,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B250": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 188,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b231-b250.md",
+  "r3r4_line": 147,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B251": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 194,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 21,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B252": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 200,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 87,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B253": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 206,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270.md",
+  "r3r4_line": 44,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B254": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 212,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 119,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B255": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 218,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 33,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B256": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 224,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 45,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B257": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 230,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270.md",
+  "r3r4_line": 23,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B258": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 236,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 57,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B259": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 242,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B260": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 248,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 68,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B261": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 254,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 104,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B262": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 260,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 83,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B263": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 266,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b270-weak.md",
+  "r3r4_line": 133,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B264": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 272,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 97,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B265": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 278,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 104,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B266": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 284,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270.md",
+  "r3r4_line": 118,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B267": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 290,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 150,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B268": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 296,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 125,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B269": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 302,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b251-b300.md",
+  "r3r4_line": 132,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B270": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 308,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b251-b270.md",
+  "r3r4_line": 147,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B271": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 314,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 13,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B272": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 320,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 20,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B273": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 326,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 77,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B274": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 332,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 352,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B275": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 338,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 82,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B276": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 344,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 366,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B277": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 350,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 96,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B278": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 356,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 61,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B279": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 362,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 68,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B280": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 368,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 103,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B281": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 374,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 112,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B282": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 380,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 32,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B283": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 386,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 130,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B284": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 392,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 179,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B285": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 398,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 48,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B286": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 404,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 47,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B287": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 410,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 188,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B288": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 416,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b201-b300-weak.md",
+  "r3r4_line": 429,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B289": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 422,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290.md",
+  "r3r4_line": 63,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B290": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 428,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b271-b290-followup.md",
+  "r3r4_line": 25,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B291": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 434,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 13,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B292": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 440,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 28,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B293": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 446,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 35,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B294": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 452,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 46,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B295": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 458,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 54,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B296": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 464,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 68,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B297": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 470,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 76,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B298": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 476,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 83,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B299": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 482,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-push2.md",
+  "r3r4_line": 66,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B300": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "batch-10.md",
+  "r1r2_line": 488,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 101,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B301": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 10,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B302": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 16,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B303": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 22,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B304": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 28,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B305": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 34,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B306": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 40,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B307": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 46,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B308": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 52,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B309": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 58,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B310": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 64,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B311": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 70,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B312": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 76,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-jn-followup.md",
+  "r3r4_line": 17,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B313": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 82,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 193,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B314": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 88,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 163,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B315": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 94,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 202,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B316": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 100,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B317": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 106,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-jn.md",
+  "r3r4_line": 64,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B318": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 112,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 207,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B319": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 118,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 157,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B320": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b301.md",
+  "r1r2_line": 124,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-jn-followup.md",
+  "r3r4_line": 92,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B321": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 14,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 145,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B322": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 21,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 151,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B323": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 28,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B324": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 35,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B325": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 42,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 34,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B326": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 49,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B327": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 56,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 41,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B328": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 63,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B329": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 70,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 48,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B330": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 77,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 55,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B331": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 86,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 62,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B332": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 93,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B333": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 100,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 69,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B334": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 107,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 76,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B335": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 114,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 83,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B336": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 121,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 118,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B337": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 128,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B338": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 135,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 90,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B339": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 142,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 143,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B340": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 149,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 97,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B341": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 158,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 104,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B342": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 165,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B343": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 172,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 169,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B344": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 179,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 111,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B345": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 186,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B346": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 193,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B347": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 200,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 186,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B348": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 207,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 206,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B349": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 214,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b325-b350-weak.md",
+  "r3r4_line": 118,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B350": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b321.md",
+  "r1r2_line": 221,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B351": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 16,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 16,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B352": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 30,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 32,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B353": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 37,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 47,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B354": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 44,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 60,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B355": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 51,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 214,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B356": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 58,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 223,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B357": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 65,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 324,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B358": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 72,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 92,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B359": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 79,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 228,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B360": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 86,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400.md",
+  "r3r4_line": 10,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B361": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 114,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 339,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B362": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 121,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 355,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B363": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 128,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 113,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B364": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 135,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b291-b360.md",
+  "r3r4_line": 365,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B365": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 142,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400.md",
+  "r3r4_line": 71,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B366": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 149,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 235,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B367": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 156,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B368": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 163,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B369": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 170,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B370": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 177,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 133,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B371": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 198,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 78,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B372": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 205,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 95,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B373": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 212,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 111,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B374": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 219,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 124,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B375": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 226,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 137,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B376": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 233,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 132,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B377": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 240,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400.md",
+  "r3r4_line": 22,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B378": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 247,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b371-b380.md",
+  "r3r4_line": 151,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B379": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 254,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 152,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B380": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b351.md",
+  "r1r2_line": 261,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b351-b400.md",
+  "r3r4_line": 29,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B381": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 14,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B382": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 21,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 166,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B383": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 28,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B384": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 34,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 178,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B385": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 40,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 188,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B386": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 46,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 12,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B387": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 53,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B388": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 60,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b351-b400.md",
+  "r3r4_line": 43,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B389": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 66,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B390": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 72,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b351-b400-followup.md",
+  "r3r4_line": 206,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B391": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 78,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B392": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 84,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B393": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 90,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B394": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 96,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B395": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 102,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B396": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 108,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B397": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 114,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B398": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 120,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B399": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 127,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B400": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 133,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b301-b400-followup.md",
+  "r3r4_line": 89,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B401": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 139,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B402": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 145,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 23,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B403": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 151,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B404": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 157,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 34,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B405": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 163,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 244,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B406": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 168,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 56,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B407": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 174,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 66,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B408": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 179,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 78,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B409": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 184,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B410": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b381.md",
+  "r1r2_line": 190,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 90,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B411": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 21,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B412": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 44,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 99,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B413": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 52,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 119,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B414": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 59,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 132,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B415": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 65,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 144,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B416": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 72,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 102,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B417": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 82,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 175,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B418": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 90,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 189,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B419": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 98,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 209,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B420": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 106,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 230,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B421": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 114,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 245,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B422": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 123,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 263,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B423": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 133,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-grp8.md",
+  "r3r4_line": 281,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B424": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 141,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B425": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 148,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 114,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B426": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 157,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 168,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B427": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 165,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B428": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 174,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 125,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B429": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 182,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 136,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B430": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 189,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B431": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 199,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-b431-b434-push2.md",
+  "r3r4_line": 17,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B432": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 208,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-b431-b434.md",
+  "r3r4_line": 8,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B433": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 217,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-b431-b434.md",
+  "r3r4_line": 25,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B434": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 225,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-b431-b434-push2.md",
+  "r3r4_line": 85,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B435": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 234,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B436": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 243,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B437": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 251,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 147,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B438": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 259,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B439": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 266,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B440": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b411.md",
+  "r1r2_line": 273,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 251,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B441": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 24,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B442": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 32,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 173,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B443": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 41,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B444": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 50,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B445": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 58,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B446": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 65,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B447": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 72,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B448": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 79,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B449": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 87,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B450": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 94,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 289,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B451": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 111,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-b451-b457.md",
+  "r3r4_line": 57,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B452": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 117,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-b451-b457.md",
+  "r3r4_line": 83,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B453": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 123,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-b451-b457.md",
+  "r3r4_line": 102,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B454": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 129,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round3-batch-b451-b457.md",
+  "r3r4_line": 142,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B455": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 135,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-grp3-b.md",
+  "r3r4_line": 320,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B456": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 141,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 181,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B457": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 147,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 256,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B458": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 153,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 263,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B459": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 159,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 229,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B460": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 165,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 270,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B461": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 179,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B462": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 189,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B463": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 195,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 381,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B464": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 206,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 245,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B465": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 213,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B466": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 222,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B467": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 231,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 260,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B468": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 237,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-last21.md",
+  "r3r4_line": 111,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B469": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 243,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 299,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B470": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b441.md",
+  "r1r2_line": 249,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 308,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B471": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 13,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 561,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B472": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 27,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-collinear-asymptotic.md",
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B473": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 43,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 523,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B474": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 51,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 583,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B475": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 66,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 322,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B476": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 81,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 340,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B477": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 88,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 621,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B478": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 103,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 677,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B479": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 117,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 717,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B480": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 124,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 764,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B481": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 138,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 806,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B482": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 152,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 360,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B483": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 159,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b400-b600.md",
+  "r3r4_line": 880,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B484": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 166,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 372,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B485": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 173,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 382,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B486": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 180,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 394,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B487": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 187,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 404,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B488": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 195,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 415,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B489": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 202,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 427,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B490": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 209,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 439,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B491": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 221,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B492": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 239,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B493": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 246,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B494": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 260,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 450,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B495": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 269,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 460,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B496": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 276,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 469,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B497": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 283,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B498": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 296,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B499": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 309,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 480,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B500": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b471.md",
+  "r1r2_line": 316,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-geom-stats-followup.md",
+  "r3r4_line": 493,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B501": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 28,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-n8.md",
+  "r3r4_line": 11,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B502": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 39,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-n8.md",
+  "r3r4_line": 20,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B503": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 49,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B504": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 62,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 40,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B505": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 70,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 47,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B506": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 78,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B507": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 89,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 54,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B508": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 106,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 70,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B509": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 115,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B510": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 128,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 77,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B511": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 139,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B512": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 150,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 88,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B513": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 161,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 105,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B514": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 171,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 87,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B515": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 179,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B516": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 191,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B517": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 203,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B518": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 212,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B519": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 224,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 133,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B520": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 232,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 286,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B521": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 243,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 160,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B522": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 254,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 105,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B523": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 264,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-pgrand-followup.md",
+  "r3r4_line": 37,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B524": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 272,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-pgrand-followup.md",
+  "r3r4_line": 50,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B525": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 278,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B526": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 291,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B527": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 302,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 212,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B528": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 309,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 126,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B529": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 319,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-pgrand.md",
+  "r3r4_line": 244,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B530": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b501.md",
+  "r1r2_line": 325,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 291,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B531": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 28,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B532": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 35,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B533": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 42,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B534": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 49,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B535": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 58,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B536": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 68,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 143,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B537": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 79,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B538": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 86,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B539": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 94,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B540": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 102,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B541": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 122,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B542": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 129,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 150,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B543": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 138,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 20,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B544": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 148,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 38,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B545": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 157,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 55,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B546": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 166,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round3-batch-push2.md",
+  "r3r4_line": 188,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B547": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 175,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 79,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B548": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 183,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 106,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B549": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 193,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 133,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B550": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 201,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b501-b600-weak.md",
+  "r3r4_line": 157,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B551": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 217,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 216,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B552": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 225,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 246,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B553": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 232,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 267,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B554": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 240,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 290,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B555": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 248,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 21,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B556": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 255,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 31,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B557": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 263,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b536-b600.md",
+  "r3r4_line": 377,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B558": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 271,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B559": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 281,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B560": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b531.md",
+  "r1r2_line": 289,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b551-b600.md",
+  "r3r4_line": 39,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B561": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 21,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 298,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B562": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 34,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B563": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 41,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 41,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B564": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 50,
+  "r3r4": "REFUTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 51,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B565": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 59,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 60,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B566": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 67,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B567": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 77,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B568": {
+  "r1r2": "REFUTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 85,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "REFUTED",
+  "settled": true
+ },
+ "B569": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 94,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 307,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B570": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 99,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-weak-promote.md",
+  "r3r4_line": 314,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B571": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 111,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B572": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 118,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 88,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B573": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 125,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B574": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 131,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B575": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 139,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 99,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B576": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 149,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B577": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 156,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B578": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 164,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 110,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B579": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 171,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 120,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B580": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 178,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 129,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B581": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 192,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 139,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B582": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 202,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 149,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B583": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 210,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B584": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 217,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B585": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 226,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600.md",
+  "r3r4_line": 179,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B586": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 233,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B587": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 244,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 159,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B588": {
+  "r1r2": "NOT-CHECKED",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 251,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600.md",
+  "r3r4_line": 216,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B589": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 259,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 177,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B590": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b561.md",
+  "r1r2_line": 266,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 191,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B591": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 13,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 201,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B592": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 33,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 211,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B593": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 40,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 221,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B594": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 56,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B595": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 63,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B596": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 77,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round4-batch-b591-b599.md",
+  "r3r4_line": 164,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B597": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 87,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 230,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B598": {
+  "r1r2": "INCONCLUSIVE",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 94,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 239,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B599": {
+  "r1r2": "PARTIAL",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 101,
+  "r3r4": "SUPPORTED",
+  "r3r4_file": "round5-batch-b551-b600-followup.md",
+  "r3r4_line": 249,
+  "final": "SUPPORTED",
+  "settled": true
+ },
+ "B600": {
+  "r1r2": "SUPPORTED",
+  "r1r2_file": "round2-batch-b591.md",
+  "r1r2_line": 108,
+  "r3r4": null,
+  "r3r4_file": null,
+  "r3r4_line": null,
+  "final": "SUPPORTED",
+  "settled": true
+ }
 }

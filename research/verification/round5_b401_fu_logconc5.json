@@ -1,0 +1,298 @@
+{
+  "n": 5,
+  "f_empty": [
+    1,
+    25,
+    300,
+    2300,
+    11824,
+    37272,
+    59192,
+    35208,
+    5172,
+    100,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "f_empty_logconcave": true,
+  "single_stone": [
+    {
+      "p": 20,
+      "xy": [
+        0,
+        4
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 3,
+      "xy": [
+        3,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 0,
+      "xy": [
+        0,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 23,
+      "xy": [
+        3,
+        4
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 8,
+      "xy": [
+        3,
+        1
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 7,
+      "xy": [
+        2,
+        1
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 7,
+      "xy": [
+        2,
+        1
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 4,
+      "xy": [
+        4,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 23,
+      "xy": [
+        3,
+        4
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 3,
+      "xy": [
+        3,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 21,
+      "xy": [
+        1,
+        4
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 23,
+      "xy": [
+        3,
+        4
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 17,
+      "xy": [
+        2,
+        3
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 2,
+      "xy": [
+        2,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 18,
+      "xy": [
+        3,
+        3
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 13,
+      "xy": [
+        3,
+        2
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 1,
+      "xy": [
+        1,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 0,
+      "xy": [
+        0,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 2,
+      "xy": [
+        2,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "p": 6,
+      "xy": [
+        1,
+        1
+      ],
+      "logconcave": true,
+      "viol_r": null
+    }
+  ],
+  "single_violations": 0,
+  "two_stone": [
+    {
+      "pq": [
+        7,
+        16
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        19,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        17,
+        6
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        22,
+        20
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        22,
+        17
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        13,
+        7
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        14,
+        18
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        8,
+        0
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        24,
+        5
+      ],
+      "logconcave": true,
+      "viol_r": null
+    },
+    {
+      "pq": [
+        22,
+        13
+      ],
+      "logconcave": true,
+      "viol_r": null
+    }
+  ],
+  "two_violations": 0
+}

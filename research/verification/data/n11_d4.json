@@ -1,0 +1,23 @@
+{
+  "n": 11,
+  "V": 121,
+  "F": 95670,
+  "K": 5,
+  "symmetry": "D4",
+  "d4_point_orbits": 3,
+  "g_empty": 1,
+  "winner": "first",
+  "level_sizes_raw": [1,121,7260,287980,8399740,187879156],
+  "level_sizes_orbits": [1,21,970,36390,1051657,23489377],
+  "levels": [
+    {"k": 0, "orbits": 1, "raw": 1, "P_orbits": 0, "N_orbits": 1, "gen_s": 0.00, "dp_s": 0.11},
+    {"k": 1, "orbits": 21, "raw": 121, "P_orbits": 21, "N_orbits": 0, "gen_s": 0.57, "dp_s": 0.18},
+    {"k": 2, "orbits": 970, "raw": 7260, "P_orbits": 0, "N_orbits": 970, "gen_s": 0.34, "dp_s": 0.12},
+    {"k": 3, "orbits": 36390, "raw": 287980, "P_orbits": 36390, "N_orbits": 0, "gen_s": 1.61, "dp_s": 1.51},
+    {"k": 4, "orbits": 1051657, "raw": 8399740, "P_orbits": 0, "N_orbits": 1051657, "gen_s": 41.39, "dp_s": 46.96},
+    {"k": 5, "orbits": 23489377, "raw": 187879156, "P_orbits": 23489377, "N_orbits": 0, "gen_s": 958.50, "dp_s": 0.00}
+  ],
+  "threads": 14,
+  "total_seconds": 1088.80,
+  "peak_rss_mb": 4005
+}

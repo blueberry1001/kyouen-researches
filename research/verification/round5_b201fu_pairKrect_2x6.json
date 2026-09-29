@@ -1,0 +1,1398 @@
+{
+  "K_base": 6,
+  "g_base": 0,
+  "h": 6,
+  "n_combo": 2,
+  "n_flip": 50,
+  "n_kloss": 0,
+  "n_pairs": 66,
+  "rows": [
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": true,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": true,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        0
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        0,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": false,
+      "g0": 0,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 2,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    },
+    {
+      "K": 6,
+      "combo": false,
+      "flip": true,
+      "g0": 1,
+      "g_one": [
+        1,
+        1
+      ],
+      "kloss": false,
+      "pair": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          5
+        ]
+      ]
+    }
+  ],
+  "w": 2
+}

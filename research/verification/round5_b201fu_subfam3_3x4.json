@@ -1,0 +1,17 @@
+{
+  "W_std": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    11
+  ],
+  "best": null,
+  "g0_std": 2,
+  "h": 4,
+  "n_quads": 57,
+  "quad_masks_note": "bitmask y*w+x",
+  "seconds": 978.65,
+  "w": 3
+}

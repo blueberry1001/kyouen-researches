@@ -1,0 +1,238 @@
+{
+  "B281_witA_sig_size": 1,
+  "B281_witB_sig_size": 1,
+  "B286_min_side_witA": 3,
+  "B286_min_side_witB": 3,
+  "B286_grid_scan": [
+    {
+      "m": 3,
+      "k": 4,
+      "n_points": 9,
+      "n_subsets": 126,
+      "n_distinct_Q": 2,
+      "empty_Q_count": 1,
+      "min_maxabs_dist": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "m": 3,
+      "k": 5,
+      "n_points": 9,
+      "n_subsets": 126,
+      "n_distinct_Q": 6,
+      "empty_Q_count": 1,
+      "min_maxabs_dist": {
+        "2": 6
+      }
+    },
+    {
+      "m": 3,
+      "k": 6,
+      "n_points": 9,
+      "n_subsets": 84,
+      "n_distinct_Q": 37,
+      "empty_Q_count": 0,
+      "min_maxabs_dist": {
+        "2": 37
+      }
+    },
+    {
+      "m": 4,
+      "k": 4,
+      "n_points": 16,
+      "n_subsets": 1820,
+      "n_distinct_Q": 2,
+      "empty_Q_count": 1,
+      "min_maxabs_dist": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "m": 4,
+      "k": 5,
+      "n_points": 16,
+      "n_subsets": 4368,
+      "n_distinct_Q": 7,
+      "empty_Q_count": 1,
+      "min_maxabs_dist": {
+        "2": 6,
+        "3": 1
+      }
+    },
+    {
+      "m": 4,
+      "k": 6,
+      "n_points": 16,
+      "n_subsets": 8008,
+      "n_distinct_Q": 83,
+      "empty_Q_count": 1,
+      "min_maxabs_dist": {
+        "2": 37,
+        "3": 46
+      }
+    }
+  ],
+  "B287_need_large": {
+    "m4_k5": {
+      "nonempty_Q_total": 2008,
+      "need_full_4x4": 80,
+      "max_needed_maxabs": 3,
+      "examples": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ]
+    },
+    "m4_k6": {
+      "nonempty_Q_total": 6944,
+      "need_full_4x4": 720,
+      "max_needed_maxabs": 3,
+      "examples": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ]
+    }
+  }
+}

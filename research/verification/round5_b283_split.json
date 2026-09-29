@@ -1,0 +1,80 @@
+{
+  "m4_k5": {
+    "total_nonemptyQ": 2008,
+    "n_distinct_Qcounts": 2,
+    "Qcounts_with_multiple_splits": {
+      "1": [
+        [
+          [
+            1,
+            0
+          ],
+          120
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          1808
+        ]
+      ]
+    },
+    "n_multi_split_Qcounts": 1
+  },
+  "m4_k6": {
+    "total_nonemptyQ": 6944,
+    "n_distinct_Qcounts": 5,
+    "Qcounts_with_multiple_splits": {
+      "2": [
+        [
+          [
+            1,
+            1
+          ],
+          364
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          1880
+        ]
+      ],
+      "3": [
+        [
+          [
+            1,
+            2
+          ],
+          64
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          144
+        ]
+      ],
+      "1": [
+        [
+          [
+            1,
+            0
+          ],
+          232
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          3540
+        ]
+      ]
+    },
+    "n_multi_split_Qcounts": 3
+  }
+}

@@ -1,0 +1,368 @@
+{
+ "b239": {
+  "scope": "5x5 board, 3x3 at origin scaled unit square, N=2",
+  "corners": [
+   [
+    0,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ]
+  ],
+  "intermediates": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "found_blocking_F_empty_inters": 2,
+  "F_sample": [
+   [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   [
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ]
+  ],
+  "min_F": 4,
+  "note": "F subset of the 16 non-corner non-intermediate points; inters illegal, corners legal"
+ },
+ "b249": {
+  "scope": "n=5 g=1 positions, critical P-child structure",
+  "struct_by_depth": {
+   "1": {
+    "count": 38950,
+    "top3": [
+     {
+      "occ": 380,
+      "stones": 6,
+      "proof": 2,
+      "n_win": 3,
+      "p_child": 524668,
+      "p_child_stones": 7,
+      "p_n_children": 0,
+      "p_child_proofs_top": [],
+      "p_child_proof_sum": 0,
+      "p_child_proof": 1
+     },
+     {
+      "occ": 452,
+      "stones": 4,
+      "proof": 2,
+      "n_win": 10,
+      "p_child": 4194756,
+      "p_child_stones": 5,
+      "p_n_children": 0,
+      "p_child_proofs_top": [],
+      "p_child_proof_sum": 0,
+      "p_child_proof": 1
+     },
+     {
+      "occ": 614,
+      "stones": 5,
+      "proof": 2,
+      "n_win": 1,
+      "p_child": 4194918,
+      "p_child_stones": 6,
+      "p_n_children": 0,
+      "p_child_proofs_top": [],
+      "p_child_proof_sum": 0,
+      "p_child_proof": 1
+     }
+    ],
+    "mean_p_n_children": 0.0,
+    "mean_p_proof": 1.0
+   },
+   "3": {
+    "count": 7626,
+    "top3": [
+     {
+      "occ": 9240,
+      "stones": 4,
+      "proof": 28,
+      "n_win": 4,
+      "p_child": 533528,
+      "p_child_stones": 5,
+      "p_n_children": 13,
+      "p_child_proofs_top": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "p_child_proof_sum": 26,
+      "p_child_proof": 27
+     },
+     {
+      "occ": 9744,
+      "stones": 4,
+      "proof": 28,
+      "n_win": 1,
+      "p_child": 534032,
+      "p_child_stones": 5,
+      "p_n_children": 13,
+      "p_child_proofs_top": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "p_child_proof_sum": 26,
+      "p_child_proof": 27
+     },
+     {
+      "occ": 18435,
+      "stones": 4,
+      "proof": 28,
+      "n_win": 4,
+      "p_child": 51203,
+      "p_child_stones": 5,
+      "p_n_children": 13,
+      "p_child_proofs_top": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "p_child_proof_sum": 26,
+      "p_child_proof": 27
+     }
+    ],
+    "mean_p_n_children": 4.3446105428796225,
+    "mean_p_proof": 9.693417256753213
+   },
+   "5": {
+    "count": 306,
+    "top3": [
+     {
+      "occ": 48,
+      "stones": 2,
+      "proof": 360,
+      "n_win": 4,
+      "p_child": 560,
+      "p_child_stones": 3,
+      "p_n_children": 21,
+      "p_child_proofs_top": [
+       20,
+       22,
+       22,
+       22,
+       24,
+       24,
+       24,
+       26
+      ],
+      "p_child_proof_sum": 358,
+      "p_child_proof": 359
+     },
+     {
+      "occ": 513,
+      "stones": 2,
+      "proof": 360,
+      "n_win": 4,
+      "p_child": 545,
+      "p_child_stones": 3,
+      "p_n_children": 21,
+      "p_child_proofs_top": [
+       20,
+       22,
+       22,
+       22,
+       24,
+       24,
+       24,
+       26
+      ],
+      "p_child_proof_sum": 358,
+      "p_child_proof": 359
+     },
+     {
+      "occ": 1048578,
+      "stones": 2,
+      "proof": 360,
+      "n_win": 4,
+      "p_child": 3145730,
+      "p_child_stones": 3,
+      "p_n_children": 21,
+      "p_child_proofs_top": [
+       20,
+       22,
+       22,
+       22,
+       24,
+       24,
+       24,
+       26
+      ],
+      "p_child_proof_sum": 358,
+      "p_child_proof": 359
+     }
+    ],
+    "mean_p_n_children": 16.686274509803923,
+    "mean_p_proof": 166.77777777777777
+   },
+   "7": {
+    "count": 3,
+    "top3": [
+     {
+      "occ": 0,
+      "stones": 0,
+      "proof": 4432,
+      "n_win": 9,
+      "p_child": 64,
+      "p_child_stones": 1,
+      "p_n_children": 24,
+      "p_child_proofs_top": [
+       214,
+       214,
+       214,
+       214,
+       214,
+       214,
+       214,
+       276
+      ],
+      "p_child_proof_sum": 4430,
+      "p_child_proof": 4431
+     },
+     {
+      "occ": 1048592,
+      "stones": 2,
+      "proof": 378,
+      "n_win": 1,
+      "p_child": 1052688,
+      "p_child_stones": 3,
+      "p_n_children": 20,
+      "p_child_proofs_top": [
+       18,
+       18,
+       18,
+       18,
+       22,
+       22,
+       22,
+       22
+      ],
+      "p_child_proof_sum": 376,
+      "p_child_proof": 377
+     },
+     {
+      "occ": 16777217,
+      "stones": 2,
+      "proof": 378,
+      "n_win": 1,
+      "p_child": 16781313,
+      "p_child_stones": 3,
+      "p_n_children": 20,
+      "p_child_proofs_top": [
+       18,
+       18,
+       18,
+       18,
+       22,
+       22,
+       22,
+       22
+      ],
+      "p_child_proof_sum": 376,
+      "p_child_proof": 377
+     }
+    ],
+    "mean_p_n_children": 21.333333333333332,
+    "mean_p_proof": 1728.3333333333333
+   }
+  },
+  "max_proof_by_depth": {
+   "1": 2,
+   "3": 28,
+   "5": 360,
+   "7": 4432
+  },
+  "ratios": [
+   14.0,
+   12.857142857142858,
+   12.311111111111112
+  ]
+ },
+ "b246_extra": {
+  "feat_more_scalars": {
+   "n_classes": 1064,
+   "homogeneous": 936,
+   "rate": 0.8796992481203008
+  },
+  "feat_wl_residual_identity": {
+   "n_classes": 1098,
+   "homogeneous": 1076,
+   "rate": 0.9799635701275046
+  },
+  "note": "f_wl is the upper bound (residual isomorphism); f_more is 8 scalar features"
+ }
+}

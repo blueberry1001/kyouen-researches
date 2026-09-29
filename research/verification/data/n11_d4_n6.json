@@ -1,0 +1,29 @@
+{
+  "n": 6,
+  "V": 36,
+  "F": 2491,
+  "K": 11,
+  "symmetry": "D4",
+  "d4_point_orbits": 2,
+  "g_empty": 1,
+  "winner": "first",
+  "level_sizes_raw": [1,36,630,7140,56414,301952,997796,1783296,1459292,438952,35316,464],
+  "level_sizes_orbits": [1,6,93,920,7120,37804,124767,222912,182440,54869,4417,58],
+  "levels": [
+    {"k": 0, "orbits": 1, "raw": 1, "P_orbits": 0, "N_orbits": 1, "gen_s": 0.00, "dp_s": 0.14},
+    {"k": 1, "orbits": 6, "raw": 36, "P_orbits": 6, "N_orbits": 0, "gen_s": 0.55, "dp_s": 0.25},
+    {"k": 2, "orbits": 93, "raw": 630, "P_orbits": 0, "N_orbits": 93, "gen_s": 0.63, "dp_s": 0.20},
+    {"k": 3, "orbits": 920, "raw": 7140, "P_orbits": 684, "N_orbits": 236, "gen_s": 0.57, "dp_s": 0.23},
+    {"k": 4, "orbits": 7120, "raw": 56414, "P_orbits": 80, "N_orbits": 7040, "gen_s": 0.96, "dp_s": 0.26},
+    {"k": 5, "orbits": 37804, "raw": 301952, "P_orbits": 10002, "N_orbits": 27802, "gen_s": 2.89, "dp_s": 0.61},
+    {"k": 6, "orbits": 124767, "raw": 997796, "P_orbits": 10533, "N_orbits": 114234, "gen_s": 6.53, "dp_s": 0.98},
+    {"k": 7, "orbits": 222912, "raw": 1783296, "P_orbits": 58920, "N_orbits": 163992, "gen_s": 13.58, "dp_s": 1.15},
+    {"k": 8, "orbits": 182440, "raw": 1459292, "P_orbits": 47492, "N_orbits": 134948, "gen_s": 11.58, "dp_s": 0.56},
+    {"k": 9, "orbits": 54869, "raw": 438952, "P_orbits": 26635, "N_orbits": 28234, "gen_s": 5.74, "dp_s": 0.19},
+    {"k": 10, "orbits": 4417, "raw": 35316, "P_orbits": 3814, "N_orbits": 603, "gen_s": 1.65, "dp_s": 0.23},
+    {"k": 11, "orbits": 58, "raw": 464, "P_orbits": 58, "N_orbits": 0, "gen_s": 0.92, "dp_s": 0.00}
+  ],
+  "threads": 14,
+  "total_seconds": 52.48,
+  "peak_rss_mb": 62
+}

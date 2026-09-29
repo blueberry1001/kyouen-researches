@@ -1,0 +1,91 @@
+{
+  "3": {
+    "n": 3,
+    "n_forbidden_quads": 14,
+    "n_types": 3,
+    "top_m": 10,
+    "top_m_types_count": 14,
+    "top_m_types_frac": 1.0,
+    "top_m_type_sizes": [
+      6,
+      4,
+      4
+    ],
+    "covered_quads_by_top_m": 13,
+    "covered_quads_frac": 0.9285714285714286,
+    "covered_types": 3,
+    "covered_types_frac": 1.0
+  },
+  "4": {
+    "n": 4,
+    "n_forbidden_quads": 194,
+    "n_types": 16,
+    "top_m": 10,
+    "top_m_types_count": 164,
+    "top_m_types_frac": 0.845360824742268,
+    "top_m_type_sizes": [
+      32,
+      20,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      10,
+      8
+    ],
+    "covered_quads_by_top_m": 126,
+    "covered_quads_frac": 0.6494845360824743,
+    "covered_types": 10,
+    "covered_types_frac": 0.625
+  },
+  "5": {
+    "n": 5,
+    "n_forbidden_quads": 826,
+    "n_types": 32,
+    "top_m": 10,
+    "top_m_types_count": 580,
+    "top_m_types_frac": 0.7021791767554479,
+    "top_m_type_sizes": [
+      128,
+      64,
+      64,
+      56,
+      56,
+      50,
+      48,
+      48,
+      38,
+      28
+    ],
+    "covered_quads_by_top_m": 312,
+    "covered_quads_frac": 0.37772397094430993,
+    "covered_types": 10,
+    "covered_types_frac": 0.3125
+  },
+  "6": {
+    "n": 6,
+    "n_forbidden_quads": 2491,
+    "n_types": 69,
+    "top_m": 10,
+    "top_m_types_count": 1291,
+    "top_m_types_frac": 0.5182657567242072,
+    "top_m_type_sizes": [
+      288,
+      144,
+      144,
+      128,
+      120,
+      120,
+      105,
+      96,
+      82,
+      64
+    ],
+    "covered_quads_by_top_m": 659,
+    "covered_quads_frac": 0.26455238859895625,
+    "covered_types": 10,
+    "covered_types_frac": 0.14492753623188406
+  }
+}

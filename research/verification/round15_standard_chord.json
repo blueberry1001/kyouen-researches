@@ -1,0 +1,5242 @@
+{
+  "boards": [
+    {
+      "n": 2,
+      "concyclic_quads": 1,
+      "contributing_chord_parameter_groups": 1,
+      "triple_visits": 4,
+      "quad_count_by_center_denominator": {
+        "2": 1
+      },
+      "independent_four_point_subsets_checked": 1,
+      "quad_sets_equal": true,
+      "circle_count": 1,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 1,
+      "parallel_base_choices_checked": 2,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 3,
+      "concyclic_quads": 14,
+      "contributing_chord_parameter_groups": 14,
+      "triple_visits": 84,
+      "quad_count_by_center_denominator": {
+        "1": 2,
+        "2": 12
+      },
+      "independent_four_point_subsets_checked": 126,
+      "quad_sets_equal": true,
+      "circle_count": 14,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 14,
+      "parallel_base_choices_checked": 24,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 4,
+      "concyclic_quads": 184,
+      "contributing_chord_parameter_groups": 93,
+      "triple_visits": 560,
+      "quad_count_by_center_denominator": {
+        "1": 12,
+        "2": 168,
+        "6": 4
+      },
+      "independent_four_point_subsets_checked": 1820,
+      "quad_sets_equal": true,
+      "circle_count": 59,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 96,
+      "parallel_base_choices_checked": 140,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 5,
+      "concyclic_quads": 762,
+      "contributing_chord_parameter_groups": 363,
+      "triple_visits": 2300,
+      "quad_count_by_center_denominator": {
+        "1": 166,
+        "2": 548,
+        "4": 20,
+        "6": 20,
+        "8": 4,
+        "10": 4
+      },
+      "independent_four_point_subsets_checked": 12650,
+      "quad_sets_equal": true,
+      "circle_count": 217,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 362,
+      "parallel_base_choices_checked": 492,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 6,
+      "concyclic_quads": 2257,
+      "contributing_chord_parameter_groups": 1060,
+      "triple_visits": 7140,
+      "quad_count_by_center_denominator": {
+        "1": 488,
+        "2": 1565,
+        "3": 4,
+        "4": 68,
+        "5": 8,
+        "6": 68,
+        "8": 16,
+        "10": 36,
+        "14": 4
+      },
+      "independent_four_point_subsets_checked": 58905,
+      "quad_sets_equal": true,
+      "circle_count": 622,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 1065,
+      "parallel_base_choices_checked": 1378,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 7,
+      "concyclic_quads": 5704,
+      "contributing_chord_parameter_groups": 2659,
+      "triple_visits": 18424,
+      "quad_count_by_center_denominator": {
+        "1": 1312,
+        "2": 3752,
+        "3": 36,
+        "4": 184,
+        "5": 24,
+        "6": 196,
+        "8": 48,
+        "10": 116,
+        "12": 4,
+        "14": 32
+      },
+      "independent_four_point_subsets_checked": 211876,
+      "quad_sets_equal": true,
+      "circle_count": 1581,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 2616,
+      "parallel_base_choices_checked": 3256,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 8,
+      "concyclic_quads": 13040,
+      "contributing_chord_parameter_groups": 5751,
+      "triple_visits": 41664,
+      "quad_count_by_center_denominator": {
+        "1": 2668,
+        "2": 8788,
+        "3": 96,
+        "4": 396,
+        "5": 52,
+        "6": 444,
+        "7": 24,
+        "8": 100,
+        "10": 284,
+        "12": 16,
+        "14": 164,
+        "18": 4,
+        "22": 4
+      },
+      "independent_four_point_subsets_checked": 635376,
+      "quad_sets_equal": true,
+      "circle_count": 3481,
+      "circle_multiplicity_sum_equal": true,
+      "isosceles_trapezoids": 5600,
+      "parallel_base_choices_checked": 6792,
+      "trapezoid_denominator_bounds_all_pass": true
+    },
+    {
+      "n": 9,
+      "concyclic_quads": 25996,
+      "contributing_chord_parameter_groups": 11270,
+      "triple_visits": 85320,
+      "quad_count_by_center_denominator": {
+        "1": 5460,
+        "2": 16884,
+        "3": 224,
+        "4": 884,
+        "5": 120,
+        "6": 960,
+        "7": 72,
+        "8": 272,
+        "10": 568,
+        "12": 48,
+        "14": 412,
+        "16": 40,
+        "18": 24,
+        "22": 24,
+        "26": 4
+      }
+    },
+    {
+      "n": 10,
+      "concyclic_quads": 48513,
+      "contributing_chord_parameter_groups": 20596,
+      "triple_visits": 161700,
+      "quad_count_by_center_denominator": {
+        "1": 10340,
+        "2": 30557,
+        "3": 468,
+        "4": 1744,
+        "5": 236,
+        "6": 2028,
+        "7": 164,
+        "8": 540,
+        "9": 24,
+        "10": 1076,
+        "12": 96,
+        "14": 836,
+        "16": 112,
+        "18": 156,
+        "22": 112,
+        "26": 24
+      }
+    },
+    {
+      "n": 11,
+      "concyclic_quads": 85242,
+      "contributing_chord_parameter_groups": 35017,
+      "triple_visits": 287980,
+      "quad_count_by_center_denominator": {
+        "1": 18494,
+        "2": 52504,
+        "3": 856,
+        "4": 3160,
+        "5": 496,
+        "6": 3580,
+        "7": 328,
+        "8": 996,
+        "9": 64,
+        "10": 1976,
+        "12": 160,
+        "14": 1540,
+        "16": 240,
+        "18": 388,
+        "20": 48,
+        "22": 296,
+        "26": 96,
+        "34": 20
+      }
+    },
+    {
+      "n": 12,
+      "concyclic_quads": 141272,
+      "contributing_chord_parameter_groups": 56445,
+      "triple_visits": 487344,
+      "quad_count_by_center_denominator": {
+        "1": 29736,
+        "2": 86948,
+        "3": 1472,
+        "4": 5208,
+        "5": 868,
+        "6": 5836,
+        "7": 572,
+        "8": 1672,
+        "9": 124,
+        "10": 3304,
+        "11": 104,
+        "12": 244,
+        "14": 2648,
+        "16": 420,
+        "18": 792,
+        "20": 128,
+        "22": 868,
+        "26": 248,
+        "30": 4,
+        "34": 72,
+        "38": 4
+      }
+    }
+  ],
+  "circle_certificates": [
+    {
+      "n": 2,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 3,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 4,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 4,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 5,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 5,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 5,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 5,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -13,
+      "B": 4,
+      "D": 13,
+      "E": 16,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -13,
+        -16,
+        0
+      ],
+      "norm": 425,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 5,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        2,
+        4
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 14,
+      "B": 5,
+      "D": 19,
+      "E": 9,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -19,
+        -19,
+        14
+      ],
+      "norm": 442,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -13,
+      "B": 4,
+      "D": 13,
+      "E": 16,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -13,
+        -16,
+        0
+      ],
+      "norm": 425,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 6,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 26,
+      "B": 7,
+      "D": 33,
+      "E": 19,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -33,
+        -33,
+        26
+      ],
+      "norm": 1450,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -13,
+      "B": 4,
+      "D": 13,
+      "E": 16,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -13,
+        -16,
+        0
+      ],
+      "norm": 425,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 7,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        2,
+        6
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 32,
+      "B": 7,
+      "D": 39,
+      "E": 25,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -39,
+        -39,
+        32
+      ],
+      "norm": 2146,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -47,
+      "B": 7,
+      "D": 47,
+      "E": 21,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -47,
+        -21,
+        0
+      ],
+      "norm": 2650,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -13,
+      "B": 4,
+      "D": 13,
+      "E": 16,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -13,
+        -16,
+        0
+      ],
+      "norm": 425,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        5,
+        7
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 62,
+      "B": 11,
+      "D": 73,
+      "E": 51,
+      "q": 22,
+      "global_primitive_equation": [
+        11,
+        -73,
+        -73,
+        62
+      ],
+      "norm": 7930,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 8,
+      "a": [
+        0,
+        2
+      ],
+      "b": [
+        2,
+        0
+      ],
+      "c": [
+        4,
+        7
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 2,
+      "A": 43,
+      "B": 9,
+      "D": 61,
+      "E": 25,
+      "q": 18,
+      "global_primitive_equation": [
+        9,
+        -61,
+        -61,
+        86
+      ],
+      "norm": 4346,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        3,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 3,
+      "D": 7,
+      "E": 9,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -7,
+        -9,
+        0
+      ],
+      "norm": 130,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -47,
+      "B": 7,
+      "D": 47,
+      "E": 21,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -47,
+        -21,
+        0
+      ],
+      "norm": 2650,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -31,
+      "B": 4,
+      "D": 31,
+      "E": 12,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -31,
+        -12,
+        0
+      ],
+      "norm": 1105,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -61,
+      "B": 8,
+      "D": 61,
+      "E": 32,
+      "q": 16,
+      "global_primitive_equation": [
+        8,
+        -61,
+        -32,
+        0
+      ],
+      "norm": 4745,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        2,
+        8
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 58,
+      "B": 9,
+      "D": 67,
+      "E": 49,
+      "q": 18,
+      "global_primitive_equation": [
+        9,
+        -67,
+        -67,
+        58
+      ],
+      "norm": 6890,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        4,
+        8
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 68,
+      "B": 11,
+      "D": 79,
+      "E": 57,
+      "q": 22,
+      "global_primitive_equation": [
+        11,
+        -79,
+        -79,
+        68
+      ],
+      "norm": 9490,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 9,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        6,
+        8
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 86,
+      "B": 13,
+      "D": 99,
+      "E": 73,
+      "q": 26,
+      "global_primitive_equation": [
+        13,
+        -99,
+        -99,
+        86
+      ],
+      "norm": 15130,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -29,
+      "B": 3,
+      "D": 29,
+      "E": 3,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -29,
+        -3,
+        0
+      ],
+      "norm": 850,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          -4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          9,
+          -2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 15,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -47,
+      "B": 7,
+      "D": 47,
+      "E": 21,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -47,
+        -21,
+        0
+      ],
+      "norm": 2650,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -31,
+      "B": 4,
+      "D": 31,
+      "E": 12,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -31,
+        -12,
+        0
+      ],
+      "norm": 1105,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        9,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -79,
+      "B": 9,
+      "D": 79,
+      "E": 27,
+      "q": 18,
+      "global_primitive_equation": [
+        9,
+        -79,
+        -27,
+        0
+      ],
+      "norm": 6970,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -61,
+      "B": 8,
+      "D": 61,
+      "E": 32,
+      "q": 16,
+      "global_primitive_equation": [
+        8,
+        -61,
+        -32,
+        0
+      ],
+      "norm": 4745,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        1,
+        7
+      ],
+      "c": [
+        6,
+        9
+      ],
+      "u": [
+        1,
+        7
+      ],
+      "g": 1,
+      "A": -16,
+      "B": 11,
+      "D": 123,
+      "E": 61,
+      "q": 22,
+      "global_primitive_equation": [
+        11,
+        -123,
+        -61,
+        0
+      ],
+      "norm": 18850,
+      "all_norm_representation_count": 48,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 10,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        5,
+        9
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 92,
+      "B": 13,
+      "D": 105,
+      "E": 79,
+      "q": 26,
+      "global_primitive_equation": [
+        13,
+        -105,
+        -105,
+        92
+      ],
+      "norm": 17266,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -29,
+      "B": 3,
+      "D": 29,
+      "E": 3,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -29,
+        -3,
+        0
+      ],
+      "norm": 850,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          -4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          9,
+          -2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 15,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -47,
+      "B": 7,
+      "D": 47,
+      "E": 21,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -47,
+        -21,
+        0
+      ],
+      "norm": 2650,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -31,
+      "B": 4,
+      "D": 31,
+      "E": 12,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -31,
+        -12,
+        0
+      ],
+      "norm": 1105,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        9,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -79,
+      "B": 9,
+      "D": 79,
+      "E": 27,
+      "q": 18,
+      "global_primitive_equation": [
+        9,
+        -79,
+        -27,
+        0
+      ],
+      "norm": 6970,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -61,
+      "B": 8,
+      "D": 61,
+      "E": 32,
+      "q": 16,
+      "global_primitive_equation": [
+        8,
+        -61,
+        -32,
+        0
+      ],
+      "norm": 4745,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        10,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -97,
+      "B": 10,
+      "D": 97,
+      "E": 40,
+      "q": 20,
+      "global_primitive_equation": [
+        10,
+        -97,
+        -40,
+        0
+      ],
+      "norm": 11009,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        1,
+        7
+      ],
+      "c": [
+        6,
+        9
+      ],
+      "u": [
+        1,
+        7
+      ],
+      "g": 1,
+      "A": -16,
+      "B": 11,
+      "D": 123,
+      "E": 61,
+      "q": 22,
+      "global_primitive_equation": [
+        11,
+        -123,
+        -61,
+        0
+      ],
+      "norm": 18850,
+      "all_norm_representation_count": 48,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        4,
+        10
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 102,
+      "B": 13,
+      "D": 115,
+      "E": 89,
+      "q": 26,
+      "global_primitive_equation": [
+        13,
+        -115,
+        -115,
+        102
+      ],
+      "norm": 21146,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 11,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        8,
+        10
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 146,
+      "B": 17,
+      "D": 163,
+      "E": 129,
+      "q": 34,
+      "global_primitive_equation": [
+        17,
+        -163,
+        -163,
+        146
+      ],
+      "norm": 43210,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          7
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        1,
+        0
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -1,
+      "B": 1,
+      "D": 1,
+      "E": 1,
+      "q": 2,
+      "global_primitive_equation": [
+        1,
+        -1,
+        -1,
+        0
+      ],
+      "norm": 2,
+      "all_norm_representation_count": 4,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "c": [
+        3,
+        5
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 1,
+      "A": -29,
+      "B": 3,
+      "D": 29,
+      "E": 3,
+      "q": 6,
+      "global_primitive_equation": [
+        3,
+        -29,
+        -3,
+        0
+      ],
+      "norm": 850,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          -4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          9,
+          -2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 15,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        4,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -7,
+      "B": 2,
+      "D": 7,
+      "E": 6,
+      "q": 4,
+      "global_primitive_equation": [
+        2,
+        -7,
+        -6,
+        0
+      ],
+      "norm": 85,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        5,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -23,
+      "B": 5,
+      "D": 23,
+      "E": 15,
+      "q": 10,
+      "global_primitive_equation": [
+        5,
+        -23,
+        -15,
+        0
+      ],
+      "norm": 754,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        7,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -47,
+      "B": 7,
+      "D": 47,
+      "E": 21,
+      "q": 14,
+      "global_primitive_equation": [
+        7,
+        -47,
+        -21,
+        0
+      ],
+      "norm": 2650,
+      "all_norm_representation_count": 24,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -31,
+      "B": 4,
+      "D": 31,
+      "E": 12,
+      "q": 8,
+      "global_primitive_equation": [
+        4,
+        -31,
+        -12,
+        0
+      ],
+      "norm": 1105,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        9,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -79,
+      "B": 9,
+      "D": 79,
+      "E": 27,
+      "q": 18,
+      "global_primitive_equation": [
+        9,
+        -79,
+        -27,
+        0
+      ],
+      "norm": 6970,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        3
+      ],
+      "c": [
+        11,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 3,
+      "A": -119,
+      "B": 11,
+      "D": 119,
+      "E": 33,
+      "q": 22,
+      "global_primitive_equation": [
+        11,
+        -119,
+        -33,
+        0
+      ],
+      "norm": 15250,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        8,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -61,
+      "B": 8,
+      "D": 61,
+      "E": 32,
+      "q": 16,
+      "global_primitive_equation": [
+        8,
+        -61,
+        -32,
+        0
+      ],
+      "norm": 4745,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        4
+      ],
+      "c": [
+        10,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 4,
+      "A": -97,
+      "B": 10,
+      "D": 97,
+      "E": 40,
+      "q": 20,
+      "global_primitive_equation": [
+        10,
+        -97,
+        -40,
+        0
+      ],
+      "norm": 11009,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        6
+      ],
+      "c": [
+        6,
+        1
+      ],
+      "u": [
+        0,
+        1
+      ],
+      "g": 6,
+      "A": -31,
+      "B": 6,
+      "D": 31,
+      "E": 36,
+      "q": 12,
+      "global_primitive_equation": [
+        6,
+        -31,
+        -36,
+        0
+      ],
+      "norm": 2257,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        3,
+        11
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 116,
+      "B": 13,
+      "D": 129,
+      "E": 103,
+      "q": 26,
+      "global_primitive_equation": [
+        13,
+        -129,
+        -129,
+        116
+      ],
+      "norm": 27250,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          11,
+          2
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        7,
+        11
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 152,
+      "B": 17,
+      "D": 169,
+      "E": 135,
+      "q": 34,
+      "global_primitive_equation": [
+        17,
+        -169,
+        -169,
+        152
+      ],
+      "norm": 46786,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "c": [
+        9,
+        11
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 1,
+      "A": 182,
+      "B": 19,
+      "D": 201,
+      "E": 163,
+      "q": 38,
+      "global_primitive_equation": [
+        19,
+        -201,
+        -201,
+        182
+      ],
+      "norm": 66970,
+      "all_norm_representation_count": 32,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          11,
+          8
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    },
+    {
+      "n": 12,
+      "a": [
+        0,
+        3
+      ],
+      "b": [
+        3,
+        0
+      ],
+      "c": [
+        7,
+        11
+      ],
+      "u": [
+        1,
+        -1
+      ],
+      "g": 3,
+      "A": 116,
+      "B": 15,
+      "D": 161,
+      "E": 71,
+      "q": 30,
+      "global_primitive_equation": [
+        15,
+        -161,
+        -161,
+        348
+      ],
+      "norm": 30962,
+      "all_norm_representation_count": 16,
+      "complete_relative_integer_points": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          -3
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          11,
+          4
+        ]
+      ],
+      "all_complete_circle_chords_checked": 6,
+      "independent_center_and_equation_pass": true,
+      "norm_and_quadratic_solutions_equal": true
+    }
+  ],
+  "certificate_count": 81,
+  "complete_chords_checked": 513,
+  "sharp_trapezoid_family": {
+    "n_min": 3,
+    "n_max": 1000,
+    "cases": 998,
+    "q_equals_4n_minus_10_cases_n_ge5": 664,
+    "examples": [
+      {
+        "n": 3,
+        "points": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "q": 2,
+        "primitive_equation": [
+          1,
+          -1,
+          -3,
+          0
+        ]
+      },
+      {
+        "n": 4,
+        "points": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "q": 2,
+        "primitive_equation": [
+          1,
+          -3,
+          -3,
+          2
+        ]
+      },
+      {
+        "n": 5,
+        "points": [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "q": 10,
+        "primitive_equation": [
+          5,
+          -21,
+          -19,
+          18
+        ]
+      },
+      {
+        "n": 6,
+        "points": [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "q": 14,
+        "primitive_equation": [
+          7,
+          -37,
+          -33,
+          36
+        ]
+      },
+      {
+        "n": 8,
+        "points": [
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        "q": 22,
+        "primitive_equation": [
+          11,
+          -81,
+          -73,
+          90
+        ]
+      },
+      {
+        "n": 20,
+        "points": [
+          [
+            18,
+            0
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            0,
+            17
+          ],
+          [
+            2,
+            19
+          ]
+        ],
+        "q": 70,
+        "primitive_equation": [
+          35,
+          -681,
+          -649,
+          918
+        ]
+      },
+      {
+        "n": 101,
+        "points": [
+          [
+            99,
+            0
+          ],
+          [
+            100,
+            1
+          ],
+          [
+            0,
+            98
+          ],
+          [
+            2,
+            100
+          ]
+        ],
+        "q": 394,
+        "primitive_equation": [
+          197,
+          -19797,
+          -19603,
+          29106
+        ]
+      },
+      {
+        "n": 500,
+        "points": [
+          [
+            498,
+            0
+          ],
+          [
+            499,
+            1
+          ],
+          [
+            0,
+            497
+          ],
+          [
+            2,
+            499
+          ]
+        ],
+        "q": 1990,
+        "primitive_equation": [
+          995,
+          -497001,
+          -496009,
+          742518
+        ]
+      },
+      {
+        "n": 998,
+        "points": [
+          [
+            996,
+            0
+          ],
+          [
+            997,
+            1
+          ],
+          [
+            0,
+            995
+          ],
+          [
+            2,
+            997
+          ]
+        ],
+        "q": 3982,
+        "primitive_equation": [
+          1991,
+          -1986021,
+          -1984033,
+          2973060
+        ]
+      },
+      {
+        "n": 999,
+        "points": [
+          [
+            997,
+            0
+          ],
+          [
+            998,
+            1
+          ],
+          [
+            0,
+            996
+          ],
+          [
+            2,
+            998
+          ]
+        ],
+        "q": 3986,
+        "primitive_equation": [
+          1993,
+          -1990009,
+          -1988019,
+          2979036
+        ]
+      },
+      {
+        "n": 1000,
+        "points": [
+          [
+            998,
+            0
+          ],
+          [
+            999,
+            1
+          ],
+          [
+            0,
+            997
+          ],
+          [
+            2,
+            999
+          ]
+        ],
+        "q": 1330,
+        "primitive_equation": [
+          665,
+          -664667,
+          -664003,
+          995006
+        ]
+      }
+    ]
+  },
+  "quadratic_denominator_family": {
+    "parameter_t": "30*j+10",
+    "j_min": 0,
+    "j_max": 100,
+    "cases": 101,
+    "all_nontrapezoid_and_exact_denominator_checks_pass": true,
+    "examples": [
+      {
+        "t": 10,
+        "n": 68,
+        "points": [
+          [
+            33,
+            1
+          ],
+          [
+            0,
+            36
+          ],
+          [
+            43,
+            0
+          ],
+          [
+            7,
+            67
+          ]
+        ],
+        "q": 634,
+        "primitive_equation": [
+          317,
+          -26771,
+          -27107,
+          565020
+        ],
+        "q_over_n_squared": {
+          "numerator": 634,
+          "denominator": 4624
+        }
+      },
+      {
+        "t": 40,
+        "n": 248,
+        "points": [
+          [
+            123,
+            1
+          ],
+          [
+            0,
+            126
+          ],
+          [
+            163,
+            0
+          ],
+          [
+            37,
+            247
+          ]
+        ],
+        "q": 9754,
+        "primitive_equation": [
+          4877,
+          -1430621,
+          -1436837,
+          103614210
+        ],
+        "q_over_n_squared": {
+          "numerator": 9754,
+          "denominator": 61504
+        }
+      },
+      {
+        "t": 70,
+        "n": 428,
+        "points": [
+          [
+            213,
+            1
+          ],
+          [
+            0,
+            216
+          ],
+          [
+            283,
+            0
+          ],
+          [
+            67,
+            427
+          ]
+        ],
+        "q": 29674,
+        "primitive_equation": [
+          14837,
+          -7465871,
+          -7485167,
+          924561000
+        ],
+        "q_over_n_squared": {
+          "numerator": 29674,
+          "denominator": 183184
+        }
+      },
+      {
+        "t": 310,
+        "n": 1868,
+        "points": [
+          [
+            933,
+            1
+          ],
+          [
+            0,
+            936
+          ],
+          [
+            1243,
+            0
+          ],
+          [
+            307,
+            1867
+          ]
+        ],
+        "q": 577834,
+        "primitive_equation": [
+          288917,
+          -630718271,
+          -631101407,
+          337591888920
+        ],
+        "q_over_n_squared": {
+          "numerator": 577834,
+          "denominator": 3489424
+        }
+      },
+      {
+        "t": 1510,
+        "n": 9068,
+        "points": [
+          [
+            4533,
+            1
+          ],
+          [
+            0,
+            4536
+          ],
+          [
+            6043,
+            0
+          ],
+          [
+            1507,
+            9067
+          ]
+        ],
+        "q": 13686634,
+        "primitive_equation": [
+          6843317,
+          -72422884271,
+          -72431998607,
+          187748272784520
+        ],
+        "q_over_n_squared": {
+          "numerator": 13686634,
+          "denominator": 82228624
+        }
+      },
+      {
+        "t": 3010,
+        "n": 18068,
+        "points": [
+          [
+            9033,
+            1
+          ],
+          [
+            0,
+            9036
+          ],
+          [
+            12043,
+            0
+          ],
+          [
+            3007,
+            18067
+          ]
+        ],
+        "q": 54372634,
+        "primitive_equation": [
+          27186317,
+          -573169241771,
+          -573205470107,
+          2959740984004020
+        ],
+        "q_over_n_squared": {
+          "numerator": 54372634,
+          "denominator": 326452624
+        }
+      }
+    ]
+  },
+  "independent_census": {
+    "file": "round3_b451_census.json",
+    "sha256": "b904ccc224c213713edc708972eaa9707e38341d683a740ce726845869e9f970",
+    "comparisons": [
+      {
+        "n": 4,
+        "census_count": 184,
+        "new_count": 184,
+        "equal": true
+      },
+      {
+        "n": 5,
+        "census_count": 762,
+        "new_count": 762,
+        "equal": true
+      },
+      {
+        "n": 6,
+        "census_count": 2257,
+        "new_count": 2257,
+        "equal": true
+      },
+      {
+        "n": 7,
+        "census_count": 5704,
+        "new_count": 5704,
+        "equal": true
+      },
+      {
+        "n": 8,
+        "census_count": 13040,
+        "new_count": 13040,
+        "equal": true
+      },
+      {
+        "n": 9,
+        "census_count": 25996,
+        "new_count": 25996,
+        "equal": true
+      },
+      {
+        "n": 10,
+        "census_count": 48513,
+        "new_count": 48513,
+        "equal": true
+      },
+      {
+        "n": 11,
+        "census_count": 85242,
+        "new_count": 85242,
+        "equal": true
+      },
+      {
+        "n": 12,
+        "census_count": 141272,
+        "new_count": 141272,
+        "equal": true
+      }
+    ]
+  },
+  "script_sha256": "4e549befe45f349357041a8d620e3ad5734ebf5eff857ea1ea0005d089745e0f",
+  "scope": "Exact finite implementation checks. The general proof is in round15-standard-chord.md."
+}

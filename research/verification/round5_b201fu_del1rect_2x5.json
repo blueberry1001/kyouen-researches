@@ -1,0 +1,154 @@
+{
+  "base_K": 6,
+  "base_Wsize": 4,
+  "base_g0": 1,
+  "base_n_pos": 470,
+  "h": 5,
+  "n_Kchange": 0,
+  "n_Kdown_same": 0,
+  "n_flip": 0,
+  "n_sameK_flip": 0,
+  "rows": [
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 5,
+      "g0": 1,
+      "n_pos": 293,
+      "p": [
+        0,
+        0
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 5,
+      "g0": 1,
+      "n_pos": 293,
+      "p": [
+        1,
+        0
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 298,
+      "p": [
+        0,
+        1
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 298,
+      "p": [
+        1,
+        1
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 292,
+      "p": [
+        0,
+        2
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 292,
+      "p": [
+        1,
+        2
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 298,
+      "p": [
+        0,
+        3
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 9,
+      "g0": 1,
+      "n_pos": 298,
+      "p": [
+        1,
+        3
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 5,
+      "g0": 1,
+      "n_pos": 293,
+      "p": [
+        0,
+        4
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    },
+    {
+      "K": 6,
+      "K_changed": false,
+      "K_down_same_win": false,
+      "Wsize": 5,
+      "g0": 1,
+      "n_pos": 293,
+      "p": [
+        1,
+        4
+      ],
+      "same_K_flip": false,
+      "winner_changed": false
+    }
+  ],
+  "w": 2
+}

@@ -1,0 +1,27 @@
+{
+  "K": 7,
+  "contain_counts": [
+    42,
+    40,
+    42,
+    34,
+    28,
+    34,
+    26,
+    68,
+    26,
+    34,
+    28,
+    34,
+    42,
+    40,
+    42
+  ],
+  "h": 5,
+  "max_count": 68,
+  "min_count": 26,
+  "n_maximal": 80,
+  "never_coords": [],
+  "points_never_in_max": [],
+  "w": 3
+}

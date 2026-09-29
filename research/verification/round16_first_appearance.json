@@ -1,0 +1,949 @@
+{
+  "circle_pair": [
+    {
+      "name": "C",
+      "q_a_b_M": [
+        3,
+        1,
+        2,
+        725
+      ],
+      "complete_points": [
+        [
+          -9,
+          -3
+        ],
+        [
+          -8,
+          4
+        ],
+        [
+          -5,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          -9
+        ],
+        [
+          8,
+          -4
+        ]
+      ],
+      "primitive_equation": [
+        3,
+        2,
+        4,
+        -240
+      ],
+      "profile": {
+        "1": {
+          "first_board_side_at_least": 1,
+          "subset_span_histogram": {
+            "0": 6
+          }
+        },
+        "2": {
+          "first_board_side_at_least": 4,
+          "subset_span_histogram": {
+            "3": 1,
+            "5": 1,
+            "7": 2,
+            "10": 2,
+            "11": 1,
+            "12": 2,
+            "13": 2,
+            "16": 2,
+            "17": 2
+          }
+        },
+        "3": {
+          "first_board_side_at_least": 11,
+          "subset_span_histogram": {
+            "10": 2,
+            "11": 2,
+            "13": 2,
+            "16": 6,
+            "17": 8
+          }
+        },
+        "4": {
+          "first_board_side_at_least": 12,
+          "subset_span_histogram": {
+            "11": 1,
+            "16": 3,
+            "17": 11
+          }
+        },
+        "5": {
+          "first_board_side_at_least": 18,
+          "subset_span_histogram": {
+            "17": 6
+          }
+        },
+        "6": {
+          "first_board_side_at_least": 18,
+          "subset_span_histogram": {
+            "17": 1
+          }
+        }
+      },
+      "exact_four_window": {
+        "lower_left": [
+          -9,
+          -3
+        ],
+        "side": 12,
+        "points": [
+          [
+            -9,
+            -3
+          ],
+          [
+            -8,
+            4
+          ],
+          [
+            -5,
+            7
+          ],
+          [
+            2,
+            8
+          ]
+        ]
+      },
+      "inert_scales": [
+        {
+          "exponent": 0,
+          "scale": 1,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            2,
+            4,
+            -240
+          ],
+          "full_span": 17,
+          "first_four_side": 12,
+          "exact_four_window": {
+            "lower_left": [
+              -9,
+              -3
+            ],
+            "side": 12,
+            "points": [
+              [
+                -9,
+                -3
+              ],
+              [
+                -8,
+                4
+              ],
+              [
+                -5,
+                7
+              ],
+              [
+                2,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 1,
+          "scale": 7,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            14,
+            28,
+            -11760
+          ],
+          "full_span": 119,
+          "first_four_side": 78,
+          "exact_four_window": {
+            "lower_left": [
+              -63,
+              -21
+            ],
+            "side": 78,
+            "points": [
+              [
+                -63,
+                -21
+              ],
+              [
+                -56,
+                28
+              ],
+              [
+                -35,
+                49
+              ],
+              [
+                14,
+                56
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 2,
+          "scale": 49,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            98,
+            196,
+            -576240
+          ],
+          "full_span": 833,
+          "first_four_side": 540,
+          "exact_four_window": {
+            "lower_left": [
+              -441,
+              -147
+            ],
+            "side": 540,
+            "points": [
+              [
+                -441,
+                -147
+              ],
+              [
+                -392,
+                196
+              ],
+              [
+                -245,
+                343
+              ],
+              [
+                98,
+                392
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 3,
+          "scale": 343,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            686,
+            1372,
+            -28235760
+          ],
+          "full_span": 5831,
+          "first_four_side": 3774,
+          "exact_four_window": {
+            "lower_left": [
+              -3087,
+              -1029
+            ],
+            "side": 3774,
+            "points": [
+              [
+                -3087,
+                -1029
+              ],
+              [
+                -2744,
+                1372
+              ],
+              [
+                -1715,
+                2401
+              ],
+              [
+                686,
+                2744
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 4,
+          "scale": 2401,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            4802,
+            9604,
+            -1383552240
+          ],
+          "full_span": 40817,
+          "first_four_side": 26412,
+          "exact_four_window": {
+            "lower_left": [
+              -21609,
+              -7203
+            ],
+            "side": 26412,
+            "points": [
+              [
+                -21609,
+                -7203
+              ],
+              [
+                -19208,
+                9604
+              ],
+              [
+                -12005,
+                16807
+              ],
+              [
+                4802,
+                19208
+              ]
+            ]
+          }
+        }
+      ],
+      "excluded_scale_examples": [
+        {
+          "scale": 3,
+          "complete_count": 24,
+          "center_denominator": 1,
+          "reason_excluded": "divides q"
+        },
+        {
+          "scale": 5,
+          "complete_count": 10,
+          "center_denominator": 3,
+          "reason_excluded": "prime is 1 mod 4"
+        }
+      ]
+    },
+    {
+      "name": "D",
+      "q_a_b_M": [
+        3,
+        1,
+        1,
+        845
+      ],
+      "complete_points": [
+        [
+          -10,
+          -1
+        ],
+        [
+          -9,
+          4
+        ],
+        [
+          -1,
+          -10
+        ],
+        [
+          4,
+          -9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          6
+        ]
+      ],
+      "primitive_equation": [
+        3,
+        2,
+        2,
+        -281
+      ],
+      "profile": {
+        "1": {
+          "first_board_side_at_least": 1,
+          "subset_span_histogram": {
+            "0": 6
+          }
+        },
+        "2": {
+          "first_board_side_at_least": 2,
+          "subset_span_histogram": {
+            "1": 1,
+            "5": 2,
+            "9": 1,
+            "13": 1,
+            "14": 2,
+            "15": 2,
+            "16": 4,
+            "17": 2
+          }
+        },
+        "3": {
+          "first_board_side_at_least": 15,
+          "subset_span_histogram": {
+            "14": 4,
+            "16": 8,
+            "17": 8
+          }
+        },
+        "4": {
+          "first_board_side_at_least": 15,
+          "subset_span_histogram": {
+            "14": 1,
+            "16": 3,
+            "17": 11
+          }
+        },
+        "5": {
+          "first_board_side_at_least": 18,
+          "subset_span_histogram": {
+            "17": 6
+          }
+        },
+        "6": {
+          "first_board_side_at_least": 18,
+          "subset_span_histogram": {
+            "17": 1
+          }
+        }
+      },
+      "exact_four_window": {
+        "lower_left": [
+          -10,
+          -10
+        ],
+        "side": 15,
+        "points": [
+          [
+            -10,
+            -1
+          ],
+          [
+            -9,
+            4
+          ],
+          [
+            -1,
+            -10
+          ],
+          [
+            4,
+            -9
+          ]
+        ]
+      },
+      "inert_scales": [
+        {
+          "exponent": 0,
+          "scale": 1,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            2,
+            2,
+            -281
+          ],
+          "full_span": 17,
+          "first_four_side": 15,
+          "exact_four_window": {
+            "lower_left": [
+              -10,
+              -10
+            ],
+            "side": 15,
+            "points": [
+              [
+                -10,
+                -1
+              ],
+              [
+                -9,
+                4
+              ],
+              [
+                -1,
+                -10
+              ],
+              [
+                4,
+                -9
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 1,
+          "scale": 7,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            14,
+            14,
+            -13769
+          ],
+          "full_span": 119,
+          "first_four_side": 99,
+          "exact_four_window": {
+            "lower_left": [
+              -70,
+              -70
+            ],
+            "side": 99,
+            "points": [
+              [
+                -70,
+                -7
+              ],
+              [
+                -63,
+                28
+              ],
+              [
+                -7,
+                -70
+              ],
+              [
+                28,
+                -63
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 2,
+          "scale": 49,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            98,
+            98,
+            -674681
+          ],
+          "full_span": 833,
+          "first_four_side": 687,
+          "exact_four_window": {
+            "lower_left": [
+              -490,
+              -490
+            ],
+            "side": 687,
+            "points": [
+              [
+                -490,
+                -49
+              ],
+              [
+                -441,
+                196
+              ],
+              [
+                -49,
+                -490
+              ],
+              [
+                196,
+                -441
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 3,
+          "scale": 343,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            686,
+            686,
+            -33059369
+          ],
+          "full_span": 5831,
+          "first_four_side": 4803,
+          "exact_four_window": {
+            "lower_left": [
+              -3430,
+              -3430
+            ],
+            "side": 4803,
+            "points": [
+              [
+                -3430,
+                -343
+              ],
+              [
+                -3087,
+                1372
+              ],
+              [
+                -343,
+                -3430
+              ],
+              [
+                1372,
+                -3087
+              ]
+            ]
+          }
+        },
+        {
+          "exponent": 4,
+          "scale": 2401,
+          "complete_count": 6,
+          "center_denominator": 3,
+          "primitive_equation": [
+            3,
+            4802,
+            4802,
+            -1619909081
+          ],
+          "full_span": 40817,
+          "first_four_side": 33615,
+          "exact_four_window": {
+            "lower_left": [
+              -24010,
+              -24010
+            ],
+            "side": 33615,
+            "points": [
+              [
+                -24010,
+                -2401
+              ],
+              [
+                -21609,
+                9604
+              ],
+              [
+                -2401,
+                -24010
+              ],
+              [
+                9604,
+                -21609
+              ]
+            ]
+          }
+        }
+      ],
+      "excluded_scale_examples": [
+        {
+          "scale": 3,
+          "complete_count": 24,
+          "center_denominator": 1,
+          "reason_excluded": "divides q"
+        },
+        {
+          "scale": 5,
+          "complete_count": 12,
+          "center_denominator": 3,
+          "reason_excluded": "prime is 1 mod 4"
+        }
+      ]
+    }
+  ],
+  "exterior_example": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "original_radius": 2,
+    "original_shell_checks": [
+      {
+        "r": 1,
+        "points_checked": 32,
+        "legal_points": []
+      },
+      {
+        "r": 2,
+        "points_checked": 40,
+        "legal_points": [
+          [
+            7,
+            8
+          ]
+        ]
+      }
+    ],
+    "three_point_line_count": 9,
+    "three_point_circle_count": 355,
+    "circle_center_denominators": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      14,
+      16,
+      18,
+      22,
+      26,
+      32,
+      34,
+      38,
+      42,
+      46,
+      54,
+      58,
+      62
+    ],
+    "dilates": [
+      {
+        "scale": 79,
+        "safe": true,
+        "exterior_radius": 1,
+        "candidates": [
+          [
+            475,
+            0
+          ],
+          [
+            475,
+            1
+          ],
+          [
+            475,
+            2
+          ],
+          [
+            475,
+            3
+          ],
+          [
+            475,
+            4
+          ],
+          [
+            475,
+            5
+          ],
+          [
+            475,
+            6
+          ],
+          [
+            475,
+            7
+          ],
+          [
+            475,
+            8
+          ],
+          [
+            475,
+            9
+          ]
+        ],
+        "legal_candidates": [
+          [
+            475,
+            1
+          ],
+          [
+            475,
+            2
+          ],
+          [
+            475,
+            3
+          ],
+          [
+            475,
+            4
+          ],
+          [
+            475,
+            5
+          ],
+          [
+            475,
+            6
+          ],
+          [
+            475,
+            7
+          ],
+          [
+            475,
+            8
+          ],
+          [
+            475,
+            9
+          ]
+        ],
+        "witness": [
+          475,
+          1
+        ],
+        "all_triples_tested_per_candidate": 364
+      },
+      {
+        "scale": 367,
+        "safe": true,
+        "exterior_radius": 1,
+        "candidates": [
+          [
+            2203,
+            0
+          ],
+          [
+            2203,
+            1
+          ],
+          [
+            2203,
+            2
+          ],
+          [
+            2203,
+            3
+          ],
+          [
+            2203,
+            4
+          ],
+          [
+            2203,
+            5
+          ],
+          [
+            2203,
+            6
+          ],
+          [
+            2203,
+            7
+          ],
+          [
+            2203,
+            8
+          ],
+          [
+            2203,
+            9
+          ]
+        ],
+        "legal_candidates": [
+          [
+            2203,
+            1
+          ],
+          [
+            2203,
+            2
+          ],
+          [
+            2203,
+            3
+          ],
+          [
+            2203,
+            4
+          ],
+          [
+            2203,
+            5
+          ],
+          [
+            2203,
+            6
+          ],
+          [
+            2203,
+            7
+          ],
+          [
+            2203,
+            8
+          ],
+          [
+            2203,
+            9
+          ]
+        ],
+        "witness": [
+          2203,
+          1
+        ],
+        "all_triples_tested_per_candidate": 364
+      }
+    ]
+  },
+  "script_sha256": "116b1a6135f8bcc03247a2172d0b7dfa7ab1d5a00cac631932bf22f59107a216",
+  "scope": "Exact finite certificates. General proofs are in round16-first-appearance.md and round16-dilation-exterior.md."
+}

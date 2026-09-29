@@ -1,0 +1,261 @@
+{
+  "agree": false,
+  "deletions": [
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        0,
+        0
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        1,
+        0
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        2,
+        0
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        3,
+        0
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        4,
+        0
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        0,
+        1
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        1,
+        1
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        2,
+        1
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        3,
+        1
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        4,
+        1
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        0,
+        2
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        1,
+        2
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        2,
+        2
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        3,
+        2
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        4,
+        2
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        0,
+        3
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        1,
+        3
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        2,
+        3
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        3,
+        3
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        4,
+        3
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        0,
+        4
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        1,
+        4
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        2,
+        4
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        3,
+        4
+      ]
+    },
+    {
+      "agree": false,
+      "misere": "Second",
+      "normal": "First",
+      "normal_g0": 1,
+      "p": [
+        4,
+        4
+      ]
+    }
+  ],
+  "misere_empty": 0,
+  "misere_winner": "Second",
+  "n": 5,
+  "n_del_agree": 0,
+  "normal_g0": 1,
+  "normal_winner": "First"
+}

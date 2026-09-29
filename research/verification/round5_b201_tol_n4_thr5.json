@@ -1,0 +1,31 @@
+{
+  "det_min_nonzero": 0,
+  "levels": {
+    "1": {
+      "K": 7,
+      "n_extra_quads": 0,
+      "n_quads": 194
+    },
+    "2": {
+      "K": 7,
+      "n_extra_quads": 256,
+      "n_quads": 450
+    },
+    "3": {
+      "K": 7,
+      "n_extra_quads": 256,
+      "n_quads": 450
+    },
+    "4": {
+      "K": 6,
+      "n_extra_quads": 484,
+      "n_quads": 678
+    },
+    "5": {
+      "K": 6,
+      "n_extra_quads": 484,
+      "n_quads": 678
+    }
+  },
+  "n": 4
+}

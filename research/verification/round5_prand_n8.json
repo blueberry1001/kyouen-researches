@@ -1,0 +1,147 @@
+{
+  "n": 8,
+  "V": 64,
+  "F": 14564,
+  "method": "streaming DP grundy+p_rand 5B/state, 3-subset legal_one, mmap child masks",
+  "n_safe_subsets": 6700711937,
+  "max_safe_size": 15,
+  "n_P": 1457674065,
+  "n_N": 5243037872,
+  "P_max_filter_value": "0.810389610007",
+  "P_max_level": 9,
+  "P_max_n_attaining": 8,
+  "P_gt_1_2": 16466948,
+  "P_gt_2_3": 375476,
+  "P_gt_3_4": 2536,
+  "levels": [
+    {
+      "k": 0,
+      "size": 1,
+      "n_P": 1,
+      "n_N": 0,
+      "best_filter": 0.470258335583,
+      "best_count": 1
+    },
+    {
+      "k": 1,
+      "size": 64,
+      "n_P": 0,
+      "n_N": 64,
+      "best_filter": 0.0,
+      "best_count": 0
+    },
+    {
+      "k": 2,
+      "size": 2016,
+      "n_P": 1380,
+      "n_N": 636,
+      "best_filter": 0.480516835116,
+      "best_count": 4
+    },
+    {
+      "k": 3,
+      "size": 41664,
+      "n_P": 428,
+      "n_N": 41236,
+      "best_filter": 0.511253056116,
+      "best_count": 4
+    },
+    {
+      "k": 4,
+      "size": 620812,
+      "n_P": 374608,
+      "n_N": 246204,
+      "best_filter": 0.503019579686,
+      "best_count": 8
+    },
+    {
+      "k": 5,
+      "size": 6784816,
+      "n_P": 128836,
+      "n_N": 6655980,
+      "best_filter": 0.573086203076,
+      "best_count": 4
+    },
+    {
+      "k": 6,
+      "size": 53020968,
+      "n_P": 12902052,
+      "n_N": 40118916,
+      "best_filter": 0.601934917271,
+      "best_count": 8
+    },
+    {
+      "k": 7,
+      "size": 281902248,
+      "n_P": 15228312,
+      "n_N": 266673936,
+      "best_filter": 0.707575757988,
+      "best_count": 8
+    },
+    {
+      "k": 8,
+      "size": 956468384,
+      "n_P": 161202052,
+      "n_N": 795266332,
+      "best_filter": 0.785000000149,
+      "best_count": 8
+    },
+    {
+      "k": 9,
+      "size": 1921019144,
+      "n_P": 252917496,
+      "n_N": 1668101648,
+      "best_filter": 0.810389610007,
+      "best_count": 8
+    },
+    {
+      "k": 10,
+      "size": 2092205428,
+      "n_P": 542172152,
+      "n_N": 1550033276,
+      "best_filter": 0.801404151134,
+      "best_count": 8
+    },
+    {
+      "k": 11,
+      "size": 1112723392,
+      "n_P": 346421424,
+      "n_N": 766301968,
+      "best_filter": 0.760052910075,
+      "best_count": 8
+    },
+    {
+      "k": 12,
+      "size": 254143028,
+      "n_P": 110534840,
+      "n_N": 143608188,
+      "best_filter": 0.666666666046,
+      "best_count": 8
+    },
+    {
+      "k": 13,
+      "size": 21240760,
+      "n_P": 15299848,
+      "n_N": 5940912,
+      "best_filter": 0.0,
+      "best_count": 0
+    },
+    {
+      "k": 14,
+      "size": 535844,
+      "n_P": 487268,
+      "n_N": 48576,
+      "best_filter": 0.0,
+      "best_count": 0
+    },
+    {
+      "k": 15,
+      "size": 3368,
+      "n_P": 3368,
+      "n_N": 0,
+      "best_filter": 0.0,
+      "best_count": 0
+    }
+  ],
+  "note": "P_max_filter_value is u32 fixed-point (SCALE=2^30); exact fraction requires big-int. Level 15 (terminal, 3368 states, all p=0) added post-scan."
+}

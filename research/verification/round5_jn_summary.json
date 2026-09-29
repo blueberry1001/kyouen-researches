@@ -1,0 +1,39 @@
+{
+  "batch": "round5-jn",
+  "ids": ["B312", "B313", "B314", "B315", "B317", "B318", "B319", "B320", "B321", "B322"],
+  "labels": {
+    "B312": "PARTIAL",
+    "B313": "PARTIAL",
+    "B314": "PARTIAL",
+    "B315": "INCONCLUSIVE",
+    "B317": "REFUTED",
+    "B318": "PARTIAL",
+    "B319": "PARTIAL",
+    "B320": "PARTIAL",
+    "B321": "PARTIAL",
+    "B322": "PARTIAL"
+  },
+  "settled": ["B317"],
+  "jn_table": {
+    "2": {"V": 4, "E": 0, "g_empty": 1},
+    "3": {"V": 9, "E": 0, "g_empty": 1},
+    "4": {"V": 16, "E": 84, "g_empty": 0, "PM": 112212, "TD": 40, "P_d4_types": 15, "TD_d4_types": 8, "bridges": 0, "arts": 0},
+    "5": {"V": 25, "E": 20, "g_empty": 1, "PM": 0, "TD": 0, "noniso": 16, "bridges": 0, "arts": 0},
+    "6": {"V": 36, "E": 0, "g_empty": 1, "two_g_hist": {"1": 596, "3": 34}}
+  },
+  "B317_key_numbers": {
+    "num_PMs": 112212,
+    "unbreakable_at_first_pair": 2508,
+    "pairing_strategy_wins": 0,
+    "min_breaks": 0,
+    "max_breaks": 160,
+    "avg_breaks": 25.27
+  },
+  "B312_geometry": {
+    "TD_d2_hist": {"1": 4, "2": 14, "5": 8, "9": 4, "10": 8, "18": 2},
+    "nonTD_d2_hist": {"1": 20, "2": 4, "5": 8, "10": 4, "13": 8},
+    "note": "d2=9,18 TD-only; d2=13 nonTD-only; d2 in {1,2,5,10} mixed"
+  },
+  "scripts": ["scripts/round5_jn_b317.cpp", "scripts/round5_b301_j6.cpp"],
+  "data_files": ["round5_jn_b317.json", "scripts/round5_b301_j6.txt", "round2_b301.json", "round2_b321.json"]
+}

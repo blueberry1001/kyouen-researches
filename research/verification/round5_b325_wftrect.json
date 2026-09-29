@@ -1,0 +1,1014 @@
+{
+  "2x4": {
+    "name": "2x4",
+    "n_states": 169,
+    "g_empty": 1,
+    "Tstar_empty": [
+      5
+    ],
+    "WFT_empty": [
+      5
+    ],
+    "wft_width_hist": {
+      "1": 169
+    },
+    "n_multi_WFT": 0,
+    "max_wft_width": 0,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 8,
+    "n_winning_firsts": 8,
+    "winning_forced_vals": [
+      5
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 0,
+        "xy": [
+          0,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 1,
+        "xy": [
+          1,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 2,
+        "xy": [
+          0,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 3,
+        "xy": [
+          1,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 4,
+        "xy": [
+          0,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 5,
+        "xy": [
+          1,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 6,
+        "xy": [
+          0,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 7,
+        "xy": [
+          1,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      }
+    ],
+    "elapsed_s": 0.01
+  },
+  "2x5": {
+    "name": "2x5",
+    "n_states": 470,
+    "g_empty": 1,
+    "Tstar_empty": [
+      5
+    ],
+    "WFT_empty": [
+      5
+    ],
+    "wft_width_hist": {
+      "1": 470
+    },
+    "n_multi_WFT": 0,
+    "max_wft_width": 0,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 10,
+    "n_winning_firsts": 4,
+    "winning_forced_vals": [
+      5
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 0,
+        "xy": [
+          0,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 1,
+        "xy": [
+          1,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 8,
+        "xy": [
+          0,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 9,
+        "xy": [
+          1,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      }
+    ],
+    "elapsed_s": 0.02
+  },
+  "3x3": {
+    "name": "3x3",
+    "n_states": 298,
+    "g_empty": 1,
+    "Tstar_empty": [
+      5
+    ],
+    "WFT_empty": [
+      5
+    ],
+    "wft_width_hist": {
+      "1": 298
+    },
+    "n_multi_WFT": 0,
+    "max_wft_width": 0,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 9,
+    "n_winning_firsts": 9,
+    "winning_forced_vals": [
+      5
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 0,
+        "xy": [
+          0,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 1,
+        "xy": [
+          1,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 2,
+        "xy": [
+          2,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 3,
+        "xy": [
+          0,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 4,
+        "xy": [
+          1,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 5,
+        "xy": [
+          2,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 6,
+        "xy": [
+          0,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 7,
+        "xy": [
+          1,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 8,
+        "xy": [
+          2,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      }
+    ],
+    "elapsed_s": 0.12
+  },
+  "3x4": {
+    "name": "3x4",
+    "n_states": 1199,
+    "g_empty": 2,
+    "Tstar_empty": [
+      5
+    ],
+    "WFT_empty": [
+      5
+    ],
+    "wft_width_hist": {
+      "1": 1199
+    },
+    "n_multi_WFT": 0,
+    "max_wft_width": 0,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 12,
+    "n_winning_firsts": 6,
+    "winning_forced_vals": [
+      5
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 0,
+        "xy": [
+          0,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 1,
+        "xy": [
+          1,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 2,
+        "xy": [
+          2,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 9,
+        "xy": [
+          0,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 10,
+        "xy": [
+          1,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      },
+      {
+        "v": 11,
+        "xy": [
+          2,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          5
+        ],
+        "Tstar": [
+          5
+        ]
+      }
+    ],
+    "elapsed_s": 0.09
+  },
+  "3x5": {
+    "name": "3x5",
+    "n_states": 4672,
+    "g_empty": 0,
+    "Tstar_empty": [
+      6
+    ],
+    "WFT_empty": [
+      6
+    ],
+    "wft_width_hist": {
+      "0": 66,
+      "1": 4514,
+      "2": 92
+    },
+    "n_multi_WFT": 92,
+    "max_wft_width": 2,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 15,
+    "n_winning_firsts": 0,
+    "winning_forced_vals": [],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [],
+    "elapsed_s": 0.57
+  },
+  "4x4": {
+    "name": "4x4",
+    "n_states": 5811,
+    "g_empty": 0,
+    "Tstar_empty": [
+      6
+    ],
+    "WFT_empty": [
+      6
+    ],
+    "wft_width_hist": {
+      "0": 28,
+      "1": 5671,
+      "2": 112
+    },
+    "n_multi_WFT": 112,
+    "max_wft_width": 2,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 16,
+    "n_winning_firsts": 0,
+    "winning_forced_vals": [],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [],
+    "elapsed_s": 1.02
+  },
+  "2x6": {
+    "name": "2x6",
+    "n_states": 1167,
+    "g_empty": 0,
+    "Tstar_empty": [
+      6
+    ],
+    "WFT_empty": [
+      6
+    ],
+    "wft_width_hist": {
+      "1": 1167
+    },
+    "n_multi_WFT": 0,
+    "max_wft_width": 0,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 12,
+    "n_winning_firsts": 0,
+    "winning_forced_vals": [],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [],
+    "elapsed_s": 0.09
+  },
+  "3x6": {
+    "name": "3x6",
+    "n_states": 16992,
+    "g_empty": 1,
+    "Tstar_empty": [
+      5,
+      7
+    ],
+    "WFT_empty": [
+      7
+    ],
+    "wft_width_hist": {
+      "0": 489,
+      "1": 15707,
+      "2": 796
+    },
+    "n_multi_WFT": 796,
+    "max_wft_width": 2,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 18,
+    "n_winning_firsts": 12,
+    "winning_forced_vals": [
+      7
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 3,
+        "xy": [
+          0,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 4,
+        "xy": [
+          1,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 5,
+        "xy": [
+          2,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 6,
+        "xy": [
+          0,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7
+        ]
+      },
+      {
+        "v": 7,
+        "xy": [
+          1,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 8,
+        "xy": [
+          2,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7
+        ]
+      },
+      {
+        "v": 9,
+        "xy": [
+          0,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7
+        ]
+      },
+      {
+        "v": 10,
+        "xy": [
+          1,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 11,
+        "xy": [
+          2,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7
+        ]
+      },
+      {
+        "v": 12,
+        "xy": [
+          0,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 13,
+        "xy": [
+          1,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      },
+      {
+        "v": 14,
+        "xy": [
+          2,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7
+        ]
+      }
+    ],
+    "elapsed_s": 3.7
+  },
+  "n4": {
+    "name": "n4",
+    "n_states": 5811,
+    "g_empty": 0,
+    "Tstar_empty": [
+      6
+    ],
+    "WFT_empty": [
+      6
+    ],
+    "wft_width_hist": {
+      "0": 28,
+      "1": 5671,
+      "2": 112
+    },
+    "n_multi_WFT": 112,
+    "max_wft_width": 2,
+    "n_Tstar_ge3": 0,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 16,
+    "n_winning_firsts": 0,
+    "winning_forced_vals": [],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [],
+    "elapsed_s": 1.25
+  },
+  "n5": {
+    "name": "n5",
+    "n_states": 151394,
+    "g_empty": 1,
+    "Tstar_empty": [
+      5,
+      7,
+      9
+    ],
+    "WFT_empty": [
+      7
+    ],
+    "wft_width_hist": {
+      "0": 2248,
+      "1": 143486,
+      "2": 5660
+    },
+    "n_multi_WFT": 5660,
+    "max_wft_width": 2,
+    "n_Tstar_ge3": 27,
+    "n_Tstar_ge3_WFT_empty": 0,
+    "n_first": 25,
+    "n_winning_firsts": 9,
+    "winning_forced_vals": [
+      7
+    ],
+    "forced_is_constant_among_winners": true,
+    "winning_firsts_sample": [
+      {
+        "v": 2,
+        "xy": [
+          2,
+          0
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 6,
+        "xy": [
+          1,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 8,
+        "xy": [
+          3,
+          1
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 10,
+        "xy": [
+          0,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 12,
+        "xy": [
+          2,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          7,
+          9
+        ]
+      },
+      {
+        "v": 14,
+        "xy": [
+          4,
+          2
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 16,
+        "xy": [
+          1,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 18,
+        "xy": [
+          3,
+          3
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "v": 22,
+        "xy": [
+          2,
+          4
+        ],
+        "g": 0,
+        "winning": true,
+        "WFT": [
+          7
+        ],
+        "Tstar": [
+          5,
+          7,
+          9
+        ]
+      }
+    ],
+    "elapsed_s": 122.35
+  }
+}

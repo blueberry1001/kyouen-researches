@@ -1,0 +1,47 @@
+{
+  "n": 4,
+  "per_k": [
+    {
+      "k": 2,
+      "d4_orbits": 21,
+      "size_seq_types": 13,
+      "abstract_types": 13,
+      "reduction_vs_d4": 1.6153846153846154
+    },
+    {
+      "k": 3,
+      "d4_orbits": 77,
+      "size_seq_types": 39,
+      "abstract_types": 67,
+      "reduction_vs_d4": 1.1492537313432836
+    },
+    {
+      "k": 4,
+      "d4_orbits": 213,
+      "size_seq_types": 89,
+      "abstract_types": 201,
+      "reduction_vs_d4": 1.0597014925373134
+    },
+    {
+      "k": 5,
+      "d4_orbits": 298,
+      "size_seq_types": 114,
+      "abstract_types": 292,
+      "reduction_vs_d4": 1.0205479452054795
+    },
+    {
+      "k": 6,
+      "d4_orbits": 134,
+      "size_seq_types": 54,
+      "abstract_types": 125,
+      "reduction_vs_d4": 1.072
+    },
+    {
+      "k": 7,
+      "d4_orbits": 8,
+      "size_seq_types": 6,
+      "abstract_types": 8,
+      "reduction_vs_d4": 1.0
+    }
+  ]
+}

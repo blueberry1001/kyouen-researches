@@ -1,0 +1,10 @@
+{
+  "n": 5,
+  "n_positions": 151394,
+  "normal_g0": 1,
+  "normal_winner": "First",
+  "pass_empty_both": 1,
+  "pass_empty_first_only": 1,
+  "pass_winner_both": "First",
+  "same_g_split_witnesses": []
+}

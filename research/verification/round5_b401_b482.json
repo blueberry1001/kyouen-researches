@@ -1,0 +1,50 @@
+{
+ "n4": {
+  "n": 4,
+  "F": 194,
+  "n_states": 5811,
+  "fine_cells": {
+   "n_cells_total": 85,
+   "n_valid": 1,
+   "spread_more_kinds": 0,
+   "conc_more_kinds": 0,
+   "ties": 1,
+   "details": [
+    {
+     "k": 7,
+     "tri": 29,
+     "L": 0,
+     "conc_n": 16,
+     "spread_n": 16,
+     "conc_g_kinds": [
+      0
+     ],
+     "spread_g_kinds": [
+      0
+     ]
+    }
+   ]
+  },
+  "coarse_cells": {
+   "n_valid": 1,
+   "spread_more_kinds": 0,
+   "conc_more_kinds": 0,
+   "ties": 1,
+   "details": [
+    {
+     "k": 7,
+     "tri": 29,
+     "conc_n": 16,
+     "spread_n": 16,
+     "conc_g_kinds": [
+      0
+     ],
+     "spread_g_kinds": [
+      0
+     ]
+    }
+   ]
+  },
+  "timing_s": 2.5
+ }
+}

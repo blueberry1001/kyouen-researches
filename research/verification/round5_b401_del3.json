@@ -1,0 +1,12 @@
+{
+ "n": 4,
+ "base_K": 7,
+ "base_g": 0,
+ "n_triples": 560,
+ "K_drops": [],
+ "winner_flips": [],
+ "n_K_drops": 0,
+ "n_winner_flips": 0,
+ "delta_K_n4": ">=4",
+ "timing_s": 642.21
+}

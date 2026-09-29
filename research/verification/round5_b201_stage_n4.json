@@ -1,0 +1,58 @@
+{
+  "circ_g0": 0,
+  "n": 4,
+  "n_circ_quads": 184,
+  "n_coll_quads": 10,
+  "n_std_quads": 194,
+  "stages": {
+    "0": {
+      "n": 1,
+      "n_diff": 0,
+      "n_only_circ": 0,
+      "n_only_std": 0
+    },
+    "1": {
+      "n": 16,
+      "n_diff": 0,
+      "n_only_circ": 0,
+      "n_only_std": 0
+    },
+    "2": {
+      "n": 120,
+      "n_diff": 64,
+      "n_only_circ": 0,
+      "n_only_std": 0
+    },
+    "3": {
+      "n": 560,
+      "n_diff": 56,
+      "n_only_circ": 0,
+      "n_only_std": 0
+    },
+    "4": {
+      "n": 1636,
+      "n_diff": 348,
+      "n_only_circ": 10,
+      "n_only_std": 0
+    },
+    "5": {
+      "n": 2480,
+      "n_diff": 288,
+      "n_only_circ": 120,
+      "n_only_std": 0
+    },
+    "6": {
+      "n": 1296,
+      "n_diff": 112,
+      "n_only_circ": 232,
+      "n_only_std": 0
+    },
+    "7": {
+      "n": 104,
+      "n_diff": 0,
+      "n_only_circ": 40,
+      "n_only_std": 0
+    }
+  },
+  "std_g0": 0
+}

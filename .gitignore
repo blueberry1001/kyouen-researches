@@ -59,3 +59,11 @@ research/verification/scripts/_rel_marker.txt
 /out_test.txt
 /runlog.txt
 /scratch_scan.txt
+
+# round5 / verification runtime logs and compiled binaries
+research/verification/*.log
+research/verification/scripts/*.log
+research/verification/scripts/round5_b142_count
+research/verification/scripts/round5_b522_triples
+scratchpad/
+scripts/round5_b231_*.py

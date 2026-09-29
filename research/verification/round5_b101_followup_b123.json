@@ -1,0 +1,13 @@
+{
+ "n": 4,
+ "K": 7,
+ "n_max_sets": 64,
+ "n_pairs_examined": 2016,
+ "pairs_stats": {
+  "aux0": 2016
+ },
+ "examples_need_aux": [],
+ "b125_checked_with_common": 1980,
+ "b125_must_drop_common": 0,
+ "b125_examples": []
+}

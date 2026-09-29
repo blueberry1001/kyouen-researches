@@ -1,0 +1,16 @@
+{
+  "n": 5,
+  "K0": 9,
+  "size1": {
+    "tested": 25,
+    "n_drops": 0,
+    "drops": []
+  },
+  "size2": {
+    "tested": 300,
+    "n_drops": 0,
+    "drops": []
+  },
+  "delta_K": ">=3",
+  "elapsed": 1145.1182627677917
+}

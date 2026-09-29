@@ -1,0 +1,119 @@
+{
+  "b379": {
+    "n_success": 407,
+    "fail": 0,
+    "r1": 167,
+    "n_tried": 408,
+    "r2": 1,
+    "r0": 239
+  },
+  "b376": {
+    "greedy_min": 19,
+    "exact_le12_found": 0,
+    "exact_le12_sampled": 8,
+    "greedy_max": 29
+  },
+  "jn": {
+    "n6": {
+      "note": "J_6 empty: no 2-stone P-positions",
+      "two_g": {
+        "1": 596,
+        "3": 34
+      },
+      "g_empty": 1,
+      "states": 5081289,
+      "E": 0,
+      "one_g": {
+        "0": 36
+      }
+    },
+    "n5": {
+      "states": 151394,
+      "one_g": {
+        "3": 16,
+        "0": 9
+      },
+      "iso": 9,
+      "bridges": 0,
+      "matching_size": 8,
+      "PM": false,
+      "g_empty": 1,
+      "E": 20,
+      "arts": 0,
+      "two_g": {
+        "0": 20,
+        "1": 208,
+        "2": 72
+      },
+      "P_d4_types": 3
+    },
+    "n3": {
+      "g_empty": 1,
+      "one_g": {
+        "0": 9
+      },
+      "E": 0,
+      "states": 298,
+      "two_g": {
+        "1": 36
+      }
+    },
+    "n4": {
+      "states": 5811,
+      "P_d4_types": 15,
+      "one_g": {
+        "1": 16
+      },
+      "bridges": 0,
+      "PM": true,
+      "g_empty": 0,
+      "E": 84,
+      "arts": 0,
+      "two_g": {
+        "0": 84,
+        "5": 8,
+        "3": 8,
+        "2": 20
+      },
+      "TD": 40,
+      "TD_d4_types": 8
+    },
+    "n2": {
+      "g_empty": 1,
+      "one_g": {
+        "0": 4
+      },
+      "E": 0,
+      "states": 15,
+      "two_g": {
+        "1": 6
+      }
+    }
+  },
+  "b377": {
+    "n_deletions": 3264,
+    "claim_holds_ge2": true,
+    "min_n_legal": 3
+  },
+  "meta": {
+    "agent": "B301-B400",
+    "task": "round5 B301-B400 unresolved",
+    "date": "2026-09-28"
+  },
+  "labels": {
+    "INCONCLUSIVE_count": 10,
+    "SUPPORTED": [
+      "B360",
+      "B377",
+      "B379"
+    ],
+    "PARTIAL_count": 31,
+    "REFUTED": [
+      "B334"
+    ],
+    "NOT_CHECKED": [
+      "B365",
+      "B370"
+    ]
+  }
+}

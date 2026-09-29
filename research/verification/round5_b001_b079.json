@@ -1,0 +1,128 @@
+{
+  "5": {
+    "V": 25,
+    "F_n": 826,
+    "total_triples": 2300,
+    "triples_with_completion": 1504,
+    "triples_multi_completion": 720,
+    "max_compl": 5,
+    "max_tri": [
+      2,
+      5,
+      8
+    ],
+    "compl_size_hist": {
+      "1": 784,
+      "2": 200,
+      "3": 240,
+      "5": 280
+    }
+  },
+  "6": {
+    "V": 36,
+    "F_n": 2491,
+    "total_triples": 7140,
+    "triples_with_completion": 4324,
+    "triples_multi_completion": 2120,
+    "max_compl": 5,
+    "max_tri": [
+      2,
+      6,
+      9
+    ],
+    "compl_size_hist": {
+      "1": 2204,
+      "2": 280,
+      "3": 1000,
+      "5": 840
+    }
+  },
+  "7": {
+    "V": 49,
+    "F_n": 6364,
+    "total_triples": 18424,
+    "triples_with_completion": 10800,
+    "triples_multi_completion": 5064,
+    "max_compl": 5,
+    "max_tri": [
+      5,
+      20,
+      27
+    ],
+    "compl_size_hist": {
+      "1": 5736,
+      "2": 400,
+      "3": 1920,
+      "4": 560,
+      "5": 2184
+    }
+  },
+  "8": {
+    "V": 64,
+    "F_n": 14564,
+    "total_triples": 41664,
+    "triples_with_completion": 23380,
+    "triples_multi_completion": 10584,
+    "max_compl": 9,
+    "max_tri": [
+      4,
+      9,
+      14
+    ],
+    "compl_size_hist": {
+      "1": 12796,
+      "2": 760,
+      "3": 3440,
+      "4": 140,
+      "5": 5544,
+      "7": 480,
+      "9": 220
+    }
+  },
+  "9": {
+    "V": 81,
+    "F_n": 29152,
+    "total_triples": 85320,
+    "triples_with_completion": 45448,
+    "triples_multi_completion": 21320,
+    "max_compl": 9,
+    "max_tri": [
+      4,
+      10,
+      15
+    ],
+    "compl_size_hist": {
+      "1": 24128,
+      "2": 2720,
+      "3": 6400,
+      "4": 280,
+      "5": 8400,
+      "6": 1680,
+      "7": 960,
+      "9": 880
+    }
+  },
+  "10": {
+    "V": 100,
+    "F_n": 54441,
+    "total_triples": 161700,
+    "triples_with_completion": 82744,
+    "triples_multi_completion": 39016,
+    "max_compl": 9,
+    "max_tri": [
+      4,
+      11,
+      16
+    ],
+    "compl_size_hist": {
+      "1": 43728,
+      "2": 4520,
+      "3": 12080,
+      "4": 700,
+      "5": 14840,
+      "6": 336,
+      "7": 4560,
+      "9": 1980
+    }
+  }
+}

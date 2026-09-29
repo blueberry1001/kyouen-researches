@@ -1,0 +1,292 @@
+{
+  "small_board_independent_checks": [
+    {
+      "span": 1,
+      "board_side": 2,
+      "anchored_circles": 1,
+      "match": true
+    },
+    {
+      "span": 2,
+      "board_side": 3,
+      "anchored_circles": 5,
+      "match": true
+    },
+    {
+      "span": 3,
+      "board_side": 4,
+      "anchored_circles": 9,
+      "match": true
+    },
+    {
+      "span": 4,
+      "board_side": 5,
+      "anchored_circles": 26,
+      "match": true
+    },
+    {
+      "span": 5,
+      "board_side": 6,
+      "anchored_circles": 50,
+      "match": true
+    },
+    {
+      "span": 6,
+      "board_side": 7,
+      "anchored_circles": 84,
+      "match": true
+    }
+  ],
+  "minimum_witnesses_checked": 49,
+  "exact_norm_witnesses": [
+    {
+      "family": "odd",
+      "m": 7,
+      "span": 65,
+      "q": 11,
+      "M": 138125,
+      "residue": [
+        4,
+        2
+      ],
+      "complete_points": [
+        [
+          -34,
+          3
+        ],
+        [
+          -19,
+          28
+        ],
+        [
+          -18,
+          -29
+        ],
+        [
+          6,
+          33
+        ],
+        [
+          11,
+          -32
+        ],
+        [
+          27,
+          -20
+        ],
+        [
+          30,
+          -15
+        ]
+      ]
+    },
+    {
+      "family": "odd",
+      "m": 11,
+      "span": 161,
+      "q": 11,
+      "M": 801125,
+      "residue": [
+        10,
+        4
+      ],
+      "complete_points": [
+        [
+          -81,
+          14
+        ],
+        [
+          -75,
+          -34
+        ],
+        [
+          -49,
+          -66
+        ],
+        [
+          -43,
+          -70
+        ],
+        [
+          -40,
+          71
+        ],
+        [
+          0,
+          81
+        ],
+        [
+          20,
+          -79
+        ],
+        [
+          21,
+          78
+        ],
+        [
+          63,
+          50
+        ],
+        [
+          69,
+          -42
+        ],
+        [
+          80,
+          -9
+        ]
+      ]
+    },
+    {
+      "family": "power2",
+      "m": 11,
+      "span": 366,
+      "q": 16,
+      "M": 8718125,
+      "residue": [
+        13,
+        10
+      ],
+      "complete_points": [
+        [
+          -183,
+          -30
+        ],
+        [
+          -161,
+          91
+        ],
+        [
+          -153,
+          -105
+        ],
+        [
+          -147,
+          112
+        ],
+        [
+          -29,
+          -183
+        ],
+        [
+          7,
+          -185
+        ],
+        [
+          37,
+          180
+        ],
+        [
+          85,
+          -164
+        ],
+        [
+          121,
+          138
+        ],
+        [
+          177,
+          -50
+        ],
+        [
+          183,
+          -17
+        ]
+      ]
+    }
+  ],
+  "odd11_points_on_162_board": [
+    [
+      0,
+      93
+    ],
+    [
+      6,
+      45
+    ],
+    [
+      32,
+      13
+    ],
+    [
+      38,
+      9
+    ],
+    [
+      41,
+      150
+    ],
+    [
+      81,
+      160
+    ],
+    [
+      101,
+      0
+    ],
+    [
+      102,
+      157
+    ],
+    [
+      144,
+      129
+    ],
+    [
+      150,
+      37
+    ],
+    [
+      161,
+      70
+    ]
+  ],
+  "point_counts_4_through_10": [
+    {
+      "m": 4,
+      "power2_min_span": 1,
+      "odd_min_span": 5
+    },
+    {
+      "m": 5,
+      "power2_min_span": 12,
+      "odd_min_span": 16
+    },
+    {
+      "m": 6,
+      "power2_min_span": 5,
+      "odd_min_span": 12
+    },
+    {
+      "m": 7,
+      "power2_min_span": 60,
+      "odd_min_span": 65
+    },
+    {
+      "m": 8,
+      "power2_min_span": 3,
+      "odd_min_span": 22
+    },
+    {
+      "m": 9,
+      "power2_min_span": 32,
+      "odd_min_span": 42
+    },
+    {
+      "m": 10,
+      "power2_min_span": 25,
+      "odd_min_span": 60
+    }
+  ],
+  "input_sha256": {
+    "round12_circle_bbox_w32.json": "a80e39fe14cbdbf98f9c935fe6113873a9a468ad7ec166882e460dea2efd6288",
+    "round12_circle_bbox_w64.json": "209c7fd48a50ea8b12b731343f921b09a95ede055f05c06755bebae875d66569",
+    "round12_circle_bbox_w161_power2.json": "c871a482e122d2d7dd8bb83345ee9eafdc78110c519fabdb7b382fff2470581a",
+    "scripts/round12_circle_bbox.cpp": "65b5a331571e6225849be862d5c9118c3684340de083ed80681ed9ec70e90971"
+  },
+  "B454": "REFUTED by exact finite enumeration plus explicit complete-circle witness",
+  "power2_m11_min_span_lower_bound": 162,
+  "odd_m11_min_span_upper_bound": 161,
+  "power2_m11_min_span_upper_bound": 366,
+  "limitations": "The full width-161 exclusion is supplied by the C++ census; its whole run is not duplicated by the Python small-board comparison."
+}

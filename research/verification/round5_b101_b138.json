@@ -1,0 +1,32 @@
+{
+ "n4": {
+  "n_circles_ge3": 292,
+  "max_pts": 8,
+  "n_top_circles": 12,
+  "n_top_center_types": 2,
+  "top_center_ratio": 6.0,
+  "n_second_circles": 0,
+  "n_second_center_types": 0,
+  "second_center_ratio": null
+ },
+ "n5": {
+  "n_circles_ge3": 1234,
+  "max_pts": 8,
+  "n_top_circles": 53,
+  "n_top_center_types": 10,
+  "top_center_ratio": 5.3,
+  "n_second_circles": 0,
+  "n_second_center_types": 0,
+  "second_center_ratio": null
+ },
+ "n6": {
+  "n_circles_ge3": 3872,
+  "max_pts": 8,
+  "n_top_circles": 125,
+  "n_top_center_types": 24,
+  "top_center_ratio": 5.208333333333333,
+  "n_second_circles": 0,
+  "n_second_center_types": 0,
+  "second_center_ratio": null
+ }
+}
