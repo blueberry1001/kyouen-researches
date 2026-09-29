@@ -154,7 +154,11 @@ public:
 
     std::uint64_t forbidden_count() const { return forbidden_count_; }
     std::uint64_t visited() const { return visited_; }
-    std::uint64_t revisits() const { return revisits_; }
+    void child_stats(std::uint64_t& probe_hit, std::uint64_t& used,
+                     std::uint64_t& unused, std::uint64_t& loss_cut) const {
+        probe_hit=child_probe_hit_; used=child_used_;
+        unused=child_unused_; loss_cut=child_loss_cut_;
+    }
     std::size_t memo_used() const { return memo_.used(); }
     std::size_t memo_capacity() const { return memo_.capacity(); }
     void memo_counters(std::uint64_t& hits, std::uint64_t& misses,
@@ -184,9 +188,16 @@ private:
     std::vector<Bits> completion_;
     std::array<std::array<Bits,V>,8> tbit_{};
     ReplaceMemo121 memo_;
-    std::uint64_t forbidden_count_=0,visited_=0,revisits_=0;
+    std::uint64_t forbidden_count_=0,visited_=0;
     std::uint64_t depth_hist_[64]={};
     std::uint64_t d_hit_[64]={}, d_miss_[64]={}, d_put_[64]={}, d_moves_[64]={};
+    // TT effectiveness: how much work the child pre-probe actually saves.
+    // child_probe_hit = pre-probe get() returned a value.
+    // child_used      = ... and that child was reached before cutoff/return,
+    //                     i.e. its cached value decided something.
+    // child_unused    = ... but the loop returned before reaching it.
+    // child_loss_cut  = ... and it was a cached LOSS that ended the node.
+    std::uint64_t child_probe_hit_=0, child_used_=0, child_unused_=0, child_loss_cut_=0;
     int max_depth_=0;
     double deadline_s_=0;
     std::chrono::steady_clock::time_point t0_;
@@ -201,14 +212,16 @@ private:
         memo_counters(hits,misses,pn,pu,ev,ap);
         double total=(double)(hits+misses);
         double hr = total>0 ? 100.0*(double)hits/total : 0.0;
+        double cused = visited_ ? 100.0*(double)child_used_/(double)visited_ : 0.0;
         std::cerr << "[hb] t=" << (long long)el << "s"
                   << " visited=" << visited_
-                  << " revisits=" << revisits_
                   << " depth=" << depth << " maxdepth=" << max_depth_
                   << " memo=" << memo_.used() << "/" << memo_.capacity()
                   << " hit=" << hr << "%"
                   << " puts_new=" << pn << " evict=" << ev
                   << " avgprobe=" << ap
+                  << " child_used/vis=" << cused << "%"
+                  << " loss_cut=" << child_loss_cut_
                   << std::endl;
         if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
     }
@@ -275,9 +288,6 @@ private:
         // to be ~free, frequent enough (~1M nodes) to bound wasted work.
         if((visited_ & ((std::uint64_t(1)<<20)-1))==0) heartbeat(depth);
         int dd = depth<64?depth:63;
-        auto cached=memo_.get(canonical(state).lo,canonical(state).hi);
-        if(cached){ ++revisits_; ++d_hit_[dd]; return cached==ReplaceMemo121::Winning; }
-        ++d_miss_[dd];
         Bits key=canonical(state);
         ++visited_;
         ++depth_hist_[dd];
@@ -286,7 +296,9 @@ private:
         std::array<Child,V> ch{};int n=0;Bits moves=legal;
         while(any(moves)){int v=take_lsb(moves);Bits bit=bitof(v);TState ns=add(state,v);Bits nl=(legal&~bit)&~added_bans(state.t[0],v);nl.hi&=HI_MASK;Bits nk=canonical(ns);
             bool dup=false;for(int i=0;i<n;++i)if(ch[i].key==nk){dup=true;break;}if(dup)continue;
-            auto cv=memo_.get(nk.lo,nk.hi);ch[n++]={ns,nl,nk,popcount(nl),v,cv};
+            auto cv=memo_.get(nk.lo,nk.hi);
+            if(cv) ++child_probe_hit_;
+            ch[n++]={ns,nl,nk,popcount(nl),v,cv};
         }
         d_moves_[dd]+= (std::uint64_t)n;
         std::sort(ch.begin(),ch.begin()+n,[](const Child&a,const Child&b){
@@ -294,7 +306,23 @@ private:
             int pb=b.cached==ReplaceMemo121::Losing?0:(b.cached==0?1:2);
             if(pa!=pb)return pa<pb;if(a.count!=b.count)return a.count<b.count;return a.key<b.key;
         });
-        for(int i=0;i<n;++i){bool cw;if(ch[i].cached)cw=ch[i].cached==ReplaceMemo121::Winning;else cw=win(ch[i].ts,ch[i].legal,depth+1);if(!cw){memo_.put(key.lo,key.hi,ReplaceMemo121::Winning);++d_put_[dd];return true;}}
+        for(int i=0;i<n;++i){
+            if(ch[i].cached){
+                ++child_used_;
+                bool cw=ch[i].cached==ReplaceMemo121::Winning;
+                if(!cw){
+                    ++child_loss_cut_;
+                    for(int j=i+1;j<n;++j) if(ch[j].cached) ++child_unused_;
+                    memo_.put(key.lo,key.hi,ReplaceMemo121::Winning);++d_put_[dd];return true;
+                }
+                continue;
+            }
+            bool cw=win(ch[i].ts,ch[i].legal,depth+1);
+            if(!cw){
+                for(int j=i+1;j<n;++j) if(ch[j].cached) ++child_unused_;
+                memo_.put(key.lo,key.hi,ReplaceMemo121::Winning);++d_put_[dd];return true;
+            }
+        }
         memo_.put(key.lo,key.hi,ReplaceMemo121::Losing);++d_put_[dd];return false;
     }
 };
@@ -363,19 +391,33 @@ int main(int argc,char**argv){
                 solver.memo_counters(hits,misses,pn,pu,ev,ap);
                 double total=(double)(hits+misses);
                 double hr = total>0 ? 100.0*(double)hits/total : 0.0;
+                std::uint64_t cph,cu,cun,clc;
+                solver.child_stats(cph,cu,cun,clc);
+                double cused = solver.visited() ? 100.0*(double)cu/(double)solver.visited() : 0.0;
                 std::cerr << "[timeout] v=" << v
                           << " reason=" << e.what()
                           << " visited=" << solver.visited()
-                          << " revisits=" << solver.revisits()
                           << " memo=" << solver.memo_used() << "/" << solver.memo_capacity()
                           << " hit=" << hr << "%"
                           << " puts_new=" << pn << " evict=" << ev
                           << " avgprobe=" << ap
+                          << " child_probe_hit=" << cph
+                          << " child_used=" << cu << " (" << cused << "%/vis)"
+                          << " child_unused=" << cun
+                          << " loss_cut=" << clc
                           << " wall_s=" << (long long)wall << std::endl;
                 {
-                    std::uint64_t dh[64]; solver.depth_hist(dh,64);
-                    std::cerr<<"[depth_hist]";
-                    for(int d=0;d<22;++d) std::cerr<<" d"<<d<<"="<<dh[d];
+                    std::uint64_t dh[64], mv[64]; double dhr[64];
+                    solver.depth_stats(dh, mv, dhr, 64);
+                    std::uint64_t p=0;
+                    for(int d=0;d<22;++d){ p+=dh[d]; }
+                    std::cerr<<"[depth] total="<<p;
+                    for(int d=0;d<22;++d){
+                        if(dh[d]==0) continue;
+                        double avgm = dh[d] ? (double)mv[d]/(double)dh[d] : 0.0;
+                        std::cerr<<" d"<<d<<"="<<dh[d]<<"/"<<avgm<<"mv";
+                        if(dhr[d]>=0) std::cerr<<"/"<<dhr[d]<<"%h";
+                    }
                     std::cerr<<"\n";
                 }
                 prev_visited=solver.visited(); prev_t=std::chrono::steady_clock::now();
@@ -388,18 +430,22 @@ int main(int argc,char**argv){
             solver.memo_counters(hits,misses,pn,pu,ev,ap);
             double total=(double)(hits+misses);
             double hr = total>0 ? 100.0*(double)hits/total : 0.0;
+            std::uint64_t cph,cu,cun,clc;
+            solver.child_stats(cph,cu,cun,clc);
+            double cused = solver.visited() ? 100.0*(double)cu/(double)solver.visited() : 0.0;
             double dt=std::chrono::duration<double>(std::chrono::steady_clock::now()-prev_t).count();
             std::uint64_t dv=solver.visited()-prev_visited;
             std::cerr << "[progress] v=" << v << " (" << (v%11) << "," << (v/11) << ") "
                       << outcome(r.win)
                       << " visited_total=" << solver.visited()
-                      << " revisits=" << solver.revisits()
                       << " rate=" << (dt>0?(long long)(dv/dt):0) << "/s"
                       << " memo=" << solver.memo_used() << "/" << solver.memo_capacity()
                       << " hit=" << hr << "%"
                       << " puts_new_delta=" << (pn-prev_puts)
                       << " evict_delta=" << (ev-prev_evict)
                       << " avgprobe=" << ap
+                      << " child_used=" << cu << " (" << cused << "%/vis)"
+                      << " loss_cut=" << clc
                       << " maxdepth=" << solver.max_depth()
                       << " wall_s=" << (long long)wall << std::endl;
             prev_visited=solver.visited(); prev_t=std::chrono::steady_clock::now();
