@@ -29,37 +29,48 @@ static inline int take_lsb(Bits& a){
 }
 
 // 10x10 needs all 36 high bits of the 100-bit position key.
- // Packing (key.hi << 2) into uint32_t silently discarded the top 6 bits,
- // turning those entries into permanent memo misses and wasting capacity.
+// Keep the low 30 high-word bits beside the 2-bit value in uint32_t,
+// and the remaining 6 key bits in a byte. This avoids the previous
+// truncation without growing every slot to a full extra uint64_t.
 class FlatMemo81 {
 public:
     enum : std::uint32_t { Losing=1, Winning=2 };
     explicit FlatMemo81(unsigned power)
       : lows_(std::size_t{1}<<power), metas_(std::size_t{1}<<power),
+        hi_tops_(std::size_t{1}<<power),
         mask_((std::size_t{1}<<power)-1) {}
     inline std::uint32_t get(Bits key) const {
         std::size_t i=mix(key)&mask_;
         while(metas_[i]){
-            std::uint64_t m=metas_[i];
-            if(lows_[i]==key.lo && (m>>2)==key.hi) return std::uint32_t(m&3);
+            std::uint32_t m=metas_[i];
+            if(lows_[i]==key.lo &&
+               hi_tops_[i]==std::uint8_t(key.hi>>30) &&
+               (m>>2)==std::uint32_t(key.hi&((1ULL<<30)-1)))
+                return m&3;
             i=(i+1)&mask_;
         }
         return 0;
     }
     inline void put(Bits key,std::uint32_t value){
         std::size_t i=mix(key)&mask_;
-        const std::uint64_t meta=(key.hi<<2)|value;
+        const std::uint32_t meta=(std::uint32_t(key.hi&((1ULL<<30)-1))<<2)|value;
+        const std::uint8_t hi_top=std::uint8_t(key.hi>>30);
         while(metas_[i]){
-            if(lows_[i]==key.lo && (metas_[i]>>2)==key.hi){metas_[i]=meta;return;}
+            if(lows_[i]==key.lo &&
+               hi_tops_[i]==hi_top &&
+               (metas_[i]>>2)==std::uint32_t(key.hi&((1ULL<<30)-1))){
+                metas_[i]=meta; return;
+            }
             i=(i+1)&mask_;
         }
-        lows_[i]=key.lo; metas_[i]=meta; ++used_;
+        lows_[i]=key.lo; metas_[i]=meta; hi_tops_[i]=hi_top; ++used_;
         if(used_*10 > metas_.size()*8) throw std::runtime_error("memo table over 80%");
     }
     std::size_t used()const{return used_;}
 private:
     std::vector<std::uint64_t> lows_;
-    std::vector<std::uint64_t> metas_;
+    std::vector<std::uint32_t> metas_;
+    std::vector<std::uint8_t> hi_tops_;
     std::size_t mask_,used_=0;
     static inline std::uint64_t mix64(std::uint64_t x){
         x^=x>>30;x*=0xbf58476d1ce4e5b9ULL;
