@@ -3,7 +3,7 @@
 更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は154件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は157件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,9 +13,9 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 446 |
-| PARTIAL | 18 |
-| REFUTED | 44 |
+| NOT_AUDITED | 443 |
+| PARTIAL | 20 |
+| REFUTED | 45 |
 | SCOPE_UNCLEAR | 5 |
 | SUPPORTED | 87 |
 
@@ -104,7 +104,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B076](../hypothesis-bank-2026-09-27.md#L144) | [統計] 最小極大配置は被覆の重複が少ない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B077](../hypothesis-bank-2026-09-27.md#L145) | [存在] 極大なのにすべての空点が二重以上に禁止される。 | SUPPORTED | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B078](../hypothesis-bank-2026-09-27.md#L146) | [全称・大胆] 最小極大配置には一重被覆点がある。 | SCOPE_UNCLEAR | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
-| [B079](../hypothesis-bank-2026-09-27.md#L147) | [構造] 六石非存在は三つ組の共起だけで短く説明できる。 | NOT_AUDITED | 旧個票参照12箇所（JSON） |
+| [B079](../hypothesis-bank-2026-09-27.md#L147) | [構造] 六石非存在は三つ組の共起だけで短く説明できる。 | PARTIAL | [round48-six-stone-cover-incidence.md](round48-six-stone-cover-incidence.md) |
 | [B080](../hypothesis-bank-2026-09-27.md#L148) | [存在] 全空点をちょうど一度ずつ禁止する極大配置。 | SUPPORTED | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B081](../hypothesis-bank-2026-09-27.md#L152) | [全称] 9×9の最大安全サイズは17。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
 | [B082](../hypothesis-bank-2026-09-27.md#L153) | [全称・大胆] 10×10では20石まで届く。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
@@ -118,8 +118,8 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B090](../hypothesis-bank-2026-09-27.md#L161) | [統計] 最大配置の難しさはサイズより型数に現れる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B091](../hypothesis-bank-2026-09-27.md#L165) | [全称] 8×8には8石の極大安全配置がある。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
 | [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
-| [B093](../hypothesis-bank-2026-09-27.md#L167) | [全称] 10×10の最小極大は10石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B094](../hypothesis-bank-2026-09-27.md#L168) | [全称] 10×10の最小極大は11石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
+| [B093](../hypothesis-bank-2026-09-27.md#L167) | [全称] 10×10の最小極大は10石。 | PARTIAL | [round51-ten-board-seven-stone-exclusion.md](round51-ten-board-seven-stone-exclusion.md) |
+| [B094](../hypothesis-bank-2026-09-27.md#L168) | [全称] 10×10の最小極大は11石。 | REFUTED | [round49-ten-stone-maximal-counterexample.md](round49-ten-stone-maximal-counterexample.md) |
 | [B095](../hypothesis-bank-2026-09-27.md#L169) | [漸近・大胆] 最小極大は線形より小さくなる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B096](../hypothesis-bank-2026-09-27.md#L170) | [漸近・大胆] 最小極大の指数は2/3。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B097](../hypothesis-bank-2026-09-27.md#L171) | [全称・大胆] s_nは単調増加する。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |

@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 154,
+  "reviewed_originals": 157,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 446,
-    "PARTIAL": 18,
+    "NOT_AUDITED": 443,
+    "PARTIAL": 20,
     "SUPPORTED": 87,
-    "REFUTED": 44,
+    "REFUTED": 45,
     "SCOPE_UNCLEAR": 5
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "6468af4dc17fd4ffed4fc8b1c640f4d258d4d93632c70494fc8bf2568e4c7f09",
+  "index_source_sha256": "3c5035e553f8a4b33734ba7fba169f35f41e79e192a3f858211a172cf6031348",
   "rows": [
     {
       "id": "B001",
@@ -8914,6 +8914,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round48-six-stone-cover-incidence.md",
+          "heading_line": 1,
+          "heading": "# B079: 十盤六石の重複被覆総数は正確に85",
+          "joint_heading_ids": [
+            "B079"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round5-batch-b001-b100-final.md",
           "heading_line": 86,
           "heading": "## B079 [構造] 最終",
@@ -9128,10 +9138,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "exact_geometric_cover_incidence_maximization",
+      "preferred_report": "round48-six-stone-cover-incidence.md",
+      "reason": "十盤六石の重複被覆総数は全安全集合最大85<必要94、等号証人を独立検算。上界は完全最適化に依存し、原文の短い非列挙証明は未達。",
       "additional_reports": []
     },
     {
@@ -11462,11 +11472,13 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
-      "additional_reports": []
+      "original_status": "PARTIAL",
+      "evidence_kind": "complete_seven_stone_exclusion_and_ten_stone_witness",
+      "preferred_report": "round51-ten-board-seven-stone-exclusion.md",
+      "reason": "s9=9から十盤七石候補の全幅帰着、初点0..4全5.9億節点を完了してs10≥8。健全な十石証人で[8,10]、八・九石は未決。",
+      "additional_reports": [
+        "round49-ten-stone-maximal-counterexample.md"
+      ]
     },
     {
       "id": "B094",
@@ -11534,6 +11546,25 @@
                 "PARTIAL"
               ],
               "exact_text": "- 判定: **PARTIAL**（前回: PARTIAL → 今回: PARTIAL。n=10, n=11 の乱ハセ最小が加わり、n 依存の系列が伸びた）"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round49-ten-stone-maximal-counterexample.md",
+          "heading_line": 1,
+          "heading": "# B094の反証: 十盤に安全十石極大",
+          "joint_heading_ids": [
+            "B094"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "REFUTED",
+                "PARTIAL"
+              ],
+              "exact_text": "更新: 2026-10-01。**B094 REFUTED。B093 PARTIAL、8≤s₁₀≤10。**"
             }
           ],
           "weakening_mentioned": false
@@ -11613,10 +11644,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "independently_verified_ten_stone_maximal_witness",
+      "preferred_report": "round49-ten-stone-maximal-counterexample.md",
+      "reason": "十盤S=[21,27,31,35,36,46,65,81,29,48]は全210四点安全・全90空点禁止、s10≤10で原文11を反証。",
       "additional_reports": []
     },
     {
@@ -74971,6 +75002,8 @@
     "round45-cover-gap-and-sharp-overlap.md": "3a03d8f402c6ac8fb49259e3bcd9d86cec0e583c469ab097591b1d1de91c8929",
     "round46-small-saturation-and-window-reduction.md": "18d499bb24735ebd0e33b0790fa2fd6e4b8efa3d09df337f976447f355321daf",
     "round47-private-cover-and-global-minima.md": "bc4446d3bc05348c526a2f5732174f8702a71055896e80b6cfac078fb6c07a61",
+    "round48-six-stone-cover-incidence.md": "d6b9de697ab2b6169dce883f27d2869b5a3e98b16b3e8cd9cfa406232ebcf8b1",
+    "round49-ten-stone-maximal-counterexample.md": "d410f7ea42ba9176024cbd5b8b4b17fa562902f890b633e99a959d5577428c7f",
     "round5-FINAL-SUMMARY.md": "92006d512a1b70df30e11d05ffe711914908c730d4120e31c6fabf8ec486f55f",
     "round5-b141-corrections.md": "939fd458c2ab92e8863414cdb3c112a3c475250bb24bf3cd3a9477b6233e4c45",
     "round5-batch-b001-b100-final.md": "919843f66d5f257a838d32138dbc54e55dd61eaca26b86a5b58454043127707b",
@@ -75028,6 +75061,7 @@
     "round5-cover-union.md": "0da382149935c86f0247e6dab4470dc631aea24a6ccc8502ed75cadba7411cac",
     "round5-quadratic-cover.md": "313e038cebbe7c679626b32b471c08272d86276e7ff3c76fe8037b0a7d5e6b66",
     "round5-row-thresholds.md": "58c762f9b13781b37f66eea59144eaec49ab9acc7b1d09f93314c73917987bf9",
+    "round51-ten-board-seven-stone-exclusion.md": "e72914a6bacb793e40e139edc9c10996a489cc1d5201682d5602b87a13437c70",
     "round5_b101_followup.md": "1799ce770f7eedc358f91aaff3bbc517d796010b5dbdebd05f4159d48690181a",
     "round6-ap-parabola.md": "16bb40e27a77308c5f31ddb9936deb9edfe47ff75d2350b8b51ee547ba60eb89",
     "round6-rational-orchard.md": "ad2be63be342477d77a11fbdbdab0e31b11a87b802593f4d773d1a77c9df8a3f",

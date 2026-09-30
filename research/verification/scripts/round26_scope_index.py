@@ -42,6 +42,17 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B079', 'PARTIAL', 'exact_geometric_cover_incidence_maximization',
+       'round48-six-stone-cover-incidence.md',
+       '十盤六石の重複被覆総数は全安全集合最大85<必要94、等号証人を独立検算。上界は完全最適化に依存し、原文の短い非列挙証明は未達。')
+review('B094', 'REFUTED', 'independently_verified_ten_stone_maximal_witness',
+       'round49-ten-stone-maximal-counterexample.md',
+       '十盤S=[21,27,31,35,36,46,65,81,29,48]は全210四点安全・全90空点禁止、s10≤10で原文11を反証。')
+review('B093', 'PARTIAL', 'complete_seven_stone_exclusion_and_ten_stone_witness',
+       'round51-ten-board-seven-stone-exclusion.md',
+       's9=9から十盤七石候補の全幅帰着、初点0..4全5.9億節点を完了してs10≥8。健全な十石証人で[8,10]、八・九石は未決。',
+       ('round49-ten-stone-maximal-counterexample.md',))
+
 review('B091', 'SUPPORTED', 'complete_all_lower_sizes_exclusion_and_finite_witness',
        'round46-small-saturation-and-window-reduction.md',
        '8×8のk≤4は三つ組補完上界、k5/6/7は個別の完全探索で除外。八石極大証人を独立幾何で検算しs8=8。')

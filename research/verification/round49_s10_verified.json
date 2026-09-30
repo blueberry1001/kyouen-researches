@@ -1,0 +1,1225 @@
+{
+  "B094_original_verdict": "REFUTED",
+  "B093_original_verdict": "PARTIAL",
+  "s10_bounds": [
+    8,
+    10
+  ],
+  "minimum_stone_lower_sizes_closed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "six_stone_exclusion": "completed maximum sum_b=85<94",
+  "ten_stone_maximal_witness": {
+    "S_ids": [
+      21,
+      27,
+      31,
+      35,
+      36,
+      46,
+      65,
+      81,
+      29,
+      48
+    ],
+    "S_coordinates": [
+      [
+        1,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        8,
+        4
+      ]
+    ],
+    "empty_point_certificates": [
+      {
+        "p": [
+          0,
+          0
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          88
+        ]
+      },
+      {
+        "p": [
+          1,
+          0
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          12
+        ]
+      },
+      {
+        "p": [
+          2,
+          0
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          11,
+          100
+        ]
+      },
+      {
+        "p": [
+          3,
+          0
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          4,
+          9,
+          100
+        ]
+      },
+      {
+        "p": [
+          4,
+          0
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          9
+        ]
+      },
+      {
+        "p": [
+          5,
+          0
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          4,
+          33,
+          43,
+          104
+        ]
+      },
+      {
+        "p": [
+          6,
+          0
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          43,
+          93
+        ]
+      },
+      {
+        "p": [
+          7,
+          0
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          11,
+          58,
+          92
+        ]
+      },
+      {
+        "p": [
+          8,
+          0
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          54,
+          93
+        ]
+      },
+      {
+        "p": [
+          9,
+          0
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          51
+        ]
+      },
+      {
+        "p": [
+          0,
+          1
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          100
+        ]
+      },
+      {
+        "p": [
+          1,
+          1
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          12,
+          94
+        ]
+      },
+      {
+        "p": [
+          2,
+          1
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          33,
+          62
+        ]
+      },
+      {
+        "p": [
+          3,
+          1
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          26,
+          70
+        ]
+      },
+      {
+        "p": [
+          4,
+          1
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          22,
+          43,
+          70
+        ]
+      },
+      {
+        "p": [
+          5,
+          1
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          93,
+          100
+        ]
+      },
+      {
+        "p": [
+          6,
+          1
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          10
+        ]
+      },
+      {
+        "p": [
+          7,
+          1
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          43,
+          109
+        ]
+      },
+      {
+        "p": [
+          8,
+          1
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          14,
+          33,
+          51,
+          109
+        ]
+      },
+      {
+        "p": [
+          9,
+          1
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          93
+        ]
+      },
+      {
+        "p": [
+          0,
+          2
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          6,
+          37,
+          77
+        ]
+      },
+      {
+        "p": [
+          2,
+          2
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          6,
+          40,
+          88
+        ]
+      },
+      {
+        "p": [
+          3,
+          2
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          6,
+          30,
+          66,
+          72
+        ]
+      },
+      {
+        "p": [
+          4,
+          2
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          6,
+          17,
+          43,
+          72
+        ]
+      },
+      {
+        "p": [
+          5,
+          2
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          6,
+          8,
+          23,
+          115
+        ]
+      },
+      {
+        "p": [
+          6,
+          2
+        ],
+        "b": 5,
+        "blocking_triple_indices": [
+          6,
+          9,
+          48,
+          95,
+          109
+        ]
+      },
+      {
+        "p": [
+          8,
+          2
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          6,
+          11,
+          49,
+          105
+        ]
+      },
+      {
+        "p": [
+          0,
+          3
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          17,
+          23,
+          62,
+          64
+        ]
+      },
+      {
+        "p": [
+          2,
+          3
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          2,
+          64
+        ]
+      },
+      {
+        "p": [
+          3,
+          3
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          1,
+          64
+        ]
+      },
+      {
+        "p": [
+          4,
+          3
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          24,
+          64,
+          90
+        ]
+      },
+      {
+        "p": [
+          7,
+          3
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          0,
+          64,
+          111
+        ]
+      },
+      {
+        "p": [
+          8,
+          3
+        ],
+        "b": 6,
+        "blocking_triple_indices": [
+          11,
+          40,
+          48,
+          64,
+          77,
+          103
+        ]
+      },
+      {
+        "p": [
+          9,
+          3
+        ],
+        "b": 6,
+        "blocking_triple_indices": [
+          13,
+          45,
+          49,
+          64,
+          93,
+          109
+        ]
+      },
+      {
+        "p": [
+          0,
+          4
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          7,
+          65
+        ]
+      },
+      {
+        "p": [
+          1,
+          4
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          4,
+          12,
+          70
+        ]
+      },
+      {
+        "p": [
+          2,
+          4
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          3,
+          35
+        ]
+      },
+      {
+        "p": [
+          3,
+          4
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          61,
+          77,
+          89,
+          90
+        ]
+      },
+      {
+        "p": [
+          4,
+          4
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          28,
+          86
+        ]
+      },
+      {
+        "p": [
+          5,
+          4
+        ],
+        "b": 5,
+        "blocking_triple_indices": [
+          30,
+          48,
+          51,
+          59,
+          85
+        ]
+      },
+      {
+        "p": [
+          7,
+          4
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          4,
+          86,
+          109
+        ]
+      },
+      {
+        "p": [
+          9,
+          4
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          49
+        ]
+      },
+      {
+        "p": [
+          0,
+          5
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          33,
+          72,
+          118
+        ]
+      },
+      {
+        "p": [
+          1,
+          5
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          12,
+          21
+        ]
+      },
+      {
+        "p": [
+          2,
+          5
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          11
+        ]
+      },
+      {
+        "p": [
+          3,
+          5
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          9,
+          84,
+          90
+        ]
+      },
+      {
+        "p": [
+          4,
+          5
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          9,
+          51,
+          86
+        ]
+      },
+      {
+        "p": [
+          5,
+          5
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          79,
+          105
+        ]
+      },
+      {
+        "p": [
+          6,
+          5
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          48,
+          52,
+          90
+        ]
+      },
+      {
+        "p": [
+          7,
+          5
+        ],
+        "b": 6,
+        "blocking_triple_indices": [
+          11,
+          48,
+          49,
+          72,
+          86,
+          118
+        ]
+      },
+      {
+        "p": [
+          8,
+          5
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          49,
+          96
+        ]
+      },
+      {
+        "p": [
+          9,
+          5
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          102
+        ]
+      },
+      {
+        "p": [
+          0,
+          6
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          17,
+          72,
+          100
+        ]
+      },
+      {
+        "p": [
+          1,
+          6
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          12,
+          66
+        ]
+      },
+      {
+        "p": [
+          2,
+          6
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          46,
+          71,
+          89,
+          118
+        ]
+      },
+      {
+        "p": [
+          3,
+          6
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          4,
+          13,
+          51,
+          70
+        ]
+      },
+      {
+        "p": [
+          4,
+          6
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          11,
+          70,
+          90
+        ]
+      },
+      {
+        "p": [
+          6,
+          6
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          27,
+          86
+        ]
+      },
+      {
+        "p": [
+          7,
+          6
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          13,
+          52,
+          72
+        ]
+      },
+      {
+        "p": [
+          8,
+          6
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          34
+        ]
+      },
+      {
+        "p": [
+          9,
+          6
+        ],
+        "b": 4,
+        "blocking_triple_indices": [
+          45,
+          52,
+          89,
+          112
+        ]
+      },
+      {
+        "p": [
+          0,
+          7
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          23
+        ]
+      },
+      {
+        "p": [
+          1,
+          7
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          12,
+          17,
+          87
+        ]
+      },
+      {
+        "p": [
+          2,
+          7
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          51,
+          89,
+          100
+        ]
+      },
+      {
+        "p": [
+          3,
+          7
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          55,
+          66,
+          100
+        ]
+      },
+      {
+        "p": [
+          4,
+          7
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          17,
+          104
+        ]
+      },
+      {
+        "p": [
+          5,
+          7
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          18
+        ]
+      },
+      {
+        "p": [
+          6,
+          7
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          23,
+          76,
+          95
+        ]
+      },
+      {
+        "p": [
+          7,
+          7
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          45
+        ]
+      },
+      {
+        "p": [
+          8,
+          7
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          83
+        ]
+      },
+      {
+        "p": [
+          9,
+          7
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          89,
+          95
+        ]
+      },
+      {
+        "p": [
+          0,
+          8
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          65,
+          119
+        ]
+      },
+      {
+        "p": [
+          2,
+          8
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          101
+        ]
+      },
+      {
+        "p": [
+          3,
+          8
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          30
+        ]
+      },
+      {
+        "p": [
+          4,
+          8
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          54
+        ]
+      },
+      {
+        "p": [
+          5,
+          8
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          23,
+          67
+        ]
+      },
+      {
+        "p": [
+          6,
+          8
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          65,
+          72,
+          105
+        ]
+      },
+      {
+        "p": [
+          7,
+          8
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          5,
+          16,
+          59
+        ]
+      },
+      {
+        "p": [
+          8,
+          8
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          40
+        ]
+      },
+      {
+        "p": [
+          9,
+          8
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          33,
+          59
+        ]
+      },
+      {
+        "p": [
+          0,
+          9
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          51
+        ]
+      },
+      {
+        "p": [
+          1,
+          9
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          12,
+          65
+        ]
+      },
+      {
+        "p": [
+          2,
+          9
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          33,
+          40
+        ]
+      },
+      {
+        "p": [
+          3,
+          9
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          62,
+          72,
+          89
+        ]
+      },
+      {
+        "p": [
+          4,
+          9
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          72
+        ]
+      },
+      {
+        "p": [
+          5,
+          9
+        ],
+        "b": 2,
+        "blocking_triple_indices": [
+          65,
+          111
+        ]
+      },
+      {
+        "p": [
+          6,
+          9
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          50
+        ]
+      },
+      {
+        "p": [
+          7,
+          9
+        ],
+        "b": 1,
+        "blocking_triple_indices": [
+          40
+        ]
+      },
+      {
+        "p": [
+          8,
+          9
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          33,
+          89,
+          105
+        ]
+      },
+      {
+        "p": [
+          9,
+          9
+        ],
+        "b": 3,
+        "blocking_triple_indices": [
+          82,
+          105,
+          108
+        ]
+      }
+    ],
+    "sum_b": 222,
+    "min_b": 1,
+    "legal_empty_points": []
+  },
+  "source_eight_stone_mask": 563087396594306,
+  "source_translation": [
+    0,
+    2
+  ],
+  "added_point_ids": [
+    29,
+    48
+  ],
+  "nine_stone_search_limit": "Only all 3672 translated n8 eight-stone catalogue sets plus one point. This is not a universal n10 nine-stone exclusion.",
+  "seven_stone_search": {
+    "n": 10,
+    "k": 7,
+    "score_upper_bound": "suffix-conditioned triple counts",
+    "complete": false,
+    "found": false,
+    "forbidden_quads": 54441,
+    "triple_completion_incidence": 217764,
+    "max_completion": 9,
+    "nodes": 860066578,
+    "seconds": 600.390355,
+    "nodes_by_depth": [
+      1,
+      8,
+      657,
+      30498,
+      928842,
+      20422779,
+      325930129,
+      512753664
+    ],
+    "coverage_prunes": [
+      0,
+      0,
+      64,
+      5471,
+      203490,
+      4485991,
+      89899301,
+      455591
+    ],
+    "score_prunes": [
+      0,
+      0,
+      0,
+      16,
+      23405,
+      2413580,
+      221032209,
+      512298072
+    ],
+    "witness": []
+  },
+  "seven_stone_complete_window_search": {
+    "n": 10,
+    "k": 7,
+    "orbit_reduction": "n10 K<=8 first occupied ID <=4 using s9=9",
+    "score_upper_bound": "suffix-conditioned triple counts",
+    "complete": true,
+    "found": false,
+    "forbidden_quads": 54441,
+    "triple_completion_incidence": 217764,
+    "max_completion": 9,
+    "nodes": 591689184,
+    "seconds": 170.05046,
+    "nodes_by_depth": [
+      1,
+      5,
+      460,
+      21159,
+      641957,
+      14131135,
+      226297827,
+      350596640
+    ],
+    "coverage_prunes": [
+      0,
+      0,
+      46,
+      3828,
+      138582,
+      3017873,
+      60564022,
+      279601
+    ],
+    "score_prunes": [
+      0,
+      0,
+      0,
+      16,
+      18473,
+      1777958,
+      155610276,
+      350317039
+    ],
+    "witness": []
+  },
+  "smaller_witness": null,
+  "sha256": {
+    "scripts/round48_49_audit.py": "bae34d0c95a7727c380e39c7373a5fa925d1c8992aa08502c1efcef31e6aef79",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "scripts/round46_audit.py": "424363e556306b2418fff5ac9349c7554df1ef838af0ed935ab37b5c24f18cf0",
+    "scripts/round46_kmin_tight.cpp": "b697fd2a4336896c784fe2c05f7dd49489a650e1210a280e006e57598d26d04d",
+    "scripts/round48_n10_embedded.cpp": "6fbee2d9c234ed6adf32469253fe8c5589522ac7c57ff0b0fc309c4e76391234",
+    "round4_b371.bin": "f91c81d4eab5a0cf09e613fde697e1584eabf146210263f64499150fac03d0e1",
+    "round48_n10_embedded_extensions.json": "cd735abb4628ab37ebde03a36e4c04776aa7af64566ccbad439611c4ca85b8b4",
+    "round49_n10_embedded_nine.json": "8646aa1017602fb4804a224fa22887105ca3d229f8e91a0490340f2cd2588a03",
+    "round48_incidence_verified.json": "92f7663fbbfca7a5fa7ea49a63e4385fd7845322dca54d90541e5817707e29fc",
+    "round49_n10_k7.json": "2e4f668bdd52eca3aaae7370729e1d8ea43e618a9d10eb99999880fd4a6c7407",
+    "round51_n10_k7_window.json": "a5611335ec94e3bd6ea9d8e76d90bb9bfa6bd4257b3dbb7f832675c1d5916583",
+    "scripts/round51_n10_window.cpp": "40454fc40381016f8e2284256d355680afd03f844c1baf31e28b8e6c544f9343",
+    "round46_saturation_verified.json": "f76c9c7ac538ad2d05748029bebc893f8f21834083874a6dd7425a2ef6b0a4c2"
+  }
+}
