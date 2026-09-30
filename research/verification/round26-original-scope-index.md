@@ -3,7 +3,7 @@
 更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は157件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は161件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 443 |
-| PARTIAL | 20 |
+| NOT_AUDITED | 439 |
+| PARTIAL | 23 |
 | REFUTED | 45 |
 | SCOPE_UNCLEAR | 5 |
-| SUPPORTED | 87 |
+| SUPPORTED | 88 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -120,10 +120,10 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
 | [B093](../hypothesis-bank-2026-09-27.md#L167) | [全称] 10×10の最小極大は10石。 | PARTIAL | [round51-ten-board-seven-stone-exclusion.md](round51-ten-board-seven-stone-exclusion.md) |
 | [B094](../hypothesis-bank-2026-09-27.md#L168) | [全称] 10×10の最小極大は11石。 | REFUTED | [round49-ten-stone-maximal-counterexample.md](round49-ten-stone-maximal-counterexample.md) |
-| [B095](../hypothesis-bank-2026-09-27.md#L169) | [漸近・大胆] 最小極大は線形より小さくなる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B096](../hypothesis-bank-2026-09-27.md#L170) | [漸近・大胆] 最小極大の指数は2/3。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B097](../hypothesis-bank-2026-09-27.md#L171) | [全称・大胆] s_nは単調増加する。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B098](../hypothesis-bank-2026-09-27.md#L172) | [存在] s_nが一段の拡大で2以上増える。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
+| [B095](../hypothesis-bank-2026-09-27.md#L169) | [漸近・大胆] 最小極大は線形より小さくなる。 | PARTIAL | [round52-general-saturation-exponent-lower-bound.md](round52-general-saturation-exponent-lower-bound.md) |
+| [B096](../hypothesis-bank-2026-09-27.md#L170) | [漸近・大胆] 最小極大の指数は2/3。 | PARTIAL | [round52-general-saturation-exponent-lower-bound.md](round52-general-saturation-exponent-lower-bound.md) |
+| [B097](../hypothesis-bank-2026-09-27.md#L171) | [全称・大胆] s_nは単調増加する。 | PARTIAL | [round54-small-board-saturation-jump.md](round54-small-board-saturation-jump.md) |
+| [B098](../hypothesis-bank-2026-09-27.md#L172) | [存在] s_nが一段の拡大で2以上増える。 | SUPPORTED | [round54-small-board-saturation-jump.md](round54-small-board-saturation-jump.md) |
 | [B099](../hypothesis-bank-2026-09-27.md#L173) | [統計] 最小極大配置では長い直線と豊富な円を併用する。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B100](../hypothesis-bank-2026-09-27.md#L174) | [全称・大胆] 極大サイズのスペクトルは区間。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B101](../hypothesis-bank-2026-09-27.md#L178) | [全称・大胆] 最大配置は四辺すべてに触れる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |

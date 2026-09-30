@@ -42,6 +42,16 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B098', 'SUPPORTED', 'complete_small_board_saturation_jump',
+       'round54-small-board-saturation-jump.md',
+       '原文にn≥4の指定なし。全n2/n3集合の監査でs2=3・s3=5、差2の存在を証明。n≥4を追加した問いの決着は主張しない。')
+review('B097', 'PARTIAL', 'complete_finite_saturation_sequence',
+       'round54-small-board-saturation-jump.md',
+       '完全に確認したs1..s9=1,3,5,5,5,6,7,8,9では単調。s10∈[8,10]で九盤以後の単調性は未決。')
+review('B095 B096', 'PARTIAL', 'general_asymptotic_lower_exponent_proof',
+       'round52-general-saturation-exponent-lower-bound.md',
+       '原始方向別に直線被覆O(n k^(3/2))、三点真円の整数係数と約数上界でR(n)=n^o(1)。全ε>0でs_n>n^(2/3−ε)を証明。対応する上界・s_n=o(n)は未証明。')
+
 review('B079', 'PARTIAL', 'exact_geometric_cover_incidence_maximization',
        'round48-six-stone-cover-incidence.md',
        '十盤六石の重複被覆総数は全安全集合最大85<必要94、等号証人を独立検算。上界は完全最適化に依存し、原文の短い非列挙証明は未達。')
@@ -64,7 +74,8 @@ review('B077 B080', 'SUPPORTED', 'finite_witness_and_general_minimum_stone_count
        '4×4の全空点二重以上六石証人・完全一重被覆五石証人を独立検算。曲線上界と残る小盤の全域検査で最小石数6/5、最小盤4を証明。')
 review('B078 B361', 'SCOPE_UNCLEAR', 'degenerate_endpoint_and_complete_finite_nondegenerate_support',
        'round47-private-cover-and-global-minima.md',
-       'n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。')
+       'n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。',
+       ('round50-nine-board-private-point-family.md',))
 
 
 review('B349', 'SUPPORTED', 'general_minimum_classification_and_finite_realizations',

@@ -1,11 +1,11 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 157,
+  "reviewed_originals": 161,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 443,
-    "PARTIAL": 20,
-    "SUPPORTED": 87,
+    "NOT_AUDITED": 439,
+    "PARTIAL": 23,
+    "SUPPORTED": 88,
     "REFUTED": 45,
     "SCOPE_UNCLEAR": 5
   },
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "3c5035e553f8a4b33734ba7fba169f35f41e79e192a3f858211a172cf6031348",
+  "index_source_sha256": "4e7a9949750a8355cdb65623c4796cda0e928049aa21abfb67b1703810ed1d10",
   "rows": [
     {
       "id": "B001",
@@ -8820,13 +8820,26 @@
           ],
           "labels_in_section": [],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round50-nine-board-private-point-family.md",
+          "heading_line": 1,
+          "heading": "# B078・B361: 九盤最小極大の限定族16配置",
+          "joint_heading_ids": [
+            "B078",
+            "B361"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
       "original_status": "SCOPE_UNCLEAR",
       "evidence_kind": "degenerate_endpoint_and_complete_finite_nondegenerate_support",
       "preferred_report": "round47-private-cover-and-global-minima.md",
       "reason": "n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。",
-      "additional_reports": []
+      "additional_reports": [
+        "round50-nine-board-private-point-family.md"
+      ]
     },
     {
       "id": "B079",
@@ -11807,12 +11820,23 @@
             }
           ],
           "weakening_mentioned": true
+        },
+        {
+          "report": "round52-general-saturation-exponent-lower-bound.md",
+          "heading_line": 1,
+          "heading": "# B095・B096: 最小極大の指数は少なくとも2/3",
+          "joint_heading_ids": [
+            "B095",
+            "B096"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "general_asymptotic_lower_exponent_proof",
+      "preferred_report": "round52-general-saturation-exponent-lower-bound.md",
+      "reason": "原始方向別に直線被覆O(n k^(3/2))、三点真円の整数係数と約数上界でR(n)=n^o(1)。全ε>0でs_n>n^(2/3−ε)を証明。対応する上界・s_n=o(n)は未証明。",
       "additional_reports": []
     },
     {
@@ -11972,12 +11996,23 @@
             }
           ],
           "weakening_mentioned": true
+        },
+        {
+          "report": "round52-general-saturation-exponent-lower-bound.md",
+          "heading_line": 1,
+          "heading": "# B095・B096: 最小極大の指数は少なくとも2/3",
+          "joint_heading_ids": [
+            "B095",
+            "B096"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "general_asymptotic_lower_exponent_proof",
+      "preferred_report": "round52-general-saturation-exponent-lower-bound.md",
+      "reason": "原始方向別に直線被覆O(n k^(3/2))、三点真円の整数係数と約数上界でR(n)=n^o(1)。全ε>0でs_n>n^(2/3−ε)を証明。対応する上界・s_n=o(n)は未証明。",
       "additional_reports": []
     },
     {
@@ -12167,12 +12202,32 @@
             }
           ],
           "weakening_mentioned": true
+        },
+        {
+          "report": "round54-small-board-saturation-jump.md",
+          "heading_line": 1,
+          "heading": "# B098の原文採用とB097の有限範囲",
+          "joint_heading_ids": [
+            "B098",
+            "B097"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED",
+                "PARTIAL"
+              ],
+              "exact_text": "作成: 2026-10-01。**B098 SUPPORTED、B097 PARTIAL。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "complete_finite_saturation_sequence",
+      "preferred_report": "round54-small-board-saturation-jump.md",
+      "reason": "完全に確認したs1..s9=1,3,5,5,5,6,7,8,9では単調。s10∈[8,10]で九盤以後の単調性は未決。",
       "additional_reports": []
     },
     {
@@ -12326,12 +12381,32 @@
             }
           ],
           "weakening_mentioned": true
+        },
+        {
+          "report": "round54-small-board-saturation-jump.md",
+          "heading_line": 1,
+          "heading": "# B098の原文採用とB097の有限範囲",
+          "joint_heading_ids": [
+            "B098",
+            "B097"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED",
+                "PARTIAL"
+              ],
+              "exact_text": "作成: 2026-10-01。**B098 SUPPORTED、B097 PARTIAL。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "complete_small_board_saturation_jump",
+      "preferred_report": "round54-small-board-saturation-jump.md",
+      "reason": "原文にn≥4の指定なし。全n2/n3集合の監査でs2=3・s3=5、差2の存在を証明。n≥4を追加した問いの決着は主張しない。",
       "additional_reports": []
     },
     {
@@ -50145,13 +50220,26 @@
           ],
           "labels_in_section": [],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round50-nine-board-private-point-family.md",
+          "heading_line": 1,
+          "heading": "# B078・B361: 九盤最小極大の限定族16配置",
+          "joint_heading_ids": [
+            "B078",
+            "B361"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
       "original_status": "SCOPE_UNCLEAR",
       "evidence_kind": "degenerate_endpoint_and_complete_finite_nondegenerate_support",
       "preferred_report": "round47-private-cover-and-global-minima.md",
       "reason": "n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。",
-      "additional_reports": []
+      "additional_reports": [
+        "round50-nine-board-private-point-family.md"
+      ]
     },
     {
       "id": "B362",
@@ -75061,7 +75149,10 @@
     "round5-cover-union.md": "0da382149935c86f0247e6dab4470dc631aea24a6ccc8502ed75cadba7411cac",
     "round5-quadratic-cover.md": "313e038cebbe7c679626b32b471c08272d86276e7ff3c76fe8037b0a7d5e6b66",
     "round5-row-thresholds.md": "58c762f9b13781b37f66eea59144eaec49ab9acc7b1d09f93314c73917987bf9",
+    "round50-nine-board-private-point-family.md": "fcad1f2a20644aec75fc56c232f2b2106247fb587a38c1de80c3fa7d03d282ee",
     "round51-ten-board-seven-stone-exclusion.md": "e72914a6bacb793e40e139edc9c10996a489cc1d5201682d5602b87a13437c70",
+    "round52-general-saturation-exponent-lower-bound.md": "683d99d7ca836bd56dc5154caad0091a592bf0a86d4f0aa6c0db899dddf924bc",
+    "round54-small-board-saturation-jump.md": "47028fb05a634c962bc316458c64c0474385990e3db61a6c162a898eccf1e9ee",
     "round5_b101_followup.md": "1799ce770f7eedc358f91aaff3bbc517d796010b5dbdebd05f4159d48690181a",
     "round6-ap-parabola.md": "16bb40e27a77308c5f31ddb9936deb9edfe47ff75d2350b8b51ee547ba60eb89",
     "round6-rational-orchard.md": "ad2be63be342477d77a11fbdbdab0e31b11a87b802593f4d773d1a77c9df8a3f",
