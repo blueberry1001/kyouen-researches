@@ -1,0 +1,12 @@
+{
+  "format": "raw little-endian uint64 masks, no header",
+  "complete_layer_dependencies": "round28 n4/n7 and round39 n5/n6 full safe-subset enumerations",
+  "layers": [
+    {"n":4,"k":5,"count":2360,"path":"/home/yuubi/round28_n4/level_5.occ","sha256":"d2d61993b5b0e7787be95e72663637cf11a5bd5457f0e8967d13d88dc9b944d1"},
+    {"n":5,"k":5,"count":37272,"path":"/home/yuubi/round39_n5/level_5.occ","sha256":"dd0de39e8bec266e0d92df6ab43fbbb054233920563ce73be1cb41ee4d6203f6"},
+    {"n":6,"k":5,"count":301952,"path":"/home/yuubi/round39_n6/level_5.occ","sha256":"c4d5e6aeece85d3d525369f8147070ac444ed78d0a1da5b20942a17c456aeeb7"},
+    {"n":6,"k":6,"count":997796,"path":"/home/yuubi/round39_n6/level_6.occ","sha256":"6077db334d653eddea6dd1808895d59a553846710a7b96dd350608ad53c1aabd"},
+    {"n":7,"k":5,"count":1633048,"path":"/home/yuubi/round28_n7/level_5.occ","sha256":"52c9c9c12bde7d97722d282822867dbc3f35b5c27e5c16e124c2c2a27e8a4444"},
+    {"n":7,"k":7,"count":29688640,"path":"/home/yuubi/round28_n7/level_7.occ","sha256":"7f24d29c4e06cc67e0f699d00a117591808bd677b21b74be80a3e763808ecdea"}
+  ]
+}

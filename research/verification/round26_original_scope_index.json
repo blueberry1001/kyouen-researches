@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 148,
+  "reviewed_originals": 154,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 452,
-    "PARTIAL": 18,
-    "SUPPORTED": 83,
+    "NOT_AUDITED": 446,
+    "PARTIAL": 19,
+    "SUPPORTED": 86,
     "REFUTED": 44,
-    "SCOPE_UNCLEAR": 3
+    "SCOPE_UNCLEAR": 5
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "d4ca3befdd3d05e63791a845c18ce9745d96a7ecb4df3327840eeb7ae3f068e7",
+  "index_source_sha256": "5427bff1e0e7c076bc52a0c4cd1a047e8bc01dbd40b304445df707a7ca8c7fdf",
   "rows": [
     {
       "id": "B001",
@@ -8674,6 +8674,35 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 1,
+          "heading": "# B077・B080の全盤最小石数と最小極大の私有空点",
+          "joint_heading_ids": [
+            "B077",
+            "B080"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-10-01。**B077・B080 SUPPORTED。**"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 20,
+          "heading": "## B077: 六石が全盤最小",
+          "joint_heading_ids": [
+            "B077"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round5-batch-b001-b100.md",
           "heading_line": 306,
           "heading": "## B077 [存在] 極大なのにすべての空点が二重以上に禁止される",
@@ -8745,10 +8774,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_general_minimum_stone_count_proof",
+      "preferred_report": "round47-private-cover-and-global-minima.md",
+      "reason": "4×4の全空点二重以上六石証人・完全一重被覆五石証人を独立検算。曲線上界と残る小盤の全域検査で最小石数6/5、最小盤4を証明。",
       "additional_reports": []
     },
     {
@@ -8780,12 +8809,23 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 52,
+          "heading": "## B078・B361の有限支持と量化の端点",
+          "joint_heading_ids": [
+            "B078",
+            "B361"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SCOPE_UNCLEAR",
+      "evidence_kind": "degenerate_endpoint_and_complete_finite_nondegenerate_support",
+      "preferred_report": "round47-private-cover-and-global-minima.md",
+      "reason": "n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。",
       "additional_reports": []
     },
     {
@@ -9124,12 +9164,41 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 1,
+          "heading": "# B077・B080の全盤最小石数と最小極大の私有空点",
+          "joint_heading_ids": [
+            "B077",
+            "B080"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-10-01。**B077・B080 SUPPORTED。**"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 41,
+          "heading": "## B080: 五石が原文範囲で全盤最小",
+          "joint_heading_ids": [
+            "B080"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_general_minimum_stone_count_proof",
+      "preferred_report": "round47-private-cover-and-global-minima.md",
+      "reason": "4×4の全空点二重以上六石証人・完全一重被覆五石証人を独立検算。曲線上界と残る小盤の全域検査で最小石数6/5、最小盤4を証明。",
       "additional_reports": []
     },
     {
@@ -11028,12 +11097,32 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round46-small-saturation-and-window-reduction.md",
+          "heading_line": 1,
+          "heading": "# B091の完全監査とB092の8石探索",
+          "joint_heading_ids": [
+            "B091",
+            "B092"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED",
+                "PARTIAL"
+              ],
+              "exact_text": "作成: 2026-10-01。**B091 SUPPORTED: s₈=8。B092 PARTIAL: 8≤s₉≤9。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "complete_all_lower_sizes_exclusion_and_finite_witness",
+      "preferred_report": "round46-small-saturation-and-window-reduction.md",
+      "reason": "8×8のk≤4は三つ組補完上界、k5/6/7は個別の完全探索で除外。八石極大証人を独立幾何で検算しs8=8。",
       "additional_reports": []
     },
     {
@@ -11117,6 +11206,26 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round46-small-saturation-and-window-reduction.md",
+          "heading_line": 1,
+          "heading": "# B091の完全監査とB092の8石探索",
+          "joint_heading_ids": [
+            "B091",
+            "B092"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED",
+                "PARTIAL"
+              ],
+              "exact_text": "作成: 2026-10-01。**B091 SUPPORTED: s₈=8。B092 PARTIAL: 8≤s₉≤9。**"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round5-batch-b001-b100-push3.md",
           "heading_line": 474,
           "heading": "## B092 [全称] 第3波",
@@ -11191,10 +11300,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "complete_lower_sizes_exclusion_and_window_orbit_reduction",
+      "preferred_report": "round46-small-saturation-and-window-reduction.md",
+      "reason": "9×9のk≤7を除外、九石証人で[8,9]。408配置の全1632埋め込みに合法外点、八石候補の初点をD4で0..4へ帰着。未完了探索は非存在に使わない。",
       "additional_reports": []
     },
     {
@@ -49994,12 +50103,23 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round47-private-cover-and-global-minima.md",
+          "heading_line": 52,
+          "heading": "## B078・B361の有限支持と量化の端点",
+          "joint_heading_ids": [
+            "B078",
+            "B361"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SCOPE_UNCLEAR",
+      "evidence_kind": "degenerate_endpoint_and_complete_finite_nondegenerate_support",
+      "preferred_report": "round47-private-cover-and-global-minima.md",
+      "reason": "n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。",
       "additional_reports": []
     },
     {
@@ -74849,6 +74969,8 @@
     "round43-b350-value-preserving-move-switch.md": "4df3bc78c9e09a614f207dcfc8d899408813ef4a492829ac6918e82e90e35bed",
     "round44-three-stone-cliques-and-tree-minima.md": "3b8ae02628c8637c76d4e5cd81de97e5020a0f8dda12c37a635944eab719a63b",
     "round45-cover-gap-and-sharp-overlap.md": "3a03d8f402c6ac8fb49259e3bcd9d86cec0e583c469ab097591b1d1de91c8929",
+    "round46-small-saturation-and-window-reduction.md": "57b13a46d73e17c3e9576eeb77ec8708baaa551b970aa3393b500afe2a138de3",
+    "round47-private-cover-and-global-minima.md": "bc4446d3bc05348c526a2f5732174f8702a71055896e80b6cfac078fb6c07a61",
     "round5-FINAL-SUMMARY.md": "92006d512a1b70df30e11d05ffe711914908c730d4120e31c6fabf8ec486f55f",
     "round5-b141-corrections.md": "939fd458c2ab92e8863414cdb3c112a3c475250bb24bf3cd3a9477b6233e4c45",
     "round5-batch-b001-b100-final.md": "919843f66d5f257a838d32138dbc54e55dd61eaca26b86a5b58454043127707b",

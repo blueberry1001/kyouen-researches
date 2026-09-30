@@ -1,0 +1,1 @@
+{"n":8,"k":5,"complete":true,"found":false,"forbidden_quads":14564,"triple_completion_incidence":58256,"max_completion":9,"nodes":762798,"seconds":0.070934,"nodes_by_depth":[1,60,1794,35797,484034,241112],"coverage_prunes":[0,8,417,14978,247251,0],"score_prunes":[0,0,0,0,229092,241112],"witness":[]}

@@ -42,6 +42,20 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B091', 'SUPPORTED', 'complete_all_lower_sizes_exclusion_and_finite_witness',
+       'round46-small-saturation-and-window-reduction.md',
+       '8×8のk≤4は三つ組補完上界、k5/6/7は個別の完全探索で除外。八石極大証人を独立幾何で検算しs8=8。')
+review('B092', 'PARTIAL', 'complete_lower_sizes_exclusion_and_window_orbit_reduction',
+       'round46-small-saturation-and-window-reduction.md',
+       '9×9のk≤7を除外、九石証人で[8,9]。408配置の全1632埋め込みに合法外点、八石候補の初点をD4で0..4へ帰着。未完了探索は非存在に使わない。')
+review('B077 B080', 'SUPPORTED', 'finite_witness_and_general_minimum_stone_count_proof',
+       'round47-private-cover-and-global-minima.md',
+       '4×4の全空点二重以上六石証人・完全一重被覆五石証人を独立検算。曲線上界と残る小盤の全域検査で最小石数6/5、最小盤4を証明。')
+review('B078 B361', 'SCOPE_UNCLEAR', 'degenerate_endpoint_and_complete_finite_nondegenerate_support',
+       'round47-private-cover-and-global-minima.md',
+       'n1の全占有最小極大には空点なし、B078の存在節は偽・ρは未定義。非空空点の読みはn2..8全最小極大でmin b1・ρ1、n≥9一般命題は未証明。')
+
+
 review('B349', 'SUPPORTED', 'general_minimum_classification_and_finite_realizations',
        'round40-b349-minimum-four-edge-classification.md',
        '二点競合ありの最小合法点数5・全9型を証明し全型を格子実現。競合なしを含める読みの最小4・単独辺1型も分類。')
@@ -298,7 +312,7 @@ def main():
                                         for name in sorted(report_names)}
     atomic_text(ROOT/'round26_original_scope_index.json',json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
     lines = ['# 全600原命題の証拠索引（原文監査は途中）','',
-             '作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。',
+             '更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。',
              '**未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**','',
              f'原文照合して採用した記録は{reviewed_count}件。残りは旧ラベルを採用せずNOT_AUDITEDとする。',
              '旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。',

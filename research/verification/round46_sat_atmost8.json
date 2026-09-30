@@ -1,0 +1,28 @@
+{
+  "n": 9,
+  "stone_count_bound": 8,
+  "status": "UNKNOWN",
+  "solver": "Glucose4",
+  "python_sat_version": "1.9.dev15",
+  "wall_seconds": 600.125,
+  "variables": 46113,
+  "clauses": 166810,
+  "quad_count": 29152,
+  "triple_completion_incidence": 116608,
+  "max_completion": 9,
+  "witness_ids": null,
+  "solver_statistics": {
+    "restarts": 3055,
+    "conflicts": 769814,
+    "decisions": 6022749,
+    "propagations": 3149336076
+  },
+  "formula_sha256": "2e421db9d5c064d5bb0343c87649ae356f3943b795ce62bd6dadc1e8739cbb99",
+  "proof_kind": "independent exact CNF solver result; no DRAT proof checked",
+  "solver_extension_sha256": "e0587629689c5adb710cd58ece2d531151e72d1338a8aa7e9fddf7a33867878d",
+  "sha256": {
+    "scripts/round46_sat.py": "7fef24c4d6d3b1aa89971bb49d583c29f0cea5d8ca9d9f62b331ab600dd7db71",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "../../scripts/analysis/fact_kmin_cover_bound.cpp": "a574a8e23f045b81e5ecdd3be261d5f4ded478d0564cd2ebb188f48ff2d4c777"
+  }
+}

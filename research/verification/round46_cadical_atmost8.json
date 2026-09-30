@@ -1,0 +1,20 @@
+{
+  "n": 9,
+  "stone_count_bound": 8,
+  "status": "UNKNOWN",
+  "solver": "CaDiCaL195",
+  "python_sat_version": "1.9.dev15",
+  "wall_seconds": 613.0619999999981,
+  "conflict_budget_per_chunk": 50000,
+  "chunks": 18,
+  "witness_ids": null,
+  "solver_statistics": {
+    "restarts": 14189,
+    "conflicts": 900015,
+    "decisions": 8151896,
+    "propagations": 2082983539
+  },
+  "formula_sha256": "2e421db9d5c064d5bb0343c87649ae356f3943b795ce62bd6dadc1e8739cbb99",
+  "proof_kind": "independent SAT engine; no DRAT proof checked",
+  "source_sha256": "7f9acd163a0a42b0911aca0cd2ab374930fb480196277649ab4e8b7700670ce1"
+}

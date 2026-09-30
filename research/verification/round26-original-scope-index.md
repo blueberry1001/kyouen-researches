@@ -1,9 +1,9 @@
 # 全600原命題の証拠索引（原文監査は途中）
 
-作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
+更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は148件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は154件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 452 |
-| PARTIAL | 18 |
+| NOT_AUDITED | 446 |
+| PARTIAL | 19 |
 | REFUTED | 44 |
-| SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 83 |
+| SCOPE_UNCLEAR | 5 |
+| SUPPORTED | 86 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -102,10 +102,10 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B074](../hypothesis-bank-2026-09-27.md#L142) | [全称・大胆] 幾何によりB072より厳しい線形上限がある。 | REFUTED | [round5-quadratic-cover.md](round5-quadratic-cover.md) |
 | [B075](../hypothesis-bank-2026-09-27.md#L143) | [全称] 二つの三つ組補完集合の重複は小さい。 | SUPPORTED | [round45-cover-gap-and-sharp-overlap.md](round45-cover-gap-and-sharp-overlap.md) |
 | [B076](../hypothesis-bank-2026-09-27.md#L144) | [統計] 最小極大配置は被覆の重複が少ない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B077](../hypothesis-bank-2026-09-27.md#L145) | [存在] 極大なのにすべての空点が二重以上に禁止される。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B078](../hypothesis-bank-2026-09-27.md#L146) | [全称・大胆] 最小極大配置には一重被覆点がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B077](../hypothesis-bank-2026-09-27.md#L145) | [存在] 極大なのにすべての空点が二重以上に禁止される。 | SUPPORTED | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
+| [B078](../hypothesis-bank-2026-09-27.md#L146) | [全称・大胆] 最小極大配置には一重被覆点がある。 | SCOPE_UNCLEAR | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B079](../hypothesis-bank-2026-09-27.md#L147) | [構造] 六石非存在は三つ組の共起だけで短く説明できる。 | NOT_AUDITED | 旧個票参照12箇所（JSON） |
-| [B080](../hypothesis-bank-2026-09-27.md#L148) | [存在] 全空点をちょうど一度ずつ禁止する極大配置。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B080](../hypothesis-bank-2026-09-27.md#L148) | [存在] 全空点をちょうど一度ずつ禁止する極大配置。 | SUPPORTED | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B081](../hypothesis-bank-2026-09-27.md#L152) | [全称] 9×9の最大安全サイズは17。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
 | [B082](../hypothesis-bank-2026-09-27.md#L153) | [全称・大胆] 10×10では20石まで届く。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B083](../hypothesis-bank-2026-09-27.md#L154) | [漸近・大胆] K_n/nは2へ収束する。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
@@ -116,8 +116,8 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B088](../hypothesis-bank-2026-09-27.md#L159) | [構造] 2n−O(1)石の安全配置を無限族で作れる。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
 | [B089](../hypothesis-bank-2026-09-27.md#L160) | [構造・大胆] 少数の代数曲線の和で漸近最適になる。 | REFUTED | [round17-b089-bounded-degree.md](round17-b089-bounded-degree.md) |
 | [B090](../hypothesis-bank-2026-09-27.md#L161) | [統計] 最大配置の難しさはサイズより型数に現れる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
-| [B091](../hypothesis-bank-2026-09-27.md#L165) | [全称] 8×8には8石の極大安全配置がある。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
-| [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
+| [B091](../hypothesis-bank-2026-09-27.md#L165) | [全称] 8×8には8石の極大安全配置がある。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
+| [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | PARTIAL | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
 | [B093](../hypothesis-bank-2026-09-27.md#L167) | [全称] 10×10の最小極大は10石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B094](../hypothesis-bank-2026-09-27.md#L168) | [全称] 10×10の最小極大は11石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B095](../hypothesis-bank-2026-09-27.md#L169) | [漸近・大胆] 最小極大は線形より小さくなる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
@@ -386,7 +386,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B358](../hypothesis-bank-round2-2026-09-27.md#L122) | [構造] 反転後の通常直線の端点は、元配置の弱い円束を特定する。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B359](../hypothesis-bank-round2-2026-09-27.md#L123) | [統計] 最大配置の高被覆点は中心付近より円束の交点に集中する。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
 | [B360](../hypothesis-bank-round2-2026-09-27.md#L124) | [存在] 点ごとの被覆上限は大きくても全面被覆は極端に非効率。 | SUPPORTED | [round5-cover-union.md](round5-cover-union.md) |
-| [B361](../hypothesis-bank-round2-2026-09-27.md#L130) | [全称・大胆] 最小極大配置は一石の故障に弱い。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
+| [B361](../hypothesis-bank-round2-2026-09-27.md#L130) | [全称・大胆] 最小極大配置は一石の故障に弱い。 | SCOPE_UNCLEAR | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B362](../hypothesis-bank-round2-2026-09-27.md#L131) | [存在] どの一石を抜いても元の空点は合法にならない極大配置。 | SUPPORTED | [round29-fault-witness-audit.md](round29-fault-witness-audit.md) |
 | [B363](../hypothesis-bank-round2-2026-09-27.md#L132) | [存在・大胆] 故障耐性は無限に増やせる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B364](../hypothesis-bank-round2-2026-09-27.md#L133) | [全称・大胆] 標準盤の極大配置の故障耐性は高々3。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
