@@ -66,6 +66,12 @@ review('B064', 'SUPPORTED', 'finite_witness_and_general_minimum_legal_size_proof
 review('B344', 'PARTIAL', 'minimum_connecting_tree_classification',
        'round44-three-stone-cliques-and-tree-minima.md',
        '効く三点辺の最小接続木はK1,3・三葉上の辺、格子実現を検算。大きな木の距離偶奇による一般分類は未証明。')
+review('B071 B072 B075', 'SUPPORTED', 'general_geometric_proof_and_sharpness_certificates',
+       'round45-cover-gap-and-sharp-overlap.md',
+       '三点族の線形性と点対計数、異なる曲線の交点数で全盤証明。k≥4の改善上限−1、六石等号、二空点交差の最小石数6も検算。')
+review('B073', 'REFUTED', 'general_impossibility_using_melchior_inequality',
+       'round45-cover-gap-and-sharp-overlap.md',
+       '反転後の通常直線数δ≥3。全k≥4で床付き二次上限から必ず1減り、床等号もSteiner等号も不可能。')
 
 
 review('B211 B212 B215 B216 B220 B541 B546 B550', 'SUPPORTED', 'general_proof',

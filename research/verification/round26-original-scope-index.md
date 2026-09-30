@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は144件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は148件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 456 |
+| NOT_AUDITED | 452 |
 | PARTIAL | 18 |
-| REFUTED | 43 |
+| REFUTED | 44 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 80 |
+| SUPPORTED | 83 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -96,11 +96,11 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B068](../hypothesis-bank-2026-09-27.md#L133) | [存在] 同じP(S)の次数列・スペクトルでも勝敗が違う。 | SUPPORTED | [round34-b068-cospectral-opposite-games.md](round34-b068-cospectral-opposite-games.md) |
 | [B069](../hypothesis-bank-2026-09-27.md#L134) | [統計] 競合グラフのseparatorが小さい局面は戦略を分割できる。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B070](../hypothesis-bank-2026-09-27.md#L135) | [構造] 実現できる競合グラフには有限の小さい禁止型がある。 | SUPPORTED | [round18-competition-stars.md](round18-competition-stars.md) |
-| [B071](../hypothesis-bank-2026-09-27.md#L139) | [全称] 一つの禁止点を作る三つ組族は線形。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
-| [B072](../hypothesis-bank-2026-09-27.md#L140) | [全称] 点ごとの被覆重複には二次上限がある。 | NOT_AUDITED | 旧個票参照12箇所（JSON） |
-| [B073](../hypothesis-bank-2026-09-27.md#L141) | [存在] B072に等号を達成する非自明な配置。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B071](../hypothesis-bank-2026-09-27.md#L139) | [全称] 一つの禁止点を作る三つ組族は線形。 | SUPPORTED | [round45-cover-gap-and-sharp-overlap.md](round45-cover-gap-and-sharp-overlap.md) |
+| [B072](../hypothesis-bank-2026-09-27.md#L140) | [全称] 点ごとの被覆重複には二次上限がある。 | SUPPORTED | [round45-cover-gap-and-sharp-overlap.md](round45-cover-gap-and-sharp-overlap.md) |
+| [B073](../hypothesis-bank-2026-09-27.md#L141) | [存在] B072に等号を達成する非自明な配置。 | REFUTED | [round45-cover-gap-and-sharp-overlap.md](round45-cover-gap-and-sharp-overlap.md) |
 | [B074](../hypothesis-bank-2026-09-27.md#L142) | [全称・大胆] 幾何によりB072より厳しい線形上限がある。 | REFUTED | [round5-quadratic-cover.md](round5-quadratic-cover.md) |
-| [B075](../hypothesis-bank-2026-09-27.md#L143) | [全称] 二つの三つ組補完集合の重複は小さい。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
+| [B075](../hypothesis-bank-2026-09-27.md#L143) | [全称] 二つの三つ組補完集合の重複は小さい。 | SUPPORTED | [round45-cover-gap-and-sharp-overlap.md](round45-cover-gap-and-sharp-overlap.md) |
 | [B076](../hypothesis-bank-2026-09-27.md#L144) | [統計] 最小極大配置は被覆の重複が少ない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B077](../hypothesis-bank-2026-09-27.md#L145) | [存在] 極大なのにすべての空点が二重以上に禁止される。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B078](../hypothesis-bank-2026-09-27.md#L146) | [全称・大胆] 最小極大配置には一重被覆点がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
