@@ -231,6 +231,44 @@ public:
         return solve_common(state, occupied, legal, (int)stones.size());
     }
 
+    // ---- STANDALONE EXACT REPLAY (--exact-replay=P) ---------------
+    // Re-solve a recorded handoff root with the exact solver alone, free
+    // of df-pn, so its true cost can be measured. This is the
+    // benchmark that move-ordering work is graded against: unlike a
+    // proof number, "nodes to solve this exact position" is a direct,
+    // comparable quantity.
+    //
+    // The position is rebuilt from the CANONICAL occupancy carried in a
+    // --exact-record row. Crucially, TState is rebuilt by REPLAYING the
+    // occupied points through add() in the canonical orientation, and
+    // the legal mask is RE-DERIVED by legal_for() from that same
+    // occupancy. It is never inherited from a parent frame and never
+    // assumed to match the canonical key's bit pattern. The game is D4
+    // invariant, so a canonical-orientation reconstruction is a valid
+    // representative of the orbit; using the key as if it were the
+    // orientation actually reached by play was a previous bug.
+    //
+    // Returns: 0 UNKNOWN (budget exhausted), 1 WIN, 2 LOSS.
+    // `out_nodes` receives the exact nodes consumed by this call.
+    int exact_replay(const Bits& occupied,int stones,std::uint64_t budget,
+                    std::uint64_t& out_nodes) {
+        int verts[V],k=0;
+        Bits s=occupied;
+        while(any(s)){ if(k>=V) throw std::runtime_error("exact_replay: bad occupancy"); verts[k++]=take_lsb(s); }
+        if(k!=stones) throw std::runtime_error("exact_replay: stones mismatch");
+        TState state{};
+        for(int i=0;i<k;++i) state=add(state,verts[i]);
+        // Re-derive legality from the reconstructed occupancy.
+        Bits legal=legal_for(occupied);
+        std::uint64_t b=budget;
+        std::uint64_t before=exact_nodes_;
+        ExactResult r=exact_prop(state,stones,legal,b);
+        out_nodes=exact_nodes_-before;
+        return (r==ExactResult::WIN)?1:((r==ExactResult::LOSS)?2:0);
+    }
+    void reset_exact_counters(){ exact_nodes_=0; }
+    std::uint64_t exact_total_nodes() const { return exact_nodes_; }
+
     std::uint64_t forbidden_count() const { return forbidden_count_; }
     std::uint64_t visited() const { return visited_; }
     std::uint64_t expansions() const { return expanded_; }
@@ -446,6 +484,60 @@ private:
     std::uint64_t exact_local_stores_=0;
     std::uint64_t exact_call_hist_[64]={};
     std::uint64_t exact_win_hist_[64]={}, exact_loss_hist_[64]={}, exact_abort_hist_[64]={};
+
+    // ---- HANDOFF RECORD DIAGNOSTIC (--exact-record) ----------------
+    // One record per exact-handoff ATTEMPT, emitted as it happens, so
+    // that aborted handoffs can be counted, deduplicated by canonical
+    // key, and replayed standalone. Without this, an aborted s5 root is
+    // invisible: exact_abort_hist_ only says "N calls aborted", not
+    // which positions, how many were repeats, or how deep they were.
+    //
+    // The position is recorded as its canonical Bits key plus the stone
+    // count and legal count. A standalone replay RE-DERIVES occupied and
+    // legal from the canonical occupancy rather than trusting an
+    // inherited mask: canonical() returns the minimum over the 8 D4
+    // images, so the key is generally a rotated image and does not
+    // correspond to the orientation actually reached by play. The game
+    // is D4 invariant, so recomputing legal from the canonical occupancy
+    // is correct. This is the same mistake the old root-child code made
+    // (rebuilding TState from the key and mixing it with the parent's
+    // inherited legal mask), so it is called out explicitly here.
+    struct HandoffRec {
+        Bits key{};              // canonical occupancy mask
+        int stones=0;
+        int legal=0;            // popcount(legal) at handoff time
+        int depth_from_root=0;  // frame depth - root stone count
+        bool is_or=false;       // is_or(stones): OR node for side to move
+        int retries=0;          // handoff attempt index for this key (0-based)
+        std::uint64_t nodes=0;  // exact nodes consumed by THIS attempt
+        std::uint8_t result=0;  // 0=UNKNOWN 1=WIN 2=LOSS
+        std::uint64_t seq=0;    // global attempt counter
+    };
+    std::vector<HandoffRec> exact_recs_;
+    bool track_exact_=false;
+    int exact_record_limit_=0;   // 0 = unlimited
+    std::uint64_t exact_rec_seq_=0;
+
+    // Reset the per-root handoff record list. Called from solve_common
+    // so each root's records are its own; the exact_* counters and the
+    // stone histogram stay cumulative for the whole process.
+    void exact_record_begin(){
+        exact_recs_.clear();
+        exact_rec_seq_=0;
+    }
+    void exact_record_add(const Bits& key,int stones,int legal_cnt,
+                          int depth_from_root,unsigned retries,
+                          std::uint64_t nodes,ExactResult r){
+        if(exact_record_limit_>0 && (int)exact_recs_.size()>=exact_record_limit_) return;
+        HandoffRec h;
+        h.key=key; h.stones=stones; h.legal=legal_cnt;
+        h.depth_from_root=depth_from_root; h.is_or=is_or(stones);
+        h.retries=(int)retries; h.nodes=nodes;
+        h.result=(r==ExactResult::WIN)?1:((r==ExactResult::LOSS)?2:0);
+        h.seq=exact_rec_seq_++;
+        exact_recs_.push_back(h);
+    }
+    const std::vector<HandoffRec>& exact_records() const { return exact_recs_; }
 
     static std::uint32_t sadd(std::uint32_t a,std::uint32_t b){
         std::uint64_t s=(std::uint64_t)a+b;
@@ -898,8 +990,17 @@ private:
                         if(exact_publish_mode_==ExactPublishMode::ROOT)
                             exact_local_.reset();
                         std::uint64_t b=exact_budget_;
+                        // Snapshot the GLOBAL exact-node counter so the
+                        // nodes consumed by THIS attempt can be isolated.
+                        std::uint64_t nodes_before=exact_nodes_;
+                        int legal_cnt=popcount(st.back().legal);
+                        int depth_from_root=st.back().depth-root_stones_;
                         ExactResult er=exact_prop(st.back().state,st.back().stones,
                                                   st.back().legal,b);
+                        if(track_exact_)
+                            exact_record_add(st.back().key,st.back().stones,legal_cnt,
+                                             depth_from_root,attempts,
+                                             exact_nodes_-nodes_before,er);
                         if(er==ExactResult::WIN){
                             if(exact_publish_mode_!=ExactPublishMode::ALL)
                                 exact_store(st.back().key,er);
@@ -1073,6 +1174,7 @@ private:
         hb_prev_t_=0.0; hb_prev_exp_=before_exp;
         // Reset per-root child diagnostics.
         child_stat_.clear(); child_stat_updates_=0;
+        exact_record_begin();
         // Emit the t=0 series point immediately: roots that finish or die
         // before the first 10 s gate would otherwise leave no series at all
         // (the missing-hb bug: only [timeout]/[done] survived).
@@ -1185,6 +1287,11 @@ public:
     // pn/dn, solved status and legal count logged on completion.
     void set_track_children(bool b){ track_children_=b; }
     bool tracking_children() const { return track_children_; }
+    // Handoff recording for the exact-frontier diagnostic. When set, one
+    // record per exact-handoff attempt is kept for the current root and
+    // dumped as CSV by run() on completion or timeout.
+    void set_track_exact(bool b){ track_exact_=b; }
+    void set_exact_record_limit(int n){ exact_record_limit_=n<0?0:n; }
     // Tie-break mode: false = count ASC then key ASC (baseline),
     // true = count DESC then key DESC (the DFS depth-5 winner).
     void set_tiebreak_desc(bool b){ tiebreak_desc_=b; }
@@ -1220,6 +1327,30 @@ public:
         os.flush();
     }
 
+    // Dump every recorded handoff attempt as one CSV row. The header is
+    // emitted once per process (guarded by a static) so the file is
+    // directly loadable. Columns are chosen so a standalone replay can
+    // rebuild the position from (key_lo, key_hi, stones) and re-derive
+    // the legal mask from the canonical occupancy:
+    //   seq,stones,key_lo,key_hi,legal,depth_from_root,is_or,retries,nodes,result
+    // result is 0=UNKNOWN 1=WIN 2=LOSS. is_or is 1 for an OR node (the
+    // side to move maximizes), 0 for AND.
+    void dump_exact_records(std::ostream& os,const std::string& tag) const {
+        static bool header_written=false;
+        if(!header_written){
+            os<<"# exact-handoff records: tag,seq,stones,key_lo,key_hi,legal,"
+                 "depth_from_root,is_or,retries,nodes,result\n";
+            header_written=true;
+        }
+        for(const auto& h:exact_recs_){
+            os<<tag<<","<<h.seq<<","<<h.stones<<","
+              <<h.key.lo<<","<<h.key.hi<<","<<h.legal<<","
+              <<h.depth_from_root<<","<<(h.is_or?1:0)<<","
+              <<h.retries<<","<<h.nodes<<","<<(int)h.result<<"\n";
+        }
+        os.flush();
+    }
+
 private:
     std::ostream* log_=&std::cerr;
     std::ofstream log_file_;
@@ -1247,7 +1378,8 @@ template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
                bool do_empty,bool do_reps,bool do_children,bool tiebreak_desc,
                int exact_legal,std::uint64_t exact_budget,int exact_retries,
-               int exact_publish_mode,
+               int exact_publish_mode,bool do_exact_record,
+               int exact_record_limit,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -1260,6 +1392,8 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.attach_log(L);
     solver.attach_csv(C);
     solver.set_track_children(do_children);
+    solver.set_track_exact(do_exact_record);
+    solver.set_exact_record_limit(exact_record_limit);
     solver.set_tiebreak_desc(tiebreak_desc);
     solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_mode);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
@@ -1313,6 +1447,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
             C<<" seq="<<seq<<" wall_s="<<(long long)wall<<"\n";
             solver.csv_flush();
             solver.dump_exact_hist(L);
+            if(do_exact_record) solver.dump_exact_records(C,tag);
             {
                 std::uint64_t dh[64]; solver.exp_hist(dh,64);
                 std::uint64_t p=0;
@@ -1331,6 +1466,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
         double wall=std::chrono::duration<double>(
             std::chrono::steady_clock::now()-wall0).count();
         solver.dump_exact_hist(L);
+        if(do_exact_record) solver.dump_exact_records(C,tag);
         L<<"[done] ["<<tag<<"] "<<outcome_str(r.outcome)
          <<" expansions="<<r.expansions
          <<" root_pn="<<r.root_pn<<" root_dn="<<r.root_dn
@@ -1406,11 +1542,78 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     return 0;
 }
 
+// ---- standalone exact replay of recorded handoff roots ------------
+// Reads an --exact-record CSV and re-solves each recorded position with
+// the exact solver ALONE, no df-pn and no transposition table shared
+// between positions, so each root's true cost is measured in isolation.
+// One solver instance is reused for all rows: building the forbidden
+// table per row would dominate the runtime (the 11x11 table has ~95k
+// entries) and has nothing to do with what is being measured.
+//
+// `--only=` here filters by STONE COUNT, so `--only=5` benchmarks just
+// the s5 frontier.
+template<int N>
+static int run_exact_replay(const std::string& path,std::uint64_t budget,
+                            unsigned memo_power,const std::string& only,
+                            std::ostream& O){
+    std::ifstream in(path);
+    if(!in){ std::cerr<<"cannot open --exact-replay\n"; return 1; }
+    DfPn<N> rs(memo_power);
+    rs.set_deadline(0); // no global time budget: the node budget governs
+    rs.set_exact_handoff(0,1,1,1); // handoff disabled; exact_prop called directly
+    O<<"# exact replay: id,stones,legal,is_or,budget,result,nodes,wall_s,key_lo,key_hi\n";
+    O.flush();
+    std::string line; int id=0;
+    double w0=std::chrono::duration<double>(
+        std::chrono::steady_clock::now().time_since_epoch()).count();
+    while(std::getline(in,line)){
+        if(line.empty()||line[0]=='#') continue;
+        std::vector<std::string> f;
+        std::stringstream ss(line); std::string tok;
+        while(std::getline(ss,tok,',')) f.push_back(tok);
+        // record rows: tag,seq,stones,lo,hi,legal,depth,is_or,retries,nodes,result
+        if(f.size()<11) continue;
+        int stones=std::stoi(f[2]);
+        if(!only.empty()){
+            std::stringstream t(only); std::string w; bool want=false;
+            while(std::getline(t,w,','))
+                if(!w.empty()&&std::stoi(w)==stones){want=true;break;}
+            if(!want) continue;
+        }
+        Bits occ; occ.lo=std::stoull(f[3]); occ.hi=std::stoull(f[4]);
+        int legal=std::stoi(f[5]);
+        double t0=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        std::uint64_t nodes=0; int res=-1;
+        try{
+            res=rs.exact_replay(occ,stones,budget,nodes);
+        }catch(const std::exception& e){
+            O<<"replay_error,"<<id<<","<<stones<<",0,"<<e.what()<<"\n"; O.flush(); ++id; continue;
+        }
+        double t1=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        O<<"replay,"<<id<<","<<stones<<","<<legal<<","
+         <<(stones%2==0?1:0)<<","<<budget<<","<<res<<","
+         <<nodes<<","<<(long long)(t1-t0)<<","<<occ.lo<<","<<occ.hi<<"\n";
+        O.flush();
+        ++id;
+    }
+    double w1=std::chrono::duration<double>(
+        std::chrono::steady_clock::now().time_since_epoch()).count();
+    O<<"# replay_done rows="<<id<<" wall_s="<<(long long)(w1-w0)<<"\n";
+    O.flush();
+    return 0;
+}
+
 int main(int argc,char**argv){
     try{
         int n=11;
         unsigned pow=26;
         bool reps=false, empty=false, children=false, tiebreak_desc=false;
+        bool exact_record=false;
+        int exact_record_limit=0;
+        std::string exact_replay_path="";
+        std::uint64_t exact_replay_budget=1000000;
         std::string only="";
         double budget_s=0;
         int exact_legal=0, exact_retries=1;
@@ -1437,13 +1640,17 @@ int main(int argc,char**argv){
             else if(a=="--exact-publish=all")exact_publish_mode=0;
             else if(a=="--exact-publish=root")exact_publish_mode=1;
             else if(a=="--exact-publish=separate")exact_publish_mode=2;
+            else if(a=="--exact-record")exact_record=true;
+            else if(a.rfind("--exact-record-limit=",0)==0)exact_record_limit=std::stoi(a.substr(21));
+            else if(a.rfind("--exact-replay=",0)==0)exact_replay_path=a.substr(15);
+            else if(a.rfind("--exact-replay-budget=",0)==0)exact_replay_budget=std::stoull(a.substr(22));
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate] [--exact-record] [--exact-record-limit=N]\n";
                 return 2;
             }
         }
-        if(!reps && !empty && roots_path.empty()){
-            std::cerr<<"nothing to do without --empty/--reps/--roots-csv\n";
+        if(!reps && !empty && roots_path.empty() && exact_replay_path.empty()){
+            std::cerr<<"nothing to do without --empty/--reps/--roots-csv/--exact-replay\n";
             return 2;
         }
         std::ostream* lp=&std::cerr;
@@ -1463,11 +1670,21 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
+            case 4:
+                if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,*cp);
+                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+            case 5:
+                if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,*cp);
+                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+            case 6:
+                if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,*cp);
+                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+            case 7:
+                if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,*cp);
+                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+            case 11:
+                if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,*cp);
+                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
