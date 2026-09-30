@@ -1,0 +1,66 @@
+kinds:
+  - proposition
+  - definition
+  - open-problem
+  - computational-result
+  - method
+  - dataset
+
+statuses:
+  - conjectured
+  - supported
+  - proved
+  - refuted
+  - verified
+  - provisional
+  - invalidated
+  - open
+  - resolved
+  - active
+  - superseded
+  - withdrawn
+
+relations:
+  - depends_on
+  - supports
+  - refutes
+  - proves
+  - generalizes
+  - supersedes
+  - verifies
+
+artifact_roles:
+  - implementation
+  - verification
+  - result
+  - certificate
+  - dataset
+  - source
+  - log
+
+topics:
+  - game-solution
+  - grundy
+  - certificates
+  - dfpn
+  - fixed-width
+  - maximal-safe-sets
+  - geometry
+  - forbidden-quadruples
+  - symmetry
+  - formal-verification
+  - solver
+  - complexity
+
+boards:
+  - general
+  - 2xm
+  - 5x5
+  - 6x6
+  - 7x7
+  - 8x8
+  - 9x9
+  - 10x10
+  - 11x11
+  - nxn
+  - nxm

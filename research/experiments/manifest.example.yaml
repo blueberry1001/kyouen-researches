@@ -1,0 +1,27 @@
+title: 11x11 DFPN center20 example
+status: completed
+
+related:
+  - KTMP-example-001
+
+commit: abc1234
+dirty: false
+
+command:
+  - ./build/kyouen_dfpn_root --n 11 --root 60
+
+programs:
+  - cpp/solvers/kyouen_dfpn_root.cpp
+
+inputs:
+  - roots.txt
+
+outputs:
+  - results.csv
+
+logs:
+  - run.log
+
+environment:
+  os: ubuntu
+  notes: "必要なCPU・メモリ・compiler情報などを記録する"
