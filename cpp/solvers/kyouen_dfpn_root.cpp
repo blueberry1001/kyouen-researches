@@ -44,10 +44,12 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <memory>
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 struct Bits {
@@ -185,6 +187,8 @@ public:
     struct GChild {
         TState ts; Bits legal,key; int count=0;
         std::uint32_t pn=1,dn=1; std::uint8_t st=0;
+        std::uint64_t work=0;      // cumulative expansions under this child
+        std::uint32_t last_pn=1,last_dn=1; // for delta tracking
     };
     struct Gen { std::array<GChild,V> ch; int n=0; };
     // sizeof(Gen) sanity per N: GChild=176 B (8x16 B TState + 48 B).
@@ -251,6 +255,90 @@ private:
     // mid() throws (TIME_BUDGET), read by the run_one() handler.
     std::uint32_t r_exp_fallback_pn=INF, r_exp_fallback_dn=INF;
     std::uint64_t r_exp_fallback_exp=0, r_exp_fallback_vis=0;
+
+    // CHILD WORK: per direct child of the ROOT, keyed by the
+    // child's canonical Bits (NOT a hash -- lo*const+hi collides
+    // and produced 970 phantom "children" for a 20-child root).
+    // work = number of times the search DESCENDED into this child
+    // from the root (b1==this child at a root re-aggregation);
+    // pn/dn/st = the child's CURRENT stored bounds; legal/count =
+    // its legal-move count. Only populated when track_children_
+    // is set (the diagnostic mode), because the per-child
+    // bookkeeping would slow the main runs.
+    struct ChildStat {
+        std::uint64_t work=0;
+        std::uint32_t pn=INF, dn=INF;
+        std::uint8_t st=0;
+        int count=0;
+        int move=-1;
+    };
+    std::map<Bits,ChildStat> child_stat_;
+    std::uint64_t child_stat_updates_=0;
+    bool track_children_=false;
+
+    // Create-or-update one child observation for the root-child
+    // diagnostic. Called from gen_into when track_children_ is
+    // set AND the parent is the root (is_root passed explicitly).
+    // work is NOT touched here (it is accumulated at descent
+    // time by add_child_work); pn/dn/st/count/move are refreshed.
+    void note_child(const Bits& key,int move,int count,
+                    std::uint32_t pn,std::uint32_t dn,std::uint8_t st){
+        if(!track_children_) return;
+        auto it=child_stat_.find(key);
+        if(it==child_stat_.end()){
+            ChildStat cs; cs.pn=pn; cs.dn=dn; cs.st=st;
+            cs.count=count; cs.move=move;
+            child_stat_[key]=cs;
+        }else{
+            it->second.pn=pn; it->second.dn=dn; it->second.st=st;
+            it->second.count=count;
+            if(move>=0) it->second.move=move;
+        }
+        ++child_stat_updates_;
+    }
+
+    // Accumulate one descent into the child with the given key.
+    // Called from mid_iter when the search pushes a child frame
+    // whose parent is the root.
+    void add_child_work(const Bits& key){
+        if(!track_children_) return;
+        auto it=child_stat_.find(key);
+        if(it!=child_stat_.end()) it->second.work += 1;
+    }
+
+    // Print the root-child diagnostic: one line per direct child of
+    // the root, ranked by work descending. Fields: move, pn, dn,
+    // solved status, cumulative work, legal count. The ranking
+    // answers "which of the 20 replies dominates the proof search"
+    // without waiting for the root to solve. The v=11 one-stone root
+    // has 20 D4-distinct children; a larger n child count means the
+    // map accumulated children of deeper frames too (should not
+    // happen -- the guard is stones_==root_stones_ in note_child).
+    void dump_children(){
+        if(child_stat_.empty()){ *log_<<"[children] n=0\n"; return; }
+        std::vector<std::pair<Bits,ChildStat>> v;
+        v.reserve(child_stat_.size());
+        for(auto& kv:child_stat_) v.push_back({kv.first,kv.second});
+        std::sort(v.begin(),v.end(),
+            [](const std::pair<Bits,ChildStat>& a,
+               const std::pair<Bits,ChildStat>& b){
+                if(a.second.work!=b.second.work)
+                    return a.second.work>b.second.work;
+                return a.second.pn<b.second.pn;
+            });
+        *log_ << "[children] t=" << (long long)std::chrono::duration<double>(
+            Clock::now()-t0_).count() << "s n=" << v.size()
+              << " updates=" << child_stat_updates_ << "\n";
+        for(auto& kv:v){
+            const ChildStat& cs=kv.second;
+            *log_ << "  move=" << cs.move
+                  << " pn=" << cs.pn << " dn=" << cs.dn
+                  << " st=" << (int)cs.st
+                  << " work=" << cs.work
+                  << " legal=" << cs.count << "\n";
+        }
+        log_->flush();
+    }
 
     static std::uint32_t sadd(std::uint32_t a,std::uint32_t b){
         std::uint64_t s=(std::uint64_t)a+b;
@@ -331,7 +419,7 @@ private:
     // indexed by depth then threw bad_alloc because resize() default-builds
     // every Gen up to that depth including ~18 KB each. unique_ptr<Gen>
     // allocates exactly one buffer per frame, lazily, on the heap.
-    void gen_into(const TState& state,int stones,Bits legal,Gen& g){
+    void gen_into(const TState& state,int stones,Bits legal,Gen& g,bool is_root=false){
         g.n=0;
         Bits moves=legal;
         // Mask hygiene: legal must never carry bits >= V. take_lsb on a
@@ -361,6 +449,7 @@ private:
             if(g.n<0 || g.n>=V) throw std::runtime_error("gen_into: child index out of range");
             GChild& c=g.ch[(std::size_t)g.n];
             c.ts=ns; c.legal=nl; c.key=nk; c.count=popcount(nl);
+            c.work=0; c.last_pn=1; c.last_dn=1;
             int cs=stones+1;
             int s=tt_.find(nk.lo,nk.hi);
             if(s>=0){
@@ -371,6 +460,7 @@ private:
                     else{ c.pn=0; c.dn=INF; c.st=PnTT::WIN; }
                 }else{ c.pn=1; c.dn=1; c.st=PnTT::OPEN; }
             }
+            if(track_children_ && is_root) note_child(nk,v,c.count,c.pn,c.dn,c.st);
             ++g.n;
         }
     }
@@ -570,8 +660,14 @@ private:
             }
             int frd=st.back().depth, frs=st.back().stones;
             std::uint32_t frtp=st.back().tp, frtd=st.back().td;
+            // Only the ROOT frame contributes to the child diagnostic.
+            // Passing it explicitly (rather than inferring from a
+            // shared stones_ field) is what keeps the child count at
+            // exactly the root's fan-out: expand()'s throwaway Gen and
+            // every deeper frame pass false.
+            bool is_root=(frs==root_stones_);
             Gen& g=st.back().gen();
-            gen_into(st.back().state,frs,st.back().legal,g);
+            gen_into(st.back().state,frs,st.back().legal,g,is_root);
             std::uint32_t pn,dn;
             aggregate(frs,g,&pn,&dn);
             int s=st.back().slot;
@@ -661,6 +757,13 @@ private:
             Bits ck=g.ch[(std::size_t)b1].key;
             Bits cl=g.ch[(std::size_t)b1].legal;
             int cs=frs+1, cd=frd+1;
+            // CHILD WORK: attribute this descent to b1 so the
+            // root-child diagnostic can rank children by the
+            // expansions their subproof consumed. last_pn/last_dn
+            // are refreshed on every re-aggregation below so the
+            // diagnostic sees the freshest bounds, not the stale
+            // values from the initial gen_into.
+            g.ch[(std::size_t)b1].work += 1;
             // Reuse the child's TState DIRECTLY from the parent's Gen buffer.
             // Rebuilding it from the key (old code) is both slower AND wrong:
             // canonical(ns) is the MINIMUM over 8 D4 images, so the key's bit
@@ -678,6 +781,10 @@ private:
             nf.key=ck; nf.state=ct; nf.legal=cl;
             nf.stones=cs; nf.depth=cd;
             nf.tp=tp_c; nf.td=td_c;
+            // CHILD WORK: attribute this descent to b1 so the
+            // root-child diagnostic can rank children by the
+            // expansions their subproof consumed.
+            if(track_children_ && frs==root_stones_) add_child_work(ck);
             st.push_back(std::move(nf));
         }
     }
@@ -704,6 +811,8 @@ private:
         // Reset per-root heartbeat rate state (TT is shared across roots).
         hb_last_vis_=visited_; hb_last_t_=0.0;
         hb_prev_t_=0.0; hb_prev_exp_=before_exp;
+        // Reset per-root child diagnostics.
+        child_stat_.clear(); child_stat_updates_=0;
         // Emit the t=0 series point immediately: roots that finish or die
         // before the first 10 s gate would otherwise leave no series at all
         // (the missing-hb bug: only [timeout]/[done] survived).
@@ -726,6 +835,9 @@ private:
                   << " tthit=0 ttmiss=0 avgprobe=0" << std::endl;
             log_->flush();
         }
+        // Emit the t=0 child diagnostic header (empty for now).
+        *log_ << "[children] t=0s n=0\n";
+        log_->flush();
         // Reset the partial-progress fallback BEFORE running: the TT is
         // shared across roots, so a stale fallback from a previous root
         // would otherwise masquerade as this root's progress
@@ -744,6 +856,7 @@ private:
             }
             r_exp_fallback_exp=expanded_-before_exp;
             r_exp_fallback_vis=visited_-before_vis;
+            if(track_children_) dump_children();
             throw;
         }
         double sec=std::chrono::duration<double>(Clock::now()-start).count();
@@ -757,6 +870,7 @@ private:
             if(tt_.st_[(std::size_t)s]==PnTT::WIN) r.outcome=1;
             else if(tt_.st_[(std::size_t)s]==PnTT::LOSS) r.outcome=-1;
         }
+        dump_children();
         return r;
     }
 
@@ -802,6 +916,11 @@ public:
         for(int i=0;i<n;++i) out[i]=exp_hist_[i<64?i:63];
     }
     int max_depth() const { return max_depth_; }
+    // Enable the root-child diagnostic. When set, each direct child
+    // of the root gets its cumulative work (descents), current
+    // pn/dn, solved status and legal count logged on completion.
+    void set_track_children(bool b){ track_children_=b; }
+    bool tracking_children() const { return track_children_; }
 
 private:
     std::ostream* log_=&std::cerr;
@@ -828,7 +947,8 @@ static std::string outcome_str(int o){ return o>0?"WIN":(o<0?"LOSS":"TIMEOUT"); 
 
 template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
-               bool do_empty,bool do_reps,std::ostream& L,std::ostream& C,
+               bool do_empty,bool do_reps,bool do_children,
+               std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
     DfPn<N> solver(memo_power);
@@ -839,6 +959,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     // --log file only ever saw [timeout]/[done]. Now everything converges.
     solver.attach_log(L);
     solver.attach_csv(C);
+    solver.set_track_children(do_children);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()<<std::endl;
     L.flush();
     // Deadline counts from the first root actually started, not from solver
@@ -951,7 +1072,7 @@ int main(int argc,char**argv){
     try{
         int n=11;
         unsigned pow=26;
-        bool reps=false, empty=false;
+        bool reps=false, empty=false, children=false;
         std::string only="";
         double budget_s=0;
         std::string log_path="", csv_path="", roots_path="";
@@ -966,8 +1087,9 @@ int main(int argc,char**argv){
             else if(a.rfind("--log=",0)==0)log_path=a.substr(6);
             else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
             else if(a.rfind("--roots-csv=",0)==0)roots_path=a.substr(12);
+            else if(a=="--children")children=true;
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children]\n";
                 return 2;
             }
         }
@@ -992,11 +1114,11 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,*lp,*cp,&total_exp,roots_path); break;
+            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
+            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
+            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
+            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
+            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
