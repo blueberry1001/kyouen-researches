@@ -41,7 +41,7 @@ for p in "${pids[@]}"; do
   wait "$p" || rc=1
 done
 
-echo "legal,outcome,root_pn,root_dn,expansions,solved,exact_calls,exact_nodes,exact_abort,exact_win,exact_loss,exact_stores"
+echo "legal,outcome,root_pn,root_dn,expansions,solved,evict_open,evict_solved,exact_calls,exact_nodes,exact_abort,exact_win,exact_loss,exact_stores"
 for legal in $LEVELS; do
   tag="L$legal"
   if grep -q '^\[done\]' "$OUT/$tag.log" 2>/dev/null; then
@@ -59,7 +59,8 @@ def get(k, default="-"):
     return m.group(1) if m else default
 print(",".join([
     legal,outcome,get("root_pn"),get("root_dn"),get("expansions"),
-    get("solved"),get("exact_calls"),get("exact_nodes"),get("exact_abort"),
+    get("solved"),get("evict_open"),get("evict_solved"),
+    get("exact_calls"),get("exact_nodes"),get("exact_abort"),
     get("exact_win"),get("exact_loss"),get("exact_stores")
 ]))
 PY
