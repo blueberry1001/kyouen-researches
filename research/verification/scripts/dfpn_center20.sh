@@ -30,6 +30,23 @@ mkdir -p "$OUT"
 
 replies=(0 1 2 3 4 5 12 13 14 15 16 24 25 26 27 36 37 38 48 49)
 
+# Move v=60 (the center) is played by the ORIGINAL FIRST PLAYER.
+# After it, the ORIGINAL SECOND PLAYER to move, so each two-stone root
+# {60,r} has 2 stones on the board => is_or(2) is true => OR node from
+# the side-to-move's perspective, i.e. the ORIGINAL FIRST PLAYER is to
+# move and is the maximizing side.
+#
+# Therefore at each child root:
+#   WIN  = the original first player wins  (pn = 0, the proof side)
+#   LOSS = the original second player wins (dn = 0, the disproof side)
+# and at the parent {60} (1 stone, AND node for that same proposition):
+#   proving the center needs ALL 20 children WIN
+#   refuting the center needs ANY ONE child LOSS
+#
+# This is the parity relation that makes the aggregate verdict correct.
+# The DFS cross-check on n=6/n=7 depends on the same inversion:
+# odd-stone roots invert the reported side.
+
 for r in "${replies[@]}"; do
   roots="$OUT/root-$r.csv"
   printf 'canonical_parent,move\n"60",%s\n' "$r" > "$roots"
@@ -44,6 +61,18 @@ done
 
 echo CENTER20_DONE
 
+# OUTCOME STREAMS (verified 2026-09-30, do not "unify" these):
+#   run_one() writes "[done] ... WIN/LOSS" to the LOG stream (L<<), and
+#   writes the "# ... TIMEOUT" line to the CSV stream (C<<). They are
+#   deliberately different streams, so a solved root shows up in the
+#   log and an unsolved one shows up in the csv.
+#
+# Verified on a board that actually solves: n=6 root {30,1} finishes in
+# 0 s and its log contains
+#   [done] [roots{30,1}] WIN expansions=20462 root_pn=0 ...
+# with an empty csv, while n=11 root {60,5} times out and puts
+#   # [roots{60,5}] TIMEOUT reason=TIME_BUDGET ...
+# in the csv. So: outcome from the log, timeout detail from the csv.
 win=0
 loss=0
 timeout=0
