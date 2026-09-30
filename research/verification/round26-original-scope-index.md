@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は81件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は98件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 519 |
+| NOT_AUDITED | 502 |
 | PARTIAL | 6 |
-| REFUTED | 22 |
+| REFUTED | 27 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 50 |
+| SUPPORTED | 62 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -36,14 +36,14 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B008](../hypothesis-bank-2026-09-27.md#L51) | [漸近・大胆] 先手勝ち盤も後手勝ち盤も無限にある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B009](../hypothesis-bank-2026-09-27.md#L52) | [漸近・大胆] 勝敗列は最終的にも周期的にならない。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B010](../hypothesis-bank-2026-09-27.md#L53) | [存在] 初手全勝でも対局長は初手で分かれる。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
-| [B011](../hypothesis-bank-2026-09-27.md#L59) | [全称] 5×5のJ_5の非孤立部分は連結。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B012](../hypothesis-bank-2026-09-27.md#L60) | [構造] 5×5のJ_5は短いサイクルだけで生成される。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B013](../hypothesis-bank-2026-09-27.md#L61) | [全称] J_5の自己同型にはD4以外のものがある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B014](../hypothesis-bank-2026-09-27.md#L62) | [全称・大胆] J_5の非孤立部分は二部グラフ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B015](../hypothesis-bank-2026-09-27.md#L63) | [全称] J_5の非孤立部分に完全マッチングがある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B011](../hypothesis-bank-2026-09-27.md#L59) | [全称] 5×5のJ_5の非孤立部分は連結。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B012](../hypothesis-bank-2026-09-27.md#L60) | [構造] 5×5のJ_5は短いサイクルだけで生成される。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B013](../hypothesis-bank-2026-09-27.md#L61) | [全称] J_5の自己同型にはD4以外のものがある。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B014](../hypothesis-bank-2026-09-27.md#L62) | [全称・大胆] J_5の非孤立部分は二部グラフ。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B015](../hypothesis-bank-2026-09-27.md#L63) | [全称] J_5の非孤立部分に完全マッチングがある。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B016](../hypothesis-bank-2026-09-27.md#L64) | [全称・大胆] 後手勝ち正方形盤のJ_nは連結。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B017](../hypothesis-bank-2026-09-27.md#L65) | [統計] Pペアは共通近傍の少ない頂点を結ぶ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B018](../hypothesis-bank-2026-09-27.md#L66) | [存在] 二石Pグラフが同じでも高層の勝敗は違う盤。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B018](../hypothesis-bank-2026-09-27.md#L66) | [存在] 二石Pグラフが同じでも高層の勝敗は違う盤。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B019](../hypothesis-bank-2026-09-27.md#L67) | [統計] J_nの小さい支配集合は少数の応答拠点を与える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B020](../hypothesis-bank-2026-09-27.md#L68) | [構造] 5×5のPペアは少数の整数関係で記述できる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B021](../hypothesis-bank-2026-09-27.md#L74) | [全称・大胆] 飽和開始は4石以内。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
@@ -326,23 +326,23 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B298](../hypothesis-bank-2026-09-27.md#L454) | [存在] 最大配置への拡張可能性が高い方が負ける。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B299](../hypothesis-bank-2026-09-27.md#L455) | [存在] 自分の必勝手を一つ封じると別の必勝手が新生する。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B300](../hypothesis-bank-2026-09-27.md#L456) | [存在・大胆] 任意の固定深さの局所情報では勝敗を決められない。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
-| [B301](../hypothesis-bank-round2-2026-09-27.md#L40) | [構造] J_5は四角形の各辺に長さ4の迂回路を添えたグラフ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B302](../hypothesis-bank-round2-2026-09-27.md#L41) | [全称] 四つの5サイクルと角の4サイクルがサイクル空間の基底になる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B303](../hypothesis-bank-round2-2026-09-27.md#L42) | [全称] J_5の最小奇閉路横断集合は2点。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B304](../hypothesis-bank-round2-2026-09-27.md#L43) | [全称] J_5のすべての辺は何らかの完全マッチングに属する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B305](../hypothesis-bank-round2-2026-09-27.md#L44) | [全称] J_5の完全マッチングにはD4不変なものがない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B306](../hypothesis-bank-round2-2026-09-27.md#L45) | [構造] J_5の完全マッチングは小サイクル上の交替で相互に移れる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B307](../hypothesis-bank-round2-2026-09-27.md#L46) | [全称] J_5から角4点を除くと同型な4本のパスになる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B308](../hypothesis-bank-round2-2026-09-27.md#L47) | [構造] J_5の最小応答拠点は対角の角ペアで表せない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B309](../hypothesis-bank-round2-2026-09-27.md#L48) | [存在] 一つの負け初手への応答選択で、後の強制長が分かれる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B301](../hypothesis-bank-round2-2026-09-27.md#L40) | [構造] J_5は四角形の各辺に長さ4の迂回路を添えたグラフ。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B302](../hypothesis-bank-round2-2026-09-27.md#L41) | [全称] 四つの5サイクルと角の4サイクルがサイクル空間の基底になる。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B303](../hypothesis-bank-round2-2026-09-27.md#L42) | [全称] J_5の最小奇閉路横断集合は2点。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B304](../hypothesis-bank-round2-2026-09-27.md#L43) | [全称] J_5のすべての辺は何らかの完全マッチングに属する。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B305](../hypothesis-bank-round2-2026-09-27.md#L44) | [全称] J_5の完全マッチングにはD4不変なものがない。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B306](../hypothesis-bank-round2-2026-09-27.md#L45) | [構造] J_5の完全マッチングは小サイクル上の交替で相互に移れる。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B307](../hypothesis-bank-round2-2026-09-27.md#L46) | [全称] J_5から角4点を除くと同型な4本のパスになる。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B308](../hypothesis-bank-round2-2026-09-27.md#L47) | [構造] J_5の最小応答拠点は対角の角ペアで表せない。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
+| [B309](../hypothesis-bank-round2-2026-09-27.md#L48) | [存在] 一つの負け初手への応答選択で、後の強制長が分かれる。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B310](../hypothesis-bank-round2-2026-09-27.md#L49) | [構造] J_5の5サイクルは特定の共線制約群への感度で区別できる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B311](../hypothesis-bank-round2-2026-09-27.md#L55) | [全称] J_4には二点の全域支配集合がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B311](../hypothesis-bank-round2-2026-09-27.md#L55) | [全称] J_4には二点の全域支配集合がある。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B312](../hypothesis-bank-round2-2026-09-27.md#L56) | [構造] J_4の全域支配ペアは二石Pペアの一部で、少数のD4型に限られる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B313](../hypothesis-bank-round2-2026-09-27.md#L57) | [全称・大胆] 後手勝ち正方形盤のJ_nには完全マッチングまたは一頂点だけ余すマッチングがある。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
 | [B314](../hypothesis-bank-round2-2026-09-27.md#L58) | [全称・大胆] J_nの非孤立部分には橋がない。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B315](../hypothesis-bank-round2-2026-09-27.md#L59) | [存在] J_nの非孤立部分に関節点が現れる。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
 | [B316](../hypothesis-bank-round2-2026-09-27.md#L60) | [統計] J_nの次数は「勝つ速さ」より「勝ち方の多様さ」に効く。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B317](../hypothesis-bank-round2-2026-09-27.md#L61) | [存在] J_nにある固定ペア分けは中盤では必ず破れる。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
+| [B317](../hypothesis-bank-round2-2026-09-27.md#L61) | [存在] J_nにある固定ペア分けは中盤では必ず破れる。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B318](../hypothesis-bank-round2-2026-09-27.md#L62) | [構造] J_4の補グラフの連結成分が一石nimberの一様性を説明する。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
 | [B319](../hypothesis-bank-round2-2026-09-27.md#L63) | [全称・大胆] 全初手負け盤でも一石nimberの種類数は小さい。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B320](../hypothesis-bank-round2-2026-09-27.md#L64) | [存在] 二石Pペアの有無は一石nimberでは区別できないが三石子分布で区別できる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |

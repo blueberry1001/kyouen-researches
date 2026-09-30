@@ -1,0 +1,12 @@
+{
+  "all_certificates_verified": 112212,
+  "independent_matching_enumeration_complete": true,
+  "sha256": {
+    "round27_response_graphs.json": "bee44285c1ee3728f643b37e6d6ecb03d7ae9709ac7055b57665a7f630c7dd4e",
+    "round27_pairing_verified.json": "8cbd425408ed23d4c87cd01f03f472e6cda0ecfda864857005b007c466c84b4a",
+    "round27_pairing_failures.bin": "1a36d902a7d9cc9f3d84c4b35182b351194526c1d778e58c83e8ba9a250c539c",
+    "scripts\\round27_response_graphs.py": "b284c4cdd8d4af8aa604797f9bc68d2856598c50a91987d221ef336c904befc5",
+    "scripts\\round27_pairing_verify.cpp": "c35a46b55d2dfb6a814114d52c390ec6ededea50c0c5d2d60fbf7a09e753bc04",
+    "scripts\\round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7"
+  }
+}

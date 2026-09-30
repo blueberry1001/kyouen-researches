@@ -1,11 +1,11 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 81,
+  "reviewed_originals": 98,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 519,
-    "REFUTED": 22,
-    "SUPPORTED": 50,
+    "NOT_AUDITED": 502,
+    "SUPPORTED": 62,
+    "REFUTED": 27,
     "PARTIAL": 6,
     "SCOPE_UNCLEAR": 3
   },
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "8eab27469e5786dc55b0a50ac1174757abe9b6ed3111174805d40130d9baec85",
+  "index_source_sha256": "0d35454529bc56f1f61f0285794aade06fb338806a32cbe256d3a3e06ac54d23",
   "rows": [
     {
       "id": "B001",
@@ -1056,10 +1056,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -1093,10 +1093,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。",
       "additional_reports": []
     },
     {
@@ -1130,10 +1130,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。",
       "additional_reports": []
     },
     {
@@ -1167,10 +1167,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。",
       "additional_reports": []
     },
     {
@@ -1204,10 +1204,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -1461,10 +1461,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42436,10 +42436,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42473,10 +42473,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42510,10 +42510,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42547,10 +42547,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。",
       "additional_reports": []
     },
     {
@@ -42584,10 +42584,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42619,12 +42619,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round27-fixed-response-audit.md",
+          "heading_line": 98,
+          "heading": "### B306の旧説明を訂正",
+          "joint_heading_ids": [
+            "B306"
+          ],
+          "labels_in_section": [
+            {
+              "line": 104,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "REFUTEDという原文判定は正しいが、理由は原文の長さ上限10が16に足りないこと。"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。",
       "additional_reports": []
     },
     {
@@ -42658,10 +42676,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42695,10 +42713,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42732,10 +42750,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -42806,10 +42824,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。",
       "additional_reports": []
     },
     {
@@ -43646,6 +43664,24 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round27-fixed-response-audit.md",
+          "heading_line": 1,
+          "heading": "# B317成立と、J4・J5の有限命題の原文監査",
+          "joint_heading_ids": [
+            "B317"
+          ],
+          "labels_in_section": [
+            {
+              "line": 6,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "**B317 SUPPORTED。4×4の全112,212完全マッチングは、固定応答を4手目または6手目に破られる。**"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round3-batch-b291-b360.md",
           "heading_line": 118,
           "heading": "## B317 [存在] J_nにある固定ペア分けは中盤では必ず破れる",
@@ -43732,10 +43768,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_exhaustive_certificates",
+      "preferred_report": "round27-fixed-response-audit.md",
+      "reason": "4×4全112212完全マッチングが4/6手目で破れる。全証明書と逆順独立列挙で網羅。",
       "additional_reports": []
     },
     {
@@ -74195,6 +74231,7 @@
     "round23-b256-symmetric-minimum.md": "cefc3078c91e9f1b95d99d0df76439168d445828b017eff10e6f85d8dbdb2af2",
     "round24-circular-cubic-multiple-cover.md": "5be6b3e1f7452e0f309247056d7a7c560edb80d1f3e8166a58e95a006938de56",
     "round25-forced-length-holes.md": "9730a686aabd968d0336346f022af838ff94b19cb3cb92bda22bd9bcdc42a966",
+    "round27-fixed-response-audit.md": "0da295a6d997da04bf1c2c4be6aca7ec03c0c4eab67d770cc4d10bb3bd02a585",
     "round3-batch-b050-b366.md": "8153aa86c8217c4b0f4903deaf3447cc38d9f2cea487402bb61381d9215a24b4",
     "round3-batch-b092-b127.md": "4afb07b6c378d25f086f1fd618322ed7e0e9faa2b608924b42a5578806fce0b8",
     "round3-batch-b168-b227.md": "75ded41c8ead470832e07bed7399604e731361d0346127e1ec462d899984783b",

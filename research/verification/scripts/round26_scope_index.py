@@ -136,6 +136,13 @@ review('B031', 'REFUTED', 'finite_counterexample_and_minimum_board_proof',
        'round25-forced-length-holes.md', '6×6でT*={7,11}、9なし。旧n=5反例T*={6,7,9}は偶奇混在で不可能。')
 review('B334', 'SUPPORTED', 'finite_witness_and_minimum_board_proof',
        'round25-forced-length-holes.md', '6×6の3石N局面でT*={6,8,10}、WFT空。固定長AND/ORでも確認。')
+review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',
+       'finite_complete_classification_and_witness', 'round27-fixed-response-audit.md',
+       '原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。')
+review('B012 B013 B014 B304 B306', 'REFUTED', 'finite_complete_classification',
+       'round27-fixed-response-audit.md', 'J5全20辺と全マッチングを検査。B306は単一16交替サイクルで、旧説明を訂正。')
+review('B317', 'SUPPORTED', 'finite_witness_and_exhaustive_certificates',
+       'round27-fixed-response-audit.md', '4×4全112212完全マッチングが4/6手目で破れる。全証明書と逆順独立列挙で網羅。')
 
 
 def main():
