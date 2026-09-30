@@ -379,7 +379,8 @@ private:
     int exact_legal_=0;                    // 0 disables the hybrid
     std::uint64_t exact_budget_=100000;    // nodes per handoff attempt
     int exact_retries_=1;                  // attempts per TT residency
-    bool exact_publish_all_=true;           // all exact states -> PnTT, or handoff root only
+    enum class ExactPublishMode : std::uint8_t { ALL=0, ROOT=1, SEPARATE=2 };
+    ExactPublishMode exact_publish_mode_=ExactPublishMode::ALL;
 
     // Fixed-capacity generation-stamped memo for ONE exact handoff.
     // exact_budget defaults to 200k in the experiments; 2^19 slots keeps
@@ -608,9 +609,12 @@ private:
 
     void exact_record(const Bits& key,ExactResult r){
         if(r==ExactResult::UNKNOWN) return;
-        if(exact_publish_all_){
+        if(exact_publish_mode_==ExactPublishMode::ALL){
             exact_store(key,r);
         }else{
+            // ROOT: per-handoff cache (generation reset before every call).
+            // SEPARATE: the same fixed cache persists across handoffs and
+            // roots, giving cross-call exact reuse without occupying PnTT.
             if(exact_local_.put(
                     key,(r==ExactResult::WIN)?std::uint8_t(1):std::uint8_t(2)))
                 ++exact_local_stores_;
@@ -623,7 +627,7 @@ private:
         int s=tt_.find(key.lo,key.hi);
         if(s>=0 && tt_.st_[(std::size_t)s]>=PnTT::WIN)
             return tt_.st_[(std::size_t)s]==PnTT::WIN ? ExactResult::WIN : ExactResult::LOSS;
-        if(!exact_publish_all_){
+        if(exact_publish_mode_!=ExactPublishMode::ALL){
             std::uint8_t lv=exact_local_.get(key);
             if(lv) return lv==1 ? ExactResult::WIN : ExactResult::LOSS;
         }
@@ -887,18 +891,21 @@ private:
                         tt_.vis_[(std::size_t)es]=(tt_.vis_[(std::size_t)es]&1u)
                             | ((std::uint32_t(attempts+1)&0xffu)<<1);
                         ++exact_calls_;
-                        if(!exact_publish_all_) exact_local_.reset();
+                        if(exact_publish_mode_==ExactPublishMode::ROOT)
+                            exact_local_.reset();
                         std::uint64_t b=exact_budget_;
                         ExactResult er=exact_prop(st.back().state,st.back().stones,
                                                   st.back().legal,b);
                         if(er==ExactResult::WIN){
-                            if(!exact_publish_all_) exact_store(st.back().key,er);
+                            if(exact_publish_mode_!=ExactPublishMode::ALL)
+                                exact_store(st.back().key,er);
                             ++exact_trigger_win_;
                             st.pop_back();
                             continue;
                         }
                         if(er==ExactResult::LOSS){
-                            if(!exact_publish_all_) exact_store(st.back().key,er);
+                            if(exact_publish_mode_!=ExactPublishMode::ALL)
+                                exact_store(st.back().key,er);
                             ++exact_trigger_loss_;
                             st.pop_back();
                             continue;
@@ -1174,11 +1181,13 @@ public:
     // Tie-break mode: false = count ASC then key ASC (baseline),
     // true = count DESC then key DESC (the DFS depth-5 winner).
     void set_tiebreak_desc(bool b){ tiebreak_desc_=b; }
-    void set_exact_handoff(int legal,std::uint64_t budget,int retries,bool publish_all){
+    void set_exact_handoff(int legal,std::uint64_t budget,int retries,int publish_mode){
         exact_legal_=std::max(0,legal);
         exact_budget_=std::max<std::uint64_t>(1,budget);
         exact_retries_=std::clamp(retries,1,255);
-        exact_publish_all_=publish_all;
+        exact_publish_mode_=(publish_mode==0?ExactPublishMode::ALL:
+                            (publish_mode==1?ExactPublishMode::ROOT:
+                                             ExactPublishMode::SEPARATE));
     }
     void exact_counters(std::uint64_t& calls,std::uint64_t& nodes,
                         std::uint64_t& aborts,std::uint64_t& wins,
@@ -1216,7 +1225,7 @@ template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
                bool do_empty,bool do_reps,bool do_children,bool tiebreak_desc,
                int exact_legal,std::uint64_t exact_budget,int exact_retries,
-               bool exact_publish_all,
+               int exact_publish_mode,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -1230,13 +1239,14 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.attach_csv(C);
     solver.set_track_children(do_children);
     solver.set_tiebreak_desc(tiebreak_desc);
-    solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_all);
+    solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_mode);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
      <<" tiebreak="<<(tiebreak_desc?"desc":"asc")
      <<" exact_legal="<<exact_legal
      <<" exact_budget="<<exact_budget
      <<" exact_retries="<<exact_retries
-     <<" exact_publish="<<(exact_publish_all?"all":"root")<<std::endl;
+     <<" exact_publish="<<(exact_publish_mode==0?"all":
+                            (exact_publish_mode==1?"root":"separate"))<<std::endl;
     L.flush();
     // Deadline counts from the first root actually started, not from solver
     // construction (which builds the ~8M-entry forbidden table). Setting it
@@ -1381,7 +1391,7 @@ int main(int argc,char**argv){
         double budget_s=0;
         int exact_legal=0, exact_retries=1;
         std::uint64_t exact_budget=100000;
-        bool exact_publish_all=true;
+        int exact_publish_mode=0; // 0=all, 1=root-only, 2=separate persistent exact cache
         std::string log_path="", csv_path="", roots_path="";
         for(int i=1;i<argc;++i){
             std::string a=argv[i];
@@ -1400,10 +1410,11 @@ int main(int argc,char**argv){
             else if(a.rfind("--exact-legal=",0)==0)exact_legal=std::stoi(a.substr(14));
             else if(a.rfind("--exact-budget=",0)==0)exact_budget=std::stoull(a.substr(15));
             else if(a.rfind("--exact-retries=",0)==0)exact_retries=std::stoi(a.substr(16));
-            else if(a=="--exact-publish=all")exact_publish_all=true;
-            else if(a=="--exact-publish=root")exact_publish_all=false;
+            else if(a=="--exact-publish=all")exact_publish_mode=0;
+            else if(a=="--exact-publish=root")exact_publish_mode=1;
+            else if(a=="--exact-publish=separate")exact_publish_mode=2;
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate]\n";
                 return 2;
             }
         }
@@ -1428,11 +1439,11 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_all,*lp,*cp,&total_exp,roots_path); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_all,*lp,*cp,&total_exp,roots_path); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_all,*lp,*cp,&total_exp,roots_path); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_all,*lp,*cp,&total_exp,roots_path); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_all,*lp,*cp,&total_exp,roots_path); break;
+            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
+            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
+            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
+            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
+            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
