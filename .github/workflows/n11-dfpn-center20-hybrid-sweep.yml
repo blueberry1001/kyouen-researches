@@ -1,0 +1,31 @@
+name: N11 center20 root-only hybrid sweep
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-center20-hybrid-sweep.yml'
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: Sweep all 20 replies, 30 seconds each
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '30'
+          MEMO: '25'
+          ROUNDS: '1'
+          EXACT_LEGAL: '44'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+          EXACT_PUBLISH: 'root'
+          ORDER: 'fwd'
+        run: |
+          bash research/verification/scripts/dfpn_center20_hybrid_sweep.sh
