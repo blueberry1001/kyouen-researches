@@ -1,0 +1,28 @@
+name: N11 df-pn hybrid smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-hybrid-smoke.yml'
+
+jobs:
+  hybrid-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: 60-second v60 hybrid comparison (L0/20/32/44)
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '60'
+          MEMO: '24'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+          LEVELS: '0 20 32 44'
+        run: |
+          bash research/verification/scripts/dfpn_hybrid_probe.sh
