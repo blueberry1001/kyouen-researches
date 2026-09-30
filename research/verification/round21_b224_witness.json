@@ -1,0 +1,22 @@
+{
+  "mode": "orbit-local",
+  "seed": 210224,
+  "kept_group_ids": [
+    1,
+    3,
+    6,
+    9,
+    11,
+    14,
+    70,
+    79,
+    123,
+    132
+  ],
+  "winning_first_move_mask": 4543812,
+  "kept_quads": 310,
+  "trials": 2978,
+  "budget_skips": 375,
+  "accepted": 12,
+  "seconds": 180.313
+}
