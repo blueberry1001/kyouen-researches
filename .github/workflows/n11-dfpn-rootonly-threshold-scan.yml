@@ -1,0 +1,29 @@
+name: N11 root-only exact threshold scan
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-rootonly-threshold-scan.yml'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: Scan L44/L48/L52/L56 with root-only exact cache
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '60'
+          MEMO: '24'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+          EXACT_PUBLISH: 'root'
+          LEVELS: '44 48 52 56'
+        run: |
+          bash research/verification/scripts/dfpn_hybrid_probe.sh
