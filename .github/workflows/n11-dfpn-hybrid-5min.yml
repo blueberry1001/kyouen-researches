@@ -1,0 +1,28 @@
+name: N11 df-pn hybrid 5min A/B
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-hybrid-5min.yml'
+  workflow_dispatch:
+
+jobs:
+  hybrid-5min:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: 5-minute v60 baseline vs exact L44
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '300'
+          MEMO: '25'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+          LEVELS: '0 44'
+        run: |
+          bash research/verification/scripts/dfpn_hybrid_probe.sh
