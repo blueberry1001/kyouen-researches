@@ -113,7 +113,8 @@ public:
                 if(!(lo_[i]==rlo_ && hi_[i]==rhi_)){
                     std::uint8_t old=st_[i];
                     lo_[i]=klo;hi_[i]=khi;st_[i]=OPEN;
-                    if(old>=WIN) ++evict_solved_; else ++evictions_;
+                    if(old>=WIN){ ++evict_solved_; --solved_; }
+                    else ++evictions_;
                     return (int)i;
                 }
             }
@@ -121,13 +122,29 @@ public:
         }
         std::uint8_t oldh=st_[h];
         lo_[h]=klo;hi_[h]=khi;st_[h]=OPEN;
-        if(oldh>=WIN) ++evict_solved_; else ++evictions_;
+        if(oldh>=WIN){ ++evict_solved_; --solved_; }
+        else ++evictions_;
         return (int)h;
     }
     std::size_t used()const{return used_;}
     std::size_t capacity()const{return n_;}
-    std::uint64_t solved_count()const{return solved_;}
-    void mark_solved(int s,std::uint8_t v){ if(st_[(std::size_t)s]<WIN)++solved_; st_[(std::size_t)s]=v; }
+    // Three SEPARATE counters:
+    //   solved_now()           = solved entries CURRENTLY in the TT
+    //   solved_discoveries()   = total times an entry was marked solved
+    //                            (never decremented; re-marking an
+    //                            already-solved slot does not count)
+    //   evicted_solved()       = solved entries evicted so far
+    // Previously solved_ was an effective cumulative count: evicting a
+    // solved entry bumped evict_solved_ but not solved_, so
+    // used_-solved_ (open) drifted once evict_solved_>0. Splitting
+    // the three keeps open exact for every eviction.
+    std::uint64_t solved_now()const{return solved_;}
+    std::uint64_t solved_discoveries()const{return solved_disc_;}
+    std::uint64_t evicted_solved()const{return evict_solved_;}
+    void mark_solved(int s,std::uint8_t v){
+        if(st_[(std::size_t)s]<WIN){ ++solved_; ++solved_disc_; }
+        st_[(std::size_t)s]=v;
+    }
     void counters(std::uint64_t& hits,std::uint64_t& misses,
                   std::uint64_t& puts_new,std::uint64_t& puts_update,
                   std::uint64_t& ev,std::uint64_t& evs,double& ap) const {
@@ -141,7 +158,7 @@ public:
     std::vector<std::uint32_t> pn_,dn_,vis_;
     std::vector<std::uint8_t> st_;
     std::uint64_t used_=0;
-    std::uint64_t hits_=0, misses_=0, puts_new_=0, evictions_=0, evict_solved_=0, solved_=0;
+    std::uint64_t hits_=0, misses_=0, puts_new_=0, evictions_=0, evict_solved_=0, solved_=0, solved_disc_=0;
     std::uint64_t probe_sum_=0, probe_n_=0;
 private:
     std::size_t n_,mask_;
@@ -434,9 +451,10 @@ private:
               << " pndn=" << pndn
               << " memo=" << tt_.used() << "/" << tt_.capacity()
               << " open=" << open
-              << " solved=" << tt_.solved_count()
+              << " solved=" << tt_.solved_now()
+              << " solved_disc=" << tt_.solved_discoveries()
               << " evict_open=" << tt_.evictions_
-              << " evict_solved=" << tt_.evict_solved_
+              << " evict_solved=" << tt_.evicted_solved()
               << " maxdepth=" << max_depth_
               << " tthit=" << hits << " ttmiss=" << misses
               << " avgprobe=" << ap << std::endl;
@@ -700,9 +718,10 @@ private:
                   << " pndn=-1"
                   << " memo=" << tt_.used() << "/" << tt_.capacity()
                   << " open=" << tt_open()
-                  << " solved=" << tt_.solved_count()
+                  << " solved=" << tt_.solved_now()
+                  << " solved_disc=" << tt_.solved_discoveries()
                   << " evict_open=" << tt_.evictions_
-                  << " evict_solved=" << tt_.evict_solved_
+                  << " evict_solved=" << tt_.evicted_solved()
                   << " maxdepth=" << max_depth_
                   << " tthit=0 ttmiss=0 avgprobe=0" << std::endl;
             log_->flush();
@@ -771,7 +790,8 @@ public:
         return tt_.used_ >= tt_.solved_ ? tt_.used_ - tt_.solved_ : 0;
     }
     std::uint64_t memo_used() const { return tt_.used(); }
-    std::uint64_t memo_solved() const { return tt_.solved_count(); }
+    std::uint64_t memo_solved() const { return tt_.solved_now(); }
+    std::uint64_t memo_solved_disc() const { return tt_.solved_discoveries(); }
     std::size_t memo_capacity() const { return tt_.capacity(); }
     void partial_progress(std::uint32_t& pn,std::uint32_t& dn,
                           std::uint64_t& exp,std::uint64_t& vis) const {
@@ -845,6 +865,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
              <<" root_pn="<<fpn<<" root_dn="<<fdn
              <<" memo="<<solver.memo_used()<<"/"<<solver.memo_capacity()
              <<" solved="<<solver.memo_solved()
+             <<" solved_disc="<<solver.memo_solved_disc()
              <<" wall_s="<<(long long)wall<<"\n";
             solver.csv_flush();
             {
