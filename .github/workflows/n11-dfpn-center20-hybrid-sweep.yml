@@ -15,14 +15,14 @@ jobs:
       - name: Build df-pn solver
         run: |
           g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
-      - name: Sweep all 20 replies, 30 seconds each
+      - name: Sweep all 20 replies, 30 seconds each at L56
         env:
           D: /tmp/dfpn
           L: /tmp/dfpn-logs
           BUDGET: '30'
           MEMO: '25'
           ROUNDS: '1'
-          EXACT_LEGAL: '44'
+          EXACT_LEGAL: '56'
           EXACT_BUDGET: '200000'
           EXACT_RETRIES: '2'
           EXACT_PUBLISH: 'root'
