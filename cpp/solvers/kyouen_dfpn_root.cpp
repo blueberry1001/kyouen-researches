@@ -380,21 +380,66 @@ private:
     std::uint64_t exact_budget_=100000;    // nodes per handoff attempt
     int exact_retries_=1;                  // attempts per TT residency
     bool exact_publish_all_=true;           // all exact states -> PnTT, or handoff root only
-    struct BitsHash {
-        std::size_t operator()(const Bits& b) const noexcept {
-            auto mix=[](std::uint64_t x){
-                x^=x>>30; x*=0xbf58476d1ce4e5b9ULL;
-                x^=x>>27; x*=0x94d049bb133111ebULL;
-                return x^(x>>31);
-            };
-            return (std::size_t)mix(b.lo ^ (b.hi*0x9e3779b97f4a7c15ULL));
+
+    // Fixed-capacity generation-stamped memo for ONE exact handoff.
+    // exact_budget defaults to 200k in the experiments; 2^19 slots keeps
+    // load comfortably below 50% without any per-node heap allocation.
+    // Replacement can only lose cache hits, never affect correctness.
+    class ExactLocalMemo {
+    public:
+        static constexpr int PROBE=32;
+        explicit ExactLocalMemo(unsigned power=19)
+          : n_(std::size_t{1}<<power),mask_(n_-1),
+            lo_(n_,0),hi_(n_,0),gen_(n_,0),st_(n_,0) {}
+        void reset(){
+            ++cur_;
+            if(cur_==0){
+                std::fill(gen_.begin(),gen_.end(),0);
+                cur_=1;
+            }
+        }
+        std::uint8_t get(Bits k) const {
+            std::size_t i=mix(k.lo,k.hi)&mask_;
+            for(int j=0;j<PROBE;++j){
+                if(gen_[i]!=cur_) return 0;
+                if(lo_[i]==k.lo && hi_[i]==k.hi) return st_[i];
+                i=(i+1)&mask_;
+            }
+            return 0;
+        }
+        bool put(Bits k,std::uint8_t v){
+            std::size_t h=mix(k.lo,k.hi)&mask_;
+            std::size_t i=h;
+            for(int j=0;j<PROBE;++j){
+                if(gen_[i]!=cur_){
+                    lo_[i]=k.lo;hi_[i]=k.hi;st_[i]=v;gen_[i]=cur_;
+                    return true;
+                }
+                if(lo_[i]==k.lo && hi_[i]==k.hi){
+                    st_[i]=v;
+                    return false;
+                }
+                i=(i+1)&mask_;
+            }
+            lo_[h]=k.lo;hi_[h]=k.hi;st_[h]=v;gen_[h]=cur_;
+            return true;
+        }
+    private:
+        std::size_t n_,mask_;
+        std::vector<std::uint64_t> lo_,hi_;
+        std::vector<std::uint32_t> gen_;
+        std::vector<std::uint8_t> st_;
+        std::uint32_t cur_=1;
+        static std::uint64_t mix64(std::uint64_t x){
+            x^=x>>30;x*=0xbf58476d1ce4e5b9ULL;
+            x^=x>>27;x*=0x94d049bb133111ebULL;
+            return x^(x>>31);
+        }
+        static std::uint64_t mix(std::uint64_t a,std::uint64_t b){
+            return mix64(a ^ (b*0x9e3779b97f4a7c15ULL));
         }
     };
-    // root-only publish mode keeps the complete exact proof cache local to
-    // one handoff. This avoids flooding the main df-pn TT with millions of
-    // deep solved states while still memoizing transpositions inside the
-    // exact call. The map is cleared between handoffs but retains capacity.
-    std::unordered_map<Bits,std::uint8_t,BitsHash> exact_local_;
+    ExactLocalMemo exact_local_;
     std::uint64_t exact_calls_=0, exact_nodes_=0, exact_aborts_=0;
     std::uint64_t exact_trigger_win_=0, exact_trigger_loss_=0, exact_stores_=0;
     std::uint64_t exact_local_stores_=0;
@@ -566,10 +611,9 @@ private:
         if(exact_publish_all_){
             exact_store(key,r);
         }else{
-            auto [it,inserted]=exact_local_.insert_or_assign(
-                key,(r==ExactResult::WIN)?std::uint8_t(1):std::uint8_t(2));
-            (void)it;
-            if(inserted) ++exact_local_stores_;
+            if(exact_local_.put(
+                    key,(r==ExactResult::WIN)?std::uint8_t(1):std::uint8_t(2)))
+                ++exact_local_stores_;
         }
     }
 
@@ -580,9 +624,8 @@ private:
         if(s>=0 && tt_.st_[(std::size_t)s]>=PnTT::WIN)
             return tt_.st_[(std::size_t)s]==PnTT::WIN ? ExactResult::WIN : ExactResult::LOSS;
         if(!exact_publish_all_){
-            auto it=exact_local_.find(key);
-            if(it!=exact_local_.end())
-                return it->second==1 ? ExactResult::WIN : ExactResult::LOSS;
+            std::uint8_t lv=exact_local_.get(key);
+            if(lv) return lv==1 ? ExactResult::WIN : ExactResult::LOSS;
         }
 
         if(budget==0) return ExactResult::UNKNOWN;
@@ -844,7 +887,7 @@ private:
                         tt_.vis_[(std::size_t)es]=(tt_.vis_[(std::size_t)es]&1u)
                             | ((std::uint32_t(attempts+1)&0xffu)<<1);
                         ++exact_calls_;
-                        if(!exact_publish_all_) exact_local_.clear();
+                        if(!exact_publish_all_) exact_local_.reset();
                         std::uint64_t b=exact_budget_;
                         ExactResult er=exact_prop(st.back().state,st.back().stones,
                                                   st.back().legal,b);
@@ -1136,8 +1179,6 @@ public:
         exact_budget_=std::max<std::uint64_t>(1,budget);
         exact_retries_=std::clamp(retries,1,255);
         exact_publish_all_=publish_all;
-        if(!exact_publish_all_)
-            exact_local_.reserve((std::size_t)std::min<std::uint64_t>(exact_budget_,262144));
     }
     void exact_counters(std::uint64_t& calls,std::uint64_t& nodes,
                         std::uint64_t& aborts,std::uint64_t& wins,
