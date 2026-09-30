@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 98,
+  "reviewed_originals": 115,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 502,
-    "SUPPORTED": 62,
-    "REFUTED": 27,
-    "PARTIAL": 6,
+    "NOT_AUDITED": 485,
+    "PARTIAL": 14,
+    "SUPPORTED": 67,
+    "REFUTED": 31,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "6fecc023aafe9a39850a24a9fd46762a60b209c9a3711a575cca434032e7f4b9",
+  "index_source_sha256": "42491308570d4c1ec3b935f3d4ccefe132289a8416ef3a70cad9272fca09a7de",
   "rows": [
     {
       "id": "B001",
@@ -378,10 +378,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -1387,10 +1387,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -1891,10 +1891,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -1925,6 +1925,16 @@
               "exact_text": "- 判定: **NOT-CHECKED**"
             }
           ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round28-seven-board-original-verdicts.md",
+          "heading_line": 25,
+          "heading": "## B022：SUPPORTED、σ₇=4",
+          "joint_heading_ids": [
+            "B022"
+          ],
+          "labels_in_section": [],
           "weakening_mentioned": false
         },
         {
@@ -2121,10 +2131,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7全179810350安全局面を二方式で照合。σ7=4、J7中央は関節点。",
       "additional_reports": []
     },
     {
@@ -4160,6 +4170,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round28-seven-board-original-verdicts.md",
+          "heading_line": 36,
+          "heading": "## B040：REFUTED、空盤から固定終局長を宣言できない",
+          "joint_heading_ids": [
+            "B040"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round3-batch-grp1.md",
           "heading_line": 454,
           "heading": "## B040 [全称・大胆] 勝者は最終石数の一つを宣言して勝てる",
@@ -4305,10 +4325,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_and_complete_verification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7空盤WFTは空。四隅の唯一の応答先が中央で、近完全マッチングなし・橋四本。",
       "additional_reports": []
     },
     {
@@ -42998,6 +43018,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round28-seven-board-original-verdicts.md",
+          "heading_line": 56,
+          "heading": "### B313：REFUTED",
+          "joint_heading_ids": [
+            "B313"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round3-batch-b291-b360.md",
           "heading_line": 97,
           "heading": "## B313 [全称・大胆] 後手勝ち正方形盤のJ_nには完全マッチングまたは一頂点だけ余すマッチングがある",
@@ -43198,10 +43228,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_and_complete_verification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7空盤WFTは空。四隅の唯一の応答先が中央で、近完全マッチングなし・橋四本。",
       "additional_reports": []
     },
     {
@@ -43232,6 +43262,17 @@
               "exact_text": "- 判定: **PARTIAL**"
             }
           ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round28-seven-board-original-verdicts.md",
+          "heading_line": 63,
+          "heading": "### B314：REFUTED、B315：SUPPORTED",
+          "joint_heading_ids": [
+            "B314",
+            "B315"
+          ],
+          "labels_in_section": [],
           "weakening_mentioned": false
         },
         {
@@ -43358,10 +43399,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_and_complete_verification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7空盤WFTは空。四隅の唯一の応答先が中央で、近完全マッチングなし・橋四本。",
       "additional_reports": []
     },
     {
@@ -43392,6 +43433,17 @@
               "exact_text": "- 判定: **INCONCLUSIVE**"
             }
           ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round28-seven-board-original-verdicts.md",
+          "heading_line": 63,
+          "heading": "### B314：REFUTED、B315：SUPPORTED",
+          "joint_heading_ids": [
+            "B314",
+            "B315"
+          ],
+          "labels_in_section": [],
           "weakening_mentioned": false
         },
         {
@@ -43590,10 +43642,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_classification_and_witness",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7全179810350安全局面を二方式で照合。σ7=4、J7中央は関節点。",
       "additional_reports": []
     },
     {
@@ -44133,10 +44185,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -44467,10 +44519,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -44665,10 +44717,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -45684,10 +45736,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -46268,10 +46320,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_classification",
+      "preferred_report": "round28-seven-board-original-verdicts.md",
+      "reason": "7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。",
       "additional_reports": []
     },
     {
@@ -49695,6 +49747,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round29-fault-witness-audit.md",
+          "heading_line": 26,
+          "heading": "## B362：SUPPORTED",
+          "joint_heading_ids": [
+            "B362"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round4-batch-b291-b360.md",
           "heading_line": 354,
           "heading": "## B362 [存在] どの一石を抜いても元の空点が合法にならない極大配置",
@@ -49715,10 +49777,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness",
+      "preferred_report": "round29-fault-witness-audit.md",
+      "reason": "独立幾何で原文の故障耐性・解除割合・最大集合不要石の具体的証人を照合。旧決着の監査。",
       "additional_reports": []
     },
     {
@@ -50405,12 +50467,22 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round29-fault-witness-audit.md",
+          "heading_line": 20,
+          "heading": "## B367：SUPPORTED",
+          "joint_heading_ids": [
+            "B367"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness",
+      "preferred_report": "round29-fault-witness-audit.md",
+      "reason": "独立幾何で原文の故障耐性・解除割合・最大集合不要石の具体的証人を照合。旧決着の監査。",
       "additional_reports": []
     },
     {
@@ -50442,12 +50514,23 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round29-fault-witness-audit.md",
+          "heading_line": 10,
+          "heading": "## B368：REFUTED、B369：SUPPORTED",
+          "joint_heading_ids": [
+            "B368",
+            "B369"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_and_exhaustion",
+      "preferred_report": "round29-fault-witness-audit.md",
+      "reason": "3×3全512部分集合の極大は全て5石。最小極大の石2を除いても元の空点は全て禁止。",
       "additional_reports": []
     },
     {
@@ -50479,12 +50562,23 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round29-fault-witness-audit.md",
+          "heading_line": 10,
+          "heading": "## B368：REFUTED、B369：SUPPORTED",
+          "joint_heading_ids": [
+            "B368",
+            "B369"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness",
+      "preferred_report": "round29-fault-witness-audit.md",
+      "reason": "独立幾何で原文の故障耐性・解除割合・最大集合不要石の具体的証人を照合。旧決着の監査。",
       "additional_reports": []
     },
     {
@@ -74232,6 +74326,8 @@
     "round24-circular-cubic-multiple-cover.md": "5be6b3e1f7452e0f309247056d7a7c560edb80d1f3e8166a58e95a006938de56",
     "round25-forced-length-holes.md": "9730a686aabd968d0336346f022af838ff94b19cb3cb92bda22bd9bcdc42a966",
     "round27-fixed-response-audit.md": "b63ca114607ee59bc1daf461f699f7a8097d6038ac621449e1d23700ce79c8a8",
+    "round28-seven-board-original-verdicts.md": "8d5da6f51f7f971cdc9368f5baa70d68d24313ec44bd6a0684bacc27225f9631",
+    "round29-fault-witness-audit.md": "f0f872998365cd53d3c62b8b6c5b11450e02371b3071c281785b41345ffb9a65",
     "round3-batch-b050-b366.md": "8153aa86c8217c4b0f4903deaf3447cc38d9f2cea487402bb61381d9215a24b4",
     "round3-batch-b092-b127.md": "4afb07b6c378d25f086f1fd618322ed7e0e9faa2b608924b42a5578806fce0b8",
     "round3-batch-b168-b227.md": "75ded41c8ead470832e07bed7399604e731361d0346127e1ec462d899984783b",

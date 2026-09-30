@@ -151,6 +151,16 @@ review('B031', 'REFUTED', 'finite_counterexample_and_minimum_board_proof',
        'round25-forced-length-holes.md', '6×6でT*={7,11}、9なし。旧n=5反例T*={6,7,9}は偶奇混在で不可能。')
 review('B334', 'SUPPORTED', 'finite_witness_and_minimum_board_proof',
        'round25-forced-length-holes.md', '6×6の3石N局面でT*={6,8,10}、WFT空。固定長AND/ORでも確認。')
+review('B022 B315', 'SUPPORTED', 'finite_complete_classification_and_witness',
+       'round28-seven-board-original-verdicts.md', '7×7全179810350安全局面を二方式で照合。σ7=4、J7中央は関節点。')
+review('B040 B313 B314', 'REFUTED', 'finite_counterexample_and_complete_verification',
+       'round28-seven-board-original-verdicts.md', '7×7空盤WFTは空。四隅の唯一の応答先が中央で、近完全マッチングなし・橋四本。')
+review('B006 B016 B021 B319 B321 B322 B331 B335', 'PARTIAL', 'finite_complete_classification',
+       'round28-seven-board-original-verdicts.md', '7×7までの一石・飽和・J・空盤WFTを完全検査したが、原文の無界全称は未証明。')
+review('B362 B367 B369', 'SUPPORTED', 'finite_witness',
+       'round29-fault-witness-audit.md', '独立幾何で原文の故障耐性・解除割合・最大集合不要石の具体的証人を照合。旧決着の監査。')
+review('B368', 'REFUTED', 'finite_counterexample_and_exhaustion',
+       'round29-fault-witness-audit.md', '3×3全512部分集合の極大は全て5石。最小極大の石2を除いても元の空点は全て禁止。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',
        'finite_complete_classification_and_witness', 'round27-fixed-response-audit.md',
        '原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。')

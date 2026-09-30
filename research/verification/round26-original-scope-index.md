@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は98件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は115件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 502 |
-| PARTIAL | 6 |
-| REFUTED | 27 |
+| NOT_AUDITED | 485 |
+| PARTIAL | 14 |
+| REFUTED | 31 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 62 |
+| SUPPORTED | 67 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -31,7 +31,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B003](../hypothesis-bank-2026-09-27.md#L46) | [全称・大胆] 空盤のnimberは0か1。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B004](../hypothesis-bank-2026-09-27.md#L47) | [全称] 奇数の先手勝ち盤では中央が勝ち初手。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B005](../hypothesis-bank-2026-09-27.md#L48) | [全称] 角が勝ち初手なら全初手が勝つ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B006](../hypothesis-bank-2026-09-27.md#L49) | [全称・大胆] 負け初手後のnimberは奇数。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B006](../hypothesis-bank-2026-09-27.md#L49) | [全称・大胆] 負け初手後のnimberは奇数。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B007](../hypothesis-bank-2026-09-27.md#L50) | [統計] 初手の混在は細かい算術に依存する。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B008](../hypothesis-bank-2026-09-27.md#L51) | [漸近・大胆] 先手勝ち盤も後手勝ち盤も無限にある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B009](../hypothesis-bank-2026-09-27.md#L52) | [漸近・大胆] 勝敗列は最終的にも周期的にならない。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
@@ -41,13 +41,13 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B013](../hypothesis-bank-2026-09-27.md#L61) | [全称] J_5の自己同型にはD4以外のものがある。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B014](../hypothesis-bank-2026-09-27.md#L62) | [全称・大胆] J_5の非孤立部分は二部グラフ。 | REFUTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B015](../hypothesis-bank-2026-09-27.md#L63) | [全称] J_5の非孤立部分に完全マッチングがある。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
-| [B016](../hypothesis-bank-2026-09-27.md#L64) | [全称・大胆] 後手勝ち正方形盤のJ_nは連結。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
+| [B016](../hypothesis-bank-2026-09-27.md#L64) | [全称・大胆] 後手勝ち正方形盤のJ_nは連結。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B017](../hypothesis-bank-2026-09-27.md#L65) | [統計] Pペアは共通近傍の少ない頂点を結ぶ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B018](../hypothesis-bank-2026-09-27.md#L66) | [存在] 二石Pグラフが同じでも高層の勝敗は違う盤。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B019](../hypothesis-bank-2026-09-27.md#L67) | [統計] J_nの小さい支配集合は少数の応答拠点を与える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B020](../hypothesis-bank-2026-09-27.md#L68) | [構造] 5×5のPペアは少数の整数関係で記述できる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
-| [B021](../hypothesis-bank-2026-09-27.md#L74) | [全称・大胆] 飽和開始は4石以内。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
-| [B022](../hypothesis-bank-2026-09-27.md#L75) | [全称] 7×7の飽和開始は3または4。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
+| [B021](../hypothesis-bank-2026-09-27.md#L74) | [全称・大胆] 飽和開始は4石以内。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
+| [B022](../hypothesis-bank-2026-09-27.md#L75) | [全称] 7×7の飽和開始は3または4。 | SUPPORTED | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B023](../hypothesis-bank-2026-09-27.md#L76) | [全称] 8×8でも3石で飽和する。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
 | [B024](../hypothesis-bank-2026-09-27.md#L77) | [存在] 全初手勝ち盤で二石nimberが偶数になる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B025](../hypothesis-bank-2026-09-27.md#L78) | [全称・大胆] 飽和後の層にはnimberの穴がない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
@@ -65,7 +65,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B037](../hypothesis-bank-2026-09-27.md#L93) | [構造] 対局長の分岐は少数の選択点へ圧縮できる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B038](../hypothesis-bank-2026-09-27.md#L94) | [存在] 同じP局面へ行く異なる勝ち手が、戦略長では非同値。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B039](../hypothesis-bank-2026-09-27.md#L95) | [統計] 終局直前より中盤の一手の方が勝敗を反転させやすい。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
-| [B040](../hypothesis-bank-2026-09-27.md#L96) | [全称・大胆] 勝者は最終石数の一つを宣言して勝てる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
+| [B040](../hypothesis-bank-2026-09-27.md#L96) | [全称・大胆] 勝者は最終石数の一つを宣言して勝てる。 | REFUTED | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B041](../hypothesis-bank-2026-09-27.md#L100) | [全称] 禁止4点族の自己同型はn≥5でD4だけ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B042](../hypothesis-bank-2026-09-27.md#L101) | [存在] 残余ゲームには非幾何的な対称性が頻出する。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
 | [B043](../hypothesis-bank-2026-09-27.md#L102) | [構造] 7×7後手勝ちは少数の動的ペア分けで説明できる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
@@ -338,16 +338,16 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B310](../hypothesis-bank-round2-2026-09-27.md#L49) | [構造] J_5の5サイクルは特定の共線制約群への感度で区別できる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B311](../hypothesis-bank-round2-2026-09-27.md#L55) | [全称] J_4には二点の全域支配集合がある。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B312](../hypothesis-bank-round2-2026-09-27.md#L56) | [構造] J_4の全域支配ペアは二石Pペアの一部で、少数のD4型に限られる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B313](../hypothesis-bank-round2-2026-09-27.md#L57) | [全称・大胆] 後手勝ち正方形盤のJ_nには完全マッチングまたは一頂点だけ余すマッチングがある。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
-| [B314](../hypothesis-bank-round2-2026-09-27.md#L58) | [全称・大胆] J_nの非孤立部分には橋がない。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B315](../hypothesis-bank-round2-2026-09-27.md#L59) | [存在] J_nの非孤立部分に関節点が現れる。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
+| [B313](../hypothesis-bank-round2-2026-09-27.md#L57) | [全称・大胆] 後手勝ち正方形盤のJ_nには完全マッチングまたは一頂点だけ余すマッチングがある。 | REFUTED | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
+| [B314](../hypothesis-bank-round2-2026-09-27.md#L58) | [全称・大胆] J_nの非孤立部分には橋がない。 | REFUTED | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
+| [B315](../hypothesis-bank-round2-2026-09-27.md#L59) | [存在] J_nの非孤立部分に関節点が現れる。 | SUPPORTED | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B316](../hypothesis-bank-round2-2026-09-27.md#L60) | [統計] J_nの次数は「勝つ速さ」より「勝ち方の多様さ」に効く。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B317](../hypothesis-bank-round2-2026-09-27.md#L61) | [存在] J_nにある固定ペア分けは中盤では必ず破れる。 | SUPPORTED | [round27-fixed-response-audit.md](round27-fixed-response-audit.md) |
 | [B318](../hypothesis-bank-round2-2026-09-27.md#L62) | [構造] J_4の補グラフの連結成分が一石nimberの一様性を説明する。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
-| [B319](../hypothesis-bank-round2-2026-09-27.md#L63) | [全称・大胆] 全初手負け盤でも一石nimberの種類数は小さい。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
+| [B319](../hypothesis-bank-round2-2026-09-27.md#L63) | [全称・大胆] 全初手負け盤でも一石nimberの種類数は小さい。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B320](../hypothesis-bank-round2-2026-09-27.md#L64) | [存在] 二石Pペアの有無は一石nimberでは区別できないが三石子分布で区別できる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B321](../hypothesis-bank-round2-2026-09-27.md#L70) | [全称・大胆] 飽和開始層で欠けるnimberは連続しない。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
-| [B322](../hypothesis-bank-round2-2026-09-27.md#L71) | [全称・大胆] 飽和開始層で欠ける正のnimberは2の冪だけ。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
+| [B321](../hypothesis-bank-round2-2026-09-27.md#L70) | [全称・大胆] 飽和開始層で欠けるnimberは連続しない。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
+| [B322](../hypothesis-bank-round2-2026-09-27.md#L71) | [全称・大胆] 飽和開始層で欠ける正のnimberは2の冪だけ。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B323](../hypothesis-bank-round2-2026-09-27.md#L72) | [存在] 飽和開始層に0が欠ける盤がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B324](../hypothesis-bank-round2-2026-09-27.md#L73) | [統計] 天井達成局面は極大拡張のサイズ分布が広いだけでなく平坦。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B325](../hypothesis-bank-round2-2026-09-27.md#L74) | [存在・大胆] 天井達成局面は合法手数の小さい余裕で作れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
@@ -356,11 +356,11 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B328](../hypothesis-bank-round2-2026-09-27.md#L77) | [統計] 最大nimberを作る三石配置は一直線型に偏る。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B329](../hypothesis-bank-round2-2026-09-27.md#L78) | [構造] nimberの穴は子の値集合の必須対で説明できる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B330](../hypothesis-bank-round2-2026-09-27.md#L79) | [存在] 同じ残り最大・最小手数でnimberが任意に離れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
-| [B331](../hypothesis-bank-round2-2026-09-27.md#L85) | [全称・大胆] 空盤のWFTは空でなければ単元。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
+| [B331](../hypothesis-bank-round2-2026-09-27.md#L85) | [全称・大胆] 空盤のWFTは空でなければ単元。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B332](../hypothesis-bank-round2-2026-09-27.md#L86) | [存在] 中盤には二つの終局手数を選んで強制できる局面がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B333](../hypothesis-bank-round2-2026-09-27.md#L87) | [全称・大胆] WFT(S)の同じ偶奇の穴はない。 | REFUTED | [round25-forced-length-holes.md](round25-forced-length-holes.md) |
 | [B334](../hypothesis-bank-round2-2026-09-27.md#L88) | [存在] T*(S)が3種類でもWFT(S)は空。 | SUPPORTED | [round25-forced-length-holes.md](round25-forced-length-holes.md) |
-| [B335](../hypothesis-bank-round2-2026-09-27.md#L89) | [全称・大胆] 空盤で強制できる終局長はT*の中央値。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
+| [B335](../hypothesis-bank-round2-2026-09-27.md#L89) | [全称・大胆] 空盤で強制できる終局長はT*の中央値。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B336](../hypothesis-bank-round2-2026-09-27.md#L90) | [構造] 5×5の7石強制には最小極大4配置の回避だけで足りる。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B337](../hypothesis-bank-round2-2026-09-27.md#L91) | [存在] 同じgとT*でもWFTが異なる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B338](../hypothesis-bank-round2-2026-09-27.md#L92) | [統計] WFTの非空率は子の勝敗より子のT*の交わりに敏感。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
@@ -387,14 +387,14 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B359](../hypothesis-bank-round2-2026-09-27.md#L123) | [統計] 最大配置の高被覆点は中心付近より円束の交点に集中する。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
 | [B360](../hypothesis-bank-round2-2026-09-27.md#L124) | [存在] 点ごとの被覆上限は大きくても全面被覆は極端に非効率。 | SUPPORTED | [round5-cover-union.md](round5-cover-union.md) |
 | [B361](../hypothesis-bank-round2-2026-09-27.md#L130) | [全称・大胆] 最小極大配置は一石の故障に弱い。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
-| [B362](../hypothesis-bank-round2-2026-09-27.md#L131) | [存在] どの一石を抜いても元の空点は合法にならない極大配置。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
+| [B362](../hypothesis-bank-round2-2026-09-27.md#L131) | [存在] どの一石を抜いても元の空点は合法にならない極大配置。 | SUPPORTED | [round29-fault-witness-audit.md](round29-fault-witness-audit.md) |
 | [B363](../hypothesis-bank-round2-2026-09-27.md#L132) | [存在・大胆] 故障耐性は無限に増やせる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B364](../hypothesis-bank-round2-2026-09-27.md#L133) | [全称・大胆] 標準盤の極大配置の故障耐性は高々3。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B365](../hypothesis-bank-round2-2026-09-27.md#L134) | [統計] 最大集合でも故障耐性の高い配置は変形しにくい。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B366](../hypothesis-bank-round2-2026-09-27.md#L135) | [構造] 各空点の故障耐性は線形三つ組族の横断数で説明できる。 | NOT_AUDITED | 旧個票参照10箇所（JSON） |
-| [B367](../hypothesis-bank-round2-2026-09-27.md#L136) | [存在] 被覆重複が大きいのに一石で大量解除できる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B368](../hypothesis-bank-round2-2026-09-27.md#L137) | [全称・大胆] 最小極大配置の各石には固有の仕事がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B369](../hypothesis-bank-round2-2026-09-27.md#L138) | [存在] 最大配置には全面被覆に不要な石がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B367](../hypothesis-bank-round2-2026-09-27.md#L136) | [存在] 被覆重複が大きいのに一石で大量解除できる。 | SUPPORTED | [round29-fault-witness-audit.md](round29-fault-witness-audit.md) |
+| [B368](../hypothesis-bank-round2-2026-09-27.md#L137) | [全称・大胆] 最小極大配置の各石には固有の仕事がある。 | REFUTED | [round29-fault-witness-audit.md](round29-fault-witness-audit.md) |
+| [B369](../hypothesis-bank-round2-2026-09-27.md#L138) | [存在] 最大配置には全面被覆に不要な石がある。 | SUPPORTED | [round29-fault-witness-audit.md](round29-fault-witness-audit.md) |
 | [B370](../hypothesis-bank-round2-2026-09-27.md#L139) | [統計] 最小極大を縮めにくい原因は被覆の冗長さではなく安全性。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B371](../hypothesis-bank-round2-2026-09-27.md#L145) | [全称・大胆] 8×8の8石極大集合は三点共線を必ず含む。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B372](../hypothesis-bank-round2-2026-09-27.md#L146) | [全称・大胆] 8×8の8石極大集合には方向の異なる三点直線が二本ある。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
