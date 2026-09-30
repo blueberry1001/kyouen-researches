@@ -15,7 +15,7 @@ jobs:
       - name: Build df-pn solver
         run: |
           g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
-      - name: 60-second v60 hybrid comparison (L20/24/28/32)
+      - name: 60-second v60 hybrid comparison (L32/36/40/44)
         env:
           D: /tmp/dfpn
           L: /tmp/dfpn-logs
@@ -23,6 +23,6 @@ jobs:
           MEMO: '24'
           EXACT_BUDGET: '200000'
           EXACT_RETRIES: '2'
-          LEVELS: '20 24 28 32'
+          LEVELS: '32 36 40 44'
         run: |
           bash research/verification/scripts/dfpn_hybrid_probe.sh
