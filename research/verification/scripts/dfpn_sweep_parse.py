@@ -24,6 +24,7 @@ TIMEOUT = re.compile(r'\[roots\{60,(\d+)\}\]\s+TIMEOUT'
                      r'.*?visited=(\d+)'
                      r'.*?root_pn=(\d+)\s+root_dn=(\d+)'
                      r'.*?solved=(\d+)')
+SEQ = re.compile(r'\bseq=(\d+)')
 
 
 def parse(path):
@@ -38,14 +39,18 @@ def parse(path):
         m = DONE.search(line)
         if m:
             r, oc, ex, pn, dn = m.groups()
+            sm=SEQ.search(line)
             out.append(dict(reply=int(r), outcome=oc, pn=int(pn),
-                            dn=int(dn), expansions=int(ex), solved='-'))
+                            dn=int(dn), expansions=int(ex), solved='-',
+                            seq=int(sm.group(1)) if sm else None))
             continue
         m = TIMEOUT.search(line)
         if m:
             r, ex, _vis, pn, dn, sv = m.groups()
+            sm=SEQ.search(line)
             out.append(dict(reply=int(r), outcome='TIMEOUT', pn=int(pn),
-                            dn=int(dn), expansions=int(ex), solved=int(sv)))
+                            dn=int(dn), expansions=int(ex), solved=int(sv),
+                            seq=int(sm.group(1)) if sm else None))
     return out
 
 
@@ -60,21 +65,29 @@ def main():
 
     n = len(rl) * rounds
     rows = []
+
+    # New solver versions tag every completed/timed-out root with seq=N.
+    # This makes mixed WIN/LOSS/TIMEOUT sweeps unambiguous even when many
+    # roots finish in the same wall-clock second. Older all-timeout logs
+    # have no seq; retain the legacy fallback for those historical files.
+    events = dones + tos
+    have_seq = events and all(x.get('seq') is not None for x in events)
+    by_seq = {x['seq']: x for x in events} if have_seq else {}
+
     for i in range(n):
         r = rl[i % len(rl)]
         rnd = i // len(rl) + 1
-        d = dones[i] if i < len(dones) else None
-        t = tos[i] if i < len(tos) else None
-        if d:
-            rows.append((rnd, r, d['outcome'], d['pn'], d['dn'],
-                         d['expansions'], d['solved']))
-        elif t:
-            rows.append((rnd, r, 'TIMEOUT', t['pn'], t['dn'],
-                         t['expansions'], t['solved']))
+        if have_seq:
+            src = by_seq.get(i + 1)
+        else:
+            d = dones[i] if i < len(dones) else None
+            t = tos[i] if i < len(tos) else None
+            src = d or t
+        if src:
+            rows.append((rnd, r, src['outcome'], src['pn'], src['dn'],
+                         src['expansions'], src['solved']))
         else:
             rows.append((rnd, r, 'MISSING', '-', '-', '-', '-'))
-        # sanity: the reply the stream claimed must match the schedule
-        src = d or t
         if src and src['reply'] != r:
             print('WARNING: slot %d expected reply %d but stream says %d'
                   % (i, r, src['reply']))
