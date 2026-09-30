@@ -1,0 +1,27 @@
+name: N11 df-pn hybrid regression
+
+on:
+  push:
+    paths:
+      - 'cpp/solvers/kyouen_dfpn_root.cpp'
+      - 'research/verification/scripts/dfpn_regress_hybrid.sh'
+      - '.github/workflows/n11-dfpn-hybrid-regression.yml'
+  workflow_dispatch:
+
+jobs:
+  hybrid-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: Known-board regression with exact handoff
+        env:
+          D: /tmp/dfpn
+          MEMO: '24'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+        run: |
+          bash research/verification/scripts/dfpn_regress_hybrid.sh
