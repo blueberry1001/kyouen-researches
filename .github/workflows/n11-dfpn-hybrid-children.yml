@@ -1,0 +1,28 @@
+name: N11 df-pn hybrid child diagnostic
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-hybrid-children.yml'
+  workflow_dispatch:
+
+jobs:
+  child-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: 5-minute baseline vs L44 with root-child diagnostics
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '300'
+          MEMO: '25'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+          HYBRID_LEGAL: '44'
+        run: |
+          bash research/verification/scripts/dfpn_hybrid_children_probe.sh
