@@ -1118,6 +1118,7 @@ int main(int argc,char**argv){
             else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
             else if(a.rfind("--roots-csv=",0)==0)roots_path=a.substr(12);
             else if(a=="--children")children=true;
+            else if(a=="--tiebreak=asc")tiebreak_desc=false;
             else if(a=="--tiebreak=desc")tiebreak_desc=true;
             else{
                 std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc]\n";
