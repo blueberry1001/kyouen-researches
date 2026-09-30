@@ -1,0 +1,1463 @@
+{
+  "n": 6,
+  "forbidden_quads": 2491,
+  "whole_curves": 644,
+  "witnesses": [
+    {
+      "mask": 13422297094,
+      "coordinates": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 612634626,
+      "coordinates": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 25769869388,
+      "coordinates": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 6442461196,
+      "coordinates": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 12905873432,
+      "coordinates": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 159776784,
+      "coordinates": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 17188393536,
+      "coordinates": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 2147883264,
+      "coordinates": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        11
+      ],
+      "WFT": [
+        7,
+        11
+      ],
+      "fast_terminal": 7,
+      "h": 5,
+      "mu": 1,
+      "fixed_target_actual_player_checks": {
+        "7": true,
+        "9": false,
+        "11": true
+      }
+    },
+    {
+      "mask": 19,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "g": 0,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [],
+      "fast_terminal": 11,
+      "h": 8,
+      "mu": 4,
+      "fixed_target_actual_player_checks": {
+        "7": false,
+        "9": false,
+        "11": false
+      }
+    },
+    {
+      "mask": 6208,
+      "coordinates": [
+        [
+          0,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "g": 5,
+      "Tstar": [
+        6,
+        8,
+        10
+      ],
+      "WFT": [],
+      "fast_terminal": 10,
+      "h": 8,
+      "mu": 3,
+      "fixed_target_actual_player_checks": {
+        "6": false,
+        "8": false,
+        "10": false
+      },
+      "winning_children": [
+        {
+          "mask": 8589940800,
+          "g": 0,
+          "Tstar": [
+            6,
+            8,
+            10
+          ],
+          "WFT": []
+        },
+        {
+          "mask": 7232,
+          "g": 0,
+          "Tstar": [
+            8,
+            10
+          ],
+          "WFT": []
+        }
+      ]
+    }
+  ],
+  "B334_children": [
+    {
+      "mask": 83,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 147,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "g": 4,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 4
+    },
+    {
+      "mask": 275,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 4
+    },
+    {
+      "mask": 531,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 1043,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 4
+    },
+    {
+      "mask": 2067,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "g": 2,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 4115,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "g": 2,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 8211,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 16403,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 32787,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 65555,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 4
+    },
+    {
+      "mask": 131091,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 262163,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "g": 4,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 524307,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 1048595,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 2097171,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 4194323,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 8388627,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 16777235,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 33554451,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 67108883,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "g": 4,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 134217747,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "g": 4,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [],
+      "fast_terminal": 11,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 268435475,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 6,
+      "mu": 3
+    },
+    {
+      "mask": 536870931,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "g": 3,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 1073741843,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 2147483667,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "g": 7,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 4294967315,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 8589934611,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 17179869203,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        7,
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    },
+    {
+      "mask": 34359738387,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "g": 1,
+      "Tstar": [
+        9,
+        11
+      ],
+      "WFT": [
+        9
+      ],
+      "fast_terminal": 9,
+      "h": 7,
+      "mu": 3
+    }
+  ],
+  "independent_subgame_states": 37187,
+  "small_board_full_checks": [
+    {
+      "n": 2,
+      "safe_states": 15,
+      "B333_gap_count": 0,
+      "B334_count": 0
+    },
+    {
+      "n": 3,
+      "safe_states": 298,
+      "B333_gap_count": 0,
+      "B334_count": 0
+    },
+    {
+      "n": 4,
+      "safe_states": 5811,
+      "B333_gap_count": 0,
+      "B334_count": 0
+    },
+    {
+      "n": 5,
+      "safe_states": 151394,
+      "B333_gap_count": 0,
+      "B334_count": 0
+    }
+  ],
+  "sources_sha256": {
+    "round25_forced_verify.py": "ed498a18f63e8f673c1a9776afbf6f2384bd537b5dee85f47b07ca6c1989c299",
+    "round25_forced_lengths.cpp": "d9d013c545d5d859e889cd151febc5b511271b7870e51468078aa113a7082a4f",
+    "round25_forced_n6.json": "5fb882bece35ebcfb18423d212550ab6850f7fdcb7aef3cd4912738a66fa23e6",
+    "round23_b251_n6_input.txt": "a0e9c6855bf2d369c72e68c5c4aa205f0c36a011b85166e8ec430c21690db8ed"
+  },
+  "seconds": 8.663818199999696
+}
