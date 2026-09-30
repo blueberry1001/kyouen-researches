@@ -128,6 +128,41 @@ proof number は残り作業量ではなく、精密化で増減するためで�
 
 という点。
 
+## main TT への exact result publish 方針
+
+publish-all では 5 分 run で main TT がほぼ満杯になったため、
+`--exact-publish=root` を追加した。
+
+root-only mode:
+
+- exact DFS 内部の transposition は handoff ごとの local hash で memoize
+- exact DFS が完全に解けたら **handoff root だけ**を main df-pn TT に publish
+- local memo は handoff ごとに clear するが capacity は再利用
+- incomplete / budget abort は従来どおり UNKNOWN
+
+小盤 n=4..7 は root-only でも既知勝敗と完全一致。
+
+60 秒、11x11 v=60、memo=2^24、L44 の同時比較:
+
+| arm | outcome | root pn | root dn | df-pn expansions | main memo used | main solved | exact nodes | main exact stores | local stores | TT evict |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| baseline | TIMEOUT | 18,310 | 6,096 | 913,317 | 913,317 | 0 | 0 | 0 | 0 | 0 |
+| publish-all | TIMEOUT | 9,133 | 5,466 | 503,172 | 13,798,916 | 13,362,841 | 13,434,880 | 13,434,874 | 0 | open 65,744 / solved 72,549 |
+| root-only | TIMEOUT | 8,477 | 5,425 | 443,451 | 443,451 | 673 | 9,346,773 | 525 | 9,346,773 | 0 |
+
+proof number の大小は「残り距離」として比較しない。
+ここで明確なのは、root-only が main TT をほぼ df-pn frontier 用に保ったまま
+exact handoff を実行でき、60 秒 run では **TT eviction 0** だったこと。
+
+publish-all は同じ 60 秒でも main TT に 1,300 万超の solved state を保持し、
+既に open / solved eviction が発生した。一方 root-only は exact 内部で
+約 934 万 state を local memoize しながら main TT への書き込みを
+handoff root 525 件に限定した。
+
+この結果は root-only の証明速度が優れていること自体を証明しないが、
+**main df-pn bounds を deep exact states から隔離する設計が実際に機能する**
+ことを確認した。
+
 ## 現時点の判断
 
 hybrid は **正しさ回帰を通過し、11x11 でも実際に仕事をしている**。
