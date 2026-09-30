@@ -1431,33 +1431,37 @@
     {
       "n": 2,
       "safe_states": 15,
+      "B031_Tstar_gap_count": 0,
       "B333_gap_count": 0,
       "B334_count": 0
     },
     {
       "n": 3,
       "safe_states": 298,
+      "B031_Tstar_gap_count": 0,
       "B333_gap_count": 0,
       "B334_count": 0
     },
     {
       "n": 4,
       "safe_states": 5811,
+      "B031_Tstar_gap_count": 0,
       "B333_gap_count": 0,
       "B334_count": 0
     },
     {
       "n": 5,
       "safe_states": 151394,
+      "B031_Tstar_gap_count": 0,
       "B333_gap_count": 0,
       "B334_count": 0
     }
   ],
   "sources_sha256": {
-    "round25_forced_verify.py": "ed498a18f63e8f673c1a9776afbf6f2384bd537b5dee85f47b07ca6c1989c299",
+    "round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
     "round25_forced_lengths.cpp": "d9d013c545d5d859e889cd151febc5b511271b7870e51468078aa113a7082a4f",
     "round25_forced_n6.json": "5fb882bece35ebcfb18423d212550ab6850f7fdcb7aef3cd4912738a66fa23e6",
     "round23_b251_n6_input.txt": "a0e9c6855bf2d369c72e68c5c4aa205f0c36a011b85166e8ec430c21690db8ed"
   },
-  "seconds": 8.663818199999696
+  "seconds": 10.69590739999876
 }

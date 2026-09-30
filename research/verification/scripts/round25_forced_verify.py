@@ -114,6 +114,7 @@ def main():
         terminal = frozenset().union(*(c[1] for c in allowed))
         forced = (frozenset().union(*(c[2] for c in allowed)) if g
                   else allowed[0][2].intersection(*(c[2] for c in allowed[1:])))
+        assert all(t % 2 == (s.bit_count()+bool(g)) % 2 for t in terminal)
         fast = (min if g else max)(c[3] for c in allowed)
         h = 1+max(c[4] for c in options)
         mu = 1+min(c[5] for c in options)
@@ -207,6 +208,7 @@ def main():
                 terminal = frozenset().union(*(c[1] for c in allowed))
                 forced = (frozenset().union(*(c[2] for c in allowed)) if g
                           else allowed[0][2].intersection(*(c[2] for c in allowed[1:])))
+                assert all(t % 2 == (s.bit_count()+bool(g)) % 2 for t in terminal)
                 value = g, terminal, forced
             small_values[s] = value
             return value
@@ -215,12 +217,16 @@ def main():
         gap_count = sum(bool(w) and any(t not in w for t in range(min(w),max(w)+1,2))
                         for _, _, w in small_values.values())
         empty_count = sum(len(t) >= 3 and not w for _, t, w in small_values.values())
+        terminal_gap_count = sum(any(j not in t for j in range(min(t),max(t)+1,2))
+                                 for _, t, _ in small_values.values())
         assert gap_count == empty_count == 0
+        assert terminal_gap_count == 0
         small_result = json.loads((root/f'round25_forced_n{n}.json').read_text())
         assert small_result['safe_states'] == len(small_values)
         assert small_result['B333_gap_count'] == gap_count
         assert small_result['B334_count'] == empty_count
         small_checks.append({'n': n, 'safe_states': len(small_values),
+                             'B031_Tstar_gap_count': terminal_gap_count,
                              'B333_gap_count': gap_count, 'B334_count': empty_count})
         print('small-board independent', n, 'states', len(small_values), 'PASS', flush=True)
     output = {'n': 6, 'forbidden_quads': len(quads), 'whole_curves': len(masks),
