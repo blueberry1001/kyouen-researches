@@ -1,11 +1,11 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 118,
+  "reviewed_originals": 119,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 482,
+    "NOT_AUDITED": 481,
     "PARTIAL": 16,
-    "SUPPORTED": 67,
+    "SUPPORTED": 68,
     "REFUTED": 32,
     "SCOPE_UNCLEAR": 3
   },
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "5857ee2463b80593fdde97d3b0bdb975134a2991407f82120fe672743d2d313c",
+  "index_source_sha256": "70f8cd55f08a15aa07685ef0a04550656ebaefe274b516883e3166da60773ddf",
   "rows": [
     {
       "id": "B001",
@@ -47254,6 +47254,24 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round33-b343-single-triple-switch.md",
+          "heading_line": 1,
+          "heading": "# B343: 一つだけの三点制約で全勝ち手が交換される",
+          "joint_heading_ids": [
+            "B343"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B343原文SUPPORTED。**"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round4-batch-b291-b360.md",
           "heading_line": 168,
           "heading": "## B343 [存在] 残余三点制約が一つでも、それを外すと必勝手が全交換される",
@@ -47274,10 +47292,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_with_sole_triple_and_full_certificate",
+      "preferred_report": "round33-b343-single-triple-switch.md",
+      "reason": "6×6でRの三点辺がちょうど一つ。単独除去でg=1→3、勝ち手{14}→{15,19}は互いに素。全256拡張を独立検算。",
       "additional_reports": []
     },
     {
@@ -74403,6 +74421,7 @@
     "round30-ceiling-orbit-finite-audit.md": "66eb1a4bede5e14989ce7e4728c3966c65ee2dd4a2548fcfef98f9685926f66b",
     "round31-b047-odd-cycle-counterexample.md": "f58270a47e04502cc8d6732027503d01cabed803f141d4e2b25e8b1bf047e875",
     "round32-b251-seven-board-exclusion.md": "83adda9982f32ad9af2e08c16c2b04dae22d3ad67c7d18b66db49fa784905232",
+    "round33-b343-single-triple-switch.md": "e66eaa960e5e85cde1a42f7a3e9c0dc5e5da1324946dfcb9ecdee8fd52722a32",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",

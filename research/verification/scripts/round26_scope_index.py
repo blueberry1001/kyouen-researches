@@ -164,6 +164,8 @@ review('B368', 'REFUTED', 'finite_counterexample_and_exhaustion',
        'round29-fault-witness-audit.md', '3×3全512部分集合の極大は全て5石。最小極大の石2を除いても元の空点は全て禁止。')
 review('B047', 'REFUTED', 'finite_counterexample_with_exact_residual_game',
        'round31-b047-odd-cycle-counterexample.md', '5×5の6石から残余C5を正確に実現。頂点推移的Pで合法点5個なので固定点なしの応答対合は不可能。')
+review('B343', 'SUPPORTED', 'finite_witness_with_sole_triple_and_full_certificate',
+       'round33-b343-single-triple-switch.md', '6×6でRの三点辺がちょうど一つ。単独除去でg=1→3、勝ち手{14}→{15,19}は互いに素。全256拡張を独立検算。')
 review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
        'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',

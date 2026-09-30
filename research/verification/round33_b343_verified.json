@@ -1,0 +1,2339 @@
+{
+  "original_verdict": "SUPPORTED",
+  "n": 6,
+  "S_mask": 17040397,
+  "S_ids": [
+    0,
+    2,
+    3,
+    10,
+    18,
+    24
+  ],
+  "S_coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "L_ids": [
+    8,
+    11,
+    14,
+    15,
+    19,
+    31,
+    34,
+    35
+  ],
+  "L_coordinates": [
+    [
+      2,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      5
+    ]
+  ],
+  "minimal_residual_edges": [
+    [
+      8,
+      14
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      8,
+      19
+    ],
+    [
+      14,
+      19
+    ],
+    [
+      11,
+      31
+    ],
+    [
+      14,
+      31
+    ],
+    [
+      31,
+      34
+    ],
+    [
+      31,
+      35
+    ],
+    [
+      11,
+      34,
+      35
+    ]
+  ],
+  "quad_witnesses": {
+    "16640": [
+      0,
+      8,
+      14,
+      18
+    ],
+    "33024": [
+      3,
+      8,
+      10,
+      15
+    ],
+    "49152": [
+      2,
+      3,
+      14,
+      15
+    ],
+    "524544": [
+      0,
+      8,
+      18,
+      19
+    ],
+    "540672": [
+      0,
+      14,
+      18,
+      19
+    ],
+    "2147485696": [
+      3,
+      11,
+      18,
+      31
+    ],
+    "2147500032": [
+      14,
+      18,
+      24,
+      31
+    ],
+    "19327352832": [
+      2,
+      3,
+      31,
+      34
+    ],
+    "36507222016": [
+      0,
+      24,
+      31,
+      35
+    ],
+    "51539609600": [
+      10,
+      11,
+      34,
+      35
+    ]
+  },
+  "residual_size_histogram": {
+    "2": 9,
+    "3": 1
+  },
+  "removed_triple_ids": [
+    11,
+    34,
+    35
+  ],
+  "g_full": 1,
+  "g_minus": 3,
+  "winning_full_ids": [
+    14
+  ],
+  "winning_minus_ids": [
+    15,
+    19
+  ],
+  "child_g_full": {
+    "8": 2,
+    "11": 3,
+    "14": 0,
+    "15": 3,
+    "19": 3,
+    "31": 2,
+    "34": 3,
+    "35": 3
+  },
+  "child_g_minus": {
+    "8": 1,
+    "11": 2,
+    "14": 1,
+    "15": 0,
+    "19": 0,
+    "31": 2,
+    "34": 2,
+    "35": 2
+  },
+  "all_256_extensions": [
+    {
+      "extension_mask": 0,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 256,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2048,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2304,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 16384,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 16640,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 18432,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 18688,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 32768,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 33024,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34816,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 35072,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 49152,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 49408,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51200,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51456,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 524288,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 524544,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 526336,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 526592,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 540672,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 540928,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 542720,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 542976,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 557056,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 557312,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 559104,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 559360,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 573440,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 573696,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 575488,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 575744,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147483648,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2147483904,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2147485696,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147485952,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147500032,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147500288,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147502080,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147502336,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147516416,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2147516672,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147518464,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147518720,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147532800,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147533056,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147534848,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2147535104,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148007936,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2148008192,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148009984,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148010240,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148024320,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148024576,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148026368,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148026624,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148040704,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 2148040960,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148042752,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148043008,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148057088,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148057344,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148059136,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 2148059392,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179869184,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179869440,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179871232,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179871488,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179885568,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179885824,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179887616,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179887872,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179901952,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179902208,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179904000,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17179904256,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179918336,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179918592,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179920384,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17179920640,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180393472,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17180393728,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180395520,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17180395776,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180409856,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180410112,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180411904,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180412160,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180426240,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17180426496,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180428288,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 17180428544,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180442624,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180442880,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180444672,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 17180444928,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327352832,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327353088,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327354880,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327355136,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327369216,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327369472,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327371264,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327371520,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327385600,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327385856,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327387648,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327387904,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327401984,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327402240,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327404032,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327404288,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327877120,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327877376,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327879168,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327879424,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327893504,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327893760,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327895552,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327895808,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327909888,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327910144,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327911936,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327912192,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327926272,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327926528,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327928320,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 19327928576,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359738368,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359738624,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359740416,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359740672,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359754752,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359755008,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359756800,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359757056,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359771136,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359771392,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359773184,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34359773440,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359787520,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359787776,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359789568,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34359789824,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360262656,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34360262912,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360264704,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34360264960,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360279040,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360279296,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360281088,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360281344,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360295424,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34360295680,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360297472,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 34360297728,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360311808,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360312064,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360313856,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 34360314112,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507222016,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507222272,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507224064,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507224320,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507238400,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507238656,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507240448,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507240704,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507254784,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507255040,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507256832,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507257088,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507271168,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507271424,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507273216,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507273472,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507746304,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507746560,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507748352,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507748608,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507762688,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507762944,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507764736,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507764992,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507779072,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507779328,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507781120,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507781376,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507795456,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507795712,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507797504,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 36507797760,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539607552,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539607808,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539609600,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539609856,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539623936,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539624192,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539625984,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539626240,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539640320,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539640576,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539642368,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51539642624,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539656704,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539656960,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539658752,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51539659008,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540131840,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51540132096,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540133888,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51540134144,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540148224,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540148480,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540150272,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540150528,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540164608,
+      "original_safe": true,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51540164864,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540166656,
+      "original_safe": false,
+      "one_triple_removed_safe": true
+    },
+    {
+      "extension_mask": 51540166912,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540180992,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540181248,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540183040,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 51540183296,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687091200,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687091456,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687093248,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687093504,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687107584,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687107840,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687109632,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687109888,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687123968,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687124224,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687126016,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687126272,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687140352,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687140608,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687142400,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687142656,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687615488,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687615744,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687617536,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687617792,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687631872,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687632128,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687633920,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687634176,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687648256,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687648512,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687650304,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687650560,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687664640,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687664896,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687666688,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    },
+    {
+      "extension_mask": 53687666944,
+      "original_safe": false,
+      "one_triple_removed_safe": false
+    }
+  ],
+  "full_game_dag": [
+    {
+      "extension_mask": 0,
+      "g": 1,
+      "child_masks": [
+        256,
+        2048,
+        16384,
+        32768,
+        524288,
+        2147483648,
+        17179869184,
+        34359738368
+      ]
+    },
+    {
+      "extension_mask": 256,
+      "g": 2,
+      "child_masks": [
+        2304,
+        2147483904,
+        17179869440,
+        34359738624
+      ]
+    },
+    {
+      "extension_mask": 2048,
+      "g": 3,
+      "child_masks": [
+        2304,
+        18432,
+        34816,
+        526336,
+        17179871232,
+        34359740416
+      ]
+    },
+    {
+      "extension_mask": 2304,
+      "g": 1,
+      "child_masks": [
+        17179871488,
+        34359740672
+      ]
+    },
+    {
+      "extension_mask": 16384,
+      "g": 0,
+      "child_masks": [
+        18432,
+        17179885568,
+        34359754752
+      ]
+    },
+    {
+      "extension_mask": 18432,
+      "g": 1,
+      "child_masks": [
+        17179887616,
+        34359756800
+      ]
+    },
+    {
+      "extension_mask": 32768,
+      "g": 3,
+      "child_masks": [
+        34816,
+        557056,
+        2147516416,
+        17179901952,
+        34359771136
+      ]
+    },
+    {
+      "extension_mask": 34816,
+      "g": 0,
+      "child_masks": [
+        559104,
+        17179904000,
+        34359773184
+      ]
+    },
+    {
+      "extension_mask": 524288,
+      "g": 3,
+      "child_masks": [
+        526336,
+        557056,
+        2148007936,
+        17180393472,
+        34360262656
+      ]
+    },
+    {
+      "extension_mask": 526336,
+      "g": 0,
+      "child_masks": [
+        559104,
+        17180395520,
+        34360264704
+      ]
+    },
+    {
+      "extension_mask": 557056,
+      "g": 2,
+      "child_masks": [
+        559104,
+        2148040704,
+        17180426240,
+        34360295424
+      ]
+    },
+    {
+      "extension_mask": 559104,
+      "g": 1,
+      "child_masks": [
+        17180428288,
+        34360297472
+      ]
+    },
+    {
+      "extension_mask": 2147483648,
+      "g": 2,
+      "child_masks": [
+        2147483904,
+        2147516416,
+        2148007936
+      ]
+    },
+    {
+      "extension_mask": 2147483904,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 2147516416,
+      "g": 1,
+      "child_masks": [
+        2148040704
+      ]
+    },
+    {
+      "extension_mask": 2148007936,
+      "g": 1,
+      "child_masks": [
+        2148040704
+      ]
+    },
+    {
+      "extension_mask": 2148040704,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 17179869184,
+      "g": 3,
+      "child_masks": [
+        17179869440,
+        17179871232,
+        17179885568,
+        17179901952,
+        17180393472,
+        51539607552
+      ]
+    },
+    {
+      "extension_mask": 17179869440,
+      "g": 1,
+      "child_masks": [
+        17179871488,
+        51539607808
+      ]
+    },
+    {
+      "extension_mask": 17179871232,
+      "g": 2,
+      "child_masks": [
+        17179871488,
+        17179887616,
+        17179904000,
+        17180395520
+      ]
+    },
+    {
+      "extension_mask": 17179871488,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 17179885568,
+      "g": 1,
+      "child_masks": [
+        17179887616,
+        51539623936
+      ]
+    },
+    {
+      "extension_mask": 17179887616,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 17179901952,
+      "g": 0,
+      "child_masks": [
+        17179904000,
+        17180426240,
+        51539640320
+      ]
+    },
+    {
+      "extension_mask": 17179904000,
+      "g": 1,
+      "child_masks": [
+        17180428288
+      ]
+    },
+    {
+      "extension_mask": 17180393472,
+      "g": 0,
+      "child_masks": [
+        17180395520,
+        17180426240,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 17180395520,
+      "g": 1,
+      "child_masks": [
+        17180428288
+      ]
+    },
+    {
+      "extension_mask": 17180426240,
+      "g": 1,
+      "child_masks": [
+        17180428288,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 17180428288,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 34359738368,
+      "g": 3,
+      "child_masks": [
+        34359738624,
+        34359740416,
+        34359754752,
+        34359771136,
+        34360262656,
+        51539607552
+      ]
+    },
+    {
+      "extension_mask": 34359738624,
+      "g": 1,
+      "child_masks": [
+        34359740672,
+        51539607808
+      ]
+    },
+    {
+      "extension_mask": 34359740416,
+      "g": 2,
+      "child_masks": [
+        34359740672,
+        34359756800,
+        34359773184,
+        34360264704
+      ]
+    },
+    {
+      "extension_mask": 34359740672,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 34359754752,
+      "g": 1,
+      "child_masks": [
+        34359756800,
+        51539623936
+      ]
+    },
+    {
+      "extension_mask": 34359756800,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 34359771136,
+      "g": 0,
+      "child_masks": [
+        34359773184,
+        34360295424,
+        51539640320
+      ]
+    },
+    {
+      "extension_mask": 34359773184,
+      "g": 1,
+      "child_masks": [
+        34360297472
+      ]
+    },
+    {
+      "extension_mask": 34360262656,
+      "g": 0,
+      "child_masks": [
+        34360264704,
+        34360295424,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 34360264704,
+      "g": 1,
+      "child_masks": [
+        34360297472
+      ]
+    },
+    {
+      "extension_mask": 34360295424,
+      "g": 1,
+      "child_masks": [
+        34360297472,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 34360297472,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 51539607552,
+      "g": 2,
+      "child_masks": [
+        51539607808,
+        51539623936,
+        51539640320,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 51539607808,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 51539623936,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 51539640320,
+      "g": 1,
+      "child_masks": [
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 51540131840,
+      "g": 1,
+      "child_masks": [
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 51540164608,
+      "g": 0,
+      "child_masks": []
+    }
+  ],
+  "one_triple_removed_dag": [
+    {
+      "extension_mask": 0,
+      "g": 3,
+      "child_masks": [
+        256,
+        2048,
+        16384,
+        32768,
+        524288,
+        2147483648,
+        17179869184,
+        34359738368
+      ]
+    },
+    {
+      "extension_mask": 256,
+      "g": 1,
+      "child_masks": [
+        2304,
+        2147483904,
+        17179869440,
+        34359738624
+      ]
+    },
+    {
+      "extension_mask": 2048,
+      "g": 2,
+      "child_masks": [
+        2304,
+        18432,
+        34816,
+        526336,
+        17179871232,
+        34359740416
+      ]
+    },
+    {
+      "extension_mask": 2304,
+      "g": 0,
+      "child_masks": [
+        17179871488,
+        34359740672
+      ]
+    },
+    {
+      "extension_mask": 16384,
+      "g": 1,
+      "child_masks": [
+        18432,
+        17179885568,
+        34359754752
+      ]
+    },
+    {
+      "extension_mask": 18432,
+      "g": 0,
+      "child_masks": [
+        17179887616,
+        34359756800
+      ]
+    },
+    {
+      "extension_mask": 32768,
+      "g": 0,
+      "child_masks": [
+        34816,
+        557056,
+        2147516416,
+        17179901952,
+        34359771136
+      ]
+    },
+    {
+      "extension_mask": 34816,
+      "g": 1,
+      "child_masks": [
+        559104,
+        17179904000,
+        34359773184
+      ]
+    },
+    {
+      "extension_mask": 524288,
+      "g": 0,
+      "child_masks": [
+        526336,
+        557056,
+        2148007936,
+        17180393472,
+        34360262656
+      ]
+    },
+    {
+      "extension_mask": 526336,
+      "g": 1,
+      "child_masks": [
+        559104,
+        17180395520,
+        34360264704
+      ]
+    },
+    {
+      "extension_mask": 557056,
+      "g": 1,
+      "child_masks": [
+        559104,
+        2148040704,
+        17180426240,
+        34360295424
+      ]
+    },
+    {
+      "extension_mask": 559104,
+      "g": 0,
+      "child_masks": [
+        17180428288,
+        34360297472
+      ]
+    },
+    {
+      "extension_mask": 2147483648,
+      "g": 2,
+      "child_masks": [
+        2147483904,
+        2147516416,
+        2148007936
+      ]
+    },
+    {
+      "extension_mask": 2147483904,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 2147516416,
+      "g": 1,
+      "child_masks": [
+        2148040704
+      ]
+    },
+    {
+      "extension_mask": 2148007936,
+      "g": 1,
+      "child_masks": [
+        2148040704
+      ]
+    },
+    {
+      "extension_mask": 2148040704,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 17179869184,
+      "g": 2,
+      "child_masks": [
+        17179869440,
+        17179871232,
+        17179885568,
+        17179901952,
+        17180393472,
+        51539607552
+      ]
+    },
+    {
+      "extension_mask": 17179869440,
+      "g": 0,
+      "child_masks": [
+        17179871488,
+        51539607808
+      ]
+    },
+    {
+      "extension_mask": 17179871232,
+      "g": 3,
+      "child_masks": [
+        17179871488,
+        17179887616,
+        17179904000,
+        17180395520,
+        51539609600
+      ]
+    },
+    {
+      "extension_mask": 17179871488,
+      "g": 1,
+      "child_masks": [
+        51539609856
+      ]
+    },
+    {
+      "extension_mask": 17179885568,
+      "g": 0,
+      "child_masks": [
+        17179887616,
+        51539623936
+      ]
+    },
+    {
+      "extension_mask": 17179887616,
+      "g": 1,
+      "child_masks": [
+        51539625984
+      ]
+    },
+    {
+      "extension_mask": 17179901952,
+      "g": 1,
+      "child_masks": [
+        17179904000,
+        17180426240,
+        51539640320
+      ]
+    },
+    {
+      "extension_mask": 17179904000,
+      "g": 0,
+      "child_masks": [
+        17180428288,
+        51539642368
+      ]
+    },
+    {
+      "extension_mask": 17180393472,
+      "g": 1,
+      "child_masks": [
+        17180395520,
+        17180426240,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 17180395520,
+      "g": 0,
+      "child_masks": [
+        17180428288,
+        51540133888
+      ]
+    },
+    {
+      "extension_mask": 17180426240,
+      "g": 0,
+      "child_masks": [
+        17180428288,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 17180428288,
+      "g": 1,
+      "child_masks": [
+        51540166656
+      ]
+    },
+    {
+      "extension_mask": 34359738368,
+      "g": 2,
+      "child_masks": [
+        34359738624,
+        34359740416,
+        34359754752,
+        34359771136,
+        34360262656,
+        51539607552
+      ]
+    },
+    {
+      "extension_mask": 34359738624,
+      "g": 0,
+      "child_masks": [
+        34359740672,
+        51539607808
+      ]
+    },
+    {
+      "extension_mask": 34359740416,
+      "g": 3,
+      "child_masks": [
+        34359740672,
+        34359756800,
+        34359773184,
+        34360264704,
+        51539609600
+      ]
+    },
+    {
+      "extension_mask": 34359740672,
+      "g": 1,
+      "child_masks": [
+        51539609856
+      ]
+    },
+    {
+      "extension_mask": 34359754752,
+      "g": 0,
+      "child_masks": [
+        34359756800,
+        51539623936
+      ]
+    },
+    {
+      "extension_mask": 34359756800,
+      "g": 1,
+      "child_masks": [
+        51539625984
+      ]
+    },
+    {
+      "extension_mask": 34359771136,
+      "g": 1,
+      "child_masks": [
+        34359773184,
+        34360295424,
+        51539640320
+      ]
+    },
+    {
+      "extension_mask": 34359773184,
+      "g": 0,
+      "child_masks": [
+        34360297472,
+        51539642368
+      ]
+    },
+    {
+      "extension_mask": 34360262656,
+      "g": 1,
+      "child_masks": [
+        34360264704,
+        34360295424,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 34360264704,
+      "g": 0,
+      "child_masks": [
+        34360297472,
+        51540133888
+      ]
+    },
+    {
+      "extension_mask": 34360295424,
+      "g": 0,
+      "child_masks": [
+        34360297472,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 34360297472,
+      "g": 1,
+      "child_masks": [
+        51540166656
+      ]
+    },
+    {
+      "extension_mask": 51539607552,
+      "g": 3,
+      "child_masks": [
+        51539607808,
+        51539609600,
+        51539623936,
+        51539640320,
+        51540131840
+      ]
+    },
+    {
+      "extension_mask": 51539607808,
+      "g": 1,
+      "child_masks": [
+        51539609856
+      ]
+    },
+    {
+      "extension_mask": 51539609600,
+      "g": 2,
+      "child_masks": [
+        51539609856,
+        51539625984,
+        51539642368,
+        51540133888
+      ]
+    },
+    {
+      "extension_mask": 51539609856,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 51539623936,
+      "g": 1,
+      "child_masks": [
+        51539625984
+      ]
+    },
+    {
+      "extension_mask": 51539625984,
+      "g": 0,
+      "child_masks": []
+    },
+    {
+      "extension_mask": 51539640320,
+      "g": 0,
+      "child_masks": [
+        51539642368,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 51539642368,
+      "g": 1,
+      "child_masks": [
+        51540166656
+      ]
+    },
+    {
+      "extension_mask": 51540131840,
+      "g": 0,
+      "child_masks": [
+        51540133888,
+        51540164608
+      ]
+    },
+    {
+      "extension_mask": 51540133888,
+      "g": 1,
+      "child_masks": [
+        51540166656
+      ]
+    },
+    {
+      "extension_mask": 51540164608,
+      "g": 1,
+      "child_masks": [
+        51540166656
+      ]
+    },
+    {
+      "extension_mask": 51540166656,
+      "g": 0,
+      "child_masks": []
+    }
+  ],
+  "sha256": {
+    "scripts/round33_b343_verify.py": "2094a01d67335b4772c5ad50dfbceda3f732cd263fe60dbf0b729276a6e065ed",
+    "scripts/round33_b343_search.cpp": "72758836a0fee8db1f7c61622bd3a32d1ff3ed6a2a0c54cfd65ad264318af88e",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "scripts/kc_core.h": "d98df31b219d8121314969dc3c7be6618ff6d42090df19c3179b9a281efd422c",
+    "round33_b343_n6_sole.json": "ef214bc0bf10af42502068e5747c9b118320ab989606d02d4c6086a9879e49a8"
+  }
+}
