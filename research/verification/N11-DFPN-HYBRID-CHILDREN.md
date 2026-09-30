@@ -78,6 +78,64 @@ hybrid の TT occupancy は
    目的は「deep solved state の再利用」と「df-pn open bound の保持」の
    トレードオフを測ること。
 
+## root-only publish の 5 分追試
+
+main TT の flooding を避ける `--exact-publish=root` でも同じ
+`v=60 / 300 s / memo=2^25 / L44` を測定した。
+
+結果:
+
+- outcome: TIMEOUT
+- root: `pn=17,698, dn=6,028`
+- df-pn expansions: 902,323
+- exact calls: 15,800
+- exact nodes: **149,004,288**
+- exact abort: 0
+- handoff root publish: 15,799
+- local exact stores: 149,004,280
+- main TT: 902,323 / 33,554,432
+- main TT solved: 17,983
+- evict open / solved: **0 / 0**
+- direct child solved: **0 / 20**
+
+root-only は 5 分で約 1.49 億 exact node を処理しながら main TT を
+df-pn frontier と handoff root だけに近い形で保持し、eviction 0 を維持した。
+publish-all の 5 分 run は main TT が約 3,301 万 entry まで膨らんだため、
+メモリ局所性の面では root-only の方が明確に扱いやすい。
+
+ただし direct child は依然 0/20 solved。
+大量の exact work が行われていても、それだけでは中央初手の証明進捗とは
+みなさない。
+
+root-only の child 最終値:
+
+| reply | pn | dn | work | state |
+|---:|---:|---:|---:|---|
+| 0 | 2,016 | 6,030 | 390 | OPEN |
+| 1 | 118 | 6,397 | 59 | OPEN |
+| 2 | 118 | 6,106 | 56 | OPEN |
+| 3 | 118 | 6,332 | 51 | OPEN |
+| 4 | 118 | 6,091 | 49 | OPEN |
+| 5 | 1,924 | 6,031 | 479 | OPEN |
+| 12 | 1,560 | 6,030 | 365 | OPEN |
+| 13 | 118 | 6,122 | 32 | OPEN |
+| 14 | 118 | 6,094 | 61 | OPEN |
+| 15 | 118 | 6,051 | 69 | OPEN |
+| 16 | 1,012 | 6,064 | 297 | OPEN |
+| 24 | 1,928 | 6,029 | 468 | OPEN |
+| 25 | 118 | 6,071 | 63 | OPEN |
+| 26 | 118 | 6,029 | 76 | OPEN |
+| 27 | 1,715 | 6,028 | 372 | OPEN |
+| 36 | 1,536 | 6,029 | 361 | OPEN |
+| 37 | 118 | 6,117 | 58 | OPEN |
+| 38 | 1,189 | 6,033 | 260 | OPEN |
+| 48 | 1,789 | 6,029 | 456 | OPEN |
+| 49 | 1,849 | 6,029 | 317 | OPEN |
+
+このため次は親 AND node 内での配分だけを見るのではなく、
+20 個の二石局面をそれぞれ root として shared TT で回し、
+hybrid が直接 WIN/LOSS を閉じられるかを見る。
+
 ## 結論
 
 hybrid は 11x11 frontier で確実に大量の exact work を実行しているが、
