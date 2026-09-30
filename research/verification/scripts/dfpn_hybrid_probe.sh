@@ -67,4 +67,12 @@ print(",".join([
 PY
 done
 
+echo
+echo "=== exact handoff depth histograms ==="
+for legal in $LEVELS; do
+  tag="L$legal"
+  printf 'L%s ' "$legal"
+  grep '^\[exact-depth\]' "$OUT/$tag.log" | tail -1 || echo "[exact-depth] missing"
+done
+
 exit "$rc"
