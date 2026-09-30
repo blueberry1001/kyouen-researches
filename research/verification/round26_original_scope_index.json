@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 133,
+  "reviewed_originals": 140,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 467,
-    "PARTIAL": 16,
-    "SUPPORTED": 75,
-    "REFUTED": 39,
+    "NOT_AUDITED": 460,
+    "PARTIAL": 17,
+    "SUPPORTED": 78,
+    "REFUTED": 42,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "ffec83e3b258476557b0c7706269906612ce3280ad9fdb0563940c2d57dc0666",
+  "index_source_sha256": "2b1c817cafc697e475176f0a9ee7ed078f8f886cd61f112be9c90c34c5e911b7",
   "rows": [
     {
       "id": "B001",
@@ -5732,10 +5732,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "complete_exact_family_counterexample",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "4×4四石・同一L/Rの完全族は二集合のみ。三石交換が必要、Rは連結な四点パス。全65536集合から抽出。",
       "additional_reports": []
     },
     {
@@ -57148,10 +57148,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "complete_exact_family_counterexample",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "4×4四石・同一L/Rの完全族は二集合のみ。三石交換が必要、Rは連結な四点パス。全65536集合から抽出。",
       "additional_reports": []
     },
     {
@@ -57316,10 +57316,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "complete_exact_family_counterexample",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "4×4四石・同一L/Rの完全族は二集合のみ。三石交換が必要、Rは連結な四点パス。全65536集合から抽出。",
       "additional_reports": []
     },
     {
@@ -57353,10 +57353,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "complete_exact_family_witness",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "非空連結Rの分裂、同一族別成分で最大一石解除数8対7、厳密抽象同型40集合の四成分分裂を検算。B446旧反証を訂正。",
       "additional_reports": []
     },
     {
@@ -57425,12 +57425,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round42-exact-residual-family-audit.md",
+          "heading_line": 27,
+          "heading": "## B446: 解除できる点数が成分間で違う",
+          "joint_heading_ids": [
+            "B446"
+          ],
+          "labels_in_section": [
+            {
+              "line": 43,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "旧round2は数族でρ=1が一致し、現在の非合法点総数も一致したことからREFUTEDとしていた。"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "complete_exact_family_witness",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "非空連結Rの分裂、同一族別成分で最大一石解除数8対7、厳密抽象同型40集合の四成分分裂を検算。B446旧反証を訂正。",
       "additional_reports": []
     },
     {
@@ -57499,12 +57517,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round42-exact-residual-family-audit.md",
+          "heading_line": 60,
+          "heading": "## B448: 四石なら三石層を通る橋は常にある",
+          "joint_heading_ids": [
+            "B448"
+          ],
+          "labels_in_section": [
+            {
+              "line": 69,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "旧「四石中間層を巡っても分裂のまま」という有限記録を無検算で原文全体のREFUTEDにしない。"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "general_four_stone_bridge_proof",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "任意の安全四石配置対は常に安全な三石層のJohnsonグラフを通って結べる。k≥5の原文全体は未証明。",
       "additional_reports": []
     },
     {
@@ -57536,12 +57572,22 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round42-exact-residual-family-audit.md",
+          "heading_line": 47,
+          "heading": "## B449: 抽象同型を本当に判定しても残る分裂",
+          "joint_heading_ids": [
+            "B449"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "complete_exact_family_witness",
+      "preferred_report": "round42-exact-residual-family-audit.md",
+      "reason": "非空連結Rの分裂、同一族別成分で最大一石解除数8対7、厳密抽象同型40集合の四成分分裂を検算。B446旧反証を訂正。",
       "additional_reports": []
     },
     {
@@ -74729,6 +74775,7 @@
     "round4-two-row-order-strategy.md": "3bd1c9bb544ab74f15320b149d050cb4bf2e9d9997324a078e5c03bf56c653d0",
     "round40-b349-minimum-four-edge-classification.md": "51bb509128d2eeaa396f4e5dd8a9fc04562135d41471d241fc196c448194098d",
     "round41-b065-pair-empty-grundy-five.md": "deb503d036b0acb81de467178689a4d53a5a6d56782f8bbc914d88775b2712f1",
+    "round42-exact-residual-family-audit.md": "55bb941131addf85d06a21aca1d11a424167b4c122ec3149de0669d4b94fc2af",
     "round5-FINAL-SUMMARY.md": "92006d512a1b70df30e11d05ffe711914908c730d4120e31c6fabf8ec486f55f",
     "round5-b141-corrections.md": "939fd458c2ab92e8863414cdb3c112a3c475250bb24bf3cd3a9477b6233e4c45",
     "round5-batch-b001-b100-final.md": "919843f66d5f257a838d32138dbc54e55dd61eaca26b86a5b58454043127707b",

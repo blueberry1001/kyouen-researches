@@ -45,6 +45,15 @@ def review(ids, status, kind, source, reason, additional=()):
 review('B349', 'SUPPORTED', 'general_minimum_classification_and_finite_realizations',
        'round40-b349-minimum-four-edge-classification.md',
        '二点競合ありの最小合法点数5・全9型を証明し全型を格子実現。競合なしを含める読みの最小4・単独辺1型も分類。')
+review('B057 B441 B443', 'REFUTED', 'complete_exact_family_counterexample',
+       'round42-exact-residual-family-audit.md',
+       '4×4四石・同一L/Rの完全族は二集合のみ。三石交換が必要、Rは連結な四点パス。全65536集合から抽出。')
+review('B444 B446 B449', 'SUPPORTED', 'complete_exact_family_witness',
+       'round42-exact-residual-family-audit.md',
+       '非空連結Rの分裂、同一族別成分で最大一石解除数8対7、厳密抽象同型40集合の四成分分裂を検算。B446旧反証を訂正。')
+review('B448', 'PARTIAL', 'general_four_stone_bridge_proof',
+       'round42-exact-residual-family-audit.md',
+       '任意の安全四石配置対は常に安全な三石層のJohnsonグラフを通って結べる。k≥5の原文全体は未証明。')
 
 
 review('B211 B212 B215 B216 B220 B541 B546 B550', 'SUPPORTED', 'general_proof',

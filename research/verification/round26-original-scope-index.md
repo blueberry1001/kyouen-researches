@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は133件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は140件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 467 |
-| PARTIAL | 16 |
-| REFUTED | 39 |
+| NOT_AUDITED | 460 |
+| PARTIAL | 17 |
+| REFUTED | 42 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 75 |
+| SUPPORTED | 78 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -82,7 +82,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B054](../hypothesis-bank-2026-09-27.md#L116) | [統計] 残余制約の分裂は最後の数手だけの現象ではない。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B055](../hypothesis-bank-2026-09-27.md#L117) | [存在] 盤上では遠い領域が同じ残余成分になる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B056](../hypothesis-bank-2026-09-27.md#L118) | [存在] 盤上では隣り合う領域がゲームとして分離する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B057](../hypothesis-bank-2026-09-27.md#L119) | [構造] 同じ残余ゲームを与える占有集合は交換でつながる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B057](../hypothesis-bank-2026-09-27.md#L119) | [構造] 同じ残余ゲームを与える占有集合は交換でつながる。 | REFUTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
 | [B058](../hypothesis-bank-2026-09-27.md#L120) | [統計] 高階制約の消滅点は勝敗の偶奇固定を予告する。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B059](../hypothesis-bank-2026-09-27.md#L121) | [統計] 同じ石数でも残余ゲームの種類数は大幅に少ない。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B060](../hypothesis-bank-2026-09-27.md#L122) | [存在] 遠く離れたnで同じ非自明残局が現れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
@@ -466,15 +466,15 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B438](../hypothesis-bank-round2-2026-09-27.md#L242) | [存在] 最小証明の四点族は複数の本質的な幾何型を持つ。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B439](../hypothesis-bank-round2-2026-09-27.md#L243) | [構造] 候補の重みは占有差と角数だけで選べる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B440](../hypothesis-bank-round2-2026-09-27.md#L244) | [存在] 別の占有ポテンシャルなら21より短い静的証明がある。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
-| [B441](../hypothesis-bank-round2-2026-09-27.md#L250) | [全称・大胆] 各族は二点交換まで許せば連結する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B441](../hypothesis-bank-round2-2026-09-27.md#L250) | [全称・大胆] 各族は二点交換まで許せば連結する。 | REFUTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
 | [B442](../hypothesis-bank-round2-2026-09-27.md#L251) | [存在] 同一残局族の交換距離は無限に大きくなる。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
-| [B443](../hypothesis-bank-round2-2026-09-27.md#L252) | [全称・大胆] 非連結性はRが空または非連結の族に限られる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B444](../hypothesis-bank-round2-2026-09-27.md#L253) | [存在] 非空で連結なRを持つ族も分裂する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B443](../hypothesis-bank-round2-2026-09-27.md#L252) | [全称・大胆] 非連結性はRが空または非連結の族に限られる。 | REFUTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
+| [B444](../hypothesis-bank-round2-2026-09-27.md#L253) | [存在] 非空で連結なRを持つ族も分裂する。 | SUPPORTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
 | [B445](../hypothesis-bank-round2-2026-09-27.md#L254) | [構造] 分裂成分は占有点の被覆責任の割り当てで区別できる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B446](../hypothesis-bank-round2-2026-09-27.md#L255) | [存在] 同一残局族の異なる成分は石除去への耐性が違う。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B446](../hypothesis-bank-round2-2026-09-27.md#L255) | [存在] 同一残局族の異なる成分は石除去への耐性が違う。 | SUPPORTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
 | [B447](../hypothesis-bank-round2-2026-09-27.md#L256) | [統計] 同一残局族の成分数は禁止点の重複被覆の多さと増える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B448](../hypothesis-bank-round2-2026-09-27.md#L257) | [構造] 一石少ない中間配置を許すと同一残局族を少数の橋で結べる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B449](../hypothesis-bank-round2-2026-09-27.md#L258) | [存在] 残余ゲームの抽象同型まで緩めても配置族は分裂する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B448](../hypothesis-bank-round2-2026-09-27.md#L257) | [構造] 一石少ない中間配置を許すと同一残局族を少数の橋で結べる。 | PARTIAL | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
+| [B449](../hypothesis-bank-round2-2026-09-27.md#L258) | [存在] 残余ゲームの抽象同型まで緩めても配置族は分裂する。 | SUPPORTED | [round42-exact-residual-family-audit.md](round42-exact-residual-family-audit.md) |
 | [B450](../hypothesis-bank-round2-2026-09-27.md#L259) | [構造] 同じ残局の複数実現は安全な遮蔽部品の置換則を与える。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
 | [B451](../hypothesis-bank-round2-2026-09-27.md#L265) | [存在] 同半径・異なる中心分母で、ともに4点以上だが点数が違う円がある。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
 | [B452](../hypothesis-bank-round2-2026-09-27.md#L266) | [存在] 分母の大きい中心が整数中心を上回る半径範囲がある。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
