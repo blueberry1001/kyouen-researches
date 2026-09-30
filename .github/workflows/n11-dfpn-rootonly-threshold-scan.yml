@@ -17,7 +17,7 @@ jobs:
       - name: Build df-pn solver
         run: |
           g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
-      - name: Scan L44/L48/L52/L56 with root-only exact cache
+      - name: Scan L60/L64/L68/L72 with root-only exact cache
         env:
           D: /tmp/dfpn
           L: /tmp/dfpn-logs
@@ -26,6 +26,6 @@ jobs:
           EXACT_BUDGET: '200000'
           EXACT_RETRIES: '2'
           EXACT_PUBLISH: 'root'
-          LEVELS: '44 48 52 56'
+          LEVELS: '60 64 68 72'
         run: |
           bash research/verification/scripts/dfpn_hybrid_probe.sh
