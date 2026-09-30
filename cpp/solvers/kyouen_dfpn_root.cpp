@@ -444,6 +444,8 @@ private:
     std::uint64_t exact_calls_=0, exact_nodes_=0, exact_aborts_=0;
     std::uint64_t exact_trigger_win_=0, exact_trigger_loss_=0, exact_stores_=0;
     std::uint64_t exact_local_stores_=0;
+    std::uint64_t exact_call_hist_[64]={};
+    std::uint64_t exact_win_hist_[64]={}, exact_loss_hist_[64]={}, exact_abort_hist_[64]={};
 
     static std::uint32_t sadd(std::uint32_t a,std::uint32_t b){
         std::uint64_t s=(std::uint64_t)a+b;
@@ -891,6 +893,8 @@ private:
                         tt_.vis_[(std::size_t)es]=(tt_.vis_[(std::size_t)es]&1u)
                             | ((std::uint32_t(attempts+1)&0xffu)<<1);
                         ++exact_calls_;
+                        int eh=st.back().stones<64?st.back().stones:63;
+                        ++exact_call_hist_[eh];
                         if(exact_publish_mode_==ExactPublishMode::ROOT)
                             exact_local_.reset();
                         std::uint64_t b=exact_budget_;
@@ -900,6 +904,7 @@ private:
                             if(exact_publish_mode_!=ExactPublishMode::ALL)
                                 exact_store(st.back().key,er);
                             ++exact_trigger_win_;
+                            ++exact_win_hist_[eh];
                             st.pop_back();
                             continue;
                         }
@@ -907,10 +912,12 @@ private:
                             if(exact_publish_mode_!=ExactPublishMode::ALL)
                                 exact_store(st.back().key,er);
                             ++exact_trigger_loss_;
+                            ++exact_loss_hist_[eh];
                             st.pop_back();
                             continue;
                         }
                         ++exact_aborts_;
+                        ++exact_abort_hist_[eh];
                     }
                 }
             }
@@ -1197,6 +1204,21 @@ public:
         wins=exact_trigger_win_; losses=exact_trigger_loss_;
         stores=exact_stores_; local_stores=exact_local_stores_;
     }
+    void dump_exact_hist(std::ostream& os) const {
+        os<<"[exact-depth]";
+        bool anyv=false;
+        for(int s=0;s<64;++s){
+            if(!exact_call_hist_[s]) continue;
+            anyv=true;
+            os<<" s"<<s<<"="<<exact_call_hist_[s]
+              <<"/"<<exact_win_hist_[s]
+              <<"/"<<exact_loss_hist_[s]
+              <<"/"<<exact_abort_hist_[s];
+        }
+        if(!anyv) os<<" none";
+        os<<" (call/win/loss/abort)\n";
+        os.flush();
+    }
 
 private:
     std::ostream* log_=&std::cerr;
@@ -1290,6 +1312,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
             }
             C<<" seq="<<seq<<" wall_s="<<(long long)wall<<"\n";
             solver.csv_flush();
+            solver.dump_exact_hist(L);
             {
                 std::uint64_t dh[64]; solver.exp_hist(dh,64);
                 std::uint64_t p=0;
@@ -1307,6 +1330,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
         }
         double wall=std::chrono::duration<double>(
             std::chrono::steady_clock::now()-wall0).count();
+        solver.dump_exact_hist(L);
         L<<"[done] ["<<tag<<"] "<<outcome_str(r.outcome)
          <<" expansions="<<r.expansions
          <<" root_pn="<<r.root_pn<<" root_dn="<<r.root_dn
