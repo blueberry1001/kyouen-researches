@@ -3,6 +3,8 @@ name: N11 root-only exact threshold scan
 on:
   push:
     paths:
+      - 'cpp/solvers/kyouen_dfpn_root.cpp'
+      - 'research/verification/scripts/dfpn_hybrid_probe.sh'
       - '.github/workflows/n11-dfpn-rootonly-threshold-scan.yml'
   workflow_dispatch:
 
