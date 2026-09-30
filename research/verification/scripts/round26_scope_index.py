@@ -57,6 +57,15 @@ review('B448', 'PARTIAL', 'general_four_stone_bridge_proof',
 review('B350', 'SUPPORTED', 'finite_witness_and_general_minimum_legal_size_proof',
        'round43-b350-value-preserving-move-switch.md',
        '5×5の合法5点で両版g1・勝ち手1対5。全m≤4極小残余族を二方式全列挙し最小合法点数5、n≤3全域除外と4×4証人で最小盤4。')
+review('B062', 'REFUTED', 'infinite_clique_family_and_minimum_board_counterexample',
+       'round44-three-stone-cliques-and-tree-minima.md',
+       '三石の標準整数盤に任意大のK4Mを実現、彩色数は無界。4×4初例は厳密χ6、全n≤3三石は三色で最小盤4。')
+review('B064', 'SUPPORTED', 'finite_witness_and_general_minimum_legal_size_proof',
+       'round44-three-stone-cliques-and-tree-minima.md',
+       '3×3のP5+一三点辺でg0対3、最小盤3。木の勝敗反転の最小合法点数5を証明。値だけの変更の最小4と区別。')
+review('B344', 'PARTIAL', 'minimum_connecting_tree_classification',
+       'round44-three-stone-cliques-and-tree-minima.md',
+       '効く三点辺の最小接続木はK1,3・三葉上の辺、格子実現を検算。大きな木の距離偶奇による一般分類は未証明。')
 
 
 review('B211 B212 B215 B216 B220 B541 B546 B550', 'SUPPORTED', 'general_proof',

@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は141件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は144件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 459 |
-| PARTIAL | 17 |
-| REFUTED | 42 |
+| NOT_AUDITED | 456 |
+| PARTIAL | 18 |
+| REFUTED | 43 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 79 |
+| SUPPORTED | 80 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -87,9 +87,9 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B059](../hypothesis-bank-2026-09-27.md#L121) | [統計] 同じ石数でも残余ゲームの種類数は大幅に少ない。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B060](../hypothesis-bank-2026-09-27.md#L122) | [存在] 遠く離れたnで同じ非自明残局が現れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B061](../hypothesis-bank-2026-09-27.md#L126) | [統計] P(S)に三角形が多い局面はnimberが小さい。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B062](../hypothesis-bank-2026-09-27.md#L127) | [全称・大胆] 三石局面のP(S)の彩色数は3以下。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B062](../hypothesis-bank-2026-09-27.md#L127) | [全称・大胆] 三石局面のP(S)の彩色数は3以下。 | REFUTED | [round44-three-stone-cliques-and-tree-minima.md](round44-three-stone-cliques-and-tree-minima.md) |
 | [B063](../hypothesis-bank-2026-09-27.md#L128) | [構造] 四石以降で初めて現れる競合グラフの最小型がある。 | SUPPORTED | [round19-b063-stone-hierarchy.md](round19-b063-stone-hierarchy.md) |
-| [B064](../hypothesis-bank-2026-09-27.md#L129) | [存在] P(S)が木でも高階制約が勝敗を変える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B064](../hypothesis-bank-2026-09-27.md#L129) | [存在] P(S)が木でも高階制約が勝敗を変える。 | SUPPORTED | [round44-three-stone-cliques-and-tree-minima.md](round44-three-stone-cliques-and-tree-minima.md) |
 | [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | SUPPORTED | [round41-b065-pair-empty-grundy-five.md](round41-b065-pair-empty-grundy-five.md) |
 | [B066](../hypothesis-bank-2026-09-27.md#L131) | [統計] 二点競合の近似が外れるのは高階制約の重なりが大きい場所。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B067](../hypothesis-bank-2026-09-27.md#L132) | [全称・大胆] 終盤のP(S)には大きな誘導奇サイクルがない。 | REFUTED | [round34-b067-induced-seven-cycle.md](round34-b067-induced-seven-cycle.md) |
@@ -369,7 +369,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B341](../hypothesis-bank-round2-2026-09-27.md#L100) | [存在] 一つの残余三点制約で任意に大きいnimber差を作れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B342](../hypothesis-bank-round2-2026-09-27.md#L101) | [全称・大胆] 二点競合が森なら一つの三点制約によるnimber差は3以下。 | REFUTED | [round37-residual-original-witness-audit.md](round37-residual-original-witness-audit.md) |
 | [B343](../hypothesis-bank-round2-2026-09-27.md#L102) | [存在] 残余三点制約が一つでも、それを外すと必勝手が全交換される。 | SUPPORTED | [round33-b343-single-triple-switch.md](round33-b343-single-triple-switch.md) |
-| [B344](../hypothesis-bank-round2-2026-09-27.md#L103) | [構造] 木の競合グラフで効く三点制約には最小の接続型がある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
+| [B344](../hypothesis-bank-round2-2026-09-27.md#L103) | [構造] 木の競合グラフで効く三点制約には最小の接続型がある。 | PARTIAL | [round44-three-stone-cliques-and-tree-minima.md](round44-three-stone-cliques-and-tree-minima.md) |
 | [B345](../hypothesis-bank-round2-2026-09-27.md#L104) | [全称・大胆] 完全グラフ成分をまたぐ三点制約は冗長か値不変。 | REFUTED | [round38-b345-sole-triple-clique-counterexample.md](round38-b345-sole-triple-clique-counterexample.md) |
 | [B346](../hypothesis-bank-round2-2026-09-27.md#L105) | [存在] 高階制約を二つ同時に外したときだけ値が変わる。 | SUPPORTED | [round37-residual-original-witness-audit.md](round37-residual-original-witness-audit.md) |
 | [B347](../hypothesis-bank-round2-2026-09-27.md#L106) | [統計] 高階制約の件数より、その被覆する合法点の割合が近似誤差を説明する。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |

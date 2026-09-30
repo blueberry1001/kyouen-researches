@@ -1,0 +1,1432 @@
+{
+  "B062_original_verdict": "REFUTED",
+  "B062_stronger_statement": "Three occupied stones have unbounded competition chromatic number.",
+  "B062_minimum_counterexample_board": 4,
+  "B062_exact_chromatic_six": {
+    "n": 4,
+    "S_ids": [
+      0,
+      1,
+      2
+    ],
+    "L_ids": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "pair_edges": [
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        6,
+        13
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        11,
+        14
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        7,
+        15
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        15
+      ]
+    ],
+    "clique_ids": [
+      4,
+      7,
+      8,
+      11,
+      13,
+      14
+    ],
+    "six_coloring": {
+      "13": 0,
+      "4": 1,
+      "8": 2,
+      "7": 3,
+      "11": 4,
+      "14": 5,
+      "6": 2,
+      "10": 1,
+      "12": 3,
+      "15": 0,
+      "5": 0,
+      "9": 0
+    }
+  },
+  "small_chromatic_exclusions": [
+    {
+      "n": 2,
+      "all_three_stone_sets": 4,
+      "all_chromatic_numbers_at_most": 3
+    },
+    {
+      "n": 3,
+      "all_three_stone_sets": 84,
+      "all_chromatic_numbers_at_most": 3
+    }
+  ],
+  "infinite_clique_family_samples": [
+    {
+      "M": 1,
+      "n": 11,
+      "radius": 5,
+      "S_coordinates": [
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "induced_clique_size": 4,
+      "legal_clique_points": [
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "M": 2,
+      "n": 101,
+      "radius": 50,
+      "S_coordinates": [
+        [
+          0,
+          50
+        ],
+        [
+          50,
+          50
+        ],
+        [
+          100,
+          50
+        ]
+      ],
+      "induced_clique_size": 8,
+      "legal_clique_points": [
+        [
+          80,
+          90
+        ],
+        [
+          80,
+          10
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          90,
+          80
+        ],
+        [
+          90,
+          20
+        ],
+        [
+          10,
+          80
+        ],
+        [
+          10,
+          20
+        ]
+      ]
+    },
+    {
+      "M": 3,
+      "n": 1701,
+      "radius": 850,
+      "S_coordinates": [
+        [
+          0,
+          850
+        ],
+        [
+          850,
+          850
+        ],
+        [
+          1700,
+          850
+        ]
+      ],
+      "induced_clique_size": 12,
+      "legal_clique_points": [
+        [
+          1360,
+          1530
+        ],
+        [
+          1360,
+          170
+        ],
+        [
+          340,
+          1530
+        ],
+        [
+          340,
+          170
+        ],
+        [
+          1530,
+          1360
+        ],
+        [
+          1530,
+          340
+        ],
+        [
+          170,
+          1360
+        ],
+        [
+          170,
+          340
+        ],
+        [
+          1600,
+          1250
+        ],
+        [
+          1600,
+          450
+        ],
+        [
+          100,
+          1250
+        ],
+        [
+          100,
+          450
+        ]
+      ]
+    },
+    {
+      "M": 4,
+      "n": 44201,
+      "radius": 22100,
+      "S_coordinates": [
+        [
+          0,
+          22100
+        ],
+        [
+          22100,
+          22100
+        ],
+        [
+          44200,
+          22100
+        ]
+      ],
+      "induced_clique_size": 16,
+      "legal_clique_points": [
+        [
+          35360,
+          39780
+        ],
+        [
+          35360,
+          4420
+        ],
+        [
+          8840,
+          39780
+        ],
+        [
+          8840,
+          4420
+        ],
+        [
+          39780,
+          35360
+        ],
+        [
+          39780,
+          8840
+        ],
+        [
+          4420,
+          35360
+        ],
+        [
+          4420,
+          8840
+        ],
+        [
+          41600,
+          32500
+        ],
+        [
+          41600,
+          11700
+        ],
+        [
+          2600,
+          32500
+        ],
+        [
+          2600,
+          11700
+        ],
+        [
+          42500,
+          30600
+        ],
+        [
+          42500,
+          13600
+        ],
+        [
+          1700,
+          30600
+        ],
+        [
+          1700,
+          13600
+        ]
+      ]
+    },
+    {
+      "M": 5,
+      "n": 1635401,
+      "radius": 817700,
+      "S_coordinates": [
+        [
+          0,
+          817700
+        ],
+        [
+          817700,
+          817700
+        ],
+        [
+          1635400,
+          817700
+        ]
+      ],
+      "induced_clique_size": 20,
+      "legal_clique_points": [
+        [
+          1308320,
+          1471860
+        ],
+        [
+          1308320,
+          163540
+        ],
+        [
+          327080,
+          1471860
+        ],
+        [
+          327080,
+          163540
+        ],
+        [
+          1471860,
+          1308320
+        ],
+        [
+          1471860,
+          327080
+        ],
+        [
+          163540,
+          1308320
+        ],
+        [
+          163540,
+          327080
+        ],
+        [
+          1539200,
+          1202500
+        ],
+        [
+          1539200,
+          432900
+        ],
+        [
+          96200,
+          1202500
+        ],
+        [
+          96200,
+          432900
+        ],
+        [
+          1572500,
+          1132200
+        ],
+        [
+          1572500,
+          503200
+        ],
+        [
+          62900,
+          1132200
+        ],
+        [
+          62900,
+          503200
+        ],
+        [
+          1591200,
+          1082900
+        ],
+        [
+          1591200,
+          552500
+        ],
+        [
+          44200,
+          1082900
+        ],
+        [
+          44200,
+          552500
+        ]
+      ]
+    },
+    {
+      "M": 6,
+      "n": 81770001,
+      "radius": 40885000,
+      "S_coordinates": [
+        [
+          0,
+          40885000
+        ],
+        [
+          40885000,
+          40885000
+        ],
+        [
+          81770000,
+          40885000
+        ]
+      ],
+      "induced_clique_size": 24,
+      "legal_clique_points": [
+        [
+          65416000,
+          73593000
+        ],
+        [
+          65416000,
+          8177000
+        ],
+        [
+          16354000,
+          73593000
+        ],
+        [
+          16354000,
+          8177000
+        ],
+        [
+          73593000,
+          65416000
+        ],
+        [
+          73593000,
+          16354000
+        ],
+        [
+          8177000,
+          65416000
+        ],
+        [
+          8177000,
+          16354000
+        ],
+        [
+          76960000,
+          60125000
+        ],
+        [
+          76960000,
+          21645000
+        ],
+        [
+          4810000,
+          60125000
+        ],
+        [
+          4810000,
+          21645000
+        ],
+        [
+          78625000,
+          56610000
+        ],
+        [
+          78625000,
+          25160000
+        ],
+        [
+          3145000,
+          56610000
+        ],
+        [
+          3145000,
+          25160000
+        ],
+        [
+          79560000,
+          54145000
+        ],
+        [
+          79560000,
+          27625000
+        ],
+        [
+          2210000,
+          54145000
+        ],
+        [
+          2210000,
+          27625000
+        ],
+        [
+          80134600,
+          52332800
+        ],
+        [
+          80134600,
+          29437200
+        ],
+        [
+          1635400,
+          52332800
+        ],
+        [
+          1635400,
+          29437200
+        ]
+      ]
+    },
+    {
+      "M": 7,
+      "n": 5315050001,
+      "radius": 2657525000,
+      "S_coordinates": [
+        [
+          0,
+          2657525000
+        ],
+        [
+          2657525000,
+          2657525000
+        ],
+        [
+          5315050000,
+          2657525000
+        ]
+      ],
+      "induced_clique_size": 28,
+      "legal_clique_points": [
+        [
+          4252040000,
+          4783545000
+        ],
+        [
+          4252040000,
+          531505000
+        ],
+        [
+          1063010000,
+          4783545000
+        ],
+        [
+          1063010000,
+          531505000
+        ],
+        [
+          4783545000,
+          4252040000
+        ],
+        [
+          4783545000,
+          1063010000
+        ],
+        [
+          531505000,
+          4252040000
+        ],
+        [
+          531505000,
+          1063010000
+        ],
+        [
+          5002400000,
+          3908125000
+        ],
+        [
+          5002400000,
+          1406925000
+        ],
+        [
+          312650000,
+          3908125000
+        ],
+        [
+          312650000,
+          1406925000
+        ],
+        [
+          5110625000,
+          3679650000
+        ],
+        [
+          5110625000,
+          1635400000
+        ],
+        [
+          204425000,
+          3679650000
+        ],
+        [
+          204425000,
+          1635400000
+        ],
+        [
+          5171400000,
+          3519425000
+        ],
+        [
+          5171400000,
+          1795625000
+        ],
+        [
+          143650000,
+          3519425000
+        ],
+        [
+          143650000,
+          1795625000
+        ],
+        [
+          5208749000,
+          3401632000
+        ],
+        [
+          5208749000,
+          1913418000
+        ],
+        [
+          106301000,
+          3401632000
+        ],
+        [
+          106301000,
+          1913418000
+        ],
+        [
+          5233280000,
+          3311685000
+        ],
+        [
+          5233280000,
+          2003365000
+        ],
+        [
+          81770000,
+          3311685000
+        ],
+        [
+          81770000,
+          2003365000
+        ]
+      ]
+    },
+    {
+      "M": 8,
+      "n": 435834100001,
+      "radius": 217917050000,
+      "S_coordinates": [
+        [
+          0,
+          217917050000
+        ],
+        [
+          217917050000,
+          217917050000
+        ],
+        [
+          435834100000,
+          217917050000
+        ]
+      ],
+      "induced_clique_size": 32,
+      "legal_clique_points": [
+        [
+          348667280000,
+          392250690000
+        ],
+        [
+          348667280000,
+          43583410000
+        ],
+        [
+          87166820000,
+          392250690000
+        ],
+        [
+          87166820000,
+          43583410000
+        ],
+        [
+          392250690000,
+          348667280000
+        ],
+        [
+          392250690000,
+          87166820000
+        ],
+        [
+          43583410000,
+          348667280000
+        ],
+        [
+          43583410000,
+          87166820000
+        ],
+        [
+          410196800000,
+          320466250000
+        ],
+        [
+          410196800000,
+          115367850000
+        ],
+        [
+          25637300000,
+          320466250000
+        ],
+        [
+          25637300000,
+          115367850000
+        ],
+        [
+          419071250000,
+          301731300000
+        ],
+        [
+          419071250000,
+          134102800000
+        ],
+        [
+          16762850000,
+          301731300000
+        ],
+        [
+          16762850000,
+          134102800000
+        ],
+        [
+          424054800000,
+          288592850000
+        ],
+        [
+          424054800000,
+          147241250000
+        ],
+        [
+          11779300000,
+          288592850000
+        ],
+        [
+          11779300000,
+          147241250000
+        ],
+        [
+          427117418000,
+          278933824000
+        ],
+        [
+          427117418000,
+          156900276000
+        ],
+        [
+          8716682000,
+          278933824000
+        ],
+        [
+          8716682000,
+          156900276000
+        ],
+        [
+          429128960000,
+          271558170000
+        ],
+        [
+          429128960000,
+          164275930000
+        ],
+        [
+          6705140000,
+          271558170000
+        ],
+        [
+          6705140000,
+          164275930000
+        ],
+        [
+          430519050000,
+          265752500000
+        ],
+        [
+          430519050000,
+          170081600000
+        ],
+        [
+          5315050000,
+          265752500000
+        ],
+        [
+          5315050000,
+          170081600000
+        ]
+      ]
+    }
+  ],
+  "B064_original_verdict": "SUPPORTED",
+  "B064_minimum_legal_size_for_winner_change": 5,
+  "tree_minimum_legal_size_for_value_change": 4,
+  "B064_minimum_board": 3,
+  "all_small_tree_antichains": [
+    {
+      "legal_size": 1,
+      "tree_residual_antichains": 1,
+      "value_changes": 0,
+      "winner_changes": 0
+    },
+    {
+      "legal_size": 2,
+      "tree_residual_antichains": 1,
+      "value_changes": 0,
+      "winner_changes": 0
+    },
+    {
+      "legal_size": 3,
+      "tree_residual_antichains": 3,
+      "value_changes": 0,
+      "winner_changes": 0
+    },
+    {
+      "legal_size": 4,
+      "tree_residual_antichains": 20,
+      "value_changes": 4,
+      "winner_changes": 0
+    }
+  ],
+  "tree_minimum_legal_witness": {
+    "n": 4,
+    "S_ids": [
+      9,
+      11,
+      13,
+      14
+    ],
+    "L_ids": [
+      0,
+      3,
+      5,
+      12
+    ],
+    "R_ids": [
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        0,
+        5,
+        12
+      ]
+    ],
+    "full_g": 2,
+    "pair_only_g": 1,
+    "full_child_g": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "pair_child_g": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "all_extensions": [
+      {
+        "extension": 0,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 2,
+        "pair_g": 1
+      },
+      {
+        "extension": 1,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 0
+      },
+      {
+        "extension": 2,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 0
+      },
+      {
+        "extension": 3,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 4,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 0
+      },
+      {
+        "extension": 5,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 6,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 7,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 8,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 0
+      },
+      {
+        "extension": 9,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 10,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 11,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 12,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 13,
+        "full_safe": false,
+        "pair_safe": true,
+        "full_g": null,
+        "pair_g": 0
+      },
+      {
+        "extension": 14,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 15,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      }
+    ]
+  },
+  "tree_minimum_board_witness": {
+    "n": 3,
+    "S_ids": [
+      0,
+      1,
+      6
+    ],
+    "L_ids": [
+      2,
+      3,
+      4,
+      5,
+      8
+    ],
+    "R_ids": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "full_g": 0,
+    "pair_only_g": 3,
+    "full_child_g": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "pair_child_g": [
+      0,
+      1,
+      2,
+      2,
+      1
+    ],
+    "all_extensions": [
+      {
+        "extension": 0,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 3
+      },
+      {
+        "extension": 1,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 0
+      },
+      {
+        "extension": 2,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 1
+      },
+      {
+        "extension": 3,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 4,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 2
+      },
+      {
+        "extension": 5,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 6,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 7,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 8,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 2
+      },
+      {
+        "extension": 9,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 10,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 0
+      },
+      {
+        "extension": 11,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 12,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 1
+      },
+      {
+        "extension": 13,
+        "full_safe": false,
+        "pair_safe": true,
+        "full_g": null,
+        "pair_g": 0
+      },
+      {
+        "extension": 14,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 15,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 16,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 1,
+        "pair_g": 1
+      },
+      {
+        "extension": 17,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 18,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 0
+      },
+      {
+        "extension": 19,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 20,
+        "full_safe": true,
+        "pair_safe": true,
+        "full_g": 0,
+        "pair_g": 0
+      },
+      {
+        "extension": 21,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 22,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 23,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 24,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 25,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 26,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 27,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 28,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 29,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 30,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      },
+      {
+        "extension": 31,
+        "full_safe": false,
+        "pair_safe": false,
+        "full_g": null,
+        "pair_g": null
+      }
+    ]
+  },
+  "small_tree_exclusions": [
+    {
+      "n": 1,
+      "all_safe_sets": 2,
+      "tree_value_change_hits": 0
+    },
+    {
+      "n": 2,
+      "all_safe_sets": 15,
+      "tree_value_change_hits": 0
+    }
+  ],
+  "B344_original_verdict": "PARTIAL",
+  "B344_partial_result": "Unique minimum connecting tree is K1,3 with triple on all leaves; broader parity classification not proved.",
+  "sha256": {
+    "scripts/round44_tree_and_clique.py": "2dfa242993045125eb3d58819640091fa5af304b3d69aeef9623044e62d29755",
+    "scripts/round43_b350_minimum.py": "f9f42f3fbdd6f77b00c0fdb3b801d6def821d229ad2b6920d8f0f97141d228b3",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7"
+  }
+}
