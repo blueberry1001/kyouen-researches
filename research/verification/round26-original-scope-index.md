@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は115件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は118件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,9 +13,9 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 485 |
-| PARTIAL | 14 |
-| REFUTED | 31 |
+| NOT_AUDITED | 482 |
+| PARTIAL | 16 |
+| REFUTED | 32 |
 | SCOPE_UNCLEAR | 3 |
 | SUPPORTED | 67 |
 
@@ -72,7 +72,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B044](../hypothesis-bank-2026-09-27.md#L103) | [存在] 対称性を壊すことが必要な必勝手。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B045](../hypothesis-bank-2026-09-27.md#L104) | [統計] 高対称な安全集合は極大サイズの両端に偏る。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B046](../hypothesis-bank-2026-09-27.md#L105) | [存在] 幾何的鏡映ではない固定ペア戦略で解ける残局面。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B047](../hypothesis-bank-2026-09-27.md#L106) | [全称・大胆] 2点制約だけの対称P局面は対合証明を持つ。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
+| [B047](../hypothesis-bank-2026-09-27.md#L106) | [全称・大胆] 2点制約だけの対称P局面は対合証明を持つ。 | REFUTED | [round31-b047-odd-cycle-counterexample.md](round31-b047-odd-cycle-counterexample.md) |
 | [B048](../hypothesis-bank-2026-09-27.md#L107) | [統計] 軌道数は合法手数より必勝手の多さを説明する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B049](../hypothesis-bank-2026-09-27.md#L108) | [存在] 同じ残余自己同型群でも勝敗は逆になる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B050](../hypothesis-bank-2026-09-27.md#L109) | [構造] 5×5の一石nimber=3は共通の商ゲームで説明できる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
@@ -350,8 +350,8 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B322](../hypothesis-bank-round2-2026-09-27.md#L71) | [全称・大胆] 飽和開始層で欠ける正のnimberは2の冪だけ。 | PARTIAL | [round28-seven-board-original-verdicts.md](round28-seven-board-original-verdicts.md) |
 | [B323](../hypothesis-bank-round2-2026-09-27.md#L72) | [存在] 飽和開始層に0が欠ける盤がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B324](../hypothesis-bank-round2-2026-09-27.md#L73) | [統計] 天井達成局面は極大拡張のサイズ分布が広いだけでなく平坦。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B325](../hypothesis-bank-round2-2026-09-27.md#L74) | [存在・大胆] 天井達成局面は合法手数の小さい余裕で作れる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
-| [B326](../hypothesis-bank-round2-2026-09-27.md#L75) | [全称・大胆] g=h≥3の局面には、対称性ではまとめられない勝ち手がある。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B325](../hypothesis-bank-round2-2026-09-27.md#L74) | [存在・大胆] 天井達成局面は合法手数の小さい余裕で作れる。 | PARTIAL | [round30-ceiling-orbit-finite-audit.md](round30-ceiling-orbit-finite-audit.md) |
+| [B326](../hypothesis-bank-round2-2026-09-27.md#L75) | [全称・大胆] g=h≥3の局面には、対称性ではまとめられない勝ち手がある。 | PARTIAL | [round30-ceiling-orbit-finite-audit.md](round30-ceiling-orbit-finite-audit.md) |
 | [B327](../hypothesis-bank-round2-2026-09-27.md#L76) | [存在] 局所天井への不足が一手で大きく減る。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B328](../hypothesis-bank-round2-2026-09-27.md#L77) | [統計] 最大nimberを作る三石配置は一直線型に偏る。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B329](../hypothesis-bank-round2-2026-09-27.md#L78) | [構造] nimberの穴は子の値集合の必須対で説明できる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |

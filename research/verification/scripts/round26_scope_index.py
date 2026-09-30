@@ -161,6 +161,10 @@ review('B362 B367 B369', 'SUPPORTED', 'finite_witness',
        'round29-fault-witness-audit.md', '独立幾何で原文の故障耐性・解除割合・最大集合不要石の具体的証人を照合。旧決着の監査。')
 review('B368', 'REFUTED', 'finite_counterexample_and_exhaustion',
        'round29-fault-witness-audit.md', '3×3全512部分集合の極大は全て5石。最小極大の石2を除いても元の空点は全て禁止。')
+review('B047', 'REFUTED', 'finite_counterexample_with_exact_residual_game',
+       'round31-b047-odd-cycle-counterexample.md', '5×5の6石から残余C5を正確に実現。頂点推移的Pで合法点5個なので固定点なしの応答対合は不可能。')
+review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
+       'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',
        'finite_complete_classification_and_witness', 'round27-fixed-response-audit.md',
        '原文の固定盤量化を全状態再計算・全グラフ構成で検査。無限の全盤主張へ外挿しない。')

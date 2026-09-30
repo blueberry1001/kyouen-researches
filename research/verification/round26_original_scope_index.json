@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 115,
+  "reviewed_originals": 118,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 485,
-    "PARTIAL": 14,
+    "NOT_AUDITED": 482,
+    "PARTIAL": 16,
     "SUPPORTED": 67,
-    "REFUTED": 31,
+    "REFUTED": 32,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "42491308570d4c1ec3b935f3d4ccefe132289a8416ef3a70cad9272fca09a7de",
+  "index_source_sha256": "203a2612ee9a1f04b4a8fea994819e50ca5bbe4192ffbbb7630e8709b3c45aa7",
   "rows": [
     {
       "id": "B001",
@@ -4920,6 +4920,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round31-b047-odd-cycle-counterexample.md",
+          "heading_line": 1,
+          "heading": "# B047反証：頂点推移的な二点制約P局面でも固定ペアはない",
+          "joint_heading_ids": [
+            "B047"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round4-batch-b002-b091.md",
           "heading_line": 603,
           "heading": "## B047 [全称・大胆] 2 点制約だけの対称 P 局面は対合証明を持つ",
@@ -5108,10 +5118,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_with_exact_residual_game",
+      "preferred_report": "round31-b047-odd-cycle-counterexample.md",
+      "reason": "5×5の6石から残余C5を正確に実現。頂点推移的Pで合法点5個なので固定点なしの応答対合は不可能。",
       "additional_reports": []
     },
     {
@@ -44883,6 +44893,17 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round30-ceiling-orbit-finite-audit.md",
+          "heading_line": 1,
+          "heading": "# B325/B326：7×7の天井・軌道の有限監査",
+          "joint_heading_ids": [
+            "B325",
+            "B326"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round5-batch-b301-b400-followup.md",
           "heading_line": 52,
           "heading": "## B325 [存在・大胆] 天井達成局面は合法手数の小さい余裕で作れる 追撃",
@@ -44982,10 +45003,10 @@
           "weakening_mentioned": true
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_census_and_small_board_crosscheck",
+      "preferred_report": "round30-ceiling-orbit-finite-audit.md",
+      "reason": "7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。",
       "additional_reports": []
     },
     {
@@ -45017,12 +45038,23 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round30-ceiling-orbit-finite-audit.md",
+          "heading_line": 1,
+          "heading": "# B325/B326：7×7の天井・軌道の有限監査",
+          "joint_heading_ids": [
+            "B325",
+            "B326"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "finite_complete_census_and_small_board_crosscheck",
+      "preferred_report": "round30-ceiling-orbit-finite-audit.md",
+      "reason": "7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。",
       "additional_reports": []
     },
     {
@@ -74356,6 +74388,8 @@
     "round3-batch-grp8.md": "5e73d2156071297d2d02d570911f04303c9d77fa6368f78d690b27f004575dc7",
     "round3-batch-grp9.md": "c4819b8e8623cfe8b7da258cc017f5f3d742102bd04ca8795350bc38de7c3ae5",
     "round3-batch-push2.md": "1573d9745eb239ded800bde968c5f7803584f26637e5d43254480dffe5180d1e",
+    "round30-ceiling-orbit-finite-audit.md": "66eb1a4bede5e14989ce7e4728c3966c65ee2dd4a2548fcfef98f9685926f66b",
+    "round31-b047-odd-cycle-counterexample.md": "f58270a47e04502cc8d6732027503d01cabed803f141d4e2b25e8b1bf047e875",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",

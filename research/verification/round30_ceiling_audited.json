@@ -1,0 +1,30 @@
+{
+  "B325_original": "PARTIAL",
+  "B326_original": "PARTIAL",
+  "n4_independent_curve_height_and_orbit_check": true,
+  "n7_ceiling_g_ge3": 58123224,
+  "n7_ceiling_stabilizer_ge4": 0,
+  "n7_minimum_legal_minus_h": {
+    "0": 0,
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 2,
+    "5": 2,
+    "6": 4,
+    "7": 5,
+    "8": 9,
+    "9": 17,
+    "10": 28
+  },
+  "scope": "n7 height/orbit census uses one new DP on independently validated safe layers. n4 was checked by a separate Python recurrence. Finite support is not a proof of either infinite original.",
+  "sha256": {
+    "scripts/round30_ceiling_orbits.cpp": "a2d55fc2721da25735df5321f530ab1624c7f05f1aeb0616c9f210bf461cff6b",
+    "scripts/round30_ceiling_verify.py": "aa1efa4d7c2c1166ce468a0b9b612b1d3a8bcceaef5949df9f253b61b920c0b6",
+    "scripts/kc_core.h": "d98df31b219d8121314969dc3c7be6618ff6d42090df19c3179b9a281efd422c",
+    "scripts/round27_response_graphs.py": "b284c4cdd8d4af8aa604797f9bc68d2856598c50a91987d221ef336c904befc5",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "round30_n4_ceiling.json": "f6a58113c3fc42128d52e4c4d766f9486de7909f11fcaf7ca4fa7afee51f8255",
+    "round30_n7_ceiling.json": "09e005101876d47ea51e7b886d7b4bc6cfe463f0855beef4f109433a05724c2b"
+  }
+}
