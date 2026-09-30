@@ -163,6 +163,50 @@ handoff root 525 件に限定した。
 **main df-pn bounds を deep exact states から隔離する設計が実際に機能する**
 ことを確認した。
 
+## root-only threshold scan
+
+flat local memo 版の root-only policy で `v=60` を 60 秒ずつ測定した。
+各 arm fresh process、memo=2^24、exact budget=200,000。
+
+| exact-legal | outcome | root pn | root dn | df-pn exp | exact calls | exact nodes | abort | handoff WIN | handoff LOSS |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 44 | TIMEOUT | 9,582 | 5,505 | 496,746 | 853 | 17,346,560 | 0 | 345 | 507 |
+| 48 | TIMEOUT | 6,441 | 5,306 | 345,640 | 618 | 19,951,616 | 5 | 265 | 347 |
+| 52 | TIMEOUT | 4,797 | 5,143 | 251,612 | 249 | 21,250,048 | 32 | 215 | 1 |
+| 56 | TIMEOUT | 2,777 | 4,104 | 101,042 | 250 | 23,810,048 | 36 | 211 | 2 |
+
+全 arm root は未解決なので、pn/dn の大小を解決距離として比較しない。
+一方で threshold を上げるほど wall time のより多くを exact DFS が引き受け、
+L56 でも 250 calls 中 214 件は budget 内で決着している。
+
+L52/L56 で handoff result がほぼ WIN 側だけになるのは目立つため、
+単なる速度指標として扱わず、発火する深さ/parity が変わった可能性も含めて
+今後の診断対象とする。
+
+この結果を受けて、center 後の20二石 root を L56 でも直接 sweep する。
+
+## persistent separate exact cache
+
+root-only の per-handoff local cache に加え、deep exact solved state を
+**main df-pn TT とは別の固定 cache に保持し、handoff 間で再利用する**
+`--exact-publish=separate` も試した。
+
+60秒の同時比較（L44）:
+
+| policy | outcome | df-pn exp | main TT used | main solved | exact calls | exact nodes | TT eviction |
+|---|---|---:|---:|---:|---:|---:|---:|
+| publish-all | TIMEOUT | 444,385 | 8,271,328 | 7,827,761 | 482 | 7,827,456 | open 17 / solved 8 |
+| root-only | TIMEOUT | 436,486 | 436,486 | 614 | 487 | 8,388,608 | 0 |
+| separate | TIMEOUT | 439,250 | 439,250 | 629 | 494 | 8,089,217 | 0 |
+
+この短時間測定では separate cache に明確な優位は見えない。
+root-only と separate は handoff 完了数・exact work・df-pn work が近く、
+両方とも main TT flooding を防げている。
+
+したがって当面はより単純な **root-only** を主実験に使う。
+separate mode は残すが、cache size や root 間 overlap の専用実験なしに
+優位とは主張しない。
+
 ## 現時点の判断
 
 hybrid は **正しさ回帰を通過し、11x11 でも実際に仕事をしている**。
