@@ -340,6 +340,35 @@ private:
         log_->flush();
     }
 
+    // TIE-BREAK between children with EQUAL proof number, applied only
+    // when the numbers are equal (so it can never change correctness --
+    // b1 is only ever a choice of which equally-bounded child to dig
+    // first). Ties are extremely common early in a search, which is
+    // why the tie-break has outsized influence on the order in which
+    // subproofs are visited.
+    //
+    // Modes (--tiebreak=):
+    //   asc  (0, default) legal count ASC,  then canonical key ASC
+    //   desc (1)         legal count DESC, then canonical key DESC
+    //   key  (2)         canonical key ASC only (no count term)
+    //
+    // The `desc` rule is the one that helped the DFS solver in the
+    // preregistered depth-5 experiment
+    // (cpp/solvers/kyouen_solver_10_depth5_max_first.cpp).
+    //
+    // NOTE from the v=60 child diagnostic (N11-DFPN-CHILDREN.md): all 20
+    // root children have legal=119, so at the root the count term is
+    // inert for every mode and selection falls through to the key term.
+    // The rule still differs at deeper nodes, where counts do vary.
+    bool tie_better(const Gen& g,int i,int b) const {
+        const GChild& ci=g.ch[(std::size_t)i];
+        const GChild& cb=g.ch[(std::size_t)b];
+        if(ci.count!=cb.count)
+            return tiebreak_desc_ ? ci.count>cb.count : ci.count<cb.count;
+        return tiebreak_desc_ ? (cb.key<ci.key) : (ci.key<cb.key);
+    }
+    bool tiebreak_desc_=false;
+
     static std::uint32_t sadd(std::uint32_t a,std::uint32_t b){
         std::uint64_t s=(std::uint64_t)a+b;
         return s>=INF?INF:(std::uint32_t)s;
@@ -707,15 +736,11 @@ private:
                 else if(isor){
                     if(g.ch[(std::size_t)i].pn<g.ch[(std::size_t)b1].pn) better=true;
                     else if(g.ch[(std::size_t)i].pn==g.ch[(std::size_t)b1].pn &&
-                        (g.ch[(std::size_t)i].count<g.ch[(std::size_t)b1].count ||
-                         (g.ch[(std::size_t)i].count==g.ch[(std::size_t)b1].count &&
-                          g.ch[(std::size_t)i].key<g.ch[(std::size_t)b1].key))) better=true;
+                        tie_better(g,i,b1)) better=true;
                 }else{
                     if(g.ch[(std::size_t)i].dn<g.ch[(std::size_t)b1].dn) better=true;
                     else if(g.ch[(std::size_t)i].dn==g.ch[(std::size_t)b1].dn &&
-                        (g.ch[(std::size_t)i].count<g.ch[(std::size_t)b1].count ||
-                         (g.ch[(std::size_t)i].count==g.ch[(std::size_t)b1].count &&
-                           g.ch[(std::size_t)i].key<g.ch[(std::size_t)b1].key))) better=true;
+                        tie_better(g,i,b1)) better=true;
                 }
                 if(better){ b2=b1; b1=i; }
                 else{
@@ -921,6 +946,9 @@ public:
     // pn/dn, solved status and legal count logged on completion.
     void set_track_children(bool b){ track_children_=b; }
     bool tracking_children() const { return track_children_; }
+    // Tie-break mode: false = count ASC then key ASC (baseline),
+    // true = count DESC then key DESC (the DFS depth-5 winner).
+    void set_tiebreak_desc(bool b){ tiebreak_desc_=b; }
 
 private:
     std::ostream* log_=&std::cerr;
@@ -947,7 +975,7 @@ static std::string outcome_str(int o){ return o>0?"WIN":(o<0?"LOSS":"TIMEOUT"); 
 
 template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
-               bool do_empty,bool do_reps,bool do_children,
+               bool do_empty,bool do_reps,bool do_children,bool tiebreak_desc,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -960,7 +988,9 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.attach_log(L);
     solver.attach_csv(C);
     solver.set_track_children(do_children);
-    L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()<<std::endl;
+    solver.set_tiebreak_desc(tiebreak_desc);
+    L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
+     <<" tiebreak="<<(tiebreak_desc?"desc":"asc")<<std::endl;
     L.flush();
     // Deadline counts from the first root actually started, not from solver
     // construction (which builds the ~8M-entry forbidden table). Setting it
@@ -1072,7 +1102,7 @@ int main(int argc,char**argv){
     try{
         int n=11;
         unsigned pow=26;
-        bool reps=false, empty=false, children=false;
+        bool reps=false, empty=false, children=false, tiebreak_desc=false;
         std::string only="";
         double budget_s=0;
         std::string log_path="", csv_path="", roots_path="";
@@ -1088,8 +1118,9 @@ int main(int argc,char**argv){
             else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
             else if(a.rfind("--roots-csv=",0)==0)roots_path=a.substr(12);
             else if(a=="--children")children=true;
+            else if(a=="--tiebreak=desc")tiebreak_desc=true;
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc]\n";
                 return 2;
             }
         }
@@ -1114,11 +1145,11 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,*lp,*cp,&total_exp,roots_path); break;
+            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
+            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
+            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
+            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
+            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
