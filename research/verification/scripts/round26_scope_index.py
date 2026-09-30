@@ -189,6 +189,8 @@ review('B525', 'REFUTED', 'finite_whole_circle_counterexample',
        'round22-b252-one-circle-versus-scattered.md', '4×4の中央八点真円の全70四点組を丸ごと解除し空盤g=0→1。既存B252証人はB525の全称にも直接反例。')
 review('B345', 'REFUTED', 'sole_minimal_triple_counterexample_and_minimum_legal_size',
        'round38-b345-sole-triple-clique-counterexample.md', '5×5のR=一二点辺+一三点辺。二点競合はK2+K1+K1、唯一の三点辺でg=1→3。全16拡張検算、非退化の最小合法点数4。')
+review('B065', 'PARTIAL', 'finite_complete_exclusion_through_n7',
+       'round39-b065-seven-board-exclusion.md', '7×7全179810350安全集合で二点競合なし候補137292局面を二方式検算、最大g3。全n≤7の除外により証人はn≥8、無界全盤は未決着。')
 review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
        'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',

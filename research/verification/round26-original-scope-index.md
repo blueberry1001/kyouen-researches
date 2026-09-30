@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は131件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は132件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,8 +13,8 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 469 |
-| PARTIAL | 16 |
+| NOT_AUDITED | 468 |
+| PARTIAL | 17 |
 | REFUTED | 39 |
 | SCOPE_UNCLEAR | 3 |
 | SUPPORTED | 73 |
@@ -90,7 +90,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B062](../hypothesis-bank-2026-09-27.md#L127) | [全称・大胆] 三石局面のP(S)の彩色数は3以下。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B063](../hypothesis-bank-2026-09-27.md#L128) | [構造] 四石以降で初めて現れる競合グラフの最小型がある。 | SUPPORTED | [round19-b063-stone-hierarchy.md](round19-b063-stone-hierarchy.md) |
 | [B064](../hypothesis-bank-2026-09-27.md#L129) | [存在] P(S)が木でも高階制約が勝敗を変える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
+| [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | PARTIAL | [round39-b065-seven-board-exclusion.md](round39-b065-seven-board-exclusion.md) |
 | [B066](../hypothesis-bank-2026-09-27.md#L131) | [統計] 二点競合の近似が外れるのは高階制約の重なりが大きい場所。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B067](../hypothesis-bank-2026-09-27.md#L132) | [全称・大胆] 終盤のP(S)には大きな誘導奇サイクルがない。 | REFUTED | [round34-b067-induced-seven-cycle.md](round34-b067-induced-seven-cycle.md) |
 | [B068](../hypothesis-bank-2026-09-27.md#L133) | [存在] 同じP(S)の次数列・スペクトルでも勝敗が違う。 | SUPPORTED | [round34-b068-cospectral-opposite-games.md](round34-b068-cospectral-opposite-games.md) |
