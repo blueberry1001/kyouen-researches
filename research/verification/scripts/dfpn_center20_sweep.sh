@@ -74,6 +74,12 @@ n=$(( ${#replies[@]} * ROUNDS ))
 echo "=== shared-TT sweep order=$ORDER rounds=$ROUNDS budget=${BUDGET}s/root memo=$MEMO entries=$n ==="
 echo "=== total expected wall ~ $(( ${#replies[@]} * ROUNDS * BUDGET / 60 )) min ==="
 
+# The solver opens --log/--csv in APPEND mode, so stale entries from an
+# earlier run with the same ORDER would be concatenated into this one and
+# every count would be wrong (seen: a 2 s smoke test left 40 entries that
+# a later 60 s run then reported as 65/60 roots). Truncate first.
+rm -f "$OUT/sweep-$ORDER.log" "$OUT/sweep-$ORDER.csv"
+
 "$D" --n=11 --memo="$MEMO" --budget="$BUDGET" \
      --roots-csv="$csv" \
      --log="$OUT/sweep-$ORDER.log" --csv="$OUT/sweep-$ORDER.csv" \
