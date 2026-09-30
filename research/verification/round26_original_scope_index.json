@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 127,
+  "reviewed_originals": 129,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 473,
+    "NOT_AUDITED": 471,
     "PARTIAL": 16,
-    "SUPPORTED": 72,
-    "REFUTED": 36,
+    "SUPPORTED": 73,
+    "REFUTED": 37,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "fb44a174e069e95814e438b593ebed5a2dd56aa26bad503365d280b7608a7e0d",
+  "index_source_sha256": "83f2c9c7ab58ea9a65f6621fbeef202f89cd39648769c819c5d366c918102f87",
   "rows": [
     {
       "id": "B001",
@@ -47231,12 +47231,38 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round37-residual-original-witness-audit.md",
+          "heading_line": 1,
+          "heading": "# B342・B346の原文残余辺操作を再検算",
+          "joint_heading_ids": [
+            "B342",
+            "B346"
+          ],
+          "labels_in_section": [
+            {
+              "line": 6,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "**B342 REFUTED。** 4×4のSの点ID=[0,2]、座標={(0,0),(2,0)}。"
+            },
+            {
+              "line": 15,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "**B346 SUPPORTED。** 3×3のSの点ID=[0,1,4]、座標={(0,0),(1,0),(1,1)}。"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_with_forest_and_single_deletion",
+      "preferred_report": "round37-residual-original-witness-audit.md",
+      "reason": "4×4のS=[0,2]、二点競合は五辺マッチング。極小三点辺[1,10,12]の単独除去でg=5→0を独立全安全mex検算。",
       "additional_reports": []
     },
     {
@@ -47561,12 +47587,38 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round37-residual-original-witness-audit.md",
+          "heading_line": 1,
+          "heading": "# B342・B346の原文残余辺操作を再検算",
+          "joint_heading_ids": [
+            "B342",
+            "B346"
+          ],
+          "labels_in_section": [
+            {
+              "line": 6,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "**B342 REFUTED。** 4×4のSの点ID=[0,2]、座標={(0,0),(2,0)}。"
+            },
+            {
+              "line": 15,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "**B346 SUPPORTED。** 3×3のSの点ID=[0,1,4]、座標={(0,0),(1,0),(1,1)}。"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_pair_synergy_witness",
+      "preferred_report": "round37-residual-original-witness-audit.md",
+      "reason": "3×3のS=[0,1,4]、極小三点辺二つの単独除去はg0、同時除去だけg3。既存証人を原文照合・全安全mex再検算。",
       "additional_reports": []
     },
     {
@@ -74592,6 +74644,7 @@
     "round34-b068-cospectral-opposite-games.md": "67181c6baec70a7eb0b7a731767e5ff0693773aa186b0135e655c9995cef1248",
     "round35-empty-intersection-minimum.md": "d73713330dc6dd317fbd5a437ed7e32e5ba3079a99ed572c83b0264364ea323b",
     "round36-random-original-witness-audit.md": "fb24983fb4943654438cfd99e765d48febb0ac3e39145e6128ac14ea09092881",
+    "round37-residual-original-witness-audit.md": "67813a8a23c0013805fe9fbb971e48145df498f9b8b62baf4eb6ea8996383d68",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",
