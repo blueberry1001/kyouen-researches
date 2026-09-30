@@ -42,6 +42,11 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B349', 'SUPPORTED', 'general_minimum_classification_and_finite_realizations',
+       'round40-b349-minimum-four-edge-classification.md',
+       '二点競合ありの最小合法点数5・全9型を証明し全型を格子実現。競合なしを含める読みの最小4・単独辺1型も分類。')
+
+
 review('B211 B212 B215 B216 B220 B541 B546 B550', 'SUPPORTED', 'general_proof',
        'round4-fixed-width.md', '全固定幅の一様終局定理。必要な短い二行盤と区間証人も全数検査。')
 review('B213 B219 B544 B555 B556', 'REFUTED', 'general_impossibility',
