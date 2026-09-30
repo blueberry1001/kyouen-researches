@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は121件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は124件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 479 |
+| NOT_AUDITED | 476 |
 | PARTIAL | 16 |
-| REFUTED | 33 |
+| REFUTED | 34 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 69 |
+| SUPPORTED | 71 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -546,10 +546,10 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B518](../hypothesis-bank-round2-2026-09-27.md#L362) | [存在] 三点のどの二点を削除しても不変だが、三点全部で反転する。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B519](../hypothesis-bank-round2-2026-09-27.md#L363) | [全称・大胆] 最小反転削除集合は共円・共線になりやすいだけでなく、それを避けられない。 | NOT_AUDITED | 旧個票参照4箇所（JSON） |
 | [B520](../hypothesis-bank-round2-2026-09-27.md#L364) | [存在] 最大集合をすべて壊しても最適勝者と全初手分類は変わらない。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
-| [B521](../hypothesis-bank-round2-2026-09-27.md#L370) | [全称] 4×4はどの二つの禁止四点を同時解除しても後手勝ち。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
+| [B521](../hypothesis-bank-round2-2026-09-27.md#L370) | [全称] 4×4はどの二つの禁止四点を同時解除しても後手勝ち。 | SUPPORTED | [round19-rule-removal-audit.md](round19-rule-removal-audit.md) |
 | [B522](../hypothesis-bank-round2-2026-09-27.md#L371) | [存在] 4×4の三つの禁止解除で勝者が反転する。 | SUPPORTED | [round19-rule-removal-audit.md](round19-rule-removal-audit.md) |
-| [B523](../hypothesis-bank-round2-2026-09-27.md#L372) | [構造] 最小反転解除族は共有する三点を持つ。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
-| [B524](../hypothesis-bank-round2-2026-09-27.md#L373) | [存在] 共通点を一つも持たない最小反転解除族がある。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
+| [B523](../hypothesis-bank-round2-2026-09-27.md#L372) | [構造] 最小反転解除族は共有する三点を持つ。 | REFUTED | [round35-empty-intersection-minimum.md](round35-empty-intersection-minimum.md) |
+| [B524](../hypothesis-bank-round2-2026-09-27.md#L373) | [存在] 共通点を一つも持たない最小反転解除族がある。 | SUPPORTED | [round35-empty-intersection-minimum.md](round35-empty-intersection-minimum.md) |
 | [B525](../hypothesis-bank-round2-2026-09-27.md#L374) | [全称・大胆] 一つの真円の制約を全部解除しても4×4の空盤勝者は変わらない。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B526](../hypothesis-bank-round2-2026-09-27.md#L375) | [存在] 一つの直線の制約を全部解除すると4×4の勝者が変わる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B527](../hypothesis-bank-round2-2026-09-27.md#L376) | [構造] 禁止追加による勝敗反転には局所的な臨界証明がある。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |

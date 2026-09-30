@@ -1,0 +1,401 @@
+{
+  "B524_original_verdict": "SUPPORTED",
+  "B523_original_verdict": "REFUTED",
+  "n": 4,
+  "minimum_cardinality": 3,
+  "removed_indices": [
+    3,
+    78,
+    97
+  ],
+  "removed_ids": [
+    [
+      0,
+      1,
+      6,
+      12
+    ],
+    [
+      1,
+      7,
+      8,
+      14
+    ],
+    [
+      2,
+      4,
+      7,
+      11
+    ]
+  ],
+  "removed_coordinates": [
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ]
+  ],
+  "common_intersection": [],
+  "all_eight_subfamilies": [
+    {
+      "subset": 0,
+      "removed_indices": [],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5811,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1825,
+        "1": 2192,
+        "2": 1124,
+        "3": 574,
+        "4": 88,
+        "5": 8
+      },
+      "maximum_size": 7,
+      "maximum_count": 64
+    },
+    {
+      "subset": 1,
+      "removed_indices": [
+        3
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5854,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1820,
+        "1": 2194,
+        "2": 1129,
+        "3": 615,
+        "4": 87,
+        "5": 9
+      },
+      "maximum_size": 7,
+      "maximum_count": 73
+    },
+    {
+      "subset": 2,
+      "removed_indices": [
+        78
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5868,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1855,
+        "1": 2225,
+        "2": 1046,
+        "3": 634,
+        "4": 96,
+        "5": 12
+      },
+      "maximum_size": 7,
+      "maximum_count": 88
+    },
+    {
+      "subset": 3,
+      "removed_indices": [
+        3,
+        78
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5913,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1862,
+        "1": 2223,
+        "2": 1052,
+        "3": 646,
+        "4": 106,
+        "5": 24
+      },
+      "maximum_size": 8,
+      "maximum_count": 1
+    },
+    {
+      "subset": 4,
+      "removed_indices": [
+        97
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5835,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1802,
+        "1": 2177,
+        "2": 1138,
+        "3": 616,
+        "4": 92,
+        "5": 10
+      },
+      "maximum_size": 7,
+      "maximum_count": 67
+    },
+    {
+      "subset": 5,
+      "removed_indices": [
+        3,
+        97
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5878,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1797,
+        "1": 2177,
+        "2": 1144,
+        "3": 655,
+        "4": 94,
+        "5": 11
+      },
+      "maximum_size": 7,
+      "maximum_count": 76
+    },
+    {
+      "subset": 6,
+      "removed_indices": [
+        78,
+        97
+      ],
+      "g0": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5892,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1832,
+        "1": 2210,
+        "2": 1060,
+        "3": 676,
+        "4": 100,
+        "5": 14
+      },
+      "maximum_size": 7,
+      "maximum_count": 91
+    },
+    {
+      "subset": 7,
+      "removed_indices": [
+        3,
+        78,
+        97
+      ],
+      "g0": 2,
+      "child_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "safe_states": 5937,
+      "all_safe_states_independent_mex_checked": true,
+      "g_histogram": {
+        "0": 1838,
+        "1": 2205,
+        "2": 1068,
+        "3": 687,
+        "4": 112,
+        "5": 26,
+        "6": 1
+      },
+      "maximum_size": 8,
+      "maximum_count": 1
+    }
+  ],
+  "lower_bound_source": "round19_rule_pair_lower.json (previously certified full one/pair census)",
+  "sha256": {
+    "scripts/round35_minimum_family_verify.py": "1f7b0ce1e1aa6c6cf75b02ee2271b3024f62b794d21f15d429a0b45fe0ec9057",
+    "scripts/round35_empty_intersection_search.cpp": "74f259b22a7e6c0e9eb310e718099ec5642b0335dcb53fd80a49d84509040d29",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "scripts/kc_core.h": "d98df31b219d8121314969dc3c7be6618ff6d42090df19c3179b9a281efd422c",
+    "round35_empty_intersection_search.json": "ca3192c88edc4e1611f9f73a7bcb62d9dcf7254e79d91786246d508667a28379",
+    "round19_rule_pair_lower.json": "9201fd7adcdda6800b0da077c31167ca353677568178c179105e2681d220a324",
+    "round19-rule-removal-audit.md": "44cc6ad3605b26646dc1eee31e8f48bd33b09f6c0b2c41e82dc07c73dce55ef1",
+    "scripts/round19_rule_pair_lower.py": "26fb93360464999883ca94fcbf90e9e18d6f7289bbe9c166d9e43846ca09d2da"
+  }
+}

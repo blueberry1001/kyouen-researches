@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 121,
+  "reviewed_originals": 124,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 479,
+    "NOT_AUDITED": 476,
     "PARTIAL": 16,
-    "SUPPORTED": 69,
-    "REFUTED": 33,
+    "SUPPORTED": 71,
+    "REFUTED": 34,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "9a7e0993c9e2cb86aadbc4c49288850cdbbf98d12c836d3e5a7e4440620f515b",
+  "index_source_sha256": "6476761b163fc340260b8c5b07e9924c3a6ab2923c2c5d3bb6c9aad9fb21f3bc",
   "rows": [
     {
       "id": "B001",
@@ -65767,10 +65767,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_complete_exhaustion",
+      "preferred_report": "round19-rule-removal-audit.md",
+      "reason": "4×4全18721二組解除を2554D4軌道で検査し全てP。既存原文決着の採用。",
       "additional_reports": []
     },
     {
@@ -66184,11 +66184,13 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
-      "additional_reports": []
+      "original_status": "REFUTED",
+      "evidence_kind": "cardinality_minimum_counterexample",
+      "preferred_report": "round35-empty-intersection-minimum.md",
+      "reason": "基数最小の三組反転解除族の共通部分が空。共有三点を要求する全称への反例。",
+      "additional_reports": [
+        "round19-rule-removal-audit.md"
+      ]
     },
     {
       "id": "B524",
@@ -66256,6 +66258,32 @@
                 "INCONCLUSIVE"
               ],
               "exact_text": "- 判定: **INCONCLUSIVE**（前回: INCONCLUSIVE → 今回: INCONCLUSIVE）"
+            }
+          ],
+          "weakening_mentioned": false
+        },
+        {
+          "report": "round35-empty-intersection-minimum.md",
+          "heading_line": 1,
+          "heading": "# B524: 基数最小の反転解除族でも共通点は空",
+          "joint_heading_ids": [
+            "B524"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED",
+                "REFUTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B524原文SUPPORTED、B523原文REFUTED。**"
+            },
+            {
+              "line": 47,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "原文索引ではその報告を根拠にSUPPORTEDとして採用した。新規探索結果とは数えない。"
             }
           ],
           "weakening_mentioned": false
@@ -66387,10 +66415,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_cardinality_minimum_proof",
+      "preferred_report": "round35-empty-intersection-minimum.md",
+      "reason": "4×4で三組の共通点が空、全三組だけg=0→2。全8部分族全安全局面の独立mex一致と既存全単独・全ペア除外で基数最小。",
       "additional_reports": []
     },
     {
@@ -74460,6 +74488,7 @@
     "round33-b343-single-triple-switch.md": "e66eaa960e5e85cde1a42f7a3e9c0dc5e5da1324946dfcb9ecdee8fd52722a32",
     "round34-b067-induced-seven-cycle.md": "6f107c1876e12f6b70a2fa7f3ecd71b01e06238681d45174f6c72fa498bdecaf",
     "round34-b068-cospectral-opposite-games.md": "67181c6baec70a7eb0b7a731767e5ff0693773aa186b0135e655c9995cef1248",
+    "round35-empty-intersection-minimum.md": "d73713330dc6dd317fbd5a437ed7e32e5ba3079a99ed572c83b0264364ea323b",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",

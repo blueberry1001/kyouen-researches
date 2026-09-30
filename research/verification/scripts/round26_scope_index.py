@@ -170,6 +170,13 @@ review('B067', 'REFUTED', 'finite_counterexample_with_exact_height',
        'round34-b067-induced-seven-cycle.md', '4×4でh=3の全256拡張を検査。二点競合の誘導C7に弦なし。旧K(S)の計算バグの留保を解消。')
 review('B068', 'SUPPORTED', 'finite_cospectral_witness_pair',
        'round34-b068-cospectral-opposite-games.md', '6×6の二点残余のみの8頂点対で次数列・厳密特性多項式が一致、g=3と0。両256拡張と多項式行列式を独立検算。')
+review('B524', 'SUPPORTED', 'finite_witness_and_cardinality_minimum_proof',
+       'round35-empty-intersection-minimum.md', '4×4で三組の共通点が空、全三組だけg=0→2。全8部分族全安全局面の独立mex一致と既存全単独・全ペア除外で基数最小。')
+review('B523', 'REFUTED', 'cardinality_minimum_counterexample',
+       'round35-empty-intersection-minimum.md', '基数最小の三組反転解除族の共通部分が空。共有三点を要求する全称への反例。',
+       ('round19-rule-removal-audit.md',))
+review('B521', 'SUPPORTED', 'finite_complete_exhaustion',
+       'round19-rule-removal-audit.md', '4×4全18721二組解除を2554D4軌道で検査し全てP。既存原文決着の採用。')
 review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
        'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',
