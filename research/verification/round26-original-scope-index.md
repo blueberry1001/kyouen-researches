@@ -14,10 +14,10 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 | 状態 | 件数 |
 |---|---:|
 | NOT_AUDITED | 467 |
-| PARTIAL | 17 |
+| PARTIAL | 16 |
 | REFUTED | 39 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 74 |
+| SUPPORTED | 75 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -90,7 +90,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B062](../hypothesis-bank-2026-09-27.md#L127) | [全称・大胆] 三石局面のP(S)の彩色数は3以下。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B063](../hypothesis-bank-2026-09-27.md#L128) | [構造] 四石以降で初めて現れる競合グラフの最小型がある。 | SUPPORTED | [round19-b063-stone-hierarchy.md](round19-b063-stone-hierarchy.md) |
 | [B064](../hypothesis-bank-2026-09-27.md#L129) | [存在] P(S)が木でも高階制約が勝敗を変える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
-| [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | PARTIAL | [round39-b065-seven-board-exclusion.md](round39-b065-seven-board-exclusion.md) |
+| [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | SUPPORTED | [round41-b065-pair-empty-grundy-five.md](round41-b065-pair-empty-grundy-five.md) |
 | [B066](../hypothesis-bank-2026-09-27.md#L131) | [統計] 二点競合の近似が外れるのは高階制約の重なりが大きい場所。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B067](../hypothesis-bank-2026-09-27.md#L132) | [全称・大胆] 終盤のP(S)には大きな誘導奇サイクルがない。 | REFUTED | [round34-b067-induced-seven-cycle.md](round34-b067-induced-seven-cycle.md) |
 | [B068](../hypothesis-bank-2026-09-27.md#L133) | [存在] 同じP(S)の次数列・スペクトルでも勝敗が違う。 | SUPPORTED | [round34-b068-cospectral-opposite-games.md](round34-b068-cospectral-opposite-games.md) |

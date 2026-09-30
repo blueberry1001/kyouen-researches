@@ -4,8 +4,8 @@
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
     "NOT_AUDITED": 467,
-    "PARTIAL": 17,
-    "SUPPORTED": 74,
+    "PARTIAL": 16,
+    "SUPPORTED": 75,
     "REFUTED": 39,
     "SCOPE_UNCLEAR": 3
   },
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "122a62c648f61f86c983687b104ffaf8f4c49803fc9659e139e46c3958c1933f",
+  "index_source_sha256": "ffec83e3b258476557b0c7706269906612ce3280ad9fdb0563940c2d57dc0666",
   "rows": [
     {
       "id": "B001",
@@ -6804,13 +6804,33 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round41-b065-pair-empty-grundy-five.md",
+          "heading_line": 1,
+          "heading": "# B065: 二点競合なし・Grundy値5、最小盤8×8",
+          "joint_heading_ids": [
+            "B065"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B065原文SUPPORTED。最小盤は8×8。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "PARTIAL",
-      "evidence_kind": "finite_complete_exclusion_through_n7",
-      "preferred_report": "round39-b065-seven-board-exclusion.md",
-      "reason": "7×7全179810350安全集合で二点競合なし候補137292局面を二方式検算、最大g3。全n≤7の除外により証人はn≥8、無界全盤は未決着。",
-      "additional_reports": []
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_minimum_board_proof",
+      "preferred_report": "round41-b065-pair-empty-grundy-five.md",
+      "reason": "8×8で二点辺0・合法7点・g=5。全128拡張を四方式、全67安全mexを三方式検算。n≤7全域除外と合わせ最小盤8。",
+      "additional_reports": [
+        "round39-b065-seven-board-exclusion.md"
+      ]
     },
     {
       "id": "B066",
@@ -74708,6 +74728,7 @@
     "round4-fixed-width.md": "e75d219bfc538cd3f8b0a645d2b8e24a043e25caf58b140b4317bbf1faba98d8",
     "round4-two-row-order-strategy.md": "3bd1c9bb544ab74f15320b149d050cb4bf2e9d9997324a078e5c03bf56c653d0",
     "round40-b349-minimum-four-edge-classification.md": "51bb509128d2eeaa396f4e5dd8a9fc04562135d41471d241fc196c448194098d",
+    "round41-b065-pair-empty-grundy-five.md": "deb503d036b0acb81de467178689a4d53a5a6d56782f8bbc914d88775b2712f1",
     "round5-FINAL-SUMMARY.md": "92006d512a1b70df30e11d05ffe711914908c730d4120e31c6fabf8ec486f55f",
     "round5-b141-corrections.md": "939fd458c2ab92e8863414cdb3c112a3c475250bb24bf3cd3a9477b6233e4c45",
     "round5-batch-b001-b100-final.md": "919843f66d5f257a838d32138dbc54e55dd61eaca26b86a5b58454043127707b",

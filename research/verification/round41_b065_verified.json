@@ -1,0 +1,1524 @@
+{
+  "original_verdict": "SUPPORTED",
+  "minimum_board_n": 8,
+  "n": 8,
+  "S_mask": 577868264626062371,
+  "S_ids": [
+    0,
+    1,
+    5,
+    10,
+    17,
+    37,
+    48,
+    50,
+    59
+  ],
+  "S_coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      7
+    ]
+  ],
+  "L_ids": [
+    9,
+    38,
+    39,
+    43,
+    47,
+    62,
+    63
+  ],
+  "L_coordinates": [
+    [
+      1,
+      1
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      7
+    ]
+  ],
+  "minimal_residual_edges_ids": [
+    [
+      9,
+      43,
+      47
+    ],
+    [
+      38,
+      43,
+      47
+    ],
+    [
+      38,
+      47,
+      62
+    ],
+    [
+      39,
+      47,
+      62
+    ],
+    [
+      38,
+      43,
+      63
+    ],
+    [
+      38,
+      47,
+      63
+    ],
+    [
+      43,
+      47,
+      63
+    ],
+    [
+      9,
+      62,
+      63
+    ],
+    [
+      38,
+      39,
+      62,
+      63
+    ]
+  ],
+  "minimal_residual_edges_compressed": [
+    25,
+    26,
+    50,
+    52,
+    74,
+    82,
+    88,
+    97,
+    102
+  ],
+  "pair_edge_count": 0,
+  "g": 5,
+  "child_g": {
+    "9": 4,
+    "38": 4,
+    "39": 1,
+    "43": 2,
+    "47": 3,
+    "62": 0,
+    "63": 1
+  },
+  "winning_moves": [
+    62
+  ],
+  "all_128_extensions": [
+    {
+      "compressed_extension": 0,
+      "extension_ids": [],
+      "safe": true,
+      "g": 5
+    },
+    {
+      "compressed_extension": 1,
+      "extension_ids": [
+        9
+      ],
+      "safe": true,
+      "g": 4
+    },
+    {
+      "compressed_extension": 2,
+      "extension_ids": [
+        38
+      ],
+      "safe": true,
+      "g": 4
+    },
+    {
+      "compressed_extension": 3,
+      "extension_ids": [
+        9,
+        38
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 4,
+      "extension_ids": [
+        39
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 5,
+      "extension_ids": [
+        9,
+        39
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 6,
+      "extension_ids": [
+        38,
+        39
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 7,
+      "extension_ids": [
+        9,
+        38,
+        39
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 8,
+      "extension_ids": [
+        43
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 9,
+      "extension_ids": [
+        9,
+        43
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 10,
+      "extension_ids": [
+        38,
+        43
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 11,
+      "extension_ids": [
+        9,
+        38,
+        43
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 12,
+      "extension_ids": [
+        39,
+        43
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 13,
+      "extension_ids": [
+        9,
+        39,
+        43
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 14,
+      "extension_ids": [
+        38,
+        39,
+        43
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 15,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 16,
+      "extension_ids": [
+        47
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 17,
+      "extension_ids": [
+        9,
+        47
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 18,
+      "extension_ids": [
+        38,
+        47
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 19,
+      "extension_ids": [
+        9,
+        38,
+        47
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 20,
+      "extension_ids": [
+        39,
+        47
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 21,
+      "extension_ids": [
+        9,
+        39,
+        47
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 22,
+      "extension_ids": [
+        38,
+        39,
+        47
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 23,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        47
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 24,
+      "extension_ids": [
+        43,
+        47
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 25,
+      "extension_ids": [
+        9,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 26,
+      "extension_ids": [
+        38,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 27,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 28,
+      "extension_ids": [
+        39,
+        43,
+        47
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 29,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 30,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 31,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        47
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 32,
+      "extension_ids": [
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 33,
+      "extension_ids": [
+        9,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 34,
+      "extension_ids": [
+        38,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 35,
+      "extension_ids": [
+        9,
+        38,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 36,
+      "extension_ids": [
+        39,
+        62
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 37,
+      "extension_ids": [
+        9,
+        39,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 38,
+      "extension_ids": [
+        38,
+        39,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 39,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 40,
+      "extension_ids": [
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 3
+    },
+    {
+      "compressed_extension": 41,
+      "extension_ids": [
+        9,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 42,
+      "extension_ids": [
+        38,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 43,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 44,
+      "extension_ids": [
+        39,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 45,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 46,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 47,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 48,
+      "extension_ids": [
+        47,
+        62
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 49,
+      "extension_ids": [
+        9,
+        47,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 50,
+      "extension_ids": [
+        38,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 51,
+      "extension_ids": [
+        9,
+        38,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 52,
+      "extension_ids": [
+        39,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 53,
+      "extension_ids": [
+        9,
+        39,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 54,
+      "extension_ids": [
+        38,
+        39,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 55,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 56,
+      "extension_ids": [
+        43,
+        47,
+        62
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 57,
+      "extension_ids": [
+        9,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 58,
+      "extension_ids": [
+        38,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 59,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 60,
+      "extension_ids": [
+        39,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 61,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 62,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 63,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        47,
+        62
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 64,
+      "extension_ids": [
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 65,
+      "extension_ids": [
+        9,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 66,
+      "extension_ids": [
+        38,
+        63
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 67,
+      "extension_ids": [
+        9,
+        38,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 68,
+      "extension_ids": [
+        39,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 69,
+      "extension_ids": [
+        9,
+        39,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 70,
+      "extension_ids": [
+        38,
+        39,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 71,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 72,
+      "extension_ids": [
+        43,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 73,
+      "extension_ids": [
+        9,
+        43,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 74,
+      "extension_ids": [
+        38,
+        43,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 75,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 76,
+      "extension_ids": [
+        39,
+        43,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 77,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 78,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 79,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 80,
+      "extension_ids": [
+        47,
+        63
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 81,
+      "extension_ids": [
+        9,
+        47,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 82,
+      "extension_ids": [
+        38,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 83,
+      "extension_ids": [
+        9,
+        38,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 84,
+      "extension_ids": [
+        39,
+        47,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 85,
+      "extension_ids": [
+        9,
+        39,
+        47,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 86,
+      "extension_ids": [
+        38,
+        39,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 87,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 88,
+      "extension_ids": [
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 89,
+      "extension_ids": [
+        9,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 90,
+      "extension_ids": [
+        38,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 91,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 92,
+      "extension_ids": [
+        39,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 93,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 94,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 95,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        47,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 96,
+      "extension_ids": [
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 2
+    },
+    {
+      "compressed_extension": 97,
+      "extension_ids": [
+        9,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 98,
+      "extension_ids": [
+        38,
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 99,
+      "extension_ids": [
+        9,
+        38,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 100,
+      "extension_ids": [
+        39,
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 101,
+      "extension_ids": [
+        9,
+        39,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 102,
+      "extension_ids": [
+        38,
+        39,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 103,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 104,
+      "extension_ids": [
+        43,
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 1
+    },
+    {
+      "compressed_extension": 105,
+      "extension_ids": [
+        9,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 106,
+      "extension_ids": [
+        38,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 107,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 108,
+      "extension_ids": [
+        39,
+        43,
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 109,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 110,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 111,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 112,
+      "extension_ids": [
+        47,
+        62,
+        63
+      ],
+      "safe": true,
+      "g": 0
+    },
+    {
+      "compressed_extension": 113,
+      "extension_ids": [
+        9,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 114,
+      "extension_ids": [
+        38,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 115,
+      "extension_ids": [
+        9,
+        38,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 116,
+      "extension_ids": [
+        39,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 117,
+      "extension_ids": [
+        9,
+        39,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 118,
+      "extension_ids": [
+        38,
+        39,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 119,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 120,
+      "extension_ids": [
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 121,
+      "extension_ids": [
+        9,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 122,
+      "extension_ids": [
+        38,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 123,
+      "extension_ids": [
+        9,
+        38,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 124,
+      "extension_ids": [
+        39,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 125,
+      "extension_ids": [
+        9,
+        39,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 126,
+      "extension_ids": [
+        38,
+        39,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    },
+    {
+      "compressed_extension": 127,
+      "extension_ids": [
+        9,
+        38,
+        39,
+        43,
+        47,
+        62,
+        63
+      ],
+      "safe": false,
+      "g": null
+    }
+  ],
+  "safe_extension_count": 67,
+  "search_complete": false,
+  "search_note": "Stopped at first exact witness; 47711132 safe sets visited, not a census.",
+  "sha256": {
+    "scripts/round41_audit.py": "3cd7df31bf681c8431ee6b996d2b349f10eadd62c24d76c1e7538ad51cb45dca",
+    "scripts/round41_empty_pair_bounded.cpp": "00bdd877ed1c4ce93c658783302b4151876dab1ecea5a57ca9af248ddd67136f",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "scripts/kc_core.h": "d98df31b219d8121314969dc3c7be6618ff6d42090df19c3179b9a281efd422c",
+    "round41_n8_bounded.json": "4413917490c4e58d36b44125917b57d7c5e5077b6a8c868ab90e3ce0beb8f439",
+    "round39_empty_pair_audited.json": "35167cc24d8d0fda6399091d7663efe31f55ed884126867023fade20b0d7a69f",
+    "round39-b065-seven-board-exclusion.md": "a2527321f359fd723cbdff003d928a71687bb38f3d1ae74f43f7c914bf012fc5"
+  }
+}
