@@ -24,4 +24,15 @@ for legal in 0 4 6 8; do
   done
 done
 
+# Force UNKNOWN fallbacks: each exact attempt gets only one DFS node.
+# The final proven outcomes must still match the baseline, demonstrating
+# that an aborted handoff cannot inject an unsound solved result.
+echo "=== exact abort stress: legal=8 budget=1 retries=2 ==="
+for n in 4 5 6 7; do
+  echo "--- n=$n ---"
+  "$D" --n="$n" --empty --memo="$MEMO" \
+    --exact-legal=8 --exact-budget=1 --exact-retries=2 2>&1 \
+    | grep -E '^\[done\]|^# done'
+done
+
 echo HYBRID_REGRESSION_DONE
