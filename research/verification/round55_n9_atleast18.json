@@ -1,0 +1,25 @@
+{
+  "n": 9,
+  "minimum_stone_count": 18,
+  "status": "UNKNOWN",
+  "solver": "Glucose4",
+  "python_sat_version": "1.9.dev15",
+  "wall_seconds": 300.54699999999866,
+  "variables": 1215,
+  "clauses": 31375,
+  "quad_count": 29152,
+  "formula_path": "C:\\Users\\yuubi\\AppData\\Local\\Temp\\kyouen-round55-capacity\\n9_atleast18.cnf",
+  "formula_sha256": "0cfa0637f6fece51a7d7d9175a21c579b76b50dbd90c662fe91947a2740777ac",
+  "solver_statistics": {
+    "restarts": 4136,
+    "conflicts": 2910752,
+    "decisions": 3752202,
+    "propagations": 467114857
+  },
+  "safe_set_witness": null,
+  "drat_proof": null,
+  "sha256": {
+    "scripts/round55_maximum_sat.py": "0d5579ede97b355f0cf18b101586c939ab2bf3593b0699edc579ab458e3d6e46",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7"
+  }
+}

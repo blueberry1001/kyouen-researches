@@ -3,7 +3,7 @@
 更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は161件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は162件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,9 +13,9 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 439 |
+| NOT_AUDITED | 438 |
 | PARTIAL | 23 |
-| REFUTED | 45 |
+| REFUTED | 46 |
 | SCOPE_UNCLEAR | 5 |
 | SUPPORTED | 88 |
 
@@ -106,7 +106,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B078](../hypothesis-bank-2026-09-27.md#L146) | [全称・大胆] 最小極大配置には一重被覆点がある。 | SCOPE_UNCLEAR | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
 | [B079](../hypothesis-bank-2026-09-27.md#L147) | [構造] 六石非存在は三つ組の共起だけで短く説明できる。 | PARTIAL | [round48-six-stone-cover-incidence.md](round48-six-stone-cover-incidence.md) |
 | [B080](../hypothesis-bank-2026-09-27.md#L148) | [存在] 全空点をちょうど一度ずつ禁止する極大配置。 | SUPPORTED | [round47-private-cover-and-global-minima.md](round47-private-cover-and-global-minima.md) |
-| [B081](../hypothesis-bank-2026-09-27.md#L152) | [全称] 9×9の最大安全サイズは17。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
+| [B081](../hypothesis-bank-2026-09-27.md#L152) | [全称] 9×9の最大安全サイズは17。 | REFUTED | [round55-eighteen-stone-original-counterexample.md](round55-eighteen-stone-original-counterexample.md) |
 | [B082](../hypothesis-bank-2026-09-27.md#L153) | [全称・大胆] 10×10では20石まで届く。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B083](../hypothesis-bank-2026-09-27.md#L154) | [漸近・大胆] K_n/nは2へ収束する。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B084](../hypothesis-bank-2026-09-27.md#L155) | [全称・大胆] 2nからのずれは有界。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |

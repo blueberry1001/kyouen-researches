@@ -42,6 +42,9 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B081', 'REFUTED', 'published_construction_with_independent_coordinate_certificate',
+       'round55-eighteen-stone-original-counterexample.md',
+       'モナカ氏公開図の18石を座標化し全3060四点組・禁止族・全三点曲線で安全性を独立検算。K9≥18で原文17を反証、上界18や全軌道分類は未証明。')
 review('B098', 'SUPPORTED', 'complete_small_board_saturation_jump',
        'round54-small-board-saturation-jump.md',
        '原文にn≥4の指定なし。全n2/n3集合の監査でs2=3・s3=5、差2の存在を証明。n≥4を追加した問いの決着は主張しない。')
