@@ -144,7 +144,8 @@ review('B256', 'REFUTED', 'general_impossibility',
 review('B258', 'SCOPE_UNCLEAR', 'general_result_with_quantifier_ambiguity',
        'round23-b256-symmetric-minimum.md', '全n≥4に共通必須型なし。n=2を存在量化に含む読みは自明に真で、全体判定は保留。')
 review('B251', 'PARTIAL', 'finite_exhaustion',
-       'round23-b251-six-by-six-exclusion.md', '6×6全2491単独解除を二方式で除外。存在証人があるならn≥7。')
+       'round32-b251-seven-board-exclusion.md', '7×7全6364単独解除を935軌道・二方式で除外。共有標準表全179810350局面の証明条件も検算。存在証人はn≥8。',
+       ('round23-b251-six-by-six-exclusion.md',))
 review('B333', 'REFUTED', 'finite_counterexample_and_minimum_board_proof',
        'round25-forced-length-holes.md', '6×6でWFT={7,11}、9なし。n≤5全状態の二方式検査。')
 review('B031', 'REFUTED', 'finite_counterexample_and_minimum_board_proof',

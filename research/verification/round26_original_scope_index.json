@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "203a2612ee9a1f04b4a8fea994819e50ca5bbe4192ffbbb7630e8709b3c45aa7",
+  "index_source_sha256": "5857ee2463b80593fdde97d3b0bdb975134a2991407f82120fe672743d2d313c",
   "rows": [
     {
       "id": "B001",
@@ -33589,6 +33589,16 @@
           "weakening_mentioned": false
         },
         {
+          "report": "round32-b251-seven-board-exclusion.md",
+          "heading_line": 1,
+          "heading": "# B251の7×7全単独解除を除外",
+          "joint_heading_ids": [
+            "B251"
+          ],
+          "labels_in_section": [],
+          "weakening_mentioned": false
+        },
+        {
           "report": "round4-batch-b228-b290.md",
           "heading_line": 163,
           "heading": "## B251 [存在] 禁止四点組一つを外すだけで空盤勝者が反転する",
@@ -33778,9 +33788,11 @@
       ],
       "original_status": "PARTIAL",
       "evidence_kind": "finite_exhaustion",
-      "preferred_report": "round23-b251-six-by-six-exclusion.md",
-      "reason": "6×6全2491単独解除を二方式で除外。存在証人があるならn≥7。",
-      "additional_reports": []
+      "preferred_report": "round32-b251-seven-board-exclusion.md",
+      "reason": "7×7全6364単独解除を935軌道・二方式で除外。共有標準表全179810350局面の証明条件も検算。存在証人はn≥8。",
+      "additional_reports": [
+        "round23-b251-six-by-six-exclusion.md"
+      ]
     },
     {
       "id": "B252",
@@ -74390,6 +74402,7 @@
     "round3-batch-push2.md": "1573d9745eb239ded800bde968c5f7803584f26637e5d43254480dffe5180d1e",
     "round30-ceiling-orbit-finite-audit.md": "66eb1a4bede5e14989ce7e4728c3966c65ee2dd4a2548fcfef98f9685926f66b",
     "round31-b047-odd-cycle-counterexample.md": "f58270a47e04502cc8d6732027503d01cabed803f141d4e2b25e8b1bf047e875",
+    "round32-b251-seven-board-exclusion.md": "83adda9982f32ad9af2e08c16c2b04dae22d3ad67c7d18b66db49fa784905232",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",

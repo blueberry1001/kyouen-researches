@@ -276,7 +276,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B248](../hypothesis-bank-2026-09-27.md#L383) | [構造] 勝敗証明から人間向けの不変量を逆算できる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B249](../hypothesis-bank-2026-09-27.md#L384) | [存在] 小さいゲーム値でも最小証明は大きい。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B250](../hypothesis-bank-2026-09-27.md#L385) | [構造・大胆] 多数の石を一つの「禁止領域の型」へまとめられる。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
-| [B251](../hypothesis-bank-2026-09-27.md#L391) | [存在] 禁止四点組一つを外すだけで空盤勝者が反転する。 | PARTIAL | [round23-b251-six-by-six-exclusion.md](round23-b251-six-by-six-exclusion.md) |
+| [B251](../hypothesis-bank-2026-09-27.md#L391) | [存在] 禁止四点組一つを外すだけで空盤勝者が反転する。 | PARTIAL | [round32-b251-seven-board-exclusion.md](round32-b251-seven-board-exclusion.md) |
 | [B252](../hypothesis-bank-2026-09-27.md#L392) | [存在] 円一つの禁止解除が、同数のばらばらな解除より強く効く。 | SUPPORTED | [round22-b252-one-circle-versus-scattered.md](round22-b252-one-circle-versus-scattered.md) |
 | [B253](../hypothesis-bank-2026-09-27.md#L393) | [存在] 各禁止を単独解除しても不変だが同時解除で反転する。 | SUPPORTED | [round19-rule-removal-audit.md](round19-rule-removal-audit.md) |
 | [B254](../hypothesis-bank-2026-09-27.md#L394) | [構造] 少数の禁止型が7×7の最大配置の剛性を担う。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |

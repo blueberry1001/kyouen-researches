@@ -1,0 +1,559 @@
+{
+  "n": 7,
+  "standard_outcome": 0,
+  "node_budget": 2000000,
+  "representatives_total": 935,
+  "cases": [
+    {
+      "removed_index": 4562,
+      "removed_mask": 25362432,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1689973
+    },
+    {
+      "removed_index": 4891,
+      "removed_mask": 2189557760,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1656305
+    },
+    {
+      "removed_index": 4575,
+      "removed_mask": 3221422080,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1637600
+    },
+    {
+      "removed_index": 3467,
+      "removed_mask": 17105920,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1660169
+    },
+    {
+      "removed_index": 4603,
+      "removed_mask": 5369036800,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1649747
+    },
+    {
+      "removed_index": 3036,
+      "removed_mask": 25167360,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1636874
+    },
+    {
+      "removed_index": 3021,
+      "removed_mask": 198144,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1651691
+    },
+    {
+      "removed_index": 3073,
+      "removed_mask": 41945600,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1588247
+    },
+    {
+      "removed_index": 3165,
+      "removed_mask": 8552960,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1609086
+    },
+    {
+      "removed_index": 3064,
+      "removed_mask": 330240,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1636287
+    },
+    {
+      "removed_index": 3080,
+      "removed_mask": 5368711680,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1570394
+    },
+    {
+      "removed_index": 3210,
+      "removed_mask": 12884967936,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1566650
+    },
+    {
+      "removed_index": 3234,
+      "removed_mask": 141734183424,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1544489
+    },
+    {
+      "removed_index": 2747,
+      "removed_mask": 20972800,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1610443
+    },
+    {
+      "removed_index": 2786,
+      "removed_mask": 3221227776,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1564690
+    },
+    {
+      "removed_index": 3046,
+      "removed_mask": 4831839744,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1556474
+    },
+    {
+      "removed_index": 3560,
+      "removed_mask": 274949211136,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1674931
+    },
+    {
+      "removed_index": 1075,
+      "removed_mask": 1107298308,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1533236
+    },
+    {
+      "removed_index": 2717,
+      "removed_mask": 12583680,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1607104
+    },
+    {
+      "removed_index": 2752,
+      "removed_mask": 2684355840,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1520142
+    },
+    {
+      "removed_index": 2808,
+      "removed_mask": 41947392,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1608520
+    },
+    {
+      "removed_index": 2919,
+      "removed_mask": 1099545313536,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1579275
+    },
+    {
+      "removed_index": 3053,
+      "removed_mask": 412316861952,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1582550
+    },
+    {
+      "removed_index": 3072,
+      "removed_mask": 71305728,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1601087
+    },
+    {
+      "removed_index": 3183,
+      "removed_mask": 274945049088,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1526787
+    },
+    {
+      "removed_index": 3283,
+      "removed_mask": 283472036352,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1563252
+    },
+    {
+      "removed_index": 727,
+      "removed_mask": 8606777346,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1604237
+    },
+    {
+      "removed_index": 728,
+      "removed_mask": 100728834,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1620800
+    },
+    {
+      "removed_index": 1046,
+      "removed_mask": 100663812,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1578956
+    },
+    {
+      "removed_index": 1065,
+      "removed_mask": 139586438148,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1571006
+    },
+    {
+      "removed_index": 1147,
+      "removed_mask": 2214625284,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1545608
+    },
+    {
+      "removed_index": 1413,
+      "removed_mask": 133640,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1608286
+    },
+    {
+      "removed_index": 1531,
+      "removed_mask": 2148040712,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1638140
+    },
+    {
+      "removed_index": 1540,
+      "removed_mask": 4362108936,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1542188
+    },
+    {
+      "removed_index": 1562,
+      "removed_mask": 10616840,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1607192
+    },
+    {
+      "removed_index": 2707,
+      "removed_mask": 99072,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1642132
+    },
+    {
+      "removed_index": 2785,
+      "removed_mask": 4831840512,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1666701
+    },
+    {
+      "removed_index": 2801,
+      "removed_mask": 332032,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1619686
+    },
+    {
+      "removed_index": 654,
+      "removed_mask": 553649154,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1544835
+    },
+    {
+      "removed_index": 829,
+      "removed_mask": 196620,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1647244
+    },
+    {
+      "removed_index": 849,
+      "removed_mask": 3221225484,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1588270
+    },
+    {
+      "removed_index": 885,
+      "removed_mask": 41943060,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1617440
+    },
+    {
+      "removed_index": 1126,
+      "removed_mask": 2181054468,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1547203
+    },
+    {
+      "removed_index": 1167,
+      "removed_mask": 17213554692,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1624055
+    },
+    {
+      "removed_index": 1169,
+      "removed_mask": 17594333659140,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1558634
+    },
+    {
+      "removed_index": 1212,
+      "removed_mask": 19335741444,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1616711
+    },
+    {
+      "removed_index": 1403,
+      "removed_mask": 2151678216,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1564198
+    },
+    {
+      "removed_index": 1555,
+      "removed_mask": 4429250568,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1610730
+    },
+    {
+      "removed_index": 1557,
+      "removed_mask": 35185445896200,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1541227
+    },
+    {
+      "removed_index": 2791,
+      "removed_mask": 412316862720,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1539350
+    },
+    {
+      "removed_index": 476,
+      "removed_mask": 25165842,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1623346
+    },
+    {
+      "removed_index": 640,
+      "removed_mask": 545260034,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1531774
+    },
+    {
+      "removed_index": 652,
+      "removed_mask": 8590197762,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1569885
+    },
+    {
+      "removed_index": 662,
+      "removed_mask": 4458498,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1567147
+    },
+    {
+      "removed_index": 722,
+      "removed_mask": 10737451010,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1569448
+    },
+    {
+      "removed_index": 726,
+      "removed_mask": 68727930882,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1627940
+    },
+    {
+      "removed_index": 840,
+      "removed_mask": 37748748,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1577223
+    },
+    {
+      "removed_index": 876,
+      "removed_mask": 327700,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1610882
+    },
+    {
+      "removed_index": 995,
+      "removed_mask": 66820,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1604382
+    },
+    {
+      "removed_index": 1013,
+      "removed_mask": 2148008196,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1556387
+    },
+    {
+      "removed_index": 1085,
+      "removed_mask": 8916996,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1577955
+    },
+    {
+      "removed_index": 1113,
+      "removed_mask": 1074020356,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1643161
+    },
+    {
+      "removed_index": 1162,
+      "removed_mask": 21474902020,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1588552
+    },
+    {
+      "removed_index": 1168,
+      "removed_mask": 201457668,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1624677
+    },
+    {
+      "removed_index": 1399,
+      "removed_mask": 4295491848,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1606140
+    },
+    {
+      "removed_index": 2748,
+      "removed_mask": 1099578737920,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1633667
+    },
+    {
+      "removed_index": 1062,
+      "removed_mask": 70368777733124,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1522160
+    },
+    {
+      "removed_index": 225,
+      "removed_mask": 4295098881,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1563075
+    },
+    {
+      "removed_index": 438,
+      "removed_mask": 20971530,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1580156
+    },
+    {
+      "removed_index": 481,
+      "removed_mask": 3221225490,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1506614
+    },
+    {
+      "removed_index": 658,
+      "removed_mask": 70866961410,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1539739
+    },
+    {
+      "removed_index": 704,
+      "removed_mask": 1107312642,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1530178
+    },
+    {
+      "removed_index": 730,
+      "removed_mask": 70370891726850,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1576471
+    },
+    {
+      "removed_index": 848,
+      "removed_mask": 4831838220,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1590690
+    },
+    {
+      "removed_index": 1172,
+      "removed_mask": 539230212,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1545821
+    },
+    {
+      "removed_index": 1449,
+      "removed_mask": 6292488,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1613810
+    },
+    {
+      "removed_index": 2729,
+      "removed_mask": 206158430976,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1531255
+    },
+    {
+      "removed_index": 2818,
+      "removed_mask": 687194771712,
+      "outcome": -1,
+      "states": 2000001,
+      "standard_shortcuts": 1510538
+    }
+  ],
+  "checked": 78,
+  "unknown": 78,
+  "flips": 0,
+  "interrupted": true,
+  "source_sha256": "a12c5bb7814bcc63599c52220abc18782815ef6cbf9e6b34cb24360b6da3dc35"
+}
