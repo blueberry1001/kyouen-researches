@@ -15,6 +15,7 @@ BUDGET=${BUDGET:-300}
 MEMO=${MEMO:-26}
 EXACT_BUDGET=${EXACT_BUDGET:-200000}
 EXACT_RETRIES=${EXACT_RETRIES:-2}
+LEVELS=${LEVELS:-"0 4 6 8"}
 OUT="$L/hybrid_probe"
 mkdir -p "$OUT"
 
@@ -30,7 +31,7 @@ run_arm(){
 }
 
 pids=()
-for legal in 0 4 6 8; do
+for legal in $LEVELS; do
   run_arm "$legal" &
   pids+=("$!")
 done
@@ -41,7 +42,7 @@ for p in "${pids[@]}"; do
 done
 
 echo "legal,outcome,root_pn,root_dn,expansions,solved,exact_calls,exact_nodes,exact_abort,exact_win,exact_loss,exact_stores"
-for legal in 0 4 6 8; do
+for legal in $LEVELS; do
   tag="L$legal"
   if grep -q '^\[done\]' "$OUT/$tag.log" 2>/dev/null; then
     line=$(grep '^\[done\]' "$OUT/$tag.log" | tail -1)
