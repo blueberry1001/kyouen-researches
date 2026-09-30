@@ -98,7 +98,7 @@ public:
         int first_open=-1;
         for(int j=0;j<PROBE;++j){
             if(!st_[i]){
-                lo_[i]=klo;hi_[i]=khi;st_[i]=OPEN;++used_;++puts_new_;return (int)i;
+                lo_[i]=klo;hi_[i]=khi;pn_[i]=dn_[i]=vis_[i]=0;st_[i]=OPEN;++used_;++puts_new_;return (int)i;
             }
             if(lo_[i]==klo && hi_[i]==khi) return (int)i;
             if(first_open<0 && st_[i]==OPEN && !(lo_[i]==rlo_ && hi_[i]==rhi_))
@@ -107,14 +107,14 @@ public:
         }
         if(first_open>=0){
             i=(std::size_t)first_open;
-            lo_[i]=klo;hi_[i]=khi;st_[i]=OPEN;++evictions_;return first_open;
+            lo_[i]=klo;hi_[i]=khi;pn_[i]=dn_[i]=vis_[i]=0;st_[i]=OPEN;++evictions_;return first_open;
         }
         if(lo_[h]==rlo_ && hi_[h]==rhi_){
             for(int j=0;j<PROBE;++j){
                 i=(h+(std::size_t)j)&mask_;
                 if(!(lo_[i]==rlo_ && hi_[i]==rhi_)){
                     std::uint8_t old=st_[i];
-                    lo_[i]=klo;hi_[i]=khi;st_[i]=OPEN;
+                    lo_[i]=klo;hi_[i]=khi;pn_[i]=dn_[i]=vis_[i]=0;st_[i]=OPEN;
                     if(old>=WIN){ ++evict_solved_; --solved_; }
                     else ++evictions_;
                     return (int)i;
@@ -123,7 +123,7 @@ public:
             return -1;
         }
         std::uint8_t oldh=st_[h];
-        lo_[h]=klo;hi_[h]=khi;st_[h]=OPEN;
+        lo_[h]=klo;hi_[h]=khi;pn_[h]=dn_[h]=vis_[h]=0;st_[h]=OPEN;
         if(oldh>=WIN){ ++evict_solved_; --solved_; }
         else ++evictions_;
         return (int)h;
@@ -369,6 +369,19 @@ private:
     }
     bool tiebreak_desc_=false;
 
+    // Optional exact endgame handoff. df-pn remains the outer search, but
+    // when a node has few legal moves we can try to solve that subgame by
+    // exact DFS. Only COMPLETED exact results are written back as WIN/LOSS;
+    // a node-budget exhaustion returns UNKNOWN and leaves the df-pn bounds
+    // sound. The exact DFS reuses solved entries in the same TT, so work
+    // learned by one root/sweep can help later roots too.
+    enum class ExactResult : std::uint8_t { UNKNOWN=0, WIN=1, LOSS=2 };
+    int exact_legal_=0;                    // 0 disables the hybrid
+    std::uint64_t exact_budget_=100000;    // nodes per handoff attempt
+    int exact_retries_=1;                  // attempts per TT residency
+    std::uint64_t exact_calls_=0, exact_nodes_=0, exact_aborts_=0;
+    std::uint64_t exact_trigger_win_=0, exact_trigger_loss_=0, exact_stores_=0;
+
     static std::uint32_t sadd(std::uint32_t a,std::uint32_t b){
         std::uint64_t s=(std::uint64_t)a+b;
         return s>=INF?INF:(std::uint32_t)s;
@@ -512,6 +525,100 @@ private:
         }
     }
 
+    void exact_store(const Bits& key,ExactResult r){
+        if(r==ExactResult::UNKNOWN) return;
+        int s=tt_.find(key.lo,key.hi);
+        if(s>=0 && tt_.st_[(std::size_t)s]>=PnTT::WIN){
+            const bool old_win=tt_.st_[(std::size_t)s]==PnTT::WIN;
+            const bool new_win=r==ExactResult::WIN;
+            if(old_win!=new_win) throw std::runtime_error("exact solver contradicts solved TT entry");
+            return;
+        }
+        if(s<0){
+            s=tt_.acquire(key.lo,key.hi);
+            if(s<0) throw std::runtime_error("TT full at exact_store");
+        }
+        tt_.pn_[(std::size_t)s]=(r==ExactResult::WIN)?0:INF;
+        tt_.dn_[(std::size_t)s]=(r==ExactResult::WIN)?INF:0;
+        tt_.mark_solved(s,(r==ExactResult::WIN)?PnTT::WIN:PnTT::LOSS);
+        ++exact_stores_;
+    }
+
+    ExactResult exact_prop(const TState& state,int stones,Bits legal,
+                           std::uint64_t& budget){
+        Bits key=canonical(state);
+        int s=tt_.find(key.lo,key.hi);
+        if(s>=0 && tt_.st_[(std::size_t)s]>=PnTT::WIN)
+            return tt_.st_[(std::size_t)s]==PnTT::WIN ? ExactResult::WIN : ExactResult::LOSS;
+
+        if(budget==0) return ExactResult::UNKNOWN;
+        --budget;
+        ++exact_nodes_;
+        if((exact_nodes_ & 4095ULL)==0 && deadline_s_>0){
+            double el=std::chrono::duration<double>(Clock::now()-t0_).count();
+            if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
+        }
+
+        if(!any(legal)){
+            // Side to move loses. The fixed proposition is "the original
+            // first player wins", so a terminal is true exactly when the
+            // second player is to move (odd number of stones).
+            ExactResult r=is_or(stones)?ExactResult::LOSS:ExactResult::WIN;
+            exact_store(key,r);
+            return r;
+        }
+
+        auto gb=std::make_unique<Gen>();
+        Gen& g=*gb;
+        gen_into(state,stones,legal,g,false);
+        const bool isor=is_or(stones);
+
+        // DFS ordering only affects speed. Put an already decisive solved
+        // child first, then open children with fewer legal moves, then the
+        // solved children that cannot decide this node.
+        std::sort(g.ch.begin(),g.ch.begin()+g.n,[&](const GChild& a,const GChild& b){
+            auto pri=[&](const GChild& x){
+                if(isor){
+                    if(x.st==PnTT::WIN) return 0;
+                    if(x.st==PnTT::OPEN) return 1;
+                    return 2;
+                }else{
+                    if(x.st==PnTT::LOSS) return 0;
+                    if(x.st==PnTT::OPEN) return 1;
+                    return 2;
+                }
+            };
+            int pa=pri(a),pb=pri(b);
+            if(pa!=pb) return pa<pb;
+            if(a.count!=b.count) return a.count<b.count;
+            return a.key<b.key;
+        });
+
+        bool unknown=false;
+        for(int i=0;i<g.n;++i){
+            ExactResult cr;
+            const GChild& ch=g.ch[(std::size_t)i];
+            if(ch.st==PnTT::WIN) cr=ExactResult::WIN;
+            else if(ch.st==PnTT::LOSS) cr=ExactResult::LOSS;
+            else cr=exact_prop(ch.ts,stones+1,ch.legal,budget);
+
+            if(isor && cr==ExactResult::WIN){
+                exact_store(key,ExactResult::WIN);
+                return ExactResult::WIN;
+            }
+            if(!isor && cr==ExactResult::LOSS){
+                exact_store(key,ExactResult::LOSS);
+                return ExactResult::LOSS;
+            }
+            if(cr==ExactResult::UNKNOWN) unknown=true;
+        }
+
+        if(unknown) return ExactResult::UNKNOWN;
+        ExactResult r=isor?ExactResult::LOSS:ExactResult::WIN;
+        exact_store(key,r);
+        return r;
+    }
+
     void expand(const Bits& key,const TState& state,int stones,Bits legal,int depth){
         auto gb=std::make_unique<Gen>();
         Gen& g=*gb;
@@ -521,7 +628,7 @@ private:
         int s=tt_.acquire(key.lo,key.hi);
         if(s<0) throw std::runtime_error("TT full at expand");
         tt_.pn_[(std::size_t)s]=pn; tt_.dn_[(std::size_t)s]=dn;
-        tt_.vis_[(std::size_t)s]=1;
+        tt_.vis_[(std::size_t)s]|=1u;
         if(pn==0) tt_.mark_solved(s,PnTT::WIN);
         else if(dn==0) tt_.mark_solved(s,PnTT::LOSS);
         else tt_.st_[(std::size_t)s]=PnTT::OPEN;
@@ -576,7 +683,14 @@ private:
               << " evict_solved=" << tt_.evicted_solved()
               << " maxdepth=" << max_depth_
               << " tthit=" << hits << " ttmiss=" << misses
-              << " avgprobe=" << ap << std::endl;
+              << " avgprobe=" << ap
+              << " exact_calls=" << exact_calls_
+              << " exact_nodes=" << exact_nodes_
+              << " exact_abort=" << exact_aborts_
+              << " exact_win=" << exact_trigger_win_
+              << " exact_loss=" << exact_trigger_loss_
+              << " exact_stores=" << exact_stores_
+              << std::endl;
         log_->flush();
         if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
     }
@@ -687,6 +801,32 @@ private:
                     st.back().stage=1;
                 }
             }
+            if(exact_legal_>0 && popcount(st.back().legal)<=exact_legal_){
+                int es=tt_.find(st.back().key.lo,st.back().key.hi);
+                if(es>=0 && tt_.st_[(std::size_t)es]==PnTT::OPEN){
+                    unsigned attempts=(tt_.vis_[(std::size_t)es]>>1)&0xffu;
+                    if(attempts<(unsigned)exact_retries_){
+                        tt_.vis_[(std::size_t)es]=(tt_.vis_[(std::size_t)es]&1u)
+                            | ((std::uint32_t(attempts+1)&0xffu)<<1);
+                        ++exact_calls_;
+                        std::uint64_t b=exact_budget_;
+                        ExactResult er=exact_prop(st.back().state,st.back().stones,
+                                                  st.back().legal,b);
+                        if(er==ExactResult::WIN){
+                            ++exact_trigger_win_;
+                            st.pop_back();
+                            continue;
+                        }
+                        if(er==ExactResult::LOSS){
+                            ++exact_trigger_loss_;
+                            st.pop_back();
+                            continue;
+                        }
+                        ++exact_aborts_;
+                    }
+                }
+            }
+
             int frd=st.back().depth, frs=st.back().stones;
             std::uint32_t frtp=st.back().tp, frtd=st.back().td;
             // Only the ROOT frame contributes to the child diagnostic.
@@ -949,6 +1089,17 @@ public:
     // Tie-break mode: false = count ASC then key ASC (baseline),
     // true = count DESC then key DESC (the DFS depth-5 winner).
     void set_tiebreak_desc(bool b){ tiebreak_desc_=b; }
+    void set_exact_handoff(int legal,std::uint64_t budget,int retries){
+        exact_legal_=std::max(0,legal);
+        exact_budget_=std::max<std::uint64_t>(1,budget);
+        exact_retries_=std::clamp(retries,1,255);
+    }
+    void exact_counters(std::uint64_t& calls,std::uint64_t& nodes,
+                        std::uint64_t& aborts,std::uint64_t& wins,
+                        std::uint64_t& losses,std::uint64_t& stores) const {
+        calls=exact_calls_; nodes=exact_nodes_; aborts=exact_aborts_;
+        wins=exact_trigger_win_; losses=exact_trigger_loss_; stores=exact_stores_;
+    }
 
 private:
     std::ostream* log_=&std::cerr;
@@ -976,6 +1127,7 @@ static std::string outcome_str(int o){ return o>0?"WIN":(o<0?"LOSS":"TIMEOUT"); 
 template<int N>
 static int run(const std::string& only,double budget_s,unsigned memo_power,
                bool do_empty,bool do_reps,bool do_children,bool tiebreak_desc,
+               int exact_legal,std::uint64_t exact_budget,int exact_retries,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -989,8 +1141,12 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.attach_csv(C);
     solver.set_track_children(do_children);
     solver.set_tiebreak_desc(tiebreak_desc);
+    solver.set_exact_handoff(exact_legal,exact_budget,exact_retries);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
-     <<" tiebreak="<<(tiebreak_desc?"desc":"asc")<<std::endl;
+     <<" tiebreak="<<(tiebreak_desc?"desc":"asc")
+     <<" exact_legal="<<exact_legal
+     <<" exact_budget="<<exact_budget
+     <<" exact_retries="<<exact_retries<<std::endl;
     L.flush();
     // Deadline counts from the first root actually started, not from solver
     // construction (which builds the ~8M-entry forbidden table). Setting it
@@ -1016,8 +1172,15 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
              <<" root_pn="<<fpn<<" root_dn="<<fdn
              <<" memo="<<solver.memo_used()<<"/"<<solver.memo_capacity()
              <<" solved="<<solver.memo_solved()
-             <<" solved_disc="<<solver.memo_solved_disc()
-             <<" wall_s="<<(long long)wall<<"\n";
+             <<" solved_disc="<<solver.memo_solved_disc();
+            {
+                std::uint64_t ec,en,ea,ew,el,es;
+                solver.exact_counters(ec,en,ea,ew,el,es);
+                C<<" exact_calls="<<ec<<" exact_nodes="<<en
+                 <<" exact_abort="<<ea<<" exact_win="<<ew
+                 <<" exact_loss="<<el<<" exact_stores="<<es;
+            }
+            C<<" wall_s="<<(long long)wall<<"\n";
             solver.csv_flush();
             {
                 std::uint64_t dh[64]; solver.exp_hist(dh,64);
@@ -1039,8 +1202,15 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
         L<<"[done] ["<<tag<<"] "<<outcome_str(r.outcome)
          <<" expansions="<<r.expansions
          <<" root_pn="<<r.root_pn<<" root_dn="<<r.root_dn
-         <<" memo="<<solver.memo_used()<<"/"<<solver.memo_capacity()
-         <<" wall_s="<<(long long)wall<<std::endl;
+         <<" memo="<<solver.memo_used()<<"/"<<solver.memo_capacity();
+        {
+            std::uint64_t ec,en,ea,ew,el,es;
+            solver.exact_counters(ec,en,ea,ew,el,es);
+            L<<" exact_calls="<<ec<<" exact_nodes="<<en
+             <<" exact_abort="<<ea<<" exact_win="<<ew
+             <<" exact_loss="<<el<<" exact_stores="<<es;
+        }
+        L<<" wall_s="<<(long long)wall<<std::endl;
         L.flush();
         *total_exp+=r.expansions;
         ++n_done;
@@ -1105,6 +1275,8 @@ int main(int argc,char**argv){
         bool reps=false, empty=false, children=false, tiebreak_desc=false;
         std::string only="";
         double budget_s=0;
+        int exact_legal=0, exact_retries=1;
+        std::uint64_t exact_budget=100000;
         std::string log_path="", csv_path="", roots_path="";
         for(int i=1;i<argc;++i){
             std::string a=argv[i];
@@ -1120,8 +1292,11 @@ int main(int argc,char**argv){
             else if(a=="--children")children=true;
             else if(a=="--tiebreak=asc")tiebreak_desc=false;
             else if(a=="--tiebreak=desc")tiebreak_desc=true;
+            else if(a.rfind("--exact-legal=",0)==0)exact_legal=std::stoi(a.substr(14));
+            else if(a.rfind("--exact-budget=",0)==0)exact_budget=std::stoull(a.substr(15));
+            else if(a.rfind("--exact-retries=",0)==0)exact_retries=std::stoi(a.substr(16));
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N]\n";
                 return 2;
             }
         }
@@ -1146,11 +1321,11 @@ int main(int argc,char**argv){
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
-            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
-            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
-            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
-            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
-            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,*lp,*cp,&total_exp,roots_path); break;
+            case 4: rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,*lp,*cp,&total_exp,roots_path); break;
+            case 5: rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,*lp,*cp,&total_exp,roots_path); break;
+            case 6: rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,*lp,*cp,&total_exp,roots_path); break;
+            case 7: rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,*lp,*cp,&total_exp,roots_path); break;
+            case 11: rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
