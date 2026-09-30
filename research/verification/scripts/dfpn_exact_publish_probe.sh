@@ -2,8 +2,8 @@
 # Compare exact result publication policies on center v=60.
 # baseline: no exact handoff
 # all:      exact DFS publishes every solved internal state to the df-pn TT
-# root:     exact DFS memoizes internally in a local cache and publishes only
-#           the solved handoff root to the df-pn TT
+# root:     per-handoff local cache; publish only the solved handoff root
+# separate: persistent exact cache across handoffs; publish only handoff roots
 set -euo pipefail
 
 D=${D:-/mnt/d/ghq/build11/dfpn}
@@ -28,12 +28,14 @@ run_arm(){
 run_arm baseline 0 all & p0=$!
 run_arm all "$EXACT_LEGAL" all & p1=$!
 run_arm root "$EXACT_LEGAL" root & p2=$!
+run_arm separate "$EXACT_LEGAL" separate & p3=$!
 wait "$p0"
 wait "$p1"
 wait "$p2"
+wait "$p3"
 
 echo "arm,outcome,root_pn,root_dn,expansions,memo,solved,solved_disc,evict_open,evict_solved,exact_calls,exact_nodes,exact_abort,exact_win,exact_loss,exact_stores,exact_local"
-for tag in baseline all root; do
+for tag in baseline all root separate; do
   if grep -q '^\[done\]' "$OUT/$tag.log" 2>/dev/null; then
     line=$(grep '^\[done\]' "$OUT/$tag.log" | tail -1)
     outcome=$(printf '%s\n' "$line" | sed -n 's/.*] \(WIN\|LOSS\).*/\1/p')
