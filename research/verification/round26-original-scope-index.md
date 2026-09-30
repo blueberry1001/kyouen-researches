@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は119件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は121件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 481 |
+| NOT_AUDITED | 479 |
 | PARTIAL | 16 |
-| REFUTED | 32 |
+| REFUTED | 33 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 68 |
+| SUPPORTED | 69 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -92,8 +92,8 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B064](../hypothesis-bank-2026-09-27.md#L129) | [存在] P(S)が木でも高階制約が勝敗を変える。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B065](../hypothesis-bank-2026-09-27.md#L130) | [存在] P(S)が空でも高nimberを持つ。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
 | [B066](../hypothesis-bank-2026-09-27.md#L131) | [統計] 二点競合の近似が外れるのは高階制約の重なりが大きい場所。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
-| [B067](../hypothesis-bank-2026-09-27.md#L132) | [全称・大胆] 終盤のP(S)には大きな誘導奇サイクルがない。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |
-| [B068](../hypothesis-bank-2026-09-27.md#L133) | [存在] 同じP(S)の次数列・スペクトルでも勝敗が違う。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B067](../hypothesis-bank-2026-09-27.md#L132) | [全称・大胆] 終盤のP(S)には大きな誘導奇サイクルがない。 | REFUTED | [round34-b067-induced-seven-cycle.md](round34-b067-induced-seven-cycle.md) |
+| [B068](../hypothesis-bank-2026-09-27.md#L133) | [存在] 同じP(S)の次数列・スペクトルでも勝敗が違う。 | SUPPORTED | [round34-b068-cospectral-opposite-games.md](round34-b068-cospectral-opposite-games.md) |
 | [B069](../hypothesis-bank-2026-09-27.md#L134) | [統計] 競合グラフのseparatorが小さい局面は戦略を分割できる。 | NOT_AUDITED | 旧個票参照11箇所（JSON） |
 | [B070](../hypothesis-bank-2026-09-27.md#L135) | [構造] 実現できる競合グラフには有限の小さい禁止型がある。 | SUPPORTED | [round18-competition-stars.md](round18-competition-stars.md) |
 | [B071](../hypothesis-bank-2026-09-27.md#L139) | [全称] 一つの禁止点を作る三つ組族は線形。 | NOT_AUDITED | 旧個票参照2箇所（JSON） |

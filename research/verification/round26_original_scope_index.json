@@ -1,19 +1,19 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 119,
+  "reviewed_originals": 121,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 481,
+    "NOT_AUDITED": 479,
     "PARTIAL": 16,
-    "SUPPORTED": 68,
-    "REFUTED": 32,
+    "SUPPORTED": 69,
+    "REFUTED": 33,
     "SCOPE_UNCLEAR": 3
   },
   "original_source_sha256": {
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "70f8cd55f08a15aa07685ef0a04550656ebaefe274b516883e3166da60773ddf",
+  "index_source_sha256": "9a7e0993c9e2cb86aadbc4c49288850cdbbf98d12c836d3e5a7e4440620f515b",
   "rows": [
     {
       "id": "B001",
@@ -7150,12 +7150,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round34-b067-induced-seven-cycle.md",
+          "heading_line": 1,
+          "heading": "# B067: 残り最大3手でも誘導7サイクルがある",
+          "joint_heading_ids": [
+            "B067"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "REFUTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B067原文REFUTED。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "REFUTED",
+      "evidence_kind": "finite_counterexample_with_exact_height",
+      "preferred_report": "round34-b067-induced-seven-cycle.md",
+      "reason": "4×4でh=3の全256拡張を検査。二点競合の誘導C7に弦なし。旧K(S)の計算バグの留保を解消。",
       "additional_reports": []
     },
     {
@@ -7187,12 +7205,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round34-b068-cospectral-opposite-games.md",
+          "heading_line": 1,
+          "heading": "# B068: 次数列とスペクトルが同じでも勝敗は異なる",
+          "joint_heading_ids": [
+            "B068"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B068原文SUPPORTED。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_cospectral_witness_pair",
+      "preferred_report": "round34-b068-cospectral-opposite-games.md",
+      "reason": "6×6の二点残余のみの8頂点対で次数列・厳密特性多項式が一致、g=3と0。両256拡張と多項式行列式を独立検算。",
       "additional_reports": []
     },
     {
@@ -74422,6 +74458,8 @@
     "round31-b047-odd-cycle-counterexample.md": "f58270a47e04502cc8d6732027503d01cabed803f141d4e2b25e8b1bf047e875",
     "round32-b251-seven-board-exclusion.md": "83adda9982f32ad9af2e08c16c2b04dae22d3ad67c7d18b66db49fa784905232",
     "round33-b343-single-triple-switch.md": "e66eaa960e5e85cde1a42f7a3e9c0dc5e5da1324946dfcb9ecdee8fd52722a32",
+    "round34-b067-induced-seven-cycle.md": "6f107c1876e12f6b70a2fa7f3ecd71b01e06238681d45174f6c72fa498bdecaf",
+    "round34-b068-cospectral-opposite-games.md": "67181c6baec70a7eb0b7a731767e5ff0693773aa186b0135e655c9995cef1248",
     "round4-b092b-notes.md": "57a59593e47dec14eda40f9591d0d762ed06abe03d23b849c6e3791c41999370",
     "round4-batch-b002-b091.md": "30cf370683b18ec214398d7d1469b2f6cfdbe399cca48489bc50b1352b0b86df",
     "round4-batch-b092-b127.md": "760a2879b0fdb5c79b7b6cfdda157a335f4264b8ab197a3d8a825db976254b50",

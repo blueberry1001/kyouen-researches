@@ -166,6 +166,10 @@ review('B047', 'REFUTED', 'finite_counterexample_with_exact_residual_game',
        'round31-b047-odd-cycle-counterexample.md', '5×5の6石から残余C5を正確に実現。頂点推移的Pで合法点5個なので固定点なしの応答対合は不可能。')
 review('B343', 'SUPPORTED', 'finite_witness_with_sole_triple_and_full_certificate',
        'round33-b343-single-triple-switch.md', '6×6でRの三点辺がちょうど一つ。単独除去でg=1→3、勝ち手{14}→{15,19}は互いに素。全256拡張を独立検算。')
+review('B067', 'REFUTED', 'finite_counterexample_with_exact_height',
+       'round34-b067-induced-seven-cycle.md', '4×4でh=3の全256拡張を検査。二点競合の誘導C7に弦なし。旧K(S)の計算バグの留保を解消。')
+review('B068', 'SUPPORTED', 'finite_cospectral_witness_pair',
+       'round34-b068-cospectral-opposite-games.md', '6×6の二点残余のみの8頂点対で次数列・厳密特性多項式が一致、g=3と0。両256拡張と多項式行列式を独立検算。')
 review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
        'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',
