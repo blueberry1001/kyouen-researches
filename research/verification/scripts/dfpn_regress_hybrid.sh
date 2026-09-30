@@ -1,0 +1,27 @@
+#!/bin/bash
+# Correctness regression for the df-pn + exact-endgame hybrid.
+#
+# The hybrid may change the number of expansions, but it MUST NOT change
+# any proven outcome. We test the known empty-board results n=4..7 under
+# several exact-legal thresholds. exact-budget is deliberately generous
+# enough to exercise the handoff while still allowing UNKNOWN fallbacks.
+set -euo pipefail
+
+D=${D:-/mnt/d/ghq/build11/dfpn}
+MEMO=${MEMO:-24}
+EXACT_BUDGET=${EXACT_BUDGET:-200000}
+EXACT_RETRIES=${EXACT_RETRIES:-2}
+
+for legal in 0 4 6 8; do
+  echo "=== exact_legal=$legal ==="
+  for n in 4 5 6 7; do
+    echo "--- n=$n ---"
+    "$D" --n="$n" --empty --memo="$MEMO" \
+      --exact-legal="$legal" \
+      --exact-budget="$EXACT_BUDGET" \
+      --exact-retries="$EXACT_RETRIES" 2>&1 \
+      | grep -E '^\[done\]|^# done'
+  done
+done
+
+echo HYBRID_REGRESSION_DONE
