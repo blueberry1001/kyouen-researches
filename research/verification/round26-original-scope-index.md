@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は140件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は141件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 460 |
+| NOT_AUDITED | 459 |
 | PARTIAL | 17 |
 | REFUTED | 42 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 78 |
+| SUPPORTED | 79 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -375,7 +375,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B347](../hypothesis-bank-round2-2026-09-27.md#L106) | [統計] 高階制約の件数より、その被覆する合法点の割合が近似誤差を説明する。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
 | [B348](../hypothesis-bank-round2-2026-09-27.md#L107) | [統計] 高階制約がつなぐ二点競合成分の数が重要。 | NOT_AUDITED | 旧個票参照3箇所（JSON） |
 | [B349](../hypothesis-bank-round2-2026-09-27.md#L108) | [構造] 残余四点制約が効く最小局面は三点制約の例と別型。 | SUPPORTED | [round40-b349-minimum-four-edge-classification.md](round40-b349-minimum-four-edge-classification.md) |
-| [B350](../hypothesis-bank-round2-2026-09-27.md#L109) | [存在] 高階制約を全削除してもgは同じだが最善手は違う。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B350](../hypothesis-bank-round2-2026-09-27.md#L109) | [存在] 高階制約を全削除してもgは同じだが最善手は違う。 | SUPPORTED | [round43-b350-value-preserving-move-switch.md](round43-b350-value-preserving-move-switch.md) |
 | [B351](../hypothesis-bank-round2-2026-09-27.md#L115) | [全称・大胆] 被覆欠損は石数の半分以上。 | SUPPORTED | [round6-rational-orchard.md](round6-rational-orchard.md) |
 | [B352](../hypothesis-bank-round2-2026-09-27.md#L116) | [全称・大胆] 共円回避を加えると欠損は超線形。 | PARTIAL | [round6-rational-orchard.md](round6-rational-orchard.md) |
 | [B353](../hypothesis-bank-round2-2026-09-27.md#L117) | [存在] 被覆欠損が線形にとどまる格子配置の無限族。 | REFUTED | [round6-rational-orchard.md](round6-rational-orchard.md) |

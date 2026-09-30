@@ -54,6 +54,9 @@ review('B444 B446 B449', 'SUPPORTED', 'complete_exact_family_witness',
 review('B448', 'PARTIAL', 'general_four_stone_bridge_proof',
        'round42-exact-residual-family-audit.md',
        '任意の安全四石配置対は常に安全な三石層のJohnsonグラフを通って結べる。k≥5の原文全体は未証明。')
+review('B350', 'SUPPORTED', 'finite_witness_and_general_minimum_legal_size_proof',
+       'round43-b350-value-preserving-move-switch.md',
+       '5×5の合法5点で両版g1・勝ち手1対5。全m≤4極小残余族を二方式全列挙し最小合法点数5、n≤3全域除外と4×4証人で最小盤4。')
 
 
 review('B211 B212 B215 B216 B220 B541 B546 B550', 'SUPPORTED', 'general_proof',

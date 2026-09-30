@@ -1,0 +1,2272 @@
+{
+  "original_verdict": "SUPPORTED",
+  "minimum_legal_size": 5,
+  "minimum_board_n": 4,
+  "all_small_abstract_families": [
+    {
+      "legal_size": 1,
+      "all_rank_2_3_4_antichains": 1,
+      "same_g_different_winning_moves": 0,
+      "hits_with_pair_edge": 0
+    },
+    {
+      "legal_size": 2,
+      "all_rank_2_3_4_antichains": 2,
+      "same_g_different_winning_moves": 0,
+      "hits_with_pair_edge": 0
+    },
+    {
+      "legal_size": 3,
+      "all_rank_2_3_4_antichains": 9,
+      "same_g_different_winning_moves": 0,
+      "hits_with_pair_edge": 0
+    },
+    {
+      "legal_size": 4,
+      "all_rank_2_3_4_antichains": 114,
+      "same_g_different_winning_moves": 0,
+      "hits_with_pair_edge": 0
+    },
+    {
+      "legal_size": 5,
+      "all_rank_2_3_4_antichains": 6893,
+      "same_g_different_winning_moves": 1100,
+      "hits_with_pair_edge": 330
+    }
+  ],
+  "small_board_exclusions": [
+    {
+      "n": 1,
+      "all_safe_states_checked": 2,
+      "B350_hits": 0
+    },
+    {
+      "n": 2,
+      "all_safe_states_checked": 15,
+      "B350_hits": 0
+    },
+    {
+      "n": 3,
+      "all_safe_states_checked": 298,
+      "B350_hits": 0
+    }
+  ],
+  "minimum_legal_size_witness": {
+    "n": 5,
+    "S_ids": [
+      14,
+      15,
+      19,
+      23,
+      24
+    ],
+    "L_ids": [
+      0,
+      2,
+      6,
+      12,
+      17
+    ],
+    "R_ids": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        6,
+        12
+      ],
+      [
+        2,
+        6,
+        17
+      ],
+      [
+        12,
+        17
+      ]
+    ],
+    "full_g": 1,
+    "pair_only_g": 1,
+    "full_child_g": {
+      "0": 2,
+      "2": 2,
+      "6": 0,
+      "12": 2,
+      "17": 2
+    },
+    "pair_only_child_g": {
+      "0": 0,
+      "2": 0,
+      "6": 0,
+      "12": 0,
+      "17": 0
+    },
+    "full_winning_moves": [
+      6
+    ],
+    "pair_only_winning_moves": [
+      0,
+      2,
+      6,
+      12,
+      17
+    ],
+    "all_extensions": [
+      {
+        "compressed_extension": 0,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 1,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 2,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 3,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 4,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 5,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 6,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 7,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 8,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 9,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 10,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 11,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 12,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 13,
+        "full_safe": false,
+        "pair_only_safe": true,
+        "full_g": null,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 14,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 15,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 16,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 17,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 18,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 19,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 20,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 21,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 22,
+        "full_safe": false,
+        "pair_only_safe": true,
+        "full_g": null,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 23,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 24,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 25,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 26,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 27,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 28,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 29,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 30,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 31,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      }
+    ]
+  },
+  "minimum_board_witness": {
+    "n": 4,
+    "S_ids": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "L_ids": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "R_ids": [
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        9,
+        14
+      ],
+      [
+        11,
+        12,
+        14
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "full_g": 3,
+    "pair_only_g": 3,
+    "full_child_g": {
+      "8": 2,
+      "9": 0,
+      "10": 0,
+      "11": 1,
+      "12": 2,
+      "13": 1,
+      "14": 2,
+      "15": 1
+    },
+    "pair_only_child_g": {
+      "8": 2,
+      "9": 0,
+      "10": 0,
+      "11": 2,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 1
+    },
+    "full_winning_moves": [
+      9,
+      10
+    ],
+    "pair_only_winning_moves": [
+      9,
+      10,
+      12,
+      14
+    ],
+    "all_extensions": [
+      {
+        "compressed_extension": 0,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 3,
+        "pair_only_g": 3
+      },
+      {
+        "compressed_extension": 1,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 2
+      },
+      {
+        "compressed_extension": 2,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 3,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 4,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 5,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 6,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 7,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 8,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 2
+      },
+      {
+        "compressed_extension": 9,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 10,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 11,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 12,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 13,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 14,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 15,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 16,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 17,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 18,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 19,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 20,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 21,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 22,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 23,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 24,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 25,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 26,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 27,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 28,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 29,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 30,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 31,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 32,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 33,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 34,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 35,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 36,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 37,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 38,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 39,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 40,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 41,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 42,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 43,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 44,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 45,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 46,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 47,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 48,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 49,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 50,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 51,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 52,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 53,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 54,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 55,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 56,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 57,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 58,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 59,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 60,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 61,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 62,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 63,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 64,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 2,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 65,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 66,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 67,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 68,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 69,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 70,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 71,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 72,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 73,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 74,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 75,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 76,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 77,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 78,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 79,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 80,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 81,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 82,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 83,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 84,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 85,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 86,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 87,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 88,
+        "full_safe": false,
+        "pair_only_safe": true,
+        "full_g": null,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 89,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 90,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 91,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 92,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 93,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 94,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 95,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 96,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 97,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 98,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 99,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 100,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 101,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 102,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 103,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 104,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 105,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 106,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 107,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 108,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 109,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 110,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 111,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 112,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 113,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 114,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 115,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 116,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 117,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 118,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 119,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 120,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 121,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 122,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 123,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 124,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 125,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 126,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 127,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 128,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 1,
+        "pair_only_g": 1
+      },
+      {
+        "compressed_extension": 129,
+        "full_safe": true,
+        "pair_only_safe": true,
+        "full_g": 0,
+        "pair_only_g": 0
+      },
+      {
+        "compressed_extension": 130,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 131,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 132,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 133,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 134,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 135,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 136,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 137,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 138,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 139,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 140,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 141,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 142,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 143,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 144,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 145,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 146,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 147,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 148,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 149,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 150,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 151,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 152,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 153,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 154,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 155,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 156,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 157,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 158,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 159,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 160,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 161,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 162,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 163,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 164,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 165,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 166,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 167,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 168,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 169,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 170,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 171,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 172,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 173,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 174,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 175,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 176,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 177,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 178,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 179,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 180,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 181,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 182,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 183,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 184,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 185,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 186,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 187,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 188,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 189,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 190,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 191,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 192,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 193,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 194,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 195,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 196,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 197,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 198,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 199,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 200,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 201,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 202,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 203,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 204,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 205,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 206,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 207,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 208,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 209,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 210,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 211,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 212,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 213,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 214,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 215,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 216,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 217,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 218,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 219,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 220,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 221,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 222,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 223,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 224,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 225,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 226,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 227,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 228,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 229,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 230,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 231,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 232,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 233,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 234,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 235,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 236,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 237,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 238,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 239,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 240,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 241,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 242,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 243,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 244,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 245,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 246,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 247,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 248,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 249,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 250,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 251,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 252,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 253,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 254,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      },
+      {
+        "compressed_extension": 255,
+        "full_safe": false,
+        "pair_only_safe": false,
+        "full_g": null,
+        "pair_only_g": null
+      }
+    ]
+  },
+  "sha256": {
+    "scripts/round43_b350_minimum.py": "f9f42f3fbdd6f77b00c0fdb3b801d6def821d229ad2b6920d8f0f97141d228b3",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "round2_b321.json": "6d943ff0783f00e0c4404a8106cad040c42dc86d4e42ce2b32f48b3af282e944"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 140,
+  "reviewed_originals": 141,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 460,
+    "NOT_AUDITED": 459,
     "PARTIAL": 17,
-    "SUPPORTED": 78,
+    "SUPPORTED": 79,
     "REFUTED": 42,
     "SCOPE_UNCLEAR": 3
   },
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "2b1c817cafc697e475176f0a9ee7ed078f8f886cd61f112be9c90c34c5e911b7",
+  "index_source_sha256": "2f011728d3d8d8e342c2f1d4b25ae69ddd59bf9c87b0673b494d5ed6f15933c7",
   "rows": [
     {
       "id": "B001",
@@ -48031,12 +48031,30 @@
             }
           ],
           "weakening_mentioned": false
+        },
+        {
+          "report": "round43-b350-value-preserving-move-switch.md",
+          "heading_line": 1,
+          "heading": "# B350: 値保存・勝ち手変更の最小合法点数5、最小盤4×4",
+          "joint_heading_ids": [
+            "B350"
+          ],
+          "labels_in_section": [
+            {
+              "line": 3,
+              "labels": [
+                "SUPPORTED"
+              ],
+              "exact_text": "作成: 2026-09-30。**B350原文SUPPORTED。**"
+            }
+          ],
+          "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "SUPPORTED",
+      "evidence_kind": "finite_witness_and_general_minimum_legal_size_proof",
+      "preferred_report": "round43-b350-value-preserving-move-switch.md",
+      "reason": "5×5の合法5点で両版g1・勝ち手1対5。全m≤4極小残余族を二方式全列挙し最小合法点数5、n≤3全域除外と4×4証人で最小盤4。",
       "additional_reports": []
     },
     {
@@ -74776,6 +74794,7 @@
     "round40-b349-minimum-four-edge-classification.md": "51bb509128d2eeaa396f4e5dd8a9fc04562135d41471d241fc196c448194098d",
     "round41-b065-pair-empty-grundy-five.md": "deb503d036b0acb81de467178689a4d53a5a6d56782f8bbc914d88775b2712f1",
     "round42-exact-residual-family-audit.md": "55bb941131addf85d06a21aca1d11a424167b4c122ec3149de0669d4b94fc2af",
+    "round43-b350-value-preserving-move-switch.md": "4df3bc78c9e09a614f207dcfc8d899408813ef4a492829ac6918e82e90e35bed",
     "round5-FINAL-SUMMARY.md": "92006d512a1b70df30e11d05ffe711914908c730d4120e31c6fabf8ec486f55f",
     "round5-b141-corrections.md": "939fd458c2ab92e8863414cdb3c112a3c475250bb24bf3cd3a9477b6233e4c45",
     "round5-batch-b001-b100-final.md": "919843f66d5f257a838d32138dbc54e55dd61eaca26b86a5b58454043127707b",
