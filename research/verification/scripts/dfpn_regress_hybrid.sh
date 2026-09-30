@@ -36,6 +36,17 @@ for n in 4 5 6 7; do
     | grep -E '^\[done\]|^# done'
 done
 
+# Separate persistent exact cache: deep exact states stay out of PnTT but
+# remain reusable across handoffs.
+echo "=== exact separate cache: legal=8 budget=$EXACT_BUDGET ==="
+for n in 4 5 6 7; do
+  echo "--- n=$n ---"
+  "$D" --n="$n" --empty --memo="$MEMO" \
+    --exact-legal=8 --exact-budget="$EXACT_BUDGET" \
+    --exact-retries="$EXACT_RETRIES" --exact-publish=separate 2>&1 \
+    | grep -E '^\[done\]|^# done'
+done
+
 # Force UNKNOWN fallbacks: each exact attempt gets only one DFS node.
 # The final proven outcomes must still match the baseline, demonstrating
 # that an aborted handoff cannot inject an unsound solved result.
