@@ -1202,8 +1202,10 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     // here keeps per-probe budgets comparable across --only selections.
     solver.set_deadline(budget_s);
     int n_done=0,n_timeout=0;
+    std::uint64_t root_seq=0;
     auto wall0=std::chrono::steady_clock::now();
     auto run_one=[&](const std::string& tag,const std::vector<int>& stones){
+        const std::uint64_t seq=++root_seq;
         typename DfPn<N>::Result r;
         bool done=false;
         try{
@@ -1235,7 +1237,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
                  <<" exact_loss="<<el<<" exact_stores="<<es
                  <<" exact_local="<<els;
             }
-            C<<" wall_s="<<(long long)wall<<"\n";
+            C<<" seq="<<seq<<" wall_s="<<(long long)wall<<"\n";
             solver.csv_flush();
             {
                 std::uint64_t dh[64]; solver.exp_hist(dh,64);
@@ -1271,7 +1273,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
              <<" exact_loss="<<el<<" exact_stores="<<es
              <<" exact_local="<<els;
         }
-        L<<" wall_s="<<(long long)wall<<std::endl;
+        L<<" seq="<<seq<<" wall_s="<<(long long)wall<<std::endl;
         L.flush();
         *total_exp+=r.expansions;
         ++n_done;
