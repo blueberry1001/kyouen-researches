@@ -1,0 +1,148 @@
+{
+  "complete_independent_n4_k5_maximal_count": 176,
+  "chunk_validation": [
+    {
+      "root": 0,
+      "chunks_with_node_limit_100": 10,
+      "maximal_sets": 50,
+      "baseline_nodes": 911
+    },
+    {
+      "root": 1,
+      "chunks_with_node_limit_100": 8,
+      "maximal_sets": 45,
+      "baseline_nodes": 677
+    },
+    {
+      "root": 2,
+      "chunks_with_node_limit_100": 5,
+      "maximal_sets": 37,
+      "baseline_nodes": 481
+    },
+    {
+      "root": 3,
+      "chunks_with_node_limit_100": 4,
+      "maximal_sets": 18,
+      "baseline_nodes": 383
+    },
+    {
+      "root": 4,
+      "chunks_with_node_limit_100": 3,
+      "maximal_sets": 16,
+      "baseline_nodes": 249
+    },
+    {
+      "root": 5,
+      "chunks_with_node_limit_100": 2,
+      "maximal_sets": 3,
+      "baseline_nodes": 151
+    },
+    {
+      "root": 6,
+      "chunks_with_node_limit_100": 2,
+      "maximal_sets": 7,
+      "baseline_nodes": 108
+    },
+    {
+      "root": 7,
+      "chunks_with_node_limit_100": 1,
+      "maximal_sets": 0,
+      "baseline_nodes": 71
+    },
+    {
+      "root": 8,
+      "chunks_with_node_limit_100": 1,
+      "maximal_sets": 0,
+      "baseline_nodes": 28
+    },
+    {
+      "root": 9,
+      "chunks_with_node_limit_100": 1,
+      "maximal_sets": 0,
+      "baseline_nodes": 11
+    },
+    {
+      "root": 10,
+      "chunks_with_node_limit_100": 1,
+      "maximal_sets": 0,
+      "baseline_nodes": 10
+    },
+    {
+      "root": 11,
+      "chunks_with_node_limit_100": 1,
+      "maximal_sets": 0,
+      "baseline_nodes": 2
+    }
+  ],
+  "legacy_n10_frontiers": [
+    {
+      "root": 0,
+      "fully_processed_second_ids": [
+        1,
+        14
+      ],
+      "conservative_resume_prefix": [
+        0,
+        15
+      ]
+    },
+    {
+      "root": 1,
+      "fully_processed_second_ids": [
+        2,
+        17
+      ],
+      "conservative_resume_prefix": [
+        1,
+        18
+      ]
+    },
+    {
+      "root": 2,
+      "fully_processed_second_ids": [
+        3,
+        12
+      ],
+      "conservative_resume_prefix": [
+        2,
+        13
+      ]
+    },
+    {
+      "root": 3,
+      "fully_processed_second_ids": [
+        4,
+        26
+      ],
+      "conservative_resume_prefix": [
+        3,
+        27
+      ]
+    },
+    {
+      "root": 4,
+      "fully_processed_second_ids": [
+        5,
+        19
+      ],
+      "conservative_resume_prefix": [
+        4,
+        20
+      ]
+    }
+  ],
+  "legacy_total_nodes": 6170323452,
+  "legacy_n10_eight_stone_exclusion_proved": false,
+  "sha256": {
+    "scripts/round56_resumable_kmin.cpp": "6be168631997ad377eb5c5ec75497a7aa6b7cd2316f302dc5b73577c3173ed28",
+    "scripts/round53_n10_eight_roots.cpp": "c929fab87205c7a2e02468b8b913963baa07867c29063877d7a9f098d679da08",
+    "scripts/round56_resume_audit.py": "f4459f912534aee30b7cc2c53145f0f261d5653e58090f667f9d7262bfa37824",
+    "scripts/round56_resume_run.py": "8e3ed49bb013aad6d679c310c7ff18e502f3b30ba1dd3aa14b4cc12aff4bfe1d",
+    "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
+    "round53_n10_k8_root0.json": "bc58276dbd2f2f1cc4b56c9f2eb57062826130f868c54883b0604a99e9fd90cb",
+    "round53_n10_k8_root1.json": "1adb50825df5e1257310e9dda90b4e7e5c3ce8bee052c4d20b9d3b8a81235cc6",
+    "round53_n10_k8_root2.json": "b412ad256f1dc80b86e44cf4788ee113f4c06250f49188739b7108379a448195",
+    "round53_n10_k8_root3.json": "774ae42019dd81c0ed713db7550ee51dc59997f5d63197940f1b9a8dfd7fdbf0",
+    "round53_n10_k8_root4.json": "48ba414a0c4db421e093ebac95d6e8496f4274d7ad1fda056f2949dff5cf0963"
+  }
+}

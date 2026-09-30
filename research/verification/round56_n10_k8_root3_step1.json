@@ -1,0 +1,67 @@
+{
+  "n": 10,
+  "k": 8,
+  "first_stone_root": 3,
+  "orbit_reduction": "n10 K8 uses s9=9; n4 K5 is a resume validation case",
+  "score_upper_bound": "suffix-conditioned triple counts",
+  "complete": true,
+  "found": false,
+  "forbidden_quads": 54441,
+  "triple_completion_incidence": 217764,
+  "max_completion": 9,
+  "nodes": 191013910,
+  "seconds": 118.384195,
+  "nodes_by_depth": [
+    1,
+    1,
+    67,
+    2233,
+    49309,
+    796645,
+    9620202,
+    84415158,
+    96130294
+  ],
+  "coverage_prunes": [
+    0,
+    0,
+    9,
+    501,
+    13751,
+    256855,
+    3148140,
+    60163670,
+    10001417
+  ],
+  "score_prunes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    2830,
+    576388,
+    19134393,
+    86128877
+  ],
+  "witness": [],
+  "resume_prefix": [
+    3,
+    27
+  ],
+  "timeout_prefix": [],
+  "enumerate_all": false,
+  "node_limit": 0,
+  "maximal_sets": [],
+  "parent": "round53_n10_k8_root3.json",
+  "frontier_origin": "round53 completed depth-two prefix; active depth-two branch is repeated",
+  "native_exit_code": 0,
+  "step": 1,
+  "requested_seconds": 600,
+  "sha256": {
+    "scripts/round53_n10_eight_roots.cpp": "c929fab87205c7a2e02468b8b913963baa07867c29063877d7a9f098d679da08",
+    "scripts/round56_resumable_kmin.cpp": "6be168631997ad377eb5c5ec75497a7aa6b7cd2316f302dc5b73577c3173ed28",
+    "scripts/round56_resume_run.py": "8e3ed49bb013aad6d679c310c7ff18e502f3b30ba1dd3aa14b4cc12aff4bfe1d",
+    "round53_n10_k8_root3.json": "774ae42019dd81c0ed713db7550ee51dc59997f5d63197940f1b9a8dfd7fdbf0"
+  }
+}

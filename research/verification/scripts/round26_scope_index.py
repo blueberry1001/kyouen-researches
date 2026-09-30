@@ -42,6 +42,12 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B082', 'PARTIAL', 'independent_nineteen_stone_extension_and_local_exclusion',
+       'round57-nineteen-stone-ten-board-bound.md',
+       '公開九盤18石を移動して一点追加、全3876四点組で十盤19石安全。行内点対上界23。特定19石から除去8まで全169765枝は20石なし、一般20石の不在や等号20は未証明。')
+review('B087', 'SUPPORTED', 'complete_maximum_catalogue_embedding_obstruction',
+       'round58-original-maximum-extension-obstruction.md',
+       '完全n7最高層16配置が旧カタログと一致。全64平行移動・3200空点は直接行列式と曲線係数で全禁止。独立安全15石によりK8≥15>14、K8上界に依存せず原文存在を証明。')
 review('B081', 'REFUTED', 'published_construction_with_independent_coordinate_certificate',
        'round55-eighteen-stone-original-counterexample.md',
        'モナカ氏公開図の18石を座標化し全3060四点組・禁止族・全三点曲線で安全性を独立検算。K9≥18で原文17を反証、上界18や全軌道分類は未証明。')
@@ -50,7 +56,8 @@ review('B098', 'SUPPORTED', 'complete_small_board_saturation_jump',
        '原文にn≥4の指定なし。全n2/n3集合の監査でs2=3・s3=5、差2の存在を証明。n≥4を追加した問いの決着は主張しない。')
 review('B097', 'PARTIAL', 'complete_finite_saturation_sequence',
        'round54-small-board-saturation-jump.md',
-       '完全に確認したs1..s9=1,3,5,5,5,6,7,8,9では単調。s10∈[8,10]で九盤以後の単調性は未決。')
+       '完全値s1..s9=1,3,5,5,5,6,7,8,9、十盤八石全域除外でs10∈[9,10]。有限n1..10の単調性まで確認、全nの原文は未決。',
+       ('round56-ten-board-eight-stone-exclusion.md',))
 review('B095 B096', 'PARTIAL', 'general_asymptotic_lower_exponent_proof',
        'round52-general-saturation-exponent-lower-bound.md',
        '原始方向別に直線被覆O(n k^(3/2))、三点真円の整数係数と約数上界でR(n)=n^o(1)。全ε>0でs_n>n^(2/3−ε)を証明。対応する上界・s_n=o(n)は未証明。')
@@ -61,10 +68,10 @@ review('B079', 'PARTIAL', 'exact_geometric_cover_incidence_maximization',
 review('B094', 'REFUTED', 'independently_verified_ten_stone_maximal_witness',
        'round49-ten-stone-maximal-counterexample.md',
        '十盤S=[21,27,31,35,36,46,65,81,29,48]は全210四点安全・全90空点禁止、s10≤10で原文11を反証。')
-review('B093', 'PARTIAL', 'complete_seven_stone_exclusion_and_ten_stone_witness',
-       'round51-ten-board-seven-stone-exclusion.md',
-       's9=9から十盤七石候補の全幅帰着、初点0..4全5.9億節点を完了してs10≥8。健全な十石証人で[8,10]、八・九石は未決。',
-       ('round49-ten-stone-maximal-counterexample.md',))
+review('B093', 'PARTIAL', 'complete_eight_stone_prefix_suffix_exclusion_and_ten_stone_witness',
+       'round56-ten-board-eight-stone-exclusion.md',
+       's9=9から十盤八石候補を全幅・初点0..4へ帰着。旧完了接頭部と今回全五再開部分を接続し八石全域除外、s10∈[9,10]。九石の有無が未決。',
+       ('round49-ten-stone-maximal-counterexample.md','round51-ten-board-seven-stone-exclusion.md'))
 
 review('B091', 'SUPPORTED', 'complete_all_lower_sizes_exclusion_and_finite_witness',
        'round46-small-saturation-and-window-reduction.md',
