@@ -45,9 +45,9 @@ def review(ids, status, kind, source, reason, additional=()):
 review('B091', 'SUPPORTED', 'complete_all_lower_sizes_exclusion_and_finite_witness',
        'round46-small-saturation-and-window-reduction.md',
        '8×8のk≤4は三つ組補完上界、k5/6/7は個別の完全探索で除外。八石極大証人を独立幾何で検算しs8=8。')
-review('B092', 'PARTIAL', 'complete_lower_sizes_exclusion_and_window_orbit_reduction',
+review('B092', 'SUPPORTED', 'complete_lower_sizes_exclusion_and_window_orbit_exhaustion',
        'round46-small-saturation-and-window-reduction.md',
-       '9×9のk≤7を除外、九石証人で[8,9]。408配置の全1632埋め込みに合法外点、八石候補の初点をD4で0..4へ帰着。未完了探索は非存在に使わない。')
+       '9×9のk≤7を除外、九石証人を検算。408配置の全1632埋め込みに合法外点、八石候補の初点をD4で0..4へ帰着し全19.5億節点探索が完了、s9=9。')
 review('B077 B080', 'SUPPORTED', 'finite_witness_and_general_minimum_stone_count_proof',
        'round47-private-cover-and-global-minima.md',
        '4×4の全空点二重以上六石証人・完全一重被覆五石証人を独立検算。曲線上界と残る小盤の全域検査で最小石数6/5、最小盤4を証明。')

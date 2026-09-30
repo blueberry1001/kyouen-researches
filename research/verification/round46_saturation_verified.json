@@ -1,9 +1,9 @@
 {
   "B091_original_verdict": "SUPPORTED",
   "s8": 8,
-  "B092_original_verdict": "PARTIAL",
+  "B092_original_verdict": "SUPPORTED",
   "s9_bounds": [
-    8,
+    9,
     9
   ],
   "lower_bounds": {
@@ -21140,7 +21140,53 @@
     "round46_sat_atmost8.json",
     "round46_cadical_atmost8.json"
   ],
-  "reduced_search": null,
+  "reduced_search": {
+    "n": 9,
+    "k": 8,
+    "orbit_reduction": "n9 k8 first occupied ID <=4; requires 408-set embedding certificate",
+    "score_upper_bound": "suffix-conditioned triple counts",
+    "complete": true,
+    "found": false,
+    "forbidden_quads": 29152,
+    "triple_completion_incidence": 116608,
+    "max_completion": 9,
+    "nodes": 1951681086,
+    "seconds": 1024.017101,
+    "nodes_by_depth": [
+      1,
+      5,
+      360,
+      13026,
+      311209,
+      5343761,
+      67130517,
+      604871158,
+      1274011049
+    ],
+    "coverage_prunes": [
+      0,
+      0,
+      32,
+      2092,
+      69054,
+      1472820,
+      20295505,
+      438508983,
+      308524821
+    ],
+    "score_prunes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8727,
+      2220029,
+      86456463,
+      965486228
+    ],
+    "witness": []
+  },
   "sha256": {
     "scripts/round46_audit.py": "424363e556306b2418fff5ac9349c7554df1ef838af0ed935ab37b5c24f18cf0",
     "scripts/round25_forced_verify.py": "0dd6a9c1bcb86370f37a38f4c30df2d23dce1cd088ac62c5baa0e186403d22d7",
@@ -21162,6 +21208,7 @@
     "round46_n9_k8.json": "1ea9773c2e1ac59f7306268aac07c2591cb018eb52f24ac0e9afd4a9f15a3293",
     "round46_n9_k8_tight.json": "4debebd31812da6287bf7a932cab53447a8ede0ca517ecf54bb953fd05b57af9",
     "round46_sat_atmost8.json": "200d4008e76dfe325524c6522315dba1ec1216e2a3fcf85d75bc42bf66a72ca5",
-    "round46_cadical_atmost8.json": "a5177e6b3f84ca43810f162df0bf9d75046bf88a7cffd3f990c3fc7d4353ebde"
+    "round46_cadical_atmost8.json": "a5177e6b3f84ca43810f162df0bf9d75046bf88a7cffd3f990c3fc7d4353ebde",
+    "round46_n9_k8_symmetry.json": "dd055dbd2509191231afaa43b8b40c368a71b8583b26de2c52e669584f99ace5"
   }
 }

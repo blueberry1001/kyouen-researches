@@ -14,10 +14,10 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 | 状態 | 件数 |
 |---|---:|
 | NOT_AUDITED | 446 |
-| PARTIAL | 19 |
+| PARTIAL | 18 |
 | REFUTED | 44 |
 | SCOPE_UNCLEAR | 5 |
-| SUPPORTED | 86 |
+| SUPPORTED | 87 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -117,7 +117,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B089](../hypothesis-bank-2026-09-27.md#L160) | [構造・大胆] 少数の代数曲線の和で漸近最適になる。 | REFUTED | [round17-b089-bounded-degree.md](round17-b089-bounded-degree.md) |
 | [B090](../hypothesis-bank-2026-09-27.md#L161) | [統計] 最大配置の難しさはサイズより型数に現れる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B091](../hypothesis-bank-2026-09-27.md#L165) | [全称] 8×8には8石の極大安全配置がある。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
-| [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | PARTIAL | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
+| [B092](../hypothesis-bank-2026-09-27.md#L166) | [全称] 9×9の最小極大は9石。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |
 | [B093](../hypothesis-bank-2026-09-27.md#L167) | [全称] 10×10の最小極大は10石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B094](../hypothesis-bank-2026-09-27.md#L168) | [全称] 10×10の最小極大は11石。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B095](../hypothesis-bank-2026-09-27.md#L169) | [漸近・大胆] 最小極大は線形より小さくなる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
