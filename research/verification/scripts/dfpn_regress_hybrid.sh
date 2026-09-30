@@ -24,6 +24,18 @@ for legal in 0 4 6 8; do
   done
 done
 
+# Root-only publish mode: exact recursion memoizes in a local cache and
+# publishes only the handoff root to the main df-pn TT. Outcomes must match
+# both baseline and publish-all mode.
+echo "=== exact root-only publish: legal=8 budget=$EXACT_BUDGET ==="
+for n in 4 5 6 7; do
+  echo "--- n=$n ---"
+  "$D" --n="$n" --empty --memo="$MEMO" \
+    --exact-legal=8 --exact-budget="$EXACT_BUDGET" \
+    --exact-retries="$EXACT_RETRIES" --exact-publish=root 2>&1 \
+    | grep -E '^\[done\]|^# done'
+done
+
 # Force UNKNOWN fallbacks: each exact attempt gets only one DFS node.
 # The final proven outcomes must still match the baseline, demonstrating
 # that an aborted handoff cannot inject an unsound solved result.
