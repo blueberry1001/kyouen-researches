@@ -3,6 +3,8 @@ name: N11 df-pn exact publish smoke
 on:
   push:
     paths:
+      - 'cpp/solvers/kyouen_dfpn_root.cpp'
+      - 'research/verification/scripts/dfpn_exact_publish_probe.sh'
       - '.github/workflows/n11-dfpn-exact-publish-smoke.yml'
   workflow_dispatch:
 
