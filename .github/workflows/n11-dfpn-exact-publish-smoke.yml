@@ -1,0 +1,28 @@
+name: N11 df-pn exact publish smoke
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-exact-publish-smoke.yml'
+  workflow_dispatch:
+
+jobs:
+  publish-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: Compare baseline, publish-all, and root-only
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '60'
+          MEMO: '24'
+          EXACT_LEGAL: '44'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+        run: |
+          bash research/verification/scripts/dfpn_exact_publish_probe.sh
