@@ -1072,6 +1072,10 @@ public:
     std::uint64_t memo_solved() const { return tt_.solved_now(); }
     std::uint64_t memo_solved_disc() const { return tt_.solved_discoveries(); }
     std::size_t memo_capacity() const { return tt_.capacity(); }
+    void memo_evictions(std::uint64_t& open_ev,std::uint64_t& solved_ev) const {
+        open_ev=tt_.evictions_;
+        solved_ev=tt_.evicted_solved();
+    }
     void partial_progress(std::uint32_t& pn,std::uint32_t& dn,
                           std::uint64_t& exp,std::uint64_t& vis) const {
         pn=r_exp_fallback_pn; dn=r_exp_fallback_dn;
@@ -1174,6 +1178,11 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
              <<" solved="<<solver.memo_solved()
              <<" solved_disc="<<solver.memo_solved_disc();
             {
+                std::uint64_t eo,es;
+                solver.memo_evictions(eo,es);
+                C<<" evict_open="<<eo<<" evict_solved="<<es;
+            }
+            {
                 std::uint64_t ec,en,ea,ew,el,es;
                 solver.exact_counters(ec,en,ea,ew,el,es);
                 C<<" exact_calls="<<ec<<" exact_nodes="<<en
@@ -1203,6 +1212,11 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
          <<" expansions="<<r.expansions
          <<" root_pn="<<r.root_pn<<" root_dn="<<r.root_dn
          <<" memo="<<solver.memo_used()<<"/"<<solver.memo_capacity();
+        {
+            std::uint64_t eo,es;
+            solver.memo_evictions(eo,es);
+            L<<" evict_open="<<eo<<" evict_solved="<<es;
+        }
         {
             std::uint64_t ec,en,ea,ew,el,es;
             solver.exact_counters(ec,en,ea,ew,el,es);
