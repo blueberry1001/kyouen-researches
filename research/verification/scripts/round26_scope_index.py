@@ -177,6 +177,10 @@ review('B523', 'REFUTED', 'cardinality_minimum_counterexample',
        ('round19-rule-removal-audit.md',))
 review('B521', 'SUPPORTED', 'finite_complete_exhaustion',
        'round19-rule-removal-audit.md', '4×4全18721二組解除を2554D4軌道で検査し全てP。既存原文決着の採用。')
+review('B501 B506', 'REFUTED', 'exact_rational_finite_counterexamples',
+       'round36-random-original-witness-audit.md', '既存P証人を独立整数幾何・全継続Fraction再帰で再検算。5×5でp=2383/3360>2/3、4×4のh3で76/135>1/2。')
+review('B502', 'SUPPORTED', 'exact_rational_finite_witness',
+       'round36-random-original-witness-audit.md', '6×6のP証人mask35652737、p=5162/6615>3/4。全115安全拡張のg・p・hを厳密検算。既存決着の採用。')
 review('B325 B326', 'PARTIAL', 'finite_complete_census_and_small_board_crosscheck',
        'round30-ceiling-orbit-finite-audit.md', '7×7全安全局面の天井・軌道・余裕を計算。B325の無限族とB326の全盤条件は未決着。')
 review('B011 B015 B018 B301 B302 B303 B305 B307 B308 B309 B311', 'SUPPORTED',

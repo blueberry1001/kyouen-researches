@@ -3,7 +3,7 @@
 作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は124件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は127件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,11 +13,11 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 476 |
+| NOT_AUDITED | 473 |
 | PARTIAL | 16 |
-| REFUTED | 34 |
+| REFUTED | 36 |
 | SCOPE_UNCLEAR | 3 |
-| SUPPORTED | 71 |
+| SUPPORTED | 72 |
 
 この内訳は「この索引で照合を済ませた範囲」の件数。194件などの旧暫定残数との単純な減算はしない。
 B356/B357はround5/7の一般構成を優先し、round24の別証明を二件追加とは数えない。
@@ -526,12 +526,12 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B498](../hypothesis-bank-round2-2026-09-27.md#L332) | [統計] 最小極大への到達は初期の高補完三つ組を好む。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B499](../hypothesis-bank-round2-2026-09-27.md#L333) | [存在] 初手による平均長差がほぼなくても最小終局の確率は大きく違う。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
 | [B500](../hypothesis-bank-round2-2026-09-27.md#L334) | [構造] ランダム到達確率の極値は少数のボトルネック部分集合で説明できる。 | NOT_AUDITED | 旧個票参照6箇所（JSON） |
-| [B501](../hypothesis-bank-round2-2026-09-27.md#L340) | [全称・大胆] 標準盤のP局面のランダム勝率は2/3以下。 | NOT_AUDITED | 旧個票参照5箇所（JSON） |
-| [B502](../hypothesis-bank-round2-2026-09-27.md#L341) | [存在] P局面でランダム勝率3/4を超えられる。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
+| [B501](../hypothesis-bank-round2-2026-09-27.md#L340) | [全称・大胆] 標準盤のP局面のランダム勝率は2/3以下。 | REFUTED | [round36-random-original-witness-audit.md](round36-random-original-witness-audit.md) |
+| [B502](../hypothesis-bank-round2-2026-09-27.md#L341) | [存在] P局面でランダム勝率3/4を超えられる。 | SUPPORTED | [round36-random-original-witness-audit.md](round36-random-original-witness-audit.md) |
 | [B503](../hypothesis-bank-round2-2026-09-27.md#L342) | [構造] 約1/11のN局面は「一つの救済手と十の誘惑手」で説明できる。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B504](../hypothesis-bank-round2-2026-09-27.md#L343) | [存在] 誘惑手の数を増幅する幾何部品がある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B505](../hypothesis-bank-round2-2026-09-27.md#L344) | [存在] 最善手が多いのにランダム勝率が低い。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
-| [B506](../hypothesis-bank-round2-2026-09-27.md#L345) | [全称・大胆] 残り最大手数が3以下ならPのランダム勝率は1/2以下。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
+| [B506](../hypothesis-bank-round2-2026-09-27.md#L345) | [全称・大胆] 残り最大手数が3以下ならPのランダム勝率は1/2以下。 | REFUTED | [round36-random-original-witness-audit.md](round36-random-original-witness-audit.md) |
 | [B507](../hypothesis-bank-round2-2026-09-27.md#L346) | [構造] hを固定したPの最大ランダム勝率には明示的な上限列がある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B508](../hypothesis-bank-round2-2026-09-27.md#L347) | [存在] ランダム勝率が同じ二局面に任意に異なる最善手比率がある。 | NOT_AUDITED | 旧個票参照7箇所（JSON） |
 | [B509](../hypothesis-bank-round2-2026-09-27.md#L348) | [統計] 誘惑手が強い局面では、負け手の子のランダム勝率が似通う。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
