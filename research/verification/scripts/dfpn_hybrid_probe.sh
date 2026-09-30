@@ -15,6 +15,7 @@ BUDGET=${BUDGET:-300}
 MEMO=${MEMO:-26}
 EXACT_BUDGET=${EXACT_BUDGET:-200000}
 EXACT_RETRIES=${EXACT_RETRIES:-2}
+EXACT_PUBLISH=${EXACT_PUBLISH:-all}
 LEVELS=${LEVELS:-"0 4 6 8"}
 OUT="$L/hybrid_probe"
 mkdir -p "$OUT"
@@ -25,7 +26,7 @@ run_arm(){
   rm -f "$OUT/$tag.log" "$OUT/$tag.csv"
   "$D" --n=11 --reps --only=60 --memo="$MEMO" --budget="$BUDGET" \
     --exact-legal="$legal" --exact-budget="$EXACT_BUDGET" \
-    --exact-retries="$EXACT_RETRIES" \
+    --exact-retries="$EXACT_RETRIES" --exact-publish="$EXACT_PUBLISH" \
     --log="$OUT/$tag.log" --csv="$OUT/$tag.csv" \
     > /dev/null 2>&1
 }
