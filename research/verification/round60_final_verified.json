@@ -1,0 +1,49 @@
+{
+  "s10_bounds_unchanged": [
+    9,
+    10
+  ],
+  "round59_status": "UNKNOWN",
+  "K10_bounds_unchanged": [
+    19,
+    23
+  ],
+  "complete_local_deletion_radius": 9,
+  "all_radius_nine_subsets_checked": 92378,
+  "any_twenty_stone_set_overlap_with_this_seed_at_most": 9,
+  "twenty_stone_set_global_absence_proved": false,
+  "radius_ten_completed_first_subsets": 22085,
+  "radius_ten_conservative_resume_deletion_indices": [
+    0,
+    1,
+    5,
+    6,
+    9,
+    10,
+    13,
+    16,
+    17,
+    18
+  ],
+  "radius_ten_conservative_resume_deleted_point_ids": [
+    9,
+    15,
+    22,
+    30,
+    58,
+    62,
+    70,
+    91,
+    93,
+    97
+  ],
+  "resume_code_for_deep_neighborhood_not_yet_implemented": true,
+  "sha256": {
+    "scripts/round60_final_search_audit.py": "5226e00ac6e86f317771f1658bd6d245cefe051952b29c19df61c3f0baa05738",
+    "scripts/round59_n10_nine_sat.py": "0ad838b9b19549601c758b49d7332b2a35414a0f7c087d2a43c33a667adbfb43",
+    "scripts/round60_n10_deep_neighborhood.cpp": "2ef81f4e811aeb1b7f5a64f2933a39a927cd8fa7a836af36c31115bda95baa54",
+    "round59_n10_atmost9.json": "f3aa5e23b8b09f90762b650334676c673bdad456d0df87c065689a9aaf2166c8",
+    "round60_n10_deep_neighborhood.json": "a6944b969e59b9cac1256bef56ace00b9f49978fc8b67c7ed7b2caa32032f473",
+    "round57_n10_neighborhood.json": "a42644bbef52d5119e0823dfdb76857c0bcf270dc65bf971798c8b9df98587d0"
+  }
+}

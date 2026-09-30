@@ -3,7 +3,7 @@
 更新: 2026-10-01。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。
 **未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**
 
-原文照合して採用した記録は164件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
+原文照合して採用した記録は165件。残りは旧ラベルを採用せずNOT_AUDITEDとする。
 旧個票の原命題・弱化版ラベルはJSONのevidence_pointersに行番号・原文ごと保存した。
 最も強いラベルを自動選択したり、弱化版を原命題へ昇格したりしていない。
 SUPPORTEDは原文の量化を満たす記録、REFUTEDはその反証記録。PARTIALは明示した部分結果。
@@ -13,8 +13,8 @@ SCOPE_UNCLEARは原文の解釈・統計母集団が足りず、より強い読�
 
 | 状態 | 件数 |
 |---|---:|
-| NOT_AUDITED | 436 |
-| PARTIAL | 24 |
+| NOT_AUDITED | 435 |
+| PARTIAL | 25 |
 | REFUTED | 46 |
 | SCOPE_UNCLEAR | 5 |
 | SUPPORTED | 89 |
@@ -113,7 +113,7 @@ B356/B357はround5/7の一般構成を優先し、round24の別証明を二件�
 | [B085](../hypothesis-bank-2026-09-27.md#L156) | [存在] 2nを任意に大きく上回る盤がある。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B086](../hypothesis-bank-2026-09-27.md#L157) | [全称・大胆] 一段拡大による増分は高々3。 | NOT_AUDITED | 旧個票参照1箇所（JSON） |
 | [B087](../hypothesis-bank-2026-09-27.md#L158) | [存在] 既存最大配置に外周を足すだけでは次の最大へ届かない。 | SUPPORTED | [round58-original-maximum-extension-obstruction.md](round58-original-maximum-extension-obstruction.md) |
-| [B088](../hypothesis-bank-2026-09-27.md#L159) | [構造] 2n−O(1)石の安全配置を無限族で作れる。 | NOT_AUDITED | 旧個票参照9箇所（JSON） |
+| [B088](../hypothesis-bank-2026-09-27.md#L159) | [構造] 2n−O(1)石の安全配置を無限族で作れる。 | PARTIAL | [round61-full-split-prime-safe-construction.md](round61-full-split-prime-safe-construction.md) |
 | [B089](../hypothesis-bank-2026-09-27.md#L160) | [構造・大胆] 少数の代数曲線の和で漸近最適になる。 | REFUTED | [round17-b089-bounded-degree.md](round17-b089-bounded-degree.md) |
 | [B090](../hypothesis-bank-2026-09-27.md#L161) | [統計] 最大配置の難しさはサイズより型数に現れる。 | NOT_AUDITED | 旧個票参照8箇所（JSON） |
 | [B091](../hypothesis-bank-2026-09-27.md#L165) | [全称] 8×8には8石の極大安全配置がある。 | SUPPORTED | [round46-small-saturation-and-window-reduction.md](round46-small-saturation-and-window-reduction.md) |

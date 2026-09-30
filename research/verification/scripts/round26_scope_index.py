@@ -42,9 +42,13 @@ def review(ids, status, kind, source, reason, additional=()):
                          'additional_reports': list(additional)}
 
 
+review('B088', 'PARTIAL', 'explicit_full_split_prime_linear_construction',
+       'round61-full-split-prime-safe-construction.md',
+       'p≡1 mod4でa²=-1、(t²+t,a(t²-t))の全p整数代表が安全。四点行列式8a VandermondeでKp≥pを自足証明・独立検算。既知線形下界の再構成、原文2n−O(1)は未達。')
 review('B082', 'PARTIAL', 'independent_nineteen_stone_extension_and_local_exclusion',
        'round57-nineteen-stone-ten-board-bound.md',
-       '公開九盤18石を移動して一点追加、全3876四点組で十盤19石安全。行内点対上界23。特定19石から除去8まで全169765枝は20石なし、一般20石の不在や等号20は未証明。')
+       '公開九盤18石を移動して一点追加、全3876四点組で十盤19石安全。行内点対上界23。特定19石から除去9まで完全に20石なし、一般20石の不在や等号20は未証明。',
+       ('round59-60-final-ten-board-search.md',))
 review('B087', 'SUPPORTED', 'complete_maximum_catalogue_embedding_obstruction',
        'round58-original-maximum-extension-obstruction.md',
        '完全n7最高層16配置が旧カタログと一致。全64平行移動・3200空点は直接行列式と曲線係数で全禁止。独立安全15石によりK8≥15>14、K8上界に依存せず原文存在を証明。')
@@ -71,7 +75,8 @@ review('B094', 'REFUTED', 'independently_verified_ten_stone_maximal_witness',
 review('B093', 'PARTIAL', 'complete_eight_stone_prefix_suffix_exclusion_and_ten_stone_witness',
        'round56-ten-board-eight-stone-exclusion.md',
        's9=9から十盤八石候補を全幅・初点0..4へ帰着。旧完了接頭部と今回全五再開部分を接続し八石全域除外、s10∈[9,10]。九石の有無が未決。',
-       ('round49-ten-stone-maximal-counterexample.md','round51-ten-board-seven-stone-exclusion.md'))
+       ('round49-ten-stone-maximal-counterexample.md','round51-ten-board-seven-stone-exclusion.md',
+        'round59-60-final-ten-board-search.md'))
 
 review('B091', 'SUPPORTED', 'complete_all_lower_sizes_exclusion_and_finite_witness',
        'round46-small-saturation-and-window-reduction.md',

@@ -1,10 +1,10 @@
 {
   "total_originals": 600,
-  "reviewed_originals": 164,
+  "reviewed_originals": 165,
   "counts_are_audit_states_not_total_unresolved": true,
   "audit_state_counts": {
-    "NOT_AUDITED": 436,
-    "PARTIAL": 24,
+    "NOT_AUDITED": 435,
+    "PARTIAL": 25,
     "SUPPORTED": 89,
     "REFUTED": 46,
     "SCOPE_UNCLEAR": 5
@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "4ab9a9e4764831c827eedeb2ec02e2f10e0aa81cbcdee64d2d061fce641c8cbc",
+  "index_source_sha256": "44c11333e09ee2e336fde30ebbea3ba51c0a76844b7f0126380877cdf8a50b60",
   "rows": [
     {
       "id": "B001",
@@ -9564,8 +9564,10 @@
       "original_status": "PARTIAL",
       "evidence_kind": "independent_nineteen_stone_extension_and_local_exclusion",
       "preferred_report": "round57-nineteen-stone-ten-board-bound.md",
-      "reason": "公開九盤18石を移動して一点追加、全3876四点組で十盤19石安全。行内点対上界23。特定19石から除去8まで全169765枝は20石なし、一般20石の不在や等号20は未証明。",
-      "additional_reports": []
+      "reason": "公開九盤18石を移動して一点追加、全3876四点組で十盤19石安全。行内点対上界23。特定19石から除去9まで完全に20石なし、一般20石の不在や等号20は未証明。",
+      "additional_reports": [
+        "round59-60-final-ten-board-search.md"
+      ]
     },
     {
       "id": "B083",
@@ -10512,10 +10514,10 @@
           "weakening_mentioned": false
         }
       ],
-      "original_status": "NOT_AUDITED",
-      "evidence_kind": "unreviewed",
-      "preferred_report": null,
-      "reason": "旧ラベルの再集計だけでは原文決着を採用しない。",
+      "original_status": "PARTIAL",
+      "evidence_kind": "explicit_full_split_prime_linear_construction",
+      "preferred_report": "round61-full-split-prime-safe-construction.md",
+      "reason": "p≡1 mod4でa²=-1、(t²+t,a(t²-t))の全p整数代表が安全。四点行列式8a VandermondeでKp≥pを自足証明・独立検算。既知線形下界の再構成、原文2n−O(1)は未達。",
       "additional_reports": []
     },
     {
@@ -11491,7 +11493,8 @@
       "reason": "s9=9から十盤八石候補を全幅・初点0..4へ帰着。旧完了接頭部と今回全五再開部分を接続し八石全域除外、s10∈[9,10]。九石の有無が未決。",
       "additional_reports": [
         "round49-ten-stone-maximal-counterexample.md",
-        "round51-ten-board-seven-stone-exclusion.md"
+        "round51-ten-board-seven-stone-exclusion.md",
+        "round59-60-final-ten-board-search.md"
       ]
     },
     {
@@ -75158,11 +75161,13 @@
     "round54-small-board-saturation-jump.md": "47028fb05a634c962bc316458c64c0474385990e3db61a6c162a898eccf1e9ee",
     "round55-eighteen-stone-original-counterexample.md": "28c0072f0ccf87b8dee1425e1c7f473cbf8c711d7d88109460546b736c8371fc",
     "round56-ten-board-eight-stone-exclusion.md": "90636599d37a67d305491a063223faa74eb3f818e564368432d6eeb538c59337",
-    "round57-nineteen-stone-ten-board-bound.md": "efbf994d38f61144acd7f88ccd35e672e0618477e2e6ce93e055b01cb352df8f",
+    "round57-nineteen-stone-ten-board-bound.md": "3f062d042cbaa2f8a1f67eb8ff9107af3f57a6627e4efe153f6fe279f66eacd5",
     "round58-original-maximum-extension-obstruction.md": "10be869d61e36033a87118e728ece660905a3317f5a99b4e3f24779f6f548a01",
+    "round59-60-final-ten-board-search.md": "9318a326e113d0d6ae86f756afa0aa2514e6f4306cae549c0c2f5963118bba26",
     "round5_b101_followup.md": "1799ce770f7eedc358f91aaff3bbc517d796010b5dbdebd05f4159d48690181a",
     "round6-ap-parabola.md": "16bb40e27a77308c5f31ddb9936deb9edfe47ff75d2350b8b51ee547ba60eb89",
     "round6-rational-orchard.md": "ad2be63be342477d77a11fbdbdab0e31b11a87b802593f4d773d1a77c9df8a3f",
+    "round61-full-split-prime-safe-construction.md": "978f396782fbb07a77f04e35bf739d422270025933fcb90d55e40afb4d9dfe9c",
     "round7-ap-three-rows.md": "d7201bb8faad9df92200bfa4a720e05b93771ef765c0eb6ae6e07f511d7cc3ab",
     "round7-ellipse-cover.md": "c2c3fc97b043e810e445aa52b449a3e2b7fc267f006898e8533c5f69116adc0a",
     "round7-parabola-cover.md": "d5912a202201019b970fd6d7c10fb934a9e37d3c3bdb2decd2fcd2dfa6753f7b",
