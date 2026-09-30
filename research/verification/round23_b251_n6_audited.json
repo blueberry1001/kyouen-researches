@@ -1,0 +1,21 @@
+{
+  "n": 6,
+  "all_quad_count": 2491,
+  "orbit_count": 389,
+  "winner_flips": 0,
+  "unknown_orbits": 0,
+  "independent_outcomes_agree": true,
+  "scan_state_sum": 62862518,
+  "incremental_state_sum": 63129426,
+  "source_sha256": "14eb7534fdd15047c7cc34c4fb0b161c33bfce72aa83149dd33247f6ddc7b314",
+  "solver_sha256": {
+    "round23_b251_single_scan.cpp": "8c1eb67f7598c024a9665a44db69875effe3b2d325665f4e22201b9029ff2aa4",
+    "round23_b251_incremental.cpp": "a2d4a0d9aa384363931047e2e2697ad7c1217230ea06486f834f881bf44caeae"
+  },
+  "input_sha256": {
+    "round23_b251_n6_geometry.json": "f37d22ed7de2060135c15e5a57b9ab550478adf795221787ba6ad9dd3b404af7",
+    "round23_b251_n6_scan.json": "c33918dd7dd8ca43feb73298be5784e16eb78778e998877dda785663f6ccca31",
+    "round23_b251_n6_incremental.json": "e55858f488b92caa143b3e46a76936ba2a7445bbc31454123b5b0a876020a4c8",
+    "round23_b251_n6_input.txt": "a0e9c6855bf2d369c72e68c5c4aa205f0c36a011b85166e8ec430c21690db8ed"
+  }
+}
