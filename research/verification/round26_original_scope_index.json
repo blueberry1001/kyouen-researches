@@ -13,7 +13,7 @@
     "hypothesis-bank-2026-09-27.md": "9d71a9d9440c1423fe76cc4c7dd193a1dd00d7d9bf0de61296cb7bb4a6cf1d49",
     "hypothesis-bank-round2-2026-09-27.md": "e473a3b700bd8d0f728f2e5a181168d9fbfecefdc20c9ddbb137f73f5aa4fe8a"
   },
-  "index_source_sha256": "0d35454529bc56f1f61f0285794aade06fb338806a32cbe256d3a3e06ac54d23",
+  "index_source_sha256": "6fecc023aafe9a39850a24a9fd46762a60b209c9a3711a575cca434032e7f4b9",
   "rows": [
     {
       "id": "B001",
@@ -42622,14 +42622,14 @@
         },
         {
           "report": "round27-fixed-response-audit.md",
-          "heading_line": 98,
+          "heading_line": 99,
           "heading": "### B306の旧説明を訂正",
           "joint_heading_ids": [
             "B306"
           ],
           "labels_in_section": [
             {
-              "line": 104,
+              "line": 105,
               "labels": [
                 "REFUTED"
               ],
@@ -74231,7 +74231,7 @@
     "round23-b256-symmetric-minimum.md": "cefc3078c91e9f1b95d99d0df76439168d445828b017eff10e6f85d8dbdb2af2",
     "round24-circular-cubic-multiple-cover.md": "5be6b3e1f7452e0f309247056d7a7c560edb80d1f3e8166a58e95a006938de56",
     "round25-forced-length-holes.md": "9730a686aabd968d0336346f022af838ff94b19cb3cb92bda22bd9bcdc42a966",
-    "round27-fixed-response-audit.md": "0da295a6d997da04bf1c2c4be6aca7ec03c0c4eab67d770cc4d10bb3bd02a585",
+    "round27-fixed-response-audit.md": "b63ca114607ee59bc1daf461f699f7a8097d6038ac621449e1d23700ce79c8a8",
     "round3-batch-b050-b366.md": "8153aa86c8217c4b0f4903deaf3447cc38d9f2cea487402bb61381d9215a24b4",
     "round3-batch-b092-b127.md": "4afb07b6c378d25f086f1fd618322ed7e0e9faa2b608924b42a5578806fce0b8",
     "round3-batch-b168-b227.md": "75ded41c8ead470832e07bed7399604e731361d0346127e1ec462d899984783b",

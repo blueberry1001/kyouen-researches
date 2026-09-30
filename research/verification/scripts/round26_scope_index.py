@@ -8,6 +8,7 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +18,20 @@ ORIGINAL = re.compile(r'^- \*\*(B\d{3}) \[([^]]+)\] (.*?)\*\* (.+)$')
 ID = re.compile(r'B\d{3}(?!\d)')
 LABEL = re.compile(r'(?<![A-Z-])(SUPPORTED|REFUTED|PARTIAL|INCONCLUSIVE|NOT-CHECKED)(?![A-Z-])')
 REVIEWED = {}
+
+
+def atomic_text(path, text):
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', newline='\n',
+                                         dir=path.parent, prefix=path.name+'.', suffix='.tmp',
+                                         delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(text)
+        temporary.replace(path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
 
 
 def review(ids, status, kind, source, reason, additional=()):
@@ -205,7 +220,7 @@ def main():
     report_names |= {p for row in rows for p in row['additional_reports']}
     payload['evidence_report_sha256'] = {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
                                         for name in sorted(report_names)}
-    (ROOT/'round26_original_scope_index.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    atomic_text(ROOT/'round26_original_scope_index.json',json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
     lines = ['# 全600原命題の証拠索引（原文監査は途中）','',
              '作成: 2026-09-30。原文600件を重複・欠落なく抽出し、原文と証拠への参照を固定した。',
              '**未監査は未解決と同義ではない。この表から研究全体の未解決数はまだ確定できない。**','',
@@ -227,7 +242,7 @@ def main():
     lines += ['', '再現: `python research/verification/scripts/round26_scope_index.py`。',
               '[機械可読索引](round26_original_scope_index.json)には各原文行、節の前提、根拠の種類と採用理由を含める。',
               '根拠の更新はスクリプト内の明示的なREVIEWEDへ加える。推測したステータスで空欄を埋めない。','']
-    (ROOT/'round26-original-scope-index.md').write_text('\n'.join(lines),encoding='utf-8')
+    atomic_text(ROOT/'round26-original-scope-index.md','\n'.join(lines))
     print('PASS originals=600; reviewed=',reviewed_count,'audit states=',counts,'pointers=',sum(len(r['evidence_pointers']) for r in rows))
 
 
