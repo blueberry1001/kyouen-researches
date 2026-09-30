@@ -1,0 +1,28 @@
+name: N11 df-pn root-only child diagnostic
+
+on:
+  push:
+    paths:
+      - '.github/workflows/n11-dfpn-rootonly-children.yml'
+  workflow_dispatch:
+
+jobs:
+  rootonly-child:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build df-pn solver
+        run: |
+          g++ -std=c++20 -O2 -DNDEBUG cpp/solvers/kyouen_dfpn_root.cpp -o /tmp/dfpn
+      - name: 5-minute L44 root-only root-child diagnostic
+        env:
+          D: /tmp/dfpn
+          L: /tmp/dfpn-logs
+          BUDGET: '300'
+          MEMO: '25'
+          EXACT_LEGAL: '44'
+          EXACT_BUDGET: '200000'
+          EXACT_RETRIES: '2'
+        run: |
+          bash research/verification/scripts/dfpn_rootonly_children_probe.sh
