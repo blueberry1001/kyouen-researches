@@ -30,6 +30,7 @@ def scan(path):
             if o in (0x03A3,   # Sigma
                      0x2248,   # almost equal to
                      0x2212,   # minus sign
+                     0x2208,   # element of
                      0x2264, 0x2265, 0x2260, 0x2261):
                 continue
             offenders.append('U+%04X(%s)' % (o, c))

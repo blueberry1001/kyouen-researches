@@ -260,6 +260,15 @@ public:
         for(int i=0;i<k;++i) state=add(state,verts[i]);
         // Re-derive legality from the reconstructed occupancy.
         Bits legal=legal_for(occupied);
+        // Reset the exact-local memo before every replayed position. The
+        // replay driver reuses ONE solver for all rows, and exact_prop
+        // consults exact_local_ when the publish mode is not ALL, so
+        // without this a position solved by an earlier row would be
+        // answered instantly from the cache (observed: one root reported
+        // "LOSS" in 1 node at budget 500k after taking 8588 nodes at
+        // 200k). That silently contaminates the per-root node counts this
+        // benchmark exists to measure.
+        exact_local_.reset();
         std::uint64_t b=budget;
         std::uint64_t before=exact_nodes_;
         ExactResult r=exact_prop(state,stones,legal,b);
@@ -416,6 +425,18 @@ private:
     enum class ExactResult : std::uint8_t { UNKNOWN=0, WIN=1, LOSS=2 };
     int exact_legal_=0;                    // 0 disables the hybrid
     std::uint64_t exact_budget_=100000;    // nodes per handoff attempt
+    // Per-stone-count budget overrides. The s5 frontier measured in
+    // N11-DFPN-S5-BENCH.md needs 130k..5.7M nodes to close while s6
+    // closes inside 200k, so a single global budget either wastes a lot
+    // on s6 or leaves s5 aborting. Lookup is by stone count; anything
+    // not listed falls back to exact_budget_.
+    std::array<std::uint64_t,64> exact_budget_by_stones_{};
+    bool exact_budget_by_stones_set_[64]={};
+    std::uint64_t budget_for_stones(int stones) const {
+        int s=(stones>=0&&stones<64)?stones:63;
+        if(exact_budget_by_stones_set_[s]) return exact_budget_by_stones_[s];
+        return exact_budget_;
+    }
     int exact_retries_=1;                  // attempts per TT residency
     enum class ExactPublishMode : std::uint8_t { ALL=0, ROOT=1, SEPARATE=2 };
     ExactPublishMode exact_publish_mode_=ExactPublishMode::ALL;
@@ -989,7 +1010,7 @@ private:
                         ++exact_call_hist_[eh];
                         if(exact_publish_mode_==ExactPublishMode::ROOT)
                             exact_local_.reset();
-                        std::uint64_t b=exact_budget_;
+                        std::uint64_t b=budget_for_stones(st.back().stones);
                         // Snapshot the GLOBAL exact-node counter so the
                         // nodes consumed by THIS attempt can be isolated.
                         std::uint64_t nodes_before=exact_nodes_;
@@ -1303,6 +1324,12 @@ public:
                             (publish_mode==1?ExactPublishMode::ROOT:
                                              ExactPublishMode::SEPARATE));
     }
+    // Per-stone-count budget override, e.g. 5 -> 5000000.
+    void set_exact_budget_for_stones(int stones,std::uint64_t budget){
+        int s=(stones>=0&&stones<64)?stones:63;
+        exact_budget_by_stones_[s]=std::max<std::uint64_t>(1,budget);
+        exact_budget_by_stones_set_[s]=true;
+    }
     void exact_counters(std::uint64_t& calls,std::uint64_t& nodes,
                         std::uint64_t& aborts,std::uint64_t& wins,
                         std::uint64_t& losses,std::uint64_t& stores,
@@ -1380,6 +1407,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
                int exact_legal,std::uint64_t exact_budget,int exact_retries,
                int exact_publish_mode,bool do_exact_record,
                int exact_record_limit,
+               const std::vector<std::pair<int,std::uint64_t>>& budget_by_stones,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -1396,6 +1424,8 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.set_exact_record_limit(exact_record_limit);
     solver.set_tiebreak_desc(tiebreak_desc);
     solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_mode);
+    for(const auto& kv:budget_by_stones)
+        solver.set_exact_budget_for_stones(kv.first,kv.second);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
      <<" tiebreak="<<(tiebreak_desc?"desc":"asc")
      <<" exact_legal="<<exact_legal
@@ -1553,16 +1583,18 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
 // `--only=` here filters by STONE COUNT, so `--only=5` benchmarks just
 // the s5 frontier.
 template<int N>
-static int run_exact_replay(const std::string& path,std::uint64_t budget,
+    static int run_exact_replay(const std::string& path,std::uint64_t budget,
                             unsigned memo_power,const std::string& only,
                             std::ostream& O){
     std::ifstream in(path);
     if(!in){ std::cerr<<"cannot open --exact-replay\n"; return 1; }
-    DfPn<N> rs(memo_power);
-    rs.set_deadline(0); // no global time budget: the node budget governs
-    rs.set_exact_handoff(0,1,1,1); // handoff disabled; exact_prop called directly
     O<<"# exact replay: id,stones,legal,is_or,budget,result,nodes,wall_s,key_lo,key_hi\n";
     O.flush();
+    // Memo size for the per-row solver. The main table default is 2^26,
+    // whose assign() touches ~1 GB and would dominate a benchmark whose
+    // whole point is a few million nodes. 2^22 (4M entries, ~100 MB)
+    // comfortably holds a single exact search and is reset per row.
+    unsigned row_memo = std::min<unsigned>(memo_power,22);
     std::string line; int id=0;
     double w0=std::chrono::duration<double>(
         std::chrono::steady_clock::now().time_since_epoch()).count();
@@ -1586,9 +1618,18 @@ static int run_exact_replay(const std::string& path,std::uint64_t budget,
             std::chrono::steady_clock::now().time_since_epoch()).count();
         std::uint64_t nodes=0; int res=-1;
         try{
-            res=rs.exact_replay(occ,stones,budget,nodes);
+            // A FRESH solver per row. Reusing one instance leaks state
+            // between positions: exact_prop consults the main PnTT first,
+            // and publish=ALL writes solved entries into it, so a position
+            // overlapping an earlier row would be answered from that
+            // table and report a tiny node count. That is exactly what a
+            // per-root benchmark must not measure.
+            DfPn<N> row_solver(row_memo);
+            row_solver.set_deadline(0);
+            row_solver.set_exact_handoff(0,1,1,0); // publish=ALL
+            res=row_solver.exact_replay(occ,stones,budget,nodes);
         }catch(const std::exception& e){
-            O<<"replay_error,"<<id<<","<<stones<<",0,"<<e.what()<<"\n"; O.flush(); ++id; continue;
+            O<<"replay_error,"<<id<<","<<stones<<",0,\""<<e.what()<<"\"\n"; O.flush(); ++id; continue;
         }
         double t1=std::chrono::duration<double>(
             std::chrono::steady_clock::now().time_since_epoch()).count();
@@ -1614,6 +1655,7 @@ int main(int argc,char**argv){
         int exact_record_limit=0;
         std::string exact_replay_path="";
         std::uint64_t exact_replay_budget=1000000;
+        std::string exact_budget_by_stones_spec="";
         std::string only="";
         double budget_s=0;
         int exact_legal=0, exact_retries=1;
@@ -1644,8 +1686,12 @@ int main(int argc,char**argv){
             else if(a.rfind("--exact-record-limit=",0)==0)exact_record_limit=std::stoi(a.substr(21));
             else if(a.rfind("--exact-replay=",0)==0)exact_replay_path=a.substr(15);
             else if(a.rfind("--exact-replay-budget=",0)==0)exact_replay_budget=std::stoull(a.substr(22));
+            else if(a.rfind("--exact-budget-by-stones=",0)==0){
+                // Format: 5:5000000,6:500000,7:200000
+                exact_budget_by_stones_spec=a.substr(25);
+            }
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate] [--exact-record] [--exact-record-limit=N]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate] [--exact-record] [--exact-record-limit=N] [--exact-replay=P] [--exact-replay-budget=N] [--exact-budget-by-stones=5:N,6:N]\n";
                 return 2;
             }
         }
@@ -1667,24 +1713,41 @@ int main(int argc,char**argv){
             if(!cf){ std::cerr<<"cannot open csv\n"; return 1; }
             cp=&cf;
         }
+        // Parse --exact-budget-by-stones into a vector of (stones,budget).
+        // Format: 5:5000000,6:500000,7:200000
+        std::vector<std::pair<int,std::uint64_t>> budget_by_stones;
+        if(!exact_budget_by_stones_spec.empty()){
+            std::stringstream bs(exact_budget_by_stones_spec); std::string part;
+            while(std::getline(bs,part,',')){
+                if(part.empty()) continue;
+                std::size_t c=part.find(':');
+                if(c==std::string::npos){
+                    std::cerr<<"bad --exact-budget-by-stones entry: "<<part<<"\n";
+                    return 2;
+                }
+                int st=std::stoi(part.substr(0,c));
+                std::uint64_t bv=std::stoull(part.substr(c+1));
+                budget_by_stones.push_back({st,bv});
+            }
+        }
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
             case 4:
                 if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
             case 5:
                 if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
             case 6:
                 if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
             case 7:
                 if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
             case 11:
                 if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
