@@ -299,6 +299,10 @@ public:
     // The first move of the root, needed by quant_solve to rebuild the
     // two-stone position. Set by quant_root().
     int root_first_move_=-1;
+    // Emit a per-third-move progress line in quant_solve. The loop can
+    // run for many minutes with no other output, which is
+    // indistinguishable from a hang.
+    bool quant_progress_=true;
 
     // Solve one 5-stone position exactly, consulting and filling the
     // oracle. Returns 1 WIN, 2 LOSS, 0 UNKNOWN (budget exhausted).
@@ -378,6 +382,17 @@ public:
             bool all=true;
             std::vector<typename Cert5::Q4> rows;
             rows.reserve((std::size_t)n4);
+            // Progress heartbeat. The exists-m3 loop can run for a very
+            // long time, and a run that produces NO output until it
+            // finishes is indistinguishable from a hang, so report the
+            // oracle counters as they move.
+            if(quant_progress_){
+                const auto& oc=oracle;
+                *log_<<"[quant] r2="<<r2<<" m3="<<v<<" ("<<(i+1)<<"/"<<n3
+                    <<") queries="<<oc.queries<<" hits="<<oc.hits
+                    <<" nodes="<<oc.nodes<<std::endl;
+                log_->flush();
+            }
             for(int j=0;j<n4;++j){
                 int w=take_lsb(legal4);
                 if(w<0) break;
