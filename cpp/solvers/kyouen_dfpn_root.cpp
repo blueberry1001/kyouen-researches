@@ -499,6 +499,14 @@ public:
     // and a node-for-node comparison means nothing.
     struct M5Info { int m5=-1, legal=0, tt_state=0; Bits key{}; };
     std::vector<M5Info> enum_m5_unresolved(int r2,int m3,int m4){
+        // A repeated stone is not a position. The earlier A/B spec used
+        // m4=0 while r2 was also 0, which built a four-stone "position"
+        // with one stone doubled (popcount 4); every number measured on
+        // it described an illegal board. Reject such a spec loudly
+        // rather than silently analysing nonsense.
+        if(root_first_move_==r2||root_first_move_==m3||root_first_move_==m4||
+           r2==m3||r2==m4||m3==m4)
+            throw std::runtime_error("s4 spec repeats a stone");
         TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
         TState s3=add(s2,m3);
         TState s4=add(s3,m4);
@@ -587,6 +595,9 @@ public:
     // Returns the exact verdict (1 WIN, 2 LOSS, 0 UNKNOWN) plus the
     // winning fifth move when there is one.
     int s4_direct(int r2,int m3,int m4,std::uint64_t budget,int* winning_m5){
+        if(root_first_move_==r2||root_first_move_==m3||root_first_move_==m4||
+           r2==m3||r2==m4||m3==m4)
+            throw std::runtime_error("s4 spec repeats a stone");
         typename DfPn<N>::TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
         typename DfPn<N>::TState s3=add(s2,m3);
         typename DfPn<N>::TState s4=add(s3,m4);
