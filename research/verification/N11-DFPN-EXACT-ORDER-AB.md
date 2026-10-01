@@ -16,8 +16,8 @@
 
 `--exact-order=count|countd|key`
 
-- **count**（baseline）: 決定的子優先、その次は **合法手数 DESC**
-- **countd**: 決定的子優先、その次は **合法手数 ASC**
+- **count**（baseline, order=0）: 決定的子優先、その次は **合法手数 ASC**
+- **countd**（order=1）: 決定的子優先、その次は **合法手数 DESC**
 - **key**: 決定的子優先、その次は **canonical key ASC**（count を見ない）
 
 「決定的子優先」（OR なら既に解けた WIN 子、AND なら LOSS 子を先頭へ）
@@ -59,14 +59,18 @@
 
 ## 判定
 
-**baseline（count / 合法手数 DESC）が明確に最良。**
+**baseline（count / 合法手数 ASC）が明確に最良。**
 他の 2 mode は「窮屈な budget なら解ける」程度であり、
 同じ条件では 3.3 倍〜11.6 倍の node を無駄にする。
 
-DFS で「近い（合法手数が少ない）局面から先に解けば
-長く連鎖して決まる」のは自然であり、既存 DFS 側の
-事前登録済み depth-5 実験（count DESC 勝ち）と同じ指向で、
-11x11 exact frontier でも一貫している。
+したがって baseline（count ASC）が最良である。ただし注意すべきは、
+既存 DFS 側の事前登録済み depth-5 実験
+（`solver_10_depth5_max_first.cpp`）が **count DESC** を採用していた
+こと（比較は「`x.count > y.count` なら true」）である。
+11x11 exact frontier の測定は**それと逆**の count ASC を支持した。
+両者は局面の層（depth 5 局面と 5 石局面）と legal の範囲が異なるため
+必ずしも矛盾しないが、「count DESC がよい」という一般則を
+11x11 にそのまま持ち込むのは誤りであった。
 
 **したがって Phase 6 の「ordering で桁違いの node 削減」は見込まれない。
 次の bottleneck は ordering 以外にある。**
@@ -97,10 +101,10 @@ ordering 選択で結果が変わったわけではない。ordering は
 ordering フラグ追加後も、hybrid 回帰は前回と完全に一致
 （n=4 LOSS / n=5 WIN / n=6 WIN / n=7 LOSS、exact-legal 0/4/6/8、
 publish all/root/separate、forced-abort arm 801,180 abort）。
-default が count-desc のままであるため、当然同じ結果になる。
+default が order=0（count ASC）のままであるため、当然同じ結果になる。
 
 ## 結論
 
-**ordering 変更は不要。** baseline を維持する。
+**ordering 変更は不要。** baseline（count ASC）を維持する。
 残る bottleneck は「s5 より上の層（s6 の sibling、s7 以降）」の
 difficulty にある。
