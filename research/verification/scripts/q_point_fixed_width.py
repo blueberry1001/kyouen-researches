@@ -96,6 +96,24 @@ def solve(q: int, w: int, m: int) -> dict:
     expected_capacity = (q - 1) * w
     parity_holds = all(not ok or grundy[mask] == ((expected_capacity - mask.bit_count()) & 1)
                        for mask, ok in enumerate(safe))
+
+    # Stronger exact regime: if q > 2w, a circle meets the w horizontal
+    # rows in at most 2w < q points and a non-horizontal line in at most
+    # w < q points.  Hence the only forbidden q-sets are q points in one
+    # row.  This gives an all-m strong solution, not merely an asymptotic
+    # one.  Assert the theorem against every exhaustively enumerated case
+    # in this regime.
+    if q > 2 * w:
+        exact_capacity = w * min(m, q - 1)
+        row_safe_count = sum(comb(m, k) for k in range(min(m, q - 1) + 1))
+        assert len(edges) == w * comb(m, q)
+        assert sum(safe) == row_safe_count ** w
+        assert maximum == exact_capacity
+        assert set(maximal) == {exact_capacity}
+        assert all(
+            not ok or grundy[mask] == ((exact_capacity - mask.bit_count()) & 1)
+            for mask, ok in enumerate(safe)
+        )
     return {
         "q": q, "w": w, "m": m, "vertices": len(points),
         "forbidden_q_sets": len(edges), "safe_sets": sum(safe),
@@ -138,6 +156,11 @@ def main() -> None:
                 "stated_minimum_bound": min(subset_threshold(q, w), triple_threshold(q, w)),
             }
             for q in (4, 5, 6) for w in (1, 2, 3)
+        },
+        "high_q_exact_regime": {
+            "condition": "q > 2w",
+            "theorem": "only same-row q-sets are forbidden; all m are strongly solved",
+            "exhaustive_cases_checked": sum(q > 2 * w for q, w, _ in cases),
         },
         "cases": results,
     }
