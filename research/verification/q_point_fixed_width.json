@@ -1,0 +1,1912 @@
+{
+  "method": "complete subset enumeration; two exact integer geometry predicates agree",
+  "thresholds": {
+    "q4_w1": {
+      "q_minus_1_subset_bound": 3,
+      "determining_triple_bound": 3,
+      "stated_minimum_bound": 3
+    },
+    "q4_w2": {
+      "q_minus_1_subset_bound": 9,
+      "determining_triple_bound": 9,
+      "stated_minimum_bound": 9
+    },
+    "q4_w3": {
+      "q_minus_1_subset_bound": 69,
+      "determining_triple_bound": 69,
+      "stated_minimum_bound": 69
+    },
+    "q5_w1": {
+      "q_minus_1_subset_bound": 4,
+      "determining_triple_bound": 4,
+      "stated_minimum_bound": 4
+    },
+    "q5_w2": {
+      "q_minus_1_subset_bound": 16,
+      "determining_triple_bound": 22,
+      "stated_minimum_bound": 16
+    },
+    "q5_w3": {
+      "q_minus_1_subset_bound": 308,
+      "determining_triple_bound": 184,
+      "stated_minimum_bound": 184
+    },
+    "q6_w1": {
+      "q_minus_1_subset_bound": 5,
+      "determining_triple_bound": 5,
+      "stated_minimum_bound": 5
+    },
+    "q6_w2": {
+      "q_minus_1_subset_bound": 25,
+      "determining_triple_bound": 45,
+      "stated_minimum_bound": 25
+    },
+    "q6_w3": {
+      "q_minus_1_subset_bound": 1345,
+      "determining_triple_bound": 385,
+      "stated_minimum_bound": 385
+    }
+  },
+  "high_q_exact_regime": {
+    "condition": "q > 2w",
+    "theorem": "only same-row q-sets are forbidden; all m are strongly solved",
+    "exhaustive_cases_checked": 39
+  },
+  "boundary_q6_w3_m8_maximal_witness": {
+    "q": 6,
+    "w": 3,
+    "m": 8,
+    "size": 14,
+    "rows": [
+      [
+        0,
+        2,
+        3,
+        7
+      ],
+      [
+        0,
+        2,
+        3,
+        5,
+        6
+      ],
+      [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "all_unoccupied_additions_blocked": [
+      [
+        1,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    "verified_safe_and_maximal": true
+  },
+  "cases": [
+    {
+      "q": 4,
+      "w": 1,
+      "m": 1,
+      "vertices": 1,
+      "forbidden_q_sets": 0,
+      "safe_sets": 2,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 1,
+      "maximal_size_distribution": {
+        "1": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 1,
+      "m": 2,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 1,
+      "m": 3,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 1,
+      "m": 4,
+      "vertices": 4,
+      "forbidden_q_sets": 1,
+      "safe_sets": 15,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 4
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 1,
+      "m": 5,
+      "vertices": 5,
+      "forbidden_q_sets": 5,
+      "safe_sets": 26,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 10
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 1,
+      "m": 6,
+      "vertices": 6,
+      "forbidden_q_sets": 15,
+      "safe_sets": 42,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 20
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 1,
+      "vertices": 1,
+      "forbidden_q_sets": 0,
+      "safe_sets": 2,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 1,
+      "maximal_size_distribution": {
+        "1": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 2,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 3,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 4,
+      "vertices": 4,
+      "forbidden_q_sets": 0,
+      "safe_sets": 16,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 5,
+      "vertices": 5,
+      "forbidden_q_sets": 1,
+      "safe_sets": 31,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 5
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 6,
+      "vertices": 6,
+      "forbidden_q_sets": 6,
+      "safe_sets": 57,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 15
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 1,
+      "m": 7,
+      "vertices": 7,
+      "forbidden_q_sets": 21,
+      "safe_sets": 99,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 35
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 1,
+      "vertices": 1,
+      "forbidden_q_sets": 0,
+      "safe_sets": 2,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 1,
+      "maximal_size_distribution": {
+        "1": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 2,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 3,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 4,
+      "vertices": 4,
+      "forbidden_q_sets": 0,
+      "safe_sets": 16,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 5,
+      "vertices": 5,
+      "forbidden_q_sets": 0,
+      "safe_sets": 32,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "5": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 6,
+      "vertices": 6,
+      "forbidden_q_sets": 1,
+      "safe_sets": 63,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "5": 6
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 7,
+      "vertices": 7,
+      "forbidden_q_sets": 7,
+      "safe_sets": 120,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "5": 21
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 1,
+      "m": 8,
+      "vertices": 8,
+      "forbidden_q_sets": 28,
+      "safe_sets": 219,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "5": 56
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 1,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 2,
+      "vertices": 4,
+      "forbidden_q_sets": 1,
+      "safe_sets": 15,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 4
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 3,
+      "vertices": 6,
+      "forbidden_q_sets": 3,
+      "safe_sets": 54,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 12
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 4,
+      "vertices": 8,
+      "forbidden_q_sets": 10,
+      "safe_sets": 169,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "4": 8,
+        "5": 16
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "maximum_grundy": 2,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 5,
+      "vertices": 10,
+      "forbidden_q_sets": 26,
+      "safe_sets": 470,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "5": 72,
+        "6": 6
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 6,
+      "vertices": 12,
+      "forbidden_q_sets": 59,
+      "safe_sets": 1167,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "5": 108,
+        "6": 64
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 7,
+      "vertices": 14,
+      "forbidden_q_sets": 117,
+      "safe_sets": 2674,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "5": 60,
+        "6": 320
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 8,
+      "vertices": 16,
+      "forbidden_q_sets": 212,
+      "safe_sets": 5635,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "5": 16,
+        "6": 1058
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 2,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 2,
+      "m": 9,
+      "vertices": 18,
+      "forbidden_q_sets": 356,
+      "safe_sets": 11130,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "6": 2846
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 1,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 2,
+      "vertices": 4,
+      "forbidden_q_sets": 0,
+      "safe_sets": 16,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 3,
+      "vertices": 6,
+      "forbidden_q_sets": 0,
+      "safe_sets": 64,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "6": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 4,
+      "vertices": 8,
+      "forbidden_q_sets": 0,
+      "safe_sets": 256,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 5,
+      "vertices": 10,
+      "forbidden_q_sets": 2,
+      "safe_sets": 961,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 25
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 6,
+      "vertices": 12,
+      "forbidden_q_sets": 12,
+      "safe_sets": 3249,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 225
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 7,
+      "vertices": 14,
+      "forbidden_q_sets": 42,
+      "safe_sets": 9801,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 1225
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 8,
+      "vertices": 16,
+      "forbidden_q_sets": 112,
+      "safe_sets": 26569,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 4900
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 2,
+      "m": 9,
+      "vertices": 18,
+      "forbidden_q_sets": 252,
+      "safe_sets": 65536,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 15876
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 1,
+      "vertices": 2,
+      "forbidden_q_sets": 0,
+      "safe_sets": 4,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 2,
+      "maximal_size_distribution": {
+        "2": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 2,
+      "vertices": 4,
+      "forbidden_q_sets": 0,
+      "safe_sets": 16,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 3,
+      "vertices": 6,
+      "forbidden_q_sets": 0,
+      "safe_sets": 64,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "6": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 4,
+      "vertices": 8,
+      "forbidden_q_sets": 0,
+      "safe_sets": 256,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "8": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 5,
+      "vertices": 10,
+      "forbidden_q_sets": 0,
+      "safe_sets": 1024,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "10": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 6,
+      "vertices": 12,
+      "forbidden_q_sets": 2,
+      "safe_sets": 3969,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "10": 36
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 7,
+      "vertices": 14,
+      "forbidden_q_sets": 14,
+      "safe_sets": 14400,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "10": 441
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 8,
+      "vertices": 16,
+      "forbidden_q_sets": 56,
+      "safe_sets": 47961,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "10": 3136
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 2,
+      "m": 9,
+      "vertices": 18,
+      "forbidden_q_sets": 168,
+      "safe_sets": 145924,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "10": 15876
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 1,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 2,
+      "vertices": 6,
+      "forbidden_q_sets": 3,
+      "safe_sets": 54,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 4,
+      "maximal_size_distribution": {
+        "4": 12
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 3,
+      "vertices": 9,
+      "forbidden_q_sets": 14,
+      "safe_sets": 298,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 5,
+      "maximal_size_distribution": {
+        "5": 56
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 4,
+      "vertices": 12,
+      "forbidden_q_sets": 57,
+      "safe_sets": 1199,
+      "empty_grundy": 2,
+      "winner": "first",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "5": 104,
+        "6": 78
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 5,
+      "vertices": 15,
+      "forbidden_q_sets": 118,
+      "safe_sets": 4672,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 7,
+      "maximal_size_distribution": {
+        "5": 64,
+        "6": 530,
+        "7": 80
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 5,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 4,
+      "w": 3,
+      "m": 6,
+      "vertices": 18,
+      "forbidden_q_sets": 212,
+      "safe_sets": 16992,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 8,
+      "maximal_size_distribution": {
+        "5": 4,
+        "6": 648,
+        "7": 964,
+        "8": 108
+      },
+      "winning_first_moves": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "maximum_grundy": 6,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 1,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 2,
+      "vertices": 6,
+      "forbidden_q_sets": 0,
+      "safe_sets": 64,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "6": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 3,
+      "vertices": 9,
+      "forbidden_q_sets": 0,
+      "safe_sets": 512,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 9,
+      "maximal_size_distribution": {
+        "9": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 4,
+      "vertices": 12,
+      "forbidden_q_sets": 12,
+      "safe_sets": 3308,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "8": 36,
+        "9": 32,
+        "10": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 5,
+      "vertices": 15,
+      "forbidden_q_sets": 27,
+      "safe_sets": 21125,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 11,
+      "maximal_size_distribution": {
+        "8": 9,
+        "9": 130,
+        "10": 193,
+        "11": 12
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 7,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 3,
+      "m": 6,
+      "vertices": 18,
+      "forbidden_q_sets": 54,
+      "safe_sets": 126508,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 12,
+      "maximal_size_distribution": {
+        "8": 7,
+        "9": 112,
+        "10": 784,
+        "11": 904,
+        "12": 127
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 8,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 1,
+      "vertices": 3,
+      "forbidden_q_sets": 0,
+      "safe_sets": 8,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 3,
+      "maximal_size_distribution": {
+        "3": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 2,
+      "vertices": 6,
+      "forbidden_q_sets": 0,
+      "safe_sets": 64,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 6,
+      "maximal_size_distribution": {
+        "6": 1
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 3,
+      "vertices": 9,
+      "forbidden_q_sets": 0,
+      "safe_sets": 512,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 9,
+      "maximal_size_distribution": {
+        "9": 1
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "maximum_grundy": 1,
+      "fixed_width_parity_formula_holds_all_safe_states": true
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 4,
+      "vertices": 12,
+      "forbidden_q_sets": 2,
+      "safe_sets": 3972,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 11,
+      "maximal_size_distribution": {
+        "10": 16,
+        "11": 2
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 3,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 5,
+      "vertices": 15,
+      "forbidden_q_sets": 4,
+      "safe_sets": 30866,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 13,
+      "maximal_size_distribution": {
+        "11": 1,
+        "12": 58,
+        "13": 9
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "maximum_grundy": 5,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 6,
+      "w": 3,
+      "m": 6,
+      "vertices": 18,
+      "forbidden_q_sets": 9,
+      "safe_sets": 231312,
+      "empty_grundy": 1,
+      "winner": "first",
+      "maximum_safe_size": 15,
+      "maximal_size_distribution": {
+        "13": 296,
+        "14": 160,
+        "15": 16
+      },
+      "winning_first_moves": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "maximum_grundy": 8,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    },
+    {
+      "q": 5,
+      "w": 4,
+      "m": 4,
+      "vertices": 16,
+      "forbidden_q_sets": 80,
+      "safe_sets": 31298,
+      "empty_grundy": 0,
+      "winner": "second",
+      "maximum_safe_size": 10,
+      "maximal_size_distribution": {
+        "8": 77,
+        "9": 832,
+        "10": 196
+      },
+      "winning_first_moves": [],
+      "maximum_grundy": 5,
+      "fixed_width_parity_formula_holds_all_safe_states": false
+    }
+  ]
+}
