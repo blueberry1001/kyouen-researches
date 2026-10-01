@@ -125,6 +125,52 @@ def solve(q: int, w: int, m: int) -> dict:
     }
 
 
+def verify_q6_w3_m8_maximal_witness() -> dict:
+    """Verify a 14-stone maximal safe set on the boundary q=2w=6.
+
+    This is a lower-bound witness for the true stabilization length:
+    M_{3,6} >= 9.  It is checked directly with the same exact lifted-rank
+    predicate, without relying on the specialized pair-sum proof.
+    """
+    q, w, m = 6, 3, 8
+    points = [(x, y) for y in range(w) for x in range(m)]
+    row_x = (
+        (0, 2, 3, 7),
+        (0, 2, 3, 5, 6),
+        (0, 2, 3, 4, 5),
+    )
+    chosen = {
+        y * m + x
+        for y, xs in enumerate(row_x)
+        for x in xs
+    }
+
+    def safe(ids: set[int]) -> bool:
+        return all(
+            not same_circle_or_line_rank(tuple(points[i] for i in subset))
+            for subset in combinations(sorted(ids), q)
+        )
+
+    assert len(chosen) == 14
+    assert safe(chosen)
+    blocked = []
+    for i in range(len(points)):
+        if i in chosen:
+            continue
+        assert not safe(chosen | {i})
+        blocked.append(list(points[i]))
+
+    return {
+        "q": q,
+        "w": w,
+        "m": m,
+        "size": len(chosen),
+        "rows": [list(xs) for xs in row_x],
+        "all_unoccupied_additions_blocked": blocked,
+        "verified_safe_and_maximal": True,
+    }
+
+
 def subset_threshold(q: int, w: int) -> int:
     n = (q - 1) * (w - 1)
     return q - 1 + 2 * (comb(n, q - 1) - (w - 1)) + (q - 2) * comb(n, q - 2)
@@ -147,6 +193,7 @@ def main() -> None:
              + [(q, 3, m) for q in (4, 5, 6) for m in range(1, 7)]
              + [(5, 4, 4)])
     results = [solve(*case) for case in cases]
+    boundary_witness = verify_q6_w3_m8_maximal_witness()
     payload = {
         "method": "complete subset enumeration; two exact integer geometry predicates agree",
         "thresholds": {
@@ -162,6 +209,7 @@ def main() -> None:
             "theorem": "only same-row q-sets are forbidden; all m are strongly solved",
             "exhaustive_cases_checked": sum(q > 2 * w for q, w, _ in cases),
         },
+        "boundary_q6_w3_m8_maximal_witness": boundary_witness,
         "cases": results,
     }
     args.output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
