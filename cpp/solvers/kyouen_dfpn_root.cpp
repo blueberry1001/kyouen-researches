@@ -295,6 +295,12 @@ public:
         std::uint64_t queries=0, hits=0, wins=0, losses=0, unknowns=0;
         std::uint64_t nodes=0;
         std::uint64_t wall=0;   // milliseconds spent inside exact_prop
+        // Deep-TT reuse, sampled around each query. With publish=ALL
+        // the exact DFS publishes its interior solved states into the
+        // main PnTT, so these can be large even when the oracle root
+        // cache never hits.
+        std::uint64_t tt_hits=0, tt_misses=0, tt_growth=0;
+        std::uint64_t aborted_by_time=0;
     };
     Oracle oracle;
     // The first move of the root, needed by quant_solve to rebuild the
@@ -313,6 +319,11 @@ public:
     // costs at most one budget rather than the whole time allowance.
     std::chrono::steady_clock::time_point quant_deadline_{};
     bool quant_has_deadline_=false;
+
+    // Branch telemetry, reset per reply by quant_solve.
+    std::uint64_t q_m3_tried_=0, q_m3_refuted_=0;
+    std::uint64_t q_m4_sat_=0, q_m4_refuted_=0, q_m4_unknown_=0;
+    std::uint64_t q_queries_at_refute_=0;
 
     // True once the wall allowance is used up. Queried by the oracle
     // before each query and by quant_solve between third moves.
@@ -351,6 +362,19 @@ public:
         Bits legal=legal_for(occupied);
         std::uint64_t b=budget;
         std::uint64_t before=exact_nodes_;
+        // Deep-TT reuse is measured separately from the oracle's own
+        // root cache. run_quant() uses publish=ALL, so exact_prop writes
+        // its interior solved states into the main PnTT; a later query
+        // that overlaps an earlier one can therefore be much cheaper
+        // even when the oracle root cache never hits. Tracking the PnTT
+        // counters around each call separates "the cache did not help"
+        // from "the table did".
+        std::uint64_t tth0=0, ttm0=0, ttused0=tt_.used(), ttopen0=tt_open();
+        {
+            std::uint64_t h,m,pn,d,eo,es; double ap;
+            tt_.counters(h,m,pn,d,eo,es,ap);
+            tth0=h; ttm0=m;
+        }
         if(quant_progress_){
             *log_<<"[q-start] q="<<oracle.queries
                 <<" key="<<key.lo<<","<<key.hi
@@ -363,14 +387,25 @@ public:
         ExactResult r=exact_prop(state,5,legal,b);
         double t1=std::chrono::duration<double>(
             Clock::now().time_since_epoch()).count();
+        std::uint64_t tth1=0, ttm1=0, ttused1=tt_.used();
+        {
+            std::uint64_t h,m,pn,d,eo,es; double ap;
+            tt_.counters(h,m,pn,d,eo,es,ap);
+            tth1=h; ttm1=m;
+        }
         oracle.nodes+=exact_nodes_-before;
         oracle.wall+=std::uint64_t((t1-t0)*1000.0);
+        oracle.tt_hits+=(tth1-tth0);
+        oracle.tt_misses+=(ttm1-ttm0);
+        oracle.tt_growth+=(ttused1-ttused0);
         if(quant_progress_){
             *log_<<"[q-done]  q="<<oracle.queries
                 <<" key="<<key.lo<<","<<key.hi
                 <<" result="<<(r==ExactResult::WIN?1:(r==ExactResult::LOSS?2:0))
                 <<" nodes="<<(exact_nodes_-before)
-                <<" ms="<<(long long)((t1-t0)*1000.0)<<std::endl;
+                <<" ms="<<(long long)((t1-t0)*1000.0)
+                <<" tth="<<(tth1-tth0)<<" ttm="<<(ttm1-ttm0)
+                <<" ttused="<<ttused1<<std::endl;
             log_->flush();
         }
         if(r==ExactResult::WIN){
@@ -434,10 +469,17 @@ public:
         // possible at all; without it this routine is a one-sided prover
         // that can only ever return WIN or UNKNOWN.
         bool saw_unknown=false;
+        // Branch-level telemetry. The whole feasibility question turns
+        // on how quickly each level short-circuits, so record it rather
+        // than inferring it from total query counts.
+        q_m3_tried_=0; q_m4_sat_=0; q_m4_refuted_=0; q_m4_unknown_=0;
+        q_m3_refuted_=0; q_queries_at_refute_=0;
         for(int i=0;i<n3;++i){
             int v=take_lsb(legal3);
             if(v<0) break;
             if(quant_out_of_time()) return 0;
+            ++q_m3_tried_;
+            std::uint64_t q_at_m3=oracle.queries;
             TState s3=add(s2,v);
             Bits occ3=occ2; setbit(occ3,v);
             Bits legal4=legal_for(occ3);
@@ -479,19 +521,34 @@ public:
                 }
                 if(!found) break;
             }
-            if(!all||(int)rows.size()!=n4) continue; // not a proof
+            if(!all||(int)rows.size()!=n4){
+                if(saw_unknown && oracle.queries==q_at_m3) ++q_m4_unknown_;
+                else { ++q_m4_refuted_; ++q_m3_refuted_;
+                       if(q_queries_at_refute_==0) q_queries_at_refute_=oracle.queries-q_at_m3; }
+                continue; // not a proof
+            }
+            ++q_m4_sat_;
             if(cert){
                 cert->r2=r2; cert->r3=v; cert->q4=rows;
             }
             return 1; // exists m3 satisfied
         }
-        // Every third move was examined. The reply is refuted only when
-        // each one FAILED PROPERLY, meaning every fourth reply had every
-        // fifth move come back a proven LOSS. If any query ran out of
-        // budget the reply is merely unproven, and saying LOSS there
-        // would be exactly the overclaim this project forbids.
+        // Every third move was examined and none was proved. The reply
+        // is refuted only when each one FAILED PROPERLY, i.e. was
+        // refuted by a single fourth reply with all fifth moves LOSS.
+        // If any query ran out of budget the reply is merely unproven,
+        // and saying LOSS there would be exactly the overclaim this
+        // project forbids.
         return saw_unknown ? 0 : 2;
     }
+
+    // Branch telemetry accessors, for the driver to report.
+    std::uint64_t q_m3_tried() const { return q_m3_tried_; }
+    std::uint64_t q_m3_refuted() const { return q_m3_refuted_; }
+    std::uint64_t q_m4_sat() const { return q_m4_sat_; }
+    std::uint64_t q_m4_refuted() const { return q_m4_refuted_; }
+    std::uint64_t q_m4_unknown() const { return q_m4_unknown_; }
+    std::uint64_t q_queries_at_refute() const { return q_queries_at_refute_; }
 
     std::uint64_t forbidden_count() const { return forbidden_count_; }
     std::uint64_t visited() const { return visited_; }
@@ -990,6 +1047,16 @@ private:
         if((exact_nodes_ & 4095ULL)==0 && deadline_s_>0){
             double el=std::chrono::duration<double>(Clock::now()-t0_).count();
             if(el>=deadline_s_) throw std::runtime_error("TIME_BUDGET");
+        }
+        // Query-level watchdog for the quantified search. The oracle
+        // checks the wall allowance between queries, but a single heavy
+        // query would then run past it unchecked, so the check is also
+        // made here, on the same 4096-node cadence as the global
+        // deadline. Returning UNKNOWN rather than throwing is what lets
+        // the quant driver tell "out of time" from "budget exhausted".
+        if((exact_nodes_ & 4095ULL)==0 && quant_out_of_time()){
+            ++oracle.aborted_by_time;
+            return ExactResult::UNKNOWN;
         }
 
         if(!any(legal)){
@@ -1971,7 +2038,9 @@ static int run_quant(int first,const std::string& replies,
     O<<"# quantified s5 search: first="<<first
      <<" replies="<<rs.size()<<" node_budget="<<budget
      <<" timeout_s="<<timeout_s<<"\n";
-    O<<"# reply,outcome,r3,n_r4,oracle_queries,oracle_hits,oracle_nodes,wall_s\n";
+    O<<"# reply,outcome,r3,n_r4,oracle_queries,oracle_hits,oracle_nodes,wall_s"
+     <<",m3_tried,m3_refuted,m4_sat,m4_refuted,m4_unknown,q_at_refute"
+     <<",tt_hits,tt_misses,tt_growth\n";
     O.flush();
 
     int nwin=0, nloss=0, nunk=0;
@@ -1995,7 +2064,11 @@ static int run_quant(int first,const std::string& replies,
         O<<"quant,"<<r2<<","
          <<(res==1?"WIN":(res==2?"LOSS":"UNKNOWN"))<<","
          <<(cert.r3>=0?cert.r3:-1)<<","<<cert.q4.size()<<","
-         <<oc.queries<<","<<oc.hits<<","<<oc.nodes<<","<<(long long)(t1-t0)<<"\n";
+         <<oc.queries<<","<<oc.hits<<","<<oc.nodes<<","<<(long long)(t1-t0)<<","
+         <<solver.q_m3_tried()<<","<<solver.q_m3_refuted()<<","
+         <<solver.q_m4_sat()<<","<<solver.q_m4_refuted()<<","
+         <<solver.q_m4_unknown()<<","<<solver.q_queries_at_refute()<<","
+         <<oc.tt_hits<<","<<oc.tt_misses<<","<<oc.tt_growth<<"\n";
         if(res==1){
             ++nwin;
             O<<"# certificate reply="<<r2<<" r3="<<cert.r3
