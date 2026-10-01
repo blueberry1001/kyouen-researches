@@ -198,7 +198,7 @@ public:
     using Clock=std::chrono::steady_clock;
     struct TState { std::array<Bits,8> t{}; };
     struct GChild {
-        TState ts; Bits legal,key; int count=0;
+        typename DfPn<N>::TState ts; Bits legal,key; int count=0;
         std::uint32_t pn=1,dn=1; std::uint8_t st=0;
         std::uint64_t work=0;      // cumulative expansions under this child
         std::uint32_t last_pn=1,last_dn=1; // for delta tracking
@@ -223,7 +223,7 @@ public:
     }
 
     Result solve_empty(){
-        TState state{};
+        typename DfPn<N>::TState state{};
         Bits occupied{};
         // Empty board: every point is legal. Build the mask directly instead
         // of (~0ULL, HI_MASK): for V<=64 (n<=8) HI_MASK is 0 and hi would be
@@ -237,7 +237,7 @@ public:
 
     Result solve_root(const std::vector<int>& stones){
         validate_root(stones);
-        TState state{};
+        typename DfPn<N>::TState state{};
         Bits occupied{};
         for(int v:stones){ state=add(state,v); setbit(occupied,v); }
         Bits legal=legal_for(occupied);
@@ -269,7 +269,7 @@ public:
         Bits s=occupied;
         while(any(s)){ if(k>=V) throw std::runtime_error("exact_replay: bad occupancy"); verts[k++]=take_lsb(s); }
         if(k!=stones) throw std::runtime_error("exact_replay: stones mismatch");
-        TState state{};
+        typename DfPn<N>::TState state{};
         for(int i=0;i<k;++i) state=add(state,verts[i]);
         // Re-derive legality from the reconstructed occupancy.
         Bits legal=legal_for(occupied);
@@ -409,14 +409,20 @@ public:
         double t0=std::chrono::duration<double>(
             Clock::now().time_since_epoch()).count();
         ExactResult r=ExactResult::UNKNOWN;
+        bool timed_out=false;
         try{
             r=exact_prop(state,5,legal,b);
         }catch(const QuantTimeout&){
             // Wall allowance expired inside the exact DFS. Report the
             // sentinel so quant_solve stops immediately; whatever the
             // exact DFS had already published stays in the table.
-            ++oracle.timeouts;
-            return -1;
+            //
+            // Fall THROUGH to the accounting below rather than
+            // returning early: the nodes, time, table growth, evictions
+            // and probe length this query consumed are real cost, and
+            // dropping them made the final query of every run vanish
+            // from the totals.
+            timed_out=true;
         }
         double t1=std::chrono::duration<double>(
             Clock::now().time_since_epoch()).count();
@@ -430,16 +436,16 @@ public:
         oracle.nodes+=exact_nodes_-before;
         oracle.wall+=std::uint64_t((t1-t0)*1000.0);
         oracle.tt_hits+=(tth1-tth0);
-                oracle.tt_misses+=(ttm1-ttm0);
-                oracle.tt_growth+=(ttused1-ttused0);
+        oracle.tt_misses+=(ttm1-ttm0);
+        oracle.tt_growth+=(ttused1-ttused0);
         oracle.evict_open+=(eo1-eo0);
         oracle.evict_solved+=(es1-es0);
         oracle.probe_sum+=ap1;
         oracle.probe_n++;
         if(quant_progress_){
-            *log_<<"[q-done]  q="<<oracle.queries
+            *log_<<(timed_out?"[q-timeout]":"[q-done]  ")<<" q="<<oracle.queries
                 <<" key="<<key.lo<<","<<key.hi
-                <<" result="<<(r==ExactResult::WIN?1:(r==ExactResult::LOSS?2:0))
+                <<" result="<<(timed_out?-1:(r==ExactResult::WIN?1:(r==ExactResult::LOSS?2:0)))
                 <<" nodes="<<(exact_nodes_-before)
                 <<" ms="<<(long long)((t1-t0)*1000.0)
                 <<" tth="<<(tth1-tth0)<<" ttm="<<ttm1-ttm0
@@ -448,6 +454,11 @@ public:
                 <<" ap="<<ap1<<std::endl;
             log_->flush();
         }
+        // A timed-out query has no verdict. It must NOT be cached as
+        // UNKNOWN, and it must not be counted as one, or the next reply
+        // would inherit the failure. Report the out-of-time sentinel
+        // after the cost has been recorded.
+        if(timed_out){ ++oracle.timeouts; return -1; }
         if(r==ExactResult::WIN){
             oracle.memo[key]=1; ++oracle.wins; return 1;
         }
@@ -479,6 +490,95 @@ public:
     }
     const Oracle& oracle_stats() const { return oracle; }
 
+    // Board helpers exposed for the s4 A/B driver, which has to rebuild
+    // the same 4-stone position the quant solver would have reached.
+    void set_first_move(int v){ root_first_move_=v; }
+    TState add_pub(TState s,int v) const { return add(s,v); }
+    void setbit_pub(Bits& b,int v) const { setbit(b,v); }
+    Bits legal_for_pub(Bits occ) const { return legal_for(occ); }
+    static int popcount_pub(Bits b){
+        int n=0; while(any(b)){ if(take_lsb(b)<0) break; ++n; } return n;
+    }
+    static int take_lsb_pub(Bits& b){ return take_lsb(b); }
+    static bool any_pub(Bits b){ return any(b); }
+
+    // Solve one 4-stone position exactly. This is EQUIVALENT to the
+    // quant solver's inner "exists m5 : WIN(s5)" step, because an s4
+    // position is an OR node and the exact DFS returns on the first
+    // child it proves WIN. So it is a drop-in A/B against enumerating
+    // the fifth moves one at a time:
+    //   - the exact DFS already has the count-ASC ordering, so a WIN
+    //     fifth move is found early rather than in index order;
+    //   - transpositions between the s5 children are shared inside one
+    //     search instead of across separate oracle calls.
+    // Returns 1 WIN, 2 LOSS, 0 UNKNOWN (budget exhausted).
+    int exact4_oracle(const TState& state,Bits occupied,std::uint64_t budget){
+        Bits key=canonical(state);
+        auto it=oracle.memo.find(key);
+        if(it!=oracle.memo.end()){
+            ++oracle.hits; ++oracle.queries;
+            return it->second;
+        }
+        ++oracle.queries;
+        Bits legal=legal_for(occupied);
+        std::uint64_t b=budget;
+        std::uint64_t before=exact_nodes_;
+        double t0=std::chrono::duration<double>(
+            Clock::now().time_since_epoch()).count();
+        if(quant_progress_){
+            *log_<<"[s4-start] q="<<oracle.queries<<" key="<<key.lo<<","<<key.hi
+                <<" legal="<<popcount(legal)<<" budget="<<budget<<std::endl;
+            log_->flush();
+        }
+        ExactResult r=exact_prop(state,4,legal,b);
+        double t1=std::chrono::duration<double>(
+            Clock::now().time_since_epoch()).count();
+        oracle.nodes+=exact_nodes_-before;
+        oracle.wall+=std::uint64_t((t1-t0)*1000.0);
+        if(quant_progress_){
+            *log_<<"[s4-done]  q="<<oracle.queries<<" key="<<key.lo<<","<<key.hi
+                <<" result="<<(r==ExactResult::WIN?1:(r==ExactResult::LOSS?2:0))
+                <<" nodes="<<(exact_nodes_-before)
+                <<" ms="<<(long long)((t1-t0)*1000.0)<<std::endl;
+            log_->flush();
+        }
+        if(r==ExactResult::WIN){ oracle.memo[key]=1; ++oracle.wins; return 1; }
+        if(r==ExactResult::LOSS){ oracle.memo[key]=2; ++oracle.losses; return 2; }
+        ++oracle.unknowns;
+        return 0;
+    }
+
+    // Reconstruct the 4-stone position reached by first move, second
+    // reply, third move and fourth reply, and solve it exactly.
+    // Returns the exact verdict (1 WIN, 2 LOSS, 0 UNKNOWN) plus the
+    // winning fifth move when there is one.
+    int s4_direct(int r2,int m3,int m4,std::uint64_t budget,int* winning_m5){
+        typename DfPn<N>::TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
+        typename DfPn<N>::TState s3=add(s2,m3);
+        typename DfPn<N>::TState s4=add(s3,m4);
+        Bits occ{}; setbit(occ,root_first_move_); setbit(occ,r2);
+        setbit(occ,m3); setbit(occ,m4);
+        int res=exact4_oracle(s4,occ,budget);
+        if(winning_m5) *winning_m5=-1;
+        if(res==1){
+            // Recover a concrete winning fifth move from the stored
+            // table so the certificate stays checkable.
+            Bits legal5=legal_for(occ);
+            Bits m=legal5;
+            while(any(m)){
+                int z=take_lsb(m);
+                if(z<0) break;
+                typename DfPn<N>::TState s5=add(s4,z);
+                int slot=tt_.find(canonical(s5).lo,canonical(s5).hi);
+                if(slot>=0 && tt_.st_[(std::size_t)slot]==PnTT::WIN){
+                    if(winning_m5) *winning_m5=z;
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+
     // ---- QUANTIFIED s5 SEARCH  (exists m3 forall m4 exists m5) ----
     // A two-stone root {m2,r2} is an OR node: to show the ORIGINAL
     // FIRST PLAYER wins it, ONE winning third move suffices. A
@@ -497,18 +597,23 @@ public:
     // Returns 1 WIN, 2 LOSS, 0 UNKNOWN (a budget ran out somewhere).
     // `cert` is filled only on a WIN.
     int quant_solve(int r2,std::uint64_t budget,Cert5* cert){
-        TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
+        typename DfPn<N>::TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
         Bits occ2{}; setbit(occ2,root_first_move_); setbit(occ2,r2);
         Bits legal3=legal_for(occ2);
         int n3=popcount(legal3);
-        // A third move is only a REFUTED one if, for EVERY legal fourth
-        // reply, EVERY legal fifth move is a proven LOSS at the oracle.
-        // If any fifth move came back UNKNOWN the third move is merely
-        // unproven, and the whole reply must stay UNKNOWN rather than
-        // LOSS. Tracking that separately is what makes a refutation
-        // possible at all; without it this routine is a one-sided prover
-        // that can only ever return WIN or UNKNOWN.
-        bool saw_unknown=false;
+        // A third move is refuted as soon as ONE fourth reply is
+        // refuted (exists m4, forall m5 LOSS); it is proved only when
+        // every fourth reply is SAT (forall m4, exists m5 WIN). If some
+        // fourth reply is UNKNOWN the third move is neither proved nor
+        // refuted, and the reply as a whole must stay UNKNOWN.
+        //
+        // Unknowns are tracked by q_m3_unknown_, NOT by a reply-wide
+        // flag. The previous code kept a local saw_unknown that nothing
+        // ever set, so the final "saw_unknown ? 0 : 2" always chose 2
+        // and reported a LOSS even when a third move had been left
+        // inconclusive. That is an unsound refutation, and the per-m3
+        // counter is what the verdict must consult.
+        //
         // Branch-level telemetry. The whole feasibility question turns
         // on how quickly each level short-circuits, so record it rather
         // than inferring it from total query counts.
@@ -521,7 +626,7 @@ public:
             if(quant_out_of_time()) return 0;
             ++q_m3_tried_;
             std::uint64_t q_at_m3=oracle.queries;
-            TState s3=add(s2,v);
+            typename DfPn<N>::TState s3=add(s2,v);
             Bits occ3=occ2; setbit(occ3,v);
             Bits legal4=legal_for(occ3);
             int n4=popcount(legal4);
@@ -555,7 +660,7 @@ public:
             for(int j=0;j<n4;++j){
                 int w=take_lsb(legal4);
                 if(w<0) break;
-                TState s4=add(s3,w);
+                typename DfPn<N>::TState s4=add(s3,w);
                 Bits occ4=occ3; setbit(occ4,w);
                 Bits legal5=legal_for(occ4);
                 int n5=popcount(legal5);
@@ -564,7 +669,7 @@ public:
                 for(int k=0;k<n5;++k){
                     int z=take_lsb(legal5);
                     if(z<0) break;
-                    TState s5=add(s4,z);
+                    typename DfPn<N>::TState s5=add(s4,z);
                     Bits occ5=occ4; setbit(occ5,z);
                     int r=s5_oracle(s5,occ5,budget);
                     if(r<0) return 0;             // wall allowance exhausted
@@ -573,7 +678,7 @@ public:
                     // r==2 (this fifth move loses) -> try another
                     if(r==0){ m4_unk=true; break; }
                 }
-                if(found){ ++m4_sat; continue; }
+                if(found){ ++m4_sat; ++q_m4_sat_; continue; }
                 if(m4_unk){
                     ++m4_unknown; m3_unknown=true;
                     ++q_m4_unknown_;
@@ -591,6 +696,12 @@ public:
             }
             if(m3_refuted){ ++q_m3_refuted_; continue; }
             if((int)rows.size()!=n4||m3_unknown){
+                // Reaching here with rows.size()==n4 and no unknown
+                // would mean the m4 loop ended without either a
+                // refutation or a full set of SAT rows, which the loop
+                // structure does not allow. If it ever did happen the
+                // safe reading is UNKNOWN, so treat it as such rather
+                // than as a proof.
                 ++q_m3_unknown_;
                 if(!m3_unknown) ++q_m4_unknown_;
                 continue;                       // not a proof
@@ -603,12 +714,14 @@ public:
             return 1; // exists m3 satisfied
         }
         // Every third move was examined and none was proved. The reply
-        // is refuted only when each one FAILED PROPERLY, i.e. was
-        // refuted by a single fourth reply with all fifth moves LOSS.
-        // If any query ran out of budget the reply is merely unproven,
-        // and saying LOSS there would be exactly the overclaim this
-        // project forbids.
-        return saw_unknown ? 0 : 2;
+        // is REFUTED only if each one was refuted outright, i.e. by a
+        // single fourth reply whose every fifth move was a proven LOSS.
+        // If any third move was left UNKNOWN the reply is merely
+        // unproven. This must consult q_m3_unknown_, which is the only
+        // counter that records that; the reply-wide flag this used to
+        // use was never set, so it always answered LOSS.
+        if(q_m3_unknown_>0) return 0;
+        return 2;
     }
 
     // Branch telemetry accessors, for the driver to report.
@@ -1019,7 +1132,7 @@ private:
             int v=take_lsb(moves);
             if(v<0||v>=V) throw std::runtime_error("gen_into: move index out of range");
             Bits bit=bitof(v);
-            TState ns=add(state,v);
+            typename DfPn<N>::TState ns=add(state,v);
             Bits nl=(legal&~bit)&~added_bans(state.t[0],v);
             nl.hi&=HI_MASK;
             Bits nk=canonical(ns);
@@ -1557,7 +1670,7 @@ private:
             // Lifetime: COPIED into the child frame (not referenced), because
             // the parent's Gen buffer is reused on revisit while the child
             // frame is still alive.
-            TState ct=g.ch[(std::size_t)b1].ts;
+            typename DfPn<N>::TState ct=g.ch[(std::size_t)b1].ts;
             Frame nf;
             nf.key=ck; nf.state=ct; nf.legal=cl;
             nf.stones=cs; nf.depth=cd;
@@ -2173,6 +2286,94 @@ static int run_quant(int first,const std::string& replies,
     return 0;
 }
 
+// ---- s4-direct vs m5-enumeration A/B, on one fixed fourth position --
+// The quant solver's inner step is "exists m5 : WIN(s5)". Since an s4
+// position is an OR node, solving that position exactly answers the
+// same question, while getting the exact DFS child ordering and sharing
+// transpositions across the fifth moves inside a single search. This
+// driver runs both on the SAME s4 position with the same budget and
+// memo, so the comparison is like-for-like.
+//
+// Output columns: arm, result, nodes, ms, winning_m5
+template<int N>
+static int run_s4_ab(const std::string& spec,int first,
+                     std::uint64_t budget,unsigned memo_power,
+                     std::ostream& O){
+    int r2=0,m3=0,m4=0;
+    {
+        std::vector<std::string> f;
+        std::stringstream ss(spec); std::string t;
+        while(std::getline(ss,t,',')) if(!t.empty()) f.push_back(t);
+        if(f.size()!=3){
+            std::cerr<<"--s4-ab wants r2,m3,m4\n"; return 2;
+        }
+        r2=std::stoi(f[0]); m3=std::stoi(f[1]); m4=std::stoi(f[2]);
+    }
+    // Rebuild the position once so both arms see the identical s4.
+    O<<"# s4 A/B: first="<<first<<" r2="<<r2<<" m3="<<m3<<" m4="<<m4
+     <<" budget="<<budget<<" memo=2^"<<memo_power<<"\n";
+    O<<"# arm,result,nodes,ms,winning_m5\n";
+    O.flush();
+
+    // Arm 1: direct exact solve of the 4-stone position.
+    {
+        DfPn<N> a(memo_power);
+        a.set_deadline(0);
+        a.set_exact_handoff(0,1,1,0);
+        a.oracle_clear();
+        a.set_first_move(first);
+        int w5=-1;
+        double t0=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        int res=a.s4_direct(r2,m3,m4,budget,&w5);
+        double t1=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        const auto& oc=a.oracle_stats();
+        O<<"direct,"<<res<<","<<oc.nodes<<","<<(long long)((t1-t0)*1000.0)
+         <<","<<w5<<"\n";
+        O.flush();
+    }
+    // Arm 2: enumerate the fifth moves and hand each s5 to the oracle,
+    // exactly as the quant solver does.
+    {
+        DfPn<N> b(memo_power);
+        b.set_deadline(0);
+        b.set_exact_handoff(0,1,1,0);
+        b.oracle_clear();
+        b.set_first_move(first);
+        typename DfPn<N>::TState s2{}; s2=b.add_pub(s2,first); s2=b.add_pub(s2,r2);
+        typename DfPn<N>::TState s3=b.add_pub(s2,m3);
+        typename DfPn<N>::TState s4=b.add_pub(s3,m4);
+        Bits occ{}; b.setbit_pub(occ,first); b.setbit_pub(occ,r2);
+        b.setbit_pub(occ,m3); b.setbit_pub(occ,m4);
+        Bits legal5=b.legal_for_pub(occ);
+        Bits mm=legal5;
+        int n5=DfPn<N>::popcount_pub(legal5);
+        double t0=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        int res=0, w5=-1, tried=0;
+        for(int kk=0;kk<n5;++kk){
+            int z=DfPn<N>::take_lsb_pub(mm);
+            if(z<0) break;
+            typename DfPn<N>::TState s5=b.add_pub(s4,z);
+            Bits o5=occ; b.setbit_pub(o5,z);
+            int r=b.s5_oracle(s5,o5,budget);
+            ++tried;
+            if(r==1){ res=1; w5=z; break; }
+            if(r==2) continue;
+            res=0; break;               // inconclusive
+        }
+        (void)n5;
+        double t1=std::chrono::duration<double>(
+            std::chrono::steady_clock::now().time_since_epoch()).count();
+        const auto& oc=b.oracle_stats();
+        O<<"enum_m5,"<<res<<","<<oc.nodes<<","<<(long long)((t1-t0)*1000.0)
+         <<","<<w5<<",queries="<<oc.queries<<"\n";
+        O.flush();
+    }
+    return 0;
+}
+
 int main(int argc,char**argv){
     try{
         int n=11;
@@ -2188,6 +2389,9 @@ int main(int argc,char**argv){
         std::string quant_replies="";
         std::uint64_t quant_budget=20000000;
         double quant_timeout=0;
+        std::string s4_ab="";          // "r2,m3,m4"
+        unsigned s4_ab_memo=24;
+        std::uint64_t s4_ab_budget=20000000;
         int exact_order=0; // 0=count asc, 1=count desc, 2=key asc
         std::string only="";
         double budget_s=0;
@@ -2223,6 +2427,9 @@ int main(int argc,char**argv){
             else if(a.rfind("--quant-replies=",0)==0)quant_replies=a.substr(16);
             else if(a.rfind("--quant-budget=",0)==0)quant_budget=std::stoull(a.substr(15));
             else if(a.rfind("--quant-timeout=",0)==0)quant_timeout=std::stod(a.substr(16));
+            else if(a.rfind("--s4-ab=",0)==0)s4_ab=a.substr(8);
+            else if(a.rfind("--s4-ab-memo=",0)==0)s4_ab_memo=std::stoul(a.substr(13));
+            else if(a.rfind("--s4-ab-budget=",0)==0)s4_ab_budget=std::stoull(a.substr(15));
             else if(a=="--exact-order=count")exact_order=0;
             else if(a=="--exact-order=countd")exact_order=1;
             else if(a=="--exact-order=key")exact_order=2;
@@ -2241,7 +2448,7 @@ int main(int argc,char**argv){
             }
         }
         if(!reps && !empty && roots_path.empty() && exact_replay_path.empty()
-           && quant_replies.empty()){
+           && quant_replies.empty() && s4_ab.empty()){
             std::cerr<<"nothing to do without --empty/--reps/--roots-csv/--exact-replay/--quant-replies\n";
             return 2;
         }
@@ -2297,22 +2504,27 @@ int main(int argc,char**argv){
         switch(n){
             case 4:
                 if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(!s4_ab.empty()) return run_s4_ab<4>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<4>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
                 rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 5:
                 if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(!s4_ab.empty()) return run_s4_ab<5>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<5>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
                 rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 6:
                 if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(!s4_ab.empty()) return run_s4_ab<6>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<6>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
                 rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 7:
                 if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(!s4_ab.empty()) return run_s4_ab<7>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<7>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
                 rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 11:
                 if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(!s4_ab.empty()) return run_s4_ab<11>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<11>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
                 rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
