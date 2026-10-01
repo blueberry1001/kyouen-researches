@@ -47,6 +47,11 @@
       "stated_minimum_bound": 385
     }
   },
+  "high_q_exact_regime": {
+    "condition": "q > 2w",
+    "theorem": "only same-row q-sets are forbidden; all m are strongly solved",
+    "exhaustive_cases_checked": 39
+  },
   "cases": [
     {
       "q": 4,
