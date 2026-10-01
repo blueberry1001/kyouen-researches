@@ -35,5 +35,19 @@ jobs:
       - name: Validate knowledge items
         run: python tools/knowledge/check.py
 
-      - name: Build generated views
+      - name: Rebuild generated views
         run: python tools/knowledge/build.py
+
+      - name: Verify generated views are committed
+        shell: bash
+        run: |
+          changes="$(git status --porcelain -- research/knowledge/generated)"
+          if [ -n "$changes" ]; then
+            echo "Generated knowledge views are out of date:"
+            printf '%s\n' "$changes"
+            echo
+            git diff -- research/knowledge/generated || true
+            echo
+            echo "Run: python tools/knowledge/build.py"
+            exit 1
+          fi

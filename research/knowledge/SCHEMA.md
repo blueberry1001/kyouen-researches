@@ -2,7 +2,7 @@
 
 ## 1. 何を1項目とするか
 
-K項目の中心は「研究作業」ではなく、将来参照する価値のある知識です。
+K項目の中心は「研究作業」ではなく、将来独立して参照する価値のある知識です。
 
 適切な例:
 
@@ -10,6 +10,8 @@ K項目の中心は「研究作業」ではなく、将来参照する価値の�
 - 「11×11の真の勝敗は未確定である」
 - 「固定幅 w では十分長い長方形盤を有限状態で強解決できる」
 - 用語や対象の定義
+- 独立して参照する価値のある証明・反例
+- 重要な計算結果
 - 明示された未解決問題
 
 通常はK項目にしない例:
@@ -20,23 +22,27 @@ K項目の中心は「研究作業」ではなく、将来参照する価値の�
 - CIの実行記録
 
 後者は `research/experiments/` または `research/log/` に置き、
-そこからK項目を支持・反証・証明する形にします。
+そこから得られた知識をK項目として記録します。
 
-## 2. ファイル名
+## 2. ID とファイル名
 
-永久項目:
+main 上の永久項目:
 
 ```
 K0042-two-row-maximal-safe-set.md
 ```
 
-作業中の仮項目:
-
-```
-KTMP-agent-a-001-two-row-maximal-safe-set.md
-```
-
 ファイル名は必ず `<id>-<短い説明>.md` とします。
+
+ID は内容や種類を表しません。予想が証明されても、同じ命題である限り
+ID は変更しません。
+
+並行作業では、別ブランチ同士で同じ `Kxxxx` を使って構いません。
+各ブランチ内では ID を一意にし、main への統合時に衝突する項目だけ
+空いている番号へ採番し直します。その際、そのブランチ内の relation、
+experiment manifest、log などにある参照も同時に更新します。
+
+main に入った ID は永久 ID として扱い、単なる整理のためには変更しません。
 
 ## 3. Front matter
 
@@ -75,10 +81,9 @@ artifacts:
 
 ## 4. kind と status
 
-命題が予想から定理へ変わる場合でも ID を変えないため、
-「何であるか」と「現在どの状態か」を分離します。
+`kind` は「その項目が何であるか」、`status` は「現在どの状態か」を表します。
 
-代表例:
+命題は、予想から定理へ進んでも同じ項目です。
 
 ```yaml
 kind: proposition
@@ -98,7 +103,19 @@ status: proved
 書き換えるような変更は、状態変更ではなく命題そのものの変更です。
 前者を refuted / withdrawn として残し、後者を別のK項目にします。
 
-許可語彙は `VOCABULARY.yaml` を正本とします。
+許可される `kind`, `status` と、その組み合わせは
+`VOCABULARY.yaml` を正本とします。`check.py` は組み合わせも検査します。
+
+代表的な意味:
+
+- `proposition`: 真偽を問う数学的命題
+- `definition`: 用語・対象の定義
+- `open-problem`: 明示された未解決問題
+- `proof`: 独立して参照する価値のある証明
+- `computational-result`: 保存価値のある計算結果
+- `counterexample`: 独立して参照する価値のある反例
+- `method`: 探索法・検証法など
+- `dataset`: 研究上のデータ集合
 
 ## 5. relations
 
@@ -114,6 +131,10 @@ status: proved
 
 逆リンクは書きません。たとえば `A proves B` があれば、
 B側へ「Aによって証明される」を重複記載しません。
+
+`depends_on` と `supports` は区別します。
+証明で論理的に必要な前提は `depends_on`、計算例や実験的根拠は
+`supports` です。
 
 ## 6. artifacts
 
@@ -131,6 +152,10 @@ artifacts:
 重要な再現可能結果では `commit` を付けることを推奨します。
 path は現在のrepo内に実在するものを指定します。
 
+複雑な実験では個々のファイルを大量に列挙せず、
+`research/experiments/<experiment>/manifest.yaml` を artifact として
+参照して構いません。
+
 ## 7. 本文
 
 本文は front matter の単なる言い換えではなく、必要に応じて以下を記述します。
@@ -147,27 +172,44 @@ path は現在のrepo内に実在するものを指定します。
 ## 8. 変更規則
 
 同じK項目を更新する:
-- conjectured → supported → proved のような状態変化
-- 証明の改善
-- より良い artifact の追加
+
+- `conjectured → supported → proved` のような状態変化
+- 同じ主張に対する証明・根拠・説明の改善
+- artifact の追加
 - 誤字や説明改善
 
 新しいK項目を作る:
+
 - 主張の意味が変わる
 - より弱い主張へ修正して別命題になる
-- 独立して参照する価値のある一般化・反例・補題を追加する
+- 独立して参照する価値のある一般化・反例・補題・証明を追加する
 
-## 9. 検査
+研究の時系列はK項目をイベント列に分解して表現せず、
+`research/log/` と Git 履歴に残します。`knowledge/` は現在状態を読みやすく保ちます。
+
+## 9. 生成ビュー
+
+`research/knowledge/generated/` は `items/` から作る派生ビューです。
+正本ではありませんが、GitHubやLLMからすぐ読めるよう Git 管理します。
+
+```bash
+python tools/knowledge/build.py
+```
+
+で再生成します。生成物を直接編集しません。
+CI は再生成後の差分・未追跡生成物・削除を検出します。
+
+## 10. 検査
 
 `python tools/knowledge/check.py` は少なくとも次を検査します。
 
 - IDの一意性
 - ファイル名とIDの対応
 - 必須metadata
-- kind/status/relationの語彙
+- kind/status とその組み合わせ
+- relationの語彙
 - relation先の存在
 - aliasの重複
 - artifact pathの存在
-- mainへ入れてはいけない仮ID
 
 topics / boards の未登録値は、移行を妨げないため当面は警告とします。

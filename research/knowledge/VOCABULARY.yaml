@@ -2,7 +2,9 @@ kinds:
   - proposition
   - definition
   - open-problem
+  - proof
   - computational-result
+  - counterexample
   - method
   - dataset
 
@@ -19,6 +21,47 @@ statuses:
   - active
   - superseded
   - withdrawn
+
+status_by_kind:
+  proposition:
+    - conjectured
+    - supported
+    - proved
+    - refuted
+    - superseded
+    - withdrawn
+  definition:
+    - active
+    - superseded
+    - withdrawn
+  open-problem:
+    - open
+    - resolved
+    - withdrawn
+  proof:
+    - provisional
+    - verified
+    - invalidated
+    - superseded
+  computational-result:
+    - provisional
+    - verified
+    - invalidated
+    - superseded
+  counterexample:
+    - provisional
+    - verified
+    - invalidated
+    - superseded
+  method:
+    - active
+    - superseded
+    - withdrawn
+  dataset:
+    - active
+    - verified
+    - superseded
+    - withdrawn
 
 relations:
   - depends_on
@@ -37,6 +80,7 @@ artifact_roles:
   - dataset
   - source
   - log
+  - experiment
 
 topics:
   - game-solution

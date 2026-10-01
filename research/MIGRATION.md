@@ -12,6 +12,7 @@
 - item / experiment template
 - log / archive の役割定義
 - check.py / build.py
+- 生成ビューのGit管理
 - CI
 
 既存研究ファイルは原則移動しません。
@@ -39,7 +40,7 @@
 `findings.md`, `hypotheses.md`, `verification/`, `exploration/`,
 `night-research/`, `docs/` の各文書を、次のいずれかへ分類します。
 
-- knowledgeへ昇格すべき主張
+- knowledgeへ昇格すべき知識項目
 - experiment
 - log
 - archive
@@ -56,7 +57,16 @@
 ## Phase 4: 入口の整理
 
 最後にREADMEとdocsを、新しいknowledgeを前提にした説明へ更新します。
-生成索引をGitHub上から直接読める状態にします。
+Git管理された生成索引をGitHub上から直接読める状態にします。
+
+## 並行作業とID
+
+作業ブランチ同士で `Kxxxx` が重複しても問題ありません。
+各ブランチ内ではIDを一意に保ち、mainへの統合時に衝突する項目だけ
+空いている番号へ採番し直します。relation、experiment manifest、logなどに
+そのIDへの参照があれば同時に更新します。
+
+mainへ入ったIDは永久IDとして扱います。
 
 ## 移行中の互換性
 
