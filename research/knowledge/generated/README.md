@@ -9,7 +9,7 @@
 K項目を変更したら次を実行して、生成結果も同じ変更に含めます。
 
 ```bash
-python tools/knowledge/build.py
+uv run --locked python tools/knowledge/build.py
 ```
 
 CI は再生成後にこのディレクトリの差分、未追跡ファイル、削除が

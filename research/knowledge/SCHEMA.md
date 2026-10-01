@@ -193,7 +193,7 @@ path は現在のrepo内に実在するものを指定します。
 正本ではありませんが、GitHubやLLMからすぐ読めるよう Git 管理します。
 
 ```bash
-python tools/knowledge/build.py
+uv run --locked python tools/knowledge/build.py
 ```
 
 で再生成します。生成物を直接編集しません。
@@ -201,7 +201,7 @@ CI は再生成後の差分・未追跡生成物・削除を検出します。
 
 ## 10. 検査
 
-`python tools/knowledge/check.py` は少なくとも次を検査します。
+`uv run --locked python tools/knowledge/check.py` は少なくとも次を検査します。
 
 - IDの一意性
 - ファイル名とIDの対応

@@ -3,6 +3,9 @@ name: Knowledge structure
 on:
   push:
     paths:
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.python-version'
       - 'research/knowledge/**'
       - 'research/experiments/**'
       - 'research/log/**'
@@ -11,6 +14,9 @@ on:
       - '.github/workflows/knowledge-check.yml'
   pull_request:
     paths:
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.python-version'
       - 'research/knowledge/**'
       - 'research/experiments/**'
       - 'research/log/**'
@@ -27,16 +33,22 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version-file: '.python-version'
 
-      - name: Install knowledge tooling dependencies
-        run: python -m pip install -r tools/knowledge/requirements.txt
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.21'
+          enable-cache: true
+
+      - name: Sync Python environment
+        run: uv sync --locked
 
       - name: Validate knowledge items
-        run: python tools/knowledge/check.py
+        run: uv run --locked python tools/knowledge/check.py
 
       - name: Rebuild generated views
-        run: python tools/knowledge/build.py
+        run: uv run --locked python tools/knowledge/build.py
 
       - name: Verify generated views are committed
         shell: bash
@@ -48,6 +60,6 @@ jobs:
             echo
             git diff -- research/knowledge/generated || true
             echo
-            echo "Run: python tools/knowledge/build.py"
+            echo "Run: uv run --locked python tools/knowledge/build.py"
             exit 1
           fi

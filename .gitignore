@@ -13,6 +13,7 @@ release-assets/*.cert.zst
 # END oh-my-opencode-slim worktrees
 
 # Temporary / environment
+.venv/
 .commandcode/
 .ignore
 kyouen-local-handoff/
