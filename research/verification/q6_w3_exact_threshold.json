@@ -1,0 +1,18 @@
+{
+  "method": "exhaustive ordered pairs of 5-subsets; exact integer root tests",
+  "cases": [
+    {"m": 9, "five_subsets": 126, "ordered_pairs": 15876, "required_edges": 5, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 15398, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 10, "five_subsets": 252, "ordered_pairs": 63504, "required_edges": 6, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 53106, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 11, "five_subsets": 462, "ordered_pairs": 213444, "required_edges": 7, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 105928, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 12, "five_subsets": 792, "ordered_pairs": 627264, "required_edges": 8, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 108156, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 13, "five_subsets": 1287, "ordered_pairs": 1656369, "required_edges": 9, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 64441, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 14, "five_subsets": 2002, "ordered_pairs": 4008004, "required_edges": 10, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 27824, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 15, "five_subsets": 3003, "ordered_pairs": 9018009, "required_edges": 11, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 11057, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 16, "five_subsets": 4368, "ordered_pairs": 19079424, "required_edges": 12, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 4726, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 17, "five_subsets": 6188, "ordered_pairs": 38291344, "required_edges": 13, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 976, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 18, "five_subsets": 8568, "ordered_pairs": 73410624, "required_edges": 14, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 872, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 4},
+    {"m": 19, "five_subsets": 11628, "ordered_pairs": 135210384, "required_edges": 15, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 36, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 2},
+    {"m": 20, "five_subsets": 15504, "ordered_pairs": 240374016, "required_edges": 16, "max_pair_sum_dot": 16, "candidate_pairs_dot_ge_required": 40, "max_outer_target_edges_among_candidates": 4, "max_middle_target_edges_among_candidates": 2}
+  ],
+  "conclusion": "no deficient maximal safe set exists for m=9..20"
+}
