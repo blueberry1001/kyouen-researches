@@ -438,6 +438,22 @@ private:
         return exact_budget_;
     }
     int exact_retries_=1;                  // attempts per TT residency
+    // Per-stone-count THRESHOLD overrides, mirroring the per-stone
+    // budget above. Needed because the legal-move gate cannot separate
+    // layers on its own: a k-stone position has at most 121-k legal
+    // moves, so a single --exact-legal that admits s7 (>=114) also
+    // admits every shallower layer, and raising it makes the shallower
+    // layers fail the gate more often rather than less. See
+    // research/verification/N11-DFPN-FRONTIER-LAYERS.md.
+    // Lookup is by stone count; anything not listed falls back to
+    // exact_legal_.
+    std::array<int,64> exact_legal_by_stones_{};
+    bool exact_legal_by_stones_set_[64]={};
+    bool handoff_allowed(int stones,int legal) const {
+        int s=(stones>=0&&stones<64)?stones:63;
+        int lim=exact_legal_by_stones_set_[s]?exact_legal_by_stones_[s]:exact_legal_;
+        return lim>0 && legal<=lim;
+    }
     // Exact-DFS child ordering, A/B-able. Ordering cannot change a
     // result, only the work needed to reach it, so this is safe to vary
     // and is graded on total nodes over a fixed benchmark set.
@@ -1024,7 +1040,10 @@ private:
                     st.back().stage=1;
                 }
             }
-            if(exact_legal_>0 && popcount(st.back().legal)<=exact_legal_){
+            // Handoff gate. The per-stone-count threshold overrides the
+            // global --exact-legal when set, which is the only way to
+            // target a specific layer (see N11-DFPN-FRONTIER-LAYERS.md).
+            if(handoff_allowed(st.back().stones,popcount(st.back().legal))){
                 int es=tt_.find(st.back().key.lo,st.back().key.hi);
                 if(es>=0 && tt_.st_[(std::size_t)es]==PnTT::OPEN){
                     unsigned attempts=(tt_.vis_[(std::size_t)es]>>1)&0xffu;
@@ -1356,6 +1375,13 @@ public:
         exact_budget_by_stones_[s]=std::max<std::uint64_t>(1,budget);
         exact_budget_by_stones_set_[s]=true;
     }
+    // Per-stone-count threshold override, e.g. 7 -> 114. A value of 0
+    // disables handoff for that stone count entirely.
+    void set_exact_legal_for_stones(int stones,int legal){
+        int s=(stones>=0&&stones<64)?stones:63;
+        exact_legal_by_stones_[s]=std::max(0,legal);
+        exact_legal_by_stones_set_[s]=true;
+    }
     // Child ordering for the exact DFS. 0=count asc (baseline),
     // 1=count desc, 2=key asc. Affects speed only, never the result.
     void set_exact_order(int mode){
@@ -1444,6 +1470,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
                int exact_publish_mode,bool do_exact_record,
                int exact_record_limit,
                const std::vector<std::pair<int,std::uint64_t>>& budget_by_stones,
+               const std::vector<std::pair<int,int>>& legal_by_stones,
                int exact_order,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
@@ -1463,6 +1490,8 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_mode);
     for(const auto& kv:budget_by_stones)
         solver.set_exact_budget_for_stones(kv.first,kv.second);
+    for(const auto& kv:legal_by_stones)
+        solver.set_exact_legal_for_stones(kv.first,kv.second);
     solver.set_exact_order(exact_order);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
      <<" tiebreak="<<(tiebreak_desc?"desc":"asc")
@@ -1697,6 +1726,7 @@ int main(int argc,char**argv){
         std::string exact_replay_path="";
         std::uint64_t exact_replay_budget=1000000;
         std::string exact_budget_by_stones_spec="";
+        std::string exact_legal_by_stones_spec="";
         int exact_order=0; // 0=count asc, 1=count desc, 2=key asc
         std::string only="";
         double budget_s=0;
@@ -1735,8 +1765,13 @@ int main(int argc,char**argv){
                 // Format: 5:5000000,6:500000,7:200000
                 exact_budget_by_stones_spec=a.substr(25);
             }
+            else if(a.rfind("--exact-legal-by-stones=",0)==0){
+                // Format: 5:80,6:72,7:114. A value of 0 disables the
+                // handoff for that stone count.
+                exact_legal_by_stones_spec=a.substr(24);
+            }
             else{
-                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate] [--exact-record] [--exact-record-limit=N] [--exact-replay=P] [--exact-replay-budget=N] [--exact-budget-by-stones=5:N,6:N]\n";
+                std::cerr<<"usage: "<<argv[0]<<" [--n=N] [--empty] [--reps] [--memo=P] [--only=v,..] [--budget=S] [--log=P] [--csv=P] [--roots-csv=P] [--children] [--tiebreak=asc|desc] [--exact-legal=N] [--exact-budget=N] [--exact-retries=N] [--exact-publish=all|root|separate] [--exact-record] [--exact-record-limit=N] [--exact-replay=P] [--exact-replay-budget=N] [--exact-order=count|countd|key] [--exact-budget-by-stones=5:N,6:N] [--exact-legal-by-stones=5:N,6:N]\n";
                 return 2;
             }
         }
@@ -1775,24 +1810,40 @@ int main(int argc,char**argv){
                 budget_by_stones.push_back({st,bv});
             }
         }
+        // Parse --exact-legal-by-stones the same way. Format: 5:80,6:72,7:114
+        std::vector<std::pair<int,int>> legal_by_stones;
+        if(!exact_legal_by_stones_spec.empty()){
+            std::stringstream ls(exact_legal_by_stones_spec); std::string part;
+            while(std::getline(ls,part,',')){
+                if(part.empty()) continue;
+                std::size_t c=part.find(':');
+                if(c==std::string::npos){
+                    std::cerr<<"bad --exact-legal-by-stones entry: "<<part<<"\n";
+                    return 2;
+                }
+                int st=std::stoi(part.substr(0,c));
+                int lv=std::stoi(part.substr(c+1));
+                legal_by_stones.push_back({st,lv});
+            }
+        }
         std::uint64_t total_exp=0;
         int rc=0;
         switch(n){
             case 4:
                 if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
-                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 5:
                 if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
-                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 6:
                 if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
-                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 7:
                 if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
-                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 11:
                 if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
-                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
+                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
