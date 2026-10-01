@@ -488,6 +488,40 @@ public:
         root_first_move_=first;
         return quant_solve(r2,budget,cert);
     }
+    // Enumerate the fifth moves of a 4-stone position WITHOUT solving
+    // any of them, reporting per fifth move: index, canonical s5 key,
+//    legal count, and whether the main PnTT already holds a verdict.
+    //
+    // This is what makes the s4-direct A/B interpretable. The direct
+    // exact DFS picks children by count-ASC (decisive ones first), the
+    // quant solver picks them in board index order, so if their first
+    // choices differ then the two arms were never digging the same s5
+    // and a node-for-node comparison means nothing.
+    struct M5Info { int m5=-1, legal=0, tt_state=0; Bits key{}; };
+    std::vector<M5Info> enum_m5_unresolved(int r2,int m3,int m4){
+        TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
+        TState s3=add(s2,m3);
+        TState s4=add(s3,m4);
+        Bits occ{}; setbit(occ,root_first_move_); setbit(occ,r2);
+        setbit(occ,m3); setbit(occ,m4);
+        Bits legal5=legal_for(occ);
+        std::vector<M5Info> out;
+        Bits mm=legal5;
+        while(any(mm)){
+            int z=take_lsb(mm);
+            if(z<0) break;
+            TState s5=add(s4,z);
+            Bits o5=occ; setbit(o5,z);
+            M5Info info; info.m5=z;
+            info.key=canonical(s5);
+            info.legal=popcount(legal_for(o5));
+            int slot=tt_.find(info.key.lo,info.key.hi);
+            info.tt_state=(slot>=0)?(int)tt_.st_[(std::size_t)slot]:0;
+            out.push_back(info);
+        }
+        return out;
+    }
+
     const Oracle& oracle_stats() const { return oracle; }
 
     // Board helpers exposed for the s4 A/B driver, which has to rebuild
@@ -2290,11 +2324,22 @@ static int run_quant(int first,const std::string& replies,
 // The quant solver's inner step is "exists m5 : WIN(s5)". Since an s4
 // position is an OR node, solving that position exactly answers the
 // same question, while getting the exact DFS child ordering and sharing
-// transpositions across the fifth moves inside a single search. This
-// driver runs both on the SAME s4 position with the same budget and
-// memo, so the comparison is like-for-like.
+// transpositions across the fifth moves inside a single search.
 //
-// Output columns: arm, result, nodes, ms, winning_m5
+// BUDGET IS A TOTAL NODE CAP, NOT A PER-QUERY ONE. The earlier version
+// gave `budget` to the single direct solve AND to each individual s5
+// oracle call, so the enum arm could have spent n times the direct
+// arm. Both arms now share one pool and the enum arm is charged against
+// it as it goes.
+//
+// The third arm is a cheap enumeration that solves nothing: it lists
+// every fifth move with its canonical s5 key, legal count and whether
+// the PnTT already holds a verdict. Without it the comparison is
+// uninterpretable, because the two arms pick their first child by
+// different rules (count-ASC versus board index) and may simply be
+// digging different s5 positions.
+//
+// Output: arm,result,nodes,ms,queries,winning_m5  (plus m5,<idx>,key,legal,tt)
 template<int N>
 static int run_s4_ab(const std::string& spec,int first,
                      std::uint64_t budget,unsigned memo_power,
@@ -2309,13 +2354,28 @@ static int run_s4_ab(const std::string& spec,int first,
         }
         r2=std::stoi(f[0]); m3=std::stoi(f[1]); m4=std::stoi(f[2]);
     }
-    // Rebuild the position once so both arms see the identical s4.
     O<<"# s4 A/B: first="<<first<<" r2="<<r2<<" m3="<<m3<<" m4="<<m4
-     <<" budget="<<budget<<" memo=2^"<<memo_power<<"\n";
-    O<<"# arm,result,nodes,ms,winning_m5\n";
+     <<" TOTAL_node_cap="<<budget<<" memo=2^"<<memo_power<<"\n";
+    O<<"# arm,result,nodes,ms,queries,winning_m5\n";
     O.flush();
 
-    // Arm 1: direct exact solve of the 4-stone position.
+    // Arm 0: enumerate the fifth moves, solving none of them.
+    {
+        DfPn<N> e(memo_power);
+        e.set_deadline(0);
+        e.set_exact_handoff(0,1,1,0);
+        e.oracle_clear();
+        e.set_first_move(first);
+        auto v=e.enum_m5_unresolved(r2,m3,m4);
+        O<<"# m5_count,"<<v.size()<<"\n";
+        for(const auto& info:v){
+            O<<"m5,"<<info.m5<<","<<info.key.lo<<","<<info.key.hi
+             <<","<<info.legal<<","<<info.tt_state<<"\n";
+        }
+        O.flush();
+    }
+
+    // Arm 1: direct exact solve of the 4-stone position, one cap.
     {
         DfPn<N> a(memo_power);
         a.set_deadline(0);
@@ -2330,45 +2390,48 @@ static int run_s4_ab(const std::string& spec,int first,
             std::chrono::steady_clock::now().time_since_epoch()).count();
         const auto& oc=a.oracle_stats();
         O<<"direct,"<<res<<","<<oc.nodes<<","<<(long long)((t1-t0)*1000.0)
-         <<","<<w5<<"\n";
+         <<","<<oc.queries<<","<<w5<<"\n";
         O.flush();
     }
-    // Arm 2: enumerate the fifth moves and hand each s5 to the oracle,
-    // exactly as the quant solver does.
+
+    // Arm 2: enumerate the fifth moves, solving each from the SAME
+    // total pool. Each query is charged min(per_query_cap, remaining),
+    // and the arm stops as soon as the pool is empty.
     {
         DfPn<N> b(memo_power);
         b.set_deadline(0);
         b.set_exact_handoff(0,1,1,0);
         b.oracle_clear();
         b.set_first_move(first);
-        typename DfPn<N>::TState s2{}; s2=b.add_pub(s2,first); s2=b.add_pub(s2,r2);
-        typename DfPn<N>::TState s3=b.add_pub(s2,m3);
-        typename DfPn<N>::TState s4=b.add_pub(s3,m4);
-        Bits occ{}; b.setbit_pub(occ,first); b.setbit_pub(occ,r2);
-        b.setbit_pub(occ,m3); b.setbit_pub(occ,m4);
-        Bits legal5=b.legal_for_pub(occ);
-        Bits mm=legal5;
-        int n5=DfPn<N>::popcount_pub(legal5);
+        std::uint64_t per_query=budget;
+        std::uint64_t spent=0;
+        int queries=0, res=0, w5=-1;
         double t0=std::chrono::duration<double>(
             std::chrono::steady_clock::now().time_since_epoch()).count();
-        int res=0, w5=-1, tried=0;
-        for(int kk=0;kk<n5;++kk){
-            int z=DfPn<N>::take_lsb_pub(mm);
-            if(z<0) break;
-            typename DfPn<N>::TState s5=b.add_pub(s4,z);
-            Bits o5=occ; b.setbit_pub(o5,z);
-            int r=b.s5_oracle(s5,o5,budget);
-            ++tried;
-            if(r==1){ res=1; w5=z; break; }
+        auto v=b.enum_m5_unresolved(r2,m3,m4);
+        for(const auto& info:v){
+            std::uint64_t remaining = (spent>=budget)?0:(budget-spent);
+            if(remaining==0){ res=0; break; }
+            std::uint64_t allow=std::min<std::uint64_t>(remaining,per_query);
+            typename DfPn<N>::TState s2{};
+            s2=b.add_pub(s2,first); s2=b.add_pub(s2,r2);
+            typename DfPn<N>::TState s3=b.add_pub(s2,m3);
+            typename DfPn<N>::TState s4=b.add_pub(s3,m4);
+            Bits o5{}; b.setbit_pub(o5,first); b.setbit_pub(o5,r2);
+            b.setbit_pub(o5,m3); b.setbit_pub(o5,m4); b.setbit_pub(o5,info.m5);
+            std::uint64_t before=b.exact_total_nodes();
+            int r=b.s5_oracle(s4,o5,allow);
+            spent += b.exact_total_nodes()-before;
+            ++queries;
+            if(r==1){ res=1; w5=info.m5; break; }
             if(r==2) continue;
             res=0; break;               // inconclusive
         }
-        (void)n5;
         double t1=std::chrono::duration<double>(
             std::chrono::steady_clock::now().time_since_epoch()).count();
         const auto& oc=b.oracle_stats();
         O<<"enum_m5,"<<res<<","<<oc.nodes<<","<<(long long)((t1-t0)*1000.0)
-         <<","<<w5<<",queries="<<oc.queries<<"\n";
+         <<","<<queries<<","<<w5<<"\n";
         O.flush();
     }
     return 0;
