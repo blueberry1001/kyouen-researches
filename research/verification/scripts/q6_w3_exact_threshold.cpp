@@ -46,7 +46,7 @@ static std::pair<int,int> actual_edge_counts(const FiveSet& A, const FiveSet& B,
         for (int u=i; u<i2; ++u) for (int v=j; v<j2; ++v) {
             long long pA=A.pairs[u].second, pB=B.pairs[v].second;
             std::pair<int,int> e;
-            // Target outer row y=0, other rows y=1,2.
+            // Target outer row y=0, other rows y=1,2.  The y=2 case is its vertical reflection.
             // p0 - 2 p1 + p2 = 2, hence p0 = 2 + 2 p1 - p2.
             if (target_edge(s, 2 + 2*pA - pB, m, e)) outer.insert(e);
 
