@@ -1,0 +1,14 @@
+{
+  "q": 5, "w": 3,
+  "m11_maximal_witness_verified": true,
+  "m11_witness_rows": [[1,4,8],[1,2,4,7],[1,4,7,10]],
+  "finite_exclusion": [
+    {"m": 12, "four_sets": 495, "outer_cover_exists": false, "middle_cover_exists": false},
+    {"m": 13, "four_sets": 715, "outer_cover_exists": false, "middle_cover_exists": false},
+    {"m": 14, "four_sets": 1001, "outer_cover_exists": false, "middle_cover_exists": false},
+    {"m": 15, "four_sets": 1365, "outer_cover_exists": false, "middle_cover_exists": false},
+    {"m": 16, "four_sets": 1820, "outer_cover_exists": false, "middle_cover_exists": false}
+  ],
+  "analytic_tail": {"all_m_at_least": 56, "reason": "at most 55 unavailable points on a deficient row"},
+  "current_stabilization_bracket": [12,56]
+}
