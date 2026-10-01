@@ -438,6 +438,12 @@ private:
         return exact_budget_;
     }
     int exact_retries_=1;                  // attempts per TT residency
+    // Exact-DFS child ordering, A/B-able. Ordering cannot change a
+    // result, only the work needed to reach it, so this is safe to vary
+    // and is graded on total nodes over a fixed benchmark set.
+    enum class ExactOrder : std::uint8_t { COUNT=0, COUNTD=1, KEY=2 };
+    ExactOrder exact_order_=ExactOrder::COUNT;
+    bool exact_order_desc_=false;          // true when exact_order_==COUNTD
     enum class ExactPublishMode : std::uint8_t { ALL=0, ROOT=1, SEPARATE=2 };
     ExactPublishMode exact_publish_mode_=ExactPublishMode::ALL;
 
@@ -769,9 +775,25 @@ private:
         gen_into(state,stones,legal,g,false);
         const bool isor=is_or(stones);
 
-        // DFS ordering only affects speed. Put an already decisive solved
-        // child first, then open children with fewer legal moves, then the
-        // solved children that cannot decide this node.
+        // DFS ordering only affects speed, never the result, so it is safe to
+        // A/B. The decisive-child rule comes first because it is the only
+        // part that can terminate the loop early: if an OR node's child
+        // is already known WIN (or an AND node's already LOSS) we return
+        // on the first such child regardless of the rest of the order.
+        // Within each priority class we then choose by a named rule so
+        // that a single rule can be changed at a time:
+        //
+        //   count : fewer legal moves first        (baseline)
+        //   countd: more legal moves first         (the rule that won the
+        //          preregistered depth-5 DFS experiment, see
+        //          cpp/solvers/kyouen_solver_10_depth5_max_first.cpp)
+        //   key   : canonical key ascending, count ignored
+        //
+        // --exact-order selects this; it is recorded in the run header
+        // and in every replay row so a benchmark can never be attributed
+        // to the wrong rule.
+        const bool asc=!exact_order_desc_;
+        const bool by_key=(exact_order_==ExactOrder::KEY);
         std::sort(g.ch.begin(),g.ch.begin()+g.n,[&](const GChild& a,const GChild& b){
             auto pri=[&](const GChild& x){
                 if(isor){
@@ -786,7 +808,11 @@ private:
             };
             int pa=pri(a),pb=pri(b);
             if(pa!=pb) return pa<pb;
-            if(a.count!=b.count) return a.count<b.count;
+            if(!by_key && a.count!=b.count)
+                return asc ? (a.count<b.count) : (a.count>b.count);
+            if(by_key) return a.key<b.key;
+            // count ties: keep the key order deterministic in both modes
+            // so the only variable is the count comparison.
             return a.key<b.key;
         });
 
@@ -1330,6 +1356,16 @@ public:
         exact_budget_by_stones_[s]=std::max<std::uint64_t>(1,budget);
         exact_budget_by_stones_set_[s]=true;
     }
+    // Child ordering for the exact DFS. 0=count asc (baseline),
+    // 1=count desc, 2=key asc. Affects speed only, never the result.
+    void set_exact_order(int mode){
+        exact_order_=(mode==1)?ExactOrder::COUNTD:
+                     ((mode==2)?ExactOrder::KEY:ExactOrder::COUNT);
+        exact_order_desc_=(mode==1);
+    }
+    int exact_order_name() const {
+        return exact_order_desc_?1:((exact_order_==ExactOrder::KEY)?2:0);
+    }
     void exact_counters(std::uint64_t& calls,std::uint64_t& nodes,
                         std::uint64_t& aborts,std::uint64_t& wins,
                         std::uint64_t& losses,std::uint64_t& stores,
@@ -1408,6 +1444,7 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
                int exact_publish_mode,bool do_exact_record,
                int exact_record_limit,
                const std::vector<std::pair<int,std::uint64_t>>& budget_by_stones,
+               int exact_order,
                std::ostream& L,std::ostream& C,
                std::uint64_t* total_exp,
                const std::string& csv_roots_path=""){
@@ -1426,9 +1463,11 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
     solver.set_exact_handoff(exact_legal,exact_budget,exact_retries,exact_publish_mode);
     for(const auto& kv:budget_by_stones)
         solver.set_exact_budget_for_stones(kv.first,kv.second);
+    solver.set_exact_order(exact_order);
     L<<"n="<<N<<" built forbidden="<<solver.forbidden_count()
      <<" tiebreak="<<(tiebreak_desc?"desc":"asc")
      <<" exact_legal="<<exact_legal
+     <<" exact_order="<<exact_order
      <<" exact_budget="<<exact_budget
      <<" exact_retries="<<exact_retries
      <<" exact_publish="<<(exact_publish_mode==0?"all":
@@ -1585,9 +1624,10 @@ static int run(const std::string& only,double budget_s,unsigned memo_power,
 template<int N>
     static int run_exact_replay(const std::string& path,std::uint64_t budget,
                             unsigned memo_power,const std::string& only,
-                            std::ostream& O){
+                            int exact_order,std::ostream& O){
     std::ifstream in(path);
     if(!in){ std::cerr<<"cannot open --exact-replay\n"; return 1; }
+    O<<"# exact replay: order="<<exact_order<<" (0=count-asc 1=count-desc 2=key-asc)"<<std::endl;
     O<<"# exact replay: id,stones,legal,is_or,budget,result,nodes,wall_s,key_lo,key_hi\n";
     O.flush();
     // Memo size for the per-row solver. The main table default is 2^26,
@@ -1627,6 +1667,7 @@ template<int N>
             DfPn<N> row_solver(row_memo);
             row_solver.set_deadline(0);
             row_solver.set_exact_handoff(0,1,1,0); // publish=ALL
+            row_solver.set_exact_order(exact_order);
             res=row_solver.exact_replay(occ,stones,budget,nodes);
         }catch(const std::exception& e){
             O<<"replay_error,"<<id<<","<<stones<<",0,\""<<e.what()<<"\"\n"; O.flush(); ++id; continue;
@@ -1656,6 +1697,7 @@ int main(int argc,char**argv){
         std::string exact_replay_path="";
         std::uint64_t exact_replay_budget=1000000;
         std::string exact_budget_by_stones_spec="";
+        int exact_order=0; // 0=count asc, 1=count desc, 2=key asc
         std::string only="";
         double budget_s=0;
         int exact_legal=0, exact_retries=1;
@@ -1686,6 +1728,9 @@ int main(int argc,char**argv){
             else if(a.rfind("--exact-record-limit=",0)==0)exact_record_limit=std::stoi(a.substr(21));
             else if(a.rfind("--exact-replay=",0)==0)exact_replay_path=a.substr(15);
             else if(a.rfind("--exact-replay-budget=",0)==0)exact_replay_budget=std::stoull(a.substr(22));
+            else if(a=="--exact-order=count")exact_order=0;
+            else if(a=="--exact-order=countd")exact_order=1;
+            else if(a=="--exact-order=key")exact_order=2;
             else if(a.rfind("--exact-budget-by-stones=",0)==0){
                 // Format: 5:5000000,6:500000,7:200000
                 exact_budget_by_stones_spec=a.substr(25);
@@ -1734,20 +1779,20 @@ int main(int argc,char**argv){
         int rc=0;
         switch(n){
             case 4:
-                if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
+                if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 5:
-                if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
+                if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 6:
-                if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
+                if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 7:
-                if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
+                if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 11:
-                if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,*cp);
-                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,*lp,*cp,&total_exp,roots_path); break;
+                if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
         return rc;
