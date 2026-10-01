@@ -294,6 +294,7 @@ public:
         std::map<Bits,std::uint8_t> memo;  // 0 absent, 1 WIN, 2 LOSS
         std::uint64_t queries=0, hits=0, wins=0, losses=0, unknowns=0;
         std::uint64_t nodes=0;
+        std::uint64_t wall=0;   // milliseconds spent inside exact_prop
     };
     Oracle oracle;
     // The first move of the root, needed by quant_solve to rebuild the
@@ -303,10 +304,43 @@ public:
     // run for many minutes with no other output, which is
     // indistinguishable from a hang.
     bool quant_progress_=true;
+    // Wall-clock guard for the whole quantified search. --quant-timeout
+    // used to be checked only after a reply finished, so a single stuck
+    // oracle query could never be interrupted; the driver set the
+    // solver deadline to 0 as well, which disabled the check inside
+    // exact_prop too. quant_wall_stop_ is set by the driver and
+    // consulted by the oracle before every query, so a runaway query
+    // costs at most one budget rather than the whole time allowance.
+    std::chrono::steady_clock::time_point quant_deadline_{};
+    bool quant_has_deadline_=false;
+
+    // True once the wall allowance is used up. Queried by the oracle
+    // before each query and by quant_solve between third moves.
+    bool quant_out_of_time() const {
+        if(!quant_has_deadline_) return false;
+        return Clock::now()>=quant_deadline_;
+    }
+    void set_quant_deadline(double seconds){
+        quant_has_deadline_=(seconds>0);
+        quant_deadline_=Clock::now()+
+            std::chrono::duration_cast<Clock::duration>(
+                std::chrono::duration<double>(seconds));
+    }
 
     // Solve one 5-stone position exactly, consulting and filling the
     // oracle. Returns 1 WIN, 2 LOSS, 0 UNKNOWN (budget exhausted).
+    //
+    // `budget` is PER QUERY, not a shared pool: exact_prop receives a
+    // fresh copy each call. An earlier note in this file said the
+    // opposite, which made the measured run look budget-starved; the
+    // per-query reading is the one that matches the code.
+    //
+    // Per-query tracing is emitted around the exact call so the cost of
+    // an individual s5 position is directly observable, and so a stuck
+    // query is attributable to a specific canonical key rather than
+    // looking like a hang.
     int s5_oracle(const TState& state,Bits occupied,std::uint64_t budget){
+        if(quant_out_of_time()) return -1;   // caller treats <0 as "stop"
         Bits key=canonical(state);
         auto it=oracle.memo.find(key);
         if(it!=oracle.memo.end()){
@@ -317,8 +351,28 @@ public:
         Bits legal=legal_for(occupied);
         std::uint64_t b=budget;
         std::uint64_t before=exact_nodes_;
+        if(quant_progress_){
+            *log_<<"[q-start] q="<<oracle.queries
+                <<" key="<<key.lo<<","<<key.hi
+                <<" legal="<<popcount(legal)
+                <<" budget="<<budget<<std::endl;
+            log_->flush();
+        }
+        double t0=std::chrono::duration<double>(
+            Clock::now().time_since_epoch()).count();
         ExactResult r=exact_prop(state,5,legal,b);
+        double t1=std::chrono::duration<double>(
+            Clock::now().time_since_epoch()).count();
         oracle.nodes+=exact_nodes_-before;
+        oracle.wall+=std::uint64_t((t1-t0)*1000.0);
+        if(quant_progress_){
+            *log_<<"[q-done]  q="<<oracle.queries
+                <<" key="<<key.lo<<","<<key.hi
+                <<" result="<<(r==ExactResult::WIN?1:(r==ExactResult::LOSS?2:0))
+                <<" nodes="<<(exact_nodes_-before)
+                <<" ms="<<(long long)((t1-t0)*1000.0)<<std::endl;
+            log_->flush();
+        }
         if(r==ExactResult::WIN){
             oracle.memo[key]=1; ++oracle.wins; return 1;
         }
@@ -372,9 +426,18 @@ public:
         Bits occ2{}; setbit(occ2,root_first_move_); setbit(occ2,r2);
         Bits legal3=legal_for(occ2);
         int n3=popcount(legal3);
+        // A third move is only a REFUTED one if, for EVERY legal fourth
+        // reply, EVERY legal fifth move is a proven LOSS at the oracle.
+        // If any fifth move came back UNKNOWN the third move is merely
+        // unproven, and the whole reply must stay UNKNOWN rather than
+        // LOSS. Tracking that separately is what makes a refutation
+        // possible at all; without it this routine is a one-sided prover
+        // that can only ever return WIN or UNKNOWN.
+        bool saw_unknown=false;
         for(int i=0;i<n3;++i){
             int v=take_lsb(legal3);
             if(v<0) break;
+            if(quant_out_of_time()) return 0;
             TState s3=add(s2,v);
             Bits occ3=occ2; setbit(occ3,v);
             Bits legal4=legal_for(occ3);
@@ -407,11 +470,12 @@ public:
                     TState s5=add(s4,z);
                     Bits occ5=occ4; setbit(occ5,z);
                     int r=s5_oracle(s5,occ5,budget);
+                    if(r<0) return 0;             // wall allowance exhausted
                     if(r==1){ typename Cert5::Q4 row; row.r4=w; row.r5=z; row.key=canonical(s5);
                               rows.push_back(row); found=true; break; }
                     // r==2 (this fifth move loses) -> try another
                     // r==0 (budget) -> the whole branch is inconclusive
-                    if(r==0){ all=false; break; }
+                    if(r==0){ all=false; saw_unknown=true; break; }
                 }
                 if(!found) break;
             }
@@ -421,7 +485,12 @@ public:
             }
             return 1; // exists m3 satisfied
         }
-        return 0; // no winning third move found within budget
+        // Every third move was examined. The reply is refuted only when
+        // each one FAILED PROPERLY, meaning every fourth reply had every
+        // fifth move come back a proven LOSS. If any query ran out of
+        // budget the reply is merely unproven, and saying LOSS there
+        // would be exactly the overclaim this project forbids.
+        return saw_unknown ? 0 : 2;
     }
 
     std::uint64_t forbidden_count() const { return forbidden_count_; }
@@ -1880,10 +1949,14 @@ static int run_quant(int first,const std::string& replies,
                      unsigned memo_power,std::ostream& O){
     DfPn<N> solver(memo_power);
     // The exact DFS inside the oracle must not be gated by any hybrid
-    // threshold or by the global time budget: it is called directly.
+    // threshold. It IS gated by the quant wall allowance, which is
+    // checked before every query, because the old code set the deadline
+    // to 0 and then only checked --quant-timeout after a whole reply
+    // finished -- so a single stuck query could never be stopped.
     solver.set_deadline(0);
     solver.set_exact_handoff(0,1,1,0); // publish=ALL (oracle is its own memo)
     solver.oracle_clear();
+    if(timeout_s>0) solver.set_quant_deadline(timeout_s);
 
     std::vector<int> rs;
     {
@@ -1943,6 +2016,7 @@ static int run_quant(int first,const std::string& replies,
      <<" oracle_queries="<<oc.queries<<" oracle_hits="<<oc.hits
      <<" oracle_wins="<<oc.wins<<" oracle_losses="<<oc.losses
      <<" oracle_unknowns="<<oc.unknowns<<" oracle_nodes="<<oc.nodes
+     <<" oracle_wall_ms="<<oc.wall
      <<" wall_s="<<(long long)(t_end-t_all)<<"\n";
     O.flush();
     return 0;
