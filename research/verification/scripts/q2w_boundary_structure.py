@@ -116,7 +116,7 @@ def check_f_bound(limit: int = 30) -> list[dict[str, int]]:
         rows.append(
             {
                 "w": w,
-                "max_double_rows": exact,
+                "max_double_rows_under_local_constraints": exact,
                 "circle_point_upper_bound": w + exact,
                 "row_only_for_q_at_least": w + exact + 1,
             }
