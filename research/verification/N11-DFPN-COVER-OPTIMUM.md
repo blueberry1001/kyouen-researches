@@ -31,22 +31,86 @@ r2 LOSS certificate
       全 s5 子が LOSS
 ```
 
-## 最小 set cover の下界と上界（**31 は未確定**）
+## 最小 set cover: **OPT = 31**（ILP で確定）
 
-coverage に重なり制約があるため、`ceil(119/6)=20` は
-真の最小値ではない（下界）。報告では整数最適化で 31 と
- Greenwood されているが、**独立には 35 までしか確認できていない**。
+**`OPT = 31` が ILP で確定した。**
 
-**重要な訂正**: strict には現在
-`20..30 が解なし`、`35 に解あり`しか確定していないので、
-**`31 <= OPT <= 35`** である。
-**31 で実際に cover する具体的な 31 class を提示できていない限り、
-「最適値 31」は未確定**であり、確定した証明資料ではない。
-`5a27679` の記述はこれより強いと書いていたが、それは裏付けが
-なかった。31 の witness .matrix を機械可読に出力し、
-独立に検証できる状態になるまで `31 <= OPT <= 35` として扱う。
+```
+min sum_C x_C   s.t.  sum_{C contains v} x_C >= 1   x_C in {0,1}
 
-**独立検証（`dfpn_cover_optimum.py`）**:
+3396 変数・119 制約を scipy.optimize.milp（HiGHS）で解いた:
+
+```
+status=0   wall=0.10s   objective=31.0   mip_gap=0.0
+selected classes = 31   union covers 119/119
+coverage sizes: 3x8  4x21  5x1  6x1
+OPTIMUM CERTIFIED = 31
+```
+
+`mip_gap = 0.0` かつ `status = 0` なので**最適性が証明済み**で、
+単なる witness ではなく真の最適値である。
+
+独立検証（`dfpn_cover_verify.py`、`cert_cover_ilp_forced.json`）:
+
+```
+  OK  (a) class count = 31
+  OK  (b) all keys are legal canonical s4 classes
+  OK  (d) all coverage sets match the recomputation
+  OK  (c) union covers all 119 vertices (missing 0, spurious 0)
+  OK  (e) known-proved LOSS class present
+VERIFIED
+```
+
+### 既知 LOSS class を強制した版
+
+素の ILP の 31 解は**既知の proved class を含んでいなかった**
+（別の 31 解である）。.refutation certificate としては
+既に支出した証明を再利用したいので、`x_known = 1` を強制して
+解き直した:
+
+```
+status=0  wall=0.11s  objective=31.0  gap=0.0
+selected=31  union=119/119  known present=True
+coverage sizes: 3x8  4x21  5x1  6x1
+OPTIMUM_WITH_KNOWN = 31
+```
+
+**既知 class を強制しても最適値は 31 のまま**であり、
+その certificate も独立検証済み（(e) を含む 5 項目すべて OK）。
+
+### 内訳の一致
+
+報告された 31 解の内訳 `21×4 + 8×3 + 1×5 + 1×6` は
+ILP が返した `4x21 3x8 5x1 6x1` と**完全に一致**する。
+両者は互いに素な 119 頂点の partition である。
+
+したがって当方の 35 class witness（`3x8 4x6 5x1 6x20`）は
+最適ではなく、local improvement が大きな class を偏って
+使っていたためである。
+
+**撤回: 「limit 20..30 を除外したので OPT >= 31」**
+
+この排除は `dfpn_cover_optimum.py` の `lower_bound()` に依存していたが、
+その関数は fractional charge と disjointness charge を**加算していた**。
+これは一般には正しくない。2 つの charge がそれぞれ有効な下界でも、
+**同じ選択 class を二重に課金しうる**ので和は下界にならない。
+
+最小反例は「頂点 1 個・それを覆う class 1 個」の set cover:
+
+```
+OPT = 1
+fractional charge = 1
+disjoint charge   = 1
+sum               = 2   <- 下界になっていない
+```
+
+したがって `limit=20..30` を 1 node で除外していた部分は
+**証明として使えない**。修正は `max(A, B)` であり、和ではない。
+両者がそれぞれの下界ならその max も下界だが、加算的な結合は一般に不可。
+
+**確定: `OPT = 31`。**
+
+## 観測値（証明ではない）
 
 ```
 vertices          : 119
@@ -55,37 +119,41 @@ distinct covers   : 2002   （coverage 集合が同一の class を統合）
 max coverage      : 6
 counting bound    : 20
 greedy upper bound: 35
-  limit=20 .. 30 : すべて解なし（各 1 node で除外）
 ```
 
-`ceil(119/6)=20` から 30 までが厳密に除外される。したがって **OPT >= 31**。greedy が 35 の解を作るので **OPT <= 35**。
-下限の導出には 2 つの独立な charge を足し合わせている:
+coverage 6 の class が 43 個、coverage 4 が 2832 個であり、
+重なり制約が強いため単純 count は確かに弱い。
 
-- **Charge A（分数）**: size k の class は未被覆頂点を高々 k 個しか
-  覆えないので、頂点 v のコストは `1/maxcov(v)` 以上。
-- **Charge B（互いに素な集合）**: 「who can cover me」の集合が互いに
-  素な頂点同士は 1 つの class では同時に覆えない。この greedy
-  independent set が 1 頂点につき 1 の charge を加える。
+## 最適値を確定するには
 
-**Charge B が効くのがポイント**である。追加前は `uncovered / maxcov`
-しか無く depth 22 で 25 分以上回らなかったのが、
-追加後は depth 22..30 が各 1 node で除外される。
+set cover を 0-1 ILP として解く:
 
-**報告された 31 class 解の内訳（未検証）**:
+```
+min  sum_C x_C
+s.t. for all v:  sum_{C contains v} x_C >= 1
+     x_C in {0,1}
+```
+
+3396 変数・119 制約。scipy.optimize.milp の HiGHS が使えれば
+最適 witness を機械可読に出せる。optimal を返せばその選択 class を
+既存の `dfpn_cover_verify.py` で独立検証する。時間切れなら
+best bound と 35-class witness から区間だけを報告する。
+
+**adaptive coordinator は OPT の確定を待たずに作れる。**
+coordinator の正しさは最適値が 31 でも 35 でも変わらず、
+変わるのは進捗指標の数字だけである。
+
+## 報告された 31 class 解（未検証）
 
 ```
 21 x coverage4  +  8 x coverage3  +  1 x coverage5  +  1 x coverage6  =  119
 ```
 
-coverage 集合が互いに素であり、119 頂点をちょうど partition する。
+coverage 集合が互いに素で 119 頂点をちょうど partition する、という
+主張であるが、**witness として検証されていない**。
+上に記したとおり 31 class の具体解をまだ出力できていない。
 
-つまり「理想的に全部 LOSS なら、現在の 1 class を含めて 31 個で
-119 頂点をちょうど覆える」という target skeleton が主張されている。
-
-**ただしこれは witness として検証されていないため、骨格として
-使うべきではない。** 確定しているのは `31 <= OPT <= 35` であり、
-現在 1 個が LOSS として確定しているので、上界からすれば
-残る Worst case は 34 個。
+## orbit による観測
 
 ## orbit による検証
 
@@ -158,7 +226,7 @@ s4 cache も同じ方針。
 
 - reply r2=0 が LOSS とはまだ言っていない
 - 二石 root は 1 個も閉じていない
-- 31-class skeleton は**目標**であり、証明ではない
+- 31-class optimum は ILP で確定、witness も独立検証済み
 
 **11×11: UNKNOWN**
 
@@ -183,7 +251,7 @@ witness    : 35 classes (claim 35)
   OK   (d) all coverage sets match the recomputation
   OK   (c) union covers all 119 vertices (missing 0, spurious 0)
   OK   (e) known-proved LOSS class present
-certified bounds : 20 <= OPT <= 35
+certified bounds (greedy witness) : 20 <= OPT <= 35
 VERIFIED
 ```
 
@@ -193,26 +261,28 @@ VERIFIED
 
 **確定**:
 
-- `OPT >= 31`（limit 20..30 を厳密に除外）
+- `OPT >= 20`（単純 count）
 - `OPT <= 35`（35 class の witness を生成し独立検証）
 - 既知 LOSS class `{1,2,11,22}` は witness に含まれる
 
 **未確定**:
 
-- **`OPT = 31` ではない。** 31 class の具体的な witness は
-  **まだ出力できていない**。
+- 最適値は 20 と 35 の間のどこか。
 - この witness は local improvement による heuristic であり、
-  31 に達する保証はない。
+  最適値に到達する保証はない。
 
-したがって正しい記述は
+**最適値を確定するには 0-1 ILP として解く必要がある:**
 
 ```
-31 <= OPT <= 35
+min  sum_C x_C
+s.t. for all v:  sum_{C contains v} x_C >= 1
+     x_C in {0,1}
 ```
 
-であり、**「最適値 31」は未確定**である。
+3396 変数・119 制約であり、scipy.optimize.milp の HiGHS が
+使えるなら最適 witness を機械可読に出せる。
 31 の witness が機械可読に 31 class を出力し、
-独立検証できるまで `31 <= OPT <= 35` として扱う。
+ILP で 31 が確定した（上記）。
 
 ## 生成した witness の構造
 
@@ -228,6 +298,6 @@ VERIFIED
 coverage 6 の class を 20 個使っており、報告された 31 解の
 「21×4 + 8×3 + 1×5 + 1×6」という分布とは大きく異なる。
 local improvement が大きい class を優先して貪欲に固めているためで、
-これは 31 解が存在するならその分布-Polynomial に近づいていないことを
+これは 31 解が存在するならその分布に近づいていないことを
 示唆する。**31 witness を得るには別の探索が必要**（simulated annealing
 や exact 探索の残りなど）。

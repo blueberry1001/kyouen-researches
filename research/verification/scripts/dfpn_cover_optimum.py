@@ -153,11 +153,16 @@ def lower_bound(uncovered):
     a few high-coverage vertices are covered by only a handful of
     classes while the bulk is heavily constrained.
 
-    Both charges are individually valid and sum to a valid bound.
+    The two charges are combined with max(), NOT by addition. Adding
+    two valid lower bounds is not valid: they can charge the same chosen
+    class twice. Minimal counterexample -- one vertex, one class
+    covering it: OPT = 1, fractional charge = 1, disjoint charge = 1,
+    sum = 2, which exceeds the optimum. Since each charge on its own is
+    a lower bound, their max is also a lower bound; the sum is not.
     """
-    tot = 0.0
+    frac = 0.0
     for v in uncovered:
-        tot += 1.0 / maxcov_of_v[v]
+        frac += 1.0 / maxcov_of_v[v]
 
     # Charge B: greedy independent set over the "who can cover me"
     # sets, restricted to uncovered vertices.
@@ -174,8 +179,7 @@ def lower_bound(uncovered):
         if not (s & used):
             used |= s
             extra += 1
-    tot += extra
-    return tot
+    return max(frac, float(extra))
 
 
 nodes = [0]
