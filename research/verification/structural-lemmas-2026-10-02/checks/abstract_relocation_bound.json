@@ -1,0 +1,57 @@
+{
+  "labelled_models_including_redundant_shared_four_edge": 226,
+  "comparisons_with_shared_pairs_and_four_edge": 344,
+  "extremal_comparisons": 48,
+  "maximum_grundy_spread": 3,
+  "abstract_isomorphism_classes_with_spread_three": 2,
+  "classes": [
+    {
+      "pairs": [
+        [
+          0,
+          1
+        ]
+      ],
+      "g0_triples": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "g3_triples": [
+        [
+          0,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "g0_triples": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "g3_triples": []
+    }
+  ],
+  "note": "The possible shared four-edge is redundant in both extremal types. Only the second type is claimed as a pair of actual square-board states here."
+}

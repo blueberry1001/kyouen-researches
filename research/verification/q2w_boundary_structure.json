@@ -1,0 +1,45 @@
+{
+  "pair_criterion_cross_checks": [
+    {"w": 2, "q": 4, "m": 6, "pair_assignments": 225, "concyclic": 29, "mismatches": 0},
+    {"w": 3, "q": 6, "m": 6, "pair_assignments": 3375, "concyclic": 6, "mismatches": 0},
+    {"w": 4, "q": 8, "m": 5, "pair_assignments": 10000, "concyclic": 2, "mismatches": 0}
+  ],
+  "modular_lemma": {
+    "modulus": 9,
+    "square_residues": [0, 1, 4, 7],
+    "max_double_rows_among_5_by_c_mod_9": [3, 3, 4, 4, 4, 4, 4, 4, 4],
+    "max_double_rows_among_6_by_c_mod_9": [4, 4, 4, 4, 4, 4, 4, 4, 4]
+  },
+  "lattice_circle_upper_bounds": [
+    {"w":1,"max_double_rows_under_local_constraints":1,"circle_point_upper_bound":2,"row_only_for_q_at_least":3},
+    {"w":2,"max_double_rows_under_local_constraints":2,"circle_point_upper_bound":4,"row_only_for_q_at_least":5},
+    {"w":3,"max_double_rows_under_local_constraints":3,"circle_point_upper_bound":6,"row_only_for_q_at_least":7},
+    {"w":4,"max_double_rows_under_local_constraints":4,"circle_point_upper_bound":8,"row_only_for_q_at_least":9},
+    {"w":5,"max_double_rows_under_local_constraints":4,"circle_point_upper_bound":9,"row_only_for_q_at_least":10},
+    {"w":6,"max_double_rows_under_local_constraints":4,"circle_point_upper_bound":10,"row_only_for_q_at_least":11},
+    {"w":7,"max_double_rows_under_local_constraints":5,"circle_point_upper_bound":12,"row_only_for_q_at_least":13},
+    {"w":8,"max_double_rows_under_local_constraints":6,"circle_point_upper_bound":14,"row_only_for_q_at_least":15},
+    {"w":9,"max_double_rows_under_local_constraints":7,"circle_point_upper_bound":16,"row_only_for_q_at_least":17},
+    {"w":10,"max_double_rows_under_local_constraints":8,"circle_point_upper_bound":18,"row_only_for_q_at_least":19},
+    {"w":11,"max_double_rows_under_local_constraints":8,"circle_point_upper_bound":19,"row_only_for_q_at_least":20},
+    {"w":12,"max_double_rows_under_local_constraints":8,"circle_point_upper_bound":20,"row_only_for_q_at_least":21},
+    {"w":13,"max_double_rows_under_local_constraints":9,"circle_point_upper_bound":22,"row_only_for_q_at_least":23},
+    {"w":14,"max_double_rows_under_local_constraints":10,"circle_point_upper_bound":24,"row_only_for_q_at_least":25},
+    {"w":15,"max_double_rows_under_local_constraints":11,"circle_point_upper_bound":26,"row_only_for_q_at_least":27},
+    {"w":16,"max_double_rows_under_local_constraints":12,"circle_point_upper_bound":28,"row_only_for_q_at_least":29},
+    {"w":17,"max_double_rows_under_local_constraints":12,"circle_point_upper_bound":29,"row_only_for_q_at_least":30},
+    {"w":18,"max_double_rows_under_local_constraints":12,"circle_point_upper_bound":30,"row_only_for_q_at_least":31},
+    {"w":19,"max_double_rows_under_local_constraints":13,"circle_point_upper_bound":32,"row_only_for_q_at_least":33},
+    {"w":20,"max_double_rows_under_local_constraints":14,"circle_point_upper_bound":34,"row_only_for_q_at_least":35},
+    {"w":21,"max_double_rows_under_local_constraints":15,"circle_point_upper_bound":36,"row_only_for_q_at_least":37},
+    {"w":22,"max_double_rows_under_local_constraints":16,"circle_point_upper_bound":38,"row_only_for_q_at_least":39},
+    {"w":23,"max_double_rows_under_local_constraints":16,"circle_point_upper_bound":39,"row_only_for_q_at_least":40},
+    {"w":24,"max_double_rows_under_local_constraints":16,"circle_point_upper_bound":40,"row_only_for_q_at_least":41},
+    {"w":25,"max_double_rows_under_local_constraints":17,"circle_point_upper_bound":42,"row_only_for_q_at_least":43},
+    {"w":26,"max_double_rows_under_local_constraints":18,"circle_point_upper_bound":44,"row_only_for_q_at_least":45},
+    {"w":27,"max_double_rows_under_local_constraints":19,"circle_point_upper_bound":46,"row_only_for_q_at_least":47},
+    {"w":28,"max_double_rows_under_local_constraints":20,"circle_point_upper_bound":48,"row_only_for_q_at_least":49},
+    {"w":29,"max_double_rows_under_local_constraints":20,"circle_point_upper_bound":49,"row_only_for_q_at_least":50},
+    {"w":30,"max_double_rows_under_local_constraints":20,"circle_point_upper_bound":50,"row_only_for_q_at_least":51}
+  ]
+}

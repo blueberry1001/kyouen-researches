@@ -1,0 +1,185 @@
+{
+  "method": "Bareiss determinant on all witness quadruples, independent of SAT",
+  "prime_count": 29,
+  "checks": 3310721,
+  "witnesses": [
+    {
+      "p": 5,
+      "size": 4,
+      "quadruples": 1
+    },
+    {
+      "p": 7,
+      "size": 5,
+      "quadruples": 5
+    },
+    {
+      "p": 11,
+      "size": 7,
+      "quadruples": 35
+    },
+    {
+      "p": 13,
+      "size": 8,
+      "quadruples": 70
+    },
+    {
+      "p": 17,
+      "size": 10,
+      "quadruples": 210
+    },
+    {
+      "p": 19,
+      "size": 11,
+      "quadruples": 330
+    },
+    {
+      "p": 23,
+      "size": 13,
+      "quadruples": 715
+    },
+    {
+      "p": 29,
+      "size": 16,
+      "quadruples": 1820
+    },
+    {
+      "p": 31,
+      "size": 17,
+      "quadruples": 2380
+    },
+    {
+      "p": 37,
+      "size": 20,
+      "quadruples": 4845
+    },
+    {
+      "p": 41,
+      "size": 22,
+      "quadruples": 7315
+    },
+    {
+      "p": 43,
+      "size": 23,
+      "quadruples": 8855
+    },
+    {
+      "p": 47,
+      "size": 25,
+      "quadruples": 12650
+    },
+    {
+      "p": 53,
+      "size": 28,
+      "quadruples": 20475
+    },
+    {
+      "p": 59,
+      "size": 31,
+      "quadruples": 31465
+    },
+    {
+      "p": 61,
+      "size": 32,
+      "quadruples": 35960
+    },
+    {
+      "p": 67,
+      "size": 35,
+      "quadruples": 52360
+    },
+    {
+      "p": 71,
+      "size": 37,
+      "quadruples": 66045
+    },
+    {
+      "p": 73,
+      "size": 38,
+      "quadruples": 73815
+    },
+    {
+      "p": 79,
+      "size": 41,
+      "quadruples": 101270
+    },
+    {
+      "p": 83,
+      "size": 43,
+      "quadruples": 123410
+    },
+    {
+      "p": 89,
+      "size": 46,
+      "quadruples": 163185
+    },
+    {
+      "p": 97,
+      "size": 50,
+      "quadruples": 230300
+    },
+    {
+      "p": 101,
+      "size": 52,
+      "quadruples": 270725
+    },
+    {
+      "p": 103,
+      "size": 53,
+      "quadruples": 292825
+    },
+    {
+      "p": 107,
+      "size": 55,
+      "quadruples": 341055
+    },
+    {
+      "p": 109,
+      "size": 56,
+      "quadruples": 367290
+    },
+    {
+      "p": 113,
+      "size": 58,
+      "quadruples": 424270
+    },
+    {
+      "p": 127,
+      "size": 65,
+      "quadruples": 677040
+    }
+  ],
+  "p23_counterexample": [
+    [
+      0,
+      0
+    ],
+    [
+      4,
+      16
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      10,
+      8
+    ]
+  ],
+  "p23_repaired_parameters": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    19
+  ]
+}

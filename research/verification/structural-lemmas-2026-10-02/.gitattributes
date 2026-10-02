@@ -1,0 +1,3 @@
+# Keep source hashes in the verification records stable across platforms.
+*.py text eol=lf
+*.json text eol=lf
