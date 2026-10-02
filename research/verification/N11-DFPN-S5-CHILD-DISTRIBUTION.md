@@ -64,7 +64,7 @@ s5 は全部 20M 以内で閉じる。**heavy tail の主張は撤回する。**
 
 ## 全 m5 の結果（nodes 昇順）
 
-| m5 | legal | result | nodes | ms | rank_direct | rank_index |
+| m5 | legal | result | nodes | wall_s | rank_direct | rank_index |
 |---:|---:|---|---:|---:|---:|---:|
 | 16 | 90 | LOSS | 3176527 | 19 | 8 | 5 |
 | 26 | 88 | LOSS | 3213179 | 19 | 6 | 15 |

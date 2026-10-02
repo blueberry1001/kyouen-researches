@@ -315,6 +315,7 @@ public:
         std::uint64_t tt_hits=0, tt_misses=0, tt_growth=0;
         std::uint64_t aborted_by_time=0;
         std::uint64_t timeouts=0;
+        std::uint64_t loaded=0;   // verdicts read from the persistent cache
         // Eviction and probe-length growth. A saturated table shows
         // up here as rising evict_open/evict_solved and avgprobe, which
         // is how a full table can be told apart from a hard position.
@@ -469,6 +470,55 @@ public:
         return 0;
     }
     void oracle_clear(){ oracle=Oracle(); }
+
+    // ---- persistent s5 verdict cache -------------------------------
+    // Maps a canonical 5-stone key to WIN or LOSS, on disk, so a proof
+    // survives process restarts and does not need the 67M-entry PnTT to
+    // stay resident. Only decided verdicts are stored: an UNKNOWN means
+    // the node budget ran out, and persisting that would make a later,
+    // better funded query inherit an earlier failure.
+    //
+    // This replaces the warm-table dependence. A cold replay of the 103
+    // fifth moves of s4={60,0,1,2} closed every one of them as LOSS
+    // within 20M nodes, and those are exactly the facts a restartable
+    // refutation search needs: with the cache loaded, m4=2 resolves to
+    // REFUTED from 103 hits and m3=1 to REFUTED, with no search at all.
+    void oracle_load(const std::string& path){
+        if(path.empty()) return;
+        std::ifstream in(path);
+        if(!in){ return; }
+        std::string line; int n=0;
+        while(std::getline(in,line)){
+            if(line.empty()||line[0]=='#') continue;
+            std::vector<std::string> f;
+            std::stringstream ss(line); std::string t;
+            while(std::getline(ss,t,',')) f.push_back(t);
+            // s5verdict,key_lo,key_hi,stones,result,nodes
+            if(f.size()<6) continue;
+            if(std::stoi(f[3])!=5) continue;      // s5 layer only
+            int r=std::stoi(f[4]);
+            if(r!=1 && r!=2) continue;            // never persist UNKNOWN
+            Bits k; k.lo=std::stoull(f[1]); k.hi=std::stoull(f[2]);
+            oracle.memo[k]=(std::uint8_t)r;
+            ++n;
+        }
+        oracle.loaded=(std::uint64_t)n;
+    }
+    // Append every decided verdict gathered this run. Append-only so a
+    // crash cannot corrupt earlier entries, and so results from
+    // independent runs accumulate into one file.
+    void oracle_save(const std::string& path) const {
+        if(path.empty()) return;
+        std::ofstream out(path, std::ios::out | std::ios::app);
+        if(!out) return;
+        for(const auto& kv:oracle.memo){
+            if(kv.second!=1 && kv.second!=2) continue;
+            out<<"s5verdict,"<<kv.first.lo<<","<<kv.first.hi<<",5,"
+               <<(int)kv.second<<",0\n";
+        }
+        out.flush();
+    }
+    std::uint64_t oracle_cache_size() const { return (std::uint64_t)oracle.memo.size(); }
 
     // Certificate for one winning two-stone reply. Filled only when the
     // quantified search returns WIN:
@@ -2243,7 +2293,10 @@ template<int N>
 template<int N>
 static int run_quant(int first,const std::string& replies,
                      std::uint64_t budget,double timeout_s,
-                     unsigned memo_power,std::ostream& O){
+                     unsigned memo_power,
+                     const std::string& s5_cache,
+                     const std::string& s5_cache_out,
+                     std::ostream& O){
     DfPn<N> solver(memo_power);
     // The exact DFS inside the oracle must not be gated by any hybrid
     // threshold. It IS gated by the quant wall allowance, which is
@@ -2253,6 +2306,7 @@ static int run_quant(int first,const std::string& replies,
     solver.set_deadline(0);
     solver.set_exact_handoff(0,1,1,0); // publish=ALL (oracle is its own memo)
     solver.oracle_clear();
+    if(!s5_cache.empty()) solver.oracle_load(s5_cache);
     if(timeout_s>0) solver.set_quant_deadline(timeout_s);
 
     std::vector<int> rs;
@@ -2326,8 +2380,11 @@ static int run_quant(int first,const std::string& replies,
      <<" oracle_wins="<<oc.wins<<" oracle_losses="<<oc.losses
      <<" oracle_unknowns="<<oc.unknowns<<" oracle_nodes="<<oc.nodes
      <<" oracle_wall_ms="<<oc.wall
+     <<" cache_loaded="<<oc.loaded
+     <<" cache_size="<<solver.oracle_cache_size()
      <<" wall_s="<<(long long)(t_end-t_all)<<"\n";
     O.flush();
+    if(!s5_cache_out.empty()) solver.oracle_save(s5_cache_out);
     return 0;
 }
 
@@ -2464,6 +2521,8 @@ int main(int argc,char**argv){
         std::uint64_t quant_budget=20000000;
         double quant_timeout=0;
         std::string s4_ab="";          // "r2,m3,m4"
+        std::string s5_cache="";       // persistent s5 verdict cache to load
+        std::string s5_cache_out="";   // same file to append decided verdicts
         unsigned s4_ab_memo=24;
         std::uint64_t s4_ab_budget=20000000;
         int exact_order=0; // 0=count asc, 1=count desc, 2=key asc
@@ -2504,6 +2563,8 @@ int main(int argc,char**argv){
             else if(a.rfind("--s4-ab=",0)==0)s4_ab=a.substr(8);
             else if(a.rfind("--s4-ab-memo=",0)==0)s4_ab_memo=std::stoul(a.substr(13));
             else if(a.rfind("--s4-ab-budget=",0)==0)s4_ab_budget=std::stoull(a.substr(15));
+            else if(a.rfind("--s5-cache=",0)==0)s5_cache=a.substr(11);
+            else if(a.rfind("--s5-cache-out=",0)==0)s5_cache_out=a.substr(15);
             else if(a=="--exact-order=count")exact_order=0;
             else if(a=="--exact-order=countd")exact_order=1;
             else if(a=="--exact-order=key")exact_order=2;
@@ -2522,7 +2583,7 @@ int main(int argc,char**argv){
             }
         }
         if(!reps && !empty && roots_path.empty() && exact_replay_path.empty()
-           && quant_replies.empty() && s4_ab.empty()){
+           && quant_replies.empty() && s4_ab.empty() && s5_cache.empty()){
             std::cerr<<"nothing to do without --empty/--reps/--roots-csv/--exact-replay/--quant-replies\n";
             return 2;
         }
@@ -2579,27 +2640,27 @@ int main(int argc,char**argv){
             case 4:
                 if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
                 if(!s4_ab.empty()) return run_s4_ab<4>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
-                if(!quant_replies.empty()) return run_quant<4>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
+                if(!quant_replies.empty()) return run_quant<4>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 5:
                 if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
                 if(!s4_ab.empty()) return run_s4_ab<5>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
-                if(!quant_replies.empty()) return run_quant<5>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
+                if(!quant_replies.empty()) return run_quant<5>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 6:
                 if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
                 if(!s4_ab.empty()) return run_s4_ab<6>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
-                if(!quant_replies.empty()) return run_quant<6>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
+                if(!quant_replies.empty()) return run_quant<6>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 7:
                 if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
                 if(!s4_ab.empty()) return run_s4_ab<7>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
-                if(!quant_replies.empty()) return run_quant<7>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
+                if(!quant_replies.empty()) return run_quant<7>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 11:
                 if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
                 if(!s4_ab.empty()) return run_s4_ab<11>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
-                if(!quant_replies.empty()) return run_quant<11>(quant_first,quant_replies,quant_budget,quant_timeout,pow,*cp);
+                if(!quant_replies.empty()) return run_quant<11>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             default: std::cerr<<"unsupported n\n"; return 2;
         }
