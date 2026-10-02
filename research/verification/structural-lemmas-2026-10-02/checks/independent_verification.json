@@ -1,0 +1,201 @@
+{
+  "method": "24-term 4x4 determinant; full power set for n<=4; full 8 extension subsets for witnesses",
+  "boards": [
+    {
+      "n": 1,
+      "forbidden_quads": 0,
+      "safe_positions": 2,
+      "same_k_signatures": 2,
+      "any_k_signatures": 2,
+      "both_determine_complete_residual": true,
+      "seconds": 0.0
+    },
+    {
+      "n": 2,
+      "forbidden_quads": 1,
+      "safe_positions": 15,
+      "same_k_signatures": 12,
+      "any_k_signatures": 12,
+      "both_determine_complete_residual": true,
+      "seconds": 0.0009996891021728516
+    },
+    {
+      "n": 3,
+      "forbidden_quads": 14,
+      "safe_positions": 298,
+      "same_k_signatures": 187,
+      "any_k_signatures": 187,
+      "both_determine_complete_residual": true,
+      "seconds": 0.0025048255920410156
+    },
+    {
+      "n": 4,
+      "forbidden_quads": 194,
+      "safe_positions": 5811,
+      "same_k_signatures": 3360,
+      "any_k_signatures": 3266,
+      "both_determine_complete_residual": true,
+      "seconds": 0.8742280006408691
+    }
+  ],
+  "witnesses": [
+    {
+      "s": [
+        0,
+        1,
+        3,
+        10,
+        12,
+        19
+      ],
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "L": [
+        6,
+        17,
+        20
+      ],
+      "safe_extensions": [
+        [],
+        [
+          6
+        ],
+        [
+          17
+        ],
+        [
+          20
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          20
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "g": 0,
+      "forbidden_quad_after_all_three": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "s": [
+        0,
+        1,
+        13,
+        14,
+        15,
+        19
+      ],
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "L": [
+        6,
+        17,
+        20
+      ],
+      "safe_extensions": [
+        [],
+        [
+          6
+        ],
+        [
+          17
+        ],
+        [
+          20
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          20
+        ],
+        [
+          17,
+          20
+        ],
+        [
+          6,
+          17,
+          20
+        ]
+      ],
+      "g": 1,
+      "forbidden_quad_after_all_three": []
+    }
+  ]
+}

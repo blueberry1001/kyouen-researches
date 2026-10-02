@@ -1,0 +1,123 @@
+{
+  "scope": "relative-state option DAG mex, not a disjunctive-sum equivalence claim",
+  "finite_dag_theorem": "F(G,r,r)=g(G)",
+  "terminal_pass_allowed_full_formula": {
+    "a=b": "g(G)",
+    "a<b": 0,
+    "a=b+1 and g(G)=1": 2,
+    "all_other_a>b": 1
+  },
+  "proof": "Verify equal private-pass counts preserve the relative-state option-DAG mex.\n\nThis is NOT a claim that privately owned passes form an impartial sum game.\nFor a finite DAG G with options H, define\n F(G,a,b) = mex({F(H,b,a): H option G} U {F(G,b,a-1): a>0}).\nThe extra option is omitted at terminal G when terminal_passes=False.\nThen F(G,r,r)=g(G) for all nonnegative r.\n\nProof: induct first on r, then on the height of G. Ordinary children have\nF(H,r,r)=g(H). If a pass is available, its target X=F(G,r,r-1) has a pass\noption F(G,r-1,r-1)=g(G), so X != g(G). Adding X to the ordinary child\nvalues cannot change their mex. The base r=0 is the ordinary recursion.\nAt a terminal G with terminal_passes=False both values are zero.\n\nStronger theorem when terminal passes ARE allowed:\n F(G,a,b) = g(G) if a=b;\n            0 if a<b;\n            2 if a=b+1 and g(G)=1;\n            1 otherwise (a>b).\nProof uses induction on (height(G),a+b), lexicographically. All ordinary\nchildren reverse the strict inequality. At a>b+1 both ordinary and pass\nchildren have value 0. At a=b+1, ordinary children (if any) have value 0,\nand the pass child has value g(G). At a<b every child has positive value.\nThe a=b case follows from the equal-rights theorem above.\n",
+  "exhaustive_graphs": 1024,
+  "exhaustive_vertices": 5,
+  "random_graphs": 500,
+  "random_vertices": 30,
+  "seed": 20261002,
+  "rights_per_player_tested": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "terminal_pass_rules": [
+    false,
+    true
+  ],
+  "comparisons": 704200,
+  "maximum_plain_mex_tested": 6,
+  "failures": 0,
+  "asymmetric_counterexamples_on_nim_0_1_2": [
+    {
+      "vertex": 0,
+      "rights": [
+        1,
+        0
+      ],
+      "ordinary_mex": 0,
+      "extended_mex": 1
+    },
+    {
+      "vertex": 0,
+      "rights": [
+        2,
+        1
+      ],
+      "ordinary_mex": 0,
+      "extended_mex": 1
+    },
+    {
+      "vertex": 1,
+      "rights": [
+        0,
+        1
+      ],
+      "ordinary_mex": 1,
+      "extended_mex": 0
+    },
+    {
+      "vertex": 1,
+      "rights": [
+        1,
+        0
+      ],
+      "ordinary_mex": 1,
+      "extended_mex": 2
+    },
+    {
+      "vertex": 1,
+      "rights": [
+        1,
+        2
+      ],
+      "ordinary_mex": 1,
+      "extended_mex": 0
+    },
+    {
+      "vertex": 1,
+      "rights": [
+        2,
+        1
+      ],
+      "ordinary_mex": 1,
+      "extended_mex": 2
+    },
+    {
+      "vertex": 2,
+      "rights": [
+        0,
+        1
+      ],
+      "ordinary_mex": 2,
+      "extended_mex": 0
+    },
+    {
+      "vertex": 2,
+      "rights": [
+        1,
+        0
+      ],
+      "ordinary_mex": 2,
+      "extended_mex": 1
+    },
+    {
+      "vertex": 2,
+      "rights": [
+        1,
+        2
+      ],
+      "ordinary_mex": 2,
+      "extended_mex": 0
+    },
+    {
+      "vertex": 2,
+      "rights": [
+        2,
+        1
+      ],
+      "ordinary_mex": 2,
+      "extended_mex": 1
+    }
+  ],
+  "source_sha256": "d93fd95c859c5671bc08fe35f05fd368885b589f0b487ee336293cef981e1a63"
+}
