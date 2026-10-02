@@ -1,0 +1,405 @@
+{
+  "geometry": "integer 4x4 determinant expanded into all 24 permutations",
+  "quads": 826,
+  "witnesses": [
+    {
+      "state": [
+        1,
+        3,
+        5,
+        6,
+        11
+      ],
+      "legal": [
+        4,
+        20,
+        22,
+        24
+      ],
+      "minimal_residual": [
+        [
+          4,
+          20
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          4,
+          22,
+          24
+        ]
+      ],
+      "quad_witnesses": {
+        "4,20": [
+          [
+            1,
+            4,
+            5,
+            20
+          ],
+          [
+            3,
+            4,
+            6,
+            20
+          ]
+        ],
+        "20,24": [
+          [
+            1,
+            3,
+            20,
+            24
+          ]
+        ],
+        "4,22,24": [
+          [
+            4,
+            6,
+            22,
+            24
+          ]
+        ]
+      },
+      "all_16_subsets": [
+        {
+          "subset": [],
+          "safe": true
+        },
+        {
+          "subset": [
+            4
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            20
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20,
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            20,
+            22
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            4,
+            20,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            22,
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            22,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            20,
+            22,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            4,
+            20,
+            22,
+            24
+          ],
+          "safe": false
+        }
+      ],
+      "all_safe_grundy": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "4": 1,
+        "5": 0,
+        "6": 0,
+        "8": 1,
+        "9": 0,
+        "12": 0
+      },
+      "g": 0,
+      "child_g": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "winning_moves": []
+    },
+    {
+      "state": [
+        1,
+        3,
+        5,
+        11,
+        17
+      ],
+      "legal": [
+        4,
+        20,
+        22,
+        24
+      ],
+      "minimal_residual": [
+        [
+          4,
+          20
+        ],
+        [
+          20,
+          24
+        ]
+      ],
+      "quad_witnesses": {
+        "4,20": [
+          [
+            1,
+            4,
+            5,
+            20
+          ]
+        ],
+        "20,24": [
+          [
+            1,
+            3,
+            20,
+            24
+          ]
+        ]
+      },
+      "all_16_subsets": [
+        {
+          "subset": [],
+          "safe": true
+        },
+        {
+          "subset": [
+            4
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            20
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20,
+            22
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            20,
+            22
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            4,
+            20,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            22,
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            4,
+            22,
+            24
+          ],
+          "safe": true
+        },
+        {
+          "subset": [
+            20,
+            22,
+            24
+          ],
+          "safe": false
+        },
+        {
+          "subset": [
+            4,
+            20,
+            22,
+            24
+          ],
+          "safe": false
+        }
+      ],
+      "all_safe_grundy": {
+        "0": 3,
+        "1": 0,
+        "2": 1,
+        "4": 2,
+        "5": 1,
+        "6": 0,
+        "8": 0,
+        "9": 1,
+        "12": 1,
+        "13": 0
+      },
+      "g": 3,
+      "child_g": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "winning_moves": [
+        4,
+        24
+      ]
+    }
+  ],
+  "census": {
+    "complete": true,
+    "safe_positions": 151394,
+    "safe_layer_counts": {
+      "0": 1,
+      "1": 25,
+      "2": 300,
+      "3": 2300,
+      "4": 11824,
+      "5": 37272,
+      "6": 59192,
+      "7": 35208,
+      "8": 5172,
+      "9": 100
+    },
+    "signature_groups": 90159,
+    "mixed_grundy_groups": 32,
+    "maximum_grundy_spread": 3,
+    "all_states_with_at_most_four_stones_mixed_groups": 0,
+    "minimum_equal_stone_count_in_mixed_groups": 5,
+    "same_k_group_counts_by_stone_count": {
+      "5": 8,
+      "6": 24
+    },
+    "seconds": 3.279858350753784
+  }
+}
