@@ -2704,6 +2704,26 @@ static int run_cover(int first,int r2,const std::string& s5_cache,
         classes[{k.lo,k.hi}].push_back(e);
     }
 
+    // Canonical s4 classes are grouped by a key the solver computed,
+    // so two edges in one class are D4 images of the same position and
+    // MUST agree. If a class ever contains both a decided WIN and a
+    // decided LOSS, the cache or the canonicalisation is wrong, and
+    // taking the numeric maximum would silently let LOSS win. That is
+    // exactly the shape of bug that would forge a refutation, so it is
+    // refused instead.
+    for(const auto& kv:classes){
+        int have=-1;
+        for(const auto& e:kv.second){
+            typename DfPn<N>::EdgeInfo ei=s.classify_edge_pub(r2,e.first,e.second);
+            int v=(int)ei.verdict;
+            if(v==0) continue;                 // UNKNOWN says nothing
+            if(have<0){ have=v; continue; }
+            if(have!=v)
+                throw std::runtime_error(
+                    "canonical s4 class has conflicting WIN/LOSS edges");
+        }
+    }
+
     O<<"# LOSS-edge cover: first="<<first<<" r2="<<r2
      <<" vertices="<<V<<" safe_edges="<<edges.size()
      <<" classes="<<classes.size()
@@ -2744,6 +2764,18 @@ static int run_cover(int first,int r2,const std::string& s5_cache,
     O<<"# all_pairs="<<all_pairs<<" safe_edges="<<edges.size()
      <<" classes_loss="<<n_loss<<" classes_win="<<n_win
      <<" classes_unknown="<<n_unk<<"\n";
+    {   // coverage histogram over ALL classes, so it can be diffed
+        // against the independent Python checker
+        std::map<int,int> h;
+        int mx=0;
+        for(const auto& kv:info){
+            int c=(int)kv.second.covered.size();
+            ++h[c]; if(c>mx) mx=c;
+        }
+        O<<"# coverage";
+        for(const auto& kv:h) O<<" cov"<<kv.first<<"="<<kv.second;
+        O<<" max="<<mx<<" lower_bound="<<((mx>0)?((V+mx-1)/mx):V)<<"\n";
+    }
     O.flush();
 
     // Greedy cover over LOSS classes, biggest coverage first.
@@ -2766,12 +2798,16 @@ static int run_cover(int first,int r2,const std::string& s5_cache,
         for(int v:best_cov) covered[(std::size_t)v]=1;
         covered_n+=best;
         used.push_back(best_key);
-        std::vector<int> rep; 
+        std::vector<int> rep;
         for(const auto& e:classes[best_key]){ rep.push_back(e.first); rep.push_back(e.second); }
         std::sort(rep.begin(),rep.end());
         rep.erase(std::unique(rep.begin(),rep.end()),rep.end());
+        // raw_edges is the number of unordered pairs in this class;
+        // covered is how many third-move vertices it spans. These
+        // differ (the {1,2}/{11,22} class has 2 edges but covers 4
+        // vertices), and conflating them misreported the earlier run.
         O<<"cover_class,"<<best_key.first<<","<<best_key.second
-         <<",covers="<<best<<",edges="<<rep.size();
+         <<",covers="<<best<<",raw_edges="<<classes[best_key].size();
         for(int v:best_cov) O<<","<<v;
         O<<"\n";
         O.flush();
