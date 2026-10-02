@@ -31,13 +31,20 @@ r2 LOSS certificate
       全 s5 子が LOSS
 ```
 
-## 最小 set cover の厳密な下界
+## 最小 set cover の下界と上界（**31 は未確定**）
 
 coverage に重なり制約があるため、`ceil(119/6)=20` は
-真の最小値ではない。整数最適化で最小値を求めると
-**31 class** になる（報告された値）。
+真の最小値ではない（下界）。報告では整数最適化で 31 と
+ Greenwood されているが、**独立には 35 までしか確認できていない**。
 
-既に LOSS 証明済みの `{60,0,1,2}` class を必ず含めても最適値は 31 のまま。
+**重要な訂正**: strict には現在
+`20..30 が解なし`、`35 に解あり`しか確定していないので、
+**`31 <= OPT <= 35`** である。
+**31 で実際に cover する具体的な 31 class を提示できていない限り、
+「最適値 31」は未確定**であり、確定した証明資料ではない。
+`5a27679` の記述はこれより強いと書いていたが、それは裏付けが
+なかった。31 の witness .matrix を機械可読に出力し、
+独立に検証できる状態になるまで `31 <= OPT <= 35` として扱う。
 
 **独立検証（`dfpn_cover_optimum.py`）**:
 
@@ -51,7 +58,7 @@ greedy upper bound: 35
   limit=20 .. 30 : すべて解なし（各 1 node で除外）
 ```
 
-`ceil(119/6)=20` から 30 までが厳密に除外され、**31 のみが残る**。
+`ceil(119/6)=20` から 30 までが厳密に除外される。したがって **OPT >= 31**。greedy が 35 の解を作るので **OPT <= 35**。
 下限の導出には 2 つの独立な charge を足し合わせている:
 
 - **Charge A（分数）**: size k の class は未被覆頂点を高々 k 個しか
@@ -64,7 +71,7 @@ greedy upper bound: 35
 しか無く depth 22 で 25 分以上回らなかったのが、
 追加後は depth 22..30 が各 1 node で除外される。
 
-**31 class 解の内訳**:
+**報告された 31 class 解の内訳（未検証）**:
 
 ```
 21 x coverage4  +  8 x coverage3  +  1 x coverage5  +  1 x coverage6  =  119
@@ -73,9 +80,12 @@ greedy upper bound: 35
 coverage 集合が互いに素であり、119 頂点をちょうど partition する。
 
 つまり「理想的に全部 LOSS なら、現在の 1 class を含めて 31 個で
-119 頂点をちょうど覆える」という具体的な target skeleton が存在する。
+119 頂点をちょうど覆える」という target skeleton が主張されている。
 
-現在のところ 1 個が確定しているので、best case では残り 30 個。
+**ただしこれは witness として検証されていないため、骨格として
+使うべきではない。** 確定しているのは `31 <= OPT <= 35` であり、
+現在 1 個が LOSS として確定しているので、上界からすれば
+残る Worst case は 34 個。
 
 ## orbit による検証
 
@@ -91,7 +101,7 @@ coverage 集合が互いに素であり、119 頂点をちょうど partition �
 orbit 単位では `{1,11}` と `{2,22}` の **2/64** を覆う。
 
 1 class が覆える m3-orbit は最大 3 なので、この見方の単純下界は 22、
-そこから実際の incidence をすべて考慮すると 31 になる。
+そこから実際の incidence をすべて考慮すると 31 になる（未検証）。
 
 ## coordinator 設計の帰結
 
@@ -151,3 +161,73 @@ s4 cache も同じ方針。
 - 31-class skeleton は**目標**であり、証明ではない
 
 **11×11: UNKNOWN**
+
+## 確認された witness（`dfpn_cover_witness.py` + `dfpn_cover_verify.py`）
+
+machine-readable な witness を生成し、**別スクリプトで独立検証**した。
+
+```
+n_classes      : 35
+coverage sizes : 3x8  4x6  5x1  6x20
+union size     : 119 / 119
+counting bound : 20
+```
+
+`dfpn_cover_verify.py` の検証結果（すべて OK）:
+
+```
+recomputed : 119 vertices, 3396 classes
+witness    : 35 classes (claim 35)
+  OK   (a) class count = 35
+  OK   (b) all keys are legal canonical s4 classes
+  OK   (d) all coverage sets match the recomputation
+  OK   (c) union covers all 119 vertices (missing 0, spurious 0)
+  OK   (e) known-proved LOSS class present
+certified bounds : 20 <= OPT <= 35
+VERIFIED
+```
+
+**witness が 35 なので `OPT <= 35` は実証された。**
+
+## 確定していること・していないこと
+
+**確定**:
+
+- `OPT >= 31`（limit 20..30 を厳密に除外）
+- `OPT <= 35`（35 class の witness を生成し独立検証）
+- 既知 LOSS class `{1,2,11,22}` は witness に含まれる
+
+**未確定**:
+
+- **`OPT = 31` ではない。** 31 class の具体的な witness は
+  **まだ出力できていない**。
+- この witness は local improvement による heuristic であり、
+  31 に達する保証はない。
+
+したがって正しい記述は
+
+```
+31 <= OPT <= 35
+```
+
+であり、**「最適値 31」は未確定**である。
+31 の witness が機械可読に 31 class を出力し、
+独立検証できるまで `31 <= OPT <= 35` として扱う。
+
+## 生成した witness の構造
+
+35 class の内訳:
+
+| coverage | class 数 |
+|---:|---:|
+| 3 | 8 |
+| 4 | 6 |
+| 5 | 1 |
+| 6 | 20 |
+
+coverage 6 の class を 20 個使っており、報告された 31 解の
+「21×4 + 8×3 + 1×5 + 1×6」という分布とは大きく異なる。
+local improvement が大きい class を優先して貪欲に固めているためで、
+これは 31 解が存在するならその分布-Polynomial に近づいていないことを
+示唆する。**31 witness を得るには別の探索が必要**（simulated annealing
+や exact 探索の残りなど）。
