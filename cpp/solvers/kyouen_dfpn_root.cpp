@@ -631,11 +631,42 @@ public:
             if(it->second==1){ ++e.win_children; e.win_m5.push_back(z); }
             else { ++e.loss_children; e.loss_m5.push_back(z); }
         }
+        // Verdict. Note the EMPTY child set: an s4 with no legal fifth
+        // move is an OR terminal and therefore LOSS. That is why the
+        // test must NOT require loss_children>0, which would leave such
+        // an edge permanently UNKNOWN.
         if(e.win_children>0) e.verdict=EdgeVerdict::WIN;
-        else if(e.unknown_children==0 && e.loss_children>0)
-            e.verdict=EdgeVerdict::LOSS;
-        else e.verdict=EdgeVerdict::UNKNOWN;
+        else if(e.unknown_children>0) e.verdict=EdgeVerdict::UNKNOWN;
+        else e.verdict=EdgeVerdict::LOSS;
         return e;
+    }
+
+    // Canonical key of the four-stone position an edge names. Two edges
+    // with the same key are the SAME position under D4, so a single proof
+    // covers both. This is why the cover is counted in canonical s4
+    // classes rather than in raw edges.
+    Bits edge_class_key(int r2,int a,int b) const {
+        TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
+        TState s3=add(s2,a);
+        TState s4=add(s3,b);
+        return canonical(s4);
+    }
+
+    // Legal moves after the given occupied points. Used to enumerate
+    // SAFE edges: an edge {a,b} is only meaningful when b is a legal
+    // fourth reply to a, which is stricter than "four distinct stones"
+    // because it also requires the resulting four-stone set to contain no
+    // collinear quadruple.
+    std::vector<int> legal_moves_from(Bits occ) const {
+        std::vector<int> out;
+        Bits legal=legal_for(occ);
+        Bits mm=legal;
+        while(any(mm)){
+            int z=take_lsb(mm);
+            if(z<0) break;
+            out.push_back(z);
+        }
+        return out;
     }
 
     // Certificate for one winning two-stone reply. Filled only when the
@@ -699,6 +730,8 @@ public:
     }
 
     const Oracle& oracle_stats() const { return oracle; }
+    Bits edge_class_key_pub(int r2,int a,int b) const { return edge_class_key(r2,a,b); }
+    EdgeInfo classify_edge_pub(int r2,int a,int b) const { return classify_edge(r2,a,b); }
 
     // Board helpers exposed for the s4 A/B driver, which has to rebuild
     // the same 4-stone position the quant solver would have reached.
@@ -2624,10 +2657,19 @@ static int run_s4_ab(const std::string& spec,int first,
 }
 
 // ---- LOSS-edge cover for one two-stone reply ----------------------
-// Reports which third moves the cache alone already refutes. A proved
-// LOSS edge on {a,b} refutes BOTH a and b, so this is a set-cover over
-// vertices rather than a nested loop: the goal is a set of LOSS-proved
-// s4 positions whose endpoints cover every legal third move.
+// Vertices are the legal third moves. Edges are UNORDERED PAIRS of legal
+// third moves, but only pairs that are actually reachable: for each m3=a
+// the fourth reply b must be a LEGAL reply to a. Generating them that way
+// rather than taking all C(V,2) pairs matters, because "four distinct
+// stones" is weaker than "legal position": {0,60,12,24} is four
+// collinear points, so 12 and 24 can never be consecutive moves. The old
+// version used all pairs and so admitted illegal edges, which would let a
+// later cache entry turn a nonexistent position into a "proved" LOSS.
+//
+// Edges are then reduced to CANONICAL s4 CLASSES: two edges whose
+// four-stone sets are D4 images of each other name the same position, so
+// one proof covers both. A class's coverage is the union of its edges'
+// endpoints, which is how many third moves one proof can refute.
 template<int N>
 static int run_cover(int first,int r2,const std::string& s5_cache,
                      std::ostream& O){
@@ -2638,78 +2680,110 @@ static int run_cover(int first,int r2,const std::string& s5_cache,
     s.set_first_move(first);
     if(!s5_cache.empty()) s.oracle_load(s5_cache);
 
-    std::vector<int> verts;
-    {
-        typename DfPn<N>::TState s2{};
-        s2=s.add_pub(s2,first); s2=s.add_pub(s2,r2);
-        Bits occ{}; s.setbit_pub(occ,first); s.setbit_pub(occ,r2);
-        Bits legal3=s.legal_for_pub(occ);
-        Bits mm=legal3;
-        int n=DfPn<N>::popcount_pub(legal3);
-        for(int i=0;i<n;++i){
-            int z=DfPn<N>::take_lsb_pub(mm);
-            if(z<0) break;
-            verts.push_back(z);
-        }
-    }
+    Bits base{}; s.setbit_pub(base,first); s.setbit_pub(base,r2);
+    std::vector<int> verts=s.legal_moves_from(base);
     const int V=(int)verts.size();
+
+    // Safe edges, generated from the game's own legal-move generator.
+    std::vector<std::pair<int,int>> edges;
+    for(int a:verts){
+        Bits occ=base; s.setbit_pub(occ,a);
+        for(int b:s.legal_moves_from(occ)){
+            if(b==a) continue;
+            edges.push_back({std::min(a,b),std::max(a,b)});
+        }
+    }
+    std::sort(edges.begin(),edges.end());
+    edges.erase(std::unique(edges.begin(),edges.end()),edges.end());
+
+    // Reduce to canonical s4 classes.
+    std::map<std::pair<std::uint64_t,std::uint64_t>,
+             std::vector<std::pair<int,int>>> classes;
+    for(const auto& e:edges){
+        Bits k=s.edge_class_key_pub(r2,e.first,e.second);
+        classes[{k.lo,k.hi}].push_back(e);
+    }
+
     O<<"# LOSS-edge cover: first="<<first<<" r2="<<r2
-     <<" vertices="<<V<<" cache_loaded="<<s.oracle_stats().loaded<<"\n";
+     <<" vertices="<<V<<" safe_edges="<<edges.size()
+     <<" classes="<<classes.size()
+     <<" cache_loaded="<<s.oracle_stats().loaded<<"\n";
     O.flush();
 
-    std::vector<char> covered((std::size_t)V, 0);
+    // Classify every class from the cache only, and record its coverage.
+    struct Cls {
+        int verdict=0;            // 0 unknown, 1 WIN, 2 LOSS
+        std::vector<int> covered; // third moves this class's edges span
+        int unknown_children=0;
+        int nedges=0;
+    };
+    std::map<std::pair<std::uint64_t,std::uint64_t>,Cls> info;
+    for(const auto& kv:classes){
+        Cls c; c.nedges=(int)kv.second.size();
+        std::vector<int> cov;
+        int v=0, unk=0;
+        for(const auto& e:kv.second){
+            typename DfPn<N>::EdgeInfo ei=s.classify_edge_pub(r2,e.first,e.second);
+            if((int)ei.verdict>v) v=(int)ei.verdict;
+            if(ei.unknown_children>0) unk=1;
+            cov.push_back(e.first); cov.push_back(e.second);
+        }
+        std::sort(cov.begin(),cov.end());
+        cov.erase(std::unique(cov.begin(),cov.end()),cov.end());
+        c.verdict=v; c.unknown_children=unk; c.covered=cov;
+        info[kv.first]=c;
+    }
+
+    int n_loss=0,n_win=0,n_unk=0,all_pairs=0;
+    for(int a:verts) for(int b:verts) if(a<b) ++all_pairs;
+    for(const auto& kv:info){
+        if(kv.second.verdict==2) ++n_loss;
+        else if(kv.second.verdict==1) ++n_win;
+        else ++n_unk;
+    }
+    O<<"# all_pairs="<<all_pairs<<" safe_edges="<<edges.size()
+     <<" classes_loss="<<n_loss<<" classes_win="<<n_win
+     <<" classes_unknown="<<n_unk<<"\n";
+    O.flush();
+
+    // Greedy cover over LOSS classes, biggest coverage first.
+    std::vector<char> covered((std::size_t)V,0);
     int covered_n=0;
-    int edges_loss=0, edges_win=0, edges_unknown=0;
-    std::vector<std::pair<int,int>> cover_edges;
-    std::vector<typename DfPn<N>::EdgeInfo> info((std::size_t)V*(std::size_t)V);
-    for(int i=0;i<V;++i){
-        for(int j=i+1;j<V;++j){
-            info[(std::size_t)i*(std::size_t)V+(std::size_t)j]=
-                s.classify_edge(r2,verts[(std::size_t)i],verts[(std::size_t)j]);
+    std::vector<std::pair<std::uint64_t,std::uint64_t>> used;
+    while(true){
+        std::pair<std::uint64_t,std::uint64_t> best_key{0,0};
+        std::vector<int> best_cov; int best=-1;
+        for(const auto& kv:info){
+            if(kv.second.verdict!=2) continue;
+            bool used_already=false;
+            for(const auto& u:used) if(u==kv.first) used_already=true;
+            if(used_already) continue;
+            std::vector<int> fresh;
+            for(int v:kv.second.covered) if(!covered[(std::size_t)v]) fresh.push_back(v);
+            if((int)fresh.size()>best){ best=(int)fresh.size(); best_key=kv.first; best_cov=fresh; }
         }
-    }
-    for(int i=0;i<V;++i){
-        for(int j=i+1;j<V;++j){
-            const auto& e=info[(std::size_t)i*(std::size_t)V+(std::size_t)j];
-            if(e.verdict==DfPn<N>::EdgeVerdict::LOSS) ++edges_loss;
-            else if(e.verdict==DfPn<N>::EdgeVerdict::WIN) ++edges_win;
-            else ++edges_unknown;
-        }
-    }
-    O<<"# edges total="<<((long long)V*(V-1)/2)
-     <<" LOSS="<<edges_loss<<" WIN="<<edges_win
-     <<" UNKNOWN="<<edges_unknown<<"\n";
-    O.flush();
-
-    while(covered_n<V){
-        int bi=-1,bj=-1,best=-1;
-        for(int i=0;i<V;++i){
-            if(covered[(std::size_t)i]) continue;
-            for(int j=i+1;j<V;++j){
-                if(covered[(std::size_t)j]) continue;
-                const auto& e=info[(std::size_t)i*(std::size_t)V+(std::size_t)j];
-                if(e.verdict!=DfPn<N>::EdgeVerdict::LOSS) continue;
-                if(2>best){ best=2; bi=i; bj=j; }
-            }
-        }
-        if(bi<0) break;
-        covered[(std::size_t)bi]=1;
-        covered[(std::size_t)bj]=1;
-        covered_n+=2;
-        cover_edges.push_back({verts[(std::size_t)bi],verts[(std::size_t)bj]});
-        O<<"cover,"<<verts[(std::size_t)bi]<<","<<verts[(std::size_t)bj]
-         <<",LOSS\n";
+        if(best<=0) break;
+        for(int v:best_cov) covered[(std::size_t)v]=1;
+        covered_n+=best;
+        used.push_back(best_key);
+        std::vector<int> rep; 
+        for(const auto& e:classes[best_key]){ rep.push_back(e.first); rep.push_back(e.second); }
+        std::sort(rep.begin(),rep.end());
+        rep.erase(std::unique(rep.begin(),rep.end()),rep.end());
+        O<<"cover_class,"<<best_key.first<<","<<best_key.second
+         <<",covers="<<best<<",edges="<<rep.size();
+        for(int v:best_cov) O<<","<<v;
+        O<<"\n";
         O.flush();
     }
     O<<"# COVER covered="<<covered_n<<"/"<<V
-     <<" edges_used="<<cover_edges.size()<<"\n";
+     <<" classes_used="<<used.size()<<"\n";
     if(covered_n<V){
         O<<"# uncovered vertices:";
-        for(int i=0;i<V;++i)
-            if(!covered[(std::size_t)i]) O<<" "<<verts[(std::size_t)i];
+        for(int i=0;i<V;++i) if(!covered[(std::size_t)i]) O<<" "<<verts[(std::size_t)i];
         O<<"\n";
     }else{
-        O<<"# ALL VERTICES COVERED by cache-proved LOSS edges\n";
+        O<<"# ALL VERTICES COVERED by cache-proved LOSS classes\n";
     }
     O.flush();
     return 0;

@@ -1,119 +1,102 @@
-# LOSS-edge cover: 1 つの s4 証明が 4 つの三手目を反証する
+# LOSS-edge cover: safe edge + canonical s4 class への修正
 
 **11×11: UNKNOWN**
 
-- base commit: `8ee5eef`
-- script: `dfpn_cover_probe.sh`, `dfpn_cache_robustness.sh`,
-  `dfpn_s5_cache.py`
-- 対象: first=60, r2=0（119 頂点、7021 辺）
+- base commit: `2f564f0`
+- 対象: first=60, r2=0
 
-## 構造: s4 を辺として見る
+## 修正 1: 不正な s4 辺の除去
 
-二石局面 {60,0} に対して、合法な三手目 119 個を頂点とし、
-相異なる 2 頂点 {a,b} の組を**辺**とする。
-{60,0,a,b} は m3=a,m4=b でも m3=b,m4=a でも同じ s4 局面である。
+前の実装は 119 頂点の**全ペア**（7021 通り）を辺として扱っていた。
+しかし 4 手目として安全でないペアも含まれる。
+例えば `{0,60,12,24}` は、0=(0,0), 12=(1,1), 24=(2,2), 60=(5,5) で
+4 点共線なので、m3=12 のあとに m4=24 を置くことはできない。
 
-```
-E(a,b) = WIN   ... ∃m5: s5 が WIN
-       = LOSS  ... ∀m5: s5 が LOSS
+`classify_edge()` は「石の重複」しか検査しておらず、
+4 石局面が既に禁止 4 点組を含むかを確認していなかった。
+`legal_for()` は「次の手の危険性」を計算する関数なので、
+「現在の 4 石が既に unsafe」という状態を検出できない。
 
-m3=a が反証される  <=>  a に接続する LOSS 辺が 1 本でもある
-reply r2=0 が LOSS <=>  ∀a ∃b: E(a,b)=LOSS
-```
+**修正**: `legal_moves_from()` を追加し、m3=a ごとに
+**実際の合法 4 手目**を生成し、その中の b だけを
+unordered pair `{min(a,b), max(a,b)}` として登録する。
+ゲーム本体の合法手生成を使うので、判定が二重化しない。
 
-すなわち **LOSS と証明された s4 辺の集合で 119 頂点を覆えばよい。**
-これは 119 x 117 x 116 の入れ子ループではなく、集合被覆（set cover）型の問題である。
-
-## 実測: cache だけで 2 本の LOSS 辺
+**実測（修正後）**:
 
 ```
-# LOSS-edge cover: first=60 r2=0 vertices=119 cache_loaded=103
-# edges total=7021 LOSS=2 WIN=0 UNKNOWN=7019
-cover,1,2,LOSS
-cover,11,22,LOSS
-# COVER covered=4/119 edges_used=2
+all_pairs=7021  safe_edges=6894  classes=3396
 ```
 
-**1 本の s4 証明が 4 つの三手目インデックスを反証した。**
+7021 - 6894 = **127 unsafe pair** で、これは指摘どおり。
 
-### なぜ {1,2} と {11,22} が同じ証明なのか
+## 修正 2: terminal s4 の verdict
 
-点番号は `v = y*11 + x` なので、
+前の判定は
 
-- 点 2  = (x=2, y=0)
-- 点 22 = (x=0, y=2)
-
-であり、これは主対角線についての鏡像（D4 群の元）である。
-したがって **{60,0,1,2} と {60,0,11,22} は D4 で同一の局面**であり、
-8 個の D4 像が完全に一致する（独立に検証した）。
-
-結果として 1 本の proved LOSS 辺が、辺のラベルとしては 2 本、
-覆われる三手目としては **4 つ**を反証する。
-
-これは単なる cache hit より強い構造的再利用である。
-
-## cache の堅牢化（証明材料として）
-
-cache は証明材料になったので、以下を実装した:
-
-| 項目 | 挙動 |
-|---|---|
-| 同一 key に WIN と LOSS | **throw**（後勝ち黙示的上書きをしない） |
-| ヘッダに n=11 / schema=1 が無い | **throw** |
-| UNKNOWN verdict | ロードも保存も**しない** |
-| 再保存 | 新規確定分のみ append（`touched` で判定） |
-
-`dfpn_cache_robustness.sh` で 5 ケースを検証した:
-正常読込 / 矛盾 verdict 拒否 / 外部ヘッダ拒否 / UNKNOWN 無視 /
-再保存で行数が増えない（215 -> 215）。
-
-## 独立検証の境界
-
-`dfpn_s5_cache.py` の verify は **構造を独立に検証している**:
-103 個の合法 s5 子を正しく列挙し、その全 key が cache で LOSS に
-なっていることを、solver 本体の counter に依存せず確認する。
-
-ただし **cache に書かれた各 LOSS 判定そのものを再証明しているわけではない**。
-各 103 局面は cold replay で解いており実質かなり強いが、
-最終 certificate では
-
-- 「cache のラベルを信用する verifier」
-- 「各 s5 proof まで独立に再検証する verifier」
-
-を分けるのが望ましい。
-
-## ゼロ探索だった m3 の厳密な範囲
-
-ログのクエリ累積:
-
-```
-m3=1 start: queries=0   hits=0
-m3=2 start: queries=103 hits=103
-m3=3 start: queries=206 hits=206
+```cpp
+else if(e.unknown_children==0 && e.loss_children>0) LOSS;
 ```
 
-したがって **m3=1 と m3=2 は 103 cache hit のみでゼロ探索**と断定できる。
-**m3=3 はそうでない**: その後に新規 query が発生しており、
-cache hit だけのゼロ探索ではない。
+だったが、**合法な m5 が 0 個の s4 は OR terminal なので LOSS** である。
+`loss_children>0` は不要で、正しくは:
 
-## 現状
+```cpp
+if(win_children>0)        -> WIN
+else if(unknown_children>0) -> UNKNOWN
+else                      -> LOSS     // 空の子集合も LOSS に入る
+```
 
-- 119 頂点のうち **4 のみ**が cache で覆われている。
-  残り 115 は s4 辺の証明が必要であり、そこが次の作業である。
-- reply r2=0 が LOSS とは**まだ言っていない。**
-- 二石 root は 1 個も閉じていない。
+## 修正 3: canonical s4 class への縮約
 
-## 次の一手
+同じ canonical s4 を持つ辺は**同じ局面**なので、
+証明材料としては 1 個の proof object である。
 
-1. **LOSS 辺を 1 本ずつ積む並列 driver**。辺 1 本で 2 頂点
-   （D4 で縮約するなら 4 頂点）覆えるので、119 頂点なら理論上
-   数十本の s4 LOSS 証明で足り得る。
-2. **s4 verdict の永続化**。s4 LOSS 証明には
-   「全合法 s5 子 LOSS」の子リスト参照だけあればよく、
-   WIN なら s5 WIN の witness 1 個で済む。cache を s4 層にも
-   持たせれば毎回 103 key をなめる必要がなくなる。
+```
+proof object 1 個
+  canonical key: 1152921504606846983,0
+  representative edges: 4 本
+  covers: {1, 2, 11, 22}
+```
 
-## 記録
+**実測（修正後、r2=0）**:
+
+```
+vertices=119  safe_edges=6894  classes=3396
+classes_loss=1  classes_win=0  classes_unknown=3395
+cover_class,1152921504606846983,0,covers=4,edges=4,1,2,11,22
+# COVER covered=4/119 classes_used=1
+```
+
+**1 本の証明で 4 頂点**カバー。前の実装が「2 本の辺」と数えていた
+のは同じ証明を重複計上していたため。
+
+## 二石 root 判定の統一的な表現
+
+```
+m3=a が LOSS  <=>  a に incident な safe s4 class に LOSS が 1 つ
+m3=a が WIN   <=>  a に incident な safe s4 class がすべて WIN
+r2 が LOSS     <=>  全 119 頂点が LOSS class で covered
+r2 が WIN      <=>  どれか 1 頂点で incident class がすべて WIN
+```
+
+証明側と反証側が同じデータ構造で扱える。
+
+## 現在の正確な状態
+
+**LOSS proof class 1 個、covered 4/119。**
+
+{60,0,1,2} の LOSS 証明は有効であり、
+class 1152921504606846983,0 として 1 個の証明になる。
+残る 115 頂点には s4 class の証明が必要。
+
+- reply r2=0 が LOSS とは**まだ言っていない**
+- 二石 root は 1 個も閉じていない
+
+## 検証
+
 - 回帰: hybrid n=4 LOSS / n=5 WIN / n=6 WIN / n=7 LOSS、
-  adaptive 全条件 pass。
+  adaptive 全条件 pass
+- cache 堅牢化 5 ケース全 pass（矛盾 verdict 拒否、
+  外部ヘッダ拒否、UNKNOWN 無視、再保存で行数不変）
 - **11×11: UNKNOWN**
