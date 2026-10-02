@@ -1253,7 +1253,7 @@
 - 証拠: `research/q5-w3-stabilization.md`,
   `research/verification/scripts/q5_w3_stabilization.cpp`,
   `research/verification/q5_w3_stabilization.json`。
-- 確信度: 高（全称上界証明 + 明示下界証人 + m=12..16 完全列挙）。
+- 確信度: 高（全称上界証明 + 明示下界証人 + m=12..21 完全列挙）。
 
 ## F-BM: line-only / circle-only q点版の高q領域は全mで強解決
 
@@ -1268,4 +1268,41 @@
   circle-only は q>2w で制約そのものが消える。
 - 証拠: `research/q-point-rule-variants.md`。
 - 確信度: 高（直接的な全称幾何証明）。
+
+## F-BN: q=2w の一般共円条件と mod 9 による高q領域拡大
+
+- 一般構造: w本の水平行から各2点 \((a_i,y_i),(b_i,y_i)\) を取る。
+  \(s_i=a_i+b_i\), \(p_i=a_ib_i\) とすると、全2w点が一円上にある必要十分条件は
+  **全 \(s_i\) が等しく、\(p_i-y_i^2\) が \(y_i\) の一次式**であること。
+  標準行 \(y_i=i\) では
+  \(p_{i+2}-2p_{i+1}+p_i=2\)。
+  既存の q=6,w=3 条件はこの一般式の最初の例。
+- 判別式変換: 円が隣接二行を各2格子点で通ると、円方程式の係数
+  \(B,C,D\) は整数になり、弦の x 座標差 \(d_i\) に対して
+  \(d_i^2+(2i+C)^2=N\)（N整数）。
+- mod 9 補題: 平方剰余 \(\{0,1,4,7\}\) を使い全81組 \((C,N)\bmod9\) を調べると、
+  5連続行を全て二重点にすることは不可能で、任意の6連続行中の二重点行は高々4本。
+- 円上点数上界: 二重点行数を t とすると円上の盤内点数は高々 w+t。
+  局所補題から
+  \(f_w=w\) (w≤4), \(f_5=4\),
+  \(f_w=4k+\min(r,4)\) (w=6k+r, k≥1) として \(t≤f_w\)。
+  よって \(U_w=w+f_w\) 点を超える格子円は存在しない。
+- ゲームへの帰結: 標準格子では **q>U_w** なら、q点共円も非水平q点共線も存在せず、
+  禁止は同じ一行のq点だけ。全m・全安全局面で
+  \(g(S)=(w\min(m,q-1)-|S|)\bmod2\)、かつ \(M_{w,q}=q-1\)。
+- 特に **q=2w は w≥5 で全m強解決**し
+  \(M_{w,2w}=2w-1\)。
+  **q=2w−1 も w≥6 で全m強解決**し
+  \(M_{w,2w-1}=2w-2\)。
+  したがって q=2w の本質的な残件は w=4,q=8。
+- 幾何相図: w<q≤2w では非水平q点共線は不可能で、行をまたぐ禁止は円だけ。
+  q円の0点行数z、1点行数o、2点行数tは
+  \(2z+o=2w-q\) を満たす。
+- 証拠:
+  research/q2w-boundary-structure.md,
+  research/verification/scripts/q2w_boundary_structure.py,
+  research/verification/q2w_boundary_structure.json。
+- 交差検証: q=2w 共円条件を lifted determinant と全 pair assignment で比較し、
+  w=2,m=6（225件）、w=3,m=6（3,375件）、w=4,m=5（10,000件）で mismatch 0。
+- 確信度: 高（短い全称代数証明 + 有限 mod 9 全列挙 + determinant 交差検証）。
 
