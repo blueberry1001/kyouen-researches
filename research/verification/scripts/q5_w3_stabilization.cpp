@@ -107,6 +107,18 @@ static bool has_three_stone_cover(const CoverData& d, int m) {
     std::vector<std::uint64_t> c(m);
     for (int a=0;a<m;++a) c[a]=d.with_a[a] | (1ULL<<a);
     const std::uint64_t need=U & ~d.no_target_stone;
+    if (!need) return true;
+
+    // Safe optimistic prune: even if the best three closed-neighborhood masks
+    // were disjoint, their individual gains must cover every still-needed bit.
+    int top[3]={0,0,0};
+    for (int a=0;a<m;++a) {
+        int g=__builtin_popcountll(c[a] & need);
+        if (g>top[0]) { top[2]=top[1]; top[1]=top[0]; top[0]=g; }
+        else if (g>top[1]) { top[2]=top[1]; top[1]=g; }
+        else if (g>top[2]) top[2]=g;
+    }
+    if (top[0]+top[1]+top[2] < __builtin_popcountll(need)) return false;
 
     for (int a=0;a<m;++a) for (int b=a+1;b<m;++b) {
         std::uint64_t rem=need & ~(c[a]|c[b]);
@@ -175,7 +187,7 @@ int main() {
     std::cout << "  \"m11_maximal_witness_verified\": " << (verify_m11_witness()?"true":"false") << ",\n";
     std::cout << "  \"m11_witness_rows\": [[1,4,8],[1,2,4,7],[1,4,7,10]],\n";
     std::cout << "  \"finite_exclusion\": [\n";
-    for(int m=12;m<=16;++m) {
+    for(int m=12;m<=21;++m) {
         auto sets=four_sets(m); bool outer=false,middle=false;
         for(const auto& B:sets) {
             for(const auto& C:sets) {
@@ -188,7 +200,7 @@ int main() {
         std::cout << "    {\"m\": "<<m<<", \"four_sets\": "<<sets.size()
                   <<", \"outer_cover_exists\": "<<(outer?"true":"false")
                   <<", \"middle_cover_exists\": "<<(middle?"true":"false")<<"}"
-                  << (m==16?"\n":",\n");
+                  << (m==21?"\n":",\n");
     }
     std::cout << "  ],\n";
     std::cout << "  \"analytic_tail\": {\"all_m_at_least\": 56, \"reason\": \"at most 55 unavailable points on a deficient row\"},\n";
