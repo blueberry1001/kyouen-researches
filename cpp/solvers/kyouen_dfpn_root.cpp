@@ -46,6 +46,7 @@
 #include <iostream>
 #include <map>
 #include <memory>
+#include <set>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -316,6 +317,12 @@ public:
         std::uint64_t aborted_by_time=0;
         std::uint64_t timeouts=0;
         std::uint64_t loaded=0;   // verdicts read from the persistent cache
+        std::uint64_t rejected=0; // rows ignored as foreign
+        std::uint64_t saved=0;    // new verdicts appended this run
+        // Keys this run actually SOLVED, as opposed to loaded from
+        // disk. oracle_save appends only these, so repeated runs with an
+        // unchanged cache do not grow the file without bound.
+        std::set<Bits> touched;
         // Eviction and probe-length growth. A saturated table shows
         // up here as rising evict_open/evict_solved and avgprobe, which
         // is how a full table can be told apart from a hard position.
@@ -461,10 +468,12 @@ public:
         // after the cost has been recorded.
         if(timed_out){ ++oracle.timeouts; return -1; }
         if(r==ExactResult::WIN){
-            oracle.memo[key]=1; ++oracle.wins; return 1;
+            oracle.memo[key]=1; oracle.touched.insert(key);
+            ++oracle.wins; return 1;
         }
         if(r==ExactResult::LOSS){
-            oracle.memo[key]=2; ++oracle.losses; return 2;
+            oracle.memo[key]=2; oracle.touched.insert(key);
+            ++oracle.losses; return 2;
         }
         ++oracle.unknowns;
         return 0;
@@ -487,38 +496,147 @@ public:
         if(path.empty()) return;
         std::ifstream in(path);
         if(!in){ return; }
-        std::string line; int n=0;
+        std::string line;
+        bool header_ok=false;
+        int conflicts=0, foreign=0;
         while(std::getline(in,line)){
-            if(line.empty()||line[0]=='#') continue;
+            if(line.empty()) continue;
+            if(line[0]=='#'){
+                // Header line. It must state the board size and the
+                // schema version: the cache has become proof material,
+                // so a file written by a different board size or a
+                // different rule set must not be loaded silently.
+                if(line.find("n=11")!=std::string::npos &&
+                   line.find("schema=1")!=std::string::npos)
+                    header_ok=true;
+                else
+                    foreign++;
+                continue;
+            }
             std::vector<std::string> f;
             std::stringstream ss(line); std::string t;
             while(std::getline(ss,t,',')) f.push_back(t);
             // s5verdict,key_lo,key_hi,stones,result,nodes
             if(f.size()<6) continue;
-            if(std::stoi(f[3])!=5) continue;      // s5 layer only
+            if(f[0]!="s5verdict"){ foreign++; continue; }
+            if(std::stoi(f[3])!=5){ foreign++; continue; }
             int r=std::stoi(f[4]);
-            if(r!=1 && r!=2) continue;            // never persist UNKNOWN
+            if(r!=1 && r!=2){ foreign++; continue; }  // never accept UNKNOWN
             Bits k; k.lo=std::stoull(f[1]); k.hi=std::stoull(f[2]);
+            auto it=oracle.memo.find(k);
+            if(it!=oracle.memo.end()){
+                // Same key with two different verdicts means the cache
+                // is corrupt or the rules changed. This is proof
+                // material, so refuse rather than last-wins.
+                if(it->second!=(std::uint8_t)r) conflicts++;
+                continue;
+            }
             oracle.memo[k]=(std::uint8_t)r;
-            ++n;
+            oracle.touched.erase(k);
+            ++oracle.loaded;
         }
-        oracle.loaded=(std::uint64_t)n;
+        if(!header_ok){
+            throw std::runtime_error(
+                "s5 cache missing or foreign header (need n=11, schema=1)");
+        }
+        if(conflicts){
+            throw std::runtime_error(
+                "s5 cache has " + std::to_string(conflicts) +
+                " key(s) with conflicting WIN/LOSS verdicts");
+        }
+        if(foreign){
+            oracle.rejected=(std::uint64_t)foreign;
+        }
     }
-    // Append every decided verdict gathered this run. Append-only so a
-    // crash cannot corrupt earlier entries, and so results from
-    // independent runs accumulate into one file.
-    void oracle_save(const std::string& path) const {
+    // Append only the verdicts proved since the load, so repeated runs
+    // do not re-append the same rows forever. `touched` records the
+    // keys this run actually solved; everything loaded from disk was
+    // erased from it at load time.
+    void oracle_save(const std::string& path){
         if(path.empty()) return;
+        bool exists=false;
+        { std::ifstream probe(path); exists=probe.good(); }
         std::ofstream out(path, std::ios::out | std::ios::app);
         if(!out) return;
+        if(!exists){
+            // The header is what lets a later load refuse a file written
+            // for another board size or rule set.
+            out<<"# s5 verdict cache: n=11 schema=1 "
+               <<"(canonical key -> WIN/LOSS, UNKNOWN never stored)\n";
+        }
+        std::uint64_t w=0;
         for(const auto& kv:oracle.memo){
             if(kv.second!=1 && kv.second!=2) continue;
+            if(!oracle.touched.count(kv.first)) continue;  // not new
             out<<"s5verdict,"<<kv.first.lo<<","<<kv.first.hi<<",5,"
                <<(int)kv.second<<",0\n";
+            ++w;
         }
         out.flush();
+        oracle.saved=w;
     }
     std::uint64_t oracle_cache_size() const { return (std::uint64_t)oracle.memo.size(); }
+
+    // ---- s4 EDGE classification over the persistent cache -----------
+    // For a fixed two-stone root {first,r2}, the legal third moves are
+    // vertices and each unordered pair {a,b} of distinct legal moves is
+    // an EDGE: the pair names the same four-stone position
+    // {first,r2,a,b} regardless of which was played as m3 and which as
+    // m4. The edge's value is
+    //     WIN  if some legal fifth move reaches a WIN s5
+    //     LOSS if every legal fifth move reaches a LOSS s5
+    // and a third move a is refuted as soon as ANY incident edge is LOSS.
+    // Refuting the whole reply therefore reduces to covering all
+    // vertices with LOSS-proved edges, which is a set-cover shaped
+    // problem rather than a nested loop over 119 * 117 * 116 queries.
+    //
+    // The payoff is structural, not just speed: one proved LOSS edge on
+    // {a,b} refutes BOTH third moves a and b at once. The single s4
+    // proof {60,0,1,2} already covers m3=1 and m3=2.
+    //
+    // This classifies one edge using ONLY the cache: if any child is a
+    // cached WIN the edge is WIN, if all children are cached LOSS the
+    // edge is LOSS, and otherwise the verdict is UNKNOWN (the caller
+    // then decides whether to spend exact nodes).
+    enum class EdgeVerdict : std::uint8_t { UNKNOWN=0, WIN=1, LOSS=2 };
+    struct EdgeInfo {
+        EdgeVerdict verdict=EdgeVerdict::UNKNOWN;
+        int unknown_children=0;   // children with no cached verdict
+        int cached_children=0;   // children answered from the cache
+        int win_children=0;
+        int loss_children=0;
+        std::vector<int> win_m5; // witnesses, for a WIN certificate
+        std::vector<int> loss_m5;
+    };
+    EdgeInfo classify_edge(int r2,int a,int b) const {
+        if(root_first_move_==a||root_first_move_==b||r2==a||r2==b||a==b)
+            throw std::runtime_error("edge repeats a stone");
+        TState s2{}; s2=add(s2,root_first_move_); s2=add(s2,r2);
+        TState s3=add(s2,a);
+        TState s4=add(s3,b);
+        Bits occ{}; setbit(occ,root_first_move_); setbit(occ,r2);
+        setbit(occ,a); setbit(occ,b);
+        EdgeInfo e;
+        Bits legal5=legal_for(occ);
+        Bits mm=legal5;
+        while(any(mm)){
+            int z=take_lsb(mm);
+            if(z<0) break;
+            TState s5=add(s4,z);
+            Bits o5=occ; setbit(o5,z);
+            Bits k=canonical(s5);
+            auto it=oracle.memo.find(k);
+            if(it==oracle.memo.end()){ ++e.unknown_children; continue; }
+            ++e.cached_children;
+            if(it->second==1){ ++e.win_children; e.win_m5.push_back(z); }
+            else { ++e.loss_children; e.loss_m5.push_back(z); }
+        }
+        if(e.win_children>0) e.verdict=EdgeVerdict::WIN;
+        else if(e.unknown_children==0 && e.loss_children>0)
+            e.verdict=EdgeVerdict::LOSS;
+        else e.verdict=EdgeVerdict::UNKNOWN;
+        return e;
+    }
 
     // Certificate for one winning two-stone reply. Filled only when the
     // quantified search returns WIN:
@@ -2505,6 +2623,98 @@ static int run_s4_ab(const std::string& spec,int first,
     return 0;
 }
 
+// ---- LOSS-edge cover for one two-stone reply ----------------------
+// Reports which third moves the cache alone already refutes. A proved
+// LOSS edge on {a,b} refutes BOTH a and b, so this is a set-cover over
+// vertices rather than a nested loop: the goal is a set of LOSS-proved
+// s4 positions whose endpoints cover every legal third move.
+template<int N>
+static int run_cover(int first,int r2,const std::string& s5_cache,
+                     std::ostream& O){
+    DfPn<N> s(24);
+    s.set_deadline(0);
+    s.set_exact_handoff(0,1,1,0);
+    s.oracle_clear();
+    s.set_first_move(first);
+    if(!s5_cache.empty()) s.oracle_load(s5_cache);
+
+    std::vector<int> verts;
+    {
+        typename DfPn<N>::TState s2{};
+        s2=s.add_pub(s2,first); s2=s.add_pub(s2,r2);
+        Bits occ{}; s.setbit_pub(occ,first); s.setbit_pub(occ,r2);
+        Bits legal3=s.legal_for_pub(occ);
+        Bits mm=legal3;
+        int n=DfPn<N>::popcount_pub(legal3);
+        for(int i=0;i<n;++i){
+            int z=DfPn<N>::take_lsb_pub(mm);
+            if(z<0) break;
+            verts.push_back(z);
+        }
+    }
+    const int V=(int)verts.size();
+    O<<"# LOSS-edge cover: first="<<first<<" r2="<<r2
+     <<" vertices="<<V<<" cache_loaded="<<s.oracle_stats().loaded<<"\n";
+    O.flush();
+
+    std::vector<char> covered((std::size_t)V, 0);
+    int covered_n=0;
+    int edges_loss=0, edges_win=0, edges_unknown=0;
+    std::vector<std::pair<int,int>> cover_edges;
+    std::vector<typename DfPn<N>::EdgeInfo> info((std::size_t)V*(std::size_t)V);
+    for(int i=0;i<V;++i){
+        for(int j=i+1;j<V;++j){
+            info[(std::size_t)i*(std::size_t)V+(std::size_t)j]=
+                s.classify_edge(r2,verts[(std::size_t)i],verts[(std::size_t)j]);
+        }
+    }
+    for(int i=0;i<V;++i){
+        for(int j=i+1;j<V;++j){
+            const auto& e=info[(std::size_t)i*(std::size_t)V+(std::size_t)j];
+            if(e.verdict==DfPn<N>::EdgeVerdict::LOSS) ++edges_loss;
+            else if(e.verdict==DfPn<N>::EdgeVerdict::WIN) ++edges_win;
+            else ++edges_unknown;
+        }
+    }
+    O<<"# edges total="<<((long long)V*(V-1)/2)
+     <<" LOSS="<<edges_loss<<" WIN="<<edges_win
+     <<" UNKNOWN="<<edges_unknown<<"\n";
+    O.flush();
+
+    while(covered_n<V){
+        int bi=-1,bj=-1,best=-1;
+        for(int i=0;i<V;++i){
+            if(covered[(std::size_t)i]) continue;
+            for(int j=i+1;j<V;++j){
+                if(covered[(std::size_t)j]) continue;
+                const auto& e=info[(std::size_t)i*(std::size_t)V+(std::size_t)j];
+                if(e.verdict!=DfPn<N>::EdgeVerdict::LOSS) continue;
+                if(2>best){ best=2; bi=i; bj=j; }
+            }
+        }
+        if(bi<0) break;
+        covered[(std::size_t)bi]=1;
+        covered[(std::size_t)bj]=1;
+        covered_n+=2;
+        cover_edges.push_back({verts[(std::size_t)bi],verts[(std::size_t)bj]});
+        O<<"cover,"<<verts[(std::size_t)bi]<<","<<verts[(std::size_t)bj]
+         <<",LOSS\n";
+        O.flush();
+    }
+    O<<"# COVER covered="<<covered_n<<"/"<<V
+     <<" edges_used="<<cover_edges.size()<<"\n";
+    if(covered_n<V){
+        O<<"# uncovered vertices:";
+        for(int i=0;i<V;++i)
+            if(!covered[(std::size_t)i]) O<<" "<<verts[(std::size_t)i];
+        O<<"\n";
+    }else{
+        O<<"# ALL VERTICES COVERED by cache-proved LOSS edges\n";
+    }
+    O.flush();
+    return 0;
+}
+
 int main(int argc,char**argv){
     try{
         int n=11;
@@ -2523,6 +2733,8 @@ int main(int argc,char**argv){
         std::string s4_ab="";          // "r2,m3,m4"
         std::string s5_cache="";       // persistent s5 verdict cache to load
         std::string s5_cache_out="";   // same file to append decided verdicts
+        int cover_first=60, cover_r2=0;  // LOSS-edge cover over one reply
+        bool cover_run=false;
         unsigned s4_ab_memo=24;
         std::uint64_t s4_ab_budget=20000000;
         int exact_order=0; // 0=count asc, 1=count desc, 2=key asc
@@ -2565,6 +2777,9 @@ int main(int argc,char**argv){
             else if(a.rfind("--s4-ab-budget=",0)==0)s4_ab_budget=std::stoull(a.substr(15));
             else if(a.rfind("--s5-cache=",0)==0)s5_cache=a.substr(11);
             else if(a.rfind("--s5-cache-out=",0)==0)s5_cache_out=a.substr(15);
+            else if(a.rfind("--cover-first=",0)==0)cover_first=std::stoi(a.substr(14));
+            else if(a.rfind("--cover-r2=",0)==0)cover_r2=std::stoi(a.substr(11));
+            else if(a=="--cover")cover_run=true;
             else if(a=="--exact-order=count")exact_order=0;
             else if(a=="--exact-order=countd")exact_order=1;
             else if(a=="--exact-order=key")exact_order=2;
@@ -2583,7 +2798,8 @@ int main(int argc,char**argv){
             }
         }
         if(!reps && !empty && roots_path.empty() && exact_replay_path.empty()
-           && quant_replies.empty() && s4_ab.empty() && s5_cache.empty()){
+           && quant_replies.empty() && s4_ab.empty() && s5_cache.empty()
+           && !cover_run){
             std::cerr<<"nothing to do without --empty/--reps/--roots-csv/--exact-replay/--quant-replies\n";
             return 2;
         }
@@ -2639,26 +2855,36 @@ int main(int argc,char**argv){
         switch(n){
             case 4:
                 if(!exact_replay_path.empty()) return run_exact_replay<4>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(cover_run) return run_cover<4>(cover_first,cover_r2,s5_cache,*cp);
+
                 if(!s4_ab.empty()) return run_s4_ab<4>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<4>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<4>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 5:
                 if(!exact_replay_path.empty()) return run_exact_replay<5>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(cover_run) return run_cover<5>(cover_first,cover_r2,s5_cache,*cp);
+
                 if(!s4_ab.empty()) return run_s4_ab<5>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<5>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<5>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 6:
                 if(!exact_replay_path.empty()) return run_exact_replay<6>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(cover_run) return run_cover<6>(cover_first,cover_r2,s5_cache,*cp);
+
                 if(!s4_ab.empty()) return run_s4_ab<6>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<6>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<6>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 7:
                 if(!exact_replay_path.empty()) return run_exact_replay<7>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(cover_run) return run_cover<7>(cover_first,cover_r2,s5_cache,*cp);
+
                 if(!s4_ab.empty()) return run_s4_ab<7>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<7>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<7>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;
             case 11:
                 if(!exact_replay_path.empty()) return run_exact_replay<11>(exact_replay_path,exact_replay_budget,pow,only,exact_order,*cp);
+                if(cover_run) return run_cover<11>(cover_first,cover_r2,s5_cache,*cp);
+
                 if(!s4_ab.empty()) return run_s4_ab<11>(s4_ab,quant_first,s4_ab_budget,s4_ab_memo,*cp);
                 if(!quant_replies.empty()) return run_quant<11>(quant_first,quant_replies,quant_budget,quant_timeout,pow,s5_cache,s5_cache_out,*cp);
                 rc=run<11>(only,budget_s,pow,empty,reps,children,tiebreak_desc,exact_legal,exact_budget,exact_retries,exact_publish_mode,exact_record,exact_record_limit,budget_by_stones,legal_by_stones,exact_order,*lp,*cp,&total_exp,roots_path); break;

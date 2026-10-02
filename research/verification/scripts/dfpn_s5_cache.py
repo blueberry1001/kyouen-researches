@@ -36,6 +36,11 @@ def seed():
     b20 = load_results(BASE + '/s5dist/replay_b20.csv')
     n = w = l = skipped = 0
     with io.open(DST, 'w', encoding='utf-8') as f:
+        # Header: the loader refuses a file whose board size or schema does
+        # not match, so a cache from another configuration cannot be
+        # mistaken for proof material.
+        f.write('# s5 verdict cache: n=11 schema=1 '
+                '(canonical key -> WIN/LOSS, UNKNOWN never stored)\n')
         for key, (r5, n5) in b5.items():
             if r5 != 0:
                 r, nodes = r5, n5
