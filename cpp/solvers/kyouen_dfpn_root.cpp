@@ -577,6 +577,43 @@ public:
     }
     std::uint64_t oracle_cache_size() const { return (std::uint64_t)oracle.memo.size(); }
 
+    // ---- persistent s4 verdict cache, with a certificate manifest ---
+    // A bare s4 -> LOSS label cannot be checked by anyone else. What
+    // makes it verifiable is the manifest it carries:
+    //   LOSS  every legal s5 child's canonical key (the reader can
+    //         re-check that each is LOSS, and that the list is complete)
+    //   WIN   the single s5 WIN witness (one child is enough)
+    // Written as:
+    //   s4verdict,r2,key_lo,key_hi,result,n_child,child_lo,child_hi,...
+    // so the upper-level certificate can be checked separately from the
+    // lower-level s5 proofs.
+    struct S4Entry {
+        std::uint8_t result=0;              // 1 WIN, 2 LOSS
+        std::vector<std::pair<std::uint64_t,std::uint64_t>> children;
+    };
+    std::map<std::pair<std::uint64_t,std::uint64_t>,S4Entry> s4_cache;
+
+    void s4_cache_save(const std::string& path,const std::string& cache5) const {
+        if(path.empty()) return;
+        bool exists=false;
+        { std::ifstream probe(path); exists=probe.good(); }
+        std::ofstream out(path, std::ios::out | std::ios::app);
+        if(!out) return;
+        if(!exists)
+            out<<"# s4 verdict cache: n=11 schema=1 "
+               <<"(canonical s4 key -> WIN/LOSS + certificate manifest)\n";
+        for(const auto& kv:s4_cache){
+            const auto& e=kv.second;
+            if(e.result!=1 && e.result!=2) continue;
+            out<<"s4verdict,"<<kv.first.first<<","<<kv.first.second<<","
+               <<(int)e.result<<","<<e.children.size();
+            for(const auto& c:e.children) out<<","<<c.first<<","<<c.second;
+            out<<"\n";
+        }
+        out.flush();
+    }
+    std::uint64_t s4_cache_size() const { return (std::uint64_t)s4_cache.size(); }
+
     // ---- s4 EDGE classification over the persistent cache -----------
     // For a fixed two-stone root {first,r2}, the legal third moves are
     // vertices and each unordered pair {a,b} of distinct legal moves is
@@ -655,8 +692,9 @@ public:
     // Legal moves after the given occupied points. Used to enumerate
     // SAFE edges: an edge {a,b} is only meaningful when b is a legal
     // fourth reply to a, which is stricter than "four distinct stones"
-    // because it also requires the resulting four-stone set to contain no
-    // collinear quadruple.
+    // because the resulting four-stone set must contain no FORBIDDEN
+    // quadruple, where "forbidden" is the game's concyclic rule (the
+    // 4x4 determinant over [x*x+y*y, x, y, 1]) -- not mere collinearity.
     std::vector<int> legal_moves_from(Bits occ) const {
         std::vector<int> out;
         Bits legal=legal_for(occ);
