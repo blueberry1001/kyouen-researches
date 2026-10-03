@@ -1,0 +1,195 @@
+{
+  "statement": "M_{4,8}=11; every safe S on 4xm with m>=11 has g(S)=(28-|S|) mod 2",
+  "universal_counting_stability_from": 70,
+  "local_circle_classification": {
+    "maximum_span_for_proof": 68,
+    "patterns": [
+      [
+        1,
+        3,
+        3,
+        1
+      ]
+    ],
+    "first_nonlocal_board_length": 74,
+    "patterns_at_span_73": [
+      [
+        1,
+        3,
+        3,
+        1
+      ],
+      [
+        35,
+        51,
+        63,
+        73
+      ],
+      [
+        73,
+        63,
+        51,
+        35
+      ]
+    ]
+  },
+  "local_counting_stability_from": 13,
+  "finite_exclusions": [
+    {
+      "m": 11,
+      "target_row": 0,
+      "target_subsets": 1486,
+      "subsets_with_blocker_options": 23,
+      "search_nodes": 165,
+      "row_capacity_rejections": 49,
+      "unsafe_rejections": 0,
+      "surviving_leaves": 0
+    },
+    {
+      "m": 11,
+      "target_row": 1,
+      "target_subsets": 1486,
+      "subsets_with_blocker_options": 96,
+      "search_nodes": 635,
+      "row_capacity_rejections": 183,
+      "unsafe_rejections": 0,
+      "surviving_leaves": 0
+    },
+    {
+      "m": 12,
+      "target_row": 0,
+      "target_subsets": 2510,
+      "subsets_with_blocker_options": 13,
+      "search_nodes": 78,
+      "row_capacity_rejections": 15,
+      "unsafe_rejections": 0,
+      "surviving_leaves": 0
+    },
+    {
+      "m": 12,
+      "target_row": 1,
+      "target_subsets": 2510,
+      "subsets_with_blocker_options": 64,
+      "search_nodes": 340,
+      "row_capacity_rejections": 78,
+      "unsafe_rejections": 0,
+      "surviving_leaves": 0
+    }
+  ],
+  "lower_bound_witness": {
+    "m": 10,
+    "rows": [
+      [
+        0,
+        1,
+        2,
+        4,
+        7,
+        9
+      ],
+      [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      [
+        1,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    ],
+    "stones": 27,
+    "row_counts": [
+      6,
+      7,
+      7,
+      7
+    ],
+    "safe": true,
+    "maximal": true,
+    "blocked_blank_points": [
+      [
+        3,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        9,
+        3
+      ]
+    ],
+    "independent_geometry": {
+      "board_points": 40,
+      "triples": 9880,
+      "distinct_curves": 5203,
+      "curves_with_at_least_q_points": 11,
+      "lines": 4,
+      "circles": 7
+    }
+  },
+  "proof_scope": {
+    "finite_search": "m=11,12; all subsets of target row of sizes 0..6",
+    "local_geometry_and_counting": "m=13..69",
+    "universal_geometry_and_counting": "all m>=70"
+  }
+}

@@ -1,0 +1,38 @@
+name: Fixed-width research certificates
+
+on:
+  pull_request:
+    paths:
+      - 'research/curve-packing-fixed-width.md'
+      - 'research/q35-*.md'
+      - 'research/q48-*.md'
+      - 'research/verification/q35_*.json'
+      - 'research/verification/q48_*.json'
+      - 'research/verification/curve_packing_fixed_width.json'
+      - 'research/verification/scripts/q35_*.cpp'
+      - 'research/verification/scripts/q5_w3_stabilization.cpp'
+      - 'research/verification/scripts/q48_*.py'
+      - 'research/verification/scripts/curve_packing_fixed_width.py'
+      - 'research/verification/scripts/check_fixed_width_20261003.py'
+      - '.github/workflows/fixed-width-research.yml'
+  workflow_dispatch:
+    inputs:
+      full_exclusion:
+        description: 'Repeat all q5 support exclusions m=12..40 (several minutes)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent geometry audits and complete small-game recomputation
+        run: python3 research/verification/scripts/check_fixed_width_20261003.py
+      - name: Repeat every finite support exclusion
+        if: github.event_name == 'workflow_dispatch' && inputs.full_exclusion
+        run: python3 research/verification/scripts/check_fixed_width_20261003.py --full-exclusion

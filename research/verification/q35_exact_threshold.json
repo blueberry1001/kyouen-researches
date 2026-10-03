@@ -1,0 +1,270 @@
+{
+  "q": 5,
+  "width": 3,
+  "exact_threshold": 12,
+  "analytic_tail": 40,
+  "method": "all ordered pairs of exterior four-subsets; conservative support pruning; exact three-vertex closed-neighborhood cover test; tangency and single in-board roots included",
+  "cases": [
+    {
+      "m": 12,
+      "four_sets": 495,
+      "outer_candidates": 12968,
+      "middle_candidates": 6342,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.0113604
+    },
+    {
+      "m": 13,
+      "four_sets": 715,
+      "outer_candidates": 7591,
+      "middle_candidates": 3963,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.00989393
+    },
+    {
+      "m": 14,
+      "four_sets": 1001,
+      "outer_candidates": 3060,
+      "middle_candidates": 3821,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.0107051
+    },
+    {
+      "m": 15,
+      "four_sets": 1365,
+      "outer_candidates": 864,
+      "middle_candidates": 2492,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.01538
+    },
+    {
+      "m": 16,
+      "four_sets": 1820,
+      "outer_candidates": 191,
+      "middle_candidates": 1379,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.0233595
+    },
+    {
+      "m": 17,
+      "four_sets": 2380,
+      "outer_candidates": 32,
+      "middle_candidates": 497,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.0385348
+    },
+    {
+      "m": 18,
+      "four_sets": 3060,
+      "outer_candidates": 2,
+      "middle_candidates": 230,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.0678445
+    },
+    {
+      "m": 19,
+      "four_sets": 3876,
+      "outer_candidates": 0,
+      "middle_candidates": 119,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.110574
+    },
+    {
+      "m": 20,
+      "four_sets": 4845,
+      "outer_candidates": 0,
+      "middle_candidates": 54,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.182564
+    },
+    {
+      "m": 21,
+      "four_sets": 5985,
+      "outer_candidates": 0,
+      "middle_candidates": 17,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.280847
+    },
+    {
+      "m": 22,
+      "four_sets": 7315,
+      "outer_candidates": 0,
+      "middle_candidates": 4,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.407321
+    },
+    {
+      "m": 23,
+      "four_sets": 8855,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.645503
+    },
+    {
+      "m": 24,
+      "four_sets": 10626,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 0.856073
+    },
+    {
+      "m": 25,
+      "four_sets": 12650,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 1.13419
+    },
+    {
+      "m": 26,
+      "four_sets": 14950,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 1.63882
+    },
+    {
+      "m": 27,
+      "four_sets": 17550,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 2.18677
+    },
+    {
+      "m": 28,
+      "four_sets": 20475,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 3.12543
+    },
+    {
+      "m": 29,
+      "four_sets": 23751,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 4.03314
+    },
+    {
+      "m": 30,
+      "four_sets": 27405,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 5.45383
+    },
+    {
+      "m": 31,
+      "four_sets": 31465,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 7.51591
+    },
+    {
+      "m": 32,
+      "four_sets": 35960,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 12.1582
+    },
+    {
+      "m": 33,
+      "four_sets": 40920,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 15.1813
+    },
+    {
+      "m": 34,
+      "four_sets": 46376,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 21.4848
+    },
+    {
+      "m": 35,
+      "four_sets": 52360,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 26.3752
+    },
+    {
+      "m": 36,
+      "four_sets": 58905,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 44.5446
+    },
+    {
+      "m": 37,
+      "four_sets": 66045,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 65.0123
+    },
+    {
+      "m": 38,
+      "four_sets": 73815,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 85.9275
+    },
+    {
+      "m": 39,
+      "four_sets": 82251,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 118.428
+    },
+    {
+      "m": 40,
+      "four_sets": 91390,
+      "outer_candidates": 0,
+      "middle_candidates": 0,
+      "outer_covers": 0,
+      "middle_covers": 0,
+      "seconds": 153.542
+    }
+  ]
+}

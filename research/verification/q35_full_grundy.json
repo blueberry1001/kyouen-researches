@@ -1,0 +1,422 @@
+{
+  "q": 5,
+  "width": 3,
+  "method": "complete bottom-up SG on every triple of row subsets of size at most four; unsafe states discarded via circle geometry",
+  "cases": [
+    {
+      "m": 4,
+      "row_subsets": 16,
+      "table_entries": 4096,
+      "safe_states": 3308,
+      "empty_grundy": 0,
+      "max_grundy": 3,
+      "terminal_counts": {
+        "8": 36,
+        "9": 32,
+        "10": 1
+      },
+      "safe_by_size": [
+        1,
+        12,
+        66,
+        220,
+        495,
+        780,
+        850,
+        600,
+        241,
+        42,
+        1,
+        0,
+        0
+      ],
+      "grundy_histogram": [
+        1062,
+        1062,
+        592,
+        592
+      ],
+      "max_grundy_witness_rows": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        []
+      ],
+      "winning_first_moves": [],
+      "seconds": 7.4662e-05
+    },
+    {
+      "m": 5,
+      "row_subsets": 31,
+      "table_entries": 29791,
+      "safe_states": 21125,
+      "empty_grundy": 0,
+      "max_grundy": 7,
+      "terminal_counts": {
+        "8": 9,
+        "9": 130,
+        "10": 193,
+        "11": 12
+      },
+      "safe_by_size": [
+        1,
+        15,
+        105,
+        455,
+        1365,
+        2976,
+        4755,
+        5400,
+        4027,
+        1701,
+        313,
+        12,
+        0
+      ],
+      "grundy_histogram": [
+        6749,
+        6654,
+        3207,
+        3401,
+        580,
+        478,
+        44,
+        12
+      ],
+      "max_grundy_witness_rows": [
+        [
+          0,
+          1
+        ],
+        [],
+        []
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.000677887
+    },
+    {
+      "m": 6,
+      "row_subsets": 57,
+      "table_entries": 185193,
+      "safe_states": 126508,
+      "empty_grundy": 0,
+      "max_grundy": 8,
+      "terminal_counts": {
+        "8": 7,
+        "9": 112,
+        "10": 784,
+        "11": 904,
+        "12": 127
+      },
+      "safe_by_size": [
+        1,
+        18,
+        153,
+        816,
+        3060,
+        8514,
+        17907,
+        28152,
+        31716,
+        23640,
+        10284,
+        2120,
+        127
+      ],
+      "grundy_histogram": [
+        32580,
+        32528,
+        24232,
+        24508,
+        5560,
+        5616,
+        1192,
+        260,
+        32
+      ],
+      "max_grundy_witness_rows": [
+        [
+          1,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.00271782
+    },
+    {
+      "m": 7,
+      "row_subsets": 99,
+      "table_entries": 970299,
+      "safe_states": 682223,
+      "empty_grundy": 0,
+      "max_grundy": 7,
+      "terminal_counts": {
+        "9": 42,
+        "10": 846,
+        "11": 2728,
+        "12": 8288
+      },
+      "safe_by_size": [
+        1,
+        21,
+        210,
+        1330,
+        5985,
+        20238,
+        52633,
+        105090,
+        157141,
+        167286,
+        116879,
+        47121,
+        8288
+      ],
+      "grundy_histogram": [
+        282475,
+        281056,
+        54616,
+        56852,
+        3822,
+        2822,
+        540,
+        40
+      ],
+      "max_grundy_witness_rows": [
+        [
+          0,
+          3,
+          4,
+          5
+        ],
+        [],
+        [
+          2
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.0123318
+    },
+    {
+      "m": 8,
+      "row_subsets": 163,
+      "table_entries": 4330747,
+      "safe_states": 3201191,
+      "empty_grundy": 0,
+      "max_grundy": 7,
+      "terminal_counts": {
+        "10": 132,
+        "11": 2128,
+        "12": 123385
+      },
+      "safe_by_size": [
+        1,
+        24,
+        276,
+        2024,
+        10626,
+        42276,
+        130734,
+        315216,
+        583202,
+        797350,
+        754425,
+        441652,
+        123385
+      ],
+      "grundy_histogram": [
+        1567501,
+        1562874,
+        34698,
+        35308,
+        500,
+        250,
+        56,
+        4
+      ],
+      "max_grundy_witness_rows": [
+        [
+          1,
+          2,
+          5
+        ],
+        [],
+        [
+          3,
+          4
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.0702543
+    },
+    {
+      "m": 9,
+      "row_subsets": 256,
+      "table_entries": 16777216,
+      "safe_states": 12735409,
+      "empty_grundy": 0,
+      "max_grundy": 5,
+      "terminal_counts": {
+        "10": 8,
+        "11": 1372,
+        "12": 931309
+      },
+      "safe_by_size": [
+        1,
+        27,
+        351,
+        2925,
+        17550,
+        80274,
+        287298,
+        808794,
+        1769591,
+        2912795,
+        3397638,
+        2526856,
+        931309
+      ],
+      "grundy_histogram": [
+        6385074,
+        6313867,
+        18748,
+        17684,
+        24,
+        12
+      ],
+      "max_grundy_witness_rows": [
+        [
+          2,
+          3,
+          5,
+          6
+        ],
+        [],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.233057
+    },
+    {
+      "m": 10,
+      "row_subsets": 386,
+      "table_entries": 57512456,
+      "safe_states": 44639736,
+      "empty_grundy": 0,
+      "max_grundy": 3,
+      "terminal_counts": {
+        "10": 8,
+        "11": 368,
+        "12": 5064210
+      },
+      "safe_by_size": [
+        1,
+        30,
+        435,
+        4060,
+        27405,
+        141646,
+        575505,
+        1849920,
+        4659386,
+        8930064,
+        12319798,
+        11067276,
+        5064210
+      ],
+      "grundy_histogram": [
+        22642512,
+        21989368,
+        4304,
+        3552
+      ],
+      "max_grundy_witness_rows": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          7,
+          8
+        ],
+        [
+          5
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 0.626643
+    },
+    {
+      "m": 11,
+      "row_subsets": 562,
+      "table_entries": 177504328,
+      "safe_states": 142395909,
+      "empty_grundy": 0,
+      "max_grundy": 3,
+      "terminal_counts": {
+        "11": 64,
+        "12": 22571041
+      },
+      "safe_by_size": [
+        1,
+        33,
+        528,
+        5456,
+        40920,
+        235820,
+        1072150,
+        3873960,
+        11039434,
+        24160638,
+        38566032,
+        40829896,
+        22571041
+      ],
+      "grundy_histogram": [
+        73289330,
+        69105095,
+        788,
+        696
+      ],
+      "max_grundy_witness_rows": [
+        [
+          0,
+          3,
+          6,
+          9
+        ],
+        [
+          1,
+          3,
+          6,
+          9
+        ],
+        [
+          0
+        ]
+      ],
+      "winning_first_moves": [],
+      "seconds": 2.02374
+    }
+  ]
+}

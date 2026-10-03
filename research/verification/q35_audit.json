@@ -1,0 +1,150 @@
+{
+  "determinant_graph_cases": 4604,
+  "all_m4_to_m7_pairs": true,
+  "random_pairs_per_m8_to_m40": 25,
+  "seed": 20261003,
+  "tangent_regression": true,
+  "legacy_graphs_also_checked": true,
+  "legacy_m11_witness_verified": true,
+  "status": "passed",
+  "independent_full_grundy": [
+    {
+      "m": 4,
+      "forbidden5": 12,
+      "safe_states": 3308,
+      "empty_grundy": 0,
+      "max_grundy": 3,
+      "safe_by_size": [
+        1,
+        12,
+        66,
+        220,
+        495,
+        780,
+        850,
+        600,
+        241,
+        42,
+        1,
+        0,
+        0
+      ],
+      "terminal_by_size": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36,
+        32,
+        1,
+        0,
+        0
+      ],
+      "grundy_histogram": [
+        1062,
+        1062,
+        592,
+        592
+      ]
+    },
+    {
+      "m": 5,
+      "forbidden5": 27,
+      "safe_states": 21125,
+      "empty_grundy": 0,
+      "max_grundy": 7,
+      "safe_by_size": [
+        1,
+        15,
+        105,
+        455,
+        1365,
+        2976,
+        4755,
+        5400,
+        4027,
+        1701,
+        313,
+        12,
+        0
+      ],
+      "terminal_by_size": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        130,
+        193,
+        12,
+        0
+      ],
+      "grundy_histogram": [
+        6749,
+        6654,
+        3207,
+        3401,
+        580,
+        478,
+        44,
+        12
+      ]
+    },
+    {
+      "m": 6,
+      "forbidden5": 54,
+      "safe_states": 126508,
+      "empty_grundy": 0,
+      "max_grundy": 8,
+      "safe_by_size": [
+        1,
+        18,
+        153,
+        816,
+        3060,
+        8514,
+        17907,
+        28152,
+        31716,
+        23640,
+        10284,
+        2120,
+        127
+      ],
+      "terminal_by_size": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        112,
+        784,
+        904,
+        127
+      ],
+      "grundy_histogram": [
+        32580,
+        32528,
+        24232,
+        24508,
+        5560,
+        5616,
+        1192,
+        260,
+        32
+      ]
+    }
+  ]
+}

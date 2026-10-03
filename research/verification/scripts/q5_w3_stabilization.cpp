@@ -35,7 +35,10 @@ static void add_integer_root_pair(int sum, long long prod, int m, std::uint64_t&
     while (r*r>disc) --r;
     if (r*r!=disc || ((sum-r)&1)) return;
     long long u=(sum-r)/2, v=(sum+r)/2;
-    if (0<=u && u<v && v<m) mask |= (1ULL<<u)|(1ULL<<v);
+    // This is the singleton target row in a 2+2+1 circle. A tangent root
+    // counts, and the reflected second intersection may lie outside the board.
+    if (0<=u && u<m) mask |= 1ULL<<u;
+    if (0<=v && v<m) mask |= 1ULL<<v;
 }
 
 struct CoverData {
@@ -206,4 +209,5 @@ int main() {
     std::cout << "  \"analytic_tail\": {\"all_m_at_least\": 56, \"reason\": \"at most 55 unavailable points on a deficient row\"},\n";
     std::cout << "  \"current_stabilization_bracket\": [12,56]\n";
     std::cout << "}\n";
+    return 0;
 }
