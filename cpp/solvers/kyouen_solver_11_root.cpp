@@ -121,6 +121,52 @@ private:
     }
 };
 
+static bool memo_key_width_self_test(){
+    // Include the old 30-bit truncation boundary, board point 120 (hi bit
+    // 56), and bit 127: this memo promises to retain both complete words.
+    const std::array<Bits,9> keys{{
+        {0,0},
+        {0x0123456789abcdefULL,12345ULL},
+        {0x0123456789abcdefULL,(1ULL<<30)|12345ULL},
+        {0x0123456789abcdefULL,(1ULL<<35)|12345ULL},
+        {0x0123456789abcdefULL,(1ULL<<56)|12345ULL},
+        {0x0123456789abcdefULL,(1ULL<<63)|12345ULL},
+        {0xfedcba9876543210ULL,12345ULL},
+        {~0ULL,~0ULL},
+        {1ULL<<63,0}
+    }};
+    ReplaceMemo121 memo(4);
+    for(std::size_t i=0;i<keys.size();++i){
+        const auto value=i%2 ? ReplaceMemo121::Winning : ReplaceMemo121::Losing;
+        memo.put(keys[i].lo,keys[i].hi,value);
+        if(memo.used()!=i+1) return false;
+        for(std::size_t j=0;j<keys.size();++j){
+            const auto expected=j>i ? ReplaceMemo121::Unknown :
+                (j%2 ? ReplaceMemo121::Winning : ReplaceMemo121::Losing);
+            if(memo.get(keys[j].lo,keys[j].hi)!=expected) return false;
+        }
+    }
+    memo.put(keys[2].lo,keys[2].hi,ReplaceMemo121::Winning);
+    if(memo.used()!=keys.size()) return false;
+    for(std::size_t j=0;j<keys.size();++j){
+        const auto expected=(j==2 || j%2) ? ReplaceMemo121::Winning : ReplaceMemo121::Losing;
+        if(memo.get(keys[j].lo,keys[j].hi)!=expected) return false;
+    }
+
+    // One slot forces every hash to collide and exercises replacement and
+    // probe wraparound. Eviction may cause a miss, never a false key hit.
+    ReplaceMemo121 collision(0);
+    for(std::size_t i=0;i<keys.size();++i){
+        collision.put(keys[i].lo,keys[i].hi,ReplaceMemo121::Losing);
+        if(collision.used()!=1) return false;
+        for(std::size_t j=0;j<keys.size();++j){
+            const auto expected=i==j ? ReplaceMemo121::Losing : ReplaceMemo121::Unknown;
+            if(collision.get(keys[j].lo,keys[j].hi)!=expected) return false;
+        }
+    }
+    return true;
+}
+
 class Solver11 {
     static constexpr int N=11,V=121;
     static constexpr std::uint64_t HI_MASK=(1ULL<<57)-1; // points 64..120
@@ -385,6 +431,11 @@ static std::vector<int> first_move_reps(){
 
 int main(int argc,char**argv){
     try{
+        if(argc==2 && std::string(argv[1])=="--memo-self-test"){
+            const bool ok=memo_key_width_self_test();
+            std::cout<<"memo_key_width_self_test="<<(ok?"PASS":"FAIL")<<"\n";
+            return ok?0:1;
+        }
         unsigned pow=27;
         bool reps=false;
         std::string only="";
@@ -398,7 +449,8 @@ int main(int argc,char**argv){
             else if(a.rfind("--budget=",0)==0)budget_s=std::stod(a.substr(9));
             else if(a.rfind("--log=",0)==0)log_path=a.substr(6);
             else if(a.rfind("--csv=",0)==0)csv_path=a.substr(6);
-            else { std::cerr<<"usage: "<<argv[0]<<" [--reps] [--memo=N] [--only=v,...] [--budget=SEC] [--log=PATH] [--csv=PATH]\n"; return 2; }
+            else { std::cerr<<"usage: "<<argv[0]<<" [--reps] [--memo=N] [--only=v,...] [--budget=SEC] [--log=PATH] [--csv=PATH]\n"
+                           <<"       "<<argv[0]<<" --memo-self-test\n"; return 2; }
         }
         Solver11 solver(pow);
         solver.set_deadline(budget_s);
