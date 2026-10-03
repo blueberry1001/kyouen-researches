@@ -7,24 +7,31 @@ on:
       - 'research/q35-*.md'
       - 'research/q34-*.md'
       - 'research/q36-*.md'
+      - 'research/q46-*.md'
       - 'research/q48-*.md'
       - 'research/verification/q35_*.json'
       - 'research/verification/q34_*.json'
       - 'research/verification/q36_*.json'
+      - 'research/verification/q46_*.json'
       - 'research/verification/q48_*.json'
+      - 'research/verification/geometry_q6_exclusion_review.json'
       - 'research/verification/curve_packing_fixed_width.json'
       - 'research/verification/scripts/q35_*.cpp'
       - 'research/verification/scripts/q34_*.cpp'
       - 'research/verification/scripts/q36_*.cpp'
+      - 'research/verification/scripts/q46_*.cpp'
+      - 'research/verification/scripts/q46_*.py'
       - 'research/verification/scripts/q5_w3_stabilization.cpp'
+      - 'research/verification/scripts/q48_*.cpp'
       - 'research/verification/scripts/q48_*.py'
+      - 'research/verification/scripts/geometry_q6_exclusion_review.cpp'
       - 'research/verification/scripts/curve_packing_fixed_width.py'
       - 'research/verification/scripts/check_fixed_width_20261003.py'
       - '.github/workflows/fixed-width-research.yml'
   workflow_dispatch:
     inputs:
       full_exclusion:
-        description: 'Repeat every q4/q5 support exclusion (potentially over an hour)'
+        description: 'Repeat all q4/q5 supports and four-row q6 m16..35 exclusions (potentially over an hour)'
         type: boolean
         default: false
 
@@ -37,8 +44,9 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - name: Independent geometry audits and complete small-game recomputation
+      - name: Independent audits, complete small games, and q6 m16 exclusion
+        if: github.event_name != 'workflow_dispatch' || !inputs.full_exclusion
         run: python3 research/verification/scripts/check_fixed_width_20261003.py
-      - name: Repeat every finite support exclusion
+      - name: All audits and every finite q4, q5, and four-row q6 exclusion
         if: github.event_name == 'workflow_dispatch' && inputs.full_exclusion
         run: python3 research/verification/scripts/check_fixed_width_20261003.py --full-exclusion

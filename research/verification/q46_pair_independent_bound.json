@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "horizontal_diameter_bound": 67,
+  "shape_order_target_then_external_rows": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      0,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      3
+    ]
+  ],
+  "total_normalized_B_sets_checked": 3832400,
+  "three_row_blocker_upper_bound_outer_target": 19,
+  "three_row_blocker_upper_bound_inner_target": 19,
+  "rows": [
+    {
+      "D": 67,
+      "shape": 0,
+      "profiles": 32,
+      "normalized_B_sets": 766480,
+      "graphs_needing_exact_optimization": 185061,
+      "component_subsets": 8320985,
+      "max_component_size": 13,
+      "heavy_graph_exact_maximum": 6,
+      "universal_upper_bound": 6
+    },
+    {
+      "D": 67,
+      "shape": 1,
+      "profiles": 42,
+      "normalized_B_sets": 766480,
+      "graphs_needing_exact_optimization": 357903,
+      "component_subsets": 14707060,
+      "max_component_size": 13,
+      "heavy_graph_exact_maximum": 6,
+      "universal_upper_bound": 6
+    },
+    {
+      "D": 67,
+      "shape": 2,
+      "profiles": 42,
+      "normalized_B_sets": 766480,
+      "graphs_needing_exact_optimization": 275818,
+      "component_subsets": 15106259,
+      "max_component_size": 14,
+      "heavy_graph_exact_maximum": 7,
+      "universal_upper_bound": 7
+    },
+    {
+      "D": 67,
+      "shape": 3,
+      "profiles": 32,
+      "normalized_B_sets": 766480,
+      "graphs_needing_exact_optimization": 173387,
+      "component_subsets": 6537087,
+      "max_component_size": 11,
+      "heavy_graph_exact_maximum": 6,
+      "universal_upper_bound": 6
+    },
+    {
+      "D": 67,
+      "shape": 4,
+      "profiles": 42,
+      "normalized_B_sets": 766480,
+      "graphs_needing_exact_optimization": 255744,
+      "component_subsets": 13500385,
+      "max_component_size": 18,
+      "heavy_graph_exact_maximum": 7,
+      "universal_upper_bound": 7
+    }
+  ],
+  "small_diameter_refinement": {
+    "D": 35,
+    "shape": 0,
+    "profiles": 16,
+    "normalized_B_sets": 52360,
+    "graphs_needing_exact_optimization": 19016,
+    "component_subsets": 721045,
+    "max_component_size": 13,
+    "heavy_graph_exact_maximum": 5,
+    "universal_upper_bound": 5
+  },
+  "three_row_blocker_upper_bound_at_D_35_after_target_star_refinement": 17,
+  "resulting_tail_start_after_target_star_refinement": 34
+}

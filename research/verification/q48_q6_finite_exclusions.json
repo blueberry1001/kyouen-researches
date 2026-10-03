@@ -1,0 +1,413 @@
+{
+  "statement": "Complete exclusion of a safe configuration with a deficient blocked row for q=6 on every four-row board of lengths 16 through 35. Together with the arithmetic tail theorem this proves M_4_6 = 16.",
+  "verified_interval": [
+    16,
+    35
+  ],
+  "required_cases": 40,
+  "complete": true,
+  "per_subset_node_cap": 1000000,
+  "note": "State counts and timings depend on safe search-order optimizations and are omitted. Every target subset is enumerated before horizontal-reflection reduction; both row orbits 0 and 1 are checked. UNKNOWN is never accepted as exclusion.",
+  "cases": [
+    {
+      "m": 16,
+      "target_row": 0,
+      "circles": 191,
+      "target_subsets": 2517,
+      "reflection_representatives": 1277,
+      "searched_subsets": 1246,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 16,
+      "target_row": 1,
+      "circles": 191,
+      "target_subsets": 2517,
+      "reflection_representatives": 1277,
+      "searched_subsets": 1277,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 17,
+      "target_row": 0,
+      "circles": 220,
+      "target_subsets": 3214,
+      "reflection_representatives": 1630,
+      "searched_subsets": 1575,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 17,
+      "target_row": 1,
+      "circles": 220,
+      "target_subsets": 3214,
+      "reflection_representatives": 1630,
+      "searched_subsets": 1630,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 18,
+      "target_row": 0,
+      "circles": 251,
+      "target_subsets": 4048,
+      "reflection_representatives": 2047,
+      "searched_subsets": 1990,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 18,
+      "target_row": 1,
+      "circles": 251,
+      "target_subsets": 4048,
+      "reflection_representatives": 2047,
+      "searched_subsets": 2047,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 19,
+      "target_row": 0,
+      "circles": 282,
+      "target_subsets": 5036,
+      "reflection_representatives": 2546,
+      "searched_subsets": 2472,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 19,
+      "target_row": 1,
+      "circles": 282,
+      "target_subsets": 5036,
+      "reflection_representatives": 2546,
+      "searched_subsets": 2546,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 20,
+      "target_row": 0,
+      "circles": 319,
+      "target_subsets": 6196,
+      "reflection_representatives": 3126,
+      "searched_subsets": 3027,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 20,
+      "target_row": 1,
+      "circles": 319,
+      "target_subsets": 6196,
+      "reflection_representatives": 3126,
+      "searched_subsets": 3126,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 21,
+      "target_row": 0,
+      "circles": 358,
+      "target_subsets": 7547,
+      "reflection_representatives": 3807,
+      "searched_subsets": 3720,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 21,
+      "target_row": 1,
+      "circles": 358,
+      "target_subsets": 7547,
+      "reflection_representatives": 3807,
+      "searched_subsets": 3807,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 22,
+      "target_row": 0,
+      "circles": 401,
+      "target_subsets": 9109,
+      "reflection_representatives": 4588,
+      "searched_subsets": 4489,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 22,
+      "target_row": 1,
+      "circles": 401,
+      "target_subsets": 9109,
+      "reflection_representatives": 4588,
+      "searched_subsets": 4588,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 23,
+      "target_row": 0,
+      "circles": 444,
+      "target_subsets": 10903,
+      "reflection_representatives": 5491,
+      "searched_subsets": 5334,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 23,
+      "target_row": 1,
+      "circles": 444,
+      "target_subsets": 10903,
+      "reflection_representatives": 5491,
+      "searched_subsets": 5491,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 24,
+      "target_row": 0,
+      "circles": 489,
+      "target_subsets": 12951,
+      "reflection_representatives": 6515,
+      "searched_subsets": 6352,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 24,
+      "target_row": 1,
+      "circles": 489,
+      "target_subsets": 12951,
+      "reflection_representatives": 6515,
+      "searched_subsets": 6515,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 25,
+      "target_row": 0,
+      "circles": 538,
+      "target_subsets": 15276,
+      "reflection_representatives": 7684,
+      "searched_subsets": 7565,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 25,
+      "target_row": 1,
+      "circles": 538,
+      "target_subsets": 15276,
+      "reflection_representatives": 7684,
+      "searched_subsets": 7684,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 26,
+      "target_row": 0,
+      "circles": 589,
+      "target_subsets": 17902,
+      "reflection_representatives": 8997,
+      "searched_subsets": 8834,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 26,
+      "target_row": 1,
+      "circles": 589,
+      "target_subsets": 17902,
+      "reflection_representatives": 8997,
+      "searched_subsets": 8997,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 27,
+      "target_row": 0,
+      "circles": 640,
+      "target_subsets": 20854,
+      "reflection_representatives": 10480,
+      "searched_subsets": 10230,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 27,
+      "target_row": 1,
+      "circles": 640,
+      "target_subsets": 20854,
+      "reflection_representatives": 10480,
+      "searched_subsets": 10480,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 28,
+      "target_row": 0,
+      "circles": 691,
+      "target_subsets": 24158,
+      "reflection_representatives": 12132,
+      "searched_subsets": 11746,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 28,
+      "target_row": 1,
+      "circles": 691,
+      "target_subsets": 24158,
+      "reflection_representatives": 12132,
+      "searched_subsets": 12132,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 29,
+      "target_row": 0,
+      "circles": 744,
+      "target_subsets": 27841,
+      "reflection_representatives": 13981,
+      "searched_subsets": 13671,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 29,
+      "target_row": 1,
+      "circles": 744,
+      "target_subsets": 27841,
+      "reflection_representatives": 13981,
+      "searched_subsets": 13981,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 30,
+      "target_row": 0,
+      "circles": 803,
+      "target_subsets": 31931,
+      "reflection_representatives": 16026,
+      "searched_subsets": 15641,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 30,
+      "target_row": 1,
+      "circles": 803,
+      "target_subsets": 31931,
+      "reflection_representatives": 16026,
+      "searched_subsets": 16026,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 31,
+      "target_row": 0,
+      "circles": 862,
+      "target_subsets": 36457,
+      "reflection_representatives": 18297,
+      "searched_subsets": 17741,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 31,
+      "target_row": 1,
+      "circles": 862,
+      "target_subsets": 36457,
+      "reflection_representatives": 18297,
+      "searched_subsets": 18297,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 32,
+      "target_row": 0,
+      "circles": 925,
+      "target_subsets": 41449,
+      "reflection_representatives": 20793,
+      "searched_subsets": 20231,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 32,
+      "target_row": 1,
+      "circles": 925,
+      "target_subsets": 41449,
+      "reflection_representatives": 20793,
+      "searched_subsets": 20793,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 33,
+      "target_row": 0,
+      "circles": 988,
+      "target_subsets": 46938,
+      "reflection_representatives": 23546,
+      "searched_subsets": 22796,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 33,
+      "target_row": 1,
+      "circles": 988,
+      "target_subsets": 46938,
+      "reflection_representatives": 23546,
+      "searched_subsets": 23546,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 34,
+      "target_row": 0,
+      "circles": 1055,
+      "target_subsets": 52956,
+      "reflection_representatives": 26555,
+      "searched_subsets": 25762,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 34,
+      "target_row": 1,
+      "circles": 1055,
+      "target_subsets": 52956,
+      "reflection_representatives": 26555,
+      "searched_subsets": 26555,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 35,
+      "target_row": 0,
+      "circles": 1124,
+      "target_subsets": 59536,
+      "reflection_representatives": 29854,
+      "searched_subsets": 29136,
+      "unknown_subsets": 0,
+      "found_witness": false
+    },
+    {
+      "m": 35,
+      "target_row": 1,
+      "circles": 1124,
+      "target_subsets": 59536,
+      "reflection_representatives": 29854,
+      "searched_subsets": 29854,
+      "unknown_subsets": 0,
+      "found_witness": false
+    }
+  ]
+}

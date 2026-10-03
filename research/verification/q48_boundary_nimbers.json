@@ -1,0 +1,693 @@
+{
+  "statement": "For q=6,7,8 on four-row boards, the last nonstable length has an explicit safe position of Grundy value 2.",
+  "proof_scope": "Three explicit positions; complete descendant games, not a census or an upper bound for other positions.",
+  "cases": [
+    {
+      "q": 8,
+      "m": 10,
+      "stabilization_length": 11,
+      "maximal_witness_rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          7,
+          9
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "removed_point": [
+        7,
+        0
+      ],
+      "initial_rows": [
+        [
+          0,
+          1,
+          2,
+          4,
+          9
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "initial_stones": 26,
+      "grundy": 2,
+      "legal_first_moves": [
+        {
+          "point": [
+            6,
+            0
+          ],
+          "child_grundy": 1
+        },
+        {
+          "point": [
+            7,
+            0
+          ],
+          "child_grundy": 0
+        },
+        {
+          "point": [
+            8,
+            0
+          ],
+          "child_grundy": 1
+        }
+      ],
+      "reachable_positions": 5,
+      "all_reachable_positions": [
+        {
+          "added_points": [],
+          "stones": 26,
+          "grundy": 2,
+          "legal_moves": [
+            {
+              "point": [
+                6,
+                0
+              ],
+              "child_grundy": 1
+            },
+            {
+              "point": [
+                7,
+                0
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                8,
+                0
+              ],
+              "child_grundy": 1
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              6,
+              0
+            ]
+          ],
+          "stones": 27,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                8,
+                0
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              7,
+              0
+            ]
+          ],
+          "stones": 27,
+          "grundy": 0,
+          "legal_moves": []
+        },
+        {
+          "added_points": [
+            [
+              8,
+              0
+            ]
+          ],
+          "stones": 27,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                6,
+                0
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "stones": 28,
+          "grundy": 0,
+          "legal_moves": []
+        }
+      ],
+      "independent_geometry": {
+        "board_points": 40,
+        "board_triples": 9880,
+        "distinct_equations": 5203,
+        "lines": 4,
+        "circles": 7
+      }
+    },
+    {
+      "q": 7,
+      "m": 12,
+      "stabilization_length": 13,
+      "maximal_witness_rows": [
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          7
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "removed_point": [
+        7,
+        1
+      ],
+      "initial_rows": [
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "initial_stones": 22,
+      "grundy": 2,
+      "legal_first_moves": [
+        {
+          "point": [
+            4,
+            1
+          ],
+          "child_grundy": 1
+        },
+        {
+          "point": [
+            7,
+            1
+          ],
+          "child_grundy": 0
+        },
+        {
+          "point": [
+            10,
+            1
+          ],
+          "child_grundy": 1
+        }
+      ],
+      "reachable_positions": 5,
+      "all_reachable_positions": [
+        {
+          "added_points": [],
+          "stones": 22,
+          "grundy": 2,
+          "legal_moves": [
+            {
+              "point": [
+                4,
+                1
+              ],
+              "child_grundy": 1
+            },
+            {
+              "point": [
+                7,
+                1
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                10,
+                1
+              ],
+              "child_grundy": 1
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              4,
+              1
+            ]
+          ],
+          "stones": 23,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                10,
+                1
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              7,
+              1
+            ]
+          ],
+          "stones": 23,
+          "grundy": 0,
+          "legal_moves": []
+        },
+        {
+          "added_points": [
+            [
+              10,
+              1
+            ]
+          ],
+          "stones": 23,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                4,
+                1
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              4,
+              1
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "stones": 24,
+          "grundy": 0,
+          "legal_moves": []
+        }
+      ],
+      "independent_geometry": {
+        "board_points": 48,
+        "board_triples": 17296,
+        "distinct_equations": 9371,
+        "lines": 4,
+        "circles": 9
+      }
+    },
+    {
+      "q": 6,
+      "m": 15,
+      "stabilization_length": 16,
+      "maximal_witness_rows": [
+        [
+          8,
+          10,
+          13,
+          14
+        ],
+        [
+          3,
+          5,
+          6,
+          9,
+          10
+        ],
+        [
+          2,
+          3,
+          8,
+          11,
+          12
+        ],
+        [
+          4,
+          5,
+          9,
+          10,
+          11
+        ]
+      ],
+      "removed_point": [
+        8,
+        0
+      ],
+      "initial_rows": [
+        [
+          10,
+          13,
+          14
+        ],
+        [
+          3,
+          5,
+          6,
+          9,
+          10
+        ],
+        [
+          2,
+          3,
+          8,
+          11,
+          12
+        ],
+        [
+          4,
+          5,
+          9,
+          10,
+          11
+        ]
+      ],
+      "initial_stones": 18,
+      "grundy": 2,
+      "legal_first_moves": [
+        {
+          "point": [
+            6,
+            0
+          ],
+          "child_grundy": 1
+        },
+        {
+          "point": [
+            7,
+            0
+          ],
+          "child_grundy": 1
+        },
+        {
+          "point": [
+            8,
+            0
+          ],
+          "child_grundy": 0
+        },
+        {
+          "point": [
+            12,
+            0
+          ],
+          "child_grundy": 1
+        }
+      ],
+      "reachable_positions": 8,
+      "all_reachable_positions": [
+        {
+          "added_points": [],
+          "stones": 18,
+          "grundy": 2,
+          "legal_moves": [
+            {
+              "point": [
+                6,
+                0
+              ],
+              "child_grundy": 1
+            },
+            {
+              "point": [
+                7,
+                0
+              ],
+              "child_grundy": 1
+            },
+            {
+              "point": [
+                8,
+                0
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                12,
+                0
+              ],
+              "child_grundy": 1
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              6,
+              0
+            ]
+          ],
+          "stones": 19,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                7,
+                0
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                12,
+                0
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              7,
+              0
+            ]
+          ],
+          "stones": 19,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                6,
+                0
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                12,
+                0
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              8,
+              0
+            ]
+          ],
+          "stones": 19,
+          "grundy": 0,
+          "legal_moves": []
+        },
+        {
+          "added_points": [
+            [
+              12,
+              0
+            ]
+          ],
+          "stones": 19,
+          "grundy": 1,
+          "legal_moves": [
+            {
+              "point": [
+                6,
+                0
+              ],
+              "child_grundy": 0
+            },
+            {
+              "point": [
+                7,
+                0
+              ],
+              "child_grundy": 0
+            }
+          ]
+        },
+        {
+          "added_points": [
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "stones": 20,
+          "grundy": 0,
+          "legal_moves": []
+        },
+        {
+          "added_points": [
+            [
+              6,
+              0
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "stones": 20,
+          "grundy": 0,
+          "legal_moves": []
+        },
+        {
+          "added_points": [
+            [
+              7,
+              0
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "stones": 20,
+          "grundy": 0,
+          "legal_moves": []
+        }
+      ],
+      "independent_geometry": {
+        "board_points": 60,
+        "board_triples": 34220,
+        "distinct_equations": 19177,
+        "lines": 4,
+        "circles": 162
+      }
+    }
+  ]
+}
