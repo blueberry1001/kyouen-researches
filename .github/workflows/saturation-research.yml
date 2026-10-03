@@ -4,13 +4,14 @@ on:
   pull_request:
     paths:
       - 'research/saturation-20261003.md'
+      - 'research/saturation-20261003-extra.md'
       - 'research/verification/scripts/saturation_20261003_*'
       - 'research/verification/scripts/check_saturation_20261003.py'
       - '.github/workflows/saturation-research.yml'
   workflow_dispatch:
     inputs:
       full_exclusion:
-        description: 'Repeat complete 11x11 seven-stone exclusion'
+        description: 'Repeat the seven-stone and three local-extension exclusions'
         type: boolean
         default: false
 
@@ -25,6 +26,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Integer witness and direction-bound audits
         run: python3 research/verification/scripts/check_saturation_20261003.py
-      - name: Full seven-stone exclusion
+      - name: Full seven-stone and local-extension exclusions
         if: github.event_name == 'workflow_dispatch' && inputs.full_exclusion
         run: python3 research/verification/scripts/check_saturation_20261003.py --full-exclusion

@@ -27,6 +27,13 @@ def main():
     saved = json.loads(certificate.read_text())
     subprocess.run([sys.executable, str(HERE / "saturation_20261003_verify.py")], check=True)
     assert json.loads(certificate.read_text()) == saved
+    extra_certificate = HERE / "saturation_20261003_extra_verified.json"
+    extra_saved = json.loads(extra_certificate.read_text())
+    command = [sys.executable, str(HERE / "saturation_20261003_extra_verify.py")]
+    if args.full_exclusion:
+        command.append("--rerun-exact")
+    subprocess.run(command, check=True)
+    assert json.loads(extra_certificate.read_text()) == extra_saved
     expected = json.loads((HERE / "saturation_20261003_exact_results.json").read_text())["results"]
     with tempfile.TemporaryDirectory(prefix="kyouen-saturation-check-") as tmp:
         binary = str(Path(tmp) / "exact")
