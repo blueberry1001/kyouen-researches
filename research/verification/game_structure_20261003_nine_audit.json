@@ -1,0 +1,76 @@
+{
+  "experiment": "independent lightweight audit of bounded 9x9 solver",
+  "nine_by_nine_root_status": "UNKNOWN",
+  "source_sha256": {
+    "game_structure_20261003_nine.cpp": "4681a1e92ccc4f4c43fb6c8760b15c46e4ae4fa48989fa9bbc642b7bf0bdaec3",
+    "game_structure_20261003_nine_audit_domains.cpp": "daadc44e41b3540e5af8c3e7bc519e6021fd0d327433ecce7eff15c3deb3f868",
+    "game_structure_20261003_nine_audit.py": "e5671ae8005b783d68fecf56bd67a5808d28ff579f8448a57c1590ab4596540e"
+  },
+  "compiler_flags": [
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra"
+  ],
+  "production_source_modified": false,
+  "domain_checks": {
+    "status": "PASS",
+    "empty_rank": 0,
+    "highest_singleton_rank": 81,
+    "lowest_twenty_stone_rank": 2143508038974053704,
+    "highest_twenty_stone_rank": 6837944227813170423,
+    "twenty_one_stones_rejected": true,
+    "outside_bit_81_rejected": true,
+    "all_eight_transforms_preserve_board": true
+  },
+  "independent_geometry_and_probes": {
+    "geometric_entities_with_at_least_four_points": 6814,
+    "forbidden_quadruples": 29152,
+    "probes_verified": 1000,
+    "tiny_endgames_verified": 412,
+    "occupied_high_bits_exercised": 793,
+    "maximum_probe_stones": 17,
+    "rank_upper_exclusive": 6837944227813170424
+  },
+  "small_board_certificates": [
+    {
+      "n": 3,
+      "forbidden_quadruples": 14,
+      "proof_records": 28,
+      "verified_first_wins": false,
+      "independent_root_states": 87
+    },
+    {
+      "n": 4,
+      "forbidden_quadruples": 194,
+      "proof_records": 232,
+      "verified_first_wins": true,
+      "independent_root_states": 383
+    },
+    {
+      "n": 5,
+      "forbidden_quadruples": 826,
+      "proof_records": 2308,
+      "verified_first_wins": false,
+      "independent_root_states": 0
+    }
+  ],
+  "unknown_propagation": [
+    {
+      "guard": "node_cap",
+      "complete": false,
+      "winner": "UNKNOWN",
+      "exit_code": 2,
+      "memo_size": 1,
+      "proof_created": false
+    },
+    {
+      "guard": "time_cap",
+      "complete": false,
+      "winner": "UNKNOWN",
+      "exit_code": 2,
+      "memo_size": 0,
+      "proof_created": false
+    }
+  ]
+}

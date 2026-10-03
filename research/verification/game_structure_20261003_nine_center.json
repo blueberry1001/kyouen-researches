@@ -1,0 +1,55 @@
+{
+  "experiment": "bounded 9x9 misere root search",
+  "root_status": "UNKNOWN",
+  "parameters": {
+    "seconds": 800,
+    "search_memo_cap": 130000000,
+    "opening_point": 40,
+    "samples": 1000,
+    "hash_slots": 201326611,
+    "max_encoded_stones": 20,
+    "tiny_cache_type_cap": 2000000
+  },
+  "source_sha256": {
+    "game_structure_20261003_nine.cpp": "4681a1e92ccc4f4c43fb6c8760b15c46e4ae4fa48989fa9bbc642b7bf0bdaec3",
+    "game_structure_20261003_nine_validate.py": "af4506fe9481e6f654d62c0ed30dc802704d3a872c502c5e1ff9a7f1f754737a",
+    "game_structure_20261003_nine_reproduce.py": "68075ead92f0c54c0c3bdc838c93bf839a18a5f2b6c4200ab660014a852d0b5b"
+  },
+  "compiler_flags": [
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra"
+  ],
+  "primitive_validation": {
+    "n": 9,
+    "forbidden_quadruples": 29152,
+    "states_checked": 1000,
+    "tiny_endgames_checked": 412,
+    "states_with_occupied_high_bits": 793,
+    "max_occupied_points": 17,
+    "verified": true,
+    "scope": "geometry, legal sets, D4, exact ranks, tiny outcomes; not root outcome"
+  },
+  "probe_sha256": "c076dd285f38bc394fd052be92147d1f9fa7fdfe7fc8392429678e186ea71d86",
+  "search": {
+    "n": 9,
+    "complete": false,
+    "winner": "UNKNOWN",
+    "memo_size": 130000000,
+    "tiny_calls": 356457570,
+    "tiny_types": 567281,
+    "elapsed_seconds": 327.773418
+  },
+  "resources": {
+    "exit_code": 2,
+    "elapsed_seconds": 327.83708338200086,
+    "max_rss_kib": 1630660,
+    "user_seconds": 324.16588,
+    "system_seconds": 0.9133939999999999
+  },
+  "proof": {
+    "exists": false,
+    "independently_verified": false
+  }
+}

@@ -290,6 +290,8 @@ S=\{(2,0),(0,2),(2,2),(3,2),(0,3)\}.
 従って既存の B226「標準正方形の空盤で両ルールの勝者が一致する盤がある」は、
 **8×8までには一致例がない**というところまで延びた。
 全サイズで逆転すると証明したわけではなく、9×9以降の misère 勝敗はここでは未決定である。
+続く [9×9の資源制限付き探索](game-structure-20261003-nine.md) は、中央優先・角優先の
+両試行が保存局面上限で `UNKNOWN` となり、9×9の勝敗は確定していない。
 
 ## 7. 再現と独立検証
 
@@ -332,3 +334,10 @@ python research/verification/scripts/game_structure_20261003_eight_reproduce.py 
 [盤面結果JSON](verification/game_structure_20261003_boards.json) にファイルサイズ、SHA-256、
 ソースの SHA-256、独立検査結果を保存している。8×8分は専用の
 [8×8結果JSON](verification/game_structure_20261003_eight.json) にあり、上の各コマンドで再生成できる。
+
+通常のCIでは、9×9について1,000標本の合法手・対称性・組合せ順位と412小終盤を独立検査する。
+9×9空盤の本探索は実行しない。軽量検査だけを再現する場合は次を使う。
+
+```bash
+python research/verification/scripts/check_game_structure_20261003.py --nine-only
+```

@@ -3,7 +3,7 @@ name: Normal and misere game certificates
 on:
   pull_request:
     paths:
-      - 'research/game-structure-20261003.md'
+      - 'research/game-structure-20261003*.md'
       - 'research/verification/game_structure_20261003_*.json'
       - 'research/verification/scripts/game_structure_20261003_*'
       - 'research/verification/scripts/game_structure_20261003.cpp'
@@ -25,7 +25,9 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-      - name: Small boards and all six-vertex hereditary games
+      # The default checker includes only --probe and independent validation
+      # for 9x9. Its 130-million-state root experiments are never run in CI.
+      - name: Small boards, hereditary games, and light 9x9 validation
         run: python3 research/verification/scripts/check_game_structure_20261003.py
       - name: All 8x8 initial moves
         if: github.event_name == 'workflow_dispatch' && inputs.full_eight
