@@ -78,6 +78,19 @@ def main():
         checked = json.loads(run(programs["q34_exceptional_audit"], prefix + "_7.txt", prefix + "_23.txt"))
         assert checked == load("q34_exceptional_audit.json")
         print("q34: all exceptional-complex values and independent audits reproduced", flush=True)
+        for stem in ("q36_full_grundy", "q36_independent_audit"):
+            binary = str(Path(directory) / stem)
+            run("g++", "-O3", "-std=c++17", str(SCRIPTS / (stem + ".cpp")), "-o", binary)
+            programs[stem] = binary
+        observed = [json.loads(line) for line in run(programs["q36_full_grundy"], "1", "9").splitlines()]
+        assert stable(observed) == stable(load("q36_full_grundy.json")["cases"])
+        direct = json.loads(run(programs["q36_independent_audit"]))
+        assert direct == load("q36_audit.json")
+        for full, row in zip(direct["direct_full_grundy"], observed):
+            for key in ("safe_states", "empty_grundy", "max_grundy", "safe_by_size", "grundy_histogram"):
+                assert full[key] == row[key], (full["m"], key)
+            assert full["terminal_by_size"] == [row["terminal_counts"].get(str(k), 0) for k in range(16)]
+        print("q36: all row-state and independent subset Grundy values reproduced", flush=True)
         if args.full_exclusion:
             binary = str(Path(directory) / "q35_support")
             run("g++", "-O3", "-std=c++17", str(SCRIPTS / "q35_support_exclusion.cpp"), "-o", binary)
