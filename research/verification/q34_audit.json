@@ -1,0 +1,40 @@
+{
+  "determinant_graph_cases": 4948,
+  "all_m3_to_m7_pairs": true,
+  "random_pairs_per_orientation_per_m8_to_m68": 12,
+  "seed": 20261003,
+  "m23_outer_witness": [
+    [
+      1,
+      17
+    ],
+    [
+      7,
+      10,
+      13
+    ],
+    [
+      9,
+      10,
+      12
+    ]
+  ],
+  "m23_middle_witness": [
+    [
+      4,
+      7,
+      18
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      10,
+      13
+    ]
+  ],
+  "both_witnesses_safe_and_maximal": true,
+  "status": "passed"
+}

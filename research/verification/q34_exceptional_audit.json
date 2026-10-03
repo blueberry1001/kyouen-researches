@@ -1,0 +1,18 @@
+[
+  {
+    "m": 7,
+    "short_facets_checked": 4607,
+    "exceptional_states_checked": 53892,
+    "legal_transitions_checked": 316601,
+    "independent_full_safe_states_checked": 55964,
+    "status": "passed"
+  },
+  {
+    "m": 23,
+    "short_facets_checked": 8,
+    "exceptional_states_checked": 1971,
+    "legal_transitions_checked": 107831,
+    "independent_full_safe_states_checked": 0,
+    "status": "passed"
+  }
+]

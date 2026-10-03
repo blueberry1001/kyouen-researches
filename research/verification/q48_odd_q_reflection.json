@@ -1,0 +1,269 @@
+{
+  "theorem": "For odd q, every safe reflection-invariant position on a finite reflection-invariant board with no fixed point is a P position.",
+  "checks": [
+    {
+      "board": "2x4",
+      "q": 5,
+      "points": 8,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 16,
+      "legal_reflection_responses": 64,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 256
+    },
+    {
+      "board": "2x4",
+      "q": 7,
+      "points": 8,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 16,
+      "legal_reflection_responses": 64,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 256
+    },
+    {
+      "board": "2x4",
+      "q": 9,
+      "points": 8,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 16,
+      "legal_reflection_responses": 64,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 256
+    },
+    {
+      "board": "2x5",
+      "q": 5,
+      "points": 10,
+      "forbidden_curves": 2,
+      "symmetric_safe_positions": 31,
+      "legal_reflection_responses": 150,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 961
+    },
+    {
+      "board": "2x5",
+      "q": 7,
+      "points": 10,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 32,
+      "legal_reflection_responses": 160,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 1024
+    },
+    {
+      "board": "2x5",
+      "q": 9,
+      "points": 10,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 32,
+      "legal_reflection_responses": 160,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 1024
+    },
+    {
+      "board": "3x4",
+      "q": 5,
+      "points": 12,
+      "forbidden_curves": 2,
+      "symmetric_safe_positions": 50,
+      "legal_reflection_responses": 262,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 3308
+    },
+    {
+      "board": "3x4",
+      "q": 7,
+      "points": 12,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 64,
+      "legal_reflection_responses": 384,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 4096
+    },
+    {
+      "board": "3x4",
+      "q": 9,
+      "points": 12,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 64,
+      "legal_reflection_responses": 384,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 4096
+    },
+    {
+      "board": "4x4",
+      "q": 5,
+      "points": 16,
+      "forbidden_curves": 5,
+      "symmetric_safe_positions": 138,
+      "legal_reflection_responses": 852,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 31298
+    },
+    {
+      "board": "4x4",
+      "q": 7,
+      "points": 16,
+      "forbidden_curves": 1,
+      "symmetric_safe_positions": 240,
+      "legal_reflection_responses": 1856,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 63232
+    },
+    {
+      "board": "4x4",
+      "q": 9,
+      "points": 16,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 256,
+      "legal_reflection_responses": 2048,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 65536
+    },
+    {
+      "board": "4x5",
+      "q": 5,
+      "points": 20,
+      "forbidden_curves": 14,
+      "symmetric_safe_positions": 394,
+      "legal_reflection_responses": 2864,
+      "exact_grundy_checked": false,
+      "g_empty": null,
+      "safe_states_in_grundy_search": null
+    },
+    {
+      "board": "4x5",
+      "q": 7,
+      "points": 20,
+      "forbidden_curves": 2,
+      "symmetric_safe_positions": 904,
+      "legal_reflection_responses": 8584,
+      "exact_grundy_checked": false,
+      "g_empty": null,
+      "safe_states_in_grundy_search": null
+    },
+    {
+      "board": "4x5",
+      "q": 9,
+      "points": 20,
+      "forbidden_curves": 0,
+      "symmetric_safe_positions": 1024,
+      "legal_reflection_responses": 10240,
+      "exact_grundy_checked": false,
+      "g_empty": null,
+      "safe_states_in_grundy_search": null
+    },
+    {
+      "board": "irregular reflection-invariant board",
+      "q": 5,
+      "points": 12,
+      "forbidden_curves": 1,
+      "symmetric_safe_positions": 44,
+      "legal_reflection_responses": 216,
+      "exact_grundy_checked": true,
+      "g_empty": 0,
+      "safe_states_in_grundy_search": 2608
+    }
+  ],
+  "outside_scope_counterexamples": [
+    {
+      "case": "even q does not admit the theorem",
+      "q": 8,
+      "symmetric_position": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "first_move": [
+        1,
+        0
+      ],
+      "mirror_reply": [
+        1,
+        3
+      ],
+      "first_move_safe": true,
+      "reply_safe": false
+    },
+    {
+      "case": "central inversion is insufficient even for odd q",
+      "q": 5,
+      "centrally_symmetric_position": [
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          -12,
+          -7
+        ],
+        [
+          -13,
+          -12
+        ],
+        [
+          -12,
+          -17
+        ]
+      ],
+      "first_move": [
+        5,
+        0
+      ],
+      "rotated_reply": [
+        -5,
+        0
+      ],
+      "first_move_safe": true,
+      "reply_safe": false,
+      "new_forbidden_circle_coefficients": [
+        1,
+        0,
+        -24,
+        -25
+      ]
+    }
+  ]
+}

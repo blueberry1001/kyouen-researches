@@ -1,0 +1,774 @@
+{
+  "q": 4,
+  "width": 3,
+  "exact_threshold": 24,
+  "analytic_tail": 69,
+  "method": "safe exterior three-subsets; exact singleton blockers; all target two-vertex closed-neighborhood covers; conservative support pruning",
+  "cases": [
+    {
+      "m": 24,
+      "three_sets": 2024,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        2385880,
+        1321971
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.38699
+    },
+    {
+      "m": 25,
+      "three_sets": 2300,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        2800730,
+        1563120
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.73246
+    },
+    {
+      "m": 26,
+      "three_sets": 2600,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3173310,
+        1748215
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.10732
+    },
+    {
+      "m": 27,
+      "three_sets": 2925,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3471100,
+        1842861
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.46733
+    },
+    {
+      "m": 28,
+      "three_sets": 3276,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3644992,
+        1839851
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.59826
+    },
+    {
+      "m": 29,
+      "three_sets": 3654,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3652120,
+        1721481
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.61998
+    },
+    {
+      "m": 30,
+      "three_sets": 4060,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3516882,
+        1510214
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.55506
+    },
+    {
+      "m": 31,
+      "three_sets": 4495,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        3234768,
+        1268150
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.53387
+    },
+    {
+      "m": 32,
+      "three_sets": 4960,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        2854244,
+        1031094
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.38452
+    },
+    {
+      "m": 33,
+      "three_sets": 5456,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        1510604,
+        429791
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.82562
+    },
+    {
+      "m": 34,
+      "three_sets": 5984,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        1134068,
+        285575
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.906
+    },
+    {
+      "m": 35,
+      "three_sets": 6545,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        416974,
+        72935
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.43407
+    },
+    {
+      "m": 36,
+      "three_sets": 7140,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        251232,
+        38130
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.69849
+    },
+    {
+      "m": 37,
+      "three_sets": 7770,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        69950,
+        5931
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 1.80666
+    },
+    {
+      "m": 38,
+      "three_sets": 8436,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        32014,
+        2258
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.17001
+    },
+    {
+      "m": 39,
+      "three_sets": 9139,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        6954,
+        249
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 2.58484
+    },
+    {
+      "m": 40,
+      "three_sets": 9880,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        1918,
+        98
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 3.28034
+    },
+    {
+      "m": 41,
+      "three_sets": 10660,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        256,
+        20
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 3.41226
+    },
+    {
+      "m": 42,
+      "three_sets": 11480,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        58,
+        5
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 4.17141
+    },
+    {
+      "m": 43,
+      "three_sets": 12341,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        12,
+        6
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 4.88828
+    },
+    {
+      "m": 44,
+      "three_sets": 13244,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        3
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 5.772
+    },
+    {
+      "m": 45,
+      "three_sets": 14190,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 6.96331
+    },
+    {
+      "m": 46,
+      "three_sets": 15180,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 7.88388
+    },
+    {
+      "m": 47,
+      "three_sets": 16215,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 9.81101
+    },
+    {
+      "m": 48,
+      "three_sets": 17296,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 13.6352
+    },
+    {
+      "m": 49,
+      "three_sets": 18424,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 12.518
+    },
+    {
+      "m": 50,
+      "three_sets": 19600,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 14.4991
+    },
+    {
+      "m": 51,
+      "three_sets": 20825,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 16.5551
+    },
+    {
+      "m": 52,
+      "three_sets": 22100,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 19.4377
+    },
+    {
+      "m": 53,
+      "three_sets": 23426,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 23.2344
+    },
+    {
+      "m": 54,
+      "three_sets": 24804,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 29.1888
+    },
+    {
+      "m": 55,
+      "three_sets": 26235,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 39.4537
+    },
+    {
+      "m": 56,
+      "three_sets": 27720,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 46.4418
+    },
+    {
+      "m": 57,
+      "three_sets": 29260,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 42.9328
+    },
+    {
+      "m": 58,
+      "three_sets": 30856,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 50.1466
+    },
+    {
+      "m": 59,
+      "three_sets": 32509,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 56.0731
+    },
+    {
+      "m": 60,
+      "three_sets": 34220,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 62.7719
+    },
+    {
+      "m": 61,
+      "three_sets": 35990,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 78.1369
+    },
+    {
+      "m": 62,
+      "three_sets": 37820,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 85.3777
+    },
+    {
+      "m": 63,
+      "three_sets": 39711,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 105.381
+    },
+    {
+      "m": 64,
+      "three_sets": 41664,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 128.728
+    },
+    {
+      "m": 65,
+      "three_sets": 43680,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 101.986
+    },
+    {
+      "m": 66,
+      "three_sets": 45760,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 122.602
+    },
+    {
+      "m": 67,
+      "three_sets": 47905,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 128.752
+    },
+    {
+      "m": 68,
+      "three_sets": 50116,
+      "cover_exists": [
+        0,
+        0
+      ],
+      "candidates": [
+        0,
+        0
+      ],
+      "witnesses": [
+        null,
+        null
+      ],
+      "seconds": 149.558
+    }
+  ]
+}
