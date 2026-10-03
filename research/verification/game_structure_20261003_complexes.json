@@ -1,0 +1,6307 @@
+{
+  "censuses": [
+    {
+      "n": 1,
+      "families": 1,
+      "anomalies": 0,
+      "pair_histogram": [
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "exception_isomorphism_classes": []
+    },
+    {
+      "n": 2,
+      "families": 2,
+      "anomalies": 0,
+      "pair_histogram": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "exception_isomorphism_classes": []
+    },
+    {
+      "n": 3,
+      "families": 9,
+      "anomalies": 0,
+      "pair_histogram": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          3
+        ]
+      ],
+      "exception_isomorphism_classes": []
+    },
+    {
+      "n": 4,
+      "families": 114,
+      "anomalies": 0,
+      "pair_histogram": [
+        [
+          0,
+          1,
+          46
+        ],
+        [
+          1,
+          0,
+          22
+        ],
+        [
+          2,
+          2,
+          22
+        ],
+        [
+          3,
+          3,
+          24
+        ]
+      ],
+      "exception_isomorphism_classes": []
+    },
+    {
+      "n": 5,
+      "families": 6894,
+      "anomalies": 0,
+      "pair_histogram": [
+        [
+          0,
+          1,
+          1814
+        ],
+        [
+          1,
+          0,
+          2850
+        ],
+        [
+          2,
+          2,
+          390
+        ],
+        [
+          3,
+          3,
+          1840
+        ]
+      ],
+      "exception_isomorphism_classes": []
+    },
+    {
+      "n": 6,
+      "families": 7785062,
+      "anomalies": 69940,
+      "pair_histogram": [
+        [
+          0,
+          0,
+          69940
+        ],
+        [
+          0,
+          1,
+          1247771
+        ],
+        [
+          1,
+          0,
+          5099937
+        ],
+        [
+          2,
+          2,
+          683114
+        ],
+        [
+          3,
+          3,
+          520440
+        ],
+        [
+          4,
+          4,
+          163860
+        ]
+      ],
+      "exception_isomorphism_classes": [
+        {
+          "safe_mask": "133147613055",
+          "labelings": 120,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            24,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "C3 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "133147613183",
+          "labelings": 120,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            24,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "C3 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "133164390271",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133164390399",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133399797631",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            13,
+            22,
+            28,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133399797759",
+          "labelings": 360,
+          "minimal_forbidden": [
+            13,
+            22,
+            28,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133430448991",
+          "labelings": 90,
+          "minimal_forbidden": [
+            5,
+            10,
+            18,
+            25,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            5,
+            2,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "C4 + P2"
+        },
+        {
+          "safe_mask": "133430449023",
+          "labelings": 90,
+          "minimal_forbidden": [
+            7,
+            10,
+            13,
+            18,
+            21,
+            25,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "C4 + P1 + P1"
+        },
+        {
+          "safe_mask": "133430449439",
+          "labelings": 60,
+          "minimal_forbidden": [
+            5,
+            6,
+            9,
+            18,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            6,
+            0,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "C6"
+        },
+        {
+          "safe_mask": "133430449471",
+          "labelings": 360,
+          "minimal_forbidden": [
+            6,
+            9,
+            18,
+            21,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            5,
+            2,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P6"
+        },
+        {
+          "safe_mask": "133430449535",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            9,
+            14,
+            18,
+            21,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P5"
+        },
+        {
+          "safe_mask": "133430449663",
+          "labelings": 360,
+          "minimal_forbidden": [
+            9,
+            14,
+            18,
+            21,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P5"
+        },
+        {
+          "safe_mask": "133430450015",
+          "labelings": 360,
+          "minimal_forbidden": [
+            5,
+            11,
+            14,
+            18,
+            25,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P2 + P4"
+        },
+        {
+          "safe_mask": "133430450047",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            18,
+            21,
+            25,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P4"
+        },
+        {
+          "safe_mask": "133430450175",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            18,
+            21,
+            25,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P4"
+        },
+        {
+          "safe_mask": "133430458367",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            14,
+            18,
+            21,
+            25,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P4"
+        },
+        {
+          "safe_mask": "133430509567",
+          "labelings": 360,
+          "minimal_forbidden": [
+            18,
+            21,
+            25,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P4"
+        },
+        {
+          "safe_mask": "133430712095",
+          "labelings": 90,
+          "minimal_forbidden": [
+            5,
+            6,
+            11,
+            19,
+            25,
+            26,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P3 + P3"
+        },
+        {
+          "safe_mask": "133430712127",
+          "labelings": 360,
+          "minimal_forbidden": [
+            6,
+            11,
+            13,
+            19,
+            21,
+            25,
+            26,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P2 + P3"
+        },
+        {
+          "safe_mask": "133430712191",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133430712319",
+          "labelings": 180,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133430720319",
+          "labelings": 720,
+          "minimal_forbidden": [
+            6,
+            11,
+            19,
+            21,
+            25,
+            26,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P2 + P3"
+        },
+        {
+          "safe_mask": "133430720383",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            11,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133430720511",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133430771711",
+          "labelings": 360,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133432825727",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133432825855",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133432868863",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133464266559",
+          "labelings": 360,
+          "minimal_forbidden": [
+            6,
+            11,
+            13,
+            19,
+            21,
+            26,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P2 + P3"
+        },
+        {
+          "safe_mask": "133464266623",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133464326143",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            26,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133666119455",
+          "labelings": 90,
+          "minimal_forbidden": [
+            5,
+            6,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P3 + P3"
+        },
+        {
+          "safe_mask": "133666119487",
+          "labelings": 360,
+          "minimal_forbidden": [
+            6,
+            13,
+            21,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            3,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P2 + P3"
+        },
+        {
+          "safe_mask": "133666119551",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            21,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133666119679",
+          "labelings": 180,
+          "minimal_forbidden": [
+            13,
+            14,
+            21,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133666127679",
+          "labelings": 720,
+          "minimal_forbidden": [
+            6,
+            21,
+            37,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            2,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P2 + P3"
+        },
+        {
+          "safe_mask": "133666127743",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            14,
+            21,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133666127871",
+          "labelings": 720,
+          "minimal_forbidden": [
+            14,
+            21,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133668233087",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            13,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "133668233215",
+          "labelings": 360,
+          "minimal_forbidden": [
+            13,
+            22,
+            37,
+            38,
+            40,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P3"
+        },
+        {
+          "safe_mask": "1232676018047",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232676018175",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232722679807",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232722681855",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942338911",
+          "labelings": 60,
+          "minimal_forbidden": [
+            5,
+            10,
+            19,
+            22,
+            25,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P2 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232942338943",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            10,
+            13,
+            19,
+            21,
+            22,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232942339071",
+          "labelings": 720,
+          "minimal_forbidden": [
+            10,
+            13,
+            19,
+            21,
+            22,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232942339967",
+          "labelings": 90,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            14,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942340095",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942342143",
+          "labelings": 180,
+          "minimal_forbidden": [
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942347263",
+          "labelings": 360,
+          "minimal_forbidden": [
+            10,
+            19,
+            21,
+            22,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232942348287",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942350335",
+          "labelings": 360,
+          "minimal_forbidden": [
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942366719",
+          "labelings": 90,
+          "minimal_forbidden": [
+            15,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            10,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232942399487",
+          "labelings": 90,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232944436223",
+          "labelings": 360,
+          "minimal_forbidden": [
+            10,
+            13,
+            19,
+            22,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232944437055",
+          "labelings": 360,
+          "minimal_forbidden": [
+            6,
+            11,
+            13,
+            19,
+            25,
+            26,
+            37,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232944437119",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232944437247",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232944453503",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232944453631",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232944496639",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957543423",
+          "labelings": 360,
+          "minimal_forbidden": [
+            10,
+            13,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232957544447",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957546495",
+          "labelings": 360,
+          "minimal_forbidden": [
+            13,
+            14,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957551615",
+          "labelings": 720,
+          "minimal_forbidden": [
+            10,
+            25,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232957552639",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            14,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957554687",
+          "labelings": 720,
+          "minimal_forbidden": [
+            14,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957569023",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232957571071",
+          "labelings": 360,
+          "minimal_forbidden": [
+            15,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            7,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232991097855",
+          "labelings": 720,
+          "minimal_forbidden": [
+            10,
+            13,
+            37,
+            38,
+            41,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1232991098879",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232991100927",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            14,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232991115263",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1232991117311",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370180491135",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            21,
+            22,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370180550655",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            22,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370195169279",
+          "labelings": 360,
+          "minimal_forbidden": [
+            12,
+            25,
+            38,
+            41,
+            42,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1370195171327",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370195173375",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            14,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370195179519",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            14,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370195181567",
+          "labelings": 720,
+          "minimal_forbidden": [
+            14,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370195230719",
+          "labelings": 720,
+          "minimal_forbidden": [
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370448401791",
+          "labelings": 90,
+          "minimal_forbidden": [
+            7,
+            9,
+            14,
+            19,
+            21,
+            22,
+            38,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1370448402303",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370448404351",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370448412543",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370448461823",
+          "labelings": 180,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370463606271",
+          "labelings": 180,
+          "minimal_forbidden": [
+            9,
+            14,
+            38,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P2 + P2"
+        },
+        {
+          "safe_mask": "1370463606783",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370463608831",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            14,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            7,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370463617023",
+          "labelings": 360,
+          "minimal_forbidden": [
+            14,
+            25,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            6,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370463666175",
+          "labelings": 360,
+          "minimal_forbidden": [
+            25,
+            30,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            5,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370616700799",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            21,
+            22,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370616708991",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            14,
+            21,
+            22,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "1370618797951",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            22,
+            38,
+            41,
+            42,
+            44,
+            48
+          ],
+          "edge_size_counts_2_through_6": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P2"
+        },
+        {
+          "safe_mask": "282707652728703",
+          "labelings": 120,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            17,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707652728831",
+          "labelings": 120,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707688423423",
+          "labelings": 360,
+          "minimal_forbidden": [
+            19,
+            21,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707688947711",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            26,
+            28,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919050623",
+          "labelings": 10,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            18,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919050751",
+          "labelings": 180,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            17,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919052799",
+          "labelings": 180,
+          "minimal_forbidden": [
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919058943",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919060991",
+          "labelings": 360,
+          "minimal_forbidden": [
+            14,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            15,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919077375",
+          "labelings": 90,
+          "minimal_forbidden": [
+            15,
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            14,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919110143",
+          "labelings": 90,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707919634431",
+          "labelings": 180,
+          "minimal_forbidden": [
+            21,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707921164159",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707921164287",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            15,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707921207295",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707921731583",
+          "labelings": 720,
+          "minimal_forbidden": [
+            22,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707925401599",
+          "labelings": 360,
+          "minimal_forbidden": [
+            19,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707925925887",
+          "labelings": 360,
+          "minimal_forbidden": [
+            23,
+            25,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707956858879",
+          "labelings": 360,
+          "minimal_forbidden": [
+            19,
+            21,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282707957383167",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            26,
+            37,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845157261311",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            22,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845158834175",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            22,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845159358463",
+          "labelings": 720,
+          "minimal_forbidden": [
+            22,
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845171941375",
+          "labelings": 360,
+          "minimal_forbidden": [
+            25,
+            28,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845425112959",
+          "labelings": 45,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845425115007",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            15,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845425123199",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            14,
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845425172479",
+          "labelings": 180,
+          "minimal_forbidden": [
+            19,
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845425696767",
+          "labelings": 720,
+          "minimal_forbidden": [
+            21,
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845427793919",
+          "labelings": 360,
+          "minimal_forbidden": [
+            22,
+            25,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845440376831",
+          "labelings": 180,
+          "minimal_forbidden": [
+            25,
+            30,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845593411455",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            13,
+            14,
+            21,
+            22,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "282845593419647",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            14,
+            21,
+            22,
+            38,
+            41,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285044195137535",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            25,
+            28,
+            38,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285044195139583",
+          "labelings": 720,
+          "minimal_forbidden": [
+            13,
+            14,
+            25,
+            28,
+            38,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285044195196927",
+          "labelings": 720,
+          "minimal_forbidden": [
+            25,
+            28,
+            38,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147229847551",
+          "labelings": 45,
+          "minimal_forbidden": [
+            19,
+            21,
+            26,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147230371839",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            26,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147240857599",
+          "labelings": 360,
+          "minimal_forbidden": [
+            26,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147261245311",
+          "labelings": 30,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            22,
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147261304831",
+          "labelings": 90,
+          "minimal_forbidden": [
+            19,
+            22,
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147265439615",
+          "labelings": 120,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            15,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147265499135",
+          "labelings": 360,
+          "minimal_forbidden": [
+            19,
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147274352639",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147274412031",
+          "labelings": 720,
+          "minimal_forbidden": [
+            25,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147298994047",
+          "labelings": 180,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147299053567",
+          "labelings": 180,
+          "minimal_forbidden": [
+            19,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147307907071",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285147307966463",
+          "labelings": 720,
+          "minimal_forbidden": [
+            27,
+            28,
+            35,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181590110207",
+          "labelings": 180,
+          "minimal_forbidden": [
+            21,
+            26,
+            28,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181600595967",
+          "labelings": 720,
+          "minimal_forbidden": [
+            26,
+            28,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181824991231",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            25,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181835476991",
+          "labelings": 720,
+          "minimal_forbidden": [
+            25,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181857961855",
+          "labelings": 60,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            21,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181858021375",
+          "labelings": 180,
+          "minimal_forbidden": [
+            19,
+            21,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181858486143",
+          "labelings": 120,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            21,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181858545663",
+          "labelings": 360,
+          "minimal_forbidden": [
+            21,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181868972031",
+          "labelings": 360,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285181869031423",
+          "labelings": 720,
+          "minimal_forbidden": [
+            26,
+            29,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            8,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182393268095",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            14,
+            22,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182393319423",
+          "labelings": 720,
+          "minimal_forbidden": [
+            22,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182396938111",
+          "labelings": 360,
+          "minimal_forbidden": [
+            7,
+            11,
+            14,
+            19,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182396938239",
+          "labelings": 720,
+          "minimal_forbidden": [
+            11,
+            14,
+            19,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182396989439",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182397462399",
+          "labelings": 720,
+          "minimal_forbidden": [
+            7,
+            11,
+            14,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285182397513727",
+          "labelings": 720,
+          "minimal_forbidden": [
+            23,
+            26,
+            37,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            8,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285319230332927",
+          "labelings": 360,
+          "minimal_forbidden": [
+            13,
+            14,
+            21,
+            28,
+            39,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285319230390271",
+          "labelings": 720,
+          "minimal_forbidden": [
+            21,
+            28,
+            39,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            8,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "285868853559295",
+          "labelings": 720,
+          "minimal_forbidden": [
+            19,
+            28,
+            42,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "289682784458623",
+          "labelings": 15,
+          "minimal_forbidden": [
+            7,
+            11,
+            13,
+            14,
+            19,
+            28,
+            35,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "289682784518143",
+          "labelings": 45,
+          "minimal_forbidden": [
+            19,
+            28,
+            35,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "289682793371647",
+          "labelings": 180,
+          "minimal_forbidden": [
+            11,
+            13,
+            14,
+            28,
+            35,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        },
+        {
+          "safe_mask": "289682793431039",
+          "labelings": 360,
+          "minimal_forbidden": [
+            27,
+            28,
+            35,
+            44,
+            49,
+            50,
+            52,
+            56
+          ],
+          "edge_size_counts_2_through_6": [
+            0,
+            7,
+            1,
+            0,
+            0
+          ],
+          "child_normal_values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "pair_graph": "P1 + P1 + P1 + P1 + P1 + P1"
+        }
+      ],
+      "independent_orbit_verification": {
+        "verified": true,
+        "disjoint_labeled_exceptions": 69940
+      },
+      "pair_graph_profiles": {
+        "C3 + P1 + P1 + P1": {
+          "classes": 2,
+          "labelings": 240
+        },
+        "C4 + P1 + P1": {
+          "classes": 1,
+          "labelings": 90
+        },
+        "C4 + P2": {
+          "classes": 1,
+          "labelings": 90
+        },
+        "C6": {
+          "classes": 1,
+          "labelings": 60
+        },
+        "P1 + P1 + P1 + P1 + P1 + P1": {
+          "classes": 73,
+          "labelings": 28180
+        },
+        "P1 + P1 + P1 + P1 + P2": {
+          "classes": 44,
+          "labelings": 22230
+        },
+        "P1 + P1 + P1 + P3": {
+          "classes": 20,
+          "labelings": 8640
+        },
+        "P1 + P1 + P2 + P2": {
+          "classes": 11,
+          "labelings": 4410
+        },
+        "P1 + P1 + P4": {
+          "classes": 4,
+          "labelings": 1800
+        },
+        "P1 + P2 + P3": {
+          "classes": 5,
+          "labelings": 2520
+        },
+        "P1 + P5": {
+          "classes": 2,
+          "labelings": 720
+        },
+        "P2 + P2 + P2": {
+          "classes": 1,
+          "labelings": 60
+        },
+        "P2 + P4": {
+          "classes": 1,
+          "labelings": 360
+        },
+        "P3 + P3": {
+          "classes": 2,
+          "labelings": 180
+        },
+        "P6": {
+          "classes": 1,
+          "labelings": 360
+        }
+      },
+      "edge_size_profiles": [
+        {
+          "counts": [
+            0,
+            7,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            0,
+            8,
+            1,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          "classes": 6
+        },
+        {
+          "counts": [
+            0,
+            9,
+            1,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          "classes": 9
+        },
+        {
+          "counts": [
+            0,
+            10,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          "classes": 9
+        },
+        {
+          "counts": [
+            0,
+            11,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          "classes": 15
+        },
+        {
+          "counts": [
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          "classes": 6
+        },
+        {
+          "counts": [
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          "classes": 4
+        },
+        {
+          "counts": [
+            0,
+            14,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            0,
+            15,
+            0,
+            0,
+            0
+          ],
+          "classes": 4
+        },
+        {
+          "counts": [
+            0,
+            16,
+            0,
+            0,
+            0
+          ],
+          "classes": 6
+        },
+        {
+          "counts": [
+            0,
+            17,
+            0,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            0,
+            18,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            1,
+            5,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            1,
+            6,
+            0,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            1,
+            7,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            1,
+            7,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            1,
+            8,
+            0,
+            0,
+            0
+          ],
+          "classes": 12
+        },
+        {
+          "counts": [
+            1,
+            9,
+            0,
+            0,
+            0
+          ],
+          "classes": 7
+        },
+        {
+          "counts": [
+            1,
+            10,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            1,
+            10,
+            1,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            1,
+            11,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            1,
+            12,
+            0,
+            0,
+            0
+          ],
+          "classes": 7
+        },
+        {
+          "counts": [
+            1,
+            13,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            1,
+            14,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            2,
+            5,
+            0,
+            0,
+            0
+          ],
+          "classes": 5
+        },
+        {
+          "counts": [
+            2,
+            6,
+            0,
+            0,
+            0
+          ],
+          "classes": 6
+        },
+        {
+          "counts": [
+            2,
+            7,
+            0,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            2,
+            8,
+            0,
+            0,
+            0
+          ],
+          "classes": 4
+        },
+        {
+          "counts": [
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          "classes": 5
+        },
+        {
+          "counts": [
+            2,
+            10,
+            0,
+            0,
+            0
+          ],
+          "classes": 5
+        },
+        {
+          "counts": [
+            2,
+            11,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            3,
+            2,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            3,
+            3,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            3,
+            6,
+            0,
+            0,
+            0
+          ],
+          "classes": 5
+        },
+        {
+          "counts": [
+            3,
+            7,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            3,
+            8,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            4,
+            4,
+            0,
+            0,
+            0
+          ],
+          "classes": 3
+        },
+        {
+          "counts": [
+            4,
+            5,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            4,
+            6,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        },
+        {
+          "counts": [
+            5,
+            2,
+            0,
+            0,
+            0
+          ],
+          "classes": 2
+        },
+        {
+          "counts": [
+            6,
+            0,
+            0,
+            0,
+            0
+          ],
+          "classes": 1
+        }
+      ],
+      "child_value_profiles": [
+        {
+          "values": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "classes": 67
+        },
+        {
+          "values": [
+            2,
+            2,
+            2,
+            3,
+            3,
+            3
+          ],
+          "classes": 2
+        },
+        {
+          "values": [
+            2,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "classes": 83
+        },
+        {
+          "values": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "classes": 17
+        }
+      ]
+    }
+  ],
+  "independent_deletion_link_check": {
+    "method": "deletion_link_pairs",
+    "verified": true,
+    "complexes_on_five_allowing_absent_vertices": 7580,
+    "full_vertex_complexes_on_five": 6894,
+    "families_on_six": 7785062,
+    "pair_histogram": [
+      [
+        0,
+        0,
+        69940
+      ],
+      [
+        0,
+        1,
+        1247771
+      ],
+      [
+        1,
+        0,
+        5099937
+      ],
+      [
+        2,
+        2,
+        683114
+      ],
+      [
+        3,
+        3,
+        520440
+      ],
+      [
+        4,
+        4,
+        163860
+      ]
+    ]
+  }
+}

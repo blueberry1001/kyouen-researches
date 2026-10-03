@@ -1,0 +1,32 @@
+name: Normal and misere game certificates
+
+on:
+  pull_request:
+    paths:
+      - 'research/game-structure-20261003.md'
+      - 'research/verification/game_structure_20261003_*.json'
+      - 'research/verification/scripts/game_structure_20261003_*'
+      - 'research/verification/scripts/game_structure_20261003.cpp'
+      - 'research/verification/scripts/check_game_structure_20261003.py'
+      - '.github/workflows/game-structure-research.yml'
+  workflow_dispatch:
+    inputs:
+      full_eight:
+        description: 'Regenerate and check the complete 8x8 initial-move proof'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Small boards and all six-vertex hereditary games
+        run: python3 research/verification/scripts/check_game_structure_20261003.py
+      - name: All 8x8 initial moves
+        if: github.event_name == 'workflow_dispatch' && inputs.full_eight
+        run: python3 research/verification/scripts/check_game_structure_20261003.py --full-eight

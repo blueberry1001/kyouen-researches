@@ -1,0 +1,301 @@
+{
+  "censuses": [
+    {
+      "n": 5,
+      "double_p_by_legal_count": {
+        "6": 8,
+        "7": 8,
+        "8": 20,
+        "9": 8,
+        "11": 8,
+        "14": 16,
+        "15": 32,
+        "16": 8,
+        "17": 8,
+        "18": 4,
+        "20": 6,
+        "21": 12
+      },
+      "six_legal_classes": [
+        {
+          "safe_mask": "133430449439",
+          "count": 8,
+          "pair_graph": "C6",
+          "witness": {
+            "occupied": 46084,
+            "legal_points": [
+              4,
+              9,
+              19,
+              20,
+              23,
+              24
+            ],
+            "minimal_forbidden": [
+              3,
+              9,
+              20,
+              24,
+              34,
+              36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "double_p_by_legal_count": {
+        "6": 424,
+        "7": 336,
+        "8": 328,
+        "9": 296,
+        "10": 392,
+        "11": 352,
+        "12": 456,
+        "13": 536,
+        "14": 388,
+        "15": 368,
+        "16": 344,
+        "17": 256,
+        "18": 164,
+        "19": 152,
+        "20": 116,
+        "21": 88,
+        "22": 60,
+        "23": 64,
+        "24": 16,
+        "25": 24,
+        "26": 28,
+        "27": 8,
+        "28": 8,
+        "29": 16,
+        "30": 8,
+        "31": 4,
+        "32": 4
+      },
+      "six_legal_classes": [
+        {
+          "safe_mask": "133430448991",
+          "count": 32,
+          "pair_graph": "C4 + P2",
+          "witness": {
+            "occupied": 4737538,
+            "legal_points": [
+              5,
+              7,
+              10,
+              29,
+              30,
+              34
+            ],
+            "minimal_forbidden": [
+              3,
+              6,
+              13,
+              17,
+              20,
+              40,
+              50
+            ]
+          }
+        },
+        {
+          "safe_mask": "133430449439",
+          "count": 136,
+          "pair_graph": "C6",
+          "witness": {
+            "occupied": 4495368,
+            "legal_points": [
+              5,
+              9,
+              19,
+              24,
+              28,
+              35
+            ],
+            "minimal_forbidden": [
+              3,
+              6,
+              20,
+              24,
+              33,
+              40
+            ]
+          }
+        },
+        {
+          "safe_mask": "133430449471",
+          "count": 72,
+          "pair_graph": "P6",
+          "witness": {
+            "occupied": 268610,
+            "legal_points": [
+              5,
+              16,
+              28,
+              32,
+              33,
+              35
+            ],
+            "minimal_forbidden": [
+              3,
+              14,
+              20,
+              24,
+              33,
+              38,
+              40
+            ]
+          }
+        },
+        {
+          "safe_mask": "133430449663",
+          "count": 8,
+          "pair_graph": "P1 + P5",
+          "witness": {
+            "occupied": 34603640,
+            "legal_points": [
+              16,
+              17,
+              28,
+              31,
+              32,
+              33
+            ],
+            "minimal_forbidden": [
+              3,
+              6,
+              12,
+              24,
+              37,
+              41,
+              50,
+              52
+            ]
+          }
+        },
+        {
+          "safe_mask": "133430712095",
+          "count": 8,
+          "pair_graph": "P3 + P3",
+          "witness": {
+            "occupied": 25297955,
+            "legal_points": [
+              15,
+              21,
+              26,
+              32,
+              33,
+              34
+            ],
+            "minimal_forbidden": [
+              3,
+              6,
+              21,
+              24,
+              37,
+              40,
+              49,
+              52
+            ]
+          }
+        },
+        {
+          "safe_mask": "133666119455",
+          "count": 96,
+          "pair_graph": "P3 + P3",
+          "witness": {
+            "occupied": 7252,
+            "legal_points": [
+              13,
+              14,
+              18,
+              21,
+              30,
+              35
+            ],
+            "minimal_forbidden": [
+              9,
+              10,
+              20,
+              48
+            ]
+          }
+        },
+        {
+          "safe_mask": "133666119487",
+          "count": 8,
+          "pair_graph": "P1 + P2 + P3",
+          "witness": {
+            "occupied": 75569666,
+            "legal_points": [
+              0,
+              5,
+              10,
+              18,
+              30,
+              32
+            ],
+            "minimal_forbidden": [
+              6,
+              11,
+              13,
+              18,
+              25,
+              40
+            ]
+          }
+        },
+        {
+          "safe_mask": "133666127679",
+          "count": 56,
+          "pair_graph": "P1 + P2 + P3",
+          "witness": {
+            "occupied": 1059024,
+            "legal_points": [
+              15,
+              18,
+              30,
+              32,
+              33,
+              35
+            ],
+            "minimal_forbidden": [
+              7,
+              10,
+              13,
+              24,
+              36
+            ]
+          }
+        },
+        {
+          "safe_mask": "1232991097855",
+          "count": 8,
+          "pair_graph": "P1 + P1 + P2 + P2",
+          "witness": {
+            "occupied": 1067556,
+            "legal_points": [
+              13,
+              18,
+              22,
+              24,
+              30,
+              31
+            ],
+            "minimal_forbidden": [
+              5,
+              11,
+              25,
+              35,
+              41,
+              42,
+              48
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
