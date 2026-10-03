@@ -1,0 +1,104 @@
+{
+  "arithmetic": "exact integers; direct enumeration of all Gaussian integers with norm <= limit",
+  "limit": 100000,
+  "primitive_center_norm_conditions_checked": 2400000,
+  "thresholds": [
+    {
+      "minimum_points": 1,
+      "N_m": 1,
+      "least_q6_norm": 1,
+      "least_radius_squared": "1/36"
+    },
+    {
+      "minimum_points": 2,
+      "N_m": 5,
+      "least_q6_norm": 10,
+      "least_radius_squared": "10/36"
+    },
+    {
+      "minimum_points": 3,
+      "N_m": 25,
+      "least_q6_norm": 50,
+      "least_radius_squared": "50/36"
+    },
+    {
+      "minimum_points": 4,
+      "N_m": 65,
+      "least_q6_norm": 130,
+      "least_radius_squared": "130/36"
+    },
+    {
+      "minimum_points": 5,
+      "N_m": 325,
+      "least_q6_norm": 650,
+      "least_radius_squared": "650/36"
+    },
+    {
+      "minimum_points": 6,
+      "N_m": 325,
+      "least_q6_norm": 650,
+      "least_radius_squared": "650/36"
+    },
+    {
+      "minimum_points": 7,
+      "N_m": 1105,
+      "least_q6_norm": 2210,
+      "least_radius_squared": "2210/36"
+    },
+    {
+      "minimum_points": 8,
+      "N_m": 1105,
+      "least_q6_norm": 2210,
+      "least_radius_squared": "2210/36"
+    },
+    {
+      "minimum_points": 9,
+      "N_m": 4225,
+      "least_q6_norm": 8450,
+      "least_radius_squared": "8450/36"
+    },
+    {
+      "minimum_points": 10,
+      "N_m": 5525,
+      "least_q6_norm": 11050,
+      "least_radius_squared": "11050/36"
+    },
+    {
+      "minimum_points": 11,
+      "N_m": 5525,
+      "least_q6_norm": 11050,
+      "least_radius_squared": "11050/36"
+    },
+    {
+      "minimum_points": 12,
+      "N_m": 5525,
+      "least_q6_norm": 11050,
+      "least_radius_squared": "11050/36"
+    },
+    {
+      "minimum_points": 13,
+      "N_m": 27625,
+      "least_q6_norm": 55250,
+      "least_radius_squared": "55250/36"
+    },
+    {
+      "minimum_points": 14,
+      "N_m": 27625,
+      "least_q6_norm": 55250,
+      "least_radius_squared": "55250/36"
+    },
+    {
+      "minimum_points": 15,
+      "N_m": 27625,
+      "least_q6_norm": 55250,
+      "least_radius_squared": "55250/36"
+    },
+    {
+      "minimum_points": 16,
+      "N_m": 27625,
+      "least_q6_norm": 55250,
+      "least_radius_squared": "55250/36"
+    }
+  ],
+  "scope": "finite verification supports the separate proof for all thresholds"
+}

@@ -1,0 +1,34 @@
+name: Lattice-circle research certificates
+
+on:
+  pull_request:
+    paths:
+      - 'research/geometry-20261003.md'
+      - 'research/theory-audit-20261003.md'
+      - 'research/verification/geometry_20261003_*.json'
+      - 'research/verification/theory_audit_20261003_*.json'
+      - 'research/verification/scripts/geometry_20261003_*.py'
+      - 'research/verification/scripts/theory_audit_20261003_*'
+      - 'research/verification/scripts/check_geometry_20261003.py'
+      - '.github/workflows/geometry-research.yml'
+  workflow_dispatch:
+    inputs:
+      full_census:
+        description: 'Repeat all-center census through side 112 (4.4 billion pairs)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce modular proofs and independent circle checks
+        run: python3 research/verification/scripts/check_geometry_20261003.py
+      - name: Repeat the full census
+        if: github.event_name == 'workflow_dispatch' && inputs.full_census
+        run: python3 research/verification/scripts/check_geometry_20261003.py --full-census

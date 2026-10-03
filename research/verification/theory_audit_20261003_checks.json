@@ -1,0 +1,199 @@
+{
+  "arithmetic": "exact integers",
+  "strip": {
+    "theorem": "All widths >=16, for arbitrary circle radii and horizontal extent",
+    "mod9_H5": 4,
+    "mod441_bounds_16_to_31": [
+      8,
+      9,
+      9,
+      10,
+      10,
+      10,
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      12,
+      13,
+      13,
+      13
+    ],
+    "width17_before_mod43": {
+      "stages": [
+        {
+          "modulus": 9,
+          "remaining_masks": 30
+        },
+        {
+          "modulus": 49,
+          "remaining_masks": 3
+        },
+        {
+          "modulus": 121,
+          "remaining_masks": 1
+        }
+      ],
+      "row_patterns": [
+        [
+          0,
+          2,
+          5,
+          7,
+          8,
+          9,
+          11,
+          14,
+          16
+        ]
+      ]
+    },
+    "width17": {
+      "stages": [
+        {
+          "modulus": 9,
+          "remaining_masks": 30
+        },
+        {
+          "modulus": 49,
+          "remaining_masks": 3
+        },
+        {
+          "modulus": 121,
+          "remaining_masks": 1
+        },
+        {
+          "modulus": 43,
+          "remaining_masks": 0
+        }
+      ],
+      "row_patterns": []
+    },
+    "width19": {
+      "stages": [
+        {
+          "modulus": 9,
+          "remaining_masks": 30
+        },
+        {
+          "modulus": 49,
+          "remaining_masks": 2
+        },
+        {
+          "modulus": 121,
+          "remaining_masks": 0
+        }
+      ],
+      "row_patterns": []
+    },
+    "width15_counterexample": [
+      [
+        -5,
+        -1
+      ],
+      [
+        -5,
+        2
+      ],
+      [
+        -4,
+        -3
+      ],
+      [
+        -4,
+        4
+      ],
+      [
+        -3,
+        -4
+      ],
+      [
+        -3,
+        5
+      ],
+      [
+        -1,
+        -5
+      ],
+      [
+        -1,
+        6
+      ],
+      [
+        2,
+        -5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        4,
+        -4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        -3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        -1
+      ],
+      [
+        6,
+        2
+      ]
+    ]
+  },
+  "census": {
+    "max_side": 112,
+    "exact_witnesses_checked": 222,
+    "independent_all_triples": [
+      {
+        "n": 2,
+        "all": 4,
+        "nonhalf": 2
+      },
+      {
+        "n": 3,
+        "all": 4,
+        "nonhalf": 3
+      },
+      {
+        "n": 4,
+        "all": 8,
+        "nonhalf": 4
+      },
+      {
+        "n": 5,
+        "all": 8,
+        "nonhalf": 4
+      },
+      {
+        "n": 6,
+        "all": 8,
+        "nonhalf": 4
+      },
+      {
+        "n": 7,
+        "all": 8,
+        "nonhalf": 4
+      },
+      {
+        "n": 8,
+        "all": 12,
+        "nonhalf": 4
+      }
+    ]
+  }
+}

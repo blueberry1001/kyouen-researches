@@ -1,0 +1,470 @@
+{
+  "status": "complete",
+  "arithmetic": "exact integers only",
+  "raw_norm_identity": "N=|u|^2 |v|^2 |u-v|^2",
+  "sharp_bound": "N<=2(n-1)^6",
+  "previous_bound": "N<=224(n-1)^6",
+  "improvement_factor": 112,
+  "total_noncollinear_triples": 307092,
+  "boards": [
+    {
+      "n": 2,
+      "noncollinear_triples": 4,
+      "collinear_triples": 0,
+      "raw_N_maximum": 2,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 2,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "n": 3,
+      "noncollinear_triples": 76,
+      "collinear_triples": 8,
+      "raw_N_maximum": 128,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 50,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "n": 4,
+      "noncollinear_triples": 516,
+      "collinear_triples": 44,
+      "raw_N_maximum": 1458,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 650,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 5,
+      "noncollinear_triples": 2148,
+      "collinear_triples": 152,
+      "raw_N_maximum": 8192,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 4250,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ]
+    },
+    {
+      "n": 6,
+      "noncollinear_triples": 6768,
+      "collinear_triples": 372,
+      "raw_N_maximum": 31250,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 18850,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 7,
+      "noncollinear_triples": 17600,
+      "collinear_triples": 824,
+      "raw_N_maximum": 93312,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 58682,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    {
+      "n": 8,
+      "noncollinear_triples": 40120,
+      "collinear_triples": 1544,
+      "raw_N_maximum": 235298,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 161650,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 9,
+      "noncollinear_triples": 82608,
+      "collinear_triples": 2712,
+      "raw_N_maximum": 524288,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 367250,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          8,
+          7
+        ]
+      ]
+    },
+    {
+      "n": 10,
+      "noncollinear_triples": 157252,
+      "collinear_triples": 4448,
+      "raw_N_maximum": 1062882,
+      "raw_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          0
+        ]
+      ],
+      "primitive_N_maximum": 787610,
+      "primitive_N_maximum_witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          9,
+          2
+        ]
+      ]
+    }
+  ],
+  "primitive_asymptotic_family": {
+    "odd_sides_checked": 1000,
+    "range": [
+      3,
+      2001
+    ],
+    "formula": "N=(L^2+1)(L^2+4)(2L^2-6L+5), odd L>=3",
+    "all_coefficients_primitive": true,
+    "asymptotic_N_over_L6": 2,
+    "samples": [
+      {
+        "side": 3,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "primitive_N": 650,
+        "ratio_N_over_2side6": [
+          650,
+          1458
+        ]
+      },
+      {
+        "side": 5,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "primitive_N": 18850,
+        "ratio_N_over_2side6": [
+          18850,
+          31250
+        ]
+      },
+      {
+        "side": 11,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            2,
+            11
+          ]
+        ],
+        "primitive_N": 2760250,
+        "ratio_N_over_2side6": [
+          2760250,
+          3543122
+        ]
+      },
+      {
+        "side": 101,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            101,
+            1
+          ],
+          [
+            2,
+            101
+          ]
+        ],
+        "primitive_N": 2061510029410,
+        "ratio_N_over_2side6": [
+          2061510029410,
+          2123040301202
+        ]
+      },
+      {
+        "side": 1001,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1001,
+            1
+          ],
+          [
+            2,
+            1001
+          ]
+        ],
+        "primitive_N": 2006015010002994010,
+        "ratio_N_over_2side6": [
+          2006015010002994010,
+          2012030040030012002
+        ]
+      },
+      {
+        "side": 2001,
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            2001,
+            1
+          ],
+          [
+            2,
+            2001
+          ]
+        ],
+        "primitive_N": 128192240080011988010,
+        "ratio_N_over_2side6": [
+          128192240080011988010,
+          128384480320120024002
+        ]
+      }
+    ]
+  }
+}
