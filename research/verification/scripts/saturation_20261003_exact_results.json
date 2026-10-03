@@ -1,0 +1,128 @@
+{
+  "inherited_lower_bound": "s10>=9, research/verification/round56-ten-board-eight-stone-exclusion.md",
+  "results": [
+    {
+      "n": 11,
+      "k": 5,
+      "orbit_reduction": "n11 k<=8 first occupied ID <=5; requires s10>=9",
+      "score_upper_bound": "suffix-conditioned triple counts",
+      "complete": true,
+      "found": false,
+      "forbidden_quads": 95670,
+      "triple_completion_incidence": 382680,
+      "max_completion": 9,
+      "nodes": 1,
+      "seconds": 0.0,
+      "nodes_by_depth": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coverage_prunes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_prunes": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "witness": []
+    },
+    {
+      "n": 11,
+      "k": 6,
+      "orbit_reduction": "n11 k<=8 first occupied ID <=5; requires s10>=9",
+      "score_upper_bound": "suffix-conditioned triple counts",
+      "complete": true,
+      "found": false,
+      "forbidden_quads": 95670,
+      "triple_completion_incidence": 382680,
+      "max_completion": 9,
+      "nodes": 13133599,
+      "seconds": 1.318794,
+      "nodes_by_depth": [
+        1,
+        6,
+        681,
+        38551,
+        1383651,
+        11459534,
+        251175
+      ],
+      "coverage_prunes": [
+        0,
+        0,
+        57,
+        2643,
+        25472,
+        14585,
+        0
+      ],
+      "score_prunes": [
+        0,
+        0,
+        13,
+        6605,
+        1116719,
+        11440427,
+        251175
+      ],
+      "witness": []
+    },
+    {
+      "n": 11,
+      "k": 7,
+      "orbit_reduction": "n11 k<=8 first occupied ID <=5; requires s10>=9",
+      "score_upper_bound": "suffix-conditioned triple counts",
+      "complete": true,
+      "found": false,
+      "forbidden_quads": 95670,
+      "triple_completion_incidence": 382680,
+      "max_completion": 9,
+      "nodes": 1501466264,
+      "seconds": 241.053068,
+      "nodes_by_depth": [
+        1,
+        6,
+        675,
+        37940,
+        1408899,
+        38136398,
+        749019990,
+        712862355
+      ],
+      "coverage_prunes": [
+        0,
+        0,
+        64,
+        6506,
+        281461,
+        6764072,
+        96192195,
+        23759
+      ],
+      "score_prunes": [
+        0,
+        0,
+        0,
+        43,
+        53588,
+        6782126,
+        637363964,
+        712838596
+      ],
+      "witness": []
+    }
+  ]
+}

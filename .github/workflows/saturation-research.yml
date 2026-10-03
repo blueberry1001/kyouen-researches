@@ -1,0 +1,30 @@
+name: Saturation research certificates
+
+on:
+  pull_request:
+    paths:
+      - 'research/saturation-20261003.md'
+      - 'research/verification/scripts/saturation_20261003_*'
+      - 'research/verification/scripts/check_saturation_20261003.py'
+      - '.github/workflows/saturation-research.yml'
+  workflow_dispatch:
+    inputs:
+      full_exclusion:
+        description: 'Repeat complete 11x11 seven-stone exclusion'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Integer witness and direction-bound audits
+        run: python3 research/verification/scripts/check_saturation_20261003.py
+      - name: Full seven-stone exclusion
+        if: github.event_name == 'workflow_dispatch' && inputs.full_exclusion
+        run: python3 research/verification/scripts/check_saturation_20261003.py --full-exclusion
