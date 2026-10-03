@@ -1,0 +1,2612 @@
+{
+  "status": "complete",
+  "conditional_center_scope": "2*center_x integer, with arbitrary center_y and radius",
+  "conditional_exact_extrema": {
+    "16": 16,
+    "17": 16,
+    "18": 16,
+    "19": 16,
+    "20": 16,
+    "21": 16,
+    "22": 18,
+    "23": 20,
+    "24": 20,
+    "25": 22,
+    "26": 24,
+    "27": 24,
+    "28": 24,
+    "29": 24,
+    "30": 24,
+    "31": 24
+  },
+  "unrestricted_infinite_strip_exact_new_value": {
+    "P(16)": 16
+  },
+  "unrestricted_infinite_strip_unresolved_widths": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "forced_primitive_coefficient_product": 134562351,
+  "uniform_all_center_rectangle_range": {
+    "width_min": 16,
+    "width_max": 31,
+    "length_min": 26,
+    "length_max": 50460882
+  },
+  "rows": [
+    {
+      "width": 16,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 23
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 12,
+      "C_denominator_at_least3_upper_bound": 12,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 10
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 14
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 67281176,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 30,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 16,
+      "unrestricted_value_exact": true
+    },
+    {
+      "width": 17,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 3
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 1
+          },
+          {
+            "modulus": 43,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 12,
+      "C_denominator_at_least3_upper_bound": 12,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 14
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 63076103,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 32,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 17,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 18,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 8
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 2
+          },
+          {
+            "modulus": 43,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 12,
+      "C_denominator_at_least3_upper_bound": 12,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 14
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 59365744,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 34,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 18,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 19,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 18
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 3
+          },
+          {
+            "modulus": 43,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 12,
+      "C_denominator_at_least3_upper_bound": 14,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 11
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 15
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 56067647,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 36,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 19,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 20,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 34
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 4
+          },
+          {
+            "modulus": 43,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 12,
+      "C_denominator_at_least3_upper_bound": 14,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 16
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 53116718,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 38,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 20,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 21,
+      "exact_maximum_if_2center_x_is_integer": 16,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 9,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 56
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 9
+          },
+          {
+            "modulus": 43,
+            "remaining_maximal_row_masks": 4
+          },
+          {
+            "modulus": 19,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 14,
+      "C_denominator_at_least3_upper_bound": 14,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 11,
+        "b": 11,
+        "N": 130,
+        "points": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "point_count": 16,
+        "minimum_rectangle_length_for_this_witness": 12
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 16
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 16,
+      "all_center_rectangle_attained_from_length": 12,
+      "all_center_rectangle_proved_through_length": 50460882,
+      "polygon_area_bound_numerator": 2018435265,
+      "polygon_area_bound_denominator": 40,
+      "unrestricted_infinite_strip_lower_bound": 16,
+      "unrestricted_infinite_strip_upper_bound": 21,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 22,
+      "exact_maximum_if_2center_x_is_integer": 18,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 10,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 17
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 14,
+      "C_denominator_at_least3_upper_bound": 16,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 18,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 12
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 16
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 18,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 54465714,
+      "polygon_area_bound_numerator": 2287559967,
+      "polygon_area_bound_denominator": 42,
+      "unrestricted_infinite_strip_lower_bound": 18,
+      "unrestricted_infinite_strip_upper_bound": 22,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 23,
+      "exact_maximum_if_2center_x_is_integer": 20,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 11,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 16,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 20,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 13
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 17
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 20,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 58106470,
+      "polygon_area_bound_numerator": 2556684669,
+      "polygon_area_bound_denominator": 44,
+      "unrestricted_infinite_strip_lower_bound": 20,
+      "unrestricted_infinite_strip_upper_bound": 23,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 24,
+      "exact_maximum_if_2center_x_is_integer": 20,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 11,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 2
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 16,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 20,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 14
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 18
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 20,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 55580102,
+      "polygon_area_bound_numerator": 2556684669,
+      "polygon_area_bound_denominator": 46,
+      "unrestricted_infinite_strip_lower_bound": 20,
+      "unrestricted_infinite_strip_upper_bound": 24,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 25,
+      "exact_maximum_if_2center_x_is_integer": 22,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 12,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 18,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 22,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 15
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 18
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 22,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 58871029,
+      "polygon_area_bound_numerator": 2825809371,
+      "polygon_area_bound_denominator": 48,
+      "unrestricted_infinite_strip_lower_bound": 22,
+      "unrestricted_infinite_strip_upper_bound": 25,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 26,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 18,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 18
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 61898682,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 50,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 26,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 27,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 18,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 19
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 19
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 59517963,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 52,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 27,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 28,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 20,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 19
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 16
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 20
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 57313594,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 54,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 28,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 29,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 4
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 20,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 19
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 20
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 55266680,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 56,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 29,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 30,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 8
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 20,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 20
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 20
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 53360933,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 58,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 30,
+      "unrestricted_value_exact": false
+    },
+    {
+      "width": 31,
+      "exact_maximum_if_2center_x_is_integer": 24,
+      "integer_C_certificate": {
+        "required_rows_for_more_than_bound": 13,
+        "stages": [
+          {
+            "modulus": 9,
+            "remaining_maximal_row_masks": 30
+          },
+          {
+            "modulus": 49,
+            "remaining_maximal_row_masks": 22
+          },
+          {
+            "modulus": 121,
+            "remaining_maximal_row_masks": 0
+          }
+        ],
+        "remaining_row_masks": 0
+      },
+      "C_denominator2_upper_bound": 16,
+      "C_denominator_at_least3_upper_bound": 22,
+      "attaining_circle": {
+        "circle_equation": "(2x-a)^2+(2y-b)^2=N",
+        "a": 25,
+        "b": 25,
+        "N": 650,
+        "points": [
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            21
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            22
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            24
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            25
+          ],
+          [
+            15,
+            0
+          ],
+          [
+            15,
+            25
+          ],
+          [
+            18,
+            1
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            21,
+            3
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            4
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            24,
+            7
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            25,
+            10
+          ],
+          [
+            25,
+            15
+          ]
+        ],
+        "point_count": 24,
+        "minimum_rectangle_length_for_this_witness": 26
+      },
+      "denominator_forcing": [
+        {
+          "prime_dividing_A_in_any_counterexample": 3,
+          "modulus": 9,
+          "maximum_permitted_rows": 21
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 7,
+          "modulus": 49,
+          "maximum_permitted_rows": 19
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 11,
+          "modulus": 121,
+          "maximum_permitted_rows": 18
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 19,
+          "modulus": 19,
+          "maximum_permitted_rows": 21
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 23,
+          "modulus": 23,
+          "maximum_permitted_rows": 21
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 31,
+          "modulus": 31,
+          "maximum_permitted_rows": 17
+        },
+        {
+          "prime_dividing_A_in_any_counterexample": 43,
+          "modulus": 43,
+          "maximum_permitted_rows": 21
+        }
+      ],
+      "forced_primitive_A_divisor": 134562351,
+      "all_center_rectangle_maximum": 24,
+      "all_center_rectangle_attained_from_length": 26,
+      "all_center_rectangle_proved_through_length": 51582235,
+      "polygon_area_bound_numerator": 3094934073,
+      "polygon_area_bound_denominator": 60,
+      "unrestricted_infinite_strip_lower_bound": 24,
+      "unrestricted_infinite_strip_upper_bound": 31,
+      "unrestricted_value_exact": false
+    }
+  ],
+  "scope_warning": "The finite rectangle transfer is a congruence/determinant proof; no all-center infinite-strip equality for w>=17 is claimed."
+}

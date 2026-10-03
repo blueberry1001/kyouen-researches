@@ -23,6 +23,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix="kyouen-geometry-check-") as tmp:
         work = Path(tmp)
         for stem in ("geometry_20261003_strip", "geometry_20261003_scale",
+                     "geometry_20261003_extended", "theory_audit_20261003_extra",
                      "theory_audit_20261003_q6", "theory_audit_20261003_checks"):
             script = stem.replace("_checks", "_verify")
             out = work / (stem + ".json")

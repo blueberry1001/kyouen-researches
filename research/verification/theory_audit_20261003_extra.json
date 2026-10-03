@@ -1,0 +1,2081 @@
+{
+  "arithmetic": "exact integers; Gaussian lattice points enumerated directly",
+  "limit": 200000,
+  "center_norm_conditions_checked": 14400000,
+  "thresholds": {
+    "5": [
+      {
+        "minimum_points": 1,
+        "N_m": 1,
+        "least_q_norm": 1,
+        "least_radius_squared": "1/25"
+      },
+      {
+        "minimum_points": 2,
+        "N_m": 5,
+        "least_q_norm": 13,
+        "least_radius_squared": "13/25"
+      },
+      {
+        "minimum_points": 3,
+        "N_m": 25,
+        "least_q_norm": 169,
+        "least_radius_squared": "169/25"
+      },
+      {
+        "minimum_points": 4,
+        "N_m": 65,
+        "least_q_norm": 221,
+        "least_radius_squared": "221/25"
+      },
+      {
+        "minimum_points": 5,
+        "N_m": 325,
+        "least_q_norm": 2873,
+        "least_radius_squared": "2873/25"
+      },
+      {
+        "minimum_points": 6,
+        "N_m": 325,
+        "least_q_norm": 2873,
+        "least_radius_squared": "2873/25"
+      },
+      {
+        "minimum_points": 7,
+        "N_m": 1105,
+        "least_q_norm": 6409,
+        "least_radius_squared": "6409/25"
+      },
+      {
+        "minimum_points": 8,
+        "N_m": 1105,
+        "least_q_norm": 6409,
+        "least_radius_squared": "6409/25"
+      },
+      {
+        "minimum_points": 9,
+        "N_m": 4225,
+        "least_q_norm": 48841,
+        "least_radius_squared": "48841/25"
+      },
+      {
+        "minimum_points": 10,
+        "N_m": 5525,
+        "least_q_norm": 83317,
+        "least_radius_squared": "83317/25"
+      },
+      {
+        "minimum_points": 11,
+        "N_m": 5525,
+        "least_q_norm": 83317,
+        "least_radius_squared": "83317/25"
+      },
+      {
+        "minimum_points": 12,
+        "N_m": 5525,
+        "least_q_norm": 83317,
+        "least_radius_squared": "83317/25"
+      }
+    ],
+    "8": [
+      {
+        "minimum_points": 1,
+        "N_m": 1,
+        "least_q_norm": 1,
+        "least_radius_squared": "1/64"
+      },
+      {
+        "minimum_points": 2,
+        "N_m": 5,
+        "least_q_norm": 17,
+        "least_radius_squared": "17/64"
+      },
+      {
+        "minimum_points": 3,
+        "N_m": 25,
+        "least_q_norm": 289,
+        "least_radius_squared": "289/64"
+      },
+      {
+        "minimum_points": 4,
+        "N_m": 65,
+        "least_q_norm": 425,
+        "least_radius_squared": "425/64"
+      },
+      {
+        "minimum_points": 5,
+        "N_m": 325,
+        "least_q_norm": 4225,
+        "least_radius_squared": "4225/64"
+      },
+      {
+        "minimum_points": 6,
+        "N_m": 325,
+        "least_q_norm": 5525,
+        "least_radius_squared": "5525/64"
+      },
+      {
+        "minimum_points": 7,
+        "N_m": 1105,
+        "least_q_norm": 17425,
+        "least_radius_squared": "17425/64"
+      },
+      {
+        "minimum_points": 8,
+        "N_m": 1105,
+        "least_q_norm": 17425,
+        "least_radius_squared": "17425/64"
+      },
+      {
+        "minimum_points": 9,
+        "N_m": 4225,
+        "least_q_norm": 71825,
+        "least_radius_squared": "71825/64"
+      },
+      {
+        "minimum_points": 10,
+        "N_m": 5525,
+        "least_q_norm": 71825,
+        "least_radius_squared": "71825/64"
+      },
+      {
+        "minimum_points": 11,
+        "N_m": 5525,
+        "least_q_norm": 160225,
+        "least_radius_squared": "160225/64"
+      },
+      {
+        "minimum_points": 12,
+        "N_m": 5525,
+        "least_q_norm": 160225,
+        "least_radius_squared": "160225/64"
+      }
+    ]
+  },
+  "two_point_witnesses": [
+    {
+      "q": 1,
+      "center_numerators": [
+        0,
+        0
+      ],
+      "radius_squared": "1",
+      "points": [
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 2,
+      "center_numerators": [
+        1,
+        0
+      ],
+      "radius_squared": "1/4",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 3,
+      "center_numerators": [
+        1,
+        2
+      ],
+      "radius_squared": "5/9",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 4,
+      "center_numerators": [
+        2,
+        1
+      ],
+      "radius_squared": "5/16",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 5,
+      "center_numerators": [
+        2,
+        3
+      ],
+      "radius_squared": "13/25",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 6,
+      "center_numerators": [
+        3,
+        1
+      ],
+      "radius_squared": "5/18",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 7,
+      "center_numerators": [
+        3,
+        4
+      ],
+      "radius_squared": "25/49",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 8,
+      "center_numerators": [
+        4,
+        1
+      ],
+      "radius_squared": "17/64",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 9,
+      "center_numerators": [
+        4,
+        5
+      ],
+      "radius_squared": "41/81",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 10,
+      "center_numerators": [
+        5,
+        1
+      ],
+      "radius_squared": "13/50",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 11,
+      "center_numerators": [
+        5,
+        6
+      ],
+      "radius_squared": "61/121",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 12,
+      "center_numerators": [
+        6,
+        1
+      ],
+      "radius_squared": "37/144",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 13,
+      "center_numerators": [
+        6,
+        7
+      ],
+      "radius_squared": "85/169",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 14,
+      "center_numerators": [
+        7,
+        1
+      ],
+      "radius_squared": "25/98",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 15,
+      "center_numerators": [
+        7,
+        8
+      ],
+      "radius_squared": "113/225",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 16,
+      "center_numerators": [
+        8,
+        1
+      ],
+      "radius_squared": "65/256",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 17,
+      "center_numerators": [
+        8,
+        9
+      ],
+      "radius_squared": "145/289",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 18,
+      "center_numerators": [
+        9,
+        1
+      ],
+      "radius_squared": "41/162",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 19,
+      "center_numerators": [
+        9,
+        10
+      ],
+      "radius_squared": "181/361",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 20,
+      "center_numerators": [
+        10,
+        1
+      ],
+      "radius_squared": "101/400",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 21,
+      "center_numerators": [
+        10,
+        11
+      ],
+      "radius_squared": "221/441",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 22,
+      "center_numerators": [
+        11,
+        1
+      ],
+      "radius_squared": "61/242",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 23,
+      "center_numerators": [
+        11,
+        12
+      ],
+      "radius_squared": "265/529",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 24,
+      "center_numerators": [
+        12,
+        1
+      ],
+      "radius_squared": "145/576",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 25,
+      "center_numerators": [
+        12,
+        13
+      ],
+      "radius_squared": "313/625",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 26,
+      "center_numerators": [
+        13,
+        1
+      ],
+      "radius_squared": "85/338",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 27,
+      "center_numerators": [
+        13,
+        14
+      ],
+      "radius_squared": "365/729",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 28,
+      "center_numerators": [
+        14,
+        1
+      ],
+      "radius_squared": "197/784",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 29,
+      "center_numerators": [
+        14,
+        15
+      ],
+      "radius_squared": "421/841",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 30,
+      "center_numerators": [
+        15,
+        1
+      ],
+      "radius_squared": "113/450",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 31,
+      "center_numerators": [
+        15,
+        16
+      ],
+      "radius_squared": "481/961",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 32,
+      "center_numerators": [
+        16,
+        1
+      ],
+      "radius_squared": "257/1024",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 33,
+      "center_numerators": [
+        16,
+        17
+      ],
+      "radius_squared": "545/1089",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 34,
+      "center_numerators": [
+        17,
+        1
+      ],
+      "radius_squared": "145/578",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 35,
+      "center_numerators": [
+        17,
+        18
+      ],
+      "radius_squared": "613/1225",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 36,
+      "center_numerators": [
+        18,
+        1
+      ],
+      "radius_squared": "325/1296",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 37,
+      "center_numerators": [
+        18,
+        19
+      ],
+      "radius_squared": "685/1369",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 38,
+      "center_numerators": [
+        19,
+        1
+      ],
+      "radius_squared": "181/722",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 39,
+      "center_numerators": [
+        19,
+        20
+      ],
+      "radius_squared": "761/1521",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 40,
+      "center_numerators": [
+        20,
+        1
+      ],
+      "radius_squared": "401/1600",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 41,
+      "center_numerators": [
+        20,
+        21
+      ],
+      "radius_squared": "841/1681",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 42,
+      "center_numerators": [
+        21,
+        1
+      ],
+      "radius_squared": "221/882",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 43,
+      "center_numerators": [
+        21,
+        22
+      ],
+      "radius_squared": "925/1849",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 44,
+      "center_numerators": [
+        22,
+        1
+      ],
+      "radius_squared": "485/1936",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 45,
+      "center_numerators": [
+        22,
+        23
+      ],
+      "radius_squared": "1013/2025",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 46,
+      "center_numerators": [
+        23,
+        1
+      ],
+      "radius_squared": "265/1058",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 47,
+      "center_numerators": [
+        23,
+        24
+      ],
+      "radius_squared": "1105/2209",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 48,
+      "center_numerators": [
+        24,
+        1
+      ],
+      "radius_squared": "577/2304",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 49,
+      "center_numerators": [
+        24,
+        25
+      ],
+      "radius_squared": "1201/2401",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 50,
+      "center_numerators": [
+        25,
+        1
+      ],
+      "radius_squared": "313/1250",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 51,
+      "center_numerators": [
+        25,
+        26
+      ],
+      "radius_squared": "1301/2601",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 52,
+      "center_numerators": [
+        26,
+        1
+      ],
+      "radius_squared": "677/2704",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 53,
+      "center_numerators": [
+        26,
+        27
+      ],
+      "radius_squared": "1405/2809",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 54,
+      "center_numerators": [
+        27,
+        1
+      ],
+      "radius_squared": "365/1458",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 55,
+      "center_numerators": [
+        27,
+        28
+      ],
+      "radius_squared": "1513/3025",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 56,
+      "center_numerators": [
+        28,
+        1
+      ],
+      "radius_squared": "785/3136",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 57,
+      "center_numerators": [
+        28,
+        29
+      ],
+      "radius_squared": "1625/3249",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 58,
+      "center_numerators": [
+        29,
+        1
+      ],
+      "radius_squared": "421/1682",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 59,
+      "center_numerators": [
+        29,
+        30
+      ],
+      "radius_squared": "1741/3481",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 60,
+      "center_numerators": [
+        30,
+        1
+      ],
+      "radius_squared": "901/3600",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 61,
+      "center_numerators": [
+        30,
+        31
+      ],
+      "radius_squared": "1861/3721",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 62,
+      "center_numerators": [
+        31,
+        1
+      ],
+      "radius_squared": "481/1922",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 63,
+      "center_numerators": [
+        31,
+        32
+      ],
+      "radius_squared": "1985/3969",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 64,
+      "center_numerators": [
+        32,
+        1
+      ],
+      "radius_squared": "1025/4096",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 65,
+      "center_numerators": [
+        32,
+        33
+      ],
+      "radius_squared": "2113/4225",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 66,
+      "center_numerators": [
+        33,
+        1
+      ],
+      "radius_squared": "545/2178",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 67,
+      "center_numerators": [
+        33,
+        34
+      ],
+      "radius_squared": "2245/4489",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 68,
+      "center_numerators": [
+        34,
+        1
+      ],
+      "radius_squared": "1157/4624",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 69,
+      "center_numerators": [
+        34,
+        35
+      ],
+      "radius_squared": "2381/4761",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 70,
+      "center_numerators": [
+        35,
+        1
+      ],
+      "radius_squared": "613/2450",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 71,
+      "center_numerators": [
+        35,
+        36
+      ],
+      "radius_squared": "2521/5041",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 72,
+      "center_numerators": [
+        36,
+        1
+      ],
+      "radius_squared": "1297/5184",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 73,
+      "center_numerators": [
+        36,
+        37
+      ],
+      "radius_squared": "2665/5329",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 74,
+      "center_numerators": [
+        37,
+        1
+      ],
+      "radius_squared": "685/2738",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 75,
+      "center_numerators": [
+        37,
+        38
+      ],
+      "radius_squared": "2813/5625",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 76,
+      "center_numerators": [
+        38,
+        1
+      ],
+      "radius_squared": "1445/5776",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 77,
+      "center_numerators": [
+        38,
+        39
+      ],
+      "radius_squared": "2965/5929",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 78,
+      "center_numerators": [
+        39,
+        1
+      ],
+      "radius_squared": "761/3042",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 79,
+      "center_numerators": [
+        39,
+        40
+      ],
+      "radius_squared": "3121/6241",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 80,
+      "center_numerators": [
+        40,
+        1
+      ],
+      "radius_squared": "1601/6400",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 81,
+      "center_numerators": [
+        40,
+        41
+      ],
+      "radius_squared": "3281/6561",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 82,
+      "center_numerators": [
+        41,
+        1
+      ],
+      "radius_squared": "841/3362",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 83,
+      "center_numerators": [
+        41,
+        42
+      ],
+      "radius_squared": "3445/6889",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 84,
+      "center_numerators": [
+        42,
+        1
+      ],
+      "radius_squared": "1765/7056",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 85,
+      "center_numerators": [
+        42,
+        43
+      ],
+      "radius_squared": "3613/7225",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 86,
+      "center_numerators": [
+        43,
+        1
+      ],
+      "radius_squared": "925/3698",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 87,
+      "center_numerators": [
+        43,
+        44
+      ],
+      "radius_squared": "3785/7569",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 88,
+      "center_numerators": [
+        44,
+        1
+      ],
+      "radius_squared": "1937/7744",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 89,
+      "center_numerators": [
+        44,
+        45
+      ],
+      "radius_squared": "3961/7921",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 90,
+      "center_numerators": [
+        45,
+        1
+      ],
+      "radius_squared": "1013/4050",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 91,
+      "center_numerators": [
+        45,
+        46
+      ],
+      "radius_squared": "4141/8281",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 92,
+      "center_numerators": [
+        46,
+        1
+      ],
+      "radius_squared": "2117/8464",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 93,
+      "center_numerators": [
+        46,
+        47
+      ],
+      "radius_squared": "4325/8649",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 94,
+      "center_numerators": [
+        47,
+        1
+      ],
+      "radius_squared": "1105/4418",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 95,
+      "center_numerators": [
+        47,
+        48
+      ],
+      "radius_squared": "4513/9025",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 96,
+      "center_numerators": [
+        48,
+        1
+      ],
+      "radius_squared": "2305/9216",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 97,
+      "center_numerators": [
+        48,
+        49
+      ],
+      "radius_squared": "4705/9409",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 98,
+      "center_numerators": [
+        49,
+        1
+      ],
+      "radius_squared": "1201/4802",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "q": 99,
+      "center_numerators": [
+        49,
+        50
+      ],
+      "radius_squared": "4901/9801",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "q": 100,
+      "center_numerators": [
+        50,
+        1
+      ],
+      "radius_squared": "2501/10000",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "primitive_denominator_checks": [
+    {
+      "q": 5,
+      "minimum_points": 3,
+      "actual_points": 3,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 4,
+      "actual_points": 4,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 5,
+      "actual_points": 6,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 6,
+      "actual_points": 6,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 7,
+      "actual_points": 8,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 8,
+      "actual_points": 8,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 9,
+      "actual_points": 9,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 10,
+      "actual_points": 12,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 11,
+      "actual_points": 12,
+      "primitive_A": 5
+    },
+    {
+      "q": 5,
+      "minimum_points": 12,
+      "actual_points": 12,
+      "primitive_A": 5
+    },
+    {
+      "q": 8,
+      "minimum_points": 3,
+      "actual_points": 3,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 4,
+      "actual_points": 4,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 5,
+      "actual_points": 5,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 6,
+      "actual_points": 6,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 7,
+      "actual_points": 8,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 8,
+      "actual_points": 8,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 9,
+      "actual_points": 10,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 10,
+      "actual_points": 10,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 11,
+      "actual_points": 12,
+      "primitive_A": 4
+    },
+    {
+      "q": 8,
+      "minimum_points": 12,
+      "actual_points": 12,
+      "primitive_A": 4
+    }
+  ],
+  "triangle_determinants_checked": 1728,
+  "scope": "Finite check of formulas; general claims proved separately in the research note"
+}

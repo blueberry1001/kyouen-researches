@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - 'research/geometry-20261003.md'
+      - 'research/geometry_20261003_extended.md'
       - 'research/theory-audit-20261003.md'
+      - 'research/theory_audit_20261003_extra.md'
       - 'research/verification/geometry_20261003_*.json'
       - 'research/verification/theory_audit_20261003_*.json'
       - 'research/verification/scripts/geometry_20261003_*.py'
